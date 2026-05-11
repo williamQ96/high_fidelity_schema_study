@@ -1,0 +1,148 @@
+{
+  "documents": [
+    {
+      "candidate_id": "zenodo__record_15008662__unique_tracks_90.csv",
+      "source_file": "zenodo/record_15008662/unique_tracks_90.csv",
+      "title": "Tracked Hailstorm Events from Radar Data (unique_tracks_90.csv)",
+      "text": "Tracked Hailstorm Events from Radar Data (unique_tracks_90.csv) This dataset contains tracked hailstorm events based on radar-derived maximum vertically integrated liquid (max_VIL). The dataset provides key storm parameters such as latitude, longitude, timestamp , and storm intensity. The dataset was generated as part of the study \"Modulation of Severe Hailstorms in Alberta by Large-Scale Climate Teleconnections.\"",
+      "metadata": {
+        "text_source": "record_description_and_notes"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv",
+      "source_file": "zenodo/record_18195710/ensensia_raw_20230728-20251202_school_5.csv",
+      "title": "Indoor Air Pollutants (Raw)",
+      "text": "Indoor Air Pollutants (Raw) This dataset contains raw indoor air pollutant measurements collected from ENSENSIA sensor devices deployed in schools. Each CSV corresponds to a school and contains timestamped sensor readings and device metadata fields.",
+      "metadata": {
+        "text_source": "record_description_and_notes"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_3660832__Data_01_Jan_2019.h5",
+      "source_file": "zenodo/record_3660832/Data 01 Jan 2019.h5",
+      "title": "Collected data from the ATLASM5 Atmospheric Research Station from 01 January 2019 to 31 December 2019",
+      "text": "Collected data from the ATLASM5 Atmospheric Research Station from 01 January 2019 to 31 December 2019 PI_NAME = Abdelwahid MELLOUKI INSTITUTE = CNRS-ICARE EMAIL=mellouki@cnrs-orleans.fr ADDRESS=1C Av. de la Recherche Scientifique, CS 50060, 45071 Orleans cedex 2 TITLE = Data from the ATLASM5 Research Station Year = 2019 DATA_CATEGORY=Field_ATLASM5 Station Project=MARSU TYPE_OF_DATA= FIELD MEASUREMENT STATUS_OF_FILE=FINAL VERSION=1.0 PLATFORM = ATLASM5 NAME_OF_PLATFORM=MARSU DESCRIPTION=https://marsu-h2020.org/ The HDF5 Binary File Format, (Hierarchical Data Format free and open standard) was selected to manage the files. Information regarding the format and organization of the HDF5 file are available at : https://www.hdfgroup.org/HDF5/\nInformation regarding the ATLASm5 Atmospheric Research Station can be found: https://marsu-h2020.org/",
+      "metadata": {
+        "text_source": "record_description_and_notes"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_5935524__20211108_ZXLidar_Winds.csv",
+      "source_file": "zenodo/record_5935524/20211108_ZXLidar_Winds.csv",
+      "title": "Aeolian Saltation Data at Duck, NC - 8 Nov 2021",
+      "text": "Aeolian Saltation Data at Duck, NC - 8 Nov 2021 Aeolian saltation data collected on the north property of the Field Research Facility (FRF) in Duck, NC associated with the passing of a Nor'Easter system. Time series data includes 1Hz measurements from a Sensit H14-LIN sensor, 1 Hz wind measurements from a horizontally mounted ZX TM doppler wind lidar sensor, and tidal measurements made from the end of the FRF pier. These time series data are provided as CSV files individually for each sensor, with headers of the CSV files indicating the variables of interest. Addititionally, a Sequoia LISST-Holo2 sensor was deployed to measure properties of the aeolian saltation layer at 10Hz. Particle grain size information exported from the HoloBatch program is additionally provided, with the raw reconstructed particle height relative to the sensor lens provided. More details regarding these measurements can be found in the following manuscript: Cohn, Dickhudt, and Marshall (2022). In-situ measurement of grain size characteristics within the aeolian saltation layer on a coastal beach. Earth Surface Processes and Landforms",
+      "metadata": {
+        "text_source": "record_description_and_notes"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_5935524__20211108_Sensit.csv",
+      "source_file": "zenodo/record_5935524/20211108_Sensit.csv",
+      "title": "Aeolian Saltation Data at Duck, NC - 8 Nov 2021",
+      "text": "Aeolian Saltation Data at Duck, NC - 8 Nov 2021 Aeolian saltation data collected on the north property of the Field Research Facility (FRF) in Duck, NC associated with the passing of a Nor'Easter system. Time series data includes 1Hz measurements from a Sensit H14-LIN sensor, 1 Hz wind measurements from a horizontally mounted ZX TM doppler wind lidar sensor, and tidal measurements made from the end of the FRF pier. These time series data are provided as CSV files individually for each sensor, with headers of the CSV files indicating the variables of interest. Addititionally, a Sequoia LISST-Holo2 sensor was deployed to measure properties of the aeolian saltation layer at 10Hz. Particle grain size information exported from the HoloBatch program is additionally provided, with the raw reconstructed particle height relative to the sensor lens provided. More details regarding these measurements can be found in the following manuscript: Cohn, Dickhudt, and Marshall (2022). In-situ measurement of grain size characteristics within the aeolian saltation layer on a coastal beach. Earth Surface Processes and Landforms",
+      "metadata": {
+        "text_source": "record_description_and_notes"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_5935524__20211108_Tides.csv",
+      "source_file": "zenodo/record_5935524/20211108_Tides.csv",
+      "title": "Aeolian Saltation Data at Duck, NC - 8 Nov 2021",
+      "text": "Aeolian Saltation Data at Duck, NC - 8 Nov 2021 Aeolian saltation data collected on the north property of the Field Research Facility (FRF) in Duck, NC associated with the passing of a Nor'Easter system. Time series data includes 1Hz measurements from a Sensit H14-LIN sensor, 1 Hz wind measurements from a horizontally mounted ZX TM doppler wind lidar sensor, and tidal measurements made from the end of the FRF pier. These time series data are provided as CSV files individually for each sensor, with headers of the CSV files indicating the variables of interest. Addititionally, a Sequoia LISST-Holo2 sensor was deployed to measure properties of the aeolian saltation layer at 10Hz. Particle grain size information exported from the HoloBatch program is additionally provided, with the raw reconstructed particle height relative to the sensor lens provided. More details regarding these measurements can be found in the following manuscript: Cohn, Dickhudt, and Marshall (2022). In-situ measurement of grain size characteristics within the aeolian saltation layer on a coastal beach. Earth Surface Processes and Landforms",
+      "metadata": {
+        "text_source": "record_description_and_notes"
+      }
+    },
+    {
+      "candidate_id": "dryad__10.5061_dryad.2f2b3__Season_and_site_fidelity_determine_home_range_of_dispersing_and_resident_juvenile_Greenland_cod_(Gadus_ogac)_in_a_Newfoundland_fjord_year1.csv",
+      "source_file": "dryad/10.5061_dryad.2f2b3/Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+      "title": "Data from: Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord",
+      "text": "Data from: Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord",
+      "metadata": {
+        "text_source": "record_description_and_notes"
+      }
+    },
+    {
+      "candidate_id": "dryad__10.5061_dryad.2f2b3__Season_and_site_fidelity_determine_home_range_of_dispersing_and_resident_juvenile_Greenland_cod_(Gadus_ogac)_in_a_Newfoundland_fjord_year2.csv",
+      "source_file": "dryad/10.5061_dryad.2f2b3/Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year2.csv",
+      "title": "Data from: Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord",
+      "text": "Data from: Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord",
+      "metadata": {
+        "text_source": "record_description_and_notes"
+      }
+    },
+    {
+      "candidate_id": "dryad__10.5061_dryad.zkh1893nh__above_500_PA_data.csv",
+      "source_file": "dryad/10.5061_dryad.zkh1893nh/above_500_PA_data.csv",
+      "title": "Food web similarity increases with productivity similarity at a continental scale",
+      "text": "Food web similarity increases with productivity similarity at a continental scale",
+      "metadata": {
+        "text_source": "record_description_and_notes"
+      }
+    },
+    {
+      "candidate_id": "dryad__10.5061_dryad.zkh1893nh__African_Mammal_FoodWebs_Locations.csv",
+      "source_file": "dryad/10.5061_dryad.zkh1893nh/African_Mammal_FoodWebs_Locations.csv",
+      "title": "Food web similarity increases with productivity similarity at a continental scale",
+      "text": "Food web similarity increases with productivity similarity at a continental scale",
+      "metadata": {
+        "text_source": "record_description_and_notes"
+      }
+    },
+    {
+      "candidate_id": "dryad__10.5061_dryad.zkh1893nh__functional_traits.csv",
+      "source_file": "dryad/10.5061_dryad.zkh1893nh/functional_traits.csv",
+      "title": "Food web similarity increases with productivity similarity at a continental scale",
+      "text": "Food web similarity increases with productivity similarity at a continental scale",
+      "metadata": {
+        "text_source": "record_description_and_notes"
+      }
+    },
+    {
+      "candidate_id": "dryad__10.5061_dryad.dv41ns266__weatherMQ-FP-20261011.csv",
+      "source_file": "dryad/10.5061_dryad.dv41ns266/weatherMQ-FP-20261011.csv",
+      "title": "Weather data from the Macquarie University, Fauna Park Weather Station",
+      "text": "Weather data from the Macquarie University, Fauna Park Weather Station",
+      "metadata": {
+        "text_source": "record_description_and_notes"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_5935524__20181108_HoloParticles.csv",
+      "source_file": "zenodo/record_5935524/20181108_HoloParticles.csv",
+      "title": "Aeolian Saltation Data at Duck, NC - 8 Nov 2021",
+      "text": "Aeolian Saltation Data at Duck, NC - 8 Nov 2021 Aeolian saltation data collected on the north property of the Field Research Facility (FRF) in Duck, NC associated with the passing of a Nor'Easter system. Time series data includes 1Hz measurements from a Sensit H14-LIN sensor, 1 Hz wind measurements from a horizontally mounted ZX TM doppler wind lidar sensor, and tidal measurements made from the end of the FRF pier. These time series data are provided as CSV files individually for each sensor, with headers of the CSV files indicating the variables of interest. Addititionally, a Sequoia LISST-Holo2 sensor was deployed to measure properties of the aeolian saltation layer at 10Hz. Particle grain size information exported from the HoloBatch program is additionally provided, with the raw reconstructed particle height relative to the sensor lens provided. More details regarding these measurements can be found in the following manuscript: Cohn, Dickhudt, and Marshall (2022). In-situ measurement of grain size characteristics within the aeolian saltation layer on a coastal beach. Earth Surface Processes and Landforms",
+      "metadata": {
+        "text_source": "record_description_and_notes"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_18195710__ensensia_raw_20230728-20251202_school_6.csv",
+      "source_file": "zenodo/record_18195710/ensensia_raw_20230728-20251202_school_6.csv",
+      "title": "Indoor Air Pollutants (Raw)",
+      "text": "Indoor Air Pollutants (Raw) This dataset contains raw indoor air pollutant measurements collected from ENSENSIA sensor devices deployed in schools. Each CSV corresponds to a school and contains timestamped sensor readings and device metadata fields.",
+      "metadata": {
+        "text_source": "record_description_and_notes"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_3660832__Data_02_Feb_2019.h5",
+      "source_file": "zenodo/record_3660832/Data 02 Feb 2019.h5",
+      "title": "Collected data from the ATLASM5 Atmospheric Research Station from 01 January 2019 to 31 December 2019",
+      "text": "Collected data from the ATLASM5 Atmospheric Research Station from 01 January 2019 to 31 December 2019 PI_NAME = Abdelwahid MELLOUKI INSTITUTE = CNRS-ICARE EMAIL=mellouki@cnrs-orleans.fr ADDRESS=1C Av. de la Recherche Scientifique, CS 50060, 45071 Orleans cedex 2 TITLE = Data from the ATLASM5 Research Station Year = 2019 DATA_CATEGORY=Field_ATLASM5 Station Project=MARSU TYPE_OF_DATA= FIELD MEASUREMENT STATUS_OF_FILE=FINAL VERSION=1.0 PLATFORM = ATLASM5 NAME_OF_PLATFORM=MARSU DESCRIPTION=https://marsu-h2020.org/ The HDF5 Binary File Format, (Hierarchical Data Format free and open standard) was selected to manage the files. Information regarding the format and organization of the HDF5 file are available at : https://www.hdfgroup.org/HDF5/\nInformation regarding the ATLASm5 Atmospheric Research Station can be found: https://marsu-h2020.org/",
+      "metadata": {
+        "text_source": "record_description_and_notes"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_3660832__Data_03_Mar_2019.h5",
+      "source_file": "zenodo/record_3660832/Data 03 Mar 2019.h5",
+      "title": "Collected data from the ATLASM5 Atmospheric Research Station from 01 January 2019 to 31 December 2019",
+      "text": "Collected data from the ATLASM5 Atmospheric Research Station from 01 January 2019 to 31 December 2019 PI_NAME = Abdelwahid MELLOUKI INSTITUTE = CNRS-ICARE EMAIL=mellouki@cnrs-orleans.fr ADDRESS=1C Av. de la Recherche Scientifique, CS 50060, 45071 Orleans cedex 2 TITLE = Data from the ATLASM5 Research Station Year = 2019 DATA_CATEGORY=Field_ATLASM5 Station Project=MARSU TYPE_OF_DATA= FIELD MEASUREMENT STATUS_OF_FILE=FINAL VERSION=1.0 PLATFORM = ATLASM5 NAME_OF_PLATFORM=MARSU DESCRIPTION=https://marsu-h2020.org/ The HDF5 Binary File Format, (Hierarchical Data Format free and open standard) was selected to manage the files. Information regarding the format and organization of the HDF5 file are available at : https://www.hdfgroup.org/HDF5/\nInformation regarding the ATLASm5 Atmospheric Research Station can be found: https://marsu-h2020.org/",
+      "metadata": {
+        "text_source": "record_description_and_notes"
+      }
+    }
+  ]
+}

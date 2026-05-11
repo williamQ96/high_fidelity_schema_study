@@ -1,0 +1,79 @@
+{
+  "dataset_id": "csv_easy_weather_stations",
+  "file_format": "csv",
+  "difficulty": "easy",
+  "data_modality": "tabular",
+  "source_file": "stations_precip.csv",
+  "time_axis": null,
+  "fields": [
+    {
+      "field_name": "station_id",
+      "field_path": "station_id",
+      "correct_physical_type": "string",
+      "correct_logical_type": "identifier",
+      "correct_semantic_type": "station_identifier",
+      "unit": null,
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "station_name",
+      "field_path": "station_name",
+      "correct_physical_type": "string",
+      "correct_logical_type": "label",
+      "correct_semantic_type": "station_name",
+      "unit": null,
+      "necessity": "medium",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "latitude_deg",
+      "field_path": "latitude_deg",
+      "correct_physical_type": "float",
+      "correct_logical_type": "coordinate",
+      "correct_semantic_type": "latitude",
+      "unit": "degree",
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "longitude_deg",
+      "field_path": "longitude_deg",
+      "correct_physical_type": "float",
+      "correct_logical_type": "coordinate",
+      "correct_semantic_type": "longitude",
+      "unit": "degree",
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "elevation_m",
+      "field_path": "elevation_m",
+      "correct_physical_type": "float",
+      "correct_logical_type": "measurement",
+      "correct_semantic_type": "elevation",
+      "unit": "meter",
+      "necessity": "medium",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "precip_mm",
+      "field_path": "precip_mm",
+      "correct_physical_type": "float",
+      "correct_logical_type": "measurement",
+      "correct_semantic_type": "precipitation",
+      "unit": "millimeter",
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    }
+  ],
+  "notes": [
+    "Clean header names and explicit unit suffixes should make this an easy physical and semantic extraction case."
+  ]
+}

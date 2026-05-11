@@ -1,0 +1,57 @@
+{
+  "dataset_id": "hdf5_easy_climate_cube",
+  "file_format": "hdf5",
+  "difficulty": "easy",
+  "data_modality": "hierarchical",
+  "source_file": "climate_cube.h5",
+  "time_axis": null,
+  "fields": [
+    {
+      "field_name": "time",
+      "field_path": "/coords/time",
+      "correct_physical_type": "int32",
+      "correct_logical_type": "time_axis",
+      "correct_semantic_type": "forecast_hour",
+      "unit": "hours since 2026-01-01 00:00:00 UTC",
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "station_id",
+      "field_path": "/coords/station_id",
+      "correct_physical_type": "string",
+      "correct_logical_type": "identifier",
+      "correct_semantic_type": "station_identifier",
+      "unit": null,
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "temperature",
+      "field_path": "/observations/temperature",
+      "correct_physical_type": "float32",
+      "correct_logical_type": "measurement",
+      "correct_semantic_type": "air_temperature",
+      "unit": "C",
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "humidity",
+      "field_path": "/observations/humidity",
+      "correct_physical_type": "float32",
+      "correct_logical_type": "measurement",
+      "correct_semantic_type": "relative_humidity",
+      "unit": "%",
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    }
+  ],
+  "notes": [
+    "This HDF5 file is intended to be the clean reference case for path-preserving hierarchical extraction."
+  ]
+}

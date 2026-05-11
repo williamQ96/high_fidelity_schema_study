@@ -1,0 +1,58 @@
+{
+  "entries": [
+    {
+      "scope": "internal",
+      "task_file": "semantic_grounding/internal/hdf5_hard_ocean_profile.task.json",
+      "merged_file": "semantic_merged/internal/hdf5_hard_ocean_profile.merged.json",
+      "conflict_count": 1
+    },
+    {
+      "scope": "external",
+      "task_file": "semantic_grounding/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.task.json",
+      "merged_file": "semantic_merged/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.merged.json",
+      "conflict_count": 1
+    },
+    {
+      "scope": "external",
+      "task_file": "semantic_grounding/external/external_weatherMQ-FP-20261011_3f95de2293.task.json",
+      "merged_file": "semantic_merged/external/external_weatherMQ-FP-20261011_3f95de2293.merged.json",
+      "conflict_count": 0
+    },
+    {
+      "scope": "external",
+      "task_file": "semantic_grounding/external/zenodo__record_15008662__unique_tracks_90.csv.task.json",
+      "merged_file": "semantic_merged/external/zenodo__record_15008662__unique_tracks_90.csv.merged.json",
+      "conflict_count": 0
+    },
+    {
+      "scope": "external",
+      "task_file": "semantic_grounding/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.task.json",
+      "merged_file": "semantic_merged/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.merged.json",
+      "conflict_count": 1
+    },
+    {
+      "scope": "internal",
+      "task_file": "semantic_grounding/internal/csv_hard_field_campaign.task.json",
+      "merged_file": "semantic_merged/internal/csv_hard_field_campaign.merged.json",
+      "conflict_count": 0
+    },
+    {
+      "scope": "external",
+      "task_file": "semantic_grounding/external/external_functional_traits_7e780659c0.task.json",
+      "merged_file": "semantic_merged/external/external_functional_traits_7e780659c0.merged.json",
+      "conflict_count": 0
+    },
+    {
+      "scope": "external",
+      "task_file": "semantic_grounding/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.task.json",
+      "merged_file": "semantic_merged/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.merged.json",
+      "conflict_count": 0
+    },
+    {
+      "scope": "internal",
+      "task_file": "semantic_grounding/internal/csv_easy_weather_stations.task.json",
+      "merged_file": "semantic_merged/internal/csv_easy_weather_stations.merged.json",
+      "conflict_count": 0
+    }
+  ]
+}

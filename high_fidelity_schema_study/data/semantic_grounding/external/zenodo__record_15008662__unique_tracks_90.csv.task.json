@@ -1,0 +1,257 @@
+{
+  "system_rules": [
+    "You are given a deterministic schema extracted from a dataset file.",
+    "You may only make claims supported by the provided evidence.",
+    "Do not invent fields, units, or shapes that are not grounded in the deterministic schema or supplied snippets.",
+    "Prefer unknown over unsupported guessing.",
+    "If explicit metadata conflicts with weaker name-based inference, preserve the explicit metadata and surface a conflict."
+  ],
+  "task": {
+    "task_id": "external::zenodo::record_15008662::unique_tracks_90.csv",
+    "dataset_id": "unique_tracks_90.csv",
+    "file_format": "csv",
+    "data_modality": "time_series",
+    "deterministic_schema": {
+      "dataset_id": "unique_tracks_90",
+      "file_id": "unique_tracks_90.csv",
+      "file_format": "csv",
+      "data_modality": "time_series",
+      "fields": [
+        {
+          "field_name": "max_VIL",
+          "field_path": "max_VIL",
+          "physical_type": "float",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": 0.79,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "48.8037",
+            "35.0852",
+            "46.8739"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            30.001,
+            124.567
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "detail": "header='max_VIL'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "Lat",
+          "field_path": "Lat",
+          "physical_type": "float",
+          "logical_type": "coordinate",
+          "semantic_type": "latitude",
+          "nullable": false,
+          "unique_ratio": 0.785,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "51.473",
+            "51.8469",
+            "51.4849"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            50.496,
+            52.9781
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "detail": "header='Lat'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "Lon",
+          "field_path": "Lon",
+          "physical_type": "float",
+          "logical_type": "coordinate",
+          "semantic_type": "longitude",
+          "nullable": false,
+          "unique_ratio": 0.78,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "-115.418",
+            "-115.494",
+            "-115.425"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            -115.747,
+            -112.006
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "detail": "header='Lon'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "Date_time",
+          "field_path": "Date_time",
+          "physical_type": "datetime",
+          "logical_type": "time_axis",
+          "semantic_type": "observation_time",
+          "nullable": false,
+          "unique_ratio": 0.34,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "1997-05-03",
+            "1997-05-04"
+          ],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "detail": "header='Date_time'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        }
+      ],
+      "groups": [],
+      "metadata": {
+        "sampled_rows": 200,
+        "column_count": 4,
+        "time_series": {
+          "time_axis": {
+            "field": "Date_time",
+            "type": "datetime",
+            "frequency": "mixed",
+            "regularity": "irregular",
+            "missing_intervals": null
+          },
+          "series_identifier": null,
+          "measurements": [
+            "max_VIL"
+          ]
+        }
+      },
+      "notes": [],
+      "external_source_file": "zenodo/record_15008662/unique_tracks_90.csv"
+    },
+    "grounding_snippets": [
+      {
+        "source_type": "record_title",
+        "source_name": "external/zenodo/record_15008662/source_record.json",
+        "detail": "record title",
+        "text": "Tracked Hailstorm Events from Radar Data (unique_tracks_90.csv)",
+        "priority": 1
+      },
+      {
+        "source_type": "record_description",
+        "source_name": "external/zenodo/record_15008662/source_record.json",
+        "detail": "record description",
+        "text": "This dataset contains tracked hailstorm events based on radar-derived maximum vertically integrated liquid (max_VIL). The dataset provides key storm parameters such as latitude, longitude, timestamp , and storm intensity. The dataset was generated as part of the study \"Modulation of Severe Hailstorms in Alberta by Large-Scale Climate Teleconnections.\"",
+        "priority": 1
+      },
+      {
+        "source_type": "record_keywords",
+        "source_name": "external/zenodo/record_15008662/source_record.json",
+        "detail": "record keywords",
+        "text": "Radar, Hailstorms, Max_VIL, Storm Tracks, Climate, CSV, Alberta",
+        "priority": 2
+      }
+    ],
+    "instructions": [
+      "Treat source-record descriptions and notes as weaker than explicit field metadata.",
+      "If multiple files come from the same record family, annotate only the current file and do not copy assumptions across siblings without direct evidence."
+    ]
+  },
+  "expected_output_schema": {
+    "task_id": "string",
+    "annotations": [
+      {
+        "field_path": "string",
+        "semantic_type": "string",
+        "logical_type": "string|null",
+        "unit": "string|null",
+        "description": "string|null",
+        "supporting_evidence": [
+          "string"
+        ],
+        "confidence": "number",
+        "uncertainty_reason": "string|null"
+      }
+    ],
+    "conflicts": [
+      {
+        "field_path": "string",
+        "conflict_type": "string",
+        "detail": "string"
+      }
+    ],
+    "notes": [
+      "string"
+    ]
+  }
+}

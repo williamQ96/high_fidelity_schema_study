@@ -1,0 +1,100 @@
+{
+  "freeze_id": "benchmark-freeze-2026-05-04",
+  "freeze_date": "2026-05-04",
+  "scope": "current reproducible benchmark slice",
+  "internal_pilot": {
+    "dataset_count": 9,
+    "source_manifest": "data/pilot_corpus_manifest.json",
+    "datasets": [
+      "csv_easy_weather_stations",
+      "csv_hard_field_campaign",
+      "csv_medium_water_quality",
+      "hdf5_easy_climate_cube",
+      "hdf5_hard_ocean_profile",
+      "hdf5_medium_station_hierarchy",
+      "ts_easy_hourly_weather",
+      "ts_hard_irregular_buoy",
+      "ts_medium_power_meter"
+    ]
+  },
+  "external_retrieval_pool": {
+    "source_manifest": "data/retrieval/external_candidate_pool/pool_manifest.json",
+    "entry_count": 16,
+    "target_count": 10,
+    "distractor_count": 6,
+    "targets": [
+      "zenodo/record_15008662/unique_tracks_90.csv",
+      "zenodo/record_18195710/ensensia_raw_20230728-20251202_school_5.csv",
+      "zenodo/record_3660832/Data 01 Jan 2019.h5",
+      "zenodo/record_5935524/20211108_ZXLidar_Winds.csv",
+      "zenodo/record_5935524/20211108_Sensit.csv",
+      "zenodo/record_5935524/20211108_Tides.csv",
+      "dryad/10.5061_dryad.2f2b3/Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+      "dryad/10.5061_dryad.zkh1893nh/African_Mammal_FoodWebs_Locations.csv",
+      "dryad/10.5061_dryad.zkh1893nh/functional_traits.csv",
+      "dryad/10.5061_dryad.dv41ns266/weatherMQ-FP-20261011.csv"
+    ],
+    "distractors": [
+      "dryad/10.5061_dryad.2f2b3/Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year2.csv",
+      "dryad/10.5061_dryad.zkh1893nh/above_500_PA_data.csv",
+      "zenodo/record_5935524/20181108_HoloParticles.csv",
+      "zenodo/record_18195710/ensensia_raw_20230728-20251202_school_6.csv",
+      "zenodo/record_3660832/Data 02 Feb 2019.h5",
+      "zenodo/record_3660832/Data 03 Mar 2019.h5"
+    ]
+  },
+  "excluded_or_deferred_external_files": {
+    "source_manifest": "data/external/benchmark_candidates.json",
+    "excluded_by_user": [
+      "zenodo/record_5116851/DataseParaWorkshop_v2.h5",
+      "zenodo/record_3660832/Data 07 July 2019.h5"
+    ],
+    "keep_not_benchmark": [
+      "dryad/10.5061_dryad.04t19/boundaryflow_snapshots.hdf5",
+      "dryad/10.5061_dryad.zkh1893nh/Africa_metaweb_above500.csv"
+    ]
+  },
+  "retrieval_protocol": {
+    "artifact_manifest": "data/retrieval/external_candidate_pool/artifact_manifest.json",
+    "query_file": "data/retrieval/external_candidate_pool/queries.json",
+    "systems": [
+      "metadata_only",
+      "readme_only",
+      "schema_enhanced_deterministic",
+      "schema_enhanced_semantic_merged"
+    ],
+    "compatibility_alias": "schema_enhanced",
+    "slice_disambiguation": [
+      "year/file-slice tokens",
+      "school-slice tokens",
+      "month/time-slice tokens"
+    ]
+  },
+  "locked_regression_subsets": {
+    "greenland_cod_year1": [
+      "Hourbin",
+      "COA_Lat",
+      "COA_Lon",
+      "Tag",
+      "Transplant",
+      "Cove"
+    ],
+    "functional_traits": [
+      "Species",
+      "Mass.g"
+    ],
+    "weatherMQ_FP": [
+      "dateTime",
+      "temperature",
+      "relativeHumidity",
+      "barometricPressure",
+      "rainfall",
+      "windSpeed"
+    ]
+  },
+  "known_non_final_items": [
+    "Semantic-merged external fields are protected as high-confidence working annotations, not final gold references.",
+    "Perfect planted-query retrieval is not broad retrieval robustness; harder non-planted queries remain future work.",
+    "Remaining time-axis accuracy gaps should be resolved separately through deterministic profiling or evaluation logic."
+  ]
+}

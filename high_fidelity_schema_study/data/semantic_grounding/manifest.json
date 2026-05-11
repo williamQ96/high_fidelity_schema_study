@@ -1,0 +1,149 @@
+{
+  "internal_task_count": 9,
+  "external_task_count": 16,
+  "internal_tasks": [
+    {
+      "task_id": "internal::csv_easy_weather_stations",
+      "dataset_id": "csv_easy_weather_stations",
+      "task_file": "semantic_grounding/internal/csv_easy_weather_stations.task.json"
+    },
+    {
+      "task_id": "internal::csv_hard_field_campaign",
+      "dataset_id": "csv_hard_field_campaign",
+      "task_file": "semantic_grounding/internal/csv_hard_field_campaign.task.json"
+    },
+    {
+      "task_id": "internal::csv_medium_water_quality",
+      "dataset_id": "csv_medium_water_quality",
+      "task_file": "semantic_grounding/internal/csv_medium_water_quality.task.json"
+    },
+    {
+      "task_id": "internal::hdf5_easy_climate_cube",
+      "dataset_id": "hdf5_easy_climate_cube",
+      "task_file": "semantic_grounding/internal/hdf5_easy_climate_cube.task.json"
+    },
+    {
+      "task_id": "internal::hdf5_hard_ocean_profile",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "task_file": "semantic_grounding/internal/hdf5_hard_ocean_profile.task.json"
+    },
+    {
+      "task_id": "internal::hdf5_medium_station_hierarchy",
+      "dataset_id": "hdf5_medium_station_hierarchy",
+      "task_file": "semantic_grounding/internal/hdf5_medium_station_hierarchy.task.json"
+    },
+    {
+      "task_id": "internal::ts_easy_hourly_weather",
+      "dataset_id": "ts_easy_hourly_weather",
+      "task_file": "semantic_grounding/internal/ts_easy_hourly_weather.task.json"
+    },
+    {
+      "task_id": "internal::ts_hard_irregular_buoy",
+      "dataset_id": "ts_hard_irregular_buoy",
+      "task_file": "semantic_grounding/internal/ts_hard_irregular_buoy.task.json"
+    },
+    {
+      "task_id": "internal::ts_medium_power_meter",
+      "dataset_id": "ts_medium_power_meter",
+      "task_file": "semantic_grounding/internal/ts_medium_power_meter.task.json"
+    }
+  ],
+  "external_tasks": [
+    {
+      "task_id": "external::zenodo::record_15008662::unique_tracks_90.csv",
+      "source_file": "zenodo/record_15008662/unique_tracks_90.csv",
+      "role": "target",
+      "task_file": "semantic_grounding/external/external_unique_tracks_90_2dd0c99ecb.task.json"
+    },
+    {
+      "task_id": "external::zenodo::record_18195710::ensensia_raw_20230728-20251202_school_5.csv",
+      "source_file": "zenodo/record_18195710/ensensia_raw_20230728-20251202_school_5.csv",
+      "role": "target",
+      "task_file": "semantic_grounding/external/external_ensensia_raw_20230728-20251202_school_5_3e551bf83c.task.json"
+    },
+    {
+      "task_id": "external::zenodo::record_3660832::Data 01 Jan 2019.h5",
+      "source_file": "zenodo/record_3660832/Data 01 Jan 2019.h5",
+      "role": "target",
+      "task_file": "semantic_grounding/external/external_Data_01_Jan_2019_3d1da77494.task.json"
+    },
+    {
+      "task_id": "external::zenodo::record_5935524::20211108_ZXLidar_Winds.csv",
+      "source_file": "zenodo/record_5935524/20211108_ZXLidar_Winds.csv",
+      "role": "target",
+      "task_file": "semantic_grounding/external/external_20211108_ZXLidar_Winds_498b5c8080.task.json"
+    },
+    {
+      "task_id": "external::zenodo::record_5935524::20211108_Sensit.csv",
+      "source_file": "zenodo/record_5935524/20211108_Sensit.csv",
+      "role": "target",
+      "task_file": "semantic_grounding/external/external_20211108_Sensit_4ae577c9f2.task.json"
+    },
+    {
+      "task_id": "external::zenodo::record_5935524::20211108_Tides.csv",
+      "source_file": "zenodo/record_5935524/20211108_Tides.csv",
+      "role": "target",
+      "task_file": "semantic_grounding/external/external_20211108_Tides_eec5e1e5dd.task.json"
+    },
+    {
+      "task_id": "external::dryad::10.5061_dryad.2f2b3::Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+      "source_file": "dryad/10.5061_dryad.2f2b3/Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+      "role": "target",
+      "task_file": "semantic_grounding/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.task.json"
+    },
+    {
+      "task_id": "external::dryad::10.5061_dryad.2f2b3::Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year2.csv",
+      "source_file": "dryad/10.5061_dryad.2f2b3/Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year2.csv",
+      "role": "distractor",
+      "task_file": "semantic_grounding/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__866fd0ee32.task.json"
+    },
+    {
+      "task_id": "external::dryad::10.5061_dryad.zkh1893nh::above_500_PA_data.csv",
+      "source_file": "dryad/10.5061_dryad.zkh1893nh/above_500_PA_data.csv",
+      "role": "distractor",
+      "task_file": "semantic_grounding/external/external_above_500_PA_data_a46ee8d8f8.task.json"
+    },
+    {
+      "task_id": "external::dryad::10.5061_dryad.zkh1893nh::African_Mammal_FoodWebs_Locations.csv",
+      "source_file": "dryad/10.5061_dryad.zkh1893nh/African_Mammal_FoodWebs_Locations.csv",
+      "role": "target",
+      "task_file": "semantic_grounding/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.task.json"
+    },
+    {
+      "task_id": "external::dryad::10.5061_dryad.zkh1893nh::functional_traits.csv",
+      "source_file": "dryad/10.5061_dryad.zkh1893nh/functional_traits.csv",
+      "role": "target",
+      "task_file": "semantic_grounding/external/external_functional_traits_7e780659c0.task.json"
+    },
+    {
+      "task_id": "external::dryad::10.5061_dryad.dv41ns266::weatherMQ-FP-20261011.csv",
+      "source_file": "dryad/10.5061_dryad.dv41ns266/weatherMQ-FP-20261011.csv",
+      "role": "target",
+      "task_file": "semantic_grounding/external/external_weatherMQ-FP-20261011_3f95de2293.task.json"
+    },
+    {
+      "task_id": "external::zenodo::record_5935524::20181108_HoloParticles.csv",
+      "source_file": "zenodo/record_5935524/20181108_HoloParticles.csv",
+      "role": "distractor",
+      "task_file": "semantic_grounding/external/external_20181108_HoloParticles_3eed8863f9.task.json"
+    },
+    {
+      "task_id": "external::zenodo::record_18195710::ensensia_raw_20230728-20251202_school_6.csv",
+      "source_file": "zenodo/record_18195710/ensensia_raw_20230728-20251202_school_6.csv",
+      "role": "distractor",
+      "task_file": "semantic_grounding/external/external_ensensia_raw_20230728-20251202_school_6_4245c4da2d.task.json"
+    },
+    {
+      "task_id": "external::zenodo::record_3660832::Data 02 Feb 2019.h5",
+      "source_file": "zenodo/record_3660832/Data 02 Feb 2019.h5",
+      "role": "distractor",
+      "task_file": "semantic_grounding/external/external_Data_02_Feb_2019_9afeaa53e5.task.json"
+    },
+    {
+      "task_id": "external::zenodo::record_3660832::Data 03 Mar 2019.h5",
+      "source_file": "zenodo/record_3660832/Data 03 Mar 2019.h5",
+      "role": "distractor",
+      "task_file": "semantic_grounding/external/external_Data_03_Mar_2019_0af5c5a41a.task.json"
+    }
+  ]
+}

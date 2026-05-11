@@ -1,0 +1,412 @@
+{
+  "task_file": "semantic_grounding/external/external_functional_traits_7e780659c0.task.json",
+  "model_info": {
+    "api_base": "http://100.66.106.126:1234/v1",
+    "model": "qwen/qwen3.6-27b"
+  },
+  "raw_result": {
+    "task_id": "external::dryad::10.5061_dryad.zkh1893nh::functional_traits.csv",
+    "annotations": [
+      {
+        "field_path": "Species",
+        "semantic_type": "unknown",
+        "logical_type": "identifier",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "confidence": 0.9,
+        "uncertainty_reason": "Values follow binomial nomenclature format (e.g., Potamogale_velox), strongly suggesting species identifiers, but without explicit metadata confirming they serve as primary keys or unique identifiers for the dataset rows, semantic_type remains unknown."
+      },
+      {
+        "field_path": "Mass.g",
+        "semantic_type": "unknown",
+        "logical_type": "measurement",
+        "unit": "g",
+        "description": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null
+      },
+      {
+        "field_path": "Vertebrate",
+        "semantic_type": "unknown",
+        "logical_type": "label",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "confidence": 0.8,
+        "uncertainty_reason": "The field name 'Vertebrate' and integer values (0-3) suggest a categorical label or count, but without explicit metadata, the precise semantic type remains unknown. The logical type is inferred as 'label' based on the categorical nature of the values."
+      },
+      {
+        "field_path": "Mammal",
+        "semantic_type": "unknown",
+        "logical_type": "label",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "confidence": 0.8,
+        "uncertainty_reason": "Similar to 'Vertebrate', 'Mammal' with integer values suggests a categorical label. Semantic type is unknown due to lack of explicit metadata."
+      },
+      {
+        "field_path": "Bird",
+        "semantic_type": "unknown",
+        "logical_type": "label",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "confidence": 0.8,
+        "uncertainty_reason": "Similar to 'Vertebrate', 'Bird' with integer values suggests a categorical label. Semantic type is unknown due to lack of explicit metadata."
+      },
+      {
+        "field_path": "Herptile",
+        "semantic_type": "unknown",
+        "logical_type": "label",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "confidence": 0.8,
+        "uncertainty_reason": "Similar to 'Vertebrate', 'Herptile' with integer values suggests a categorical label. Semantic type is unknown due to lack of explicit metadata."
+      },
+      {
+        "field_path": "Fish",
+        "semantic_type": "unknown",
+        "logical_type": "measurement",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F2"
+        ],
+        "confidence": 0.7,
+        "uncertainty_reason": "The field name 'Fish' and integer values (0-3) suggest a count or score, but without explicit metadata, it's unclear if it's a count of fish, a presence/absence indicator, or a categorical score. The dataset title mentions 'Food web similarity', implying these might be functional trait scores or presence indicators. 'measurement' is chosen as the logical type because it represents a numeric observation, but the semantic type remains unknown due to lack of specific definition."
+      },
+      {
+        "field_path": "Invertebrate",
+        "semantic_type": "unknown",
+        "logical_type": "measurement",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F2"
+        ],
+        "confidence": 0.7,
+        "uncertainty_reason": "Similar to 'Fish', 'Invertebrate' with integer values 0-3 likely represents a count, score, or presence indicator related to functional traits. The logical type is 'measurement' as it is a numeric observation, but the semantic type is unknown without further context."
+      },
+      {
+        "field_path": "Seed",
+        "semantic_type": "unknown",
+        "logical_type": "measurement",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F2"
+        ],
+        "confidence": 0.7,
+        "uncertainty_reason": "The field 'Seed' with integer values (0-3) likely represents a count, score, or presence indicator. The logical type is 'measurement' as it is a numeric observation, but the semantic type is unknown without further context."
+      },
+      {
+        "field_path": "Fruit",
+        "semantic_type": "unknown",
+        "logical_type": "measurement",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F2"
+        ],
+        "confidence": 0.7,
+        "uncertainty_reason": "The field 'Fruit' with integer values (0-3) likely represents a count, score, or presence indicator. The logical type is 'measurement' as it is a numeric observation, but the semantic type is unknown without further context."
+      },
+      {
+        "field_path": "Nectar",
+        "semantic_type": "unknown",
+        "logical_type": "label",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "confidence": 0.8,
+        "uncertainty_reason": "The field name 'Nectar' suggests a categorical trait or presence/absence indicator in a functional traits dataset, but without explicit metadata defining it as a continuous measurement, it is treated as a label. The value range [0.0, 0.0] indicates a constant value in the sample, which limits inference."
+      },
+      {
+        "field_path": "Root",
+        "semantic_type": "unknown",
+        "logical_type": "label",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "confidence": 0.8,
+        "uncertainty_reason": "The field name 'Root' in a functional traits context likely represents a categorical trait (e.g., root type or presence). The integer physical type and small range [0.0, 3.0] suggest ordinal or categorical coding rather than a continuous measurement."
+      },
+      {
+        "field_path": "Woody",
+        "semantic_type": "unknown",
+        "logical_type": "label",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "confidence": 0.8,
+        "uncertainty_reason": "The field name 'Woody' typically indicates a categorical trait (e.g., woody vs non-woody). The integer physical type and range [0.0, 3.0] suggest categorical coding."
+      },
+      {
+        "field_path": "Herbaceous",
+        "semantic_type": "unknown",
+        "logical_type": "label",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "confidence": 0.8,
+        "uncertainty_reason": "The field name 'Herbaceous' typically indicates a categorical trait. The integer physical type and range [0.0, 3.0] suggest categorical coding."
+      },
+      {
+        "field_path": "Other",
+        "semantic_type": "unknown",
+        "logical_type": "label",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "confidence": 0.8,
+        "uncertainty_reason": "The field name 'Other' in a functional traits context likely represents a residual category or categorical trait. The integer physical type and range [0.0, 3.0] suggest categorical coding."
+      }
+    ],
+    "conflicts": [],
+    "notes": [
+      "All fields appear to represent categorical labels for animal classes based on their names and integer values. Without explicit metadata, semantic types remain unknown. Logical types are inferred as 'label' based on the categorical nature of the data.",
+      "The dataset title 'Food web similarity increases with productivity similarity at a continental scale' suggests these fields might be related to functional traits or presence indicators in food webs. However, without explicit metadata, the exact semantic meaning (e.g., count, score, presence) remains uncertain. The logical type 'measurement' is used for all fields as they represent numeric observations.",
+      "The dataset title 'Food web similarity increases with productivity similarity at a continental scale' suggests ecological data. The fields Nectar, Root, Woody, Herbaceous, Other are likely categorical functional traits. Without explicit metadata defining them as continuous measurements, they are annotated as labels. The constant value for Nectar in the sample limits inference."
+    ]
+  },
+  "validation_errors": [],
+  "result": {
+    "task_id": "external::dryad::10.5061_dryad.zkh1893nh::functional_traits.csv",
+    "annotations": [
+      {
+        "field_path": "Species",
+        "semantic_type": "unknown",
+        "logical_type": "identifier",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "confidence": 0.9,
+        "uncertainty_reason": "Values follow binomial nomenclature format (e.g., Potamogale_velox), strongly suggesting species identifiers, but without explicit metadata confirming they serve as primary keys or unique identifiers for the dataset rows, semantic_type remains unknown."
+      },
+      {
+        "field_path": "Mass.g",
+        "semantic_type": "unknown",
+        "logical_type": "measurement",
+        "unit": "g",
+        "description": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": "semantic type left unknown because provided evidence does not support a precise semantic claim"
+      },
+      {
+        "field_path": "Vertebrate",
+        "semantic_type": "unknown",
+        "logical_type": "label",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "confidence": 0.8,
+        "uncertainty_reason": "The field name 'Vertebrate' and integer values (0-3) suggest a categorical label or count, but without explicit metadata, the precise semantic type remains unknown. The logical type is inferred as 'label' based on the categorical nature of the values."
+      },
+      {
+        "field_path": "Mammal",
+        "semantic_type": "unknown",
+        "logical_type": "label",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "confidence": 0.8,
+        "uncertainty_reason": "Similar to 'Vertebrate', 'Mammal' with integer values suggests a categorical label. Semantic type is unknown due to lack of explicit metadata."
+      },
+      {
+        "field_path": "Bird",
+        "semantic_type": "unknown",
+        "logical_type": "label",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "confidence": 0.8,
+        "uncertainty_reason": "Similar to 'Vertebrate', 'Bird' with integer values suggests a categorical label. Semantic type is unknown due to lack of explicit metadata."
+      },
+      {
+        "field_path": "Herptile",
+        "semantic_type": "unknown",
+        "logical_type": "label",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "confidence": 0.8,
+        "uncertainty_reason": "Similar to 'Vertebrate', 'Herptile' with integer values suggests a categorical label. Semantic type is unknown due to lack of explicit metadata."
+      },
+      {
+        "field_path": "Fish",
+        "semantic_type": "unknown",
+        "logical_type": "measurement",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F2"
+        ],
+        "confidence": 0.7,
+        "uncertainty_reason": "The field name 'Fish' and integer values (0-3) suggest a count or score, but without explicit metadata, it's unclear if it's a count of fish, a presence/absence indicator, or a categorical score. The dataset title mentions 'Food web similarity', implying these might be functional trait scores or presence indicators. 'measurement' is chosen as the logical type because it represents a numeric observation, but the semantic type remains unknown due to lack of specific definition."
+      },
+      {
+        "field_path": "Invertebrate",
+        "semantic_type": "unknown",
+        "logical_type": "measurement",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F2"
+        ],
+        "confidence": 0.7,
+        "uncertainty_reason": "Similar to 'Fish', 'Invertebrate' with integer values 0-3 likely represents a count, score, or presence indicator related to functional traits. The logical type is 'measurement' as it is a numeric observation, but the semantic type is unknown without further context."
+      },
+      {
+        "field_path": "Seed",
+        "semantic_type": "unknown",
+        "logical_type": "measurement",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F2"
+        ],
+        "confidence": 0.7,
+        "uncertainty_reason": "The field 'Seed' with integer values (0-3) likely represents a count, score, or presence indicator. The logical type is 'measurement' as it is a numeric observation, but the semantic type is unknown without further context."
+      },
+      {
+        "field_path": "Fruit",
+        "semantic_type": "unknown",
+        "logical_type": "measurement",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F2"
+        ],
+        "confidence": 0.7,
+        "uncertainty_reason": "The field 'Fruit' with integer values (0-3) likely represents a count, score, or presence indicator. The logical type is 'measurement' as it is a numeric observation, but the semantic type is unknown without further context."
+      },
+      {
+        "field_path": "Nectar",
+        "semantic_type": "unknown",
+        "logical_type": "label",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "confidence": 0.8,
+        "uncertainty_reason": "The field name 'Nectar' suggests a categorical trait or presence/absence indicator in a functional traits dataset, but without explicit metadata defining it as a continuous measurement, it is treated as a label. The value range [0.0, 0.0] indicates a constant value in the sample, which limits inference."
+      },
+      {
+        "field_path": "Root",
+        "semantic_type": "unknown",
+        "logical_type": "label",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "confidence": 0.8,
+        "uncertainty_reason": "The field name 'Root' in a functional traits context likely represents a categorical trait (e.g., root type or presence). The integer physical type and small range [0.0, 3.0] suggest ordinal or categorical coding rather than a continuous measurement."
+      },
+      {
+        "field_path": "Woody",
+        "semantic_type": "unknown",
+        "logical_type": "label",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "confidence": 0.8,
+        "uncertainty_reason": "The field name 'Woody' typically indicates a categorical trait (e.g., woody vs non-woody). The integer physical type and range [0.0, 3.0] suggest categorical coding."
+      },
+      {
+        "field_path": "Herbaceous",
+        "semantic_type": "unknown",
+        "logical_type": "label",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "confidence": 0.8,
+        "uncertainty_reason": "The field name 'Herbaceous' typically indicates a categorical trait. The integer physical type and range [0.0, 3.0] suggest categorical coding."
+      },
+      {
+        "field_path": "Other",
+        "semantic_type": "unknown",
+        "logical_type": "label",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "confidence": 0.8,
+        "uncertainty_reason": "The field name 'Other' in a functional traits context likely represents a residual category or categorical trait. The integer physical type and range [0.0, 3.0] suggest categorical coding."
+      }
+    ],
+    "conflicts": [],
+    "notes": [
+      "All fields appear to represent categorical labels for animal classes based on their names and integer values. Without explicit metadata, semantic types remain unknown. Logical types are inferred as 'label' based on the categorical nature of the data.",
+      "The dataset title 'Food web similarity increases with productivity similarity at a continental scale' suggests these fields might be related to functional traits or presence indicators in food webs. However, without explicit metadata, the exact semantic meaning (e.g., count, score, presence) remains uncertain. The logical type 'measurement' is used for all fields as they represent numeric observations.",
+      "The dataset title 'Food web similarity increases with productivity similarity at a continental scale' suggests ecological data. The fields Nectar, Root, Woody, Herbaceous, Other are likely categorical functional traits. Without explicit metadata defining them as continuous measurements, they are annotated as labels. The constant value for Nectar in the sample limits inference."
+    ]
+  }
+}

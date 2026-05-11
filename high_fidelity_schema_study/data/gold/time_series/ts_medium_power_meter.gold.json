@@ -1,0 +1,75 @@
+{
+  "dataset_id": "ts_medium_power_meter",
+  "file_format": "csv",
+  "difficulty": "medium",
+  "data_modality": "time_series",
+  "source_file": "power_meter.csv",
+  "time_axis": {
+    "field": "ts_utc",
+    "type": "datetime",
+    "timezone": "UTC",
+    "frequency": "15 minutes",
+    "regularity": "mostly_regular",
+    "missing_intervals": 1
+  },
+  "fields": [
+    {
+      "field_name": "sensor_id",
+      "field_path": "sensor_id",
+      "correct_physical_type": "string",
+      "correct_logical_type": "identifier",
+      "correct_semantic_type": "sensor_identifier",
+      "unit": null,
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "ts_utc",
+      "field_path": "ts_utc",
+      "correct_physical_type": "datetime",
+      "correct_logical_type": "time_axis",
+      "correct_semantic_type": "observation_time",
+      "unit": null,
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "power_kw",
+      "field_path": "power_kw",
+      "correct_physical_type": "float",
+      "correct_logical_type": "measurement",
+      "correct_semantic_type": "power",
+      "unit": "kilowatt",
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "voltage_v",
+      "field_path": "voltage_v",
+      "correct_physical_type": "float",
+      "correct_logical_type": "measurement",
+      "correct_semantic_type": "voltage",
+      "unit": "volt",
+      "necessity": "medium",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "status",
+      "field_path": "status",
+      "correct_physical_type": "string",
+      "correct_logical_type": "label",
+      "correct_semantic_type": "operational_status",
+      "unit": null,
+      "necessity": "medium",
+      "notes": null,
+      "gold_evidence": []
+    }
+  ],
+  "notes": [
+    "The time series is mostly regular and should expose one missing interval rather than collapsing to irregular noise."
+  ]
+}

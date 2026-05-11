@@ -1,0 +1,426 @@
+{
+  "system_rules": [
+    "You are given a deterministic schema extracted from a dataset file.",
+    "You may only make claims supported by the provided evidence.",
+    "Do not invent fields, units, or shapes that are not grounded in the deterministic schema or supplied snippets.",
+    "Prefer unknown over unsupported guessing.",
+    "If explicit metadata conflicts with weaker name-based inference, preserve the explicit metadata and surface a conflict."
+  ],
+  "task": {
+    "task_id": "external::dryad::10.5061_dryad.dv41ns266::weatherMQ-FP-20261011.csv",
+    "dataset_id": "weatherMQ-FP-20261011.csv",
+    "file_format": "csv",
+    "data_modality": "tabular",
+    "deterministic_schema": {
+      "dataset_id": "weatherMQ-FP-20261011",
+      "file_id": "weatherMQ-FP-20261011.csv",
+      "file_format": "csv",
+      "data_modality": "tabular",
+      "fields": [
+        {
+          "field_name": "recordNumber",
+          "field_path": "recordNumber",
+          "physical_type": "string",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": 1.0,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "A-1",
+            "A-2",
+            "A-3"
+          ],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.dv41ns266\\weatherMQ-FP-20261011.csv",
+              "detail": "header='recordNumber'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.dv41ns266\\weatherMQ-FP-20261011.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 0.9,
+          "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "dateTime",
+          "field_path": "dateTime",
+          "physical_type": "string",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": 1.0,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "10/11/2023 17:12",
+            "10/11/2023 17:22",
+            "10/11/2023 17:32"
+          ],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.dv41ns266\\weatherMQ-FP-20261011.csv",
+              "detail": "header='dateTime'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.dv41ns266\\weatherMQ-FP-20261011.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 0.9,
+          "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "temperature",
+          "field_path": "temperature",
+          "physical_type": "float",
+          "logical_type": "measurement",
+          "semantic_type": "air_temperature",
+          "nullable": false,
+          "unique_ratio": 0.88,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "23.027",
+            "22.663",
+            "22.126"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            15.006,
+            38.727
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.dv41ns266\\weatherMQ-FP-20261011.csv",
+              "detail": "header='temperature'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.dv41ns266\\weatherMQ-FP-20261011.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "relativeHumidity",
+          "field_path": "relativeHumidity",
+          "physical_type": "float",
+          "logical_type": "measurement",
+          "semantic_type": "relative_humidity",
+          "nullable": false,
+          "unique_ratio": 0.985,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "33.564",
+            "66.886",
+            "68.028"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            28.336,
+            99.6
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.dv41ns266\\weatherMQ-FP-20261011.csv",
+              "detail": "header='relativeHumidity'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.dv41ns266\\weatherMQ-FP-20261011.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "rainfall",
+          "field_path": "rainfall",
+          "physical_type": "string",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": 0.01,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "NA",
+            "0"
+          ],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.dv41ns266\\weatherMQ-FP-20261011.csv",
+              "detail": "header='rainfall'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.dv41ns266\\weatherMQ-FP-20261011.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 0.9,
+          "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "windSpeed",
+          "field_path": "windSpeed",
+          "physical_type": "float",
+          "logical_type": "measurement",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": 0.02,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "0.33",
+            "0.67"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            0.0,
+            1.0
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.dv41ns266\\weatherMQ-FP-20261011.csv",
+              "detail": "header='windSpeed'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.dv41ns266\\weatherMQ-FP-20261011.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "windGust",
+          "field_path": "windGust",
+          "physical_type": "float",
+          "logical_type": "measurement",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": 0.075,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "0.67",
+            "3.67"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            0.0,
+            5.34
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.dv41ns266\\weatherMQ-FP-20261011.csv",
+              "detail": "header='windGust'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.dv41ns266\\weatherMQ-FP-20261011.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "windDirection",
+          "field_path": "windDirection",
+          "physical_type": "float",
+          "logical_type": "measurement",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": 0.365,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "217.6",
+            "205",
+            "235.9"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            42.1,
+            278.0
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.dv41ns266\\weatherMQ-FP-20261011.csv",
+              "detail": "header='windDirection'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.dv41ns266\\weatherMQ-FP-20261011.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "barometricPressure",
+          "field_path": "barometricPressure",
+          "physical_type": "float",
+          "logical_type": "measurement",
+          "semantic_type": "surface_pressure",
+          "nullable": false,
+          "unique_ratio": 0.34,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "1010.35",
+            "1010.25"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            1006.55,
+            1013.45
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.dv41ns266\\weatherMQ-FP-20261011.csv",
+              "detail": "header='barometricPressure'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.dv41ns266\\weatherMQ-FP-20261011.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        }
+      ],
+      "groups": [],
+      "metadata": {
+        "sampled_rows": 200,
+        "column_count": 9
+      },
+      "notes": [],
+      "external_source_file": "dryad/10.5061_dryad.dv41ns266/weatherMQ-FP-20261011.csv"
+    },
+    "grounding_snippets": [
+      {
+        "source_type": "record_title",
+        "source_name": "external/dryad/10.5061_dryad.dv41ns266/source_record.json",
+        "detail": "record title",
+        "text": "Weather data from the Macquarie University, Fauna Park Weather Station",
+        "priority": 1
+      }
+    ],
+    "instructions": [
+      "Treat source-record descriptions and notes as weaker than explicit field metadata.",
+      "If multiple files come from the same record family, annotate only the current file and do not copy assumptions across siblings without direct evidence."
+    ]
+  },
+  "expected_output_schema": {
+    "task_id": "string",
+    "annotations": [
+      {
+        "field_path": "string",
+        "semantic_type": "string",
+        "logical_type": "string|null",
+        "unit": "string|null",
+        "description": "string|null",
+        "supporting_evidence": [
+          "string"
+        ],
+        "confidence": "number",
+        "uncertainty_reason": "string|null"
+      }
+    ],
+    "conflicts": [
+      {
+        "field_path": "string",
+        "conflict_type": "string",
+        "detail": "string"
+      }
+    ],
+    "notes": [
+      "string"
+    ]
+  }
+}

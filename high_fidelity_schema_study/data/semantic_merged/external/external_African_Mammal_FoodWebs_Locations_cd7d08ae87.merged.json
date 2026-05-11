@@ -1,0 +1,359 @@
+{
+  "dataset_id": "African_Mammal_FoodWebs_Locations",
+  "file_id": "African_Mammal_FoodWebs_Locations.csv",
+  "file_format": "csv",
+  "data_modality": "tabular",
+  "fields": [
+    {
+      "field_name": "Code",
+      "field_path": "Code",
+      "physical_type": "string",
+      "logical_type": "identifier",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 1.0,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "ABER",
+        "AIHS",
+        "AKA"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\African_Mammal_FoodWebs_Locations.csv",
+          "detail": "header='Code'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\African_Mammal_FoodWebs_Locations.csv",
+          "detail": "sampled_rows=127",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.85,
+        "uncertainty_reason": "The field name 'Code' and example values like 'ABER', 'AIHS' strongly suggest an identifier for locations or sites. However, without explicit documentation linking these codes to specific geographic entities or a controlled vocabulary, the semantic type remains unknown. The logical type is inferred as identifier based on the naming convention and alphanumeric nature of the values.",
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "Community",
+      "field_path": "Community",
+      "physical_type": "string",
+      "logical_type": "label",
+      "semantic_type": "label",
+      "nullable": false,
+      "unique_ratio": 1.0,
+      "shape": null,
+      "unit": null,
+      "description": "Identifier for a specific ecological community or study site within the African mammal food web dataset.",
+      "example_values": [
+        "Aberdare",
+        "Ai.Ais",
+        "Akagera"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\African_Mammal_FoodWebs_Locations.csv",
+          "detail": "header='Community'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\African_Mammal_FoodWebs_Locations.csv",
+          "detail": "sampled_rows=127",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.85,
+        "uncertainty_reason": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "Full.Name",
+      "field_path": "Full.Name",
+      "physical_type": "string",
+      "logical_type": "label",
+      "semantic_type": "location_name",
+      "nullable": false,
+      "unique_ratio": 1.0,
+      "shape": null,
+      "unit": null,
+      "description": "Full name of the location or protected area",
+      "example_values": [
+        "Aberdare National Park",
+        "Ai Ais Hot Springs National Park",
+        "Akagera National Park"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\African_Mammal_FoodWebs_Locations.csv",
+          "detail": "header='Full.Name'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\African_Mammal_FoodWebs_Locations.csv",
+          "detail": "sampled_rows=127",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.95,
+        "uncertainty_reason": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "Country",
+      "field_path": "Country",
+      "physical_type": "string",
+      "logical_type": "label",
+      "semantic_type": "country",
+      "nullable": false,
+      "unique_ratio": 0.189,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "Kenya",
+        "Namibia",
+        "Rwanda"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\African_Mammal_FoodWebs_Locations.csv",
+          "detail": "header='Country'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\African_Mammal_FoodWebs_Locations.csv",
+          "detail": "sampled_rows=127",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.95,
+        "uncertainty_reason": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "Long",
+      "field_path": "Long",
+      "physical_type": "float",
+      "logical_type": "coordinate",
+      "semantic_type": "longitude",
+      "nullable": false,
+      "unique_ratio": 0.9685,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "36.68",
+        "17.33",
+        "30.71"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        -13.03,
+        40.15
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\African_Mammal_FoodWebs_Locations.csv",
+          "detail": "header='Long'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\African_Mammal_FoodWebs_Locations.csv",
+          "detail": "sampled_rows=127",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.95,
+        "uncertainty_reason": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "Lat",
+      "field_path": "Lat",
+      "physical_type": "float",
+      "logical_type": "coordinate",
+      "semantic_type": "latitude",
+      "nullable": false,
+      "unique_ratio": 0.9685,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "-0.38",
+        "-27.85",
+        "-1.64"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        -27.85,
+        14.37
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\African_Mammal_FoodWebs_Locations.csv",
+          "detail": "header='Lat'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\African_Mammal_FoodWebs_Locations.csv",
+          "detail": "sampled_rows=127",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "Remove",
+      "field_path": "Remove",
+      "physical_type": "int",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.0079,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "0"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        0.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\African_Mammal_FoodWebs_Locations.csv",
+          "detail": "header='Remove'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\African_Mammal_FoodWebs_Locations.csv",
+          "detail": "sampled_rows=127",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.0,
+        "uncertainty_reason": "The field name 'Remove' is ambiguous and lacks descriptive context. The example value is '0' and value_range is [0.0, 0.0], suggesting a constant or binary flag, but without further evidence, its semantic meaning cannot be determined.",
+        "supporting_evidence": [],
+        "accepted_for_merge": false
+      }
+    }
+  ],
+  "groups": [],
+  "metadata": {
+    "sampled_rows": 127,
+    "column_count": 7,
+    "semantic_annotation": {
+      "task_id": "external::dryad::10.5061_dryad.zkh1893nh::African_Mammal_FoodWebs_Locations.csv",
+      "model_info": {
+        "api_base": "http://100.66.106.126:1234/v1",
+        "model": "qwen/qwen3.6-27b"
+      },
+      "conflicts": [
+        {
+          "field_path": "Remove",
+          "conflict_type": "unsupported_annotation_no_evidence",
+          "detail": "annotation proposed changes without supporting_evidence"
+        }
+      ],
+      "logical_type_overrides": [],
+      "notes": [
+        "The field 'Code' appears to be a location identifier. The context field 'Lat' suggests this dataset contains geographic information, reinforcing the likelihood that 'Code' identifies specific locations. However, the exact semantic meaning (e.g., site code, region code) is not explicitly defined in the available evidence.",
+        "The field 'Community' contains string values like 'Aberdare' and 'Ai.Ais', which appear to be names of specific locations or ecological communities. Given the context of 'African_Mammal_FoodWebs_Locations.csv' and the presence of a 'Lat' (latitude) field, 'Community' likely serves as a categorical label or identifier for distinct study sites or ecological communities. Therefore, 'label' is the most appropriate logical_type and semantic_type.",
+        "The field 'Full.Name' contains names of locations such as 'Aberdare National Park' and 'Ai Ais Hot Springs National Park', which are clearly location identifiers. Given the context of 'African_Mammal_FoodWebs_Locations.csv' and the presence of 'Lat' as a coordinate field, 'Full.Name' serves as the human-readable label for these locations. The logical type 'label' is appropriate as it categorizes the location."
+      ]
+    }
+  },
+  "notes": [],
+  "external_source_file": "dryad/10.5061_dryad.zkh1893nh/African_Mammal_FoodWebs_Locations.csv"
+}

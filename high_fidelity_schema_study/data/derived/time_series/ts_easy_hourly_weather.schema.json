@@ -1,0 +1,251 @@
+{
+  "dataset_id": "hourly_weather",
+  "file_id": "hourly_weather.csv",
+  "file_format": "csv",
+  "data_modality": "time_series",
+  "fields": [
+    {
+      "field_name": "station_id",
+      "field_path": "station_id",
+      "physical_type": "string",
+      "logical_type": "identifier",
+      "semantic_type": "station_identifier",
+      "nullable": false,
+      "unique_ratio": 0.2,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "ST001"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_easy_hourly_weather\\hourly_weather.csv",
+          "detail": "header='station_id'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_easy_hourly_weather\\hourly_weather.csv",
+          "detail": "sampled_rows=5",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "timestamp",
+      "field_path": "timestamp",
+      "physical_type": "datetime",
+      "logical_type": "time_axis",
+      "semantic_type": "observation_time",
+      "nullable": false,
+      "unique_ratio": 1.0,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "2026-01-01 00:00:00",
+        "2026-01-01 01:00:00",
+        "2026-01-01 02:00:00"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_easy_hourly_weather\\hourly_weather.csv",
+          "detail": "header='timestamp'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_easy_hourly_weather\\hourly_weather.csv",
+          "detail": "sampled_rows=5",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "temp_C",
+      "field_path": "temp_C",
+      "physical_type": "float",
+      "logical_type": "measurement",
+      "semantic_type": "air_temperature",
+      "nullable": false,
+      "unique_ratio": 1.0,
+      "shape": null,
+      "unit": "Celsius",
+      "description": null,
+      "example_values": [
+        "12.5",
+        "12.1",
+        "11.7"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        10.9,
+        12.5
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_easy_hourly_weather\\hourly_weather.csv",
+          "detail": "header='temp_C'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_easy_hourly_weather\\hourly_weather.csv",
+          "detail": "sampled_rows=5",
+          "confidence": 0.9
+        },
+        {
+          "tier": "structural",
+          "evidence_type": "column_name_unit_hint",
+          "source": "temp_C",
+          "detail": "inferred unit from column suffix: Celsius",
+          "confidence": 0.82
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "humidity_pct",
+      "field_path": "humidity_pct",
+      "physical_type": "float",
+      "logical_type": "measurement",
+      "semantic_type": "relative_humidity",
+      "nullable": false,
+      "unique_ratio": 1.0,
+      "shape": null,
+      "unit": "percent",
+      "description": null,
+      "example_values": [
+        "61.0",
+        "64.0",
+        "66.0"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        61.0,
+        70.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_easy_hourly_weather\\hourly_weather.csv",
+          "detail": "header='humidity_pct'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_easy_hourly_weather\\hourly_weather.csv",
+          "detail": "sampled_rows=5",
+          "confidence": 0.9
+        },
+        {
+          "tier": "structural",
+          "evidence_type": "column_name_unit_hint",
+          "source": "humidity_pct",
+          "detail": "inferred unit from column suffix: percent",
+          "confidence": 0.82
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "wind_speed_m_s",
+      "field_path": "wind_speed_m_s",
+      "physical_type": "float",
+      "logical_type": "measurement",
+      "semantic_type": "wind_speed",
+      "nullable": false,
+      "unique_ratio": 1.0,
+      "shape": null,
+      "unit": "meter_per_second",
+      "description": null,
+      "example_values": [
+        "3.1",
+        "3.4",
+        "3.2"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        2.5,
+        3.4
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_easy_hourly_weather\\hourly_weather.csv",
+          "detail": "header='wind_speed_m_s'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_easy_hourly_weather\\hourly_weather.csv",
+          "detail": "sampled_rows=5",
+          "confidence": 0.9
+        },
+        {
+          "tier": "structural",
+          "evidence_type": "column_name_unit_hint",
+          "source": "wind_speed_m_s",
+          "detail": "inferred unit from column suffix: meter_per_second",
+          "confidence": 0.82
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    }
+  ],
+  "groups": [],
+  "metadata": {
+    "sampled_rows": 5,
+    "column_count": 5,
+    "time_series": {
+      "time_axis": {
+        "field": "timestamp",
+        "type": "datetime",
+        "frequency": "1 hour",
+        "regularity": "regular",
+        "missing_intervals": 0
+      },
+      "series_identifier": "station_id",
+      "measurements": [
+        "temp_C",
+        "humidity_pct",
+        "wind_speed_m_s"
+      ]
+    }
+  },
+  "notes": [],
+  "study_dataset_id": "ts_easy_hourly_weather",
+  "study_category": "time_series",
+  "study_difficulty": "easy",
+  "study_source_file": "raw/time_series/ts_easy_hourly_weather/hourly_weather.csv"
+}

@@ -1,0 +1,90 @@
+{
+  "dataset_id": "csv_medium_water_quality",
+  "file_format": "csv",
+  "difficulty": "medium",
+  "data_modality": "tabular",
+  "source_file": "water_quality.csv",
+  "time_axis": null,
+  "fields": [
+    {
+      "field_name": "sample_id",
+      "field_path": "sample_id",
+      "correct_physical_type": "string",
+      "correct_logical_type": "identifier",
+      "correct_semantic_type": "sample_identifier",
+      "unit": null,
+      "necessity": "high",
+      "notes": "Leading zeros are significant.",
+      "gold_evidence": []
+    },
+    {
+      "field_name": "site_code",
+      "field_path": "site_code",
+      "correct_physical_type": "string",
+      "correct_logical_type": "identifier",
+      "correct_semantic_type": "site_identifier",
+      "unit": null,
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "collection_date",
+      "field_path": "collection_date",
+      "correct_physical_type": "datetime",
+      "correct_logical_type": "attribute",
+      "correct_semantic_type": "collection_date",
+      "unit": null,
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "ph",
+      "field_path": "ph",
+      "correct_physical_type": "float",
+      "correct_logical_type": "measurement",
+      "correct_semantic_type": "acidity_ph",
+      "unit": null,
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "do_mg_l",
+      "field_path": "do_mg_l",
+      "correct_physical_type": "float",
+      "correct_logical_type": "measurement",
+      "correct_semantic_type": "dissolved_oxygen",
+      "unit": "milligram_per_liter",
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "turbidity_ntu",
+      "field_path": "turbidity_ntu",
+      "correct_physical_type": "float",
+      "correct_logical_type": "measurement",
+      "correct_semantic_type": "turbidity",
+      "unit": "NTU",
+      "necessity": "medium",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "notes",
+      "field_path": "notes",
+      "correct_physical_type": "string",
+      "correct_logical_type": "label",
+      "correct_semantic_type": "free_text_note",
+      "unit": null,
+      "necessity": "low",
+      "notes": null,
+      "gold_evidence": []
+    }
+  ],
+  "notes": [
+    "Mixed explicit metadata quality. Semantic meaning is partially recoverable from names and README."
+  ]
+}

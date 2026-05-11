@@ -1,0 +1,238 @@
+{
+  "dataset_id": "power_meter",
+  "file_id": "power_meter.csv",
+  "file_format": "csv",
+  "data_modality": "time_series",
+  "fields": [
+    {
+      "field_name": "sensor_id",
+      "field_path": "sensor_id",
+      "physical_type": "string",
+      "logical_type": "identifier",
+      "semantic_type": "sensor_identifier",
+      "nullable": false,
+      "unique_ratio": 0.1667,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "MTR-9"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_medium_power_meter\\power_meter.csv",
+          "detail": "header='sensor_id'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_medium_power_meter\\power_meter.csv",
+          "detail": "sampled_rows=6",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "ts_utc",
+      "field_path": "ts_utc",
+      "physical_type": "datetime",
+      "logical_type": "time_axis",
+      "semantic_type": "observation_time",
+      "nullable": false,
+      "unique_ratio": 1.0,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "2026-05-02T00:00:00Z",
+        "2026-05-02T00:15:00Z",
+        "2026-05-02T00:30:00Z"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_medium_power_meter\\power_meter.csv",
+          "detail": "header='ts_utc'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_medium_power_meter\\power_meter.csv",
+          "detail": "sampled_rows=6",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "power_kw",
+      "field_path": "power_kw",
+      "physical_type": "float",
+      "logical_type": "measurement",
+      "semantic_type": "power",
+      "nullable": false,
+      "unique_ratio": 0.8333,
+      "shape": null,
+      "unit": "kilowatt",
+      "description": null,
+      "example_values": [
+        "4.2",
+        "4.1",
+        "4.0"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        4.0,
+        4.4
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_medium_power_meter\\power_meter.csv",
+          "detail": "header='power_kw'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_medium_power_meter\\power_meter.csv",
+          "detail": "sampled_rows=6",
+          "confidence": 0.9
+        },
+        {
+          "tier": "structural",
+          "evidence_type": "column_name_unit_hint",
+          "source": "power_kw",
+          "detail": "inferred unit from column suffix: kilowatt",
+          "confidence": 0.82
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "voltage_v",
+      "field_path": "voltage_v",
+      "physical_type": "float",
+      "logical_type": "measurement",
+      "semantic_type": "voltage",
+      "nullable": false,
+      "unique_ratio": 1.0,
+      "shape": null,
+      "unit": "volt",
+      "description": null,
+      "example_values": [
+        "231.0",
+        "230.8",
+        "230.6"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        230.6,
+        231.2
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_medium_power_meter\\power_meter.csv",
+          "detail": "header='voltage_v'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_medium_power_meter\\power_meter.csv",
+          "detail": "sampled_rows=6",
+          "confidence": 0.9
+        },
+        {
+          "tier": "structural",
+          "evidence_type": "column_name_unit_hint",
+          "source": "voltage_v",
+          "detail": "inferred unit from column suffix: volt",
+          "confidence": 0.82
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "status",
+      "field_path": "status",
+      "physical_type": "string",
+      "logical_type": "label",
+      "semantic_type": "operational_status",
+      "nullable": false,
+      "unique_ratio": 0.3333,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "ok"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_medium_power_meter\\power_meter.csv",
+          "detail": "header='status'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_medium_power_meter\\power_meter.csv",
+          "detail": "sampled_rows=6",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler"
+    }
+  ],
+  "groups": [],
+  "metadata": {
+    "sampled_rows": 6,
+    "column_count": 5,
+    "time_series": {
+      "time_axis": {
+        "field": "ts_utc",
+        "type": "datetime",
+        "frequency": "15 minutes",
+        "regularity": "mostly_regular",
+        "missing_intervals": 1
+      },
+      "series_identifier": "sensor_id",
+      "measurements": [
+        "power_kw",
+        "voltage_v"
+      ]
+    }
+  },
+  "notes": [],
+  "study_dataset_id": "ts_medium_power_meter",
+  "study_category": "time_series",
+  "study_difficulty": "medium",
+  "study_source_file": "raw/time_series/ts_medium_power_meter/power_meter.csv"
+}

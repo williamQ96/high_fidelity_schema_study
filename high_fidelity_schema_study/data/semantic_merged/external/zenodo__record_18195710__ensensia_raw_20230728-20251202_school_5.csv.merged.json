@@ -1,0 +1,845 @@
+{
+  "dataset_id": "ensensia_raw_20230728-20251202_school_5",
+  "file_id": "ensensia_raw_20230728-20251202_school_5.csv",
+  "file_format": "csv",
+  "data_modality": "time_series",
+  "fields": [
+    {
+      "field_name": "sensor_id",
+      "field_path": "sensor_id",
+      "physical_type": "int",
+      "logical_type": "identifier",
+      "semantic_type": "sensor_identifier",
+      "nullable": false,
+      "unique_ratio": 0.005,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "20230701010"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        20230701010.0,
+        20230701010.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "header='sensor_id'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "date",
+      "field_path": "date",
+      "physical_type": "datetime",
+      "logical_type": "time_axis",
+      "semantic_type": "observation_time",
+      "nullable": false,
+      "unique_ratio": 1.0,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "2023-07-28 08:50:00",
+        "2023-07-28 09:10:00",
+        "2023-08-01 10:40:00"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "header='date'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "pm25",
+      "field_path": "pm25",
+      "physical_type": "int",
+      "logical_type": "measurement",
+      "semantic_type": "pm25_concentration",
+      "nullable": false,
+      "unique_ratio": 0.065,
+      "shape": null,
+      "unit": "ug/m3",
+      "description": "Particulate matter 2.5 concentration measurement",
+      "example_values": [
+        "6",
+        "9"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        1.0,
+        14.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "header='pm25'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.9,
+        "uncertainty_reason": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "no2",
+      "field_path": "no2",
+      "physical_type": "int",
+      "logical_type": "measurement",
+      "semantic_type": "air_pollutant_concentration",
+      "nullable": false,
+      "unique_ratio": 0.195,
+      "shape": null,
+      "unit": "ppb",
+      "description": "Nitrogen dioxide concentration measured by ENSENSIA sensor",
+      "example_values": [
+        "108",
+        "61",
+        "131"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        6.0,
+        314.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "header='no2'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.9,
+        "uncertainty_reason": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "o3",
+      "field_path": "o3",
+      "physical_type": "int",
+      "logical_type": "measurement",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.3,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "128",
+        "114",
+        "650"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        106.0,
+        1742.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "header='o3'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.8,
+        "uncertainty_reason": "The field name 'o3' strongly suggests ozone concentration, which is a measurement. However, the dataset context mentions 'indoor air pollutants' and 'ENSENSIA sensor devices'. While ozone is an air pollutant, indoor ozone levels are typically measured in ppb or \u00b5g/m\u00b3. The values range from 106 to 1742, which is plausible for ppb but high for \u00b5g/m\u00b3. Without explicit unit metadata or a clear description linking 'o3' to ozone concentration in the provided snippets, the semantic type remains unknown, though the logical type is clearly a measurement based on the numeric nature and context of sensor readings.",
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "so2",
+      "field_path": "so2",
+      "physical_type": "int",
+      "logical_type": "measurement",
+      "semantic_type": "air_pollutant_concentration",
+      "nullable": false,
+      "unique_ratio": 0.08,
+      "shape": null,
+      "unit": "ppb",
+      "description": "Sulfur dioxide concentration measurement",
+      "example_values": [
+        "2",
+        "16"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        784.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "header='so2'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.85,
+        "uncertainty_reason": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "no",
+      "field_path": "no",
+      "physical_type": "int",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.165,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "14"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        7.0,
+        948.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "header='no'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.0,
+        "uncertainty_reason": "The field name 'no' is ambiguous. While it could represent a row number or index, the value range [7.0, 948.0] and example value '14' do not definitively confirm it as a sequential identifier without more context. It could also be a count or another numeric attribute. Given the lack of explicit metadata defining 'no' as an identifier or index, and the instruction to treat source-record descriptions as weaker than explicit field metadata, we cannot confidently assign a logical_type like 'identifier' or 'attribute' without risking hallucination. The available evidence (F1, F2) only provides the header and sample rows, which are insufficient to disambiguate the semantic meaning.",
+        "supporting_evidence": [],
+        "accepted_for_merge": false
+      }
+    },
+    {
+      "field_name": "co",
+      "field_path": "co",
+      "physical_type": "int",
+      "logical_type": "measurement",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.735,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "2602",
+        "1497",
+        "3304"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        473.0,
+        8355.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "header='co'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.7,
+        "uncertainty_reason": "The field name 'co' likely refers to Carbon Monoxide, a common indoor air pollutant mentioned in the dataset description (S1). However, without explicit unit information or a definitive mapping in the header, the specific semantic type (e.g., air_pollutant_concentration) and unit remain uncertain. The logical type is inferred as measurement based on the context of sensor readings.",
+        "supporting_evidence": [
+          "S1"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "vocs",
+      "field_path": "vocs",
+      "physical_type": "int",
+      "logical_type": "measurement",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.325,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "264",
+        "142",
+        "412"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        55.0,
+        979.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "header='vocs'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.8,
+        "uncertainty_reason": "The field name 'vocs' strongly suggests Volatile Organic Compounds, a common indoor air pollutant measurement. The dataset context confirms it contains indoor air pollutant measurements. However, the specific unit (e.g., ppb, ppm, ug/m3) is not provided in the available evidence, and the exact semantic type (e.g., 'voc_concentration') is not explicitly defined in the allowed semantic types list, so it remains 'unknown' semantically but is clearly a 'measurement' logically.",
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "hcho",
+      "field_path": "hcho",
+      "physical_type": "float",
+      "logical_type": "measurement",
+      "semantic_type": "formaldehyde_concentration",
+      "nullable": false,
+      "unique_ratio": 0.565,
+      "shape": null,
+      "unit": "ppb",
+      "description": "Concentration of formaldehyde (HCHO) measured by the sensor.",
+      "example_values": [
+        "3.28",
+        "3.25",
+        "5.63"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        1.82,
+        15.78
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "header='hcho'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.9,
+        "uncertainty_reason": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "co2",
+      "field_path": "co2",
+      "physical_type": "int",
+      "logical_type": "measurement",
+      "semantic_type": "air_pollutant_concentration",
+      "nullable": false,
+      "unique_ratio": 0.49,
+      "shape": null,
+      "unit": "ppm",
+      "description": "Concentration of carbon dioxide measured by the sensor.",
+      "example_values": [
+        "658"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        298.0,
+        748.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "header='co2'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.9,
+        "uncertainty_reason": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "temp",
+      "field_path": "temp",
+      "physical_type": "int",
+      "logical_type": "measurement",
+      "semantic_type": "air_temperature",
+      "nullable": false,
+      "unique_ratio": 0.025,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "20",
+        "21"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        20.0,
+        24.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "header='temp'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "hum",
+      "field_path": "hum",
+      "physical_type": "int",
+      "logical_type": "measurement",
+      "semantic_type": "relative_humidity",
+      "nullable": false,
+      "unique_ratio": 0.09,
+      "shape": null,
+      "unit": "percent",
+      "description": "Relative humidity measurement from ENSENSIA sensor",
+      "example_values": [
+        "47",
+        "40"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        28.0,
+        47.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "header='hum'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.9,
+        "uncertainty_reason": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "lat",
+      "field_path": "lat",
+      "physical_type": "float",
+      "logical_type": "coordinate",
+      "semantic_type": "latitude",
+      "nullable": false,
+      "unique_ratio": 0.005,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "38.2998"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        38.2998,
+        38.2998
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "header='lat'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "lon",
+      "field_path": "lon",
+      "physical_type": "float",
+      "logical_type": "coordinate",
+      "semantic_type": "longitude",
+      "nullable": false,
+      "unique_ratio": 0.005,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "21.8146"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        21.8146,
+        21.8146
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "header='lon'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "battery",
+      "field_path": "battery",
+      "physical_type": "float",
+      "logical_type": "measurement",
+      "semantic_type": "battery_level",
+      "nullable": false,
+      "unique_ratio": 0.34,
+      "shape": null,
+      "unit": "%",
+      "description": null,
+      "example_values": [
+        "1.0",
+        "62.2"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        1.0,
+        98.0333
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "header='battery'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.9,
+        "uncertainty_reason": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "SG-BOX ID",
+      "field_path": "SG-BOX ID",
+      "physical_type": "string",
+      "logical_type": "identifier",
+      "semantic_type": "sensor_identifier",
+      "nullable": false,
+      "unique_ratio": 0.005,
+      "shape": null,
+      "unit": null,
+      "description": "Unique identifier for the ENSENSIA sensor device (SG-BOX) deployed in the school.",
+      "example_values": [
+        "SG-BOX21-1021"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "header='SG-BOX ID'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_5.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.95,
+        "uncertainty_reason": null,
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    }
+  ],
+  "groups": [],
+  "metadata": {
+    "sampled_rows": 200,
+    "column_count": 17,
+    "time_series": {
+      "time_axis": {
+        "field": "date",
+        "type": "datetime",
+        "frequency": "10 minutes",
+        "regularity": "regular",
+        "missing_intervals": 4612
+      },
+      "series_identifier": "sensor_id",
+      "measurements": [
+        "pm25",
+        "no2",
+        "o3",
+        "so2",
+        "no",
+        "co",
+        "vocs",
+        "hcho",
+        "co2",
+        "temp",
+        "hum",
+        "battery"
+      ]
+    },
+    "semantic_annotation": {
+      "task_id": "external::zenodo::record_18195710::ensensia_raw_20230728-20251202_school_5.csv",
+      "model_info": {
+        "api_base": "http://100.66.106.126:1234/v1",
+        "model": "qwen/qwen3.6-27b"
+      },
+      "conflicts": [
+        {
+          "field_path": "no",
+          "conflict_type": "unsupported_annotation_no_evidence",
+          "detail": "annotation proposed changes without supporting_evidence"
+        }
+      ],
+      "logical_type_overrides": [],
+      "notes": [
+        "Field name 'pm25' strongly suggests PM2.5 particulate matter concentration. Context fields include 'temp' (air_temperature), 'lat', 'lon', 'sensor_id', 'date', consistent with environmental sensor data. Grounding snippets mention 'Indoor Air Pollutants (Raw)' and 'raw indoor air pollutant measurements'. Standard unit for PM2.5 is ug/m3.",
+        "The field 'no2' strongly suggests nitrogen dioxide, a common indoor air pollutant. The dataset description confirms it contains indoor air pollutant measurements. The values (6-314) are consistent with ppb (parts per billion) range for NO2 in indoor environments. While the unit is not explicitly stated in the header, ppb is the standard unit for ENSENSIA NO2 sensors and aligns with the value range.",
+        "The field 'o3' likely represents ozone concentration, a common air pollutant. The numeric range (106-1742) is consistent with parts per billion (ppb) measurements often seen in air quality sensors. However, without explicit unit confirmation in the metadata or snippets, the semantic type is marked as unknown to avoid hallucination, while the logical type is assigned as measurement based on the numeric data and sensor context.",
+        "The field 'so2' is annotated as a measurement of sulfur dioxide concentration. The unit is inferred as ppb based on typical indoor air quality sensor outputs, though not explicitly stated in the provided evidence. The dataset context indicates indoor air pollutant measurements.",
+        "The field 'no' is ambiguous. It might be a row number, but the value range starts at 7, which is unusual for a 1-based index unless data is filtered. It could also be a count or another numeric attribute. Without explicit metadata, it is safer to mark as unknown.",
+        "Field 'co' is annotated as a measurement based on the dataset description indicating raw indoor air pollutant measurements. The specific pollutant is inferred to be Carbon Monoxide, but the semantic type is kept as unknown due to lack of explicit confirmation in the provided evidence.",
+        "The field 'vocs' is inferred to be a measurement of Volatile Organic Compounds based on the field name and dataset description. The logical type is set to 'measurement' as it represents a quantitative sensor reading. The semantic type is 'unknown' because a specific VOC semantic type is not available in the standard list, and the unit is missing from the evidence.",
+        "The field name 'hcho' is a standard abbreviation for formaldehyde. Given the context of indoor air pollutants and the presence of other environmental measurements like temperature, it is highly likely this represents a concentration measurement. The unit is inferred as ppb (parts per billion) which is common for HCHO sensors, though not explicitly stated in the provided snippets. The logical type is 'measurement' as it represents a quantitative reading of a physical quantity.",
+        "The field 'co2' is annotated as a measurement of air pollutant concentration. The unit is inferred as ppm, which is standard for CO2 measurements in indoor air quality monitoring, supported by the context of 'Indoor Air Pollutants' in the record title and description.",
+        "Field 'hum' is commonly used as an abbreviation for humidity in environmental sensor datasets. Given the context of indoor air pollutant measurements and the presence of temperature ('temp'), latitude ('lat'), and longitude ('lon'), 'hum' most likely represents relative humidity. The value range (28.0 to 47.0) is consistent with typical indoor relative humidity percentages. No explicit unit is provided in the header, but percent is the standard unit for relative humidity in this context.",
+        "The field name 'SG-BOX ID' and example value 'SG-BOX21-1021' strongly suggest a device identifier. The context fields include 'sensor_id' as an identifier, and the record description mentions 'device metadata fields' and 'ENSENSIA sensor devices'. Therefore, 'SG-BOX ID' is annotated as a sensor_identifier with logical_type identifier."
+      ]
+    }
+  },
+  "notes": [],
+  "external_source_file": "zenodo/record_18195710/ensensia_raw_20230728-20251202_school_5.csv"
+}

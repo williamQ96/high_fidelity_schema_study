@@ -1,0 +1,86 @@
+﻿{
+    "batch_id":  "2026-04-27-initial-dryad-zenodo-corpus",
+    "decision_date":  "2026-04-27",
+    "candidates":  [
+                       {
+                           "source_file":  "zenodo/record_15008662/unique_tracks_90.csv",
+                           "status":  "promoted",
+                           "reason":  "Compact CSV with timestamp and geospatial fields; good candidate for retrieval and tabular or time-series schema extraction."
+                       },
+                       {
+                           "source_file":  "zenodo/record_18195710/ensensia_raw_20230728-20251202_school_5.csv",
+                           "status":  "promoted",
+                           "reason":  "Real sensor deployment CSV with multiple pollutant variables and identifier fields; useful for semantic enrichment and time-axis handling."
+                       },
+                       {
+                           "source_file":  "zenodo/record_3660832/Data 01 Jan 2019.h5",
+                           "status":  "promoted",
+                           "reason":  "Rich atmospheric HDF5 file with successful deterministic extraction and enough field diversity to test hierarchical schema recovery."
+                       },
+                       {
+                           "source_file":  "zenodo/record_5935524/20211108_ZXLidar_Winds.csv",
+                           "status":  "promoted",
+                           "reason":  "Time-part assembly heuristics now recover a computed time axis from split Year/Month/Day/Hour/Minute/Second columns, making this a usable time-series benchmark candidate."
+                       },
+                       {
+                           "source_file":  "zenodo/record_5935524/20211108_Sensit.csv",
+                           "status":  "promoted",
+                           "reason":  "Time-part assembly heuristics now recover a computed time axis from split Year/Month/Day/Hour/Minute/Second columns, making this a usable time-series benchmark candidate."
+                       },
+                       {
+                           "source_file":  "zenodo/record_5935524/20211108_Tides.csv",
+                           "status":  "promoted",
+                           "reason":  "Time-part assembly heuristics now recover a computed time axis from split Year/Month/Day/Hour/Minute/Second columns, making this a usable time-series benchmark candidate."
+                       },
+                       {
+                           "source_file":  "zenodo/record_5116851/DataseParaWorkshop_v2.h5",
+                           "status":  "excluded_by_user",
+                           "reason":  "User explicitly removed this workshop HDF5 file from benchmark consideration."
+                       },
+                       {
+                           "source_file":  "zenodo/record_3660832/Data 07 July 2019.h5",
+                           "status":  "excluded_by_user",
+                           "reason":  "User explicitly removed this partially recoverable HDF5 file from benchmark consideration."
+                       },
+                       {
+                           "source_file":  "dryad/10.5061_dryad.04t19/boundaryflow_snapshots.hdf5",
+                           "status":  "keep_not_benchmark",
+                           "reason":  "Payload is locally available, but the schema is only three opaque array fields and is too semantically thin for the current benchmark."
+                       },
+                       {
+                           "source_file":  "dryad/10.5061_dryad.2f2b3/Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+                           "status":  "promoted",
+                           "reason":  "Strong real-world animal movement time-series candidate with repeated entities, coordinates, and temporal structure."
+                       },
+                       {
+                           "source_file":  "dryad/10.5061_dryad.2f2b3/Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year2.csv",
+                           "status":  "distractor",
+                           "reason":  "Strong same-family distractor for the year1 Greenland cod file: same dataset family, similar columns, different year slice."
+                       },
+                       {
+                           "source_file":  "dryad/10.5061_dryad.zkh1893nh/above_500_PA_data.csv",
+                           "status":  "distractor",
+                           "reason":  "Wide ecology table from the same family as other food-web files; useful as a hard distractor but less interpretable as a primary target."
+                       },
+                       {
+                           "source_file":  "dryad/10.5061_dryad.zkh1893nh/Africa_metaweb_above500.csv",
+                           "status":  "keep_not_benchmark",
+                           "reason":  "Very wide metaweb matrix with 259 columns; useful for future scaling work, but too structurally dense for the current benchmark slice."
+                       },
+                       {
+                           "source_file":  "dryad/10.5061_dryad.zkh1893nh/African_Mammal_FoodWebs_Locations.csv",
+                           "status":  "promoted",
+                           "reason":  "Compact, interpretable ecological site-and-location table with strong retrieval value."
+                       },
+                       {
+                           "source_file":  "dryad/10.5061_dryad.zkh1893nh/functional_traits.csv",
+                           "status":  "promoted",
+                           "reason":  "Compact ecological trait table with clear entity rows and descriptive trait columns."
+                       },
+                       {
+                           "source_file":  "dryad/10.5061_dryad.dv41ns266/weatherMQ-FP-20261011.csv",
+                           "status":  "promoted",
+                           "reason":  "Strong weather-station time-series candidate with explicit meteorological variables, timestamps, and unit-bearing documentation."
+                       }
+                   ]
+}

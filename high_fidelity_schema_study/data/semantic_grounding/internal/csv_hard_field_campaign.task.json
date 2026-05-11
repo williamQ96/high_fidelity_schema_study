@@ -1,0 +1,299 @@
+{
+  "system_rules": [
+    "You are given a deterministic schema extracted from a dataset file.",
+    "You may only make claims supported by the provided evidence.",
+    "Do not invent fields, units, or shapes that are not grounded in the deterministic schema or supplied snippets.",
+    "Prefer unknown over unsupported guessing.",
+    "If explicit metadata conflicts with weaker name-based inference, preserve the explicit metadata and surface a conflict."
+  ],
+  "task": {
+    "task_id": "internal::csv_hard_field_campaign",
+    "dataset_id": "csv_hard_field_campaign",
+    "file_format": "csv",
+    "data_modality": "tabular",
+    "deterministic_schema": {
+      "dataset_id": "field_campaign",
+      "file_id": "field_campaign.csv",
+      "file_format": "csv",
+      "data_modality": "tabular",
+      "fields": [
+        {
+          "field_name": "rec",
+          "field_path": "rec",
+          "physical_type": "string",
+          "logical_type": "identifier",
+          "semantic_type": "record_identifier",
+          "nullable": false,
+          "unique_ratio": 1.0,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "0001",
+            "0002",
+            "0003"
+          ],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_hard_field_campaign\\field_campaign.csv",
+              "detail": "header='rec'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_hard_field_campaign\\field_campaign.csv",
+              "detail": "sampled_rows=4",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 0.9,
+          "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "dt_obs",
+          "field_path": "dt_obs",
+          "physical_type": "datetime",
+          "logical_type": "attribute",
+          "semantic_type": "observation_time",
+          "nullable": false,
+          "unique_ratio": 1.0,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "2026-03-01 12:00:00",
+            "2026-03-01 12:05:00",
+            "2026-03-01 12:10:00"
+          ],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_hard_field_campaign\\field_campaign.csv",
+              "detail": "header='dt_obs'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_hard_field_campaign\\field_campaign.csv",
+              "detail": "sampled_rows=4",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "zc",
+          "field_path": "zc",
+          "physical_type": "string",
+          "logical_type": "unknown",
+          "semantic_type": "postal_zone_code",
+          "nullable": false,
+          "unique_ratio": 1.0,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "94107",
+            "02139",
+            "10001"
+          ],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_hard_field_campaign\\field_campaign.csv",
+              "detail": "header='zc'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_hard_field_campaign\\field_campaign.csv",
+              "detail": "sampled_rows=4",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 0.9,
+          "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "val",
+          "field_path": "val",
+          "physical_type": "string",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": 1.0,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "17.2",
+            "ND",
+            "18.4"
+          ],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_hard_field_campaign\\field_campaign.csv",
+              "detail": "header='val'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_hard_field_campaign\\field_campaign.csv",
+              "detail": "sampled_rows=4",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 0.9,
+          "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "flag",
+          "field_path": "flag",
+          "physical_type": "string",
+          "logical_type": "label",
+          "semantic_type": "quality_flag",
+          "nullable": false,
+          "unique_ratio": 0.75,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "A",
+            "C"
+          ],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_hard_field_campaign\\field_campaign.csv",
+              "detail": "header='flag'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_hard_field_campaign\\field_campaign.csv",
+              "detail": "sampled_rows=4",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 0.9,
+          "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "device",
+          "field_path": "device",
+          "physical_type": "string",
+          "logical_type": "identifier",
+          "semantic_type": "device_identifier",
+          "nullable": false,
+          "unique_ratio": 0.5,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "SN-01",
+            "SN-02"
+          ],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_hard_field_campaign\\field_campaign.csv",
+              "detail": "header='device'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_hard_field_campaign\\field_campaign.csv",
+              "detail": "sampled_rows=4",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 0.9,
+          "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+          "extraction_method": "csv_conservative_profiler"
+        }
+      ],
+      "groups": [],
+      "metadata": {
+        "sampled_rows": 4,
+        "column_count": 6
+      },
+      "notes": [],
+      "study_dataset_id": "csv_hard_field_campaign",
+      "study_category": "csv",
+      "study_difficulty": "hard",
+      "study_source_file": "raw/csv/csv_hard_field_campaign/field_campaign.csv"
+    },
+    "grounding_snippets": [
+      {
+        "source_type": "dataset_readme",
+        "source_name": "raw/csv/csv_hard_field_campaign/README.md",
+        "detail": "local pilot dataset README",
+        "text": "# csv_hard_field_campaign\n\nMessy field campaign export with overloaded abbreviations.\n\n- `rec` is the row-level record identifier\n- `dt_obs` is the observation timestamp\n- `zc` is a postal zone code, not a numeric quantity\n- `val` mixes numeric observations with non-detect and error markers\n- `flag` is a quality-control code",
+        "priority": 1
+      }
+    ],
+    "instructions": [
+      "Use only the deterministic schema and grounding snippets.",
+      "If a field already has explicit unit metadata, do not replace it with weaker inference."
+    ]
+  },
+  "expected_output_schema": {
+    "task_id": "string",
+    "annotations": [
+      {
+        "field_path": "string",
+        "semantic_type": "string",
+        "logical_type": "string|null",
+        "unit": "string|null",
+        "description": "string|null",
+        "supporting_evidence": [
+          "string"
+        ],
+        "confidence": "number",
+        "uncertainty_reason": "string|null"
+      }
+    ],
+    "conflicts": [
+      {
+        "field_path": "string",
+        "conflict_type": "string",
+        "detail": "string"
+      }
+    ],
+    "notes": [
+      "string"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "downloads": [
+    {
+      "source_file": "zenodo/record_5935524/20181108_HoloParticles.csv",
+      "role": "distractor",
+      "reason": "Same aeolian field dataset bundle as the promoted wind, Sensit, and tides files; adds a particle-related near-neighbor to make the pool harder."
+    },
+    {
+      "source_file": "zenodo/record_18195710/ensensia_raw_20230728-20251202_school_6.csv",
+      "role": "distractor",
+      "reason": "Same indoor-air deployment family as school_5 with very similar pollutant columns and sensor structure."
+    },
+    {
+      "source_file": "zenodo/record_3660832/Data 02 Feb 2019.h5",
+      "role": "distractor",
+      "reason": "Same atmospheric station record family as the promoted January file; monthly HDF5 near-neighbor."
+    },
+    {
+      "source_file": "zenodo/record_3660832/Data 03 Mar 2019.h5",
+      "role": "distractor",
+      "reason": "Same atmospheric station record family as the promoted January file; additional monthly HDF5 near-neighbor."
+    }
+  ]
+}

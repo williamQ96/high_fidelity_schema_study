@@ -1,0 +1,4 @@
+station_id,station_name,latitude_deg,longitude_deg,elevation_m,precip_mm
+USC0001,North Ridge,34.2,-118.52,312,0.0
+USC0002,River Bend,34.145,-118.31,128,4.6
+USC0003,Coastal Bay,33.912,-118.442,15,1.2

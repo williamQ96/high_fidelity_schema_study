@@ -1,0 +1,79 @@
+{
+  "dataset_id": "csv_hard_field_campaign",
+  "file_format": "csv",
+  "difficulty": "hard",
+  "data_modality": "tabular",
+  "source_file": "field_campaign.csv",
+  "time_axis": null,
+  "fields": [
+    {
+      "field_name": "rec",
+      "field_path": "rec",
+      "correct_physical_type": "string",
+      "correct_logical_type": "identifier",
+      "correct_semantic_type": "record_identifier",
+      "unit": null,
+      "necessity": "high",
+      "notes": "Leading zeros are significant.",
+      "gold_evidence": []
+    },
+    {
+      "field_name": "dt_obs",
+      "field_path": "dt_obs",
+      "correct_physical_type": "datetime",
+      "correct_logical_type": "attribute",
+      "correct_semantic_type": "observation_time",
+      "unit": null,
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "zc",
+      "field_path": "zc",
+      "correct_physical_type": "string",
+      "correct_logical_type": "identifier",
+      "correct_semantic_type": "postal_zone_code",
+      "unit": null,
+      "necessity": "medium",
+      "notes": "Should remain string because leading zeros are meaningful.",
+      "gold_evidence": []
+    },
+    {
+      "field_name": "val",
+      "field_path": "val",
+      "correct_physical_type": "string",
+      "correct_logical_type": "measurement",
+      "correct_semantic_type": "unknown",
+      "unit": null,
+      "necessity": "high",
+      "notes": "Physical type should remain string because values mix numerics, ND, and ERR.",
+      "gold_evidence": []
+    },
+    {
+      "field_name": "flag",
+      "field_path": "flag",
+      "correct_physical_type": "string",
+      "correct_logical_type": "label",
+      "correct_semantic_type": "quality_flag",
+      "unit": null,
+      "necessity": "medium",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "device",
+      "field_path": "device",
+      "correct_physical_type": "string",
+      "correct_logical_type": "identifier",
+      "correct_semantic_type": "device_identifier",
+      "unit": null,
+      "necessity": "medium",
+      "notes": null,
+      "gold_evidence": []
+    }
+  ],
+  "notes": [
+    "This dataset is intentionally ambiguous. Marking `val` unknown is preferable to over-claiming a numeric type."
+  ]
+}

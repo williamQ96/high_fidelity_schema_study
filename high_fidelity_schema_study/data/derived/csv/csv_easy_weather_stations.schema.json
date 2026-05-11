@@ -1,0 +1,286 @@
+{
+  "dataset_id": "stations_precip",
+  "file_id": "stations_precip.csv",
+  "file_format": "csv",
+  "data_modality": "tabular",
+  "fields": [
+    {
+      "field_name": "station_id",
+      "field_path": "station_id",
+      "physical_type": "string",
+      "logical_type": "identifier",
+      "semantic_type": "station_identifier",
+      "nullable": false,
+      "unique_ratio": 1.0,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "USC0001",
+        "USC0002",
+        "USC0003"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_easy_weather_stations\\stations_precip.csv",
+          "detail": "header='station_id'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_easy_weather_stations\\stations_precip.csv",
+          "detail": "sampled_rows=3",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "station_name",
+      "field_path": "station_name",
+      "physical_type": "string",
+      "logical_type": "label",
+      "semantic_type": "station_name",
+      "nullable": false,
+      "unique_ratio": 1.0,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "North Ridge",
+        "River Bend",
+        "Coastal Bay"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_easy_weather_stations\\stations_precip.csv",
+          "detail": "header='station_name'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_easy_weather_stations\\stations_precip.csv",
+          "detail": "sampled_rows=3",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "latitude_deg",
+      "field_path": "latitude_deg",
+      "physical_type": "float",
+      "logical_type": "coordinate",
+      "semantic_type": "latitude",
+      "nullable": false,
+      "unique_ratio": 1.0,
+      "shape": null,
+      "unit": "degree",
+      "description": null,
+      "example_values": [
+        "34.2",
+        "34.145",
+        "33.912"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        33.912,
+        34.2
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_easy_weather_stations\\stations_precip.csv",
+          "detail": "header='latitude_deg'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_easy_weather_stations\\stations_precip.csv",
+          "detail": "sampled_rows=3",
+          "confidence": 0.9
+        },
+        {
+          "tier": "structural",
+          "evidence_type": "column_name_unit_hint",
+          "source": "latitude_deg",
+          "detail": "inferred unit from column suffix: degree",
+          "confidence": 0.82
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "longitude_deg",
+      "field_path": "longitude_deg",
+      "physical_type": "float",
+      "logical_type": "coordinate",
+      "semantic_type": "longitude",
+      "nullable": false,
+      "unique_ratio": 1.0,
+      "shape": null,
+      "unit": "degree",
+      "description": null,
+      "example_values": [
+        "-118.52",
+        "-118.31",
+        "-118.442"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        -118.52,
+        -118.31
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_easy_weather_stations\\stations_precip.csv",
+          "detail": "header='longitude_deg'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_easy_weather_stations\\stations_precip.csv",
+          "detail": "sampled_rows=3",
+          "confidence": 0.9
+        },
+        {
+          "tier": "structural",
+          "evidence_type": "column_name_unit_hint",
+          "source": "longitude_deg",
+          "detail": "inferred unit from column suffix: degree",
+          "confidence": 0.82
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "elevation_m",
+      "field_path": "elevation_m",
+      "physical_type": "int",
+      "logical_type": "coordinate",
+      "semantic_type": "elevation",
+      "nullable": false,
+      "unique_ratio": 1.0,
+      "shape": null,
+      "unit": "meter",
+      "description": null,
+      "example_values": [
+        "312",
+        "128",
+        "15"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        15.0,
+        312.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_easy_weather_stations\\stations_precip.csv",
+          "detail": "header='elevation_m'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_easy_weather_stations\\stations_precip.csv",
+          "detail": "sampled_rows=3",
+          "confidence": 0.9
+        },
+        {
+          "tier": "structural",
+          "evidence_type": "column_name_unit_hint",
+          "source": "elevation_m",
+          "detail": "inferred unit from column suffix: meter",
+          "confidence": 0.82
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "precip_mm",
+      "field_path": "precip_mm",
+      "physical_type": "float",
+      "logical_type": "measurement",
+      "semantic_type": "precipitation",
+      "nullable": false,
+      "unique_ratio": 1.0,
+      "shape": null,
+      "unit": "millimeter",
+      "description": null,
+      "example_values": [
+        "0.0",
+        "4.6",
+        "1.2"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        4.6
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_easy_weather_stations\\stations_precip.csv",
+          "detail": "header='precip_mm'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_easy_weather_stations\\stations_precip.csv",
+          "detail": "sampled_rows=3",
+          "confidence": 0.9
+        },
+        {
+          "tier": "structural",
+          "evidence_type": "column_name_unit_hint",
+          "source": "precip_mm",
+          "detail": "inferred unit from column suffix: millimeter",
+          "confidence": 0.82
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    }
+  ],
+  "groups": [],
+  "metadata": {
+    "sampled_rows": 3,
+    "column_count": 6
+  },
+  "notes": [],
+  "study_dataset_id": "csv_easy_weather_stations",
+  "study_category": "csv",
+  "study_difficulty": "easy",
+  "study_source_file": "raw/csv/csv_easy_weather_stations/stations_precip.csv"
+}

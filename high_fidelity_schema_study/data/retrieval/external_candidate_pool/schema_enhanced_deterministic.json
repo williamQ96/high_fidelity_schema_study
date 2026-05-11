@@ -1,0 +1,431 @@
+{
+  "documents": [
+    {
+      "candidate_id": "zenodo__record_15008662__unique_tracks_90.csv",
+      "source_file": "zenodo/record_15008662/unique_tracks_90.csv",
+      "title": "Tracked Hailstorm Events from Radar Data (unique_tracks_90.csv)",
+      "text": "Tracked Hailstorm Events from Radar Data (unique_tracks_90.csv) Radar, Hailstorms, Max_VIL, Storm Tracks, Climate, CSV, Alberta MOHAMED, ISSAM 2025-03-11 Dataset cc-by-4.0 unique_tracks_90.csv Tracked Hailstorm Events from Radar Data (unique_tracks_90.csv) This dataset contains tracked hailstorm events based on radar-derived maximum vertically integrated liquid (max_VIL). The dataset provides key storm parameters such as latitude, longitude, timestamp , and storm intensity. The dataset was generated as part of the study \"Modulation of Severe Hailstorms in Alberta by Large-Scale Climate Teleconnections.\" csv time_series schema_source deterministic unique_tracks_90.csv max_VIL Lat Lon Date_time max_VIL Lat Lon Date_time coordinate latitude coordinate longitude time_axis observation_time coordinate latitude coordinate longitude time_axis observation_time time_axis Date_time mixed irregular max_VIL float Lat float logical:coordinate semantic:latitude Lon float logical:coordinate semantic:longitude Date_time datetime logical:time_axis semantic:observation_time",
+      "schema_summary": {
+        "field_count": 4,
+        "data_modality": "time_series",
+        "logical_types": [
+          "coordinate",
+          "time_axis"
+        ],
+        "semantic_types": [
+          "latitude",
+          "longitude",
+          "observation_time"
+        ],
+        "units": [],
+        "time_series": {
+          "time_axis": {
+            "field": "Date_time",
+            "type": "datetime",
+            "frequency": "mixed",
+            "regularity": "irregular",
+            "missing_intervals": null
+          },
+          "series_identifier": null,
+          "measurements": [
+            "max_VIL"
+          ]
+        },
+        "schema_source": "deterministic"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv",
+      "source_file": "zenodo/record_18195710/ensensia_raw_20230728-20251202_school_5.csv",
+      "title": "Indoor Air Pollutants (Raw)",
+      "text": "Indoor Air Pollutants (Raw) Apostolopoulos, John Fouskas, George Pandis, Spyros 2026-01-09 Dataset cc-by-4.0 ensensia_raw_20230728-20251202_school_5.csv Indoor Air Pollutants (Raw) This dataset contains raw indoor air pollutant measurements collected from ENSENSIA sensor devices deployed in schools. Each CSV corresponds to a school and contains timestamped sensor readings and device metadata fields. csv time_series schema_source deterministic ensensia_raw_20230728-20251202_school_5.csv school5 school 5 file_slice_school5 school5 school 5 file_slice_school5 school5 school 5 file_slice_school5 school5 school 5 file_slice_school5 sensor_id date pm25 no2 o3 so2 no co vocs hcho co2 temp hum lat lon battery SG-BOX ID sensor_id date pm25 no2 o3 so2 no co vocs hcho co2 temp hum lat lon battery SG-BOX ID identifier sensor_identifier time_axis observation_time measurement air_temperature coordinate latitude coordinate longitude identifier sensor_identifier time_axis observation_time measurement air_temperature coordinate latitude coordinate longitude time_axis date 10 minutes regular 4612 sensor_id int logical:identifier semantic:sensor_identifier date datetime logical:time_axis semantic:observation_time pm25 int no2 int o3 int so2 int no int co int vocs int hcho float co2 int temp int logical:measurement semantic:air_temperature hum int lat float logical:coordinate semantic:latitude lon float logical:coordinate semantic:longitude battery float SG-BOX ID string",
+      "schema_summary": {
+        "field_count": 17,
+        "data_modality": "time_series",
+        "logical_types": [
+          "coordinate",
+          "identifier",
+          "measurement",
+          "time_axis"
+        ],
+        "semantic_types": [
+          "air_temperature",
+          "latitude",
+          "longitude",
+          "observation_time",
+          "sensor_identifier"
+        ],
+        "units": [],
+        "time_series": {
+          "time_axis": {
+            "field": "date",
+            "type": "datetime",
+            "frequency": "10 minutes",
+            "regularity": "regular",
+            "missing_intervals": 4612
+          },
+          "series_identifier": "sensor_id",
+          "measurements": [
+            "pm25",
+            "no2",
+            "o3",
+            "so2",
+            "no",
+            "co",
+            "vocs",
+            "hcho",
+            "co2",
+            "temp",
+            "hum",
+            "battery"
+          ]
+        },
+        "schema_source": "deterministic"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_3660832__Data_01_Jan_2019.h5",
+      "source_file": "zenodo/record_3660832/Data 01 Jan 2019.h5",
+      "title": "Collected data from the ATLASM5 Atmospheric Research Station from 01 January 2019 to 31 December 2019",
+      "text": "Collected data from the ATLASM5 Atmospheric Research Station from 01 January 2019 to 31 December 2019 MARSU ATLASM5 Atmospheric Research Station Ozone Nitrogen oxides Meteorological parameters Morocco Mellouki Abdelwahid 2020-02-10 Dataset cc-by-4.0 Data 01 Jan 2019.h5 Collected data from the ATLASM5 Atmospheric Research Station from 01 January 2019 to 31 December 2019 PI_NAME = Abdelwahid MELLOUKI INSTITUTE = CNRS-ICARE EMAIL=mellouki@cnrs-orleans.fr ADDRESS=1C Av. de la Recherche Scientifique, CS 50060, 45071 Orleans cedex 2 TITLE = Data from the ATLASM5 Research Station Year = 2019 DATA_CATEGORY=Field_ATLASM5 Station Project=MARSU TYPE_OF_DATA= FIELD MEASUREMENT STATUS_OF_FILE=FINAL VERSION=1.0 PLATFORM = ATLASM5 NAME_OF_PLATFORM=MARSU DESCRIPTION=https://marsu-h2020.org/ The HDF5 Binary File Format, (Hierarchical Data Format free and open standard) was selected to manage the files. Information regarding the format and organization of the HDF5 file are available at : https://www.hdfgroup.org/HDF5/\nInformation regarding the ATLASm5 Atmospheric Research Station can be found: https://marsu-h2020.org/ hdf5 hierarchical schema_source deterministic Data 01 Jan 2019.h5 jan file_slice_jan jan file_slice_jan jan file_slice_jan jan file_slice_jan Absolute_Pressure__hPa_ Daily_Rain__mm_ Hourly_Rain_Rate__mm_ Indoor_Humidity___C_ Indoor_Temperature___C_ Monthly_Rain__mm_ NO2_ppb_ NO_ppb_ NOx_ppb_ O3__ppb_ Outdoor_Humidity____ Outdoor_Temperature___C_ Relative_Pressure__hPa_ S_fileName S_path S_waveNames Solar_Radiation__w_m2_ UVI UV__w_m2_ V_Flag Weekly_Rain__mm_ Wind_Direction Wind_Gust Wind_Speed__km_h_ Yearly_Rain__mm_ dateW Absolute_Pressure__hPa_ Daily_Rain__mm_ Hourly_Rain_Rate__mm_ Indoor_Humidity___C_ Indoor_Temperature___C_ Monthly_Rain__mm_ NO2_ppb_ NO_ppb_ NOx_ppb_ O3__ppb_ Outdoor_Humidity____ Outdoor_Temperature___C_ Relative_Pressure__hPa_ S_fileName S_path S_waveNames Solar_Radiation__w_m2_ UVI UV__w_m2_ V_Flag Weekly_Rain__mm_ Wind_Direction Wind_Gust Wind_Speed__km_h_ Yearly_Rain__mm_ dateW measurement surface_pressure measurement relative_humidity measurement relative_humidity measurement surface_pressure measurement surface_pressure measurement relative_humidity measurement relative_humidity measurement surface_pressure /'Data Januray 2019'/Absolute_Pressure__hPa_ float64 logical:measurement semantic:surface_pressure /'Data Januray 2019'/Daily_Rain__mm_ float64 /'Data Januray 2019'/Hourly_Rain_Rate__mm_ float64 /'Data Januray 2019'/Indoor_Humidity___C_ float64 logical:measurement semantic:relative_humidity /'Data Januray 2019'/Indoor_Temperature___C_ float64 /'Data Januray 2019'/Monthly_Rain__mm_ float64 /'Data Januray 2019'/NO2_ppb_ float64 /'Data Januray 2019'/NO_ppb_ float64 /'Data Januray 2019'/NOx_ppb_ float64 /'Data Januray 2019'/O3__ppb_ float64 /'Data Januray 2019'/Outdoor_Humidity____ float64 logical:measurement semantic:relative_humidity /'Data Januray 2019'/Outdoor_Temperature___C_ float64 /'Data Januray 2019'/Relative_Pressure__hPa_ float64 logical:measurement semantic:surface_pressure /'Data Januray 2019'/S_fileName string /'Data Januray 2019'/S_path string /'Data Januray 2019'/S_waveNames string /'Data Januray 2019'/Solar_Radiation__w_m2_ float64 /'Data Januray 2019'/UVI float64 /'Data Januray 2019'/UV__w_m2_ float64 /'Data Januray 2019'/V_Flag float64 /'Data Januray 2019'/Weekly_Rain__mm_ float64 /'Data Januray 2019'/Wind_Direction float64 /'Data Januray 2019'/Wind_Gust float64 /'Data Januray 2019'/Wind_Speed__km_h_ float64 /'Data Januray 2019'/Yearly_Rain__mm_ float64 /'Data Januray 2019'/dateW float64",
+      "schema_summary": {
+        "field_count": 26,
+        "data_modality": "hierarchical",
+        "logical_types": [
+          "measurement"
+        ],
+        "semantic_types": [
+          "relative_humidity",
+          "surface_pressure"
+        ],
+        "units": [],
+        "time_series": null,
+        "schema_source": "deterministic"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_5935524__20211108_ZXLidar_Winds.csv",
+      "source_file": "zenodo/record_5935524/20211108_ZXLidar_Winds.csv",
+      "title": "Aeolian Saltation Data at Duck, NC - 8 Nov 2021",
+      "text": "Aeolian Saltation Data at Duck, NC - 8 Nov 2021 Cohn Nicholas Dickhudt, Patrick 2022-02-22 Dataset cc-by-4.0 20211108_ZXLidar_Winds.csv Aeolian Saltation Data at Duck, NC - 8 Nov 2021 Aeolian saltation data collected on the north property of the Field Research Facility (FRF) in Duck, NC associated with the passing of a Nor'Easter system. Time series data includes 1Hz measurements from a Sensit H14-LIN sensor, 1 Hz wind measurements from a horizontally mounted ZX TM doppler wind lidar sensor, and tidal measurements made from the end of the FRF pier. These time series data are provided as CSV files individually for each sensor, with headers of the CSV files indicating the variables of interest. Addititionally, a Sequoia LISST-Holo2 sensor was deployed to measure properties of the aeolian saltation layer at 10Hz. Particle grain size information exported from the HoloBatch program is additionally provided, with the raw reconstructed particle height relative to the sensor lens provided. More details regarding these measurements can be found in the following manuscript: Cohn, Dickhudt, and Marshall (2022). In-situ measurement of grain size characteristics within the aeolian saltation layer on a coastal beach. Earth Surface Processes and Landforms csv time_series schema_source deterministic 20211108_ZXLidar_Winds.csv Year Month Day Hour Minute Second Wind_Speed_m_s Wind_Direction_deg Wind_Shear_Exponent Year Month Day Hour Minute Second Wind_Speed_m_s Wind_Direction_deg Wind_Shear_Exponent measurement wind_speed meter_per_second measurement degree measurement measurement wind_speed meter_per_second measurement degree measurement time_axis computed_from_parts 1 second regular 6 Year int Month int Day int Hour int Minute int Second int Wind_Speed_m_s float logical:measurement semantic:wind_speed unit:meter_per_second Wind_Direction_deg float logical:measurement unit:degree Wind_Shear_Exponent float logical:measurement",
+      "schema_summary": {
+        "field_count": 9,
+        "data_modality": "time_series",
+        "logical_types": [
+          "measurement"
+        ],
+        "semantic_types": [
+          "wind_speed"
+        ],
+        "units": [
+          "degree",
+          "meter_per_second"
+        ],
+        "time_series": {
+          "time_axis": {
+            "field": "computed_from_parts",
+            "computed_from": [
+              "Year",
+              "Month",
+              "Day",
+              "Hour",
+              "Minute",
+              "Second"
+            ],
+            "type": "datetime",
+            "frequency": "1 second",
+            "regularity": "regular",
+            "missing_intervals": 6
+          },
+          "series_identifier": null,
+          "measurements": [
+            "Wind_Speed_m_s",
+            "Wind_Direction_deg",
+            "Wind_Shear_Exponent"
+          ]
+        },
+        "schema_source": "deterministic"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_5935524__20211108_Sensit.csv",
+      "source_file": "zenodo/record_5935524/20211108_Sensit.csv",
+      "title": "Aeolian Saltation Data at Duck, NC - 8 Nov 2021",
+      "text": "Aeolian Saltation Data at Duck, NC - 8 Nov 2021 Cohn Nicholas Dickhudt, Patrick 2022-02-22 Dataset cc-by-4.0 20211108_Sensit.csv Aeolian Saltation Data at Duck, NC - 8 Nov 2021 Aeolian saltation data collected on the north property of the Field Research Facility (FRF) in Duck, NC associated with the passing of a Nor'Easter system. Time series data includes 1Hz measurements from a Sensit H14-LIN sensor, 1 Hz wind measurements from a horizontally mounted ZX TM doppler wind lidar sensor, and tidal measurements made from the end of the FRF pier. These time series data are provided as CSV files individually for each sensor, with headers of the CSV files indicating the variables of interest. Addititionally, a Sequoia LISST-Holo2 sensor was deployed to measure properties of the aeolian saltation layer at 10Hz. Particle grain size information exported from the HoloBatch program is additionally provided, with the raw reconstructed particle height relative to the sensor lens provided. More details regarding these measurements can be found in the following manuscript: Cohn, Dickhudt, and Marshall (2022). In-situ measurement of grain size characteristics within the aeolian saltation layer on a coastal beach. Earth Surface Processes and Landforms csv time_series schema_source deterministic 20211108_Sensit.csv Year Month Day Hour Minute Second ParticleCounts Year Month Day Hour Minute Second ParticleCounts time_axis computed_from_parts 1 second regular 0 Year int Month int Day int Hour int Minute int Second int ParticleCounts int",
+      "schema_summary": {
+        "field_count": 7,
+        "data_modality": "time_series",
+        "logical_types": [],
+        "semantic_types": [],
+        "units": [],
+        "time_series": {
+          "time_axis": {
+            "field": "computed_from_parts",
+            "computed_from": [
+              "Year",
+              "Month",
+              "Day",
+              "Hour",
+              "Minute",
+              "Second"
+            ],
+            "type": "datetime",
+            "frequency": "1 second",
+            "regularity": "regular",
+            "missing_intervals": 0
+          },
+          "series_identifier": null,
+          "measurements": [
+            "ParticleCounts"
+          ]
+        },
+        "schema_source": "deterministic"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_5935524__20211108_Tides.csv",
+      "source_file": "zenodo/record_5935524/20211108_Tides.csv",
+      "title": "Aeolian Saltation Data at Duck, NC - 8 Nov 2021",
+      "text": "Aeolian Saltation Data at Duck, NC - 8 Nov 2021 Cohn Nicholas Dickhudt, Patrick 2022-02-22 Dataset cc-by-4.0 20211108_Tides.csv Aeolian Saltation Data at Duck, NC - 8 Nov 2021 Aeolian saltation data collected on the north property of the Field Research Facility (FRF) in Duck, NC associated with the passing of a Nor'Easter system. Time series data includes 1Hz measurements from a Sensit H14-LIN sensor, 1 Hz wind measurements from a horizontally mounted ZX TM doppler wind lidar sensor, and tidal measurements made from the end of the FRF pier. These time series data are provided as CSV files individually for each sensor, with headers of the CSV files indicating the variables of interest. Addititionally, a Sequoia LISST-Holo2 sensor was deployed to measure properties of the aeolian saltation layer at 10Hz. Particle grain size information exported from the HoloBatch program is additionally provided, with the raw reconstructed particle height relative to the sensor lens provided. More details regarding these measurements can be found in the following manuscript: Cohn, Dickhudt, and Marshall (2022). In-situ measurement of grain size characteristics within the aeolian saltation layer on a coastal beach. Earth Surface Processes and Landforms csv time_series schema_source deterministic 20211108_Tides.csv Year Month Day Hour Minute Second Still_Water_Level_m Year Month Day Hour Minute Second Still_Water_Level_m meter meter time_axis computed_from_parts 6 minutes regular 0 Year int Month int Day int Hour int Minute int Second int Still_Water_Level_m float unit:meter",
+      "schema_summary": {
+        "field_count": 7,
+        "data_modality": "time_series",
+        "logical_types": [],
+        "semantic_types": [],
+        "units": [
+          "meter"
+        ],
+        "time_series": {
+          "time_axis": {
+            "field": "computed_from_parts",
+            "computed_from": [
+              "Year",
+              "Month",
+              "Day",
+              "Hour",
+              "Minute",
+              "Second"
+            ],
+            "type": "datetime",
+            "frequency": "6 minutes",
+            "regularity": "regular",
+            "missing_intervals": 0
+          },
+          "series_identifier": null,
+          "measurements": [
+            "Still_Water_Level_m"
+          ]
+        },
+        "schema_source": "deterministic"
+      }
+    },
+    {
+      "candidate_id": "dryad__10.5061_dryad.2f2b3__Season_and_site_fidelity_determine_home_range_of_dispersing_and_resident_juvenile_Greenland_cod_(Gadus_ogac)_in_a_Newfoundland_fjord_year1.csv",
+      "source_file": "dryad/10.5061_dryad.2f2b3/Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+      "title": "Data from: Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord",
+      "text": "Data from: Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv Data from: Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord csv tabular schema_source deterministic Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv year1 year 1 file_slice_year1 first year first-year year one year1 year 1 file_slice_year1 first year first-year year one year1 year 1 file_slice_year1 first year first-year year one year1 year 1 file_slice_year1 first year first-year year one Hourbin COA_Lat COA_Lon POINT_X POINT_Y Month Year Tag Transplant Cove Hourbin COA_Lat COA_Lon POINT_X POINT_Y Month Year Tag Transplant Cove Hourbin string COA_Lat float COA_Lon float POINT_X float POINT_Y float Month string Year int Tag string Transplant string Cove string",
+      "schema_summary": {
+        "field_count": 10,
+        "data_modality": "tabular",
+        "logical_types": [],
+        "semantic_types": [],
+        "units": [],
+        "time_series": null,
+        "schema_source": "deterministic"
+      }
+    },
+    {
+      "candidate_id": "dryad__10.5061_dryad.2f2b3__Season_and_site_fidelity_determine_home_range_of_dispersing_and_resident_juvenile_Greenland_cod_(Gadus_ogac)_in_a_Newfoundland_fjord_year2.csv",
+      "source_file": "dryad/10.5061_dryad.2f2b3/Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year2.csv",
+      "title": "Data from: Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord",
+      "text": "Data from: Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year2.csv Data from: Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord csv tabular schema_source deterministic Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year2.csv year2 year 2 file_slice_year2 second year second-year year two year2 year 2 file_slice_year2 second year second-year year two year2 year 2 file_slice_year2 second year second-year year two year2 year 2 file_slice_year2 second year second-year year two Date Time COA_Lat COA_Lon POINT_X POINT_Y Month Tag Transplant Cove Date Time COA_Lat COA_Lon POINT_X POINT_Y Month Tag Transplant Cove attribute observation_time attribute observation_time attribute observation_time attribute observation_time Date string logical:attribute semantic:observation_time Time string logical:attribute semantic:observation_time COA_Lat float COA_Lon float POINT_X float POINT_Y float Month string Tag string Transplant string Cove string",
+      "schema_summary": {
+        "field_count": 10,
+        "data_modality": "tabular",
+        "logical_types": [
+          "attribute"
+        ],
+        "semantic_types": [
+          "observation_time"
+        ],
+        "units": [],
+        "time_series": null,
+        "schema_source": "deterministic"
+      }
+    },
+    {
+      "candidate_id": "dryad__10.5061_dryad.zkh1893nh__above_500_PA_data.csv",
+      "source_file": "dryad/10.5061_dryad.zkh1893nh/above_500_PA_data.csv",
+      "title": "Food web similarity increases with productivity similarity at a continental scale",
+      "text": "Food web similarity increases with productivity similarity at a continental scale above_500_PA_data.csv Food web similarity increases with productivity similarity at a continental scale csv tabular schema_source deterministic above_500_PA_data.csv Species ABER AIHS AKA AMB ARAW ARP ART ARUSH BAHR BALE BANG BAN BIC BIND BON BOU BUD BUF BURU CAM CAN CHOB CLIF COM DAAN DEUX ETO GAM GILE GISH GOMB GONA GORO HELL HWA IONA KAB KAFNP KAFF KAK KSA KGA KHA KIBA KIBI KID KILI KIZI KFR KRU LATE LAKMA LAKMW LAKN LAKR LEF LENG LIWO LOL LUA LUE MAD MAGO MMNP MAG MAJ MANA MANNP MGSF MARE MARS MASA MATO MAT MAV MERU MIKU MOC MTFO MTAS MTE MTK MUD MUPA MUR MUSH MWAB MWE NAI NAMI NGCA NGO NIA NKA NKH NOU NYA NYK NYU ODZ OKA OMO PFR PWN QNP RUA RUS RUV RWEN SALO SAM SELO SNP SMNP SING SIM TAM TAR TSA TSO VOL VMW WNP WBP WLNP ZAK ZIN Species ABER AIHS AKA AMB ARAW ARP ART ARUSH BAHR BALE BANG BAN BIC BIND BON BOU BUD BUF BURU CAM CAN CHOB CLIF COM DAAN DEUX ETO GAM GILE GISH GOMB GONA GORO HELL HWA IONA KAB KAFNP KAFF KAK KSA KGA KHA KIBA KIBI KID KILI KIZI KFR KRU LATE LAKMA LAKMW LAKN LAKR LEF LENG LIWO LOL LUA LUE MAD MAGO MMNP MAG MAJ MANA MANNP MGSF MARE MARS MASA MATO MAT MAV MERU MIKU MOC MTFO MTAS MTE MTK MUD MUPA MUR MUSH MWAB MWE NAI NAMI NGCA NGO NIA NKA NKH NOU NYA NYK NYU ODZ OKA OMO PFR PWN QNP RUA RUS RUV RWEN SALO SAM SELO SNP SMNP SING SIM TAM TAR TSA TSO VOL VMW WNP WBP WLNP ZAK ZIN Species string ABER int AIHS int AKA int AMB int ARAW int ARP int ART int ARUSH int BAHR int BALE int BANG int BAN int BIC int BIND int BON int BOU int BUD int BUF int BURU int CAM int CAN int CHOB int CLIF int COM int DAAN int DEUX int ETO int GAM int GILE int GISH int GOMB int GONA int GORO int HELL int HWA int IONA int KAB int KAFNP int KAFF int KAK int KSA int KGA int KHA int KIBA int KIBI int KID int KILI int KIZI int KFR int KRU int LATE int LAKMA int LAKMW int LAKN int LAKR int LEF int LENG int LIWO int LOL int LUA int LUE int MAD int MAGO int MMNP int MAG int MAJ int MANA int MANNP int MGSF int MARE int MARS int MASA int MATO int MAT int MAV int MERU int MIKU int MOC int MTFO int MTAS int MTE int MTK int MUD int MUPA int MUR int MUSH int MWAB int MWE int NAI int NAMI int NGCA int NGO int NIA int NKA int NKH int NOU int NYA int NYK int NYU int ODZ int OKA int OMO int PFR int PWN int QNP int RUA int RUS int RUV int RWEN int SALO int SAM int SELO int SNP int SMNP int SING int SIM int TAM int TAR int TSA int TSO int VOL int VMW int WNP int WBP int WLNP int ZAK int ZIN int",
+      "schema_summary": {
+        "field_count": 128,
+        "data_modality": "tabular",
+        "logical_types": [],
+        "semantic_types": [],
+        "units": [],
+        "time_series": null,
+        "schema_source": "deterministic"
+      }
+    },
+    {
+      "candidate_id": "dryad__10.5061_dryad.zkh1893nh__African_Mammal_FoodWebs_Locations.csv",
+      "source_file": "dryad/10.5061_dryad.zkh1893nh/African_Mammal_FoodWebs_Locations.csv",
+      "title": "Food web similarity increases with productivity similarity at a continental scale",
+      "text": "Food web similarity increases with productivity similarity at a continental scale African_Mammal_FoodWebs_Locations.csv Food web similarity increases with productivity similarity at a continental scale csv tabular schema_source deterministic African_Mammal_FoodWebs_Locations.csv Code Community Full.Name Country Long Lat Remove Code Community Full.Name Country Long Lat Remove coordinate latitude coordinate latitude Code string Community string Full.Name string Country string Long float Lat float logical:coordinate semantic:latitude Remove int",
+      "schema_summary": {
+        "field_count": 7,
+        "data_modality": "tabular",
+        "logical_types": [
+          "coordinate"
+        ],
+        "semantic_types": [
+          "latitude"
+        ],
+        "units": [],
+        "time_series": null,
+        "schema_source": "deterministic"
+      }
+    },
+    {
+      "candidate_id": "dryad__10.5061_dryad.zkh1893nh__functional_traits.csv",
+      "source_file": "dryad/10.5061_dryad.zkh1893nh/functional_traits.csv",
+      "title": "Food web similarity increases with productivity similarity at a continental scale",
+      "text": "Food web similarity increases with productivity similarity at a continental scale functional_traits.csv Food web similarity increases with productivity similarity at a continental scale csv tabular schema_source deterministic functional_traits.csv Species Mass.g Vertebrate Mammal Bird Herptile Fish Invertebrate Seed Fruit Nectar Root Woody Herbaceous Other Species Mass.g Vertebrate Mammal Bird Herptile Fish Invertebrate Seed Fruit Nectar Root Woody Herbaceous Other Species string Mass.g float Vertebrate int Mammal int Bird int Herptile int Fish int Invertebrate int Seed int Fruit int Nectar int Root int Woody int Herbaceous int Other int",
+      "schema_summary": {
+        "field_count": 15,
+        "data_modality": "tabular",
+        "logical_types": [],
+        "semantic_types": [],
+        "units": [],
+        "time_series": null,
+        "schema_source": "deterministic"
+      }
+    },
+    {
+      "candidate_id": "dryad__10.5061_dryad.dv41ns266__weatherMQ-FP-20261011.csv",
+      "source_file": "dryad/10.5061_dryad.dv41ns266/weatherMQ-FP-20261011.csv",
+      "title": "Weather data from the Macquarie University, Fauna Park Weather Station",
+      "text": "Weather data from the Macquarie University, Fauna Park Weather Station weatherMQ-FP-20261011.csv Weather data from the Macquarie University, Fauna Park Weather Station csv tabular schema_source deterministic weatherMQ-FP-20261011.csv recordNumber dateTime temperature relativeHumidity rainfall windSpeed windGust windDirection barometricPressure recordNumber dateTime temperature relativeHumidity rainfall windSpeed windGust windDirection barometricPressure measurement air_temperature measurement relative_humidity measurement measurement measurement measurement surface_pressure measurement air_temperature measurement relative_humidity measurement measurement measurement measurement surface_pressure recordNumber string dateTime string temperature float logical:measurement semantic:air_temperature relativeHumidity float logical:measurement semantic:relative_humidity rainfall string windSpeed float logical:measurement windGust float logical:measurement windDirection float logical:measurement barometricPressure float logical:measurement semantic:surface_pressure",
+      "schema_summary": {
+        "field_count": 9,
+        "data_modality": "tabular",
+        "logical_types": [
+          "measurement"
+        ],
+        "semantic_types": [
+          "air_temperature",
+          "relative_humidity",
+          "surface_pressure"
+        ],
+        "units": [],
+        "time_series": null,
+        "schema_source": "deterministic"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_5935524__20181108_HoloParticles.csv",
+      "source_file": "zenodo/record_5935524/20181108_HoloParticles.csv",
+      "title": "Aeolian Saltation Data at Duck, NC - 8 Nov 2021",
+      "text": "Aeolian Saltation Data at Duck, NC - 8 Nov 2021 Cohn Nicholas Dickhudt, Patrick 2022-02-22 Dataset cc-by-4.0 20181108_HoloParticles.csv Aeolian Saltation Data at Duck, NC - 8 Nov 2021 Aeolian saltation data collected on the north property of the Field Research Facility (FRF) in Duck, NC associated with the passing of a Nor'Easter system. Time series data includes 1Hz measurements from a Sensit H14-LIN sensor, 1 Hz wind measurements from a horizontally mounted ZX TM doppler wind lidar sensor, and tidal measurements made from the end of the FRF pier. These time series data are provided as CSV files individually for each sensor, with headers of the CSV files indicating the variables of interest. Addititionally, a Sequoia LISST-Holo2 sensor was deployed to measure properties of the aeolian saltation layer at 10Hz. Particle grain size information exported from the HoloBatch program is additionally provided, with the raw reconstructed particle height relative to the sensor lens provided. More details regarding these measurements can be found in the following manuscript: Cohn, Dickhudt, and Marshall (2022). In-situ measurement of grain size characteristics within the aeolian saltation layer on a coastal beach. Earth Surface Processes and Landforms csv tabular schema_source deterministic 20181108_HoloParticles.csv                  string  string  string  string  string  string  string  string",
+      "schema_summary": {
+        "field_count": 8,
+        "data_modality": "tabular",
+        "logical_types": [],
+        "semantic_types": [],
+        "units": [],
+        "time_series": null,
+        "schema_source": "deterministic"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_18195710__ensensia_raw_20230728-20251202_school_6.csv",
+      "source_file": "zenodo/record_18195710/ensensia_raw_20230728-20251202_school_6.csv",
+      "title": "Indoor Air Pollutants (Raw)",
+      "text": "Indoor Air Pollutants (Raw) Apostolopoulos, John Fouskas, George Pandis, Spyros 2026-01-09 Dataset cc-by-4.0 ensensia_raw_20230728-20251202_school_6.csv Indoor Air Pollutants (Raw) This dataset contains raw indoor air pollutant measurements collected from ENSENSIA sensor devices deployed in schools. Each CSV corresponds to a school and contains timestamped sensor readings and device metadata fields. csv time_series schema_source deterministic ensensia_raw_20230728-20251202_school_6.csv school6 school 6 file_slice_school6 school6 school 6 file_slice_school6 school6 school 6 file_slice_school6 school6 school 6 file_slice_school6 sensor_id date pm25 no2 o3 so2 no co vocs hcho co2 temp hum lat lon battery SG-BOX ID sensor_id date pm25 no2 o3 so2 no co vocs hcho co2 temp hum lat lon battery SG-BOX ID identifier sensor_identifier time_axis observation_time measurement air_temperature coordinate latitude coordinate longitude identifier sensor_identifier time_axis observation_time measurement air_temperature coordinate latitude coordinate longitude time_axis date 10 minutes regular 4 sensor_id int logical:identifier semantic:sensor_identifier date datetime logical:time_axis semantic:observation_time pm25 int no2 int o3 int so2 int no int co int vocs int hcho float co2 int temp int logical:measurement semantic:air_temperature hum int lat float logical:coordinate semantic:latitude lon float logical:coordinate semantic:longitude battery float SG-BOX ID string",
+      "schema_summary": {
+        "field_count": 17,
+        "data_modality": "time_series",
+        "logical_types": [
+          "coordinate",
+          "identifier",
+          "measurement",
+          "time_axis"
+        ],
+        "semantic_types": [
+          "air_temperature",
+          "latitude",
+          "longitude",
+          "observation_time",
+          "sensor_identifier"
+        ],
+        "units": [],
+        "time_series": {
+          "time_axis": {
+            "field": "date",
+            "type": "datetime",
+            "frequency": "10 minutes",
+            "regularity": "regular",
+            "missing_intervals": 4
+          },
+          "series_identifier": "sensor_id",
+          "measurements": [
+            "pm25",
+            "no2",
+            "o3",
+            "so2",
+            "no",
+            "co",
+            "vocs",
+            "hcho",
+            "co2",
+            "temp",
+            "hum",
+            "battery"
+          ]
+        },
+        "schema_source": "deterministic"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_3660832__Data_02_Feb_2019.h5",
+      "source_file": "zenodo/record_3660832/Data 02 Feb 2019.h5",
+      "title": "Collected data from the ATLASM5 Atmospheric Research Station from 01 January 2019 to 31 December 2019",
+      "text": "Collected data from the ATLASM5 Atmospheric Research Station from 01 January 2019 to 31 December 2019 MARSU ATLASM5 Atmospheric Research Station Ozone Nitrogen oxides Meteorological parameters Morocco Mellouki Abdelwahid 2020-02-10 Dataset cc-by-4.0 Data 02 Feb 2019.h5 Collected data from the ATLASM5 Atmospheric Research Station from 01 January 2019 to 31 December 2019 PI_NAME = Abdelwahid MELLOUKI INSTITUTE = CNRS-ICARE EMAIL=mellouki@cnrs-orleans.fr ADDRESS=1C Av. de la Recherche Scientifique, CS 50060, 45071 Orleans cedex 2 TITLE = Data from the ATLASM5 Research Station Year = 2019 DATA_CATEGORY=Field_ATLASM5 Station Project=MARSU TYPE_OF_DATA= FIELD MEASUREMENT STATUS_OF_FILE=FINAL VERSION=1.0 PLATFORM = ATLASM5 NAME_OF_PLATFORM=MARSU DESCRIPTION=https://marsu-h2020.org/ The HDF5 Binary File Format, (Hierarchical Data Format free and open standard) was selected to manage the files. Information regarding the format and organization of the HDF5 file are available at : https://www.hdfgroup.org/HDF5/\nInformation regarding the ATLASm5 Atmospheric Research Station can be found: https://marsu-h2020.org/ hdf5 hierarchical schema_source deterministic Data 02 Feb 2019.h5 feb file_slice_feb feb file_slice_feb feb file_slice_feb feb file_slice_feb Absolute_Pressure__hPa_ Daily_Rain__mm_ Hourly_Rain_Rate__mm_ Indoor_Humidity___C_ Indoor_Temperature___C_ Monthly_Rain__mm_ NO2_ppb_ NO_ppb_ NOx_ppb_ O3__ppb_ Outdoor_Humidity____ Outdoor_Temperature___C_ Relative_Pressure__hPa_ S_fileName S_path S_waveNames Solar_Radiation__w_m2_ UVI UV__w_m2_ V_Flag Weekly_Rain__mm_ Wind_Direction Wind_Gust Wind_Speed__km_h_ dateW Absolute_Pressure__hPa_ Daily_Rain__mm_ Hourly_Rain_Rate__mm_ Indoor_Humidity___C_ Indoor_Temperature___C_ Monthly_Rain__mm_ NO2_ppb_ NO_ppb_ NOx_ppb_ O3__ppb_ Outdoor_Humidity____ Outdoor_Temperature___C_ Relative_Pressure__hPa_ S_fileName S_path S_waveNames Solar_Radiation__w_m2_ UVI UV__w_m2_ V_Flag Weekly_Rain__mm_ Wind_Direction Wind_Gust Wind_Speed__km_h_ dateW measurement surface_pressure measurement relative_humidity measurement relative_humidity measurement surface_pressure measurement surface_pressure measurement relative_humidity measurement relative_humidity measurement surface_pressure /'Data February 2019'/Absolute_Pressure__hPa_ float64 logical:measurement semantic:surface_pressure /'Data February 2019'/Daily_Rain__mm_ float64 /'Data February 2019'/Hourly_Rain_Rate__mm_ float64 /'Data February 2019'/Indoor_Humidity___C_ float64 logical:measurement semantic:relative_humidity /'Data February 2019'/Indoor_Temperature___C_ float64 /'Data February 2019'/Monthly_Rain__mm_ float64 /'Data February 2019'/NO2_ppb_ float64 /'Data February 2019'/NO_ppb_ float64 /'Data February 2019'/NOx_ppb_ float64 /'Data February 2019'/O3__ppb_ float64 /'Data February 2019'/Outdoor_Humidity____ float64 logical:measurement semantic:relative_humidity /'Data February 2019'/Outdoor_Temperature___C_ float64 /'Data February 2019'/Relative_Pressure__hPa_ float64 logical:measurement semantic:surface_pressure /'Data February 2019'/S_fileName string /'Data February 2019'/S_path string /'Data February 2019'/S_waveNames string /'Data February 2019'/Solar_Radiation__w_m2_ float64 /'Data February 2019'/UVI float64 /'Data February 2019'/UV__w_m2_ float64 /'Data February 2019'/V_Flag float64 /'Data February 2019'/Weekly_Rain__mm_ float64 /'Data February 2019'/Wind_Direction float64 /'Data February 2019'/Wind_Gust float64 /'Data February 2019'/Wind_Speed__km_h_ float64 /'Data February 2019'/dateW float64",
+      "schema_summary": {
+        "field_count": 25,
+        "data_modality": "hierarchical",
+        "logical_types": [
+          "measurement"
+        ],
+        "semantic_types": [
+          "relative_humidity",
+          "surface_pressure"
+        ],
+        "units": [],
+        "time_series": null,
+        "schema_source": "deterministic"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_3660832__Data_03_Mar_2019.h5",
+      "source_file": "zenodo/record_3660832/Data 03 Mar 2019.h5",
+      "title": "Collected data from the ATLASM5 Atmospheric Research Station from 01 January 2019 to 31 December 2019",
+      "text": "Collected data from the ATLASM5 Atmospheric Research Station from 01 January 2019 to 31 December 2019 MARSU ATLASM5 Atmospheric Research Station Ozone Nitrogen oxides Meteorological parameters Morocco Mellouki Abdelwahid 2020-02-10 Dataset cc-by-4.0 Data 03 Mar 2019.h5 Collected data from the ATLASM5 Atmospheric Research Station from 01 January 2019 to 31 December 2019 PI_NAME = Abdelwahid MELLOUKI INSTITUTE = CNRS-ICARE EMAIL=mellouki@cnrs-orleans.fr ADDRESS=1C Av. de la Recherche Scientifique, CS 50060, 45071 Orleans cedex 2 TITLE = Data from the ATLASM5 Research Station Year = 2019 DATA_CATEGORY=Field_ATLASM5 Station Project=MARSU TYPE_OF_DATA= FIELD MEASUREMENT STATUS_OF_FILE=FINAL VERSION=1.0 PLATFORM = ATLASM5 NAME_OF_PLATFORM=MARSU DESCRIPTION=https://marsu-h2020.org/ The HDF5 Binary File Format, (Hierarchical Data Format free and open standard) was selected to manage the files. Information regarding the format and organization of the HDF5 file are available at : https://www.hdfgroup.org/HDF5/\nInformation regarding the ATLASm5 Atmospheric Research Station can be found: https://marsu-h2020.org/ hdf5 hierarchical schema_source deterministic Data 03 Mar 2019.h5 mar file_slice_mar mar file_slice_mar mar file_slice_mar mar file_slice_mar Absolute_Pressure__hPa_ Daily_Rain__mm_ Hourly_Rain_Rate__mm_ Indoor_Humidity___C_ Indoor_Temperature___C_ Monthly_Rain__mm_ NO2_ppb_ NO_ppb_ NOx_ppb_ O3__ppb_ Outdoor_Humidity____ Outdoor_Temperature___C_ Relative_Pressure__hPa_ S_fileName S_path S_waveNames Solar_Radiation__w_m2_ UVI UV__w_m2_ V_Flag Weekly_Rain__mm_ Wind_Direction Wind_Gust Wind_Speed__km_h_ Yearly_Rain__mm_ dateW Absolute_Pressure__hPa_ Daily_Rain__mm_ Hourly_Rain_Rate__mm_ Indoor_Humidity___C_ Indoor_Temperature___C_ Monthly_Rain__mm_ NO2_ppb_ NO_ppb_ NOx_ppb_ O3__ppb_ Outdoor_Humidity____ Outdoor_Temperature___C_ Relative_Pressure__hPa_ S_fileName S_path S_waveNames Solar_Radiation__w_m2_ UVI UV__w_m2_ V_Flag Weekly_Rain__mm_ Wind_Direction Wind_Gust Wind_Speed__km_h_ Yearly_Rain__mm_ dateW measurement surface_pressure measurement relative_humidity measurement relative_humidity measurement surface_pressure measurement surface_pressure measurement relative_humidity measurement relative_humidity measurement surface_pressure /'Data March'/Absolute_Pressure__hPa_ float64 logical:measurement semantic:surface_pressure /'Data March'/Daily_Rain__mm_ float64 /'Data March'/Hourly_Rain_Rate__mm_ float64 /'Data March'/Indoor_Humidity___C_ float64 logical:measurement semantic:relative_humidity /'Data March'/Indoor_Temperature___C_ float64 /'Data March'/Monthly_Rain__mm_ float64 /'Data March'/NO2_ppb_ float64 /'Data March'/NO_ppb_ float64 /'Data March'/NOx_ppb_ float64 /'Data March'/O3__ppb_ float64 /'Data March'/Outdoor_Humidity____ float64 logical:measurement semantic:relative_humidity /'Data March'/Outdoor_Temperature___C_ float64 /'Data March'/Relative_Pressure__hPa_ float64 logical:measurement semantic:surface_pressure /'Data March'/S_fileName string /'Data March'/S_path string /'Data March'/S_waveNames string /'Data March'/Solar_Radiation__w_m2_ float64 /'Data March'/UVI float64 /'Data March'/UV__w_m2_ float64 /'Data March'/V_Flag float64 /'Data March'/Weekly_Rain__mm_ float64 /'Data March'/Wind_Direction float64 /'Data March'/Wind_Gust float64 /'Data March'/Wind_Speed__km_h_ float64 /'Data March'/Yearly_Rain__mm_ float64 /'Data March'/dateW float64",
+      "schema_summary": {
+        "field_count": 26,
+        "data_modality": "hierarchical",
+        "logical_types": [
+          "measurement"
+        ],
+        "semantic_types": [
+          "relative_humidity",
+          "surface_pressure"
+        ],
+        "units": [],
+        "time_series": null,
+        "schema_source": "deterministic"
+      }
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "dataset_id": "ts_hard_irregular_buoy",
+  "file_format": "csv",
+  "difficulty": "hard",
+  "data_modality": "time_series",
+  "source_file": "buoy_irregular.csv",
+  "time_axis": {
+    "field": "event_time",
+    "type": "datetime",
+    "timezone": "unknown",
+    "frequency": "mixed",
+    "regularity": "irregular",
+    "missing_intervals": null
+  },
+  "fields": [
+    {
+      "field_name": "buoy_id",
+      "field_path": "buoy_id",
+      "correct_physical_type": "string",
+      "correct_logical_type": "identifier",
+      "correct_semantic_type": "buoy_identifier",
+      "unit": null,
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "event_time",
+      "field_path": "event_time",
+      "correct_physical_type": "datetime",
+      "correct_logical_type": "time_axis",
+      "correct_semantic_type": "observation_time",
+      "unit": null,
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "temp_C",
+      "field_path": "temp_C",
+      "correct_physical_type": "float",
+      "correct_logical_type": "measurement",
+      "correct_semantic_type": "water_temperature",
+      "unit": "Celsius",
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "salinity_psu",
+      "field_path": "salinity_psu",
+      "correct_physical_type": "float",
+      "correct_logical_type": "measurement",
+      "correct_semantic_type": "salinity",
+      "unit": "PSU",
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "qc_flag",
+      "field_path": "qc_flag",
+      "correct_physical_type": "string",
+      "correct_logical_type": "label",
+      "correct_semantic_type": "quality_flag",
+      "unit": null,
+      "necessity": "medium",
+      "notes": null,
+      "gold_evidence": []
+    }
+  ],
+  "notes": [
+    "A correct extractor should identify the time axis but avoid over-claiming a regular sampling frequency."
+  ]
+}

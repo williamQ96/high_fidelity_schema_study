@@ -1,0 +1,263 @@
+{
+  "documents": [
+    {
+      "candidate_id": "zenodo__record_15008662__unique_tracks_90.csv",
+      "source_file": "zenodo/record_15008662/unique_tracks_90.csv",
+      "title": "Tracked Hailstorm Events from Radar Data (unique_tracks_90.csv)",
+      "text": "Tracked Hailstorm Events from Radar Data (unique_tracks_90.csv) Radar, Hailstorms, Max_VIL, Storm Tracks, Climate, CSV, Alberta MOHAMED, ISSAM 2025-03-11 Dataset cc-by-4.0 unique_tracks_90.csv",
+      "metadata": {
+        "doi": "10.5281/zenodo.15008662",
+        "keywords": [
+          "Radar, Hailstorms, Max_VIL, Storm Tracks, Climate, CSV, Alberta"
+        ],
+        "creators": [
+          "MOHAMED, ISSAM"
+        ],
+        "publication_date": "2025-03-11",
+        "license": "cc-by-4.0"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv",
+      "source_file": "zenodo/record_18195710/ensensia_raw_20230728-20251202_school_5.csv",
+      "title": "Indoor Air Pollutants (Raw)",
+      "text": "Indoor Air Pollutants (Raw) Apostolopoulos, John Fouskas, George Pandis, Spyros 2026-01-09 Dataset cc-by-4.0 ensensia_raw_20230728-20251202_school_5.csv",
+      "metadata": {
+        "doi": "10.5281/zenodo.18195710",
+        "keywords": [],
+        "creators": [
+          "Apostolopoulos, John",
+          "Fouskas, George",
+          "Pandis, Spyros"
+        ],
+        "publication_date": "2026-01-09",
+        "license": "cc-by-4.0"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_3660832__Data_01_Jan_2019.h5",
+      "source_file": "zenodo/record_3660832/Data 01 Jan 2019.h5",
+      "title": "Collected data from the ATLASM5 Atmospheric Research Station from 01 January 2019 to 31 December 2019",
+      "text": "Collected data from the ATLASM5 Atmospheric Research Station from 01 January 2019 to 31 December 2019 MARSU ATLASM5 Atmospheric Research Station Ozone Nitrogen oxides Meteorological parameters Morocco Mellouki Abdelwahid 2020-02-10 Dataset cc-by-4.0 Data 01 Jan 2019.h5",
+      "metadata": {
+        "doi": "10.5281/zenodo.3660832",
+        "keywords": [
+          "MARSU",
+          "ATLASM5 Atmospheric Research Station",
+          "Ozone",
+          "Nitrogen oxides",
+          "Meteorological parameters",
+          "Morocco"
+        ],
+        "creators": [
+          "Mellouki Abdelwahid"
+        ],
+        "publication_date": "2020-02-10",
+        "license": "cc-by-4.0"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_5935524__20211108_ZXLidar_Winds.csv",
+      "source_file": "zenodo/record_5935524/20211108_ZXLidar_Winds.csv",
+      "title": "Aeolian Saltation Data at Duck, NC - 8 Nov 2021",
+      "text": "Aeolian Saltation Data at Duck, NC - 8 Nov 2021 Cohn Nicholas Dickhudt, Patrick 2022-02-22 Dataset cc-by-4.0 20211108_ZXLidar_Winds.csv",
+      "metadata": {
+        "doi": "10.5281/zenodo.5935524",
+        "keywords": [],
+        "creators": [
+          "Cohn Nicholas",
+          "Dickhudt, Patrick"
+        ],
+        "publication_date": "2022-02-22",
+        "license": "cc-by-4.0"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_5935524__20211108_Sensit.csv",
+      "source_file": "zenodo/record_5935524/20211108_Sensit.csv",
+      "title": "Aeolian Saltation Data at Duck, NC - 8 Nov 2021",
+      "text": "Aeolian Saltation Data at Duck, NC - 8 Nov 2021 Cohn Nicholas Dickhudt, Patrick 2022-02-22 Dataset cc-by-4.0 20211108_Sensit.csv",
+      "metadata": {
+        "doi": "10.5281/zenodo.5935524",
+        "keywords": [],
+        "creators": [
+          "Cohn Nicholas",
+          "Dickhudt, Patrick"
+        ],
+        "publication_date": "2022-02-22",
+        "license": "cc-by-4.0"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_5935524__20211108_Tides.csv",
+      "source_file": "zenodo/record_5935524/20211108_Tides.csv",
+      "title": "Aeolian Saltation Data at Duck, NC - 8 Nov 2021",
+      "text": "Aeolian Saltation Data at Duck, NC - 8 Nov 2021 Cohn Nicholas Dickhudt, Patrick 2022-02-22 Dataset cc-by-4.0 20211108_Tides.csv",
+      "metadata": {
+        "doi": "10.5281/zenodo.5935524",
+        "keywords": [],
+        "creators": [
+          "Cohn Nicholas",
+          "Dickhudt, Patrick"
+        ],
+        "publication_date": "2022-02-22",
+        "license": "cc-by-4.0"
+      }
+    },
+    {
+      "candidate_id": "dryad__10.5061_dryad.2f2b3__Season_and_site_fidelity_determine_home_range_of_dispersing_and_resident_juvenile_Greenland_cod_(Gadus_ogac)_in_a_Newfoundland_fjord_year1.csv",
+      "source_file": "dryad/10.5061_dryad.2f2b3/Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+      "title": "Data from: Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord",
+      "text": "Data from: Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+      "metadata": {
+        "doi": null,
+        "keywords": [],
+        "creators": [],
+        "publication_date": null,
+        "license": null
+      }
+    },
+    {
+      "candidate_id": "dryad__10.5061_dryad.2f2b3__Season_and_site_fidelity_determine_home_range_of_dispersing_and_resident_juvenile_Greenland_cod_(Gadus_ogac)_in_a_Newfoundland_fjord_year2.csv",
+      "source_file": "dryad/10.5061_dryad.2f2b3/Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year2.csv",
+      "title": "Data from: Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord",
+      "text": "Data from: Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year2.csv",
+      "metadata": {
+        "doi": null,
+        "keywords": [],
+        "creators": [],
+        "publication_date": null,
+        "license": null
+      }
+    },
+    {
+      "candidate_id": "dryad__10.5061_dryad.zkh1893nh__above_500_PA_data.csv",
+      "source_file": "dryad/10.5061_dryad.zkh1893nh/above_500_PA_data.csv",
+      "title": "Food web similarity increases with productivity similarity at a continental scale",
+      "text": "Food web similarity increases with productivity similarity at a continental scale above_500_PA_data.csv",
+      "metadata": {
+        "doi": null,
+        "keywords": [],
+        "creators": [],
+        "publication_date": null,
+        "license": null
+      }
+    },
+    {
+      "candidate_id": "dryad__10.5061_dryad.zkh1893nh__African_Mammal_FoodWebs_Locations.csv",
+      "source_file": "dryad/10.5061_dryad.zkh1893nh/African_Mammal_FoodWebs_Locations.csv",
+      "title": "Food web similarity increases with productivity similarity at a continental scale",
+      "text": "Food web similarity increases with productivity similarity at a continental scale African_Mammal_FoodWebs_Locations.csv",
+      "metadata": {
+        "doi": null,
+        "keywords": [],
+        "creators": [],
+        "publication_date": null,
+        "license": null
+      }
+    },
+    {
+      "candidate_id": "dryad__10.5061_dryad.zkh1893nh__functional_traits.csv",
+      "source_file": "dryad/10.5061_dryad.zkh1893nh/functional_traits.csv",
+      "title": "Food web similarity increases with productivity similarity at a continental scale",
+      "text": "Food web similarity increases with productivity similarity at a continental scale functional_traits.csv",
+      "metadata": {
+        "doi": null,
+        "keywords": [],
+        "creators": [],
+        "publication_date": null,
+        "license": null
+      }
+    },
+    {
+      "candidate_id": "dryad__10.5061_dryad.dv41ns266__weatherMQ-FP-20261011.csv",
+      "source_file": "dryad/10.5061_dryad.dv41ns266/weatherMQ-FP-20261011.csv",
+      "title": "Weather data from the Macquarie University, Fauna Park Weather Station",
+      "text": "Weather data from the Macquarie University, Fauna Park Weather Station weatherMQ-FP-20261011.csv",
+      "metadata": {
+        "doi": null,
+        "keywords": [],
+        "creators": [],
+        "publication_date": null,
+        "license": null
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_5935524__20181108_HoloParticles.csv",
+      "source_file": "zenodo/record_5935524/20181108_HoloParticles.csv",
+      "title": "Aeolian Saltation Data at Duck, NC - 8 Nov 2021",
+      "text": "Aeolian Saltation Data at Duck, NC - 8 Nov 2021 Cohn Nicholas Dickhudt, Patrick 2022-02-22 Dataset cc-by-4.0 20181108_HoloParticles.csv",
+      "metadata": {
+        "doi": "10.5281/zenodo.5935524",
+        "keywords": [],
+        "creators": [
+          "Cohn Nicholas",
+          "Dickhudt, Patrick"
+        ],
+        "publication_date": "2022-02-22",
+        "license": "cc-by-4.0"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_18195710__ensensia_raw_20230728-20251202_school_6.csv",
+      "source_file": "zenodo/record_18195710/ensensia_raw_20230728-20251202_school_6.csv",
+      "title": "Indoor Air Pollutants (Raw)",
+      "text": "Indoor Air Pollutants (Raw) Apostolopoulos, John Fouskas, George Pandis, Spyros 2026-01-09 Dataset cc-by-4.0 ensensia_raw_20230728-20251202_school_6.csv",
+      "metadata": {
+        "doi": "10.5281/zenodo.18195710",
+        "keywords": [],
+        "creators": [
+          "Apostolopoulos, John",
+          "Fouskas, George",
+          "Pandis, Spyros"
+        ],
+        "publication_date": "2026-01-09",
+        "license": "cc-by-4.0"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_3660832__Data_02_Feb_2019.h5",
+      "source_file": "zenodo/record_3660832/Data 02 Feb 2019.h5",
+      "title": "Collected data from the ATLASM5 Atmospheric Research Station from 01 January 2019 to 31 December 2019",
+      "text": "Collected data from the ATLASM5 Atmospheric Research Station from 01 January 2019 to 31 December 2019 MARSU ATLASM5 Atmospheric Research Station Ozone Nitrogen oxides Meteorological parameters Morocco Mellouki Abdelwahid 2020-02-10 Dataset cc-by-4.0 Data 02 Feb 2019.h5",
+      "metadata": {
+        "doi": "10.5281/zenodo.3660832",
+        "keywords": [
+          "MARSU",
+          "ATLASM5 Atmospheric Research Station",
+          "Ozone",
+          "Nitrogen oxides",
+          "Meteorological parameters",
+          "Morocco"
+        ],
+        "creators": [
+          "Mellouki Abdelwahid"
+        ],
+        "publication_date": "2020-02-10",
+        "license": "cc-by-4.0"
+      }
+    },
+    {
+      "candidate_id": "zenodo__record_3660832__Data_03_Mar_2019.h5",
+      "source_file": "zenodo/record_3660832/Data 03 Mar 2019.h5",
+      "title": "Collected data from the ATLASM5 Atmospheric Research Station from 01 January 2019 to 31 December 2019",
+      "text": "Collected data from the ATLASM5 Atmospheric Research Station from 01 January 2019 to 31 December 2019 MARSU ATLASM5 Atmospheric Research Station Ozone Nitrogen oxides Meteorological parameters Morocco Mellouki Abdelwahid 2020-02-10 Dataset cc-by-4.0 Data 03 Mar 2019.h5",
+      "metadata": {
+        "doi": "10.5281/zenodo.3660832",
+        "keywords": [
+          "MARSU",
+          "ATLASM5 Atmospheric Research Station",
+          "Ozone",
+          "Nitrogen oxides",
+          "Meteorological parameters",
+          "Morocco"
+        ],
+        "creators": [
+          "Mellouki Abdelwahid"
+        ],
+        "publication_date": "2020-02-10",
+        "license": "cc-by-4.0"
+      }
+    }
+  ]
+}

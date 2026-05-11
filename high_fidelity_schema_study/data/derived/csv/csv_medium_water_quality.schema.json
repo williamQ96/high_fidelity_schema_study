@@ -1,0 +1,304 @@
+{
+  "dataset_id": "water_quality",
+  "file_id": "water_quality.csv",
+  "file_format": "csv",
+  "data_modality": "tabular",
+  "fields": [
+    {
+      "field_name": "sample_id",
+      "field_path": "sample_id",
+      "physical_type": "string",
+      "logical_type": "identifier",
+      "semantic_type": "sample_identifier",
+      "nullable": false,
+      "unique_ratio": 1.0,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "00017",
+        "00018",
+        "00019"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_medium_water_quality\\water_quality.csv",
+          "detail": "header='sample_id'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_medium_water_quality\\water_quality.csv",
+          "detail": "sampled_rows=4",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "site_code",
+      "field_path": "site_code",
+      "physical_type": "string",
+      "logical_type": "identifier",
+      "semantic_type": "site_identifier",
+      "nullable": false,
+      "unique_ratio": 0.5,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "UP_A",
+        "DN_B"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_medium_water_quality\\water_quality.csv",
+          "detail": "header='site_code'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_medium_water_quality\\water_quality.csv",
+          "detail": "sampled_rows=4",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "collection_date",
+      "field_path": "collection_date",
+      "physical_type": "datetime",
+      "logical_type": "attribute",
+      "semantic_type": "collection_date",
+      "nullable": false,
+      "unique_ratio": 0.75,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "2026-04-11",
+        "2026-04-12"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_medium_water_quality\\water_quality.csv",
+          "detail": "header='collection_date'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_medium_water_quality\\water_quality.csv",
+          "detail": "sampled_rows=4",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "ph",
+      "field_path": "ph",
+      "physical_type": "float",
+      "logical_type": "measurement",
+      "semantic_type": "acidity_ph",
+      "nullable": false,
+      "unique_ratio": 1.0,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "7.2",
+        "7.1",
+        "6.8"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        6.8,
+        7.2
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_medium_water_quality\\water_quality.csv",
+          "detail": "header='ph'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_medium_water_quality\\water_quality.csv",
+          "detail": "sampled_rows=4",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "do_mg_l",
+      "field_path": "do_mg_l",
+      "physical_type": "float",
+      "logical_type": "measurement",
+      "semantic_type": "dissolved_oxygen",
+      "nullable": false,
+      "unique_ratio": 1.0,
+      "shape": null,
+      "unit": "milligram_per_liter",
+      "description": null,
+      "example_values": [
+        "8.9",
+        "8.7",
+        "7.6"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        7.6,
+        8.9
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_medium_water_quality\\water_quality.csv",
+          "detail": "header='do_mg_l'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_medium_water_quality\\water_quality.csv",
+          "detail": "sampled_rows=4",
+          "confidence": 0.9
+        },
+        {
+          "tier": "structural",
+          "evidence_type": "column_name_unit_hint",
+          "source": "do_mg_l",
+          "detail": "inferred unit from column suffix: milligram_per_liter",
+          "confidence": 0.82
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "turbidity_ntu",
+      "field_path": "turbidity_ntu",
+      "physical_type": "float",
+      "logical_type": "measurement",
+      "semantic_type": "turbidity",
+      "nullable": false,
+      "unique_ratio": 1.0,
+      "shape": null,
+      "unit": "NTU",
+      "description": null,
+      "example_values": [
+        "3.2",
+        "3.9",
+        "9.8"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        3.2,
+        9.8
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_medium_water_quality\\water_quality.csv",
+          "detail": "header='turbidity_ntu'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_medium_water_quality\\water_quality.csv",
+          "detail": "sampled_rows=4",
+          "confidence": 0.9
+        },
+        {
+          "tier": "structural",
+          "evidence_type": "column_name_unit_hint",
+          "source": "turbidity_ntu",
+          "detail": "inferred unit from column suffix: NTU",
+          "confidence": 0.82
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "notes",
+      "field_path": "notes",
+      "physical_type": "string",
+      "logical_type": "label",
+      "semantic_type": "free_text_note",
+      "nullable": true,
+      "unique_ratio": 1.0,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "duplicate bottle",
+        "rain event"
+      ],
+      "missing_count": 2,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_medium_water_quality\\water_quality.csv",
+          "detail": "header='notes'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\csv\\csv_medium_water_quality\\water_quality.csv",
+          "detail": "sampled_rows=4",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler"
+    }
+  ],
+  "groups": [],
+  "metadata": {
+    "sampled_rows": 4,
+    "column_count": 7
+  },
+  "notes": [],
+  "study_dataset_id": "csv_medium_water_quality",
+  "study_category": "csv",
+  "study_difficulty": "medium",
+  "study_source_file": "raw/csv/csv_medium_water_quality/water_quality.csv"
+}

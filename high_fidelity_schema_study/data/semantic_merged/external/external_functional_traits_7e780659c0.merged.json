@@ -1,0 +1,752 @@
+{
+  "dataset_id": "functional_traits",
+  "file_id": "functional_traits.csv",
+  "file_format": "csv",
+  "data_modality": "tabular",
+  "fields": [
+    {
+      "field_name": "Species",
+      "field_path": "Species",
+      "physical_type": "string",
+      "logical_type": "identifier",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 1.0,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "Potamogale_velox",
+        "Addax_nasomaculatus",
+        "Aepyceros_melampus"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "header='Species'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.9,
+        "uncertainty_reason": "Values follow binomial nomenclature format (e.g., Potamogale_velox), strongly suggesting species identifiers, but without explicit metadata confirming they serve as primary keys or unique identifiers for the dataset rows, semantic_type remains unknown.",
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "Mass.g",
+      "field_path": "Mass.g",
+      "physical_type": "float",
+      "logical_type": "measurement",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.855,
+      "shape": null,
+      "unit": "g",
+      "description": null,
+      "example_values": [
+        "660.0",
+        "70000.3",
+        "52500.1"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        289.0,
+        2949986.3
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "header='Mass.g'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 1.0,
+        "uncertainty_reason": "semantic type left unknown because provided evidence does not support a precise semantic claim",
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "Vertebrate",
+      "field_path": "Vertebrate",
+      "physical_type": "int",
+      "logical_type": "label",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.02,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "3",
+        "0"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        3.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "header='Vertebrate'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.8,
+        "uncertainty_reason": "The field name 'Vertebrate' and integer values (0-3) suggest a categorical label or count, but without explicit metadata, the precise semantic type remains unknown. The logical type is inferred as 'label' based on the categorical nature of the values.",
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "Mammal",
+      "field_path": "Mammal",
+      "physical_type": "int",
+      "logical_type": "label",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.02,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "0"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        3.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "header='Mammal'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.8,
+        "uncertainty_reason": "Similar to 'Vertebrate', 'Mammal' with integer values suggests a categorical label. Semantic type is unknown due to lack of explicit metadata.",
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "Bird",
+      "field_path": "Bird",
+      "physical_type": "int",
+      "logical_type": "label",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.02,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "0"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        3.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "header='Bird'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.8,
+        "uncertainty_reason": "Similar to 'Vertebrate', 'Bird' with integer values suggests a categorical label. Semantic type is unknown due to lack of explicit metadata.",
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "Herptile",
+      "field_path": "Herptile",
+      "physical_type": "int",
+      "logical_type": "label",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.02,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "3",
+        "0"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        3.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "header='Herptile'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.8,
+        "uncertainty_reason": "Similar to 'Vertebrate', 'Herptile' with integer values suggests a categorical label. Semantic type is unknown due to lack of explicit metadata.",
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "Fish",
+      "field_path": "Fish",
+      "physical_type": "int",
+      "logical_type": "measurement",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.02,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "3",
+        "0"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        3.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "header='Fish'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.7,
+        "uncertainty_reason": "The field name 'Fish' and integer values (0-3) suggest a count or score, but without explicit metadata, it's unclear if it's a count of fish, a presence/absence indicator, or a categorical score. The dataset title mentions 'Food web similarity', implying these might be functional trait scores or presence indicators. 'measurement' is chosen as the logical type because it represents a numeric observation, but the semantic type remains unknown due to lack of specific definition.",
+        "supporting_evidence": [
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "Invertebrate",
+      "field_path": "Invertebrate",
+      "physical_type": "int",
+      "logical_type": "measurement",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.02,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "3",
+        "0"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        3.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "header='Invertebrate'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.7,
+        "uncertainty_reason": "Similar to 'Fish', 'Invertebrate' with integer values 0-3 likely represents a count, score, or presence indicator related to functional traits. The logical type is 'measurement' as it is a numeric observation, but the semantic type is unknown without further context.",
+        "supporting_evidence": [
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "Seed",
+      "field_path": "Seed",
+      "physical_type": "int",
+      "logical_type": "measurement",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.02,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "0"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        3.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "header='Seed'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.7,
+        "uncertainty_reason": "The field 'Seed' with integer values (0-3) likely represents a count, score, or presence indicator. The logical type is 'measurement' as it is a numeric observation, but the semantic type is unknown without further context.",
+        "supporting_evidence": [
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "Fruit",
+      "field_path": "Fruit",
+      "physical_type": "int",
+      "logical_type": "measurement",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.02,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "0"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        3.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "header='Fruit'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.7,
+        "uncertainty_reason": "The field 'Fruit' with integer values (0-3) likely represents a count, score, or presence indicator. The logical type is 'measurement' as it is a numeric observation, but the semantic type is unknown without further context.",
+        "supporting_evidence": [
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "Nectar",
+      "field_path": "Nectar",
+      "physical_type": "int",
+      "logical_type": "label",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.005,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "0"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        0.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "header='Nectar'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.8,
+        "uncertainty_reason": "The field name 'Nectar' suggests a categorical trait or presence/absence indicator in a functional traits dataset, but without explicit metadata defining it as a continuous measurement, it is treated as a label. The value range [0.0, 0.0] indicates a constant value in the sample, which limits inference.",
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "Root",
+      "field_path": "Root",
+      "physical_type": "int",
+      "logical_type": "label",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.02,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "0"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        3.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "header='Root'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.8,
+        "uncertainty_reason": "The field name 'Root' in a functional traits context likely represents a categorical trait (e.g., root type or presence). The integer physical type and small range [0.0, 3.0] suggest ordinal or categorical coding rather than a continuous measurement.",
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "Woody",
+      "field_path": "Woody",
+      "physical_type": "int",
+      "logical_type": "label",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.02,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "0",
+        "3"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        3.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "header='Woody'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.8,
+        "uncertainty_reason": "The field name 'Woody' typically indicates a categorical trait (e.g., woody vs non-woody). The integer physical type and range [0.0, 3.0] suggest categorical coding.",
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "Herbaceous",
+      "field_path": "Herbaceous",
+      "physical_type": "int",
+      "logical_type": "label",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.02,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "0",
+        "3"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        3.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "header='Herbaceous'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.8,
+        "uncertainty_reason": "The field name 'Herbaceous' typically indicates a categorical trait. The integer physical type and range [0.0, 3.0] suggest categorical coding.",
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "Other",
+      "field_path": "Other",
+      "physical_type": "int",
+      "logical_type": "label",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.015,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "0"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        3.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "header='Other'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.8,
+        "uncertainty_reason": "The field name 'Other' in a functional traits context likely represents a residual category or categorical trait. The integer physical type and range [0.0, 3.0] suggest categorical coding.",
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    }
+  ],
+  "groups": [],
+  "metadata": {
+    "sampled_rows": 200,
+    "column_count": 15,
+    "semantic_annotation": {
+      "task_id": "external::dryad::10.5061_dryad.zkh1893nh::functional_traits.csv",
+      "model_info": {
+        "api_base": "http://100.66.106.126:1234/v1",
+        "model": "qwen/qwen3.6-27b"
+      },
+      "conflicts": [],
+      "logical_type_overrides": [],
+      "notes": [
+        "All fields appear to represent categorical labels for animal classes based on their names and integer values. Without explicit metadata, semantic types remain unknown. Logical types are inferred as 'label' based on the categorical nature of the data.",
+        "The dataset title 'Food web similarity increases with productivity similarity at a continental scale' suggests these fields might be related to functional traits or presence indicators in food webs. However, without explicit metadata, the exact semantic meaning (e.g., count, score, presence) remains uncertain. The logical type 'measurement' is used for all fields as they represent numeric observations.",
+        "The dataset title 'Food web similarity increases with productivity similarity at a continental scale' suggests ecological data. The fields Nectar, Root, Woody, Herbaceous, Other are likely categorical functional traits. Without explicit metadata defining them as continuous measurements, they are annotated as labels. The constant value for Nectar in the sample limits inference."
+      ]
+    }
+  },
+  "notes": [],
+  "external_source_file": "dryad/10.5061_dryad.zkh1893nh/functional_traits.csv"
+}

@@ -1,0 +1,75 @@
+{
+  "api_base": "http://100.66.106.126:1234/v1",
+  "model": "qwen/qwen3.6-27b",
+  "results": [
+    {
+      "task_file": "semantic_grounding/internal/hdf5_hard_ocean_profile.task.json",
+      "scope": "internal",
+      "result_file": "semantic_annotations/internal/hdf5_hard_ocean_profile.result.json",
+      "validation_error_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_file": "semantic_grounding/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.task.json",
+      "scope": "external",
+      "result_file": "semantic_annotations/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.result.json",
+      "validation_error_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_file": "semantic_grounding/external/external_weatherMQ-FP-20261011_3f95de2293.task.json",
+      "scope": "external",
+      "result_file": "semantic_annotations/external/external_weatherMQ-FP-20261011_3f95de2293.result.json",
+      "validation_error_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_file": "semantic_grounding/external/zenodo__record_15008662__unique_tracks_90.csv.task.json",
+      "scope": "external",
+      "result_file": "semantic_annotations/external/zenodo__record_15008662__unique_tracks_90.csv.result.json",
+      "validation_error_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_file": "semantic_grounding/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.task.json",
+      "scope": "external",
+      "result_file": "semantic_annotations/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.result.json",
+      "validation_error_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_file": "semantic_grounding/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__866fd0ee32.task.json",
+      "scope": "external",
+      "status": "failed",
+      "error": "semantic annotation request failed: <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>"
+    },
+    {
+      "task_file": "semantic_grounding/internal/csv_hard_field_campaign.task.json",
+      "scope": "internal",
+      "result_file": "semantic_annotations/internal/csv_hard_field_campaign.result.json",
+      "validation_error_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_file": "semantic_grounding/external/external_functional_traits_7e780659c0.task.json",
+      "scope": "external",
+      "result_file": "semantic_annotations/external/external_functional_traits_7e780659c0.result.json",
+      "validation_error_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_file": "semantic_grounding/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.task.json",
+      "scope": "external",
+      "result_file": "semantic_annotations/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.result.json",
+      "validation_error_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_file": "semantic_grounding/internal/csv_easy_weather_stations.task.json",
+      "scope": "internal",
+      "result_file": "semantic_annotations/internal/csv_easy_weather_stations.result.json",
+      "validation_error_count": 0,
+      "status": "ok"
+    }
+  ]
+}

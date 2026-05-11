@@ -1,0 +1,243 @@
+{
+  "batch_id": "2026-04-27-initial-dryad-zenodo-corpus",
+  "selection_policy": {
+    "goals": [
+      "cover csv, time-series csv, and hdf5",
+      "pull from both Dryad and Zenodo",
+      "prefer direct downloadable files over opaque archives",
+      "keep initial import size moderate and reviewable"
+    ],
+    "soft_size_cap_mb": 10,
+    "notes": [
+      "Larger files may still be selected if they are strongly relevant and directly usable.",
+      "Archive-heavy records were deprioritized unless no direct format-specific file was available."
+    ]
+  },
+  "imports": [
+    {
+      "source": "dryad",
+      "label": "odor plume hdf5 snapshot",
+      "landing_url": "https://datadryad.org/dataset/doi:10.5061/dryad.04t19",
+      "why_selected": "Direct HDF5 file with explicit scientific structure and small size compared with the larger companion files.",
+      "record_directory": "dryad/10.5061_dryad.04t19",
+      "downloads": [
+        {
+          "file_name": "boundaryflow_snapshots.hdf5",
+          "destination": "dryad/10.5061_dryad.04t19/boundaryflow_snapshots.hdf5",
+          "download_url": "https://datadryad.org/downloads/file_stream/64954",
+          "bytes_downloaded": 2106752,
+          "expected_size": 2106752,
+          "mime_type": "application/octet-stream",
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source": "dryad",
+      "label": "greenland cod movement time series",
+      "landing_url": "https://datadryad.org/dataset/doi:10.5061/dryad.2f2b3",
+      "why_selected": "Two direct CSV exports with temporal structure and repeated entities.",
+      "record_directory": "dryad/10.5061_dryad.2f2b3",
+      "downloads": [
+        {
+          "file_name": "Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+          "destination": "dryad/10.5061_dryad.2f2b3/Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+          "download_url": "https://datadryad.org/downloads/file_stream/86892",
+          "bytes_downloaded": 8171562,
+          "expected_size": 8171562,
+          "mime_type": "text/csv",
+          "status": "downloaded"
+        },
+        {
+          "file_name": "Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year2.csv",
+          "destination": "dryad/10.5061_dryad.2f2b3/Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year2.csv",
+          "download_url": "https://datadryad.org/downloads/file_stream/86893",
+          "bytes_downloaded": 6950718,
+          "expected_size": 6950718,
+          "mime_type": "text/csv",
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source": "dryad",
+      "label": "african mammal food web tabular bundle",
+      "landing_url": "https://datadryad.org/dataset/doi:10.5061/dryad.zkh1893nh",
+      "why_selected": "Multiple directly downloadable CSV files with heterogeneous but schema-rich ecological tables.",
+      "record_directory": "dryad/10.5061_dryad.zkh1893nh",
+      "downloads": [
+        {
+          "file_name": "above_500_PA_data.csv",
+          "destination": "dryad/10.5061_dryad.zkh1893nh/above_500_PA_data.csv",
+          "download_url": "https://datadryad.org/downloads/file_stream/4643995",
+          "bytes_downloaded": 71810,
+          "expected_size": 71810,
+          "mime_type": "text/csv",
+          "status": "downloaded"
+        },
+        {
+          "file_name": "Africa_metaweb_above500.csv",
+          "destination": "dryad/10.5061_dryad.zkh1893nh/Africa_metaweb_above500.csv",
+          "download_url": "https://datadryad.org/downloads/file_stream/4643989",
+          "bytes_downloaded": 143254,
+          "expected_size": 143254,
+          "mime_type": "text/csv",
+          "status": "downloaded"
+        },
+        {
+          "file_name": "African_Mammal_FoodWebs_Locations.csv",
+          "destination": "dryad/10.5061_dryad.zkh1893nh/African_Mammal_FoodWebs_Locations.csv",
+          "download_url": "https://datadryad.org/downloads/file_stream/4643996",
+          "bytes_downloaded": 7957,
+          "expected_size": 7957,
+          "mime_type": "text/csv",
+          "status": "downloaded"
+        },
+        {
+          "file_name": "functional_traits.csv",
+          "destination": "dryad/10.5061_dryad.zkh1893nh/functional_traits.csv",
+          "download_url": "https://datadryad.org/downloads/file_stream/4644002",
+          "bytes_downloaded": 14666,
+          "expected_size": 14666,
+          "mime_type": "text/csv",
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source": "dryad",
+      "label": "weather station csv",
+      "landing_url": "https://datadryad.org/dataset/doi:10.5061/dryad.dv41ns266",
+      "why_selected": "Single medium-sized weather station CSV that is directly useful for time-axis and unit discovery work.",
+      "record_directory": "dryad/10.5061_dryad.dv41ns266",
+      "downloads": [
+        {
+          "file_name": "weatherMQ-FP-20261011.csv",
+          "destination": "dryad/10.5061_dryad.dv41ns266/weatherMQ-FP-20261011.csv",
+          "download_url": "https://datadryad.org/downloads/file_stream/4712579",
+          "bytes_downloaded": 6464069,
+          "expected_size": 6464069,
+          "mime_type": "text/csv",
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source": "zenodo",
+      "label": "tracked hailstorm events",
+      "landing_url": "https://zenodo.org/records/15008662",
+      "why_selected": "Compact CSV with timestamp and geospatial fields, appropriate for retrieval and tabular profiling.",
+      "record_directory": "zenodo/record_15008662",
+      "downloads": [
+        {
+          "file_name": "unique_tracks_90.csv",
+          "destination": "zenodo/record_15008662/unique_tracks_90.csv",
+          "download_url": "https://zenodo.org/api/records/15008662/files/unique_tracks_90.csv/content",
+          "bytes_downloaded": 315965,
+          "expected_size": 315965,
+          "mime_type": null,
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source": "zenodo",
+      "label": "aeolian saltation field time series",
+      "landing_url": "https://zenodo.org/records/5935524",
+      "why_selected": "Direct sensor and wind time-series CSV files with different granularities and field layouts.",
+      "record_directory": "zenodo/record_5935524",
+      "downloads": [
+        {
+          "file_name": "20211108_ZXLidar_Winds.csv",
+          "destination": "zenodo/record_5935524/20211108_ZXLidar_Winds.csv",
+          "download_url": "https://zenodo.org/api/records/5935524/files/20211108_ZXLidar_Winds.csv/content",
+          "bytes_downloaded": 5990812,
+          "expected_size": 5990812,
+          "mime_type": null,
+          "status": "downloaded"
+        },
+        {
+          "file_name": "20211108_Sensit.csv",
+          "destination": "zenodo/record_5935524/20211108_Sensit.csv",
+          "download_url": "https://zenodo.org/api/records/5935524/files/20211108_Sensit.csv/content",
+          "bytes_downloaded": 68879,
+          "expected_size": 68879,
+          "mime_type": null,
+          "status": "downloaded"
+        },
+        {
+          "file_name": "20211108_Tides.csv",
+          "destination": "zenodo/record_5935524/20211108_Tides.csv",
+          "download_url": "https://zenodo.org/api/records/5935524/files/20211108_Tides.csv/content",
+          "bytes_downloaded": 8840,
+          "expected_size": 8840,
+          "mime_type": null,
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source": "zenodo",
+      "label": "indoor air pollutant sensor csv",
+      "landing_url": "https://zenodo.org/records/18195710",
+      "why_selected": "Raw timestamped sensor measurements from a real deployment, selected with one smaller school file for an initial import batch.",
+      "record_directory": "zenodo/record_18195710",
+      "downloads": [
+        {
+          "file_name": "ensensia_raw_20230728-20251202_school_5.csv",
+          "destination": "zenodo/record_18195710/ensensia_raw_20230728-20251202_school_5.csv",
+          "download_url": "https://zenodo.org/api/records/18195710/files/ensensia_raw_20230728-20251202_school_5.csv/content",
+          "bytes_downloaded": 667745,
+          "expected_size": 667745,
+          "mime_type": null,
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source": "zenodo",
+      "label": "ATLASM5 atmospheric station h5 months",
+      "landing_url": "https://zenodo.org/records/3660832",
+      "why_selected": "Direct monthly H5 files from an atmospheric research station; selected two months to seed hierarchical extractor evaluation.",
+      "record_directory": "zenodo/record_3660832",
+      "downloads": [
+        {
+          "file_name": "Data 01 Jan 2019.h5",
+          "destination": "zenodo/record_3660832/Data 01 Jan 2019.h5",
+          "download_url": "https://zenodo.org/api/records/3660832/files/Data%2001%20Jan%202019.h5/content",
+          "bytes_downloaded": 7317974,
+          "expected_size": 7317974,
+          "mime_type": null,
+          "status": "downloaded"
+        },
+        {
+          "file_name": "Data 07 July 2019.h5",
+          "destination": "zenodo/record_3660832/Data 07 July 2019.h5",
+          "download_url": "https://zenodo.org/api/records/3660832/files/Data%2007%20July%202019.h5/content",
+          "bytes_downloaded": 7732650,
+          "expected_size": 7732650,
+          "mime_type": null,
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source": "zenodo",
+      "label": "single h5 workshop dataset",
+      "landing_url": "https://zenodo.org/records/5116851",
+      "why_selected": "Small standalone H5 file useful as an additional binary-format smoke case.",
+      "record_directory": "zenodo/record_5116851",
+      "downloads": [
+        {
+          "file_name": "DataseParaWorkshop_v2.h5",
+          "destination": "zenodo/record_5116851/DataseParaWorkshop_v2.h5",
+          "download_url": "https://zenodo.org/api/records/5116851/files/DataseParaWorkshop_v2.h5/content",
+          "bytes_downloaded": 7541776,
+          "expected_size": 7541776,
+          "mime_type": null,
+          "status": "downloaded"
+        }
+      ]
+    }
+  ]
+}

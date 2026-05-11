@@ -1,0 +1,75 @@
+{
+  "dataset_id": "ts_easy_hourly_weather",
+  "file_format": "csv",
+  "difficulty": "easy",
+  "data_modality": "time_series",
+  "source_file": "hourly_weather.csv",
+  "time_axis": {
+    "field": "timestamp",
+    "type": "datetime",
+    "timezone": "local_standard_time",
+    "frequency": "1 hour",
+    "regularity": "regular",
+    "missing_intervals": 0
+  },
+  "fields": [
+    {
+      "field_name": "station_id",
+      "field_path": "station_id",
+      "correct_physical_type": "string",
+      "correct_logical_type": "identifier",
+      "correct_semantic_type": "station_identifier",
+      "unit": null,
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "timestamp",
+      "field_path": "timestamp",
+      "correct_physical_type": "datetime",
+      "correct_logical_type": "time_axis",
+      "correct_semantic_type": "observation_time",
+      "unit": null,
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "temp_C",
+      "field_path": "temp_C",
+      "correct_physical_type": "float",
+      "correct_logical_type": "measurement",
+      "correct_semantic_type": "air_temperature",
+      "unit": "Celsius",
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "humidity_pct",
+      "field_path": "humidity_pct",
+      "correct_physical_type": "float",
+      "correct_logical_type": "measurement",
+      "correct_semantic_type": "relative_humidity",
+      "unit": "percent",
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "wind_speed_m_s",
+      "field_path": "wind_speed_m_s",
+      "correct_physical_type": "float",
+      "correct_logical_type": "measurement",
+      "correct_semantic_type": "wind_speed",
+      "unit": "meter_per_second",
+      "necessity": "medium",
+      "notes": null,
+      "gold_evidence": []
+    }
+  ],
+  "notes": [
+    "Clean time axis and explicit unit-bearing names make this a canonical easy time-series case."
+  ]
+}

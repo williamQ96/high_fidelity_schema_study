@@ -1,0 +1,90 @@
+{
+  "dataset_id": "hdf5_hard_ocean_profile",
+  "file_format": "hdf5",
+  "difficulty": "hard",
+  "data_modality": "hierarchical",
+  "source_file": "ocean_profile_nested.h5",
+  "time_axis": null,
+  "fields": [
+    {
+      "field_name": "station_code",
+      "field_path": "/campaign/meta/station_code",
+      "correct_physical_type": "string",
+      "correct_logical_type": "identifier",
+      "correct_semantic_type": "station_identifier",
+      "unit": null,
+      "necessity": "medium",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "depth_m",
+      "field_path": "/campaign/run_01/cast_0001/depth_m",
+      "correct_physical_type": "int32",
+      "correct_logical_type": "coordinate",
+      "correct_semantic_type": "depth",
+      "unit": "m",
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "temp",
+      "field_path": "/campaign/run_01/cast_0001/temp",
+      "correct_physical_type": "float32",
+      "correct_logical_type": "measurement",
+      "correct_semantic_type": "water_temperature",
+      "unit": null,
+      "necessity": "high",
+      "notes": "Unit is not explicit on this path.",
+      "gold_evidence": []
+    },
+    {
+      "field_name": "salinity_psu",
+      "field_path": "/campaign/run_01/cast_0001/salinity_psu",
+      "correct_physical_type": "float32",
+      "correct_logical_type": "measurement",
+      "correct_semantic_type": "salinity",
+      "unit": null,
+      "necessity": "high",
+      "notes": "PSU is part of the name but not an explicit attribute.",
+      "gold_evidence": []
+    },
+    {
+      "field_name": "qc_flag",
+      "field_path": "/campaign/run_01/cast_0001/qc_flag",
+      "correct_physical_type": "string",
+      "correct_logical_type": "label",
+      "correct_semantic_type": "quality_flag",
+      "unit": null,
+      "necessity": "medium",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "depth_m",
+      "field_path": "/campaign/run_01/cast_0002/depth_m",
+      "correct_physical_type": "int32",
+      "correct_logical_type": "coordinate",
+      "correct_semantic_type": "depth",
+      "unit": "m",
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "temp",
+      "field_path": "/campaign/run_01/cast_0002/temp",
+      "correct_physical_type": "float32",
+      "correct_logical_type": "measurement",
+      "correct_semantic_type": "water_temperature",
+      "unit": "C",
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    }
+  ],
+  "notes": [
+    "The hard case tests whether extraction preserves repeated nested structure and surfaces metadata asymmetry between similar paths."
+  ]
+}

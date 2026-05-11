@@ -1,0 +1,409 @@
+{
+  "dataset_count": 3,
+  "aggregate": {
+    "improved_dataset_count": 2,
+    "accepted_for_merge_count": 3,
+    "conflict_count": 1,
+    "mean_logical_accuracy_delta": 0.1667
+  },
+  "datasets": [
+    {
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "baseline": {
+        "field_count": 7,
+        "physical_accuracy": 1.0,
+        "logical_accuracy": 1.0,
+        "semantic_accuracy": 1.0,
+        "unit_accuracy": 1.0,
+        "accepted_for_merge_count": 0,
+        "per_field": [
+          {
+            "field_path": "/campaign/meta/station_code",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "/campaign/run_01/cast_0001/depth_m",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "/campaign/run_01/cast_0001/temp",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "/campaign/run_01/cast_0001/salinity_psu",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "/campaign/run_01/cast_0001/qc_flag",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "/campaign/run_01/cast_0002/depth_m",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "/campaign/run_01/cast_0002/temp",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          }
+        ]
+      },
+      "merged": {
+        "field_count": 7,
+        "physical_accuracy": 1.0,
+        "logical_accuracy": 1.0,
+        "semantic_accuracy": 1.0,
+        "unit_accuracy": 1.0,
+        "accepted_for_merge_count": 0,
+        "per_field": [
+          {
+            "field_path": "/campaign/meta/station_code",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "/campaign/run_01/cast_0001/depth_m",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "/campaign/run_01/cast_0001/temp",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "/campaign/run_01/cast_0001/salinity_psu",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "/campaign/run_01/cast_0001/qc_flag",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "/campaign/run_01/cast_0002/depth_m",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "/campaign/run_01/cast_0002/temp",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          }
+        ]
+      },
+      "conflict_count": 1
+    },
+    {
+      "dataset_id": "csv_hard_field_campaign",
+      "baseline": {
+        "field_count": 6,
+        "physical_accuracy": 1.0,
+        "logical_accuracy": 0.6667,
+        "semantic_accuracy": 1.0,
+        "unit_accuracy": 0.0,
+        "accepted_for_merge_count": 0,
+        "per_field": [
+          {
+            "field_path": "rec",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "dt_obs",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "zc",
+            "physical_match": true,
+            "logical_match": false,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "val",
+            "physical_match": true,
+            "logical_match": false,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "flag",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "device",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          }
+        ]
+      },
+      "merged": {
+        "field_count": 6,
+        "physical_accuracy": 1.0,
+        "logical_accuracy": 1.0,
+        "semantic_accuracy": 1.0,
+        "unit_accuracy": 0.0,
+        "accepted_for_merge_count": 2,
+        "per_field": [
+          {
+            "field_path": "rec",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "dt_obs",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "zc",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": true,
+            "semantic_annotation": {
+              "confidence": 0.9,
+              "uncertainty_reason": null,
+              "supporting_evidence": [
+                "S1"
+              ],
+              "accepted_for_merge": true
+            }
+          },
+          {
+            "field_path": "val",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": true,
+            "semantic_annotation": {
+              "confidence": 0.9,
+              "uncertainty_reason": "Physical type is string due to mixed non-detect/error markers; semantic type remains unknown as no precise domain concept is specified.",
+              "supporting_evidence": [
+                "S1"
+              ],
+              "accepted_for_merge": true
+            }
+          },
+          {
+            "field_path": "flag",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "device",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          }
+        ]
+      },
+      "conflict_count": 0
+    },
+    {
+      "dataset_id": "csv_easy_weather_stations",
+      "baseline": {
+        "field_count": 6,
+        "physical_accuracy": 0.8333,
+        "logical_accuracy": 0.8333,
+        "semantic_accuracy": 1.0,
+        "unit_accuracy": 1.0,
+        "accepted_for_merge_count": 0,
+        "per_field": [
+          {
+            "field_path": "station_id",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "station_name",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "latitude_deg",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "longitude_deg",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "elevation_m",
+            "physical_match": false,
+            "logical_match": false,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "precip_mm",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          }
+        ]
+      },
+      "merged": {
+        "field_count": 6,
+        "physical_accuracy": 0.8333,
+        "logical_accuracy": 1.0,
+        "semantic_accuracy": 1.0,
+        "unit_accuracy": 1.0,
+        "accepted_for_merge_count": 1,
+        "per_field": [
+          {
+            "field_path": "station_id",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "station_name",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "latitude_deg",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "longitude_deg",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          },
+          {
+            "field_path": "elevation_m",
+            "physical_match": false,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": true,
+            "semantic_annotation": {
+              "confidence": 0.95,
+              "uncertainty_reason": null,
+              "supporting_evidence": [
+                "S1",
+                "F1"
+              ],
+              "accepted_for_merge": true
+            }
+          },
+          {
+            "field_path": "precip_mm",
+            "physical_match": true,
+            "logical_match": true,
+            "semantic_match": true,
+            "accepted_for_merge": null,
+            "semantic_annotation": null
+          }
+        ]
+      },
+      "conflict_count": 0
+    }
+  ]
+}

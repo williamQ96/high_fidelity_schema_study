@@ -1,0 +1,27 @@
+{
+  "study_id": "high_fidelity_schema_extraction",
+  "status": "scaffolded",
+  "method_family": "deterministic_first_evidence_grounded",
+  "title": "A Deterministic-First Framework for High-Fidelity Schema Extraction from Scientific Data Files",
+  "required_modalities": [
+    "csv",
+    "hdf5",
+    "time_series"
+  ],
+  "evaluation_dimensions": [
+    "completeness",
+    "accuracy",
+    "necessary_field_coverage",
+    "uncertainty"
+  ],
+  "retrieval_comparison": [
+    "metadata_only",
+    "readme_only",
+    "schema_enhanced"
+  ],
+  "non_goals": [
+    "end_to_end_llm_schema_guessing",
+    "opaque_single_score_evaluation",
+    "unsupported_schema_claims_for_raw_binary_without_metadata"
+  ]
+}

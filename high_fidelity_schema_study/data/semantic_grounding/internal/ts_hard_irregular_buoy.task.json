@@ -1,0 +1,294 @@
+{
+  "system_rules": [
+    "You are given a deterministic schema extracted from a dataset file.",
+    "You may only make claims supported by the provided evidence.",
+    "Do not invent fields, units, or shapes that are not grounded in the deterministic schema or supplied snippets.",
+    "Prefer unknown over unsupported guessing.",
+    "If explicit metadata conflicts with weaker name-based inference, preserve the explicit metadata and surface a conflict."
+  ],
+  "task": {
+    "task_id": "internal::ts_hard_irregular_buoy",
+    "dataset_id": "ts_hard_irregular_buoy",
+    "file_format": "csv",
+    "data_modality": "time_series",
+    "deterministic_schema": {
+      "dataset_id": "buoy_irregular",
+      "file_id": "buoy_irregular.csv",
+      "file_format": "csv",
+      "data_modality": "time_series",
+      "fields": [
+        {
+          "field_name": "buoy_id",
+          "field_path": "buoy_id",
+          "physical_type": "string",
+          "logical_type": "identifier",
+          "semantic_type": "buoy_identifier",
+          "nullable": false,
+          "unique_ratio": 0.2,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "B-17"
+          ],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_hard_irregular_buoy\\buoy_irregular.csv",
+              "detail": "header='buoy_id'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_hard_irregular_buoy\\buoy_irregular.csv",
+              "detail": "sampled_rows=5",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 0.9,
+          "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "event_time",
+          "field_path": "event_time",
+          "physical_type": "datetime",
+          "logical_type": "time_axis",
+          "semantic_type": "observation_time",
+          "nullable": false,
+          "unique_ratio": 1.0,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "2026-08-01T00:07:00",
+            "2026-08-01T00:26:00",
+            "2026-08-01T01:12:00"
+          ],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_hard_irregular_buoy\\buoy_irregular.csv",
+              "detail": "header='event_time'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_hard_irregular_buoy\\buoy_irregular.csv",
+              "detail": "sampled_rows=5",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "temp_C",
+          "field_path": "temp_C",
+          "physical_type": "float",
+          "logical_type": "measurement",
+          "semantic_type": "water_temperature",
+          "nullable": false,
+          "unique_ratio": 1.0,
+          "shape": null,
+          "unit": "Celsius",
+          "description": null,
+          "example_values": [
+            "17.4",
+            "17.2",
+            "16.8"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            16.0,
+            17.4
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_hard_irregular_buoy\\buoy_irregular.csv",
+              "detail": "header='temp_C'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_hard_irregular_buoy\\buoy_irregular.csv",
+              "detail": "sampled_rows=5",
+              "confidence": 0.9
+            },
+            {
+              "tier": "structural",
+              "evidence_type": "column_name_unit_hint",
+              "source": "temp_C",
+              "detail": "inferred unit from column suffix: Celsius",
+              "confidence": 0.82
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "salinity_psu",
+          "field_path": "salinity_psu",
+          "physical_type": "float",
+          "logical_type": "measurement",
+          "semantic_type": "salinity",
+          "nullable": false,
+          "unique_ratio": 0.8,
+          "shape": null,
+          "unit": "PSU",
+          "description": null,
+          "example_values": [
+            "33.2",
+            "33.3",
+            "33.5"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            33.2,
+            33.9
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_hard_irregular_buoy\\buoy_irregular.csv",
+              "detail": "header='salinity_psu'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_hard_irregular_buoy\\buoy_irregular.csv",
+              "detail": "sampled_rows=5",
+              "confidence": 0.9
+            },
+            {
+              "tier": "structural",
+              "evidence_type": "column_name_unit_hint",
+              "source": "salinity_psu",
+              "detail": "inferred unit from column suffix: PSU",
+              "confidence": 0.82
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "qc_flag",
+          "field_path": "qc_flag",
+          "physical_type": "string",
+          "logical_type": "label",
+          "semantic_type": "quality_flag",
+          "nullable": false,
+          "unique_ratio": 0.4,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "A",
+            "B"
+          ],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_hard_irregular_buoy\\buoy_irregular.csv",
+              "detail": "header='qc_flag'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\time_series\\ts_hard_irregular_buoy\\buoy_irregular.csv",
+              "detail": "sampled_rows=5",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 0.9,
+          "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+          "extraction_method": "csv_conservative_profiler"
+        }
+      ],
+      "groups": [],
+      "metadata": {
+        "sampled_rows": 5,
+        "column_count": 5,
+        "time_series": {
+          "time_axis": {
+            "field": "event_time",
+            "type": "datetime",
+            "frequency": "mixed",
+            "regularity": "irregular",
+            "missing_intervals": null
+          },
+          "series_identifier": "buoy_id",
+          "measurements": [
+            "temp_C",
+            "salinity_psu"
+          ]
+        }
+      },
+      "notes": [],
+      "study_dataset_id": "ts_hard_irregular_buoy",
+      "study_category": "time_series",
+      "study_difficulty": "hard",
+      "study_source_file": "raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv"
+    },
+    "grounding_snippets": [
+      {
+        "source_type": "dataset_readme",
+        "source_name": "raw/time_series/ts_hard_irregular_buoy/README.md",
+        "detail": "local pilot dataset README",
+        "text": "# ts_hard_irregular_buoy\n\nIrregular buoy telemetry excerpt.\n\n- `event_time` is emitted by the onboard controller and is not expected to be evenly spaced\n- `temp_C` is water temperature in Celsius\n- `salinity_psu` is practical salinity\n- `qc_flag` is a quality-control code",
+        "priority": 1
+      }
+    ],
+    "instructions": [
+      "Use only the deterministic schema and grounding snippets.",
+      "If a field already has explicit unit metadata, do not replace it with weaker inference."
+    ]
+  },
+  "expected_output_schema": {
+    "task_id": "string",
+    "annotations": [
+      {
+        "field_path": "string",
+        "semantic_type": "string",
+        "logical_type": "string|null",
+        "unit": "string|null",
+        "description": "string|null",
+        "supporting_evidence": [
+          "string"
+        ],
+        "confidence": "number",
+        "uncertainty_reason": "string|null"
+      }
+    ],
+    "conflicts": [
+      {
+        "field_path": "string",
+        "conflict_type": "string",
+        "detail": "string"
+      }
+    ],
+    "notes": [
+      "string"
+    ]
+  }
+}

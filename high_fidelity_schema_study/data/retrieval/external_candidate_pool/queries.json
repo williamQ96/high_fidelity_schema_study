@@ -1,0 +1,54 @@
+{
+  "queries": [
+    {
+      "query_id": "hailstorm_tracks_geo_time",
+      "text": "Find a CSV dataset with hailstorm tracks, latitude and longitude, timestamps, and storm intensity.",
+      "expected_candidate_id": "zenodo__record_15008662__unique_tracks_90.csv"
+    },
+    {
+      "query_id": "indoor_air_sensor_pollutants",
+      "text": "Find school 5 time-series sensor data with PM2.5, NO2, O3, CO2, humidity, temperature, and sensor identifiers.",
+      "expected_candidate_id": "zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv"
+    },
+    {
+      "query_id": "atmospheric_hdf5_station",
+      "text": "Find the Jan or January file-slice HDF5 atmospheric station data with ozone, nitrogen oxides, meteorological parameters, and rain variables.",
+      "expected_candidate_id": "zenodo__record_3660832__Data_01_Jan_2019.h5"
+    },
+    {
+      "query_id": "wind_lidar_time_series",
+      "text": "Find time-series wind measurements with wind speed, wind direction, and wind shear exponent.",
+      "expected_candidate_id": "zenodo__record_5935524__20211108_ZXLidar_Winds.csv"
+    },
+    {
+      "query_id": "particle_counts_time_series",
+      "text": "Find sensor time-series data with per-second particle counts from a field deployment.",
+      "expected_candidate_id": "zenodo__record_5935524__20211108_Sensit.csv"
+    },
+    {
+      "query_id": "tide_water_level_series",
+      "text": "Find a time series of still water level or tidal water level measurements.",
+      "expected_candidate_id": "zenodo__record_5935524__20211108_Tides.csv"
+    },
+    {
+      "query_id": "greenland_cod_telemetry_positions",
+      "text": "Find the year1 or first-year time-series telemetry data for juvenile Greenland cod with hourly positions, latitude and longitude, cove labels, and transplant or control group information.",
+      "expected_candidate_id": "dryad__10.5061_dryad.2f2b3__Season_and_site_fidelity_determine_home_range_of_dispersing_and_resident_juvenile_Greenland_cod_(Gadus_ogac)_in_a_Newfoundland_fjord_year1.csv"
+    },
+    {
+      "query_id": "african_mammal_site_locations",
+      "text": "Find a table of African mammal food web site locations with site code, community name, country, latitude, and longitude.",
+      "expected_candidate_id": "dryad__10.5061_dryad.zkh1893nh__African_Mammal_FoodWebs_Locations.csv"
+    },
+    {
+      "query_id": "mammal_functional_traits",
+      "text": "Find a species trait table with mammal body mass in grams and binary or categorical feeding-resource traits such as vertebrate, bird, plant, or invertebrate consumption.",
+      "expected_candidate_id": "dryad__10.5061_dryad.zkh1893nh__functional_traits.csv"
+    },
+    {
+      "query_id": "weather_station_meteorology",
+      "text": "Find weather station data with dateTime, temperature, relative humidity, rainfall, wind speed, wind gust, wind direction, and barometric pressure.",
+      "expected_candidate_id": "dryad__10.5061_dryad.dv41ns266__weatherMQ-FP-20261011.csv"
+    }
+  ]
+}

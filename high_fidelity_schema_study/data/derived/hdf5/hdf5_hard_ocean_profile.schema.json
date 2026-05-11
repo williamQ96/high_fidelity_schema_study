@@ -1,0 +1,352 @@
+{
+  "dataset_id": "ocean_profile_nested",
+  "file_id": "ocean_profile_nested.h5",
+  "file_format": "hdf5",
+  "data_modality": "hierarchical",
+  "fields": [
+    {
+      "field_name": "platform",
+      "field_path": "/campaign/meta/platform",
+      "physical_type": "string",
+      "logical_type": "label",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\hdf5\\hdf5_hard_ocean_profile\\ocean_profile_nested.h5",
+          "detail": "/campaign/meta/platform",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "station_code",
+      "field_path": "/campaign/meta/station_code",
+      "physical_type": "string",
+      "logical_type": "identifier",
+      "semantic_type": "station_identifier",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\hdf5\\hdf5_hard_ocean_profile\\ocean_profile_nested.h5",
+          "detail": "/campaign/meta/station_code",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "depth_m",
+      "field_path": "/campaign/run_01/cast_0001/depth_m",
+      "physical_type": "int32",
+      "logical_type": "coordinate",
+      "semantic_type": "depth",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        4
+      ],
+      "unit": "m",
+      "description": "depth below sea surface",
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\hdf5\\hdf5_hard_ocean_profile\\ocean_profile_nested.h5",
+          "detail": "/campaign/run_01/cast_0001/depth_m",
+          "confidence": 1.0
+        },
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_attribute",
+          "source": "/campaign/run_01/cast_0001/depth_m",
+          "detail": "unit=m",
+          "confidence": 0.99
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "qc_flag",
+      "field_path": "/campaign/run_01/cast_0001/qc_flag",
+      "physical_type": "string",
+      "logical_type": "label",
+      "semantic_type": "quality_flag",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        4
+      ],
+      "unit": null,
+      "description": "quality control flag",
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\hdf5\\hdf5_hard_ocean_profile\\ocean_profile_nested.h5",
+          "detail": "/campaign/run_01/cast_0001/qc_flag",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "salinity_psu",
+      "field_path": "/campaign/run_01/cast_0001/salinity_psu",
+      "physical_type": "float32",
+      "logical_type": "measurement",
+      "semantic_type": "salinity",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        4
+      ],
+      "unit": null,
+      "description": "practical salinity",
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\hdf5\\hdf5_hard_ocean_profile\\ocean_profile_nested.h5",
+          "detail": "/campaign/run_01/cast_0001/salinity_psu",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "temp",
+      "field_path": "/campaign/run_01/cast_0001/temp",
+      "physical_type": "float32",
+      "logical_type": "measurement",
+      "semantic_type": "water_temperature",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        4
+      ],
+      "unit": null,
+      "description": "seawater temperature",
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\hdf5\\hdf5_hard_ocean_profile\\ocean_profile_nested.h5",
+          "detail": "/campaign/run_01/cast_0001/temp",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "depth_m",
+      "field_path": "/campaign/run_01/cast_0002/depth_m",
+      "physical_type": "int32",
+      "logical_type": "coordinate",
+      "semantic_type": "depth",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        4
+      ],
+      "unit": "m",
+      "description": "depth below sea surface",
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\hdf5\\hdf5_hard_ocean_profile\\ocean_profile_nested.h5",
+          "detail": "/campaign/run_01/cast_0002/depth_m",
+          "confidence": 1.0
+        },
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_attribute",
+          "source": "/campaign/run_01/cast_0002/depth_m",
+          "detail": "unit=m",
+          "confidence": 0.99
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "qc_flag",
+      "field_path": "/campaign/run_01/cast_0002/qc_flag",
+      "physical_type": "string",
+      "logical_type": "label",
+      "semantic_type": "quality_flag",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        4
+      ],
+      "unit": null,
+      "description": "quality control flag",
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\hdf5\\hdf5_hard_ocean_profile\\ocean_profile_nested.h5",
+          "detail": "/campaign/run_01/cast_0002/qc_flag",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "salinity_psu",
+      "field_path": "/campaign/run_01/cast_0002/salinity_psu",
+      "physical_type": "float32",
+      "logical_type": "measurement",
+      "semantic_type": "salinity",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        4
+      ],
+      "unit": null,
+      "description": "practical salinity",
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\hdf5\\hdf5_hard_ocean_profile\\ocean_profile_nested.h5",
+          "detail": "/campaign/run_01/cast_0002/salinity_psu",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "temp",
+      "field_path": "/campaign/run_01/cast_0002/temp",
+      "physical_type": "float32",
+      "logical_type": "measurement",
+      "semantic_type": "water_temperature",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        4
+      ],
+      "unit": "C",
+      "description": "seawater temperature",
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\hdf5\\hdf5_hard_ocean_profile\\ocean_profile_nested.h5",
+          "detail": "/campaign/run_01/cast_0002/temp",
+          "confidence": 1.0
+        },
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_attribute",
+          "source": "/campaign/run_01/cast_0002/temp",
+          "detail": "unit=C",
+          "confidence": 0.99
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    }
+  ],
+  "groups": [
+    {
+      "path": "/campaign",
+      "kind": "group",
+      "attributes": {}
+    },
+    {
+      "path": "/campaign/meta",
+      "kind": "group",
+      "attributes": {}
+    },
+    {
+      "path": "/campaign/run_01",
+      "kind": "group",
+      "attributes": {}
+    },
+    {
+      "path": "/campaign/run_01/cast_0001",
+      "kind": "group",
+      "attributes": {}
+    },
+    {
+      "path": "/campaign/run_01/cast_0002",
+      "kind": "group",
+      "attributes": {}
+    }
+  ],
+  "metadata": {
+    "field_count": 10,
+    "group_count": 5,
+    "extraction_errors": []
+  },
+  "notes": [],
+  "study_dataset_id": "hdf5_hard_ocean_profile",
+  "study_category": "hdf5",
+  "study_difficulty": "hard",
+  "study_source_file": "raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5"
+}

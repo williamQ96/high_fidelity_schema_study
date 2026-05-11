@@ -1,0 +1,68 @@
+{
+  "dataset_id": "hdf5_medium_station_hierarchy",
+  "file_format": "hdf5",
+  "difficulty": "medium",
+  "data_modality": "hierarchical",
+  "source_file": "station_hierarchy.h5",
+  "time_axis": null,
+  "fields": [
+    {
+      "field_name": "timestamp",
+      "field_path": "/weather/timestamp",
+      "correct_physical_type": "string",
+      "correct_logical_type": "time_axis",
+      "correct_semantic_type": "observation_time",
+      "unit": null,
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "temp",
+      "field_path": "/weather/station_001/temp",
+      "correct_physical_type": "float32",
+      "correct_logical_type": "measurement",
+      "correct_semantic_type": "air_temperature",
+      "unit": "C",
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "pressure",
+      "field_path": "/weather/station_001/pressure",
+      "correct_physical_type": "float32",
+      "correct_logical_type": "measurement",
+      "correct_semantic_type": "surface_pressure",
+      "unit": "hPa",
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "temp",
+      "field_path": "/weather/station_002/temp",
+      "correct_physical_type": "float32",
+      "correct_logical_type": "measurement",
+      "correct_semantic_type": "air_temperature",
+      "unit": "C",
+      "necessity": "high",
+      "notes": null,
+      "gold_evidence": []
+    },
+    {
+      "field_name": "pressure",
+      "field_path": "/weather/station_002/pressure",
+      "correct_physical_type": "float32",
+      "correct_logical_type": "measurement",
+      "correct_semantic_type": "surface_pressure",
+      "unit": null,
+      "necessity": "high",
+      "notes": "Unit should remain unknown because metadata is absent.",
+      "gold_evidence": []
+    }
+  ],
+  "notes": [
+    "The hierarchy itself is part of the schema. Flattening away station groups would lose field identity."
+  ]
+}

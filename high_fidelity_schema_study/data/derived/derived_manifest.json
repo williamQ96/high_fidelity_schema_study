@@ -1,0 +1,76 @@
+{
+  "datasets": [
+    {
+      "dataset_id": "csv_easy_weather_stations",
+      "category": "csv",
+      "difficulty": "easy",
+      "file_format": "csv",
+      "source_file": "raw/csv/csv_easy_weather_stations/stations_precip.csv",
+      "derived_schema_file": "derived/csv/csv_easy_weather_stations.schema.json"
+    },
+    {
+      "dataset_id": "csv_hard_field_campaign",
+      "category": "csv",
+      "difficulty": "hard",
+      "file_format": "csv",
+      "source_file": "raw/csv/csv_hard_field_campaign/field_campaign.csv",
+      "derived_schema_file": "derived/csv/csv_hard_field_campaign.schema.json"
+    },
+    {
+      "dataset_id": "csv_medium_water_quality",
+      "category": "csv",
+      "difficulty": "medium",
+      "file_format": "csv",
+      "source_file": "raw/csv/csv_medium_water_quality/water_quality.csv",
+      "derived_schema_file": "derived/csv/csv_medium_water_quality.schema.json"
+    },
+    {
+      "dataset_id": "hdf5_easy_climate_cube",
+      "category": "hdf5",
+      "difficulty": "easy",
+      "file_format": "hdf5",
+      "source_file": "raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5",
+      "derived_schema_file": "derived/hdf5/hdf5_easy_climate_cube.schema.json"
+    },
+    {
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "category": "hdf5",
+      "difficulty": "hard",
+      "file_format": "hdf5",
+      "source_file": "raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5",
+      "derived_schema_file": "derived/hdf5/hdf5_hard_ocean_profile.schema.json"
+    },
+    {
+      "dataset_id": "hdf5_medium_station_hierarchy",
+      "category": "hdf5",
+      "difficulty": "medium",
+      "file_format": "hdf5",
+      "source_file": "raw/hdf5/hdf5_medium_station_hierarchy/station_hierarchy.h5",
+      "derived_schema_file": "derived/hdf5/hdf5_medium_station_hierarchy.schema.json"
+    },
+    {
+      "dataset_id": "ts_easy_hourly_weather",
+      "category": "time_series",
+      "difficulty": "easy",
+      "file_format": "csv",
+      "source_file": "raw/time_series/ts_easy_hourly_weather/hourly_weather.csv",
+      "derived_schema_file": "derived/time_series/ts_easy_hourly_weather.schema.json"
+    },
+    {
+      "dataset_id": "ts_hard_irregular_buoy",
+      "category": "time_series",
+      "difficulty": "hard",
+      "file_format": "csv",
+      "source_file": "raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv",
+      "derived_schema_file": "derived/time_series/ts_hard_irregular_buoy.schema.json"
+    },
+    {
+      "dataset_id": "ts_medium_power_meter",
+      "category": "time_series",
+      "difficulty": "medium",
+      "file_format": "csv",
+      "source_file": "raw/time_series/ts_medium_power_meter/power_meter.csv",
+      "derived_schema_file": "derived/time_series/ts_medium_power_meter.schema.json"
+    }
+  ]
+}

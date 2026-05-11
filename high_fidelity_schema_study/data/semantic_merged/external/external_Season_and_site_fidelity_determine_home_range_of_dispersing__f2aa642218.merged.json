@@ -1,0 +1,506 @@
+{
+  "dataset_id": "Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1",
+  "file_id": "Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+  "file_format": "csv",
+  "data_modality": "tabular",
+  "fields": [
+    {
+      "field_name": "Hourbin",
+      "field_path": "Hourbin",
+      "physical_type": "string",
+      "logical_type": "time_axis",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 1.0,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "07/10/2010 15:00",
+        "07/10/2010 16:00",
+        "07/10/2010 18:00"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.2f2b3\\Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+          "detail": "header='Hourbin'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.2f2b3\\Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.9,
+        "uncertainty_reason": "The field name 'Hourbin' and example values like '07/10/2010 15:00' strongly suggest a timestamp or time-related measurement. However, without explicit metadata confirming it as a time axis or coordinate, and given the conservative fallback instruction, semantic_type remains unknown. The logical_type is inferred as time_axis based on the format of example values.",
+        "supporting_evidence": [
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "COA_Lat",
+      "field_path": "COA_Lat",
+      "physical_type": "float",
+      "logical_type": "coordinate",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.885,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "48.56225",
+        "48.56254375"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        48.56216407,
+        48.56496
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.2f2b3\\Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+          "detail": "header='COA_Lat'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.2f2b3\\Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.95,
+        "uncertainty_reason": "semantic type left unknown because provided evidence does not support a precise semantic claim",
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "COA_Lon",
+      "field_path": "COA_Lon",
+      "physical_type": "float",
+      "logical_type": "coordinate",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.925,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "-53.89144",
+        "-53.8912075",
+        "-53.89144222"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        -53.891445,
+        -53.88814
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.2f2b3\\Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+          "detail": "header='COA_Lon'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.2f2b3\\Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.95,
+        "uncertainty_reason": "semantic type left unknown because provided evidence does not support a precise semantic claim",
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "POINT_X",
+      "field_path": "POINT_X",
+      "physical_type": "float",
+      "logical_type": "coordinate",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.93,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "729339.9132",
+        "729355.735",
+        "729339.7494"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        729339.5443,
+        729571.072
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.2f2b3\\Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+          "detail": "header='POINT_X'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.2f2b3\\Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.95,
+        "uncertainty_reason": "semantic type left unknown because provided evidence does not support a precise semantic claim",
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "POINT_Y",
+      "field_path": "POINT_Y",
+      "physical_type": "float",
+      "logical_type": "coordinate",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.93,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "5383461.215",
+        "5383494.559",
+        "5383461.208"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        5383453.088,
+        5383772.311
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.2f2b3\\Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+          "detail": "header='POINT_Y'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.2f2b3\\Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.95,
+        "uncertainty_reason": "semantic type left unknown because provided evidence does not support a precise semantic claim",
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "Month",
+      "field_path": "Month",
+      "physical_type": "string",
+      "logical_type": "time_axis",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.005,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "October"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.2f2b3\\Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+          "detail": "header='Month'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.2f2b3\\Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.9,
+        "uncertainty_reason": "The field name 'Month' and example value 'October' strongly suggest a temporal component, fitting the 'time_axis' logical type. However, without explicit metadata confirming its role as a primary temporal axis versus a categorical label for season, semantic_type remains unknown.",
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "Year",
+      "field_path": "Year",
+      "physical_type": "int",
+      "logical_type": "time_axis",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.005,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "2010"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        2010.0,
+        2010.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.2f2b3\\Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+          "detail": "header='Year'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.2f2b3\\Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.95,
+        "uncertainty_reason": "The field name 'Year' and integer value '2010' clearly indicate a temporal measurement. This fits the 'time_axis' logical type. Semantic type is unknown as the specific temporal granularity or role (e.g., start year, end year) is not explicitly defined in the available evidence.",
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "Tag",
+      "field_path": "Tag",
+      "physical_type": "string",
+      "logical_type": "identifier",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.005,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "t29912"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.2f2b3\\Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+          "detail": "header='Tag'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.2f2b3\\Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.9,
+        "uncertainty_reason": "The header 'Tag' and example value 't29912' strongly suggest an identifier for individual fish, but without explicit metadata confirming it is a unique ID, semantic_type remains unknown.",
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "Transplant",
+      "field_path": "Transplant",
+      "physical_type": "string",
+      "logical_type": "label",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.005,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "Control"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.2f2b3\\Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+          "detail": "header='Transplant'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.2f2b3\\Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.9,
+        "uncertainty_reason": "The header 'Transplant' and example value 'Control' suggest a categorical label for experimental treatment groups, but semantic_type is unknown due to lack of explicit definition.",
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    },
+    {
+      "field_name": "Cove",
+      "field_path": "Cove",
+      "physical_type": "string",
+      "logical_type": "label",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.005,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "HC"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.2f2b3\\Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+          "detail": "header='Cove'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.2f2b3\\Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler",
+      "semantic_annotation": {
+        "confidence": 0.9,
+        "uncertainty_reason": "The header 'Cove' and example value 'HC' suggest a categorical label for location/site, but semantic_type is unknown due to lack of explicit definition.",
+        "supporting_evidence": [
+          "F1",
+          "F2"
+        ],
+        "accepted_for_merge": true
+      }
+    }
+  ],
+  "groups": [],
+  "metadata": {
+    "sampled_rows": 200,
+    "column_count": 10,
+    "semantic_annotation": {
+      "task_id": "external::dryad::10.5061_dryad.2f2b3::Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+      "model_info": {
+        "api_base": "http://100.66.106.126:1234/v1",
+        "model": "qwen/qwen3.6-27b"
+      },
+      "conflicts": [],
+      "logical_type_overrides": [],
+      "notes": [
+        "The field 'Hourbin' contains values formatted as dates and times (e.g., '07/10/2010 15:00'). This suggests a temporal nature. While 'time_axis' is a plausible logical_type, the lack of explicit confirmation in the provided evidence keeps semantic_type as unknown. The confidence is set to 0.9 as per the input, reflecting high but not absolute certainty.",
+        "Headers 'COA_Lat' and 'COA_Lon' combined with value ranges (~48.56, ~-53.89) strongly indicate geographic latitude and longitude coordinates for the study site in Newfoundland.",
+        "Field names POINT_X and POINT_Y combined with large numeric ranges typical of projected coordinate systems (e.g., UTM) support the logical_type coordinate. Exact CRS is not specified, so semantic_type remains unknown.",
+        "The dataset title mentions 'Season and site fidelity', supporting the temporal nature of 'Month' and 'Year'.",
+        "Logical types were assigned based on field names and example values which are strong indicators of temporal data.",
+        "Semantic types remain unknown due to lack of explicit metadata defining the precise semantic role of these temporal fields.",
+        "Annotations are based on field names and example values. The dataset title mentions 'juvenile Greenland cod' and 'Newfoundland fjord', which provides context for the fields but does not explicitly define them."
+      ]
+    }
+  },
+  "notes": [],
+  "external_source_file": "dryad/10.5061_dryad.2f2b3/Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv"
+}

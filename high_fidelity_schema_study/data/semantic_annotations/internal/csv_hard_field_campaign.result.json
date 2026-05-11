@@ -1,0 +1,70 @@
+{
+  "task_file": "semantic_grounding/internal/csv_hard_field_campaign.task.json",
+  "model_info": {
+    "api_base": "http://100.66.106.126:1234/v1",
+    "model": "qwen/qwen3.6-27b"
+  },
+  "raw_result": {
+    "task_id": "internal::csv_hard_field_campaign",
+    "annotations": [
+      {
+        "field_path": "zc",
+        "semantic_type": "postal_zone_code",
+        "logical_type": "identifier",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "S1"
+        ],
+        "confidence": 0.9,
+        "uncertainty_reason": null
+      },
+      {
+        "field_path": "val",
+        "semantic_type": "unknown",
+        "logical_type": "measurement",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "S1"
+        ],
+        "confidence": 0.9,
+        "uncertainty_reason": "Physical type is string due to mixed non-detect/error markers; semantic type remains unknown as no precise domain concept is specified."
+      }
+    ],
+    "conflicts": [],
+    "notes": []
+  },
+  "validation_errors": [],
+  "result": {
+    "task_id": "internal::csv_hard_field_campaign",
+    "annotations": [
+      {
+        "field_path": "zc",
+        "semantic_type": "postal_zone_code",
+        "logical_type": "identifier",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "S1"
+        ],
+        "confidence": 0.9,
+        "uncertainty_reason": null
+      },
+      {
+        "field_path": "val",
+        "semantic_type": "unknown",
+        "logical_type": "measurement",
+        "unit": null,
+        "description": null,
+        "supporting_evidence": [
+          "S1"
+        ],
+        "confidence": 0.9,
+        "uncertainty_reason": "Physical type is string due to mixed non-detect/error markers; semantic type remains unknown as no precise domain concept is specified."
+      }
+    ],
+    "conflicts": [],
+    "notes": []
+  }
+}

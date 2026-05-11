@@ -1,0 +1,264 @@
+{
+  "system_rules": [
+    "You are given a deterministic schema extracted from a dataset file.",
+    "You may only make claims supported by the provided evidence.",
+    "Do not invent fields, units, or shapes that are not grounded in the deterministic schema or supplied snippets.",
+    "Prefer unknown over unsupported guessing.",
+    "If explicit metadata conflicts with weaker name-based inference, preserve the explicit metadata and surface a conflict."
+  ],
+  "task": {
+    "task_id": "internal::hdf5_medium_station_hierarchy",
+    "dataset_id": "hdf5_medium_station_hierarchy",
+    "file_format": "hdf5",
+    "data_modality": "hierarchical",
+    "deterministic_schema": {
+      "dataset_id": "station_hierarchy",
+      "file_id": "station_hierarchy.h5",
+      "file_format": "hdf5",
+      "data_modality": "hierarchical",
+      "fields": [
+        {
+          "field_name": "pressure",
+          "field_path": "/weather/station_001/pressure",
+          "physical_type": "float32",
+          "logical_type": "measurement",
+          "semantic_type": "surface_pressure",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": [
+            3
+          ],
+          "unit": "hPa",
+          "description": "surface pressure",
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "hdf5_dataset_path",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\hdf5\\hdf5_medium_station_hierarchy\\station_hierarchy.h5",
+              "detail": "/weather/station_001/pressure",
+              "confidence": 1.0
+            },
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "hdf5_attribute",
+              "source": "/weather/station_001/pressure",
+              "detail": "unit=hPa",
+              "confidence": 0.99
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "h5py_structure_traversal"
+        },
+        {
+          "field_name": "temp",
+          "field_path": "/weather/station_001/temp",
+          "physical_type": "float32",
+          "logical_type": "measurement",
+          "semantic_type": "air_temperature",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": [
+            3
+          ],
+          "unit": "C",
+          "description": "air temperature",
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "hdf5_dataset_path",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\hdf5\\hdf5_medium_station_hierarchy\\station_hierarchy.h5",
+              "detail": "/weather/station_001/temp",
+              "confidence": 1.0
+            },
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "hdf5_attribute",
+              "source": "/weather/station_001/temp",
+              "detail": "unit=C",
+              "confidence": 0.99
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "h5py_structure_traversal"
+        },
+        {
+          "field_name": "pressure",
+          "field_path": "/weather/station_002/pressure",
+          "physical_type": "float32",
+          "logical_type": "measurement",
+          "semantic_type": "surface_pressure",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": [
+            3
+          ],
+          "unit": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "hdf5_dataset_path",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\hdf5\\hdf5_medium_station_hierarchy\\station_hierarchy.h5",
+              "detail": "/weather/station_002/pressure",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "h5py_structure_traversal"
+        },
+        {
+          "field_name": "temp",
+          "field_path": "/weather/station_002/temp",
+          "physical_type": "float32",
+          "logical_type": "measurement",
+          "semantic_type": "air_temperature",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": [
+            3
+          ],
+          "unit": "C",
+          "description": "air temperature",
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "hdf5_dataset_path",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\hdf5\\hdf5_medium_station_hierarchy\\station_hierarchy.h5",
+              "detail": "/weather/station_002/temp",
+              "confidence": 1.0
+            },
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "hdf5_attribute",
+              "source": "/weather/station_002/temp",
+              "detail": "unit=C",
+              "confidence": 0.99
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "h5py_structure_traversal"
+        },
+        {
+          "field_name": "timestamp",
+          "field_path": "/weather/timestamp",
+          "physical_type": "string",
+          "logical_type": "time_axis",
+          "semantic_type": "observation_time",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": [
+            3
+          ],
+          "unit": null,
+          "description": "observation timestamp",
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "hdf5_dataset_path",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\hdf5\\hdf5_medium_station_hierarchy\\station_hierarchy.h5",
+              "detail": "/weather/timestamp",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "h5py_structure_traversal"
+        }
+      ],
+      "groups": [
+        {
+          "path": "/weather",
+          "kind": "group",
+          "attributes": {
+            "description": "Nested station hierarchy with partial metadata"
+          }
+        },
+        {
+          "path": "/weather/station_001",
+          "kind": "group",
+          "attributes": {
+            "station_id": "station_001",
+            "station_name": "North Ridge"
+          }
+        },
+        {
+          "path": "/weather/station_002",
+          "kind": "group",
+          "attributes": {
+            "station_id": "station_002",
+            "station_name": "Coastal Bay"
+          }
+        }
+      ],
+      "metadata": {
+        "field_count": 5,
+        "group_count": 3,
+        "extraction_errors": []
+      },
+      "notes": [],
+      "study_dataset_id": "hdf5_medium_station_hierarchy",
+      "study_category": "hdf5",
+      "study_difficulty": "medium",
+      "study_source_file": "raw/hdf5/hdf5_medium_station_hierarchy/station_hierarchy.h5"
+    },
+    "grounding_snippets": [
+      {
+        "source_type": "dataset_readme",
+        "source_name": "raw/hdf5/hdf5_medium_station_hierarchy/README.md",
+        "detail": "local pilot dataset README",
+        "text": "# hdf5_medium_station_hierarchy\n\nNested per-station hierarchy with partial metadata.\n\n- `/weather/timestamp` is the shared hourly time axis\n- each station group stores `temp` and `pressure`\n- `station_002/pressure` intentionally lacks unit metadata",
+        "priority": 1
+      }
+    ],
+    "instructions": [
+      "Use only the deterministic schema and grounding snippets.",
+      "If a field already has explicit unit metadata, do not replace it with weaker inference."
+    ]
+  },
+  "expected_output_schema": {
+    "task_id": "string",
+    "annotations": [
+      {
+        "field_path": "string",
+        "semantic_type": "string",
+        "logical_type": "string|null",
+        "unit": "string|null",
+        "description": "string|null",
+        "supporting_evidence": [
+          "string"
+        ],
+        "confidence": "number",
+        "uncertainty_reason": "string|null"
+      }
+    ],
+    "conflicts": [
+      {
+        "field_path": "string",
+        "conflict_type": "string",
+        "detail": "string"
+      }
+    ],
+    "notes": [
+      "string"
+    ]
+  }
+}

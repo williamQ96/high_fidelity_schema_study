@@ -1,1 +1,7 @@
-# high_fidelity_schema_study
+# High-Fidelity Schema Study
+
+The study package lives in [`high_fidelity_schema_study/`](high_fidelity_schema_study/).
+
+Start with the project README:
+
+- [`high_fidelity_schema_study/README.md`](high_fidelity_schema_study/README.md)

@@ -1,0 +1,52 @@
+{
+  "task_file": "semantic_grounding/external/zenodo__record_15008662__unique_tracks_90.csv.task.json",
+  "model_info": {
+    "api_base": "http://100.66.106.126:1234/v1",
+    "model": "qwen/qwen3.6-27b"
+  },
+  "raw_result": {
+    "task_id": "external::zenodo::record_15008662::unique_tracks_90.csv",
+    "annotations": [
+      {
+        "field_path": "max_VIL",
+        "semantic_type": "measurement",
+        "logical_type": "measurement",
+        "unit": "dBZ",
+        "description": "Maximum Vertically Integrated Liquid (VIL) derived from radar data, representing the total mass of precipitation in a column of the atmosphere.",
+        "supporting_evidence": [
+          "S1",
+          "F1"
+        ],
+        "confidence": 0.95,
+        "uncertainty_reason": null
+      }
+    ],
+    "conflicts": [],
+    "notes": [
+      "The field 'max_VIL' is explicitly described in the grounding snippets (S1) as 'radar-derived maximum vertically integrated liquid'. VIL is a standard meteorological measurement typically expressed in dBZ (decibels relative to Z, the radar reflectivity factor). The header 'max_VIL' (F1) confirms the field name. The logical type is 'measurement' as it quantifies a physical property of the storm."
+    ]
+  },
+  "validation_errors": [],
+  "result": {
+    "task_id": "external::zenodo::record_15008662::unique_tracks_90.csv",
+    "annotations": [
+      {
+        "field_path": "max_VIL",
+        "semantic_type": "measurement",
+        "logical_type": "measurement",
+        "unit": "dBZ",
+        "description": "Maximum Vertically Integrated Liquid (VIL) derived from radar data, representing the total mass of precipitation in a column of the atmosphere.",
+        "supporting_evidence": [
+          "S1",
+          "F1"
+        ],
+        "confidence": 0.95,
+        "uncertainty_reason": null
+      }
+    ],
+    "conflicts": [],
+    "notes": [
+      "The field 'max_VIL' is explicitly described in the grounding snippets (S1) as 'radar-derived maximum vertically integrated liquid'. VIL is a standard meteorological measurement typically expressed in dBZ (decibels relative to Z, the radar reflectivity factor). The header 'max_VIL' (F1) confirms the field name. The logical type is 'measurement' as it quantifies a physical property of the storm."
+    ]
+  }
+}

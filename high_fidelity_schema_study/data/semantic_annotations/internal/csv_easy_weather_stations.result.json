@@ -1,0 +1,48 @@
+{
+  "task_file": "semantic_grounding/internal/csv_easy_weather_stations.task.json",
+  "model_info": {
+    "api_base": "http://100.66.106.126:1234/v1",
+    "model": "qwen/qwen3.6-27b"
+  },
+  "raw_result": {
+    "task_id": "internal::csv_easy_weather_stations",
+    "annotations": [
+      {
+        "field_path": "elevation_m",
+        "semantic_type": "elevation",
+        "logical_type": "measurement",
+        "unit": "meter",
+        "description": null,
+        "supporting_evidence": [
+          "S1",
+          "F1"
+        ],
+        "confidence": 0.95,
+        "uncertainty_reason": null
+      }
+    ],
+    "conflicts": [],
+    "notes": []
+  },
+  "validation_errors": [],
+  "result": {
+    "task_id": "internal::csv_easy_weather_stations",
+    "annotations": [
+      {
+        "field_path": "elevation_m",
+        "semantic_type": "elevation",
+        "logical_type": "measurement",
+        "unit": "meter",
+        "description": null,
+        "supporting_evidence": [
+          "S1",
+          "F1"
+        ],
+        "confidence": 0.95,
+        "uncertainty_reason": null
+      }
+    ],
+    "conflicts": [],
+    "notes": []
+  }
+}

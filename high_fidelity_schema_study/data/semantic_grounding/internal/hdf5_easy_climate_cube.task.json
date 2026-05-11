@@ -1,0 +1,224 @@
+{
+  "system_rules": [
+    "You are given a deterministic schema extracted from a dataset file.",
+    "You may only make claims supported by the provided evidence.",
+    "Do not invent fields, units, or shapes that are not grounded in the deterministic schema or supplied snippets.",
+    "Prefer unknown over unsupported guessing.",
+    "If explicit metadata conflicts with weaker name-based inference, preserve the explicit metadata and surface a conflict."
+  ],
+  "task": {
+    "task_id": "internal::hdf5_easy_climate_cube",
+    "dataset_id": "hdf5_easy_climate_cube",
+    "file_format": "hdf5",
+    "data_modality": "hierarchical",
+    "deterministic_schema": {
+      "dataset_id": "climate_cube",
+      "file_id": "climate_cube.h5",
+      "file_format": "hdf5",
+      "data_modality": "hierarchical",
+      "fields": [
+        {
+          "field_name": "station_id",
+          "field_path": "/coords/station_id",
+          "physical_type": "string",
+          "logical_type": "identifier",
+          "semantic_type": "station_identifier",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": [
+            2
+          ],
+          "unit": null,
+          "description": "weather station identifier",
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "hdf5_dataset_path",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\hdf5\\hdf5_easy_climate_cube\\climate_cube.h5",
+              "detail": "/coords/station_id",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "h5py_structure_traversal"
+        },
+        {
+          "field_name": "time",
+          "field_path": "/coords/time",
+          "physical_type": "int32",
+          "logical_type": "time_axis",
+          "semantic_type": "forecast_hour",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": [
+            4
+          ],
+          "unit": "hours since 2026-01-01 00:00:00 UTC",
+          "description": "forecast lead hour",
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "hdf5_dataset_path",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\hdf5\\hdf5_easy_climate_cube\\climate_cube.h5",
+              "detail": "/coords/time",
+              "confidence": 1.0
+            },
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "hdf5_attribute",
+              "source": "/coords/time",
+              "detail": "unit=hours since 2026-01-01 00:00:00 UTC",
+              "confidence": 0.99
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "h5py_structure_traversal"
+        },
+        {
+          "field_name": "humidity",
+          "field_path": "/observations/humidity",
+          "physical_type": "float32",
+          "logical_type": "measurement",
+          "semantic_type": "relative_humidity",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": [
+            4,
+            2
+          ],
+          "unit": "%",
+          "description": "relative humidity",
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "hdf5_dataset_path",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\hdf5\\hdf5_easy_climate_cube\\climate_cube.h5",
+              "detail": "/observations/humidity",
+              "confidence": 1.0
+            },
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "hdf5_attribute",
+              "source": "/observations/humidity",
+              "detail": "unit=%",
+              "confidence": 0.99
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "h5py_structure_traversal"
+        },
+        {
+          "field_name": "temperature",
+          "field_path": "/observations/temperature",
+          "physical_type": "float32",
+          "logical_type": "measurement",
+          "semantic_type": "air_temperature",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": [
+            4,
+            2
+          ],
+          "unit": "C",
+          "description": "air temperature",
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "hdf5_dataset_path",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\raw\\hdf5\\hdf5_easy_climate_cube\\climate_cube.h5",
+              "detail": "/observations/temperature",
+              "confidence": 1.0
+            },
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "hdf5_attribute",
+              "source": "/observations/temperature",
+              "detail": "unit=C",
+              "confidence": 0.99
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "h5py_structure_traversal"
+        }
+      ],
+      "groups": [
+        {
+          "path": "/coords",
+          "kind": "group",
+          "attributes": {}
+        },
+        {
+          "path": "/observations",
+          "kind": "group",
+          "attributes": {}
+        }
+      ],
+      "metadata": {
+        "field_count": 4,
+        "group_count": 2,
+        "extraction_errors": []
+      },
+      "notes": [],
+      "study_dataset_id": "hdf5_easy_climate_cube",
+      "study_category": "hdf5",
+      "study_difficulty": "easy",
+      "study_source_file": "raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5"
+    },
+    "grounding_snippets": [
+      {
+        "source_type": "dataset_readme",
+        "source_name": "raw/hdf5/hdf5_easy_climate_cube/README.md",
+        "detail": "local pilot dataset README",
+        "text": "# hdf5_easy_climate_cube\n\nTwo-dimensional climate data cube with explicit coordinate datasets and field-level attributes.\n\n- `/coords/time` defines time offsets\n- `/coords/station_id` identifies stations\n- `/observations/temperature` is air temperature in Celsius\n- `/observations/humidity` is relative humidity in percent",
+        "priority": 1
+      }
+    ],
+    "instructions": [
+      "Use only the deterministic schema and grounding snippets.",
+      "If a field already has explicit unit metadata, do not replace it with weaker inference."
+    ]
+  },
+  "expected_output_schema": {
+    "task_id": "string",
+    "annotations": [
+      {
+        "field_path": "string",
+        "semantic_type": "string",
+        "logical_type": "string|null",
+        "unit": "string|null",
+        "description": "string|null",
+        "supporting_evidence": [
+          "string"
+        ],
+        "confidence": "number",
+        "uncertainty_reason": "string|null"
+      }
+    ],
+    "conflicts": [
+      {
+        "field_path": "string",
+        "conflict_type": "string",
+        "detail": "string"
+      }
+    ],
+    "notes": [
+      "string"
+    ]
+  }
+}

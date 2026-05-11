@@ -1,0 +1,662 @@
+{
+  "system_rules": [
+    "You are given a deterministic schema extracted from a dataset file.",
+    "You may only make claims supported by the provided evidence.",
+    "Do not invent fields, units, or shapes that are not grounded in the deterministic schema or supplied snippets.",
+    "Prefer unknown over unsupported guessing.",
+    "If explicit metadata conflicts with weaker name-based inference, preserve the explicit metadata and surface a conflict."
+  ],
+  "task": {
+    "task_id": "external::dryad::10.5061_dryad.zkh1893nh::functional_traits.csv",
+    "dataset_id": "functional_traits.csv",
+    "file_format": "csv",
+    "data_modality": "tabular",
+    "deterministic_schema": {
+      "dataset_id": "functional_traits",
+      "file_id": "functional_traits.csv",
+      "file_format": "csv",
+      "data_modality": "tabular",
+      "fields": [
+        {
+          "field_name": "Species",
+          "field_path": "Species",
+          "physical_type": "string",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": 1.0,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "Potamogale_velox",
+            "Addax_nasomaculatus",
+            "Aepyceros_melampus"
+          ],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "header='Species'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 0.9,
+          "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "Mass.g",
+          "field_path": "Mass.g",
+          "physical_type": "float",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": 0.855,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "660.0",
+            "70000.3",
+            "52500.1"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            289.0,
+            2949986.3
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "header='Mass.g'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "Vertebrate",
+          "field_path": "Vertebrate",
+          "physical_type": "int",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": 0.02,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "3",
+            "0"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            0.0,
+            3.0
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "header='Vertebrate'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "Mammal",
+          "field_path": "Mammal",
+          "physical_type": "int",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": 0.02,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "0"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            0.0,
+            3.0
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "header='Mammal'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "Bird",
+          "field_path": "Bird",
+          "physical_type": "int",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": 0.02,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "0"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            0.0,
+            3.0
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "header='Bird'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "Herptile",
+          "field_path": "Herptile",
+          "physical_type": "int",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": 0.02,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "3",
+            "0"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            0.0,
+            3.0
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "header='Herptile'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "Fish",
+          "field_path": "Fish",
+          "physical_type": "int",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": 0.02,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "3",
+            "0"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            0.0,
+            3.0
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "header='Fish'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "Invertebrate",
+          "field_path": "Invertebrate",
+          "physical_type": "int",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": 0.02,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "3",
+            "0"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            0.0,
+            3.0
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "header='Invertebrate'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "Seed",
+          "field_path": "Seed",
+          "physical_type": "int",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": 0.02,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "0"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            0.0,
+            3.0
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "header='Seed'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "Fruit",
+          "field_path": "Fruit",
+          "physical_type": "int",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": 0.02,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "0"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            0.0,
+            3.0
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "header='Fruit'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "Nectar",
+          "field_path": "Nectar",
+          "physical_type": "int",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": 0.005,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "0"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            0.0,
+            0.0
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "header='Nectar'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "Root",
+          "field_path": "Root",
+          "physical_type": "int",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": 0.02,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "0"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            0.0,
+            3.0
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "header='Root'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "Woody",
+          "field_path": "Woody",
+          "physical_type": "int",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": 0.02,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "0",
+            "3"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            0.0,
+            3.0
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "header='Woody'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "Herbaceous",
+          "field_path": "Herbaceous",
+          "physical_type": "int",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": 0.02,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "0",
+            "3"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            0.0,
+            3.0
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "header='Herbaceous'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        },
+        {
+          "field_name": "Other",
+          "field_path": "Other",
+          "physical_type": "int",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": 0.015,
+          "shape": null,
+          "unit": null,
+          "description": null,
+          "example_values": [
+            "0"
+          ],
+          "missing_count": 0,
+          "value_range": [
+            0.0,
+            3.0
+          ],
+          "source_evidence": [
+            {
+              "tier": "structural",
+              "evidence_type": "csv_header",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "header='Other'",
+              "confidence": 1.0
+            },
+            {
+              "tier": "statistical",
+              "evidence_type": "sample_rows",
+              "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\dryad\\10.5061_dryad.zkh1893nh\\functional_traits.csv",
+              "detail": "sampled_rows=200",
+              "confidence": 0.9
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "csv_conservative_profiler"
+        }
+      ],
+      "groups": [],
+      "metadata": {
+        "sampled_rows": 200,
+        "column_count": 15
+      },
+      "notes": [],
+      "external_source_file": "dryad/10.5061_dryad.zkh1893nh/functional_traits.csv"
+    },
+    "grounding_snippets": [
+      {
+        "source_type": "record_title",
+        "source_name": "external/dryad/10.5061_dryad.zkh1893nh/source_record.json",
+        "detail": "record title",
+        "text": "Food web similarity increases with productivity similarity at a continental scale",
+        "priority": 1
+      }
+    ],
+    "instructions": [
+      "Treat source-record descriptions and notes as weaker than explicit field metadata.",
+      "If multiple files come from the same record family, annotate only the current file and do not copy assumptions across siblings without direct evidence."
+    ]
+  },
+  "expected_output_schema": {
+    "task_id": "string",
+    "annotations": [
+      {
+        "field_path": "string",
+        "semantic_type": "string",
+        "logical_type": "string|null",
+        "unit": "string|null",
+        "description": "string|null",
+        "supporting_evidence": [
+          "string"
+        ],
+        "confidence": "number",
+        "uncertainty_reason": "string|null"
+      }
+    ],
+    "conflicts": [
+      {
+        "field_path": "string",
+        "conflict_type": "string",
+        "detail": "string"
+      }
+    ],
+    "notes": [
+      "string"
+    ]
+  }
+}

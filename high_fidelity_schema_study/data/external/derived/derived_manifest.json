@@ -1,0 +1,132 @@
+{
+  "files": [
+    {
+      "record_directory": "dryad/10.5061_dryad.04t19",
+      "file_name": "boundaryflow_snapshots.hdf5",
+      "status": "derived_built",
+      "file_format": "hdf5",
+      "source_file": "dryad/10.5061_dryad.04t19/boundaryflow_snapshots.hdf5",
+      "derived_schema_file": "derived/dryad/10.5061_dryad.04t19/boundaryflow_snapshots.hdf5.schema.json"
+    },
+    {
+      "record_directory": "dryad/10.5061_dryad.2f2b3",
+      "file_name": "Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+      "status": "derived_built",
+      "file_format": "csv",
+      "source_file": "dryad/10.5061_dryad.2f2b3/Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+      "derived_schema_file": "derived/dryad/10.5061_dryad.2f2b3/Season_and_site_fidelity_determine_home_range_of_dispersing_and_resident_juvenile_Greenland_cod_Gadus_ogac_in_a_Newfoundland_fjord_year1.csv.schema.json"
+    },
+    {
+      "record_directory": "dryad/10.5061_dryad.2f2b3",
+      "file_name": "Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year2.csv",
+      "status": "derived_built",
+      "file_format": "csv",
+      "source_file": "dryad/10.5061_dryad.2f2b3/Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year2.csv",
+      "derived_schema_file": "derived/dryad/10.5061_dryad.2f2b3/Season_and_site_fidelity_determine_home_range_of_dispersing_and_resident_juvenile_Greenland_cod_Gadus_ogac_in_a_Newfoundland_fjord_year2.csv.schema.json"
+    },
+    {
+      "record_directory": "dryad/10.5061_dryad.zkh1893nh",
+      "file_name": "above_500_PA_data.csv",
+      "status": "derived_built",
+      "file_format": "csv",
+      "source_file": "dryad/10.5061_dryad.zkh1893nh/above_500_PA_data.csv",
+      "derived_schema_file": "derived/dryad/10.5061_dryad.zkh1893nh/above_500_PA_data.csv.schema.json"
+    },
+    {
+      "record_directory": "dryad/10.5061_dryad.zkh1893nh",
+      "file_name": "Africa_metaweb_above500.csv",
+      "status": "derived_built",
+      "file_format": "csv",
+      "source_file": "dryad/10.5061_dryad.zkh1893nh/Africa_metaweb_above500.csv",
+      "derived_schema_file": "derived/dryad/10.5061_dryad.zkh1893nh/Africa_metaweb_above500.csv.schema.json"
+    },
+    {
+      "record_directory": "dryad/10.5061_dryad.zkh1893nh",
+      "file_name": "African_Mammal_FoodWebs_Locations.csv",
+      "status": "derived_built",
+      "file_format": "csv",
+      "source_file": "dryad/10.5061_dryad.zkh1893nh/African_Mammal_FoodWebs_Locations.csv",
+      "derived_schema_file": "derived/dryad/10.5061_dryad.zkh1893nh/African_Mammal_FoodWebs_Locations.csv.schema.json"
+    },
+    {
+      "record_directory": "dryad/10.5061_dryad.zkh1893nh",
+      "file_name": "functional_traits.csv",
+      "status": "derived_built",
+      "file_format": "csv",
+      "source_file": "dryad/10.5061_dryad.zkh1893nh/functional_traits.csv",
+      "derived_schema_file": "derived/dryad/10.5061_dryad.zkh1893nh/functional_traits.csv.schema.json"
+    },
+    {
+      "record_directory": "dryad/10.5061_dryad.dv41ns266",
+      "file_name": "weatherMQ-FP-20261011.csv",
+      "status": "derived_built",
+      "file_format": "csv",
+      "source_file": "dryad/10.5061_dryad.dv41ns266/weatherMQ-FP-20261011.csv",
+      "derived_schema_file": "derived/dryad/10.5061_dryad.dv41ns266/weatherMQ-FP-20261011.csv.schema.json"
+    },
+    {
+      "record_directory": "zenodo/record_15008662",
+      "file_name": "unique_tracks_90.csv",
+      "status": "derived_built",
+      "file_format": "csv",
+      "source_file": "zenodo/record_15008662/unique_tracks_90.csv",
+      "derived_schema_file": "derived/zenodo/record_15008662/unique_tracks_90.csv.schema.json"
+    },
+    {
+      "record_directory": "zenodo/record_5935524",
+      "file_name": "20211108_ZXLidar_Winds.csv",
+      "status": "derived_built",
+      "file_format": "csv",
+      "source_file": "zenodo/record_5935524/20211108_ZXLidar_Winds.csv",
+      "derived_schema_file": "derived/zenodo/record_5935524/20211108_ZXLidar_Winds.csv.schema.json"
+    },
+    {
+      "record_directory": "zenodo/record_5935524",
+      "file_name": "20211108_Sensit.csv",
+      "status": "derived_built",
+      "file_format": "csv",
+      "source_file": "zenodo/record_5935524/20211108_Sensit.csv",
+      "derived_schema_file": "derived/zenodo/record_5935524/20211108_Sensit.csv.schema.json"
+    },
+    {
+      "record_directory": "zenodo/record_5935524",
+      "file_name": "20211108_Tides.csv",
+      "status": "derived_built",
+      "file_format": "csv",
+      "source_file": "zenodo/record_5935524/20211108_Tides.csv",
+      "derived_schema_file": "derived/zenodo/record_5935524/20211108_Tides.csv.schema.json"
+    },
+    {
+      "record_directory": "zenodo/record_18195710",
+      "file_name": "ensensia_raw_20230728-20251202_school_5.csv",
+      "status": "derived_built",
+      "file_format": "csv",
+      "source_file": "zenodo/record_18195710/ensensia_raw_20230728-20251202_school_5.csv",
+      "derived_schema_file": "derived/zenodo/record_18195710/ensensia_raw_20230728-20251202_school_5.csv.schema.json"
+    },
+    {
+      "record_directory": "zenodo/record_3660832",
+      "file_name": "Data 01 Jan 2019.h5",
+      "status": "derived_built",
+      "file_format": "hdf5",
+      "source_file": "zenodo/record_3660832/Data 01 Jan 2019.h5",
+      "derived_schema_file": "derived/zenodo/record_3660832/Data_01_Jan_2019.h5.schema.json"
+    },
+    {
+      "record_directory": "zenodo/record_3660832",
+      "file_name": "Data 07 July 2019.h5",
+      "status": "derived_built",
+      "file_format": "hdf5",
+      "source_file": "zenodo/record_3660832/Data 07 July 2019.h5",
+      "derived_schema_file": "derived/zenodo/record_3660832/Data_07_July_2019.h5.schema.json"
+    },
+    {
+      "record_directory": "zenodo/record_5116851",
+      "file_name": "DataseParaWorkshop_v2.h5",
+      "status": "derived_built",
+      "file_format": "hdf5",
+      "source_file": "zenodo/record_5116851/DataseParaWorkshop_v2.h5",
+      "derived_schema_file": "derived/zenodo/record_5116851/DataseParaWorkshop_v2.h5.schema.json"
+    }
+  ]
+}

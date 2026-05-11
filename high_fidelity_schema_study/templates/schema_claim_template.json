@@ -1,0 +1,24 @@
+{
+  "field_name": "temperature",
+  "field_path": "/observations/temperature",
+  "physical_type": "float32",
+  "logical_type": "measurement",
+  "semantic_type": "air_temperature",
+  "unit": "Celsius",
+  "shape": [
+    365,
+    24
+  ],
+  "source_evidence": [
+    {
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_attribute",
+      "source": "/observations/temperature",
+      "detail": "units='C'",
+      "confidence": 0.99
+    }
+  ],
+  "confidence": 0.99,
+  "uncertainty_reason": null,
+  "extraction_method": "h5py_structure_traversal"
+}

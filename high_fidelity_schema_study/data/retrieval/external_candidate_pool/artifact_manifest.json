@@ -1,0 +1,20 @@
+{
+  "candidate_count": 16,
+  "target_count": 10,
+  "artifact_files": {
+    "metadata_only": "retrieval/external_candidate_pool/metadata_only.json",
+    "readme_only": "retrieval/external_candidate_pool/readme_only.json",
+    "schema_enhanced": "retrieval/external_candidate_pool/schema_enhanced.json",
+    "schema_enhanced_deterministic": "retrieval/external_candidate_pool/schema_enhanced_deterministic.json",
+    "schema_enhanced_semantic_merged": "retrieval/external_candidate_pool/schema_enhanced_semantic_merged.json",
+    "queries": "retrieval/external_candidate_pool/queries.json"
+  },
+  "notes": [
+    "The readme_only artifact is currently a README-like text baseline derived from source record descriptions and notes, because the imported Zenodo records do not provide standalone README files.",
+    "The schema_enhanced artifact is retained as a backward-compatible deterministic-schema artifact.",
+    "The schema_enhanced_deterministic and schema_enhanced_semantic_merged artifacts provide explicit schema_source comparison modes.",
+    "The schema_enhanced_semantic_merged artifact uses semantic_merged schemas where available and deterministic fallback otherwise.",
+    "Schema-enhanced artifacts include file-slice terms such as year1/year2 and month names to support same-family disambiguation.",
+    "This artifact bundle is built from retrieval-pool entries, which may include distractors that are not promoted benchmark targets."
+  ]
+}

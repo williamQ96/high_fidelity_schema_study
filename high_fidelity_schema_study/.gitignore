@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+
+.pytest_cache/
+.mypy_cache/
+.coverage
+
+# Local scratch / rendered previews.
+tmp/
+
+# Presentation build dependencies are reproducible from the runtime.
+docs/presentation/node_modules/
+
+# Downloaded external raw payloads are large and reproducible from manifests.
+# Keep curated_sources.json, import_manifest.json, benchmark_candidates.json,
+# derived schemas, retrieval artifacts, and semantic outputs in git.
+data/external/dryad/
+data/external/zenodo/

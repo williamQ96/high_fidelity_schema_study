@@ -1,0 +1,17 @@
+{
+  "field_name": "timestamp",
+  "field_path": "timestamp",
+  "correct_physical_type": "datetime",
+  "correct_logical_type": "time_axis",
+  "correct_semantic_type": "observation_time",
+  "unit": null,
+  "necessity": "high",
+  "gold_evidence": [
+    {
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "example.csv",
+      "detail": "header='timestamp'"
+    }
+  ]
+}

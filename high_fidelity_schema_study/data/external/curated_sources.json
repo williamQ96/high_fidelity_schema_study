@@ -1,0 +1,115 @@
+{
+  "batch_id": "2026-04-27-initial-dryad-zenodo-corpus",
+  "selection_policy": {
+    "goals": [
+      "cover csv, time-series csv, and hdf5",
+      "pull from both Dryad and Zenodo",
+      "prefer direct downloadable files over opaque archives",
+      "keep initial import size moderate and reviewable"
+    ],
+    "soft_size_cap_mb": 10,
+    "notes": [
+      "Larger files may still be selected if they are strongly relevant and directly usable.",
+      "Archive-heavy records were deprioritized unless no direct format-specific file was available."
+    ]
+  },
+  "sources": [
+    {
+      "source": "dryad",
+      "dataset_doi": "10.5061/dryad.04t19",
+      "landing_url": "https://datadryad.org/dataset/doi:10.5061/dryad.04t19",
+      "label": "odor plume hdf5 snapshot",
+      "why_selected": "Direct HDF5 file with explicit scientific structure and small size compared with the larger companion files.",
+      "files": [
+        "boundaryflow_snapshots.hdf5"
+      ]
+    },
+    {
+      "source": "dryad",
+      "dataset_doi": "10.5061/dryad.2f2b3",
+      "landing_url": "https://datadryad.org/dataset/doi:10.5061/dryad.2f2b3",
+      "label": "greenland cod movement time series",
+      "why_selected": "Two direct CSV exports with temporal structure and repeated entities.",
+      "files": [
+        "Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+        "Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year2.csv"
+      ]
+    },
+    {
+      "source": "dryad",
+      "dataset_doi": "10.5061/dryad.zkh1893nh",
+      "landing_url": "https://datadryad.org/dataset/doi:10.5061/dryad.zkh1893nh",
+      "label": "african mammal food web tabular bundle",
+      "why_selected": "Multiple directly downloadable CSV files with heterogeneous but schema-rich ecological tables.",
+      "files": [
+        "above_500_PA_data.csv",
+        "Africa_metaweb_above500.csv",
+        "African_Mammal_FoodWebs_Locations.csv",
+        "functional_traits.csv"
+      ]
+    },
+    {
+      "source": "dryad",
+      "dataset_doi": "10.5061/dryad.dv41ns266",
+      "landing_url": "https://datadryad.org/dataset/doi:10.5061/dryad.dv41ns266",
+      "label": "weather station csv",
+      "why_selected": "Single medium-sized weather station CSV that is directly useful for time-axis and unit discovery work.",
+      "files": [
+        "weatherMQ-FP-20261011.csv"
+      ]
+    },
+    {
+      "source": "zenodo",
+      "record_id": "15008662",
+      "landing_url": "https://zenodo.org/records/15008662",
+      "label": "tracked hailstorm events",
+      "why_selected": "Compact CSV with timestamp and geospatial fields, appropriate for retrieval and tabular profiling.",
+      "files": [
+        "unique_tracks_90.csv"
+      ]
+    },
+    {
+      "source": "zenodo",
+      "record_id": "5935524",
+      "landing_url": "https://zenodo.org/records/5935524",
+      "label": "aeolian saltation field time series",
+      "why_selected": "Direct sensor and wind time-series CSV files with different granularities and field layouts.",
+      "files": [
+        "20211108_ZXLidar_Winds.csv",
+        "20211108_Sensit.csv",
+        "20211108_Tides.csv"
+      ]
+    },
+    {
+      "source": "zenodo",
+      "record_id": "18195710",
+      "landing_url": "https://zenodo.org/records/18195710",
+      "label": "indoor air pollutant sensor csv",
+      "why_selected": "Raw timestamped sensor measurements from a real deployment, selected with one smaller school file for an initial import batch.",
+      "files": [
+        "ensensia_raw_20230728-20251202_school_5.csv"
+      ]
+    },
+    {
+      "source": "zenodo",
+      "record_id": "3660832",
+      "landing_url": "https://zenodo.org/records/3660832",
+      "label": "ATLASM5 atmospheric station h5 months",
+      "why_selected": "Direct monthly H5 files from an atmospheric research station; selected two months to seed hierarchical extractor evaluation.",
+      "files": [
+        "Data 01 Jan 2019.h5",
+        "Data 07 July 2019.h5"
+      ]
+    },
+    {
+      "source": "zenodo",
+      "record_id": "5116851",
+      "landing_url": "https://zenodo.org/records/5116851",
+      "label": "single h5 workshop dataset",
+      "why_selected": "Small standalone H5 file useful as an additional binary-format smoke case.",
+      "files": [
+        "DataseParaWorkshop_v2.h5"
+      ]
+    }
+  ]
+}
