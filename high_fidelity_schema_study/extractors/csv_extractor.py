@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 from ..models import DatasetSchema, EvidenceRecord, FieldSchema
+from ..deterministic_profile import attach_dataset_profile
 from .timeseries_profiler import infer_time_series_metadata, parse_datetime
 
 
@@ -278,4 +279,4 @@ def extract_csv_schema(path: str, sample_limit: int = 200) -> DatasetSchema:
         dataset_schema.data_modality = "time_series"
         dataset_schema.metadata["time_series"] = time_series_metadata
 
-    return dataset_schema
+    return attach_dataset_profile(dataset_schema)

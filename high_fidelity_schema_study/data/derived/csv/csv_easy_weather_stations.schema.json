@@ -276,7 +276,77 @@
   "groups": [],
   "metadata": {
     "sampled_rows": 3,
-    "column_count": 6
+    "column_count": 6,
+    "deterministic_profile": {
+      "missingness": {
+        "basis": "sampled_rows",
+        "sampled_rows": 3,
+        "field_count": 6,
+        "fields_with_missing_count": 0,
+        "total_missing_cells": 0,
+        "fields": [
+          {
+            "field_path": "station_id",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          },
+          {
+            "field_path": "station_name",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          },
+          {
+            "field_path": "latitude_deg",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          },
+          {
+            "field_path": "longitude_deg",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          },
+          {
+            "field_path": "elevation_m",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          },
+          {
+            "field_path": "precip_mm",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          }
+        ]
+      },
+      "identifier_quality": {
+        "candidate_count": 1,
+        "best_identifier_fields": [
+          "station_id"
+        ],
+        "fields": [
+          {
+            "field_path": "station_id",
+            "semantic_type": "station_identifier",
+            "unique_ratio": 1.0,
+            "missing_ratio": 0.0,
+            "non_missing_rows": 3,
+            "duplicate_count": 0,
+            "quality": "unique_identifier"
+          }
+        ]
+      }
+    }
   },
   "notes": [],
   "study_dataset_id": "csv_easy_weather_stations",

@@ -159,7 +159,61 @@
   "metadata": {
     "field_count": 4,
     "group_count": 2,
-    "extraction_errors": []
+    "extraction_errors": [],
+    "deterministic_profile": {
+      "missingness": {
+        "basis": "field_metadata",
+        "sampled_rows": null,
+        "field_count": 4,
+        "fields_with_missing_count": 0,
+        "total_missing_cells": 0,
+        "fields": [
+          {
+            "field_path": "/coords/station_id",
+            "missing_count": 0,
+            "missing_ratio": null,
+            "nullable": true,
+            "basis": "field_metadata"
+          },
+          {
+            "field_path": "/coords/time",
+            "missing_count": 0,
+            "missing_ratio": null,
+            "nullable": true,
+            "basis": "field_metadata"
+          },
+          {
+            "field_path": "/observations/humidity",
+            "missing_count": 0,
+            "missing_ratio": null,
+            "nullable": true,
+            "basis": "field_metadata"
+          },
+          {
+            "field_path": "/observations/temperature",
+            "missing_count": 0,
+            "missing_ratio": null,
+            "nullable": true,
+            "basis": "field_metadata"
+          }
+        ]
+      },
+      "identifier_quality": {
+        "candidate_count": 1,
+        "best_identifier_fields": [],
+        "fields": [
+          {
+            "field_path": "/coords/station_id",
+            "semantic_type": "station_identifier",
+            "unique_ratio": null,
+            "missing_ratio": null,
+            "non_missing_rows": null,
+            "duplicate_count": null,
+            "quality": "not_profiled"
+          }
+        ]
+      }
+    }
   },
   "notes": [],
   "study_dataset_id": "hdf5_easy_climate_cube",

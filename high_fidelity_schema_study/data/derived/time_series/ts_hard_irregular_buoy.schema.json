@@ -229,6 +229,67 @@
         "temp_C",
         "salinity_psu"
       ]
+    },
+    "deterministic_profile": {
+      "missingness": {
+        "basis": "sampled_rows",
+        "sampled_rows": 5,
+        "field_count": 5,
+        "fields_with_missing_count": 0,
+        "total_missing_cells": 0,
+        "fields": [
+          {
+            "field_path": "buoy_id",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          },
+          {
+            "field_path": "event_time",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          },
+          {
+            "field_path": "temp_C",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          },
+          {
+            "field_path": "salinity_psu",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          },
+          {
+            "field_path": "qc_flag",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          }
+        ]
+      },
+      "identifier_quality": {
+        "candidate_count": 1,
+        "best_identifier_fields": [],
+        "fields": [
+          {
+            "field_path": "buoy_id",
+            "semantic_type": "buoy_identifier",
+            "unique_ratio": 0.2,
+            "missing_ratio": 0.0,
+            "non_missing_rows": 5,
+            "duplicate_count": 4,
+            "quality": "low_cardinality_identifier"
+          }
+        ]
+      }
     }
   },
   "notes": [],

@@ -108,6 +108,7 @@ high_fidelity_schema_study/
   import_external_corpus.py
   merge_semantic_annotations.py
   repair_semantic_annotation_manifest.py
+  deterministic_profile.py
   semantic_layer.py
   semantic_annotate.py
   log.md
@@ -138,6 +139,7 @@ This directory is no longer only a scaffold. It already contains:
 - field-level gold schemas under [data/gold](data/gold)
 - a second-pass internal gold consistency review under [docs/gold-schema-second-pass-2026-05-11.md](docs/gold-schema-second-pass-2026-05-11.md)
 - deterministic derived schemas under [data/derived](data/derived)
+- richer deterministic profiling outputs inside derived schemas, plus [data/derived/internal_relationship_profile.json](data/derived/internal_relationship_profile.json)
 - an internal baseline evaluation report under [data/derived/internal_baseline_report.md](data/derived/internal_baseline_report.md)
 - an external staged corpus under [data/external](data/external)
 - deterministic schemas for supported downloaded external files under [data/external/derived](data/external/derived)
@@ -301,7 +303,7 @@ This is the end-to-end execution checklist for the study. Checked items are alre
 - [x] Normalize HDF5 string-like datasets to `string` rather than raw `object`.
 - [x] Batch-generate deterministic derived schemas for all 9 internal pilot datasets.
 - [x] Save a derived manifest for the internal batch.
-- [ ] Add richer deterministic profiling for missingness, identifier quality, and multi-file relationships.
+- [x] Add richer deterministic profiling for missingness, identifier quality, and multi-file relationships.
 
 ### Phase 5: External Corpus Preparation
 
@@ -386,6 +388,8 @@ Create or refresh deterministic derived schemas for all pilot datasets:
 ```bash
 python -m high_fidelity_schema_study.build_derived_schemas
 ```
+
+This also refreshes derived-schema deterministic profiles and the internal multi-file relationship profile.
 
 Create or refresh the external corpus staging batch:
 

@@ -567,3 +567,19 @@ Action Points:
 Important Process:
 - Locked review policy in code: top-level time_axis is required only for time-series modality, null units can mean not evidence-backed, and semantic_type=unknown is allowed for intentionally underdetermined fields.
 - Added a regression test so future gold edits cannot silently introduce manifest mismatches, duplicate fields, invalid logical types, or time-axis inconsistencies.
+
+### Entry 2
+
+Summary:
+- Added richer deterministic profiling for internal derived schemas: missingness, identifier quality, and multi-file relationship candidates.
+- Rebuilt internal derived schemas so each artifact now includes metadata.deterministic_profile.
+- Added data/derived/internal_relationship_profile.json and documented the pass in docs/deterministic_profile_report_2026-05-11.md.
+
+Action Points:
+- Treat relationship entries as deterministic candidates, not asserted joins, until value-level overlap or source documentation supports them.
+- Use the profile report as the Phase 4 closure artifact before moving to paper-ready result tables.
+- If profiling expands later, prioritize value-scanned HDF5 missingness and external-file-safe sampling.
+
+Important Process:
+- Kept profiling separate from evaluation metrics so baseline numbers do not shift simply because diagnostic metadata exists.
+- Added regression coverage for missingness, identifier quality, and shared-identifier relationship inference, then reran the full study test suite.

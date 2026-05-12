@@ -72,5 +72,8 @@
       "source_file": "raw/time_series/ts_medium_power_meter/power_meter.csv",
       "derived_schema_file": "derived/time_series/ts_medium_power_meter.schema.json"
     }
-  ]
+  ],
+  "profile_files": {
+    "internal_relationship_profile": "derived/internal_relationship_profile.json"
+  }
 }

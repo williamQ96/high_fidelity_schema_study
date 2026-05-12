@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 from ..models import DatasetSchema, EvidenceRecord, FieldSchema
+from ..deterministic_profile import attach_dataset_profile
 
 try:
     import h5py  # type: ignore
@@ -157,7 +158,7 @@ def extract_hdf5_schema(path: str) -> DatasetSchema:
 
         visit_group(handle)
 
-    return DatasetSchema(
+    schema = DatasetSchema(
         dataset_id=hdf5_path.stem,
         file_id=hdf5_path.name,
         file_format="hdf5",
@@ -170,3 +171,4 @@ def extract_hdf5_schema(path: str) -> DatasetSchema:
             "extraction_errors": extraction_errors,
         },
     )
+    return attach_dataset_profile(schema)

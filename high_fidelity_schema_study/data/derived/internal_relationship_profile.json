@@ -1,0 +1,330 @@
+{
+  "profile_type": "internal_multi_file_relationships",
+  "dataset_count": 9,
+  "relationship_count": 22,
+  "relationship_counts": {
+    "shared_identifier_semantic": 6,
+    "shared_measurement_semantic": 6,
+    "shared_temporal_semantic": 4,
+    "shared_time_axis_semantic": 6
+  },
+  "relationships": [
+    {
+      "left_dataset_id": "csv_easy_weather_stations",
+      "right_dataset_id": "hdf5_easy_climate_cube",
+      "relationship_type": "shared_identifier_semantic",
+      "semantic_type": "station_identifier",
+      "left_fields": [
+        "station_id"
+      ],
+      "right_fields": [
+        "/coords/station_id"
+      ],
+      "confidence": 0.75,
+      "evidence": "shared deterministic logical/semantic field labels"
+    },
+    {
+      "left_dataset_id": "csv_easy_weather_stations",
+      "right_dataset_id": "hdf5_hard_ocean_profile",
+      "relationship_type": "shared_identifier_semantic",
+      "semantic_type": "station_identifier",
+      "left_fields": [
+        "station_id"
+      ],
+      "right_fields": [
+        "/campaign/meta/station_code"
+      ],
+      "confidence": 0.75,
+      "evidence": "shared deterministic logical/semantic field labels"
+    },
+    {
+      "left_dataset_id": "csv_easy_weather_stations",
+      "right_dataset_id": "ts_easy_hourly_weather",
+      "relationship_type": "shared_identifier_semantic",
+      "semantic_type": "station_identifier",
+      "left_fields": [
+        "station_id"
+      ],
+      "right_fields": [
+        "station_id"
+      ],
+      "confidence": 0.75,
+      "evidence": "shared deterministic logical/semantic field labels"
+    },
+    {
+      "left_dataset_id": "csv_hard_field_campaign",
+      "right_dataset_id": "hdf5_medium_station_hierarchy",
+      "relationship_type": "shared_temporal_semantic",
+      "semantic_type": "observation_time",
+      "left_fields": [
+        "dt_obs"
+      ],
+      "right_fields": [
+        "/weather/timestamp"
+      ],
+      "confidence": 0.55,
+      "evidence": "shared deterministic logical/semantic field labels"
+    },
+    {
+      "left_dataset_id": "csv_hard_field_campaign",
+      "right_dataset_id": "ts_easy_hourly_weather",
+      "relationship_type": "shared_temporal_semantic",
+      "semantic_type": "observation_time",
+      "left_fields": [
+        "dt_obs"
+      ],
+      "right_fields": [
+        "timestamp"
+      ],
+      "confidence": 0.55,
+      "evidence": "shared deterministic logical/semantic field labels"
+    },
+    {
+      "left_dataset_id": "csv_hard_field_campaign",
+      "right_dataset_id": "ts_hard_irregular_buoy",
+      "relationship_type": "shared_temporal_semantic",
+      "semantic_type": "observation_time",
+      "left_fields": [
+        "dt_obs"
+      ],
+      "right_fields": [
+        "event_time"
+      ],
+      "confidence": 0.55,
+      "evidence": "shared deterministic logical/semantic field labels"
+    },
+    {
+      "left_dataset_id": "csv_hard_field_campaign",
+      "right_dataset_id": "ts_medium_power_meter",
+      "relationship_type": "shared_temporal_semantic",
+      "semantic_type": "observation_time",
+      "left_fields": [
+        "dt_obs"
+      ],
+      "right_fields": [
+        "ts_utc"
+      ],
+      "confidence": 0.55,
+      "evidence": "shared deterministic logical/semantic field labels"
+    },
+    {
+      "left_dataset_id": "hdf5_easy_climate_cube",
+      "right_dataset_id": "hdf5_hard_ocean_profile",
+      "relationship_type": "shared_identifier_semantic",
+      "semantic_type": "station_identifier",
+      "left_fields": [
+        "/coords/station_id"
+      ],
+      "right_fields": [
+        "/campaign/meta/station_code"
+      ],
+      "confidence": 0.75,
+      "evidence": "shared deterministic logical/semantic field labels"
+    },
+    {
+      "left_dataset_id": "hdf5_easy_climate_cube",
+      "right_dataset_id": "hdf5_medium_station_hierarchy",
+      "relationship_type": "shared_measurement_semantic",
+      "semantic_type": "air_temperature",
+      "left_fields": [
+        "/observations/temperature"
+      ],
+      "right_fields": [
+        "/weather/station_001/temp",
+        "/weather/station_002/temp"
+      ],
+      "confidence": 0.55,
+      "evidence": "shared deterministic logical/semantic field labels"
+    },
+    {
+      "left_dataset_id": "hdf5_easy_climate_cube",
+      "right_dataset_id": "ts_easy_hourly_weather",
+      "relationship_type": "shared_measurement_semantic",
+      "semantic_type": "air_temperature",
+      "left_fields": [
+        "/observations/temperature"
+      ],
+      "right_fields": [
+        "temp_C"
+      ],
+      "confidence": 0.55,
+      "evidence": "shared deterministic logical/semantic field labels"
+    },
+    {
+      "left_dataset_id": "hdf5_easy_climate_cube",
+      "right_dataset_id": "ts_easy_hourly_weather",
+      "relationship_type": "shared_measurement_semantic",
+      "semantic_type": "relative_humidity",
+      "left_fields": [
+        "/observations/humidity"
+      ],
+      "right_fields": [
+        "humidity_pct"
+      ],
+      "confidence": 0.55,
+      "evidence": "shared deterministic logical/semantic field labels"
+    },
+    {
+      "left_dataset_id": "hdf5_easy_climate_cube",
+      "right_dataset_id": "ts_easy_hourly_weather",
+      "relationship_type": "shared_identifier_semantic",
+      "semantic_type": "station_identifier",
+      "left_fields": [
+        "/coords/station_id"
+      ],
+      "right_fields": [
+        "station_id"
+      ],
+      "confidence": 0.75,
+      "evidence": "shared deterministic logical/semantic field labels"
+    },
+    {
+      "left_dataset_id": "hdf5_hard_ocean_profile",
+      "right_dataset_id": "ts_easy_hourly_weather",
+      "relationship_type": "shared_identifier_semantic",
+      "semantic_type": "station_identifier",
+      "left_fields": [
+        "/campaign/meta/station_code"
+      ],
+      "right_fields": [
+        "station_id"
+      ],
+      "confidence": 0.75,
+      "evidence": "shared deterministic logical/semantic field labels"
+    },
+    {
+      "left_dataset_id": "hdf5_hard_ocean_profile",
+      "right_dataset_id": "ts_hard_irregular_buoy",
+      "relationship_type": "shared_measurement_semantic",
+      "semantic_type": "salinity",
+      "left_fields": [
+        "/campaign/run_01/cast_0001/salinity_psu",
+        "/campaign/run_01/cast_0002/salinity_psu"
+      ],
+      "right_fields": [
+        "salinity_psu"
+      ],
+      "confidence": 0.55,
+      "evidence": "shared deterministic logical/semantic field labels"
+    },
+    {
+      "left_dataset_id": "hdf5_hard_ocean_profile",
+      "right_dataset_id": "ts_hard_irregular_buoy",
+      "relationship_type": "shared_measurement_semantic",
+      "semantic_type": "water_temperature",
+      "left_fields": [
+        "/campaign/run_01/cast_0001/temp",
+        "/campaign/run_01/cast_0002/temp"
+      ],
+      "right_fields": [
+        "temp_C"
+      ],
+      "confidence": 0.55,
+      "evidence": "shared deterministic logical/semantic field labels"
+    },
+    {
+      "left_dataset_id": "hdf5_medium_station_hierarchy",
+      "right_dataset_id": "ts_easy_hourly_weather",
+      "relationship_type": "shared_measurement_semantic",
+      "semantic_type": "air_temperature",
+      "left_fields": [
+        "/weather/station_001/temp",
+        "/weather/station_002/temp"
+      ],
+      "right_fields": [
+        "temp_C"
+      ],
+      "confidence": 0.55,
+      "evidence": "shared deterministic logical/semantic field labels"
+    },
+    {
+      "left_dataset_id": "hdf5_medium_station_hierarchy",
+      "right_dataset_id": "ts_easy_hourly_weather",
+      "relationship_type": "shared_time_axis_semantic",
+      "semantic_type": "observation_time",
+      "left_fields": [
+        "/weather/timestamp"
+      ],
+      "right_fields": [
+        "timestamp"
+      ],
+      "confidence": 0.65,
+      "evidence": "shared deterministic logical/semantic field labels"
+    },
+    {
+      "left_dataset_id": "hdf5_medium_station_hierarchy",
+      "right_dataset_id": "ts_hard_irregular_buoy",
+      "relationship_type": "shared_time_axis_semantic",
+      "semantic_type": "observation_time",
+      "left_fields": [
+        "/weather/timestamp"
+      ],
+      "right_fields": [
+        "event_time"
+      ],
+      "confidence": 0.65,
+      "evidence": "shared deterministic logical/semantic field labels"
+    },
+    {
+      "left_dataset_id": "hdf5_medium_station_hierarchy",
+      "right_dataset_id": "ts_medium_power_meter",
+      "relationship_type": "shared_time_axis_semantic",
+      "semantic_type": "observation_time",
+      "left_fields": [
+        "/weather/timestamp"
+      ],
+      "right_fields": [
+        "ts_utc"
+      ],
+      "confidence": 0.65,
+      "evidence": "shared deterministic logical/semantic field labels"
+    },
+    {
+      "left_dataset_id": "ts_easy_hourly_weather",
+      "right_dataset_id": "ts_hard_irregular_buoy",
+      "relationship_type": "shared_time_axis_semantic",
+      "semantic_type": "observation_time",
+      "left_fields": [
+        "timestamp"
+      ],
+      "right_fields": [
+        "event_time"
+      ],
+      "confidence": 0.65,
+      "evidence": "shared deterministic logical/semantic field labels"
+    },
+    {
+      "left_dataset_id": "ts_easy_hourly_weather",
+      "right_dataset_id": "ts_medium_power_meter",
+      "relationship_type": "shared_time_axis_semantic",
+      "semantic_type": "observation_time",
+      "left_fields": [
+        "timestamp"
+      ],
+      "right_fields": [
+        "ts_utc"
+      ],
+      "confidence": 0.65,
+      "evidence": "shared deterministic logical/semantic field labels"
+    },
+    {
+      "left_dataset_id": "ts_hard_irregular_buoy",
+      "right_dataset_id": "ts_medium_power_meter",
+      "relationship_type": "shared_time_axis_semantic",
+      "semantic_type": "observation_time",
+      "left_fields": [
+        "event_time"
+      ],
+      "right_fields": [
+        "ts_utc"
+      ],
+      "confidence": 0.65,
+      "evidence": "shared deterministic logical/semantic field labels"
+    }
+  ],
+  "notes": [
+    "Relationships are deterministic candidates, not asserted joins.",
+    "Generic semantic types such as unknown and quality_flag are excluded.",
+    "Confidence reflects label strength only; value-level join validation is future work."
+  ]
+}

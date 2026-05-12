@@ -241,6 +241,67 @@
         "humidity_pct",
         "wind_speed_m_s"
       ]
+    },
+    "deterministic_profile": {
+      "missingness": {
+        "basis": "sampled_rows",
+        "sampled_rows": 5,
+        "field_count": 5,
+        "fields_with_missing_count": 0,
+        "total_missing_cells": 0,
+        "fields": [
+          {
+            "field_path": "station_id",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          },
+          {
+            "field_path": "timestamp",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          },
+          {
+            "field_path": "temp_C",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          },
+          {
+            "field_path": "humidity_pct",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          },
+          {
+            "field_path": "wind_speed_m_s",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          }
+        ]
+      },
+      "identifier_quality": {
+        "candidate_count": 1,
+        "best_identifier_fields": [],
+        "fields": [
+          {
+            "field_path": "station_id",
+            "semantic_type": "station_identifier",
+            "unique_ratio": 0.2,
+            "missing_ratio": 0.0,
+            "non_missing_rows": 5,
+            "duplicate_count": 4,
+            "quality": "low_cardinality_identifier"
+          }
+        ]
+      }
     }
   },
   "notes": [],

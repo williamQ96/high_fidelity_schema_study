@@ -234,7 +234,87 @@
   "groups": [],
   "metadata": {
     "sampled_rows": 4,
-    "column_count": 6
+    "column_count": 6,
+    "deterministic_profile": {
+      "missingness": {
+        "basis": "sampled_rows",
+        "sampled_rows": 4,
+        "field_count": 6,
+        "fields_with_missing_count": 0,
+        "total_missing_cells": 0,
+        "fields": [
+          {
+            "field_path": "rec",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          },
+          {
+            "field_path": "dt_obs",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          },
+          {
+            "field_path": "zc",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          },
+          {
+            "field_path": "val",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          },
+          {
+            "field_path": "flag",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          },
+          {
+            "field_path": "device",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          }
+        ]
+      },
+      "identifier_quality": {
+        "candidate_count": 2,
+        "best_identifier_fields": [
+          "rec",
+          "device"
+        ],
+        "fields": [
+          {
+            "field_path": "rec",
+            "semantic_type": "record_identifier",
+            "unique_ratio": 1.0,
+            "missing_ratio": 0.0,
+            "non_missing_rows": 4,
+            "duplicate_count": 0,
+            "quality": "unique_identifier"
+          },
+          {
+            "field_path": "device",
+            "semantic_type": "device_identifier",
+            "unique_ratio": 0.5,
+            "missing_ratio": 0.0,
+            "non_missing_rows": 4,
+            "duplicate_count": 2,
+            "quality": "group_identifier"
+          }
+        ]
+      }
+    }
   },
   "notes": [],
   "study_dataset_id": "csv_hard_field_campaign",

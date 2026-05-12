@@ -342,7 +342,103 @@
   "metadata": {
     "field_count": 10,
     "group_count": 5,
-    "extraction_errors": []
+    "extraction_errors": [],
+    "deterministic_profile": {
+      "missingness": {
+        "basis": "field_metadata",
+        "sampled_rows": null,
+        "field_count": 10,
+        "fields_with_missing_count": 0,
+        "total_missing_cells": 0,
+        "fields": [
+          {
+            "field_path": "/campaign/meta/platform",
+            "missing_count": 0,
+            "missing_ratio": null,
+            "nullable": true,
+            "basis": "field_metadata"
+          },
+          {
+            "field_path": "/campaign/meta/station_code",
+            "missing_count": 0,
+            "missing_ratio": null,
+            "nullable": true,
+            "basis": "field_metadata"
+          },
+          {
+            "field_path": "/campaign/run_01/cast_0001/depth_m",
+            "missing_count": 0,
+            "missing_ratio": null,
+            "nullable": true,
+            "basis": "field_metadata"
+          },
+          {
+            "field_path": "/campaign/run_01/cast_0001/qc_flag",
+            "missing_count": 0,
+            "missing_ratio": null,
+            "nullable": true,
+            "basis": "field_metadata"
+          },
+          {
+            "field_path": "/campaign/run_01/cast_0001/salinity_psu",
+            "missing_count": 0,
+            "missing_ratio": null,
+            "nullable": true,
+            "basis": "field_metadata"
+          },
+          {
+            "field_path": "/campaign/run_01/cast_0001/temp",
+            "missing_count": 0,
+            "missing_ratio": null,
+            "nullable": true,
+            "basis": "field_metadata"
+          },
+          {
+            "field_path": "/campaign/run_01/cast_0002/depth_m",
+            "missing_count": 0,
+            "missing_ratio": null,
+            "nullable": true,
+            "basis": "field_metadata"
+          },
+          {
+            "field_path": "/campaign/run_01/cast_0002/qc_flag",
+            "missing_count": 0,
+            "missing_ratio": null,
+            "nullable": true,
+            "basis": "field_metadata"
+          },
+          {
+            "field_path": "/campaign/run_01/cast_0002/salinity_psu",
+            "missing_count": 0,
+            "missing_ratio": null,
+            "nullable": true,
+            "basis": "field_metadata"
+          },
+          {
+            "field_path": "/campaign/run_01/cast_0002/temp",
+            "missing_count": 0,
+            "missing_ratio": null,
+            "nullable": true,
+            "basis": "field_metadata"
+          }
+        ]
+      },
+      "identifier_quality": {
+        "candidate_count": 1,
+        "best_identifier_fields": [],
+        "fields": [
+          {
+            "field_path": "/campaign/meta/station_code",
+            "semantic_type": "station_identifier",
+            "unique_ratio": null,
+            "missing_ratio": null,
+            "non_missing_rows": null,
+            "duplicate_count": null,
+            "quality": "not_profiled"
+          }
+        ]
+      }
+    }
   },
   "notes": [],
   "study_dataset_id": "hdf5_hard_ocean_profile",

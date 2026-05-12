@@ -294,7 +294,94 @@
   "groups": [],
   "metadata": {
     "sampled_rows": 4,
-    "column_count": 7
+    "column_count": 7,
+    "deterministic_profile": {
+      "missingness": {
+        "basis": "sampled_rows",
+        "sampled_rows": 4,
+        "field_count": 7,
+        "fields_with_missing_count": 1,
+        "total_missing_cells": 2,
+        "fields": [
+          {
+            "field_path": "sample_id",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          },
+          {
+            "field_path": "site_code",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          },
+          {
+            "field_path": "collection_date",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          },
+          {
+            "field_path": "ph",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          },
+          {
+            "field_path": "do_mg_l",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          },
+          {
+            "field_path": "turbidity_ntu",
+            "missing_count": 0,
+            "missing_ratio": 0.0,
+            "nullable": false,
+            "basis": "sampled_rows"
+          },
+          {
+            "field_path": "notes",
+            "missing_count": 2,
+            "missing_ratio": 0.5,
+            "nullable": true,
+            "basis": "sampled_rows"
+          }
+        ]
+      },
+      "identifier_quality": {
+        "candidate_count": 2,
+        "best_identifier_fields": [
+          "sample_id",
+          "site_code"
+        ],
+        "fields": [
+          {
+            "field_path": "sample_id",
+            "semantic_type": "sample_identifier",
+            "unique_ratio": 1.0,
+            "missing_ratio": 0.0,
+            "non_missing_rows": 4,
+            "duplicate_count": 0,
+            "quality": "unique_identifier"
+          },
+          {
+            "field_path": "site_code",
+            "semantic_type": "site_identifier",
+            "unique_ratio": 0.5,
+            "missing_ratio": 0.0,
+            "non_missing_rows": 4,
+            "duplicate_count": 2,
+            "quality": "group_identifier"
+          }
+        ]
+      }
+    }
   },
   "notes": [],
   "study_dataset_id": "csv_medium_water_quality",
