@@ -1,0 +1,188 @@
+{
+  "review_id": "gold-schema-second-pass-2026-05-11",
+  "review_date": "2026-05-11",
+  "review_scope": "internal pilot gold schemas",
+  "status": "pass",
+  "dataset_count": 9,
+  "field_count": 50,
+  "high_necessity_field_count": 37,
+  "finding_counts": {
+    "note": 4,
+    "warning": 9
+  },
+  "datasets": [
+    {
+      "dataset_id": "csv_easy_weather_stations",
+      "file_format": "csv",
+      "data_modality": "tabular",
+      "difficulty": "easy",
+      "field_count": 6,
+      "high_necessity_count": 4,
+      "time_axis_field_count": 0,
+      "top_level_time_axis": false,
+      "gold_path": "gold/csv/csv_easy_weather_stations.gold.json"
+    },
+    {
+      "dataset_id": "csv_hard_field_campaign",
+      "file_format": "csv",
+      "data_modality": "tabular",
+      "difficulty": "hard",
+      "field_count": 6,
+      "high_necessity_count": 3,
+      "time_axis_field_count": 0,
+      "top_level_time_axis": false,
+      "gold_path": "gold/csv/csv_hard_field_campaign.gold.json"
+    },
+    {
+      "dataset_id": "csv_medium_water_quality",
+      "file_format": "csv",
+      "data_modality": "tabular",
+      "difficulty": "medium",
+      "field_count": 7,
+      "high_necessity_count": 5,
+      "time_axis_field_count": 0,
+      "top_level_time_axis": false,
+      "gold_path": "gold/csv/csv_medium_water_quality.gold.json"
+    },
+    {
+      "dataset_id": "hdf5_easy_climate_cube",
+      "file_format": "hdf5",
+      "data_modality": "hierarchical",
+      "difficulty": "easy",
+      "field_count": 4,
+      "high_necessity_count": 4,
+      "time_axis_field_count": 1,
+      "top_level_time_axis": false,
+      "gold_path": "gold/hdf5/hdf5_easy_climate_cube.gold.json"
+    },
+    {
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "file_format": "hdf5",
+      "data_modality": "hierarchical",
+      "difficulty": "hard",
+      "field_count": 7,
+      "high_necessity_count": 5,
+      "time_axis_field_count": 0,
+      "top_level_time_axis": false,
+      "gold_path": "gold/hdf5/hdf5_hard_ocean_profile.gold.json"
+    },
+    {
+      "dataset_id": "hdf5_medium_station_hierarchy",
+      "file_format": "hdf5",
+      "data_modality": "hierarchical",
+      "difficulty": "medium",
+      "field_count": 5,
+      "high_necessity_count": 5,
+      "time_axis_field_count": 1,
+      "top_level_time_axis": false,
+      "gold_path": "gold/hdf5/hdf5_medium_station_hierarchy.gold.json"
+    },
+    {
+      "dataset_id": "ts_easy_hourly_weather",
+      "file_format": "csv",
+      "data_modality": "time_series",
+      "difficulty": "easy",
+      "field_count": 5,
+      "high_necessity_count": 4,
+      "time_axis_field_count": 1,
+      "top_level_time_axis": true,
+      "gold_path": "gold/time_series/ts_easy_hourly_weather.gold.json"
+    },
+    {
+      "dataset_id": "ts_hard_irregular_buoy",
+      "file_format": "csv",
+      "data_modality": "time_series",
+      "difficulty": "hard",
+      "field_count": 5,
+      "high_necessity_count": 4,
+      "time_axis_field_count": 1,
+      "top_level_time_axis": true,
+      "gold_path": "gold/time_series/ts_hard_irregular_buoy.gold.json"
+    },
+    {
+      "dataset_id": "ts_medium_power_meter",
+      "file_format": "csv",
+      "data_modality": "time_series",
+      "difficulty": "medium",
+      "field_count": 5,
+      "high_necessity_count": 3,
+      "time_axis_field_count": 1,
+      "top_level_time_axis": true,
+      "gold_path": "gold/time_series/ts_medium_power_meter.gold.json"
+    }
+  ],
+  "findings": [
+    {
+      "severity": "warning",
+      "dataset_id": "csv_easy_weather_stations",
+      "message": "6 field gold_evidence arrays are empty; consistency reviewed, evidence enrichment remains future work."
+    },
+    {
+      "severity": "warning",
+      "dataset_id": "csv_hard_field_campaign",
+      "message": "6 field gold_evidence arrays are empty; consistency reviewed, evidence enrichment remains future work."
+    },
+    {
+      "severity": "warning",
+      "dataset_id": "csv_medium_water_quality",
+      "message": "7 field gold_evidence arrays are empty; consistency reviewed, evidence enrichment remains future work."
+    },
+    {
+      "severity": "note",
+      "dataset_id": "hdf5_easy_climate_cube",
+      "message": "Contains field-level time_axis labels but no top-level time-series profile; acceptable for non-time-series modality."
+    },
+    {
+      "severity": "warning",
+      "dataset_id": "hdf5_easy_climate_cube",
+      "message": "4 field gold_evidence arrays are empty; consistency reviewed, evidence enrichment remains future work."
+    },
+    {
+      "severity": "warning",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "message": "7 field gold_evidence arrays are empty; consistency reviewed, evidence enrichment remains future work."
+    },
+    {
+      "severity": "note",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "message": "Semantic type 'water_temperature' has both explicit units and null units; null means unit not evidence-backed in that field."
+    },
+    {
+      "severity": "note",
+      "dataset_id": "hdf5_medium_station_hierarchy",
+      "message": "Contains field-level time_axis labels but no top-level time-series profile; acceptable for non-time-series modality."
+    },
+    {
+      "severity": "warning",
+      "dataset_id": "hdf5_medium_station_hierarchy",
+      "message": "5 field gold_evidence arrays are empty; consistency reviewed, evidence enrichment remains future work."
+    },
+    {
+      "severity": "note",
+      "dataset_id": "hdf5_medium_station_hierarchy",
+      "message": "Semantic type 'surface_pressure' has both explicit units and null units; null means unit not evidence-backed in that field."
+    },
+    {
+      "severity": "warning",
+      "dataset_id": "ts_easy_hourly_weather",
+      "message": "5 field gold_evidence arrays are empty; consistency reviewed, evidence enrichment remains future work."
+    },
+    {
+      "severity": "warning",
+      "dataset_id": "ts_hard_irregular_buoy",
+      "message": "5 field gold_evidence arrays are empty; consistency reviewed, evidence enrichment remains future work."
+    },
+    {
+      "severity": "warning",
+      "dataset_id": "ts_medium_power_meter",
+      "message": "5 field gold_evidence arrays are empty; consistency reviewed, evidence enrichment remains future work."
+    }
+  ],
+  "review_policy": [
+    "Top-level time_axis is required for data_modality=time_series only.",
+    "Non-time-series HDF5/tabular files may contain field-level time_axis labels without a top-level time-series profile.",
+    "Gold unit values represent evidence-backed units. Null units are allowed when a field's unit is not explicitly supported.",
+    "Empty gold_evidence arrays are warnings, not consistency failures, because this pass reviews label consistency rather than full evidence enrichment.",
+    "semantic_type='unknown' is allowed for intentionally underdetermined fields."
+  ]
+}

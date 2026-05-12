@@ -548,3 +548,22 @@ Action Points:
 
 Important Process:
 - Based the report on the current README, benchmark freeze, retrieval report, and recent project log rather than writing from stale memory.
+
+## 2026-05-11
+
+
+### Entry 1
+
+Summary:
+- Completed the second-pass consistency review for all 9 internal gold schema files.
+- Added a reproducible gold audit command and report at docs/gold-schema-second-pass-2026-05-11.md and docs/gold-schema-second-pass-2026-05-11.json.
+- The review covers 50 gold fields, including 37 high-necessity fields, and found 0 blocking consistency errors.
+
+Action Points:
+- Treat the current internal gold labels as consistency-reviewed for pilot-scale evaluation.
+- Keep the documented warning that gold_evidence arrays remain empty; evidence enrichment is separate from label consistency.
+- Move next to deterministic profiling improvements or paper-ready result tables rather than reopening internal gold labels without new evidence.
+
+Important Process:
+- Locked review policy in code: top-level time_axis is required only for time-series modality, null units can mean not evidence-backed, and semantic_type=unknown is allowed for intentionally underdetermined fields.
+- Added a regression test so future gold edits cannot silently introduce manifest mismatches, duplicate fields, invalid logical types, or time-axis inconsistencies.

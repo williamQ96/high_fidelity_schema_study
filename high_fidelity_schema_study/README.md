@@ -101,6 +101,7 @@ high_fidelity_schema_study/
   build_retrieval_artifacts.py
   expand_retrieval_pool.py
   build_semantic_grounding.py
+  audit_gold_schemas.py
   evaluate_internal_baseline.py
   evaluate_semantic_merge.py
   evaluate_retrieval_artifacts.py
@@ -135,6 +136,7 @@ This directory is no longer only a scaffold. It already contains:
 
 - a 3 x 3 internal pilot corpus under [data/raw](data/raw)
 - field-level gold schemas under [data/gold](data/gold)
+- a second-pass internal gold consistency review under [docs/gold-schema-second-pass-2026-05-11.md](docs/gold-schema-second-pass-2026-05-11.md)
 - deterministic derived schemas under [data/derived](data/derived)
 - an internal baseline evaluation report under [data/derived/internal_baseline_report.md](data/derived/internal_baseline_report.md)
 - an external staged corpus under [data/external](data/external)
@@ -289,7 +291,7 @@ This is the end-to-end execution checklist for the study. Checked items are alre
 - [x] Create field-level gold schemas for all 9 internal pilot datasets.
 - [x] Record physical, logical, and semantic expectations in gold.
 - [x] Record unit expectations and field necessity in gold.
-- [ ] Perform a second-pass human review of the gold schemas for consistency.
+- [x] Perform a second-pass human review of the gold schemas for consistency.
 
 ### Phase 4: Deterministic Extraction Baseline
 
@@ -395,6 +397,12 @@ Create or refresh the internal baseline evaluation report:
 
 ```bash
 python -m high_fidelity_schema_study.evaluate_internal_baseline
+```
+
+Create or refresh the internal gold consistency review:
+
+```bash
+python -m high_fidelity_schema_study.audit_gold_schemas
 ```
 
 Create or refresh deterministic derived schemas for downloaded external files:
