@@ -99,6 +99,7 @@ high_fidelity_schema_study/
   build_derived_schemas.py
   build_external_derived_schemas.py
   build_retrieval_artifacts.py
+  build_paper_tables.py
   expand_retrieval_pool.py
   build_semantic_grounding.py
   audit_gold_schemas.py
@@ -146,6 +147,7 @@ This directory is no longer only a scaffold. It already contains:
 - retrieval artifacts for the promoted external candidate pool under [data/retrieval/external_candidate_pool](data/retrieval/external_candidate_pool)
 - a first retrieval comparison report under [data/retrieval/external_candidate_pool/retrieval_report.md](data/retrieval/external_candidate_pool/retrieval_report.md)
 - a frozen benchmark-slice contract under [docs/benchmark_freeze_2026-05-04.md](docs/benchmark_freeze_2026-05-04.md)
+- paper-ready result tables under [docs/paper_result_tables_2026-05-12.md](docs/paper_result_tables_2026-05-12.md)
 - semantic-grounding task bundles under [data/semantic_grounding](data/semantic_grounding)
 - semantic annotation outputs under [data/semantic_annotations](data/semantic_annotations)
 - semantic merge-back outputs under [data/semantic_merged](data/semantic_merged)
@@ -360,8 +362,9 @@ This is the end-to-end execution checklist for the study. Checked items are alre
 
 ### Phase 11: Paper And Final Deliverables
 
-- [ ] Freeze the evaluation corpus and gold references for reporting.
-- [ ] Produce paper-ready tables and figures.
+- [x] Freeze the current evaluation corpus and reviewed internal gold references for reporting.
+- [x] Produce paper-ready result tables from frozen benchmark, deterministic baseline, retrieval, semantic merge, and deterministic profile artifacts.
+- [ ] Produce paper-ready figures.
 - [ ] Write the methods section around deterministic-first extraction, provenance, and uncertainty.
 - [ ] Write the evaluation section with field-level interpretability rather than opaque scores.
 - [ ] Write the retrieval section comparing metadata-only and schema-enhanced behavior.
@@ -369,9 +372,9 @@ This is the end-to-end execution checklist for the study. Checked items are alre
 
 ## Immediate Next Steps
 
-1. Decide whether the remaining time-axis accuracy gaps should be handled by semantic merge, deterministic profiling, or evaluation logic.
-2. Review whether semantic-merged retrieval should remain a comparison artifact or become the default schema-enhanced variant.
-3. Produce paper-ready result tables from the frozen benchmark slice.
+1. Convert the paper-ready result tables into final paper figures where they add signal instead of duplicating tables.
+2. Draft the methods section around deterministic-first extraction, provenance, and uncertainty.
+3. Draft the evaluation section using the paper-ready result tables as the source of truth.
 4. Revisit the two `keep_not_benchmark` Dryad files later if benchmark scope expands.
 5. Expand retrieval hardening further if new same-family Dryad distractors become useful.
 
@@ -455,6 +458,12 @@ Evaluate baseline vs semantic-merged internal outputs:
 
 ```bash
 python -m high_fidelity_schema_study.evaluate_semantic_merge
+```
+
+Create or refresh paper-ready result tables from frozen artifacts:
+
+```bash
+python -m high_fidelity_schema_study.build_paper_tables
 ```
 
 ## Logging

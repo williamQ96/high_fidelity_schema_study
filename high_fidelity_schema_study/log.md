@@ -583,3 +583,22 @@ Action Points:
 Important Process:
 - Kept profiling separate from evaluation metrics so baseline numbers do not shift simply because diagnostic metadata exists.
 - Added regression coverage for missingness, identifier quality, and shared-identifier relationship inference, then reran the full study test suite.
+
+## 2026-05-12
+
+
+### Entry 1
+
+Summary:
+- Entered Phase 11 by adding reproducible paper-ready result tables at docs/paper_result_tables_2026-05-12.md and docs/paper_result_tables_2026-05-12.json.
+- The table builder consolidates frozen benchmark counts, deterministic baseline metrics, retrieval metrics, semantic merge deltas, deterministic profile diagnostics, locked regression subsets, and remaining non-final items.
+- Updated the README checklist so result tables are marked complete while paper-ready figures remain explicitly pending.
+
+Action Points:
+- Use docs/paper_result_tables_2026-05-12.json as the machine-readable source of truth for paper numbers.
+- Convert only the highest-signal tables into figures; do not duplicate every table as a chart.
+- Draft methods and evaluation text from the generated tables instead of copying numbers manually from scattered reports.
+
+Important Process:
+- Kept Phase 11 table generation read-only over existing frozen artifacts; no new experiment was introduced.
+- Added regression coverage for the key table values so future artifact drift is visible in tests.
