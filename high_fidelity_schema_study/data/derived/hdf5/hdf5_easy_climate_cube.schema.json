@@ -16,6 +16,13 @@
         2
       ],
       "unit": null,
+      "unit_normalization": {
+        "status": "no_unit_claim",
+        "original_unit": null,
+        "canonical_unit": null,
+        "ucum_code": null,
+        "evidence_basis": "not_applicable"
+      },
       "description": "weather station identifier",
       "example_values": [],
       "missing_count": 0,
@@ -45,6 +52,13 @@
         4
       ],
       "unit": "hours since 2026-01-01 00:00:00 UTC",
+      "unit_normalization": {
+        "status": "unmapped_unit",
+        "original_unit": "hours since 2026-01-01 00:00:00 UTC",
+        "canonical_unit": "hours since 2026-01-01 00:00:00 UTC",
+        "ucum_code": null,
+        "evidence_basis": "explicit_metadata"
+      },
       "description": "forecast lead hour",
       "example_values": [],
       "missing_count": 0,
@@ -82,6 +96,13 @@
         2
       ],
       "unit": "%",
+      "unit_normalization": {
+        "status": "normalized_ucum",
+        "original_unit": "%",
+        "canonical_unit": "percent",
+        "ucum_code": "%",
+        "evidence_basis": "explicit_metadata"
+      },
       "description": "relative humidity",
       "example_values": [],
       "missing_count": 0,
@@ -119,6 +140,13 @@
         2
       ],
       "unit": "C",
+      "unit_normalization": {
+        "status": "normalized_ucum",
+        "original_unit": "C",
+        "canonical_unit": "Celsius",
+        "ucum_code": "Cel",
+        "evidence_basis": "explicit_metadata"
+      },
       "description": "air temperature",
       "example_values": [],
       "missing_count": 0,

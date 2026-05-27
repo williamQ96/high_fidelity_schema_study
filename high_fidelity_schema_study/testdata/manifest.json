@@ -1,0 +1,64 @@
+﻿{
+    "created_at_utc":  "2026-05-27T15:59:12.2699432Z",
+    "purpose":  "Fresh out-of-slice files for scratch high-fidelity schema extraction experiments; not part of frozen paper benchmark or training/evaluation slice.",
+    "frozen_slice_policy":  "Keep these files under testdata/ only unless a later experiment explicitly promotes them with new manifests, qrels, and documentation.",
+    "entries":  [
+                    {
+                        "id":  "csv_nasa_exoplanet_confirmed_since_2024",
+                        "category":  "csv",
+                        "relative_path":  "testdata/csv/nasa_exoplanet_confirmed_since_2024.csv",
+                        "source_name":  "NASA Exoplanet Archive Planetary Systems TAP query",
+                        "source_url":  "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,hostname,disc_year,discoverymethod,pl_orbper,pl_rade,pl_bmasse,st_teff,st_rad,sy_dist+from+ps+where+default_flag=1+and+disc_year%3E=2024\u0026format=csv",
+                        "documentation_url":  "https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html",
+                        "scope_reason":  "Scientific tabular CSV with identifiers, labels, numeric measurements, and missing values.",
+                        "not_in_frozen_training_slice":  true,
+                        "downloaded_at_utc":  "2026-05-27T15:59:12.2699432Z",
+                        "bytes":  72018,
+                        "sha256":  "74328b9577728d908d53494c62cdc6c8622d2dd0901e2761b8e1340e1745b2a3"
+                    },
+                    {
+                        "id":  "timeseries_noaa_coops_water_level_today",
+                        "category":  "time_series",
+                        "relative_path":  "testdata/time_series/noaa_coops_san_francisco_water_level_today.csv",
+                        "source_name":  "NOAA CO-OPS Data API, San Francisco water level today",
+                        "source_url":  "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?date=today\u0026station=9414290\u0026product=water_level\u0026datum=MLLW\u0026time_zone=gmt\u0026units=metric\u0026application=llm_schema_testdata\u0026format=csv",
+                        "documentation_url":  "https://api.tidesandcurrents.noaa.gov/api/prod/",
+                        "scope_reason":  "Fresh timestamped water-level observations in CSV form.",
+                        "not_in_frozen_training_slice":  true,
+                        "downloaded_at_utc":  "2026-05-27T15:59:12.2699432Z",
+                        "bytes":  6272,
+                        "sha256":  "2ba61d49e76e9693569429ddb96ee753aeceb17c4ae34ba560e169c69fc2db3c"
+                    },
+                    {
+                        "id":  "hdf5_noaa_goes_abi_cmip_latest",
+                        "category":  "hdf5",
+                        "relative_path":  "testdata/hdf5/OR_ABI-L2-CMIPM1-M6C01_G19_s20261471500279_e20261471500337_c20261471500383.nc",
+                        "source_name":  "NOAA GOES-R ABI Level 2 Cloud and Moisture Imagery via public S3",
+                        "source_url":  "https://noaa-goes19.s3.amazonaws.com/ABI-L2-CMIPM/2026/147/15/OR_ABI-L2-CMIPM1-M6C01_G19_s20261471500279_e20261471500337_c20261471500383.nc",
+                        "documentation_url":  "https://aws.amazon.com/blogs/publicsector/accessing-noaas-goes-r-series-satellite-weather-imagery-data-on-aws/",
+                        "scope_reason":  "NetCDF4/HDF5 scientific satellite product with variables, attributes, and array metadata.",
+                        "bucket":  "noaa-goes19",
+                        "product":  "ABI-L2-CMIPM",
+                        "key":  "ABI-L2-CMIPM/2026/147/15/OR_ABI-L2-CMIPM1-M6C01_G19_s20261471500279_e20261471500337_c20261471500383.nc",
+                        "not_in_frozen_training_slice":  true,
+                        "downloaded_at_utc":  "2026-05-27T15:59:12.2699432Z",
+                        "bytes":  1101610,
+                        "sha256":  "03ed2ed39b3b015a99c4b08feb15114133b036e9df2d4371c6c2992fc4b918e3"
+                    },
+                    {
+                        "id":  "binary_noaa_gfs_grib2_subset",
+                        "category":  "binary",
+                        "relative_path":  "testdata/binary/noaa_gfs_2m_temperature_20260527_12z.grib2",
+                        "source_name":  "NOAA NOMADS GFS 0.25-degree GRIB2 filtered subset",
+                        "source_url":  "https://nomads.ncep.noaa.gov/cgi-bin/filter_gfs_0p25.pl?file=gfs.t12z.pgrb2.0p25.f000\u0026lev_2_m_above_ground=on\u0026var_TMP=on\u0026subregion=\u0026leftlon=230\u0026rightlon=240\u0026toplat=40\u0026bottomlat=30\u0026dir=%2Fgfs.20260527%2F12%2Fatmos",
+                        "documentation_url":  "https://nomads.ncep.noaa.gov/",
+                        "scope_reason":  "Fresh scientific GRIB2 binary weather-model subset; useful for raw binary abstention/sidecar-policy experiments.",
+                        "model_date":  "20260527",
+                        "cycle":  "12",
+                        "not_in_frozen_training_slice":  true,
+                        "downloaded_at_utc":  "2026-05-27T15:59:12.2699432Z",
+                        "bytes":  1860,
+                        "sha256":  "eaaa39a7005a3437ff401427f65e2211e8422eea1f2e9142a564d8d7839faca3"
+                    }
+                ]
+}

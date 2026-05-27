@@ -14,6 +14,13 @@
       "unique_ratio": 0.1667,
       "shape": null,
       "unit": null,
+      "unit_normalization": {
+        "status": "no_unit_claim",
+        "original_unit": null,
+        "canonical_unit": null,
+        "ucum_code": null,
+        "evidence_basis": "not_applicable"
+      },
       "description": null,
       "example_values": [
         "MTR-9"
@@ -50,6 +57,13 @@
       "unique_ratio": 1.0,
       "shape": null,
       "unit": null,
+      "unit_normalization": {
+        "status": "no_unit_claim",
+        "original_unit": null,
+        "canonical_unit": null,
+        "ucum_code": null,
+        "evidence_basis": "not_applicable"
+      },
       "description": null,
       "example_values": [
         "2026-05-02T00:00:00Z",
@@ -88,6 +102,13 @@
       "unique_ratio": 0.8333,
       "shape": null,
       "unit": "kilowatt",
+      "unit_normalization": {
+        "status": "normalized_ucum",
+        "original_unit": "kilowatt",
+        "canonical_unit": "kilowatt",
+        "ucum_code": "kW",
+        "evidence_basis": "name_pattern"
+      },
       "description": null,
       "example_values": [
         "4.2",
@@ -136,6 +157,13 @@
       "unique_ratio": 1.0,
       "shape": null,
       "unit": "volt",
+      "unit_normalization": {
+        "status": "normalized_ucum",
+        "original_unit": "volt",
+        "canonical_unit": "volt",
+        "ucum_code": "V",
+        "evidence_basis": "name_pattern"
+      },
       "description": null,
       "example_values": [
         "231.0",
@@ -184,6 +212,13 @@
       "unique_ratio": 0.3333,
       "shape": null,
       "unit": null,
+      "unit_normalization": {
+        "status": "no_unit_claim",
+        "original_unit": null,
+        "canonical_unit": null,
+        "ucum_code": null,
+        "evidence_basis": "not_applicable"
+      },
       "description": null,
       "example_values": [
         "ok"

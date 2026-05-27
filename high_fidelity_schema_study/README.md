@@ -100,6 +100,7 @@ high_fidelity_schema_study/
   build_external_derived_schemas.py
   build_retrieval_artifacts.py
   build_paper_tables.py
+  build_provenance_manifest.py
   expand_retrieval_pool.py
   build_semantic_grounding.py
   audit_gold_schemas.py
@@ -115,6 +116,7 @@ high_fidelity_schema_study/
   log.md
   extractors/
   docs/
+    literature/
   templates/
   data/
   tests/
@@ -141,17 +143,42 @@ This directory is no longer only a scaffold. It already contains:
 - a second-pass internal gold consistency review under [docs/gold-schema-second-pass-2026-05-11.md](docs/gold-schema-second-pass-2026-05-11.md)
 - deterministic derived schemas under [data/derived](data/derived)
 - richer deterministic profiling outputs inside derived schemas, plus [data/derived/internal_relationship_profile.json](data/derived/internal_relationship_profile.json)
+- unit normalization status inside derived schema fields
+- a lightweight PROV-like provenance export under [data/derived/provenance_manifest.json](data/derived/provenance_manifest.json)
 - an internal baseline evaluation report under [data/derived/internal_baseline_report.md](data/derived/internal_baseline_report.md)
 - an external staged corpus under [data/external](data/external)
 - deterministic schemas for supported downloaded external files under [data/external/derived](data/external/derived)
 - retrieval artifacts for the promoted external candidate pool under [data/retrieval/external_candidate_pool](data/retrieval/external_candidate_pool)
 - a first retrieval comparison report under [data/retrieval/external_candidate_pool/retrieval_report.md](data/retrieval/external_candidate_pool/retrieval_report.md)
 - a frozen benchmark-slice contract under [docs/benchmark_freeze_2026-05-04.md](docs/benchmark_freeze_2026-05-04.md)
-- paper-ready result tables under [docs/paper_result_tables_2026-05-12.md](docs/paper_result_tables_2026-05-12.md)
+- a benchmark card under [docs/benchmark_card_2026-05-15.md](docs/benchmark_card_2026-05-15.md)
+- a schema claim model under [docs/schema_claim_model.md](docs/schema_claim_model.md)
+- paper-ready result tables with evidence adequacy metrics under [docs/paper_result_tables_2026-05-15.md](docs/paper_result_tables_2026-05-15.md)
+- a final-polished paper-ready draft under [docs/paper_draft.md](docs/paper_draft.md)
+- generated paper figures under [docs/figures](docs/figures)
+- a draft citation matrix under [docs/literature/citation_matrix.md](docs/literature/citation_matrix.md)
+- a draft reference list under [docs/references.md](docs/references.md)
+- an academic rigor audit under [docs/academic_rigor_audit.md](docs/academic_rigor_audit.md)
+- a time-axis gap adjudication under [docs/time_axis_gap_adjudication.md](docs/time_axis_gap_adjudication.md)
+- an artifact handoff guide under [docs/artifact_handoff.md](docs/artifact_handoff.md)
+- GUI visual QA notes under [docs/gui_visual_qa.md](docs/gui_visual_qa.md)
+- a final convergence report under [docs/final_convergence_report.md](docs/final_convergence_report.md)
+- a visual GUI demo under [gui_demo](gui_demo), including frozen artifact inspection and scratch local schema extraction
+- retrieval qrels under [data/retrieval/external_candidate_pool/qrels.json](data/retrieval/external_candidate_pool/qrels.json)
+- local related-work seed papers and a deep research prompt under [docs/literature](docs/literature)
 - semantic-grounding task bundles under [data/semantic_grounding](data/semantic_grounding)
 - semantic annotation outputs under [data/semantic_annotations](data/semantic_annotations)
 - semantic merge-back outputs under [data/semantic_merged](data/semantic_merged)
 - a running project log in [log.md](log.md)
+
+## Current Target
+
+The current convergence target is no longer broad experiment expansion. The project should now converge into two concrete deliverables:
+
+1. A complete paper-ready draft that turns the frozen benchmark slice, result tables, claim model, provenance export, qrels, semantic-merge evidence, and limitations into a coherent methods/evaluation/retrieval/related-work narrative.
+2. A visual GUI demo that lets a reviewer inspect the deterministic-first schema extraction workflow end to end: source file, extracted field claims, evidence records, semantic merge decisions, uncertainty/conflict status, retrieval comparison, provenance links, and scratch extraction for an uploaded HDF5, CSV time-series, or raw binary file.
+
+The GUI demo is a communication and inspection surface over the existing artifacts. Its scratch extraction tab is local and non-persistent. It should not silently change benchmark membership, headline metrics, qrels, gold references, or semantic merge policy.
 
 ## Data Layout
 
@@ -363,20 +390,38 @@ This is the end-to-end execution checklist for the study. Checked items are alre
 ### Phase 11: Paper And Final Deliverables
 
 - [x] Freeze the current evaluation corpus and reviewed internal gold references for reporting.
-- [x] Produce paper-ready result tables from frozen benchmark, deterministic baseline, retrieval, semantic merge, and deterministic profile artifacts.
-- [ ] Produce paper-ready figures.
-- [ ] Write the methods section around deterministic-first extraction, provenance, and uncertainty.
-- [ ] Write the evaluation section with field-level interpretability rather than opaque scores.
-- [ ] Write the retrieval section comparing metadata-only and schema-enhanced behavior.
-- [ ] Record limitations, especially around raw binary underdetermination and repository access constraints.
+- [x] Produce paper-ready result tables from frozen benchmark, deterministic baseline, retrieval, semantic merge, deterministic profile, and evidence adequacy artifacts.
+- [x] Add related-work deep research report and project improvement assessment.
+- [x] Formalize schema claim states, reason codes, and merge semantics.
+- [x] Add benchmark-card documentation for the frozen reproducible slice.
+- [x] Add evidence adequacy metrics to paper-ready result tables.
+- [x] Add lightweight PROV-like provenance export.
+- [x] Add standards-backed unit normalization status.
+- [x] Add retrieval qrels and mark current queries as planted.
+- [x] Draft an initial complete paper-ready manuscript from the frozen artifacts.
+- [x] Build an initial static visual GUI demo for artifact inspection.
+- [x] Add a scratch schema extraction tab for uploaded HDF5, CSV time-series, and raw binary abstention demos.
+- [x] Produce initial paper-ready figures.
+- [x] Add an academic rigor audit and explicit claim boundaries.
+- [x] Adjudicate the time-axis gap as a documented current-slice limitation.
+- [x] Add an artifact handoff guide for paper/demo review.
+- [x] Run browser-level GUI visual smoke checks on desktop and mobile viewports.
+- [x] Revise the paper draft into a final artifact-ready manuscript draft.
+- [x] Write the methods section around deterministic-first extraction, provenance, and uncertainty.
+- [x] Write the evaluation section with field-level interpretability rather than opaque scores.
+- [x] Write the retrieval section comparing metadata-only and schema-enhanced behavior.
+- [x] Write the related-work section from established data-readiness, provenance, schema extraction, and dataset-search literature.
+- [x] Record limitations, especially around planted qrels, working annotations, raw binary underdetermination, and the time-axis gap.
+- [x] Verify and refine the GUI demo against the frozen artifact files so it remains an inspection layer rather than an alternate evaluation path.
+- [x] Add final convergence audit for paper, references, GUI, verification, and remaining limits.
+- [ ] Convert the manuscript and references into a target venue template after a venue is selected.
 
 ## Immediate Next Steps
 
-1. Convert the paper-ready result tables into final paper figures where they add signal instead of duplicating tables.
-2. Draft the methods section around deterministic-first extraction, provenance, and uncertainty.
-3. Draft the evaluation section using the paper-ready result tables as the source of truth.
-4. Revisit the two `keep_not_benchmark` Dryad files later if benchmark scope expands.
-5. Expand retrieval hardening further if new same-family Dryad distractors become useful.
+1. External paper review: hand [docs/paper_draft.md](docs/paper_draft.md), [docs/final_convergence_report.md](docs/final_convergence_report.md), and [docs/artifact_handoff.md](docs/artifact_handoff.md) to a reviewer, mentor, or collaborator.
+2. Venue formatting: convert the manuscript and verified artifact bibliography into the target venue template after a venue is selected.
+3. Optional demo packaging: capture reviewer-facing screenshots or a short walkthrough from [gui_demo](gui_demo) without changing frozen artifacts.
+4. Defer corpus expansion, non-planted qrels, Table Schema export, and `keep_not_benchmark` Dryad files unless they become explicit paper-review blockers.
 
 ## Rebuild Study Artifacts
 
@@ -392,7 +437,7 @@ Create or refresh deterministic derived schemas for all pilot datasets:
 python -m high_fidelity_schema_study.build_derived_schemas
 ```
 
-This also refreshes derived-schema deterministic profiles and the internal multi-file relationship profile.
+This also refreshes field unit-normalization status, derived-schema deterministic profiles, and the internal multi-file relationship profile.
 
 Create or refresh the external corpus staging batch:
 
@@ -422,6 +467,14 @@ Create or refresh retrieval artifacts for the promoted external candidate pool:
 
 ```bash
 python -m high_fidelity_schema_study.build_retrieval_artifacts
+```
+
+This also refreshes `qrels.json`, which currently marks the frozen retrieval queries as planted single-positive judgments.
+
+Create or refresh the PROV-like provenance export:
+
+```bash
+python -m high_fidelity_schema_study.build_provenance_manifest
 ```
 
 Download and derive the current hard-distractor retrieval pool expansion:
@@ -464,6 +517,12 @@ Create or refresh paper-ready result tables from frozen artifacts:
 
 ```bash
 python -m high_fidelity_schema_study.build_paper_tables
+```
+
+Create or refresh paper-ready SVG figures from generated result tables:
+
+```bash
+python -m high_fidelity_schema_study.build_paper_figures
 ```
 
 ## Logging

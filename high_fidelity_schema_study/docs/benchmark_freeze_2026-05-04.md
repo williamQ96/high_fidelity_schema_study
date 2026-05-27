@@ -11,6 +11,7 @@ Machine-readable freeze: [benchmark_freeze_2026-05-04.json](benchmark_freeze_202
 - Promoted external retrieval targets: 10
 - Hard distractors: 6
 - Retrieval query set: current 10 planted queries in `data/retrieval/external_candidate_pool/queries.json`
+- Retrieval qrels: current planted single-positive judgments in `data/retrieval/external_candidate_pool/qrels.json`
 
 ## Internal Pilot
 
@@ -64,6 +65,8 @@ The frozen retrieval comparison systems are:
 - `schema_enhanced_semantic_merged`
 
 `schema_enhanced` remains a backward-compatible alias for deterministic schema-enhanced retrieval.
+
+The qrels file records one highly relevant planted target per query. It is included to make relevance judgments explicit, not to imply broad real-world dataset-search coverage.
 
 Schema-enhanced artifacts include explicit slice-disambiguation terms:
 

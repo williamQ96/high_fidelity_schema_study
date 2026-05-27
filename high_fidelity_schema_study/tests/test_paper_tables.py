@@ -61,10 +61,57 @@ class PaperTableTests(unittest.TestCase):
         self.assertEqual(relationship_counts["shared_measurement_semantic"], 6)
         self.assertEqual(relationship_counts["shared_time_axis_semantic"], 6)
 
+    def test_evidence_adequacy_metrics_are_reported(self) -> None:
+        adequacy_rows = {
+            row["metric"]: row
+            for row in self.tables["evidence_adequacy_summary"]
+        }
+        evidence_type_counts = {
+            row["evidence_type"]: row["field_count"]
+            for row in self.tables["source_evidence_type_counts"]
+        }
+
+        source_evidence = adequacy_rows["Derived fields with source evidence"]
+        self.assertEqual(source_evidence["numerator"], 53)
+        self.assertEqual(source_evidence["denominator"], 53)
+        self.assertEqual(source_evidence["value"], 1.0)
+
+        unsupported = adequacy_rows["Unsupported accepted semantic merges"]
+        self.assertEqual(unsupported["numerator"], 0)
+        self.assertEqual(unsupported["denominator"], 3)
+
+        self.assertEqual(evidence_type_counts["csv_header"], 34)
+        self.assertEqual(evidence_type_counts["hdf5_dataset_path"], 19)
+        self.assertEqual(evidence_type_counts["total_evidence_records"], 109)
+
+    def test_unit_provenance_and_qrels_summaries_are_reported(self) -> None:
+        unit_status = {
+            row["status"]: row
+            for row in self.tables["unit_normalization_status"]
+        }
+        provenance = {
+            row["metric"]: row["value"]
+            for row in self.tables["provenance_summary"]
+        }
+        qrels = {
+            row["metric"]: row["value"]
+            for row in self.tables["qrels_summary"]
+        }
+
+        self.assertEqual(unit_status["normalized_ucum"]["unit_claim_count"], 20)
+        self.assertEqual(unit_status["unmapped_unit"]["unit_claim_count"], 2)
+        self.assertEqual(provenance["field_entity_count"], 53)
+        self.assertEqual(provenance["evidence_entity_count"], 109)
+        self.assertEqual(qrels["Qrels schema"], "single_positive_planted_v1")
+        self.assertEqual(qrels["Judgment count"], 10)
+
     def test_markdown_contains_paper_claims(self) -> None:
         markdown = render_markdown(self.report)
 
-        self.assertIn("## Table 5. External Retrieval Metrics", markdown)
+        self.assertIn("## Table 5. Evidence Adequacy Summary", markdown)
+        self.assertIn("## Table 9. PROV-Like Provenance Export Summary", markdown)
+        self.assertIn("## Table 10. Retrieval Qrels Summary", markdown)
+        self.assertIn("## Table 11. External Retrieval Metrics", markdown)
         self.assertIn("Schema-enhanced retrieval reaches Recall@1 = 1.0000", markdown)
 
 

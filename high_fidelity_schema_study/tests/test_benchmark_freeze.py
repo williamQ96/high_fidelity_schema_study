@@ -19,6 +19,7 @@ class BenchmarkFreezeTests(unittest.TestCase):
         pilot_manifest = load_json(DATA_ROOT / "pilot_corpus_manifest.json")
         pool_manifest = load_json(DATA_ROOT / "retrieval" / "external_candidate_pool" / "pool_manifest.json")
         artifact_manifest = load_json(DATA_ROOT / "retrieval" / "external_candidate_pool" / "artifact_manifest.json")
+        qrels = load_json(DATA_ROOT / "retrieval" / "external_candidate_pool" / "qrels.json")
 
         self.assertEqual(freeze["internal_pilot"]["dataset_count"], len(pilot_manifest["datasets"]))
         self.assertEqual(
@@ -37,6 +38,12 @@ class BenchmarkFreezeTests(unittest.TestCase):
 
         for system_name in freeze["retrieval_protocol"]["systems"]:
             self.assertIn(system_name, artifact_manifest["artifact_files"])
+
+        self.assertEqual(
+            freeze["retrieval_protocol"]["qrels_file"],
+            f"data/{artifact_manifest['artifact_files']['qrels']}",
+        )
+        self.assertEqual(freeze["retrieval_protocol"]["qrels_schema"], qrels["qrels_schema"])
 
 
 if __name__ == "__main__":

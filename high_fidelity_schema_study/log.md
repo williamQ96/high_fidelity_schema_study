@@ -602,3 +602,208 @@ Action Points:
 Important Process:
 - Kept Phase 11 table generation read-only over existing frozen artifacts; no new experiment was introduced.
 - Added regression coverage for the key table values so future artifact drift is visible in tests.
+
+## 2026-05-14
+
+
+### Entry 1
+
+Summary:
+- Added four local related-work seed papers under docs/literature for data readiness, scientific AI readiness, and analogy-only sequence-model behavior framing.
+- Added docs/literature/deep_research_prompt_established_work.md to guide a structured search for established work that can strengthen high-fidelity schema extraction.
+- Updated the README so related-work research becomes an explicit Phase 11 writing task and immediate next step.
+
+Action Points:
+- Run the deep research prompt against scholarly search tools before drafting the related-work section.
+- Treat AIDRIN and scientific AI data readiness as direct framing leads; treat Professor Forcing and continual RNN learning as analogy-only unless the research pass finds a stronger link.
+- Convert the research output into a citation matrix before changing method claims or novelty language.
+
+Important Process:
+- Kept the seed papers local under docs/literature so literature context stays near the study artifacts.
+- Wrote the research prompt to distinguish direct schema/data-readiness relevance from weak analogy, avoiding forced citations.
+
+### Entry 2
+
+Summary:
+- Copied the generated deep research report into docs/literature/deep_research_report_2026-05-14.md.
+- Assessed the current project against the report in docs/literature/project_improvement_assessment_2026-05-14.md.
+- The assessment concludes that the project direction is strong, but the next convergence pass should formalize claim states, provenance, evidence adequacy metrics, benchmark-card documentation, qrels, and standards-backed unit normalization.
+
+Action Points:
+- Prioritize a schema-claim model and benchmark card before expanding the corpus or running additional retrieval experiments.
+- Extend paper-ready result tables with evidence adequacy metrics so evidence-grounding becomes measurable.
+- Keep RNN seed papers out of core related work unless explicitly framed as weak analogy only.
+
+Important Process:
+- Evaluated the research report against current code artifacts rather than treating all recommendations as equally urgent.
+- Preserved the current planted-query retrieval limitation instead of turning perfect planted-slice metrics into a broad robustness claim.
+
+## 2026-05-15
+
+
+### Entry 1
+
+Summary:
+- Added the literature-driven improvement plan to the Phase 11 checklist.
+- Started the convergence pass by adding docs/schema_claim_model.md and docs/benchmark_card_2026-05-15.md.
+- Extended paper-ready result tables to include evidence adequacy metrics and regenerated docs/paper_result_tables_2026-05-15.md/json.
+
+Action Points:
+- Move next to lightweight PROV-like provenance export, then standards-backed unit normalization status, then retrieval qrels.
+- Use the schema claim model when drafting the methods section so claim states, reason codes, and merge semantics are explicit.
+- Treat evidence adequacy as a first-class result alongside accuracy metrics.
+
+Important Process:
+- Advanced documentation and table generation before expanding the corpus, because the research report identified artifact defensibility as the current bottleneck.
+- Kept current retrieval claims bounded to the planted external slice.
+
+### Entry 2
+
+Summary:
+- Added standards-backed unit normalization status to field schemas and rebuilt internal derived schemas.
+- Added a lightweight PROV-like provenance export at data/derived/provenance_manifest.json.
+- Added retrieval qrels at data/retrieval/external_candidate_pool/qrels.json and updated retrieval artifact generation/evaluation to treat qrels as an auxiliary artifact.
+- Regenerated paper-ready tables so unit normalization, provenance summary, and qrels summary are first-class report tables.
+
+Action Points:
+- Use the provenance manifest and claim model when drafting the methods section.
+- Keep the qrels limitation explicit: current qrels are planted single-positive judgments, not full graded real-world relevance judgments.
+- Consider Table Schema export next only if another standards-facing artifact pass is needed before paper writing.
+
+Important Process:
+- Fixed retrieval evaluation so auxiliary qrels are skipped when iterating ranking artifacts.
+- Added tests for unit normalization, provenance summary, qrels consistency, and updated paper table sections.
+
+## 2026-05-23
+
+
+### Entry 1
+
+Summary:
+- Reframed the current convergence target as two concrete deliverables: a complete paper-ready draft and a visual GUI demo.
+- Updated the README so Phase 11 now explicitly includes manuscript drafting and a GUI inspection surface over extraction, evidence, semantic merge, retrieval, and provenance artifacts.
+- Confirmed that the GUI demo should communicate and inspect the frozen artifact state rather than define a new benchmark, qrels set, gold reference, or evaluation path.
+
+Action Points:
+- Draft the paper from the frozen benchmark card, paper-ready tables, schema claim model, provenance export, qrels, semantic merge report, and related-work map.
+- Build the GUI demo as a reviewer-facing artifact browser for source files, field claims, evidence records, uncertainty/conflict status, semantic merge decisions, retrieval comparison, and provenance links.
+- Keep planted-qrels and benchmark-scope limitations explicit in both the paper draft and GUI demo.
+
+Important Process:
+- Treat further corpus expansion, non-planted qrels, and Table Schema export as optional support work only if they directly improve the paper-ready draft or visual demo.
+- Preserve the frozen-slice contract: GUI work must read existing artifacts and should not silently change benchmark membership or headline metrics.
+
+### Entry 2
+
+Summary:
+- Added the first complete paper-ready draft at docs/paper_draft.md, using frozen benchmark tables, semantic merge results, retrieval metrics, claim model, provenance export, and limitations as source material.
+- Added an initial static GUI demo under gui_demo/ that loads frozen JSON artifacts and presents overview metrics, evidence adequacy, semantic merge status, retrieval comparisons, provenance counts, and benchmark limitations.
+- Updated the README current-state and Phase 11 checklist so the paper draft and initial GUI demo are tracked as delivered convergence artifacts.
+
+Action Points:
+- Replace related-work placeholders in docs/paper_draft.md with formal citations from the literature report.
+- Convert the highest-signal result tables into figures and reference them from the draft.
+- Verify the GUI demo in a browser and refine the reviewer workflow around field-level evidence and per-query retrieval inspection.
+
+Important Process:
+- Kept the GUI dependency-free and static so it can be served from high_fidelity_schema_study/ with python -m http.server.
+- Preserved the GUI as an inspection layer over frozen artifacts, not a new evaluation or benchmark generation path.
+
+### Entry 3
+
+Summary:
+- Added a reproducible paper figure builder at build_paper_figures.py.
+- Generated five SVG figures under docs/figures/: frozen benchmark slice, internal deterministic metrics, evidence adequacy, retrieval Recall@1, and semantic-merge logical-accuracy deltas.
+- Added docs/literature/citation_matrix.md and revised docs/paper_draft.md to use draft citation keys and figure references.
+
+Action Points:
+- Convert citation keys into the target venue's bibliography format before final submission.
+- Review the generated SVG figures for visual clarity and remove any that duplicate tables without adding interpretive value.
+- Keep figure generation tied to docs/paper_result_tables_2026-05-15.json so paper visuals remain reproducible.
+
+Important Process:
+- Generated figures from frozen table artifacts rather than hand-editing chart values.
+- Used a dependency-free SVG generator so the figure pipeline does not add package requirements.
+
+### Entry 4
+
+Summary:
+- Added docs/references.md as a draft reference list derived from the citation matrix and local deep research report.
+- Advanced docs/paper_draft.md to v0.3 by linking the reference list as the next bibliography source.
+- Expanded the static GUI demo with a field-level inspector that shows per-dataset metrics and per-field physical/logical/semantic match, confidence, and uncertainty status from the internal baseline report.
+
+Action Points:
+- Convert docs/references.md into venue-specific bibliography formatting and verify each bibliographic detail before submission.
+- Use the GUI field inspector as the main demo surface for explaining why this is field-level high-fidelity extraction rather than only aggregate scoring.
+- Add browser-level visual verification when Playwright or the in-app browser tool is available.
+
+Important Process:
+- Kept the GUI field inspector read-only over data/derived/internal_baseline_report.json.
+- Added static regression coverage so the core GUI views and artifact-boundary documentation remain present.
+
+### Entry 5
+
+Summary:
+- Completed an Artifact Paper rigor pass by adding docs/academic_rigor_audit.md, docs/time_axis_gap_adjudication.md, and docs/artifact_handoff.md.
+- Upgraded docs/references.md from a draft list to a verified artifact bibliography with stable identifiers and a separate use-with-caution section.
+- Advanced docs/paper_draft.md to v0.4 with tighter retrieval, semantic merge, provenance, and time-axis limitation wording.
+- Added a visible Artifact Boundary banner to the GUI demo so planted qrels, small pilot scope, working annotations, and the time-axis gap stay visible during review.
+
+Action Points:
+- Use docs/academic_rigor_audit.md as the guardrail for final paper review.
+- Keep the time-axis gap as an explicit limitation unless a separate evaluation-policy pass changes the metric.
+- Use docs/artifact_handoff.md for final reviewer handoff and verification.
+
+Important Process:
+- Did not expand the corpus, add non-planted qrels, rerun LLM semantic annotation, or change headline metrics.
+- Preserved the GUI as a read-only inspection layer over frozen artifacts.
+
+### Entry 6
+
+Summary:
+- Added hash-based GUI navigation so every view can be opened directly for browser smoke checks.
+- Ran Chrome headless screenshots for Overview, Evidence, Fields, Semantic Merge, Retrieval, Provenance, Limits, and a mobile Fields viewport.
+- Fixed a field-inspector table-header overlap found during visual review.
+- Added docs/gui_visual_qa.md to record the visual QA method, outcome, and remaining polish.
+
+Action Points:
+- Treat the GUI as Artifact Paper demo-ready, with remaining polish limited to mobile header text and optional accessibility review.
+- Keep hash navigation because it makes future demo screenshots and reviewer links stable.
+
+Important Process:
+- Browser screenshots were written to the system temp directory and not tracked as repo artifacts.
+
+### Entry 7
+
+Summary:
+- Completed the final Artifact Paper convergence polish without changing the frozen corpus, qrels, semantic annotations, or headline metrics.
+- Advanced the paper draft to v0.5 with reviewer-facing wording, verified citation-key hygiene, and explicit preservation of planted-qrels, small-pilot, working-annotation, evidence-adequacy, provenance, and time-axis boundaries.
+- Polished the GUI mobile header behavior and added docs/final_convergence_report.md as the release audit for the 98% artifact package.
+
+Action Points:
+- Move remaining paper work to venue/template formatting and external human review.
+- Keep Auctus and other caution-only references out of core paper claims unless their bibliographic details and role are re-verified.
+- Treat any future corpus expansion, non-planted qrels, or time-axis metric change as a new experiment round, not part of this convergence polish.
+
+Important Process:
+- This was a final convergence and audit pass, not a new experiment.
+- Verification remains centered on figure regeneration, the high_fidelity_schema_study test suite, GUI JavaScript parse checks, HTTP smoke checks, browser screenshots, and consistency searches.
+
+## 2026-05-27
+
+
+### Entry 1
+
+Summary:
+- Restored the intended interactive GUI surface by adding a scratch Extract tab for uploaded HDF5, CSV time-series, and raw binary files.
+- Added a dependency-free local GUI server at gui_demo/server.py with a `/api/extract-schema` endpoint that calls the existing deterministic extractors and returns the schema JSON to the browser.
+- Kept frozen artifact views read-only; scratch extraction is local, non-persistent, and does not change benchmark membership, qrels, gold references, paper metrics, or semantic merge policy.
+
+Action Points:
+- Use `python -m high_fidelity_schema_study.gui_demo.server 8765` for the full GUI with uploads.
+- Treat raw binary uploads without sidecar metadata as high-fidelity abstention: record file-level evidence, but do not invent field claims.
+- Keep `python -m http.server 8765` as a read-only fallback for artifact inspection when uploads are not needed.
+
+Important Process:
+- This was a demo/workbench repair, not a new experiment or metric update.
+- The live extraction tab reuses existing deterministic extractors instead of introducing a separate GUI-only schema path.

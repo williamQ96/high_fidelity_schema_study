@@ -1,0 +1,313 @@
+{
+  "dataset_id": "20211108_Sensit",
+  "file_id": "20211108_Sensit.csv",
+  "file_format": "csv",
+  "data_modality": "time_series",
+  "fields": [
+    {
+      "field_name": "Year",
+      "field_path": "Year",
+      "physical_type": "int",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.005,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "2021"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        2021.0,
+        2021.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Sensit.csv",
+          "detail": "header='Year'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Sensit.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "Month",
+      "field_path": "Month",
+      "physical_type": "int",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.005,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "11"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        11.0,
+        11.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Sensit.csv",
+          "detail": "header='Month'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Sensit.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "Day",
+      "field_path": "Day",
+      "physical_type": "int",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.005,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "8"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        8.0,
+        8.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Sensit.csv",
+          "detail": "header='Day'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Sensit.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "Hour",
+      "field_path": "Hour",
+      "physical_type": "int",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.005,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "19"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        19.0,
+        19.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Sensit.csv",
+          "detail": "header='Hour'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Sensit.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "Minute",
+      "field_path": "Minute",
+      "physical_type": "int",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.02,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "50"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        50.0,
+        53.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Sensit.csv",
+          "detail": "header='Minute'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Sensit.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "Second",
+      "field_path": "Second",
+      "physical_type": "int",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.3,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "9",
+        "10",
+        "11"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        59.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Sensit.csv",
+          "detail": "header='Second'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Sensit.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "ParticleCounts",
+      "field_path": "ParticleCounts",
+      "physical_type": "int",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.52,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "0",
+        "139",
+        "188"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        278.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Sensit.csv",
+          "detail": "header='ParticleCounts'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Sensit.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    }
+  ],
+  "groups": [],
+  "metadata": {
+    "sampled_rows": 200,
+    "column_count": 7,
+    "time_series": {
+      "time_axis": {
+        "field": "computed_from_parts",
+        "computed_from": [
+          "Year",
+          "Month",
+          "Day",
+          "Hour",
+          "Minute",
+          "Second"
+        ],
+        "type": "datetime",
+        "frequency": "1 second",
+        "regularity": "regular",
+        "missing_intervals": 0
+      },
+      "series_identifier": null,
+      "measurements": [
+        "ParticleCounts"
+      ]
+    }
+  },
+  "notes": [],
+  "external_source_file": "zenodo/record_5935524/20211108_Sensit.csv"
+}

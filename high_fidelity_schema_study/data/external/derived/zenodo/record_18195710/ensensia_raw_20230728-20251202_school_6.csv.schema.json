@@ -1,0 +1,720 @@
+{
+  "dataset_id": "ensensia_raw_20230728-20251202_school_6",
+  "file_id": "ensensia_raw_20230728-20251202_school_6.csv",
+  "file_format": "csv",
+  "data_modality": "time_series",
+  "fields": [
+    {
+      "field_name": "sensor_id",
+      "field_path": "sensor_id",
+      "physical_type": "int",
+      "logical_type": "identifier",
+      "semantic_type": "sensor_identifier",
+      "nullable": false,
+      "unique_ratio": 0.005,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "20230701027"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        20230701027.0,
+        20230701027.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "header='sensor_id'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "date",
+      "field_path": "date",
+      "physical_type": "datetime",
+      "logical_type": "time_axis",
+      "semantic_type": "observation_time",
+      "nullable": false,
+      "unique_ratio": 1.0,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "2023-10-20 07:20:00",
+        "2023-10-20 07:30:00",
+        "2023-10-20 07:40:00"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "header='date'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "pm25",
+      "field_path": "pm25",
+      "physical_type": "int",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.06,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "2",
+        "6",
+        "3"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        2.0,
+        13.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "header='pm25'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "no2",
+      "field_path": "no2",
+      "physical_type": "int",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.23,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "169",
+        "119",
+        "49"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        169.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "header='no2'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "o3",
+      "field_path": "o3",
+      "physical_type": "int",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.3,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "3",
+        "121",
+        "45"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        124.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "header='o3'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "so2",
+      "field_path": "so2",
+      "physical_type": "int",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.05,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "572",
+        "73",
+        "9"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        572.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "header='so2'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "no",
+      "field_path": "no",
+      "physical_type": "int",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.27,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "14",
+        "3",
+        "6"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        1.0,
+        127.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "header='no'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "co",
+      "field_path": "co",
+      "physical_type": "int",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.815,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "9208",
+        "3722",
+        "1894"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        7.0,
+        9208.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "header='co'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "vocs",
+      "field_path": "vocs",
+      "physical_type": "int",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.48,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "963",
+        "526",
+        "331"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        28.0,
+        963.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "header='vocs'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "hcho",
+      "field_path": "hcho",
+      "physical_type": "float",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.575,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "5.0",
+        "5.13",
+        "5.8"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        38.45
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "header='hcho'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "co2",
+      "field_path": "co2",
+      "physical_type": "int",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.74,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "1003",
+        "905",
+        "890"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        543.0,
+        1003.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "header='co2'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "temp",
+      "field_path": "temp",
+      "physical_type": "int",
+      "logical_type": "measurement",
+      "semantic_type": "air_temperature",
+      "nullable": false,
+      "unique_ratio": 0.135,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "20"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        16.0,
+        42.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "header='temp'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "hum",
+      "field_path": "hum",
+      "physical_type": "int",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.22,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "48",
+        "46",
+        "45"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        24.0,
+        67.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "header='hum'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "lat",
+      "field_path": "lat",
+      "physical_type": "float",
+      "logical_type": "coordinate",
+      "semantic_type": "latitude",
+      "nullable": false,
+      "unique_ratio": 0.005,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "38.2961"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        38.2961,
+        38.2961
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "header='lat'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "lon",
+      "field_path": "lon",
+      "physical_type": "float",
+      "logical_type": "coordinate",
+      "semantic_type": "longitude",
+      "nullable": false,
+      "unique_ratio": 0.005,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "21.8193"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        21.8193,
+        21.8193
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "header='lon'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "battery",
+      "field_path": "battery",
+      "physical_type": "float",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.62,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "60.3",
+        "60.7571",
+        "62.9667"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        60.3,
+        92.7667
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "header='battery'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "SG-BOX ID",
+      "field_path": "SG-BOX ID",
+      "physical_type": "string",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.005,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "SG-BOX15-1015"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "header='SG-BOX ID'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_18195710\\ensensia_raw_20230728-20251202_school_6.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler"
+    }
+  ],
+  "groups": [],
+  "metadata": {
+    "sampled_rows": 200,
+    "column_count": 17,
+    "time_series": {
+      "time_axis": {
+        "field": "date",
+        "type": "datetime",
+        "frequency": "10 minutes",
+        "regularity": "regular",
+        "missing_intervals": 4
+      },
+      "series_identifier": "sensor_id",
+      "measurements": [
+        "pm25",
+        "no2",
+        "o3",
+        "so2",
+        "no",
+        "co",
+        "vocs",
+        "hcho",
+        "co2",
+        "temp",
+        "hum",
+        "battery"
+      ]
+    }
+  },
+  "notes": [],
+  "external_source_file": "zenodo/record_18195710/ensensia_raw_20230728-20251202_school_6.csv"
+}

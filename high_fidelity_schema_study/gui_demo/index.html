@@ -1,0 +1,1012 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>High-Fidelity Schema Extraction Demo</title>
+  <style>
+    :root {
+      --bg: #f6f7f4;
+      --panel: #ffffff;
+      --ink: #18201c;
+      --muted: #5f6b63;
+      --line: #d9dfd8;
+      --green: #1f7a5a;
+      --blue: #245f91;
+      --amber: #9b6a1d;
+      --red: #9a3f35;
+      --shadow: 0 1px 2px rgba(19, 31, 25, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.45;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+
+    .topbar {
+      align-items: center;
+      display: flex;
+      gap: 18px;
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: 1280px;
+      padding: 14px 20px;
+    }
+
+    h1 {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .status {
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 520px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 230px minmax(0, 1fr);
+      margin: 0 auto;
+      max-width: 1280px;
+      min-height: calc(100vh - 58px);
+    }
+
+    nav {
+      border-right: 1px solid var(--line);
+      padding: 18px 14px;
+    }
+
+    nav button {
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      color: var(--ink);
+      cursor: pointer;
+      display: block;
+      font: inherit;
+      margin: 0 0 6px;
+      padding: 9px 10px;
+      text-align: left;
+      width: 100%;
+    }
+
+    nav button.active,
+    nav button:hover {
+      background: #e7eee8;
+      border-color: #c4d4ca;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .view { display: none; }
+    .view.active { display: block; }
+
+    .section-head {
+      align-items: end;
+      display: flex;
+      gap: 16px;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 720px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid.cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .metric,
+    .boundary,
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      box-shadow: var(--shadow);
+      padding: 14px;
+    }
+
+    .boundary {
+      background: #fffaf0;
+      border-color: #dcc28a;
+      margin-bottom: 14px;
+    }
+
+    .boundary h2 {
+      color: #67490d;
+      margin-bottom: 8px;
+    }
+
+    .boundary-grid {
+      display: grid;
+      gap: 8px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 12px;
+      min-height: 34px;
+    }
+
+    .metric-value {
+      font-size: 26px;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+
+    .bar-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .bar-row {
+      display: grid;
+      gap: 8px;
+      grid-template-columns: 190px minmax(0, 1fr) 58px;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .bar-track {
+      background: #e8ece7;
+      border-radius: 999px;
+      height: 10px;
+      overflow: hidden;
+    }
+
+    .bar {
+      background: var(--green);
+      height: 100%;
+      min-width: 2px;
+    }
+
+    .bar.blue { background: var(--blue); }
+    .bar.amber { background: var(--amber); }
+    .bar.red { background: var(--red); }
+
+    table {
+      border-collapse: collapse;
+      font-size: 13px;
+      width: 100%;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #eef2ee;
+      color: #2f3b34;
+      font-weight: 700;
+    }
+
+    code {
+      background: #edf1ee;
+      border-radius: 4px;
+      padding: 1px 4px;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      display: inline-block;
+      font-size: 12px;
+      margin: 2px 4px 2px 0;
+      padding: 2px 8px;
+    }
+
+    .pill.ok { border-color: #a8cdbd; color: var(--green); }
+    .pill.warn { border-color: #d7c08a; color: var(--amber); }
+    .pill.bad { border-color: #d3a6a0; color: var(--red); }
+
+    .split {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 340px minmax(0, 1fr);
+    }
+
+    select,
+    input,
+    textarea {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      font: inherit;
+      padding: 8px 10px;
+      width: 100%;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: minmax(0, 2fr) minmax(170px, 1fr) minmax(130px, 0.7fr);
+    }
+
+    .form-row {
+      display: grid;
+      gap: 6px;
+    }
+
+    .actions {
+      align-items: end;
+      display: flex;
+      gap: 8px;
+    }
+
+    .primary-button {
+      background: var(--green);
+      border: 1px solid var(--green);
+      border-radius: 6px;
+      color: #fff;
+      cursor: pointer;
+      font: inherit;
+      min-height: 38px;
+      padding: 8px 14px;
+      white-space: nowrap;
+    }
+
+    .primary-button:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    .extract-summary {
+      display: grid;
+      gap: 8px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 12px;
+    }
+
+    .json-box {
+      background: #111a15;
+      border-radius: 6px;
+      color: #eaf4ed;
+      font-size: 12px;
+      margin: 0;
+      max-height: 420px;
+      overflow: auto;
+      padding: 12px;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .scroll {
+      max-height: 520px;
+      overflow: auto;
+    }
+
+    footer {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 860px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .status {
+        max-width: 100%;
+        white-space: normal;
+      }
+      .layout { grid-template-columns: 1fr; }
+      nav {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        gap: 6px;
+        overflow-x: auto;
+      }
+      nav button {
+        margin: 0;
+        min-width: 140px;
+        text-align: center;
+      }
+      .grid.cols-2,
+      .grid.cols-3,
+      .grid.cols-4,
+      .boundary-grid,
+      .form-grid,
+      .extract-summary,
+      .split {
+        grid-template-columns: 1fr;
+      }
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+      }
+      .bar-row { grid-template-columns: 120px minmax(0, 1fr) 48px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <h1>High-Fidelity Schema Extraction</h1>
+      <div id="load-status" class="status">Loading frozen artifacts...</div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav aria-label="Demo views">
+      <button data-view="overview" class="active">Overview</button>
+      <button data-view="evidence">Evidence</button>
+      <button data-view="fields">Fields</button>
+      <button data-view="semantic">Semantic Merge</button>
+      <button data-view="retrieval">Retrieval</button>
+      <button data-view="provenance">Provenance</button>
+      <button data-view="extract">Extract</button>
+      <button data-view="limits">Limits</button>
+    </nav>
+
+    <main>
+      <section class="boundary" aria-label="Artifact boundary">
+        <h2>Artifact Boundary</h2>
+        <div class="boundary-grid">
+          <div><span class="pill warn">planted qrels</span><br><span class="note">Controlled retrieval comparison, not broad search robustness.</span></div>
+          <div><span class="pill warn">small pilot</span><br><span class="note">9 internal datasets for method validation and failure analysis.</span></div>
+          <div><span class="pill warn">working annotations</span><br><span class="note">External semantic merges are not final gold references.</span></div>
+          <div><span class="pill bad">time-axis gap</span><br><span class="note">Known non-final metric boundary in the frozen slice.</span></div>
+        </div>
+      </section>
+
+      <section id="overview" class="view active">
+        <div class="section-head">
+          <div>
+            <h2>Frozen Slice Summary</h2>
+            <div class="note">Paper-facing headline metrics from generated artifacts.</div>
+          </div>
+        </div>
+        <div id="overview-metrics" class="grid cols-4"></div>
+        <div class="grid cols-2" style="margin-top: 12px;">
+          <div class="panel">
+            <h2>Baseline Accuracy</h2>
+            <div id="baseline-bars" class="bar-list" style="margin-top: 12px;"></div>
+          </div>
+          <div class="panel">
+            <h2>Error Modes</h2>
+            <div id="error-bars" class="bar-list" style="margin-top: 12px;"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="evidence" class="view">
+        <div class="section-head">
+          <div>
+            <h2>Evidence Adequacy</h2>
+            <div class="note">Auditable evidence is tracked separately from label accuracy.</div>
+          </div>
+        </div>
+        <div id="evidence-metrics" class="grid cols-4"></div>
+        <div class="panel" style="margin-top: 12px;">
+          <h2>Evidence Type Counts</h2>
+          <div id="evidence-bars" class="bar-list" style="margin-top: 12px;"></div>
+        </div>
+      </section>
+
+      <section id="fields" class="view">
+        <div class="section-head">
+          <div>
+            <h2>Field-Level Inspector</h2>
+            <div class="note">Dataset-level metrics and per-field match status from the internal baseline report.</div>
+          </div>
+        </div>
+        <div class="split">
+          <div class="panel">
+            <label for="dataset-select" class="note">Dataset</label>
+            <select id="dataset-select" aria-label="Select internal dataset"></select>
+            <div id="dataset-detail" style="margin-top: 12px;"></div>
+          </div>
+          <div class="panel scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Field</th>
+                  <th>Physical</th>
+                  <th>Logical</th>
+                  <th>Semantic</th>
+                  <th>Confidence</th>
+                  <th>Uncertainty</th>
+                </tr>
+              </thead>
+              <tbody id="field-table"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="semantic" class="view">
+        <div class="section-head">
+          <div>
+            <h2>Semantic Merge Review</h2>
+            <div class="note">Accepted annotations enrich deterministic fields only when evidence and compatibility checks pass.</div>
+          </div>
+        </div>
+        <div id="semantic-metrics" class="grid cols-4"></div>
+        <div class="panel scroll" style="margin-top: 12px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Dataset</th>
+                <th>Baseline logical</th>
+                <th>Merged logical</th>
+                <th>Delta</th>
+                <th>Accepted</th>
+                <th>Conflicts</th>
+              </tr>
+            </thead>
+            <tbody id="semantic-table"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="retrieval" class="view">
+        <div class="section-head">
+          <div>
+            <h2>Retrieval Comparison</h2>
+            <div class="note">Current qrels are planted single-positive judgments over a bounded 16-file external pool.</div>
+          </div>
+        </div>
+        <div class="grid cols-2">
+          <div class="panel">
+            <h2>Recall@1 by System</h2>
+            <div id="retrieval-bars" class="bar-list" style="margin-top: 12px;"></div>
+          </div>
+          <div class="panel">
+            <h2>Query Inspector</h2>
+            <select id="query-select" aria-label="Select retrieval query"></select>
+            <div id="query-detail" style="margin-top: 12px;"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="provenance" class="view">
+        <div class="section-head">
+          <div>
+            <h2>Provenance Export</h2>
+            <div class="note">A lightweight PROV-like manifest links files, fields, evidence records, annotations, merge outputs, and reports.</div>
+          </div>
+        </div>
+        <div id="provenance-metrics" class="grid cols-4"></div>
+      </section>
+
+      <section id="extract" class="view">
+        <div class="section-head">
+          <div>
+            <h2>Scratch Schema Extraction</h2>
+            <div class="note">Upload a local HDF5 file, CSV time-series file, or raw binary payload and inspect the deterministic-first schema result. This scratch path does not write to frozen artifacts or paper metrics.</div>
+          </div>
+        </div>
+        <div class="panel">
+          <form id="extract-form">
+            <div class="form-grid">
+              <div class="form-row">
+                <label for="extract-file" class="note">File</label>
+                <input id="extract-file" name="file" type="file" required>
+              </div>
+              <div class="form-row">
+                <label for="extract-mode" class="note">Mode</label>
+                <select id="extract-mode" name="mode">
+                  <option value="auto">Auto detect</option>
+                  <option value="hdf5">HDF5 / self-describing binary</option>
+                  <option value="timeseries">CSV time-series</option>
+                  <option value="binary">Raw binary abstention</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="sample-limit" class="note">Sample rows</label>
+                <input id="sample-limit" name="sample_limit" type="number" min="1" max="10000" value="200">
+              </div>
+            </div>
+            <div class="actions" style="margin-top: 12px;">
+              <button id="extract-submit" class="primary-button" type="submit">Extract Schema</button>
+              <span id="extract-status" class="note">Choose a file to run local scratch extraction.</span>
+            </div>
+          </form>
+        </div>
+        <div id="extract-summary" class="extract-summary"></div>
+        <div class="grid cols-2" style="margin-top: 12px;">
+          <div class="panel scroll">
+            <h2>Extracted Fields</h2>
+            <table style="margin-top: 10px;">
+              <thead>
+                <tr>
+                  <th>Field</th>
+                  <th>Physical</th>
+                  <th>Logical</th>
+                  <th>Semantic</th>
+                  <th>Evidence</th>
+                </tr>
+              </thead>
+              <tbody id="extract-field-table"></tbody>
+            </table>
+          </div>
+          <div class="panel">
+            <h2>Schema JSON</h2>
+            <pre id="extract-json" class="json-box" style="margin-top: 10px;">No scratch extraction has run yet.</pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="limits" class="view">
+        <div class="section-head">
+          <div>
+            <h2>Boundaries</h2>
+            <div class="note">These limits should remain visible in the paper and in any live demo.</div>
+          </div>
+        </div>
+        <div class="panel">
+          <p><span class="pill warn">planted qrels</span> Current retrieval results compare artifact representations on planted single-positive judgments, not broad real-world search robustness.</p>
+          <p><span class="pill warn">small pilot</span> The internal corpus is a 9-dataset pilot designed for method validation and failure-mode analysis.</p>
+          <p><span class="pill ok">inspection layer</span> This GUI reads frozen artifacts and should not change benchmark membership, gold references, qrels, or headline metrics.</p>
+          <p><span class="pill bad">open gap</span> Time-axis evaluation remains the clearest non-final internal gap.</p>
+        </div>
+      </section>
+
+      <footer>
+        Artifact paths are relative to <code>high_fidelity_schema_study/</code>. Serve with <code>python -m high_fidelity_schema_study.gui_demo.server 8765</code> for uploads, or <code>python -m http.server 8765</code> for read-only artifact loading.
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    const paths = {
+      paper: "../docs/paper_result_tables_2026-05-15.json",
+      baseline: "../data/derived/internal_baseline_report.json",
+      retrieval: "../data/retrieval/external_candidate_pool/retrieval_report.json",
+      semantic: "../data/semantic_merged/semantic_merge_report.json",
+      provenance: "../data/derived/provenance_manifest.json",
+      qrels: "../data/retrieval/external_candidate_pool/qrels.json"
+    };
+
+    const fallback = {
+      paper: {
+        tables: {
+          benchmark_slice: [
+            { measure: "Internal pilot datasets", value: 9 },
+            { measure: "External retrieval candidate files", value: 16 },
+            { measure: "Promoted external target files", value: 10 },
+            { measure: "External distractor files", value: 6 }
+          ],
+          internal_baseline_aggregate: [
+            { metric: "physical_completeness", value: 1 },
+            { metric: "physical_accuracy", value: 0.9815 },
+            { metric: "logical_accuracy", value: 0.9444 },
+            { metric: "semantic_accuracy", value: 1 },
+            { metric: "unit_accuracy", value: 0.8889 },
+            { metric: "time_axis_accuracy", value: 0.6667 }
+          ],
+          internal_error_modes: [
+            { error_mode: "time_axis_mismatch", count: 3 },
+            { error_mode: "unexpected_field", count: 3 },
+            { error_mode: "logical_unknown", count: 2 },
+            { error_mode: "logical_mismatch", count: 1 }
+          ],
+          evidence_adequacy_summary: [
+            { metric: "Derived fields with source evidence", numerator: 53, denominator: 53, value: 1 },
+            { metric: "Accepted semantic merges with support", numerator: 3, denominator: 3, value: 1 },
+            { metric: "Unsupported accepted semantic merges", numerator: 0, denominator: 3, value: 0 }
+          ],
+          source_evidence_type_counts: [
+            { evidence_type: "csv_header", field_count: 34 },
+            { evidence_type: "sample_rows", field_count: 34 },
+            { evidence_type: "hdf5_dataset_path", field_count: 19 },
+            { evidence_type: "column_name_unit_hint", field_count: 13 },
+            { evidence_type: "hdf5_attribute", field_count: 9 }
+          ]
+        }
+      },
+      retrieval: {
+        artifacts: [
+          { artifact_name: "metadata_only", metrics: { recall_at_1: 0.7 }, queries: [] },
+          { artifact_name: "readme_only", metrics: { recall_at_1: 0.5 }, queries: [] },
+          { artifact_name: "schema_enhanced", metrics: { recall_at_1: 1 }, queries: [] }
+        ]
+      },
+      semantic: {
+        dataset_count: 3,
+        aggregate: { improved_dataset_count: 2, accepted_for_merge_count: 3, conflict_count: 1, mean_logical_accuracy_delta: 0.1667 },
+        datasets: []
+      },
+      provenance: {
+        entities: [],
+        activities: [],
+        agents: []
+      }
+    };
+
+    const fmt = (value) => {
+      if (typeof value !== "number") return value ?? "";
+      if (value <= 1) return value.toFixed(4);
+      return String(value);
+    };
+
+    function el(tag, className, text) {
+      const node = document.createElement(tag);
+      if (className) node.className = className;
+      if (text !== undefined) node.textContent = text;
+      return node;
+    }
+
+    function esc(text) {
+      return String(text ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;");
+    }
+
+    function metric(label, value) {
+      const box = el("div", "metric");
+      box.appendChild(el("div", "metric-label", label));
+      box.appendChild(el("div", "metric-value", fmt(value)));
+      return box;
+    }
+
+    function bars(container, rows, labelKey, valueKey, maxValue, tone = "green") {
+      container.innerHTML = "";
+      rows.forEach((row) => {
+        const value = row[valueKey];
+        const line = el("div", "bar-row");
+        line.appendChild(el("div", "", row[labelKey]));
+        const track = el("div", "bar-track");
+        const bar = el("div", `bar ${tone}`);
+        const pct = maxValue ? Math.max(0, Math.min(100, (value / maxValue) * 100)) : 0;
+        bar.style.width = `${pct}%`;
+        track.appendChild(bar);
+        line.appendChild(track);
+        line.appendChild(el("div", "", fmt(value)));
+        container.appendChild(line);
+      });
+    }
+
+    async function loadJson(path) {
+      const response = await fetch(path, { cache: "no-store" });
+      if (!response.ok) throw new Error(`${path} ${response.status}`);
+      return response.json();
+    }
+
+    async function loadArtifacts() {
+      const loaded = {};
+      const failed = [];
+      for (const [key, path] of Object.entries(paths)) {
+        try {
+          loaded[key] = await loadJson(path);
+        } catch (error) {
+          failed.push(key);
+        }
+      }
+      const usingFallback = failed.length > 0;
+      const data = {
+        paper: loaded.paper || fallback.paper,
+        baseline: loaded.baseline || null,
+        retrieval: loaded.retrieval || fallback.retrieval,
+        semantic: loaded.semantic || fallback.semantic,
+        provenance: loaded.provenance || fallback.provenance,
+        qrels: loaded.qrels || null
+      };
+      document.getElementById("load-status").textContent = usingFallback
+        ? `Loaded with fallback for: ${failed.join(", ")}`
+        : "Loaded live frozen artifacts";
+      return data;
+    }
+
+    function renderOverview(data) {
+      const tables = data.paper.tables || {};
+      const overview = document.getElementById("overview-metrics");
+      overview.innerHTML = "";
+      (tables.benchmark_slice || []).slice(0, 4).forEach((row) => {
+        overview.appendChild(metric(row.measure, row.value));
+      });
+      bars(
+        document.getElementById("baseline-bars"),
+        (tables.internal_baseline_aggregate || []).filter((row) => row.metric.includes("accuracy") || row.metric.includes("completeness")),
+        "metric",
+        "value",
+        1,
+        "green"
+      );
+      const errorRows = tables.internal_error_modes || [];
+      const maxError = Math.max(1, ...errorRows.map((row) => row.count || 0));
+      bars(document.getElementById("error-bars"), errorRows, "error_mode", "count", maxError, "red");
+    }
+
+    function renderEvidence(data) {
+      const tables = data.paper.tables || {};
+      const wrap = document.getElementById("evidence-metrics");
+      wrap.innerHTML = "";
+      (tables.evidence_adequacy_summary || []).slice(0, 8).forEach((row) => {
+        wrap.appendChild(metric(row.metric, `${row.numerator}/${row.denominator}`));
+      });
+      const rows = tables.source_evidence_type_counts || [];
+      const maxCount = Math.max(1, ...rows.map((row) => row.field_count || 0));
+      bars(document.getElementById("evidence-bars"), rows, "evidence_type", "field_count", maxCount, "blue");
+    }
+
+    function matchPill(value) {
+      return value ? '<span class="pill ok">match</span>' : '<span class="pill bad">miss</span>';
+    }
+
+    function renderFields(data) {
+      const datasets = data.baseline?.datasets || [];
+      const select = document.getElementById("dataset-select");
+      select.innerHTML = "";
+      datasets.forEach((dataset) => {
+        const option = document.createElement("option");
+        option.value = dataset.dataset_id;
+        option.textContent = `${dataset.dataset_id} (${dataset.category}/${dataset.difficulty})`;
+        select.appendChild(option);
+      });
+
+      const renderDataset = () => {
+        const selected = select.value;
+        const dataset = datasets.find((item) => item.dataset_id === selected);
+        const detail = document.getElementById("dataset-detail");
+        const body = document.getElementById("field-table");
+        if (!dataset) {
+          detail.innerHTML = '<p class="note">No field-level baseline data available in fallback mode.</p>';
+          body.innerHTML = "";
+          return;
+        }
+        detail.innerHTML = `
+          <p><span class="pill ok">${esc(dataset.category)}</span><span class="pill warn">${esc(dataset.difficulty)}</span></p>
+          <p>Gold fields: <strong>${esc(dataset.gold_field_count)}</strong><br>
+          Extracted fields: <strong>${esc(dataset.extracted_field_count)}</strong><br>
+          Matched fields: <strong>${esc(dataset.matched_field_count)}</strong></p>
+          <p>Physical accuracy: <strong>${fmt(dataset.physical_accuracy)}</strong><br>
+          Logical accuracy: <strong>${fmt(dataset.logical_accuracy)}</strong><br>
+          Semantic accuracy: <strong>${fmt(dataset.semantic_accuracy)}</strong><br>
+          Unit accuracy: <strong>${fmt(dataset.unit_accuracy)}</strong></p>
+        `;
+        body.innerHTML = "";
+        (dataset.field_results || []).forEach((field) => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td><code>${esc(field.field_path)}</code></td>
+            <td>${matchPill(field.physical_match)}<br>${esc(field.derived_physical_type)}</td>
+            <td>${matchPill(field.logical_match)}<br>${esc(field.derived_logical_type)}</td>
+            <td>${matchPill(field.semantic_match)}<br>${esc(field.derived_semantic_type)}</td>
+            <td>${esc(fmt(field.derived_confidence))}</td>
+            <td>${esc(field.derived_uncertainty_reason || "")}</td>
+          `;
+          body.appendChild(tr);
+        });
+      };
+
+      select.addEventListener("change", renderDataset);
+      renderDataset();
+    }
+
+    function renderSemantic(data) {
+      const aggregate = data.semantic.aggregate || {};
+      const wrap = document.getElementById("semantic-metrics");
+      wrap.innerHTML = "";
+      wrap.appendChild(metric("Datasets reviewed", data.semantic.dataset_count || 0));
+      wrap.appendChild(metric("Improved datasets", aggregate.improved_dataset_count || 0));
+      wrap.appendChild(metric("Accepted merges", aggregate.accepted_for_merge_count || 0));
+      wrap.appendChild(metric("Conflicts", aggregate.conflict_count || 0));
+
+      const body = document.getElementById("semantic-table");
+      body.innerHTML = "";
+      (data.semantic.datasets || []).forEach((row) => {
+        const tr = document.createElement("tr");
+        const base = row.baseline || {};
+        const merged = row.merged || {};
+        const delta = (merged.logical_accuracy ?? 0) - (base.logical_accuracy ?? 0);
+        [
+          row.dataset_id,
+          fmt(base.logical_accuracy),
+          fmt(merged.logical_accuracy),
+          fmt(delta),
+          merged.accepted_for_merge_count ?? 0,
+          row.conflict_count ?? 0
+        ].forEach((value) => tr.appendChild(el("td", "", String(value))));
+        body.appendChild(tr);
+      });
+    }
+
+    function renderRetrieval(data) {
+      const artifacts = data.retrieval.artifacts || [];
+      bars(
+        document.getElementById("retrieval-bars"),
+        artifacts.map((item) => ({ name: item.artifact_name, value: item.metrics?.recall_at_1 ?? 0 })),
+        "name",
+        "value",
+        1,
+        "amber"
+      );
+
+      const queries = artifacts[0]?.queries || [];
+      const select = document.getElementById("query-select");
+      select.innerHTML = "";
+      queries.forEach((query) => {
+        const option = document.createElement("option");
+        option.value = query.query_id;
+        option.textContent = query.query_id;
+        select.appendChild(option);
+      });
+
+      const renderDetail = () => {
+        const selected = select.value;
+        const queryRows = artifacts.map((artifact) => {
+          const query = (artifact.queries || []).find((item) => item.query_id === selected);
+          return { artifact: artifact.artifact_name, query };
+        }).filter((row) => row.query);
+        const detail = document.getElementById("query-detail");
+        if (!queryRows.length) {
+          detail.innerHTML = "<p class=\"note\">No query details available in fallback mode.</p>";
+          return;
+        }
+        detail.innerHTML = queryRows.map((row) => {
+          const top = row.query.top_3?.[0];
+          const cls = row.query.top_1_correct ? "ok" : "bad";
+          return `<p><span class="pill ${cls}">${row.artifact}</span><br><code>${top?.candidate_id || "no candidate"}</code><br>Top-1 correct: ${row.query.top_1_correct}</p>`;
+        }).join("");
+      };
+
+      select.addEventListener("change", renderDetail);
+      renderDetail();
+    }
+
+    function renderProvenance(data) {
+      const wrap = document.getElementById("provenance-metrics");
+      wrap.innerHTML = "";
+      const entities = Array.isArray(data.provenance.entities) ? data.provenance.entities.length : (data.provenance.entity_count || 0);
+      const activities = Array.isArray(data.provenance.activities) ? data.provenance.activities.length : (data.provenance.activity_count || 0);
+      const agents = Array.isArray(data.provenance.agents) ? data.provenance.agents.length : (data.provenance.agent_count || 0);
+      wrap.appendChild(metric("Entities", entities));
+      wrap.appendChild(metric("Activities", activities));
+      wrap.appendChild(metric("Agents", agents));
+      wrap.appendChild(metric("Artifact role", "inspection"));
+    }
+
+    function renderExtractResult(payload) {
+      const schema = payload.schema || {};
+      const fields = schema.fields || [];
+      const groups = schema.groups || [];
+      const summary = document.getElementById("extract-summary");
+      summary.innerHTML = "";
+      summary.appendChild(metric("Detected mode", payload.detected_mode || ""));
+      summary.appendChild(metric("File format", schema.file_format || ""));
+      summary.appendChild(metric("Fields", String(fields.length)));
+      summary.appendChild(metric("Groups", String(groups.length)));
+
+      const body = document.getElementById("extract-field-table");
+      body.innerHTML = "";
+      if (!fields.length) {
+        const tr = document.createElement("tr");
+        tr.innerHTML = '<td colspan="5" class="note">No field claims were emitted. For raw binary without sidecar metadata, this is an intentional high-fidelity abstention.</td>';
+        body.appendChild(tr);
+      }
+      fields.forEach((field) => {
+        const evidence = field.source_evidence || [];
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td><code>${esc(field.field_path || field.field_name)}</code></td>
+          <td>${esc(field.physical_type || "")}</td>
+          <td>${esc(field.logical_type || "unknown")}</td>
+          <td>${esc(field.semantic_type || "unknown")}</td>
+          <td>${evidence.length}<br><span class="note">${esc(field.uncertainty_reason || field.extraction_method || "")}</span></td>
+        `;
+        body.appendChild(tr);
+      });
+
+      const notes = [
+        ...(payload.runtime_notes || []),
+        ...(schema.notes || [])
+      ];
+      const jsonBox = document.getElementById("extract-json");
+      jsonBox.textContent = JSON.stringify({ notes, schema }, null, 2);
+    }
+
+    function setupExtractor() {
+      const form = document.getElementById("extract-form");
+      const button = document.getElementById("extract-submit");
+      const status = document.getElementById("extract-status");
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const fileInput = document.getElementById("extract-file");
+        if (!fileInput.files.length) {
+          status.textContent = "Choose a file first.";
+          return;
+        }
+        button.disabled = true;
+        status.textContent = "Extracting schema...";
+        try {
+          const response = await fetch("/api/extract-schema", {
+            method: "POST",
+            body: new FormData(form)
+          });
+          let payload;
+          try {
+            payload = await response.json();
+          } catch (error) {
+            throw new Error("Upload endpoint unavailable. Start the demo with python -m high_fidelity_schema_study.gui_demo.server 8765.");
+          }
+          if (!response.ok || !payload.ok) {
+            throw new Error(payload.error || `Extraction failed with status ${response.status}`);
+          }
+          renderExtractResult(payload);
+          status.textContent = `Extracted ${payload.filename}`;
+        } catch (error) {
+          status.textContent = error.message;
+        } finally {
+          button.disabled = false;
+        }
+      });
+    }
+
+    function setupNav() {
+      const activate = (view) => {
+        const button = document.querySelector(`nav button[data-view="${view}"]`);
+        const panel = document.getElementById(view);
+        if (!button || !panel) return;
+        document.querySelectorAll("nav button").forEach((item) => item.classList.remove("active"));
+        document.querySelectorAll(".view").forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+        panel.classList.add("active");
+      };
+
+      document.querySelectorAll("nav button").forEach((button) => {
+        button.addEventListener("click", () => {
+          activate(button.dataset.view);
+          history.replaceState(null, "", `#${button.dataset.view}`);
+        });
+      });
+
+      const initialView = location.hash.replace("#", "") || "overview";
+      activate(initialView);
+    }
+
+    loadArtifacts().then((data) => {
+      setupNav();
+      renderOverview(data);
+      renderEvidence(data);
+      renderFields(data);
+      renderSemantic(data);
+      renderRetrieval(data);
+      renderProvenance(data);
+      setupExtractor();
+    });
+  </script>
+</body>
+</html>

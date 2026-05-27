@@ -24,6 +24,7 @@ class FieldSchema:
     unique_ratio: Optional[float] = None
     shape: Optional[List[int]] = None
     unit: Optional[str] = None
+    unit_normalization: Optional[Dict[str, Any]] = None
     description: Optional[str] = None
     example_values: List[str] = field(default_factory=list)
     missing_count: int = 0

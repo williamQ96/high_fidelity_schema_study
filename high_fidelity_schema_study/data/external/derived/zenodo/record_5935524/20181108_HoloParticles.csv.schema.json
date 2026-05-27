@@ -1,0 +1,303 @@
+{
+  "dataset_id": "20181108_HoloParticles",
+  "file_id": "20181108_HoloParticles.csv",
+  "file_format": "csv",
+  "data_modality": "tabular",
+  "fields": [
+    {
+      "field_name": "",
+      "field_path": "",
+      "physical_type": "string",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.0525,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "Vertical_Particle_Location_mm"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20181108_HoloParticles.csv",
+          "detail": "header=''",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20181108_HoloParticles.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "",
+      "field_path": "",
+      "physical_type": "string",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.0525,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "Vertical_Particle_Location_mm"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20181108_HoloParticles.csv",
+          "detail": "header=''",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20181108_HoloParticles.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "",
+      "field_path": "",
+      "physical_type": "string",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.0525,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "Vertical_Particle_Location_mm"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20181108_HoloParticles.csv",
+          "detail": "header=''",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20181108_HoloParticles.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "",
+      "field_path": "",
+      "physical_type": "string",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.0525,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "Vertical_Particle_Location_mm"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20181108_HoloParticles.csv",
+          "detail": "header=''",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20181108_HoloParticles.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "",
+      "field_path": "",
+      "physical_type": "string",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.0525,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "Vertical_Particle_Location_mm"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20181108_HoloParticles.csv",
+          "detail": "header=''",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20181108_HoloParticles.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "",
+      "field_path": "",
+      "physical_type": "string",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.0525,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "Vertical_Particle_Location_mm"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20181108_HoloParticles.csv",
+          "detail": "header=''",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20181108_HoloParticles.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "",
+      "field_path": "",
+      "physical_type": "string",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.0525,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "Vertical_Particle_Location_mm"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20181108_HoloParticles.csv",
+          "detail": "header=''",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20181108_HoloParticles.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "",
+      "field_path": "",
+      "physical_type": "string",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.0525,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "Vertical_Particle_Location_mm"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20181108_HoloParticles.csv",
+          "detail": "header=''",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20181108_HoloParticles.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.9,
+      "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+      "extraction_method": "csv_conservative_profiler"
+    }
+  ],
+  "groups": [],
+  "metadata": {
+    "sampled_rows": 200,
+    "column_count": 8
+  },
+  "notes": [],
+  "external_source_file": "zenodo/record_5935524/20181108_HoloParticles.csv"
+}

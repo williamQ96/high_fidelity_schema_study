@@ -14,6 +14,13 @@
       "unique_ratio": 1.0,
       "shape": null,
       "unit": null,
+      "unit_normalization": {
+        "status": "no_unit_claim",
+        "original_unit": null,
+        "canonical_unit": null,
+        "ucum_code": null,
+        "evidence_basis": "not_applicable"
+      },
       "description": null,
       "example_values": [
         "00017",
@@ -52,6 +59,13 @@
       "unique_ratio": 0.5,
       "shape": null,
       "unit": null,
+      "unit_normalization": {
+        "status": "no_unit_claim",
+        "original_unit": null,
+        "canonical_unit": null,
+        "ucum_code": null,
+        "evidence_basis": "not_applicable"
+      },
       "description": null,
       "example_values": [
         "UP_A",
@@ -89,6 +103,13 @@
       "unique_ratio": 0.75,
       "shape": null,
       "unit": null,
+      "unit_normalization": {
+        "status": "no_unit_claim",
+        "original_unit": null,
+        "canonical_unit": null,
+        "ucum_code": null,
+        "evidence_basis": "not_applicable"
+      },
       "description": null,
       "example_values": [
         "2026-04-11",
@@ -126,6 +147,13 @@
       "unique_ratio": 1.0,
       "shape": null,
       "unit": null,
+      "unit_normalization": {
+        "status": "no_unit_claim",
+        "original_unit": null,
+        "canonical_unit": null,
+        "ucum_code": null,
+        "evidence_basis": "not_applicable"
+      },
       "description": null,
       "example_values": [
         "7.2",
@@ -167,6 +195,13 @@
       "unique_ratio": 1.0,
       "shape": null,
       "unit": "milligram_per_liter",
+      "unit_normalization": {
+        "status": "normalized_ucum",
+        "original_unit": "milligram_per_liter",
+        "canonical_unit": "milligram_per_liter",
+        "ucum_code": "mg/L",
+        "evidence_basis": "name_pattern"
+      },
       "description": null,
       "example_values": [
         "8.9",
@@ -215,6 +250,13 @@
       "unique_ratio": 1.0,
       "shape": null,
       "unit": "NTU",
+      "unit_normalization": {
+        "status": "normalized_ucum",
+        "original_unit": "NTU",
+        "canonical_unit": "NTU",
+        "ucum_code": "{NTU}",
+        "evidence_basis": "name_pattern"
+      },
       "description": null,
       "example_values": [
         "3.2",
@@ -263,6 +305,13 @@
       "unique_ratio": 1.0,
       "shape": null,
       "unit": null,
+      "unit_normalization": {
+        "status": "no_unit_claim",
+        "original_unit": null,
+        "canonical_unit": null,
+        "ucum_code": null,
+        "evidence_basis": "not_applicable"
+      },
       "description": null,
       "example_values": [
         "duplicate bottle",

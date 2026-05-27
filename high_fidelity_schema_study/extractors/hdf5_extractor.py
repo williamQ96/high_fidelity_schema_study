@@ -5,6 +5,7 @@ from typing import Any, Dict, List
 
 from ..models import DatasetSchema, EvidenceRecord, FieldSchema
 from ..deterministic_profile import attach_dataset_profile
+from ..unit_normalization import normalize_unit_claim
 
 try:
     import h5py  # type: ignore
@@ -139,6 +140,10 @@ def extract_hdf5_schema(path: str) -> DatasetSchema:
                             confidence=0.99,
                         )
                     )
+                unit_normalization = normalize_unit_claim(
+                    str(unit) if unit is not None else None,
+                    [item.evidence_type for item in evidence],
+                )
 
                 fields.append(
                     FieldSchema(
@@ -149,6 +154,7 @@ def extract_hdf5_schema(path: str) -> DatasetSchema:
                         semantic_type=semantic_type,
                         shape=shape,
                         unit=unit,
+                        unit_normalization=unit_normalization,
                         description=str(description) if description is not None else None,
                         source_evidence=evidence,
                         confidence=1.0,

@@ -32,6 +32,8 @@ class Hdf5ExtractorTests(unittest.TestCase):
         self.assertEqual(fields["/station_id"].physical_type, "string")
         self.assertEqual(fields["/temperature"].physical_type, "float32")
         self.assertEqual(fields["/temperature"].unit, "C")
+        self.assertEqual(fields["/temperature"].unit_normalization["status"], "normalized_ucum")
+        self.assertEqual(fields["/temperature"].unit_normalization["evidence_basis"], "explicit_metadata")
 
 
 if __name__ == "__main__":

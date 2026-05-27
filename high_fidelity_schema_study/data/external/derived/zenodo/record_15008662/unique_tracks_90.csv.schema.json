@@ -1,0 +1,188 @@
+{
+  "dataset_id": "unique_tracks_90",
+  "file_id": "unique_tracks_90.csv",
+  "file_format": "csv",
+  "data_modality": "time_series",
+  "fields": [
+    {
+      "field_name": "max_VIL",
+      "field_path": "max_VIL",
+      "physical_type": "float",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.79,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "48.8037",
+        "35.0852",
+        "46.8739"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        30.001,
+        124.567
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+          "detail": "header='max_VIL'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "Lat",
+      "field_path": "Lat",
+      "physical_type": "float",
+      "logical_type": "coordinate",
+      "semantic_type": "latitude",
+      "nullable": false,
+      "unique_ratio": 0.785,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "51.473",
+        "51.8469",
+        "51.4849"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        50.496,
+        52.9781
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+          "detail": "header='Lat'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "Lon",
+      "field_path": "Lon",
+      "physical_type": "float",
+      "logical_type": "coordinate",
+      "semantic_type": "longitude",
+      "nullable": false,
+      "unique_ratio": 0.78,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "-115.418",
+        "-115.494",
+        "-115.425"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        -115.747,
+        -112.006
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+          "detail": "header='Lon'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "Date_time",
+      "field_path": "Date_time",
+      "physical_type": "datetime",
+      "logical_type": "time_axis",
+      "semantic_type": "observation_time",
+      "nullable": false,
+      "unique_ratio": 0.34,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "1997-05-03",
+        "1997-05-04"
+      ],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+          "detail": "header='Date_time'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    }
+  ],
+  "groups": [],
+  "metadata": {
+    "sampled_rows": 200,
+    "column_count": 4,
+    "time_series": {
+      "time_axis": {
+        "field": "Date_time",
+        "type": "datetime",
+        "frequency": "mixed",
+        "regularity": "irregular",
+        "missing_intervals": null
+      },
+      "series_identifier": null,
+      "measurements": [
+        "max_VIL"
+      ]
+    }
+  },
+  "notes": [],
+  "external_source_file": "zenodo/record_15008662/unique_tracks_90.csv"
+}

@@ -57,6 +57,8 @@
   "retrieval_protocol": {
     "artifact_manifest": "data/retrieval/external_candidate_pool/artifact_manifest.json",
     "query_file": "data/retrieval/external_candidate_pool/queries.json",
+    "qrels_file": "data/retrieval/external_candidate_pool/qrels.json",
+    "qrels_schema": "single_positive_planted_v1",
     "systems": [
       "metadata_only",
       "readme_only",

@@ -200,15 +200,16 @@ def main() -> None:
         "schema_enhanced_deterministic",
         "schema_enhanced_semantic_merged",
     ]
+    non_retrieval_artifacts = {"queries", "qrels"}
     artifact_names = [
         name
         for name in preferred_order
-        if name in manifest["artifact_files"] and name != "queries"
+        if name in manifest["artifact_files"] and name not in non_retrieval_artifacts
     ]
     artifact_names.extend(
         name
         for name in manifest["artifact_files"]
-        if name not in set(artifact_names) and name != "queries"
+        if name not in set(artifact_names) and name not in non_retrieval_artifacts
     )
     artifacts = []
     for artifact_name in artifact_names:

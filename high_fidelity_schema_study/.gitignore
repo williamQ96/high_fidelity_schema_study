@@ -5,6 +5,9 @@ __pycache__/
 .mypy_cache/
 .coverage
 
+# Local agent/runtime state.
+.omx/
+
 # Local scratch / rendered previews.
 tmp/
 

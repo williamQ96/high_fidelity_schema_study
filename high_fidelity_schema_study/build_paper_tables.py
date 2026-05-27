@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from collections import Counter
 from pathlib import Path
 from typing import Any, Dict, Iterable, List
 
@@ -15,10 +16,14 @@ DERIVED_MANIFEST_PATH = DATA_ROOT / "derived" / "derived_manifest.json"
 RETRIEVAL_REPORT_PATH = DATA_ROOT / "retrieval" / "external_candidate_pool" / "retrieval_report.json"
 SEMANTIC_MERGE_REPORT_PATH = DATA_ROOT / "semantic_merged" / "semantic_merge_report.json"
 RELATIONSHIP_PROFILE_PATH = DATA_ROOT / "derived" / "internal_relationship_profile.json"
+PROVENANCE_MANIFEST_PATH = DATA_ROOT / "derived" / "provenance_manifest.json"
+QRELS_PATH = DATA_ROOT / "retrieval" / "external_candidate_pool" / "qrels.json"
+SCHEMA_CLAIM_MODEL_PATH = DOCS_ROOT / "schema_claim_model.md"
+BENCHMARK_CARD_PATH = DOCS_ROOT / "benchmark_card_2026-05-15.md"
 
-REPORT_ID = "paper-result-tables-2026-05-12"
-REPORT_JSON_PATH = DOCS_ROOT / "paper_result_tables_2026-05-12.json"
-REPORT_MD_PATH = DOCS_ROOT / "paper_result_tables_2026-05-12.md"
+REPORT_ID = "paper-result-tables-2026-05-15"
+REPORT_JSON_PATH = DOCS_ROOT / "paper_result_tables_2026-05-15.json"
+REPORT_MD_PATH = DOCS_ROOT / "paper_result_tables_2026-05-15.md"
 
 
 SCHEMA_SOURCE_LABELS = {
@@ -36,6 +41,12 @@ def load_json(path: Path) -> Dict[str, Any]:
 
 def round4(value: float) -> float:
     return round(value, 4)
+
+
+def safe_ratio(numerator: int, denominator: int) -> float:
+    if denominator == 0:
+        return 0.0
+    return round4(numerator / denominator)
 
 
 def metric_delta(current: Dict[str, float], baseline: Dict[str, float], metric: str) -> float:
@@ -191,7 +202,194 @@ def build_semantic_merge_tables(report: Dict[str, Any]) -> Dict[str, List[Dict[s
     }
 
 
-def summarize_dataset_profiles(derived_manifest: Dict[str, Any]) -> Dict[str, int]:
+def load_derived_schemas(derived_manifest: Dict[str, Any]) -> List[Dict[str, Any]]:
+    return [
+        load_json(DATA_ROOT / entry["derived_schema_file"])
+        for entry in derived_manifest["datasets"]
+    ]
+
+
+def build_evidence_adequacy_tables(
+    derived_schemas: List[Dict[str, Any]],
+    semantic_merge_report: Dict[str, Any],
+) -> Dict[str, List[Dict[str, Any]]]:
+    fields = [
+        field
+        for schema in derived_schemas
+        for field in schema.get("fields", [])
+    ]
+    total_fields = len(fields)
+    fields_with_source_evidence = sum(1 for field in fields if field.get("source_evidence"))
+    fields_with_confidence = sum(1 for field in fields if field.get("confidence") is not None)
+    fields_with_uncertainty_reason = sum(1 for field in fields if field.get("uncertainty_reason"))
+
+    evidence_type_counts: Counter[str] = Counter()
+    total_evidence_records = 0
+    unit_claim_count = 0
+    unit_claims_with_unit_evidence = 0
+    explicit_metadata_unit_claims = 0
+    name_inferred_unit_claims = 0
+    for field in fields:
+        source_evidence = field.get("source_evidence", [])
+        total_evidence_records += len(source_evidence)
+        field_evidence_types = {evidence.get("evidence_type") for evidence in source_evidence}
+        for evidence_type in field_evidence_types:
+            if evidence_type:
+                evidence_type_counts[evidence_type] += 1
+        if field.get("unit") is not None:
+            unit_claim_count += 1
+            if {"hdf5_attribute", "column_name_unit_hint"} & field_evidence_types:
+                unit_claims_with_unit_evidence += 1
+            if "hdf5_attribute" in field_evidence_types:
+                explicit_metadata_unit_claims += 1
+            if "column_name_unit_hint" in field_evidence_types:
+                name_inferred_unit_claims += 1
+
+    annotated_fields = []
+    for dataset in semantic_merge_report["datasets"]:
+        for field in dataset["merged"].get("per_field", []):
+            annotation = field.get("semantic_annotation")
+            if annotation is not None:
+                annotated_fields.append(annotation)
+
+    accepted_annotations = [
+        annotation
+        for annotation in annotated_fields
+        if annotation.get("accepted_for_merge") is True
+    ]
+    accepted_with_support = [
+        annotation
+        for annotation in accepted_annotations
+        if annotation.get("supporting_evidence")
+    ]
+    unsupported_accepted = len(accepted_annotations) - len(accepted_with_support)
+
+    summary_table = [
+        {
+            "metric": "Derived fields with source evidence",
+            "numerator": fields_with_source_evidence,
+            "denominator": total_fields,
+            "value": safe_ratio(fields_with_source_evidence, total_fields),
+            "interpretation": "Every deterministic field should be auditable back to file evidence.",
+        },
+        {
+            "metric": "Derived fields with confidence",
+            "numerator": fields_with_confidence,
+            "denominator": total_fields,
+            "value": safe_ratio(fields_with_confidence, total_fields),
+            "interpretation": "Confidence is reported separately from correctness.",
+        },
+        {
+            "metric": "Derived fields with uncertainty reason",
+            "numerator": fields_with_uncertainty_reason,
+            "denominator": total_fields,
+            "value": safe_ratio(fields_with_uncertainty_reason, total_fields),
+            "interpretation": "Reasons are attached when the deterministic layer is conservative.",
+        },
+        {
+            "metric": "Unit claims with unit evidence",
+            "numerator": unit_claims_with_unit_evidence,
+            "denominator": unit_claim_count,
+            "value": safe_ratio(unit_claims_with_unit_evidence, unit_claim_count),
+            "interpretation": "Units should come from explicit metadata or deterministic name evidence.",
+        },
+        {
+            "metric": "Explicit-metadata unit claims",
+            "numerator": explicit_metadata_unit_claims,
+            "denominator": unit_claim_count,
+            "value": safe_ratio(explicit_metadata_unit_claims, unit_claim_count),
+            "interpretation": "HDF5 unit attributes are stronger than name-based unit hints.",
+        },
+        {
+            "metric": "Name-inferred unit claims",
+            "numerator": name_inferred_unit_claims,
+            "denominator": unit_claim_count,
+            "value": safe_ratio(name_inferred_unit_claims, unit_claim_count),
+            "interpretation": "CSV suffix units are useful but weaker than explicit metadata.",
+        },
+        {
+            "metric": "Accepted semantic merges with support",
+            "numerator": len(accepted_with_support),
+            "denominator": len(accepted_annotations),
+            "value": safe_ratio(len(accepted_with_support), len(accepted_annotations)),
+            "interpretation": "Accepted semantic merge decisions should cite supporting evidence.",
+        },
+        {
+            "metric": "Unsupported accepted semantic merges",
+            "numerator": unsupported_accepted,
+            "denominator": len(accepted_annotations),
+            "value": safe_ratio(unsupported_accepted, len(accepted_annotations)),
+            "interpretation": "This should stay at zero under the merge safety policy.",
+        },
+    ]
+    evidence_type_table = [
+        {"evidence_type": evidence_type, "field_count": count}
+        for evidence_type, count in sorted(evidence_type_counts.items())
+    ]
+    evidence_type_table.append({"evidence_type": "total_evidence_records", "field_count": total_evidence_records})
+    return {
+        "evidence_adequacy_summary": summary_table,
+        "source_evidence_type_counts": evidence_type_table,
+    }
+
+
+def build_unit_normalization_tables(derived_schemas: List[Dict[str, Any]]) -> Dict[str, List[Dict[str, Any]]]:
+    status_counts: Counter[str] = Counter()
+    unit_status_counts: Counter[str] = Counter()
+    evidence_basis_counts: Counter[str] = Counter()
+    for schema in derived_schemas:
+        for field in schema.get("fields", []):
+            normalization = field.get("unit_normalization") or {}
+            status = normalization.get("status", "missing_status")
+            evidence_basis = normalization.get("evidence_basis", "missing_basis")
+            status_counts[status] += 1
+            if field.get("unit") is not None:
+                unit_status_counts[status] += 1
+                evidence_basis_counts[evidence_basis] += 1
+
+    status_table = [
+        {
+            "status": status,
+            "field_count": status_counts[status],
+            "unit_claim_count": unit_status_counts.get(status, 0),
+        }
+        for status in sorted(status_counts)
+    ]
+    basis_table = [
+        {"evidence_basis": basis, "unit_claim_count": count}
+        for basis, count in sorted(evidence_basis_counts.items())
+    ]
+    return {
+        "unit_normalization_status": status_table,
+        "unit_normalization_evidence_basis": basis_table,
+    }
+
+
+def build_provenance_summary_table(provenance_manifest: Dict[str, Any]) -> List[Dict[str, Any]]:
+    return [
+        {"metric": metric, "value": value}
+        for metric, value in provenance_manifest["summary"].items()
+    ]
+
+
+def build_qrels_summary_table(qrels: Dict[str, Any]) -> List[Dict[str, Any]]:
+    judgments = qrels.get("qrels", [])
+    planted_count = sum(1 for item in judgments if item.get("query_source") == "planted")
+    high_relevance_count = sum(1 for item in judgments if item.get("relevance_grade") == 2)
+    return [
+        {"metric": "Qrels schema", "value": qrels.get("qrels_schema")},
+        {"metric": "Query count", "value": qrels.get("query_count", 0)},
+        {"metric": "Judgment count", "value": qrels.get("judgment_count", 0)},
+        {"metric": "Planted judgments", "value": planted_count},
+        {"metric": "Highly relevant judgments", "value": high_relevance_count},
+        {"metric": "Judgment style", "value": "one positive planted target per query"},
+    ]
+
+
+def build_profile_tables(
+    derived_schemas: List[Dict[str, Any]],
+    relationship_profile: Dict[str, Any],
+) -> Dict[str, List[Dict[str, Any]]]:
     totals = {
         "dataset_count": 0,
         "field_count": 0,
@@ -200,8 +398,7 @@ def summarize_dataset_profiles(derived_manifest: Dict[str, Any]) -> Dict[str, in
         "identifier_candidate_count": 0,
         "best_identifier_field_count": 0,
     }
-    for entry in derived_manifest["datasets"]:
-        schema = load_json(DATA_ROOT / entry["derived_schema_file"])
+    for schema in derived_schemas:
         profile = schema["metadata"]["deterministic_profile"]
         missingness = profile["missingness"]
         identifier_quality = profile["identifier_quality"]
@@ -211,14 +408,6 @@ def summarize_dataset_profiles(derived_manifest: Dict[str, Any]) -> Dict[str, in
         totals["total_missing_cells"] += missingness["total_missing_cells"]
         totals["identifier_candidate_count"] += identifier_quality["candidate_count"]
         totals["best_identifier_field_count"] += len(identifier_quality["best_identifier_fields"])
-    return totals
-
-
-def build_profile_tables(
-    derived_manifest: Dict[str, Any],
-    relationship_profile: Dict[str, Any],
-) -> Dict[str, List[Dict[str, Any]]]:
-    totals = summarize_dataset_profiles(derived_manifest)
     summary_table = [
         {
             "metric": "Internal datasets with deterministic profile",
@@ -288,18 +477,27 @@ def build_paper_tables() -> Dict[str, Any]:
     retrieval_report = load_json(RETRIEVAL_REPORT_PATH)
     semantic_merge_report = load_json(SEMANTIC_MERGE_REPORT_PATH)
     relationship_profile = load_json(RELATIONSHIP_PROFILE_PATH)
+    provenance_manifest = load_json(PROVENANCE_MANIFEST_PATH)
+    qrels = load_json(QRELS_PATH)
+    derived_schemas = load_derived_schemas(derived_manifest)
 
     baseline_tables = build_internal_baseline_tables(internal_baseline)
     retrieval_tables = build_retrieval_tables(retrieval_report)
     semantic_tables = build_semantic_merge_tables(semantic_merge_report)
-    profile_tables = build_profile_tables(derived_manifest, relationship_profile)
+    evidence_tables = build_evidence_adequacy_tables(derived_schemas, semantic_merge_report)
+    unit_tables = build_unit_normalization_tables(derived_schemas)
+    profile_tables = build_profile_tables(derived_schemas, relationship_profile)
 
     tables = {
         "benchmark_slice": build_benchmark_slice_table(freeze),
         **baseline_tables,
+        **evidence_tables,
+        **unit_tables,
         **retrieval_tables,
         **semantic_tables,
         **profile_tables,
+        "provenance_summary": build_provenance_summary_table(provenance_manifest),
+        "qrels_summary": build_qrels_summary_table(qrels),
         "locked_regression_subsets": build_regression_subset_table(freeze),
         "known_limitations": build_known_limitations_table(freeze),
     }
@@ -313,6 +511,10 @@ def build_paper_tables() -> Dict[str, Any]:
             "semantic_merge_report": SEMANTIC_MERGE_REPORT_PATH.relative_to(ROOT).as_posix(),
             "derived_manifest": DERIVED_MANIFEST_PATH.relative_to(ROOT).as_posix(),
             "relationship_profile": RELATIONSHIP_PROFILE_PATH.relative_to(ROOT).as_posix(),
+            "provenance_manifest": PROVENANCE_MANIFEST_PATH.relative_to(ROOT).as_posix(),
+            "qrels": QRELS_PATH.relative_to(ROOT).as_posix(),
+            "schema_claim_model": SCHEMA_CLAIM_MODEL_PATH.relative_to(ROOT).as_posix(),
+            "benchmark_card": BENCHMARK_CARD_PATH.relative_to(ROOT).as_posix(),
         },
         "tables": tables,
     }
@@ -380,7 +582,34 @@ def render_markdown(report: Dict[str, Any]) -> str:
             "",
             *markdown_table(["error_mode", "count"], tables["internal_error_modes"]),
             "",
-            "## Table 5. External Retrieval Metrics",
+            "## Table 5. Evidence Adequacy Summary",
+            "",
+            *markdown_table(
+                ["metric", "numerator", "denominator", "value", "interpretation"],
+                tables["evidence_adequacy_summary"],
+            ),
+            "",
+            "## Table 6. Source Evidence Type Counts",
+            "",
+            *markdown_table(["evidence_type", "field_count"], tables["source_evidence_type_counts"]),
+            "",
+            "## Table 7. Unit Normalization Status",
+            "",
+            *markdown_table(["status", "field_count", "unit_claim_count"], tables["unit_normalization_status"]),
+            "",
+            "## Table 8. Unit Normalization Evidence Basis",
+            "",
+            *markdown_table(["evidence_basis", "unit_claim_count"], tables["unit_normalization_evidence_basis"]),
+            "",
+            "## Table 9. PROV-Like Provenance Export Summary",
+            "",
+            *markdown_table(["metric", "value"], tables["provenance_summary"]),
+            "",
+            "## Table 10. Retrieval Qrels Summary",
+            "",
+            *markdown_table(["metric", "value"], tables["qrels_summary"]),
+            "",
+            "## Table 11. External Retrieval Metrics",
             "",
             *markdown_table(
                 [
@@ -397,7 +626,7 @@ def render_markdown(report: Dict[str, Any]) -> str:
                 tables["retrieval_metrics"],
             ),
             "",
-            "## Table 6. Retrieval Gain Vs Metadata-Only",
+            "## Table 12. Retrieval Gain Vs Metadata-Only",
             "",
             *markdown_table(
                 [
@@ -411,7 +640,7 @@ def render_markdown(report: Dict[str, Any]) -> str:
                 tables["retrieval_gain_vs_metadata"],
             ),
             "",
-            "## Table 7. Semantic Merge Aggregate",
+            "## Table 13. Semantic Merge Aggregate",
             "",
             *markdown_table(
                 [
@@ -424,7 +653,7 @@ def render_markdown(report: Dict[str, Any]) -> str:
                 tables["semantic_merge_aggregate"],
             ),
             "",
-            "## Table 8. Semantic Merge Dataset Deltas",
+            "## Table 14. Semantic Merge Dataset Deltas",
             "",
             *markdown_table(
                 [
@@ -444,19 +673,19 @@ def render_markdown(report: Dict[str, Any]) -> str:
                 tables["semantic_merge_dataset_delta"],
             ),
             "",
-            "## Table 9. Deterministic Profile Summary",
+            "## Table 15. Deterministic Profile Summary",
             "",
             *markdown_table(["metric", "value", "interpretation"], tables["deterministic_profile_summary"]),
             "",
-            "## Table 10. Deterministic Cross-File Relationship Candidates",
+            "## Table 16. Deterministic Cross-File Relationship Candidates",
             "",
             *markdown_table(["relationship_type", "count"], tables["deterministic_profile_relationships"]),
             "",
-            "## Table 11. Locked External Field-Subset Regression Groups",
+            "## Table 17. Locked External Field-Subset Regression Groups",
             "",
             *markdown_table(["subset", "field_count", "fields"], tables["locked_regression_subsets"]),
             "",
-            "## Table 12. Remaining Non-Final Items",
+            "## Table 18. Remaining Non-Final Items",
             "",
             *markdown_table(["limitation"], tables["known_limitations"]),
             "",
@@ -464,6 +693,10 @@ def render_markdown(report: Dict[str, Any]) -> str:
             "",
             "- The frozen reproducible slice contains 9 internal pilot datasets and 16 external retrieval candidates.",
             "- Deterministic extraction has high field-level accuracy on the internal slice, while time-axis handling remains the clearest open gap.",
+            "- Every deterministic field in the current internal slice has source evidence, making evidence adequacy measurable.",
+            "- Unit claims now carry normalization status, separating UCUM-normalized units from unmapped scientific time-reference units.",
+            "- The PROV-like export links source files, derived schemas, field claims, evidence records, semantic annotations, merge outputs, and reports.",
+            "- Retrieval qrels now explicitly mark the current query set as one-positive planted judgments.",
             "- Schema-enhanced retrieval reaches Recall@1 = 1.0000 on the current planted-query external slice.",
             "- Evidence-constrained semantic merge improves logical accuracy on 2 of 3 reviewed internal datasets without measured metric regression.",
             "- Deterministic profiles add missingness, identifier quality, and relationship-candidate diagnostics without changing evaluation labels.",

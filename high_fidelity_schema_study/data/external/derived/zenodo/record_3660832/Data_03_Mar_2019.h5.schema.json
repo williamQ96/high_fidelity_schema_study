@@ -1,0 +1,768 @@
+{
+  "dataset_id": "Data 03 Mar 2019",
+  "file_id": "Data 03 Mar 2019.h5",
+  "file_format": "hdf5",
+  "data_modality": "hierarchical",
+  "fields": [
+    {
+      "field_name": "Absolute_Pressure__hPa_",
+      "field_path": "/'Data March'/Absolute_Pressure__hPa_",
+      "physical_type": "float64",
+      "logical_type": "measurement",
+      "semantic_type": "surface_pressure",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        43419
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/Absolute_Pressure__hPa_",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "Daily_Rain__mm_",
+      "field_path": "/'Data March'/Daily_Rain__mm_",
+      "physical_type": "float64",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        43419
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/Daily_Rain__mm_",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "Hourly_Rain_Rate__mm_",
+      "field_path": "/'Data March'/Hourly_Rain_Rate__mm_",
+      "physical_type": "float64",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        43419
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/Hourly_Rain_Rate__mm_",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "Indoor_Humidity___C_",
+      "field_path": "/'Data March'/Indoor_Humidity___C_",
+      "physical_type": "float64",
+      "logical_type": "measurement",
+      "semantic_type": "relative_humidity",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        43419
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/Indoor_Humidity___C_",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "Indoor_Temperature___C_",
+      "field_path": "/'Data March'/Indoor_Temperature___C_",
+      "physical_type": "float64",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        43419
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/Indoor_Temperature___C_",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "Monthly_Rain__mm_",
+      "field_path": "/'Data March'/Monthly_Rain__mm_",
+      "physical_type": "float64",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        43419
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/Monthly_Rain__mm_",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "NO2_ppb_",
+      "field_path": "/'Data March'/NO2_ppb_",
+      "physical_type": "float64",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        43419
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/NO2_ppb_",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "NO_ppb_",
+      "field_path": "/'Data March'/NO_ppb_",
+      "physical_type": "float64",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        43419
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/NO_ppb_",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "NOx_ppb_",
+      "field_path": "/'Data March'/NOx_ppb_",
+      "physical_type": "float64",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        43419
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/NOx_ppb_",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "O3__ppb_",
+      "field_path": "/'Data March'/O3__ppb_",
+      "physical_type": "float64",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        43419
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/O3__ppb_",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "Outdoor_Humidity____",
+      "field_path": "/'Data March'/Outdoor_Humidity____",
+      "physical_type": "float64",
+      "logical_type": "measurement",
+      "semantic_type": "relative_humidity",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        43419
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/Outdoor_Humidity____",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "Outdoor_Temperature___C_",
+      "field_path": "/'Data March'/Outdoor_Temperature___C_",
+      "physical_type": "float64",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        43419
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/Outdoor_Temperature___C_",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "Relative_Pressure__hPa_",
+      "field_path": "/'Data March'/Relative_Pressure__hPa_",
+      "physical_type": "float64",
+      "logical_type": "measurement",
+      "semantic_type": "surface_pressure",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        43419
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/Relative_Pressure__hPa_",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "S_fileName",
+      "field_path": "/'Data March'/S_fileName",
+      "physical_type": "string",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/S_fileName",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "S_path",
+      "field_path": "/'Data March'/S_path",
+      "physical_type": "string",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/S_path",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "S_waveNames",
+      "field_path": "/'Data March'/S_waveNames",
+      "physical_type": "string",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/S_waveNames",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "Solar_Radiation__w_m2_",
+      "field_path": "/'Data March'/Solar_Radiation__w_m2_",
+      "physical_type": "float64",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        43419
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/Solar_Radiation__w_m2_",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "UVI",
+      "field_path": "/'Data March'/UVI",
+      "physical_type": "float64",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        43419
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/UVI",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "UV__w_m2_",
+      "field_path": "/'Data March'/UV__w_m2_",
+      "physical_type": "float64",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        43419
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/UV__w_m2_",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "V_Flag",
+      "field_path": "/'Data March'/V_Flag",
+      "physical_type": "float64",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/V_Flag",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "Weekly_Rain__mm_",
+      "field_path": "/'Data March'/Weekly_Rain__mm_",
+      "physical_type": "float64",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        43419
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/Weekly_Rain__mm_",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "Wind_Direction",
+      "field_path": "/'Data March'/Wind_Direction",
+      "physical_type": "float64",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        43419
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/Wind_Direction",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "Wind_Gust",
+      "field_path": "/'Data March'/Wind_Gust",
+      "physical_type": "float64",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        43419
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/Wind_Gust",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "Wind_Speed__km_h_",
+      "field_path": "/'Data March'/Wind_Speed__km_h_",
+      "physical_type": "float64",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        43419
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/Wind_Speed__km_h_",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "Yearly_Rain__mm_",
+      "field_path": "/'Data March'/Yearly_Rain__mm_",
+      "physical_type": "float64",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        43419
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/Yearly_Rain__mm_",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "dateW",
+      "field_path": "/'Data March'/dateW",
+      "physical_type": "float64",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        43419
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_3660832\\Data 03 Mar 2019.h5",
+          "detail": "/'Data March'/dateW",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    }
+  ],
+  "groups": [
+    {
+      "path": "/'Data March'",
+      "kind": "group",
+      "attributes": {}
+    }
+  ],
+  "metadata": {
+    "field_count": 26,
+    "group_count": 1,
+    "extraction_errors": []
+  },
+  "notes": [],
+  "external_source_file": "zenodo/record_3660832/Data 03 Mar 2019.h5"
+}

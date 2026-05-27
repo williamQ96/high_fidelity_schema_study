@@ -14,6 +14,13 @@
       "unique_ratio": 1.0,
       "shape": null,
       "unit": null,
+      "unit_normalization": {
+        "status": "no_unit_claim",
+        "original_unit": null,
+        "canonical_unit": null,
+        "ucum_code": null,
+        "evidence_basis": "not_applicable"
+      },
       "description": null,
       "example_values": [
         "USC0001",
@@ -52,6 +59,13 @@
       "unique_ratio": 1.0,
       "shape": null,
       "unit": null,
+      "unit_normalization": {
+        "status": "no_unit_claim",
+        "original_unit": null,
+        "canonical_unit": null,
+        "ucum_code": null,
+        "evidence_basis": "not_applicable"
+      },
       "description": null,
       "example_values": [
         "North Ridge",
@@ -90,6 +104,13 @@
       "unique_ratio": 1.0,
       "shape": null,
       "unit": "degree",
+      "unit_normalization": {
+        "status": "normalized_ucum",
+        "original_unit": "degree",
+        "canonical_unit": "degree",
+        "ucum_code": "deg",
+        "evidence_basis": "name_pattern"
+      },
       "description": null,
       "example_values": [
         "34.2",
@@ -138,6 +159,13 @@
       "unique_ratio": 1.0,
       "shape": null,
       "unit": "degree",
+      "unit_normalization": {
+        "status": "normalized_ucum",
+        "original_unit": "degree",
+        "canonical_unit": "degree",
+        "ucum_code": "deg",
+        "evidence_basis": "name_pattern"
+      },
       "description": null,
       "example_values": [
         "-118.52",
@@ -186,6 +214,13 @@
       "unique_ratio": 1.0,
       "shape": null,
       "unit": "meter",
+      "unit_normalization": {
+        "status": "normalized_ucum",
+        "original_unit": "meter",
+        "canonical_unit": "meter",
+        "ucum_code": "m",
+        "evidence_basis": "name_pattern"
+      },
       "description": null,
       "example_values": [
         "312",
@@ -234,6 +269,13 @@
       "unique_ratio": 1.0,
       "shape": null,
       "unit": "millimeter",
+      "unit_normalization": {
+        "status": "normalized_ucum",
+        "original_unit": "millimeter",
+        "canonical_unit": "millimeter",
+        "ucum_code": "mm",
+        "evidence_basis": "name_pattern"
+      },
       "description": null,
       "example_values": [
         "0.0",

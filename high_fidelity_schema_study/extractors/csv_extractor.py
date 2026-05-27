@@ -6,6 +6,7 @@ from typing import Dict, List, Optional
 
 from ..models import DatasetSchema, EvidenceRecord, FieldSchema
 from ..deterministic_profile import attach_dataset_profile
+from ..unit_normalization import normalize_unit_claim
 from .timeseries_profiler import infer_time_series_metadata, parse_datetime
 
 
@@ -238,6 +239,10 @@ def extract_csv_schema(path: str, sample_limit: int = 200) -> DatasetSchema:
                     confidence=0.9,
                 )
             )
+        unit_normalization = normalize_unit_claim(
+            unit,
+            [item.evidence_type for item in evidence],
+        )
 
         field = FieldSchema(
             field_name=fieldname,
@@ -248,6 +253,7 @@ def extract_csv_schema(path: str, sample_limit: int = 200) -> DatasetSchema:
             nullable=nullable,
             unique_ratio=unique_ratio,
             unit=unit,
+            unit_normalization=unit_normalization,
             example_values=list(dict.fromkeys(non_empty[:3])),
             missing_count=sum(1 for value in samples if not value.strip()),
             value_range=_value_range(physical_type, samples),

@@ -14,6 +14,13 @@
       "unique_ratio": 1.0,
       "shape": null,
       "unit": null,
+      "unit_normalization": {
+        "status": "no_unit_claim",
+        "original_unit": null,
+        "canonical_unit": null,
+        "ucum_code": null,
+        "evidence_basis": "not_applicable"
+      },
       "description": null,
       "example_values": [
         "0001",
@@ -52,6 +59,13 @@
       "unique_ratio": 1.0,
       "shape": null,
       "unit": null,
+      "unit_normalization": {
+        "status": "no_unit_claim",
+        "original_unit": null,
+        "canonical_unit": null,
+        "ucum_code": null,
+        "evidence_basis": "not_applicable"
+      },
       "description": null,
       "example_values": [
         "2026-03-01 12:00:00",
@@ -90,6 +104,13 @@
       "unique_ratio": 1.0,
       "shape": null,
       "unit": null,
+      "unit_normalization": {
+        "status": "no_unit_claim",
+        "original_unit": null,
+        "canonical_unit": null,
+        "ucum_code": null,
+        "evidence_basis": "not_applicable"
+      },
       "description": null,
       "example_values": [
         "94107",
@@ -128,6 +149,13 @@
       "unique_ratio": 1.0,
       "shape": null,
       "unit": null,
+      "unit_normalization": {
+        "status": "no_unit_claim",
+        "original_unit": null,
+        "canonical_unit": null,
+        "ucum_code": null,
+        "evidence_basis": "not_applicable"
+      },
       "description": null,
       "example_values": [
         "17.2",
@@ -166,6 +194,13 @@
       "unique_ratio": 0.75,
       "shape": null,
       "unit": null,
+      "unit_normalization": {
+        "status": "no_unit_claim",
+        "original_unit": null,
+        "canonical_unit": null,
+        "ucum_code": null,
+        "evidence_basis": "not_applicable"
+      },
       "description": null,
       "example_values": [
         "A",
@@ -203,6 +238,13 @@
       "unique_ratio": 0.5,
       "shape": null,
       "unit": null,
+      "unit_normalization": {
+        "status": "no_unit_claim",
+        "original_unit": null,
+        "canonical_unit": null,
+        "ucum_code": null,
+        "evidence_basis": "not_applicable"
+      },
       "description": null,
       "example_values": [
         "SN-01",

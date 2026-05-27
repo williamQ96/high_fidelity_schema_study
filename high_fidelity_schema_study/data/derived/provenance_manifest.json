@@ -1,0 +1,4804 @@
+{
+  "provenance_model": "lightweight_prov_v1",
+  "description": "Internal PROV-like export over files, schemas, field claims, evidence, semantic annotations, merges, evaluations, and reports.",
+  "generated_from": [
+    "data/derived/derived_manifest.json",
+    "data/semantic_annotations/manifest.json",
+    "data/semantic_merged/manifest.json",
+    "data/retrieval/external_candidate_pool/artifact_manifest.json"
+  ],
+  "summary": {
+    "dataset_count": 9,
+    "field_entity_count": 53,
+    "evidence_entity_count": 109,
+    "semantic_annotation_result_count": 9,
+    "semantic_merge_output_count": 9,
+    "entity_count": 218,
+    "activity_count": 31,
+    "agent_count": 6
+  },
+  "agents": [
+    {
+      "id": "agent:deterministic_extractors",
+      "type": "software",
+      "label": "CSV/HDF5/time-series deterministic extractors"
+    },
+    {
+      "id": "agent:semantic_annotation_model",
+      "type": "llm",
+      "label": "qwen/qwen3.6-27b",
+      "api_base": "http://100.66.106.126:1234/v1"
+    },
+    {
+      "id": "agent:semantic_merge_policy",
+      "type": "software",
+      "label": "evidence-constrained semantic merge policy"
+    },
+    {
+      "id": "agent:evaluation_scripts",
+      "type": "software",
+      "label": "field-level evaluation and retrieval scripts"
+    },
+    {
+      "id": "agent:paper_table_builder",
+      "type": "software",
+      "label": "paper result table builder"
+    },
+    {
+      "id": "agent:gold_review",
+      "type": "human_review",
+      "label": "internal gold schema second-pass consistency review"
+    }
+  ],
+  "entities": [
+    {
+      "id": "source_file:raw/csv/csv_easy_weather_stations/stations_precip.csv",
+      "type": "source_file",
+      "path": "data/raw/csv/csv_easy_weather_stations/stations_precip.csv",
+      "file_format": "csv",
+      "category": "csv",
+      "difficulty": "easy"
+    },
+    {
+      "id": "derived_schema:csv_easy_weather_stations",
+      "type": "derived_schema",
+      "path": "data/derived/csv/csv_easy_weather_stations.schema.json",
+      "dataset_id": "csv_easy_weather_stations"
+    },
+    {
+      "id": "field:csv_easy_weather_stations:station_id",
+      "type": "field_schema",
+      "dataset_id": "csv_easy_weather_stations",
+      "field_path": "station_id",
+      "physical_type": "string",
+      "logical_type": "identifier",
+      "semantic_type": "station_identifier",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:csv_easy_weather_stations:station_id:1",
+      "type": "evidence_record",
+      "dataset_id": "csv_easy_weather_stations",
+      "field_path": "station_id",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/csv/csv_easy_weather_stations/stations_precip.csv",
+      "detail": "header='station_id'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:csv_easy_weather_stations:station_id:2",
+      "type": "evidence_record",
+      "dataset_id": "csv_easy_weather_stations",
+      "field_path": "station_id",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/csv/csv_easy_weather_stations/stations_precip.csv",
+      "detail": "sampled_rows=3",
+      "confidence": 0.9
+    },
+    {
+      "id": "field:csv_easy_weather_stations:station_name",
+      "type": "field_schema",
+      "dataset_id": "csv_easy_weather_stations",
+      "field_path": "station_name",
+      "physical_type": "string",
+      "logical_type": "label",
+      "semantic_type": "station_name",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:csv_easy_weather_stations:station_name:1",
+      "type": "evidence_record",
+      "dataset_id": "csv_easy_weather_stations",
+      "field_path": "station_name",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/csv/csv_easy_weather_stations/stations_precip.csv",
+      "detail": "header='station_name'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:csv_easy_weather_stations:station_name:2",
+      "type": "evidence_record",
+      "dataset_id": "csv_easy_weather_stations",
+      "field_path": "station_name",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/csv/csv_easy_weather_stations/stations_precip.csv",
+      "detail": "sampled_rows=3",
+      "confidence": 0.9
+    },
+    {
+      "id": "field:csv_easy_weather_stations:latitude_deg",
+      "type": "field_schema",
+      "dataset_id": "csv_easy_weather_stations",
+      "field_path": "latitude_deg",
+      "physical_type": "float",
+      "logical_type": "coordinate",
+      "semantic_type": "latitude",
+      "unit": "degree",
+      "unit_normalization_status": "normalized_ucum"
+    },
+    {
+      "id": "evidence:csv_easy_weather_stations:latitude_deg:1",
+      "type": "evidence_record",
+      "dataset_id": "csv_easy_weather_stations",
+      "field_path": "latitude_deg",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/csv/csv_easy_weather_stations/stations_precip.csv",
+      "detail": "header='latitude_deg'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:csv_easy_weather_stations:latitude_deg:2",
+      "type": "evidence_record",
+      "dataset_id": "csv_easy_weather_stations",
+      "field_path": "latitude_deg",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/csv/csv_easy_weather_stations/stations_precip.csv",
+      "detail": "sampled_rows=3",
+      "confidence": 0.9
+    },
+    {
+      "id": "evidence:csv_easy_weather_stations:latitude_deg:3",
+      "type": "evidence_record",
+      "dataset_id": "csv_easy_weather_stations",
+      "field_path": "latitude_deg",
+      "tier": "structural",
+      "evidence_type": "column_name_unit_hint",
+      "source": "latitude_deg",
+      "detail": "inferred unit from column suffix: degree",
+      "confidence": 0.82
+    },
+    {
+      "id": "field:csv_easy_weather_stations:longitude_deg",
+      "type": "field_schema",
+      "dataset_id": "csv_easy_weather_stations",
+      "field_path": "longitude_deg",
+      "physical_type": "float",
+      "logical_type": "coordinate",
+      "semantic_type": "longitude",
+      "unit": "degree",
+      "unit_normalization_status": "normalized_ucum"
+    },
+    {
+      "id": "evidence:csv_easy_weather_stations:longitude_deg:1",
+      "type": "evidence_record",
+      "dataset_id": "csv_easy_weather_stations",
+      "field_path": "longitude_deg",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/csv/csv_easy_weather_stations/stations_precip.csv",
+      "detail": "header='longitude_deg'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:csv_easy_weather_stations:longitude_deg:2",
+      "type": "evidence_record",
+      "dataset_id": "csv_easy_weather_stations",
+      "field_path": "longitude_deg",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/csv/csv_easy_weather_stations/stations_precip.csv",
+      "detail": "sampled_rows=3",
+      "confidence": 0.9
+    },
+    {
+      "id": "evidence:csv_easy_weather_stations:longitude_deg:3",
+      "type": "evidence_record",
+      "dataset_id": "csv_easy_weather_stations",
+      "field_path": "longitude_deg",
+      "tier": "structural",
+      "evidence_type": "column_name_unit_hint",
+      "source": "longitude_deg",
+      "detail": "inferred unit from column suffix: degree",
+      "confidence": 0.82
+    },
+    {
+      "id": "field:csv_easy_weather_stations:elevation_m",
+      "type": "field_schema",
+      "dataset_id": "csv_easy_weather_stations",
+      "field_path": "elevation_m",
+      "physical_type": "int",
+      "logical_type": "coordinate",
+      "semantic_type": "elevation",
+      "unit": "meter",
+      "unit_normalization_status": "normalized_ucum"
+    },
+    {
+      "id": "evidence:csv_easy_weather_stations:elevation_m:1",
+      "type": "evidence_record",
+      "dataset_id": "csv_easy_weather_stations",
+      "field_path": "elevation_m",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/csv/csv_easy_weather_stations/stations_precip.csv",
+      "detail": "header='elevation_m'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:csv_easy_weather_stations:elevation_m:2",
+      "type": "evidence_record",
+      "dataset_id": "csv_easy_weather_stations",
+      "field_path": "elevation_m",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/csv/csv_easy_weather_stations/stations_precip.csv",
+      "detail": "sampled_rows=3",
+      "confidence": 0.9
+    },
+    {
+      "id": "evidence:csv_easy_weather_stations:elevation_m:3",
+      "type": "evidence_record",
+      "dataset_id": "csv_easy_weather_stations",
+      "field_path": "elevation_m",
+      "tier": "structural",
+      "evidence_type": "column_name_unit_hint",
+      "source": "elevation_m",
+      "detail": "inferred unit from column suffix: meter",
+      "confidence": 0.82
+    },
+    {
+      "id": "field:csv_easy_weather_stations:precip_mm",
+      "type": "field_schema",
+      "dataset_id": "csv_easy_weather_stations",
+      "field_path": "precip_mm",
+      "physical_type": "float",
+      "logical_type": "measurement",
+      "semantic_type": "precipitation",
+      "unit": "millimeter",
+      "unit_normalization_status": "normalized_ucum"
+    },
+    {
+      "id": "evidence:csv_easy_weather_stations:precip_mm:1",
+      "type": "evidence_record",
+      "dataset_id": "csv_easy_weather_stations",
+      "field_path": "precip_mm",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/csv/csv_easy_weather_stations/stations_precip.csv",
+      "detail": "header='precip_mm'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:csv_easy_weather_stations:precip_mm:2",
+      "type": "evidence_record",
+      "dataset_id": "csv_easy_weather_stations",
+      "field_path": "precip_mm",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/csv/csv_easy_weather_stations/stations_precip.csv",
+      "detail": "sampled_rows=3",
+      "confidence": 0.9
+    },
+    {
+      "id": "evidence:csv_easy_weather_stations:precip_mm:3",
+      "type": "evidence_record",
+      "dataset_id": "csv_easy_weather_stations",
+      "field_path": "precip_mm",
+      "tier": "structural",
+      "evidence_type": "column_name_unit_hint",
+      "source": "precip_mm",
+      "detail": "inferred unit from column suffix: millimeter",
+      "confidence": 0.82
+    },
+    {
+      "id": "source_file:raw/csv/csv_hard_field_campaign/field_campaign.csv",
+      "type": "source_file",
+      "path": "data/raw/csv/csv_hard_field_campaign/field_campaign.csv",
+      "file_format": "csv",
+      "category": "csv",
+      "difficulty": "hard"
+    },
+    {
+      "id": "derived_schema:csv_hard_field_campaign",
+      "type": "derived_schema",
+      "path": "data/derived/csv/csv_hard_field_campaign.schema.json",
+      "dataset_id": "csv_hard_field_campaign"
+    },
+    {
+      "id": "field:csv_hard_field_campaign:rec",
+      "type": "field_schema",
+      "dataset_id": "csv_hard_field_campaign",
+      "field_path": "rec",
+      "physical_type": "string",
+      "logical_type": "identifier",
+      "semantic_type": "record_identifier",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:csv_hard_field_campaign:rec:1",
+      "type": "evidence_record",
+      "dataset_id": "csv_hard_field_campaign",
+      "field_path": "rec",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/csv/csv_hard_field_campaign/field_campaign.csv",
+      "detail": "header='rec'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:csv_hard_field_campaign:rec:2",
+      "type": "evidence_record",
+      "dataset_id": "csv_hard_field_campaign",
+      "field_path": "rec",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/csv/csv_hard_field_campaign/field_campaign.csv",
+      "detail": "sampled_rows=4",
+      "confidence": 0.9
+    },
+    {
+      "id": "field:csv_hard_field_campaign:dt_obs",
+      "type": "field_schema",
+      "dataset_id": "csv_hard_field_campaign",
+      "field_path": "dt_obs",
+      "physical_type": "datetime",
+      "logical_type": "attribute",
+      "semantic_type": "observation_time",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:csv_hard_field_campaign:dt_obs:1",
+      "type": "evidence_record",
+      "dataset_id": "csv_hard_field_campaign",
+      "field_path": "dt_obs",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/csv/csv_hard_field_campaign/field_campaign.csv",
+      "detail": "header='dt_obs'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:csv_hard_field_campaign:dt_obs:2",
+      "type": "evidence_record",
+      "dataset_id": "csv_hard_field_campaign",
+      "field_path": "dt_obs",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/csv/csv_hard_field_campaign/field_campaign.csv",
+      "detail": "sampled_rows=4",
+      "confidence": 0.9
+    },
+    {
+      "id": "field:csv_hard_field_campaign:zc",
+      "type": "field_schema",
+      "dataset_id": "csv_hard_field_campaign",
+      "field_path": "zc",
+      "physical_type": "string",
+      "logical_type": "unknown",
+      "semantic_type": "postal_zone_code",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:csv_hard_field_campaign:zc:1",
+      "type": "evidence_record",
+      "dataset_id": "csv_hard_field_campaign",
+      "field_path": "zc",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/csv/csv_hard_field_campaign/field_campaign.csv",
+      "detail": "header='zc'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:csv_hard_field_campaign:zc:2",
+      "type": "evidence_record",
+      "dataset_id": "csv_hard_field_campaign",
+      "field_path": "zc",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/csv/csv_hard_field_campaign/field_campaign.csv",
+      "detail": "sampled_rows=4",
+      "confidence": 0.9
+    },
+    {
+      "id": "field:csv_hard_field_campaign:val",
+      "type": "field_schema",
+      "dataset_id": "csv_hard_field_campaign",
+      "field_path": "val",
+      "physical_type": "string",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:csv_hard_field_campaign:val:1",
+      "type": "evidence_record",
+      "dataset_id": "csv_hard_field_campaign",
+      "field_path": "val",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/csv/csv_hard_field_campaign/field_campaign.csv",
+      "detail": "header='val'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:csv_hard_field_campaign:val:2",
+      "type": "evidence_record",
+      "dataset_id": "csv_hard_field_campaign",
+      "field_path": "val",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/csv/csv_hard_field_campaign/field_campaign.csv",
+      "detail": "sampled_rows=4",
+      "confidence": 0.9
+    },
+    {
+      "id": "field:csv_hard_field_campaign:flag",
+      "type": "field_schema",
+      "dataset_id": "csv_hard_field_campaign",
+      "field_path": "flag",
+      "physical_type": "string",
+      "logical_type": "label",
+      "semantic_type": "quality_flag",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:csv_hard_field_campaign:flag:1",
+      "type": "evidence_record",
+      "dataset_id": "csv_hard_field_campaign",
+      "field_path": "flag",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/csv/csv_hard_field_campaign/field_campaign.csv",
+      "detail": "header='flag'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:csv_hard_field_campaign:flag:2",
+      "type": "evidence_record",
+      "dataset_id": "csv_hard_field_campaign",
+      "field_path": "flag",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/csv/csv_hard_field_campaign/field_campaign.csv",
+      "detail": "sampled_rows=4",
+      "confidence": 0.9
+    },
+    {
+      "id": "field:csv_hard_field_campaign:device",
+      "type": "field_schema",
+      "dataset_id": "csv_hard_field_campaign",
+      "field_path": "device",
+      "physical_type": "string",
+      "logical_type": "identifier",
+      "semantic_type": "device_identifier",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:csv_hard_field_campaign:device:1",
+      "type": "evidence_record",
+      "dataset_id": "csv_hard_field_campaign",
+      "field_path": "device",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/csv/csv_hard_field_campaign/field_campaign.csv",
+      "detail": "header='device'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:csv_hard_field_campaign:device:2",
+      "type": "evidence_record",
+      "dataset_id": "csv_hard_field_campaign",
+      "field_path": "device",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/csv/csv_hard_field_campaign/field_campaign.csv",
+      "detail": "sampled_rows=4",
+      "confidence": 0.9
+    },
+    {
+      "id": "source_file:raw/csv/csv_medium_water_quality/water_quality.csv",
+      "type": "source_file",
+      "path": "data/raw/csv/csv_medium_water_quality/water_quality.csv",
+      "file_format": "csv",
+      "category": "csv",
+      "difficulty": "medium"
+    },
+    {
+      "id": "derived_schema:csv_medium_water_quality",
+      "type": "derived_schema",
+      "path": "data/derived/csv/csv_medium_water_quality.schema.json",
+      "dataset_id": "csv_medium_water_quality"
+    },
+    {
+      "id": "field:csv_medium_water_quality:sample_id",
+      "type": "field_schema",
+      "dataset_id": "csv_medium_water_quality",
+      "field_path": "sample_id",
+      "physical_type": "string",
+      "logical_type": "identifier",
+      "semantic_type": "sample_identifier",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:csv_medium_water_quality:sample_id:1",
+      "type": "evidence_record",
+      "dataset_id": "csv_medium_water_quality",
+      "field_path": "sample_id",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/csv/csv_medium_water_quality/water_quality.csv",
+      "detail": "header='sample_id'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:csv_medium_water_quality:sample_id:2",
+      "type": "evidence_record",
+      "dataset_id": "csv_medium_water_quality",
+      "field_path": "sample_id",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/csv/csv_medium_water_quality/water_quality.csv",
+      "detail": "sampled_rows=4",
+      "confidence": 0.9
+    },
+    {
+      "id": "field:csv_medium_water_quality:site_code",
+      "type": "field_schema",
+      "dataset_id": "csv_medium_water_quality",
+      "field_path": "site_code",
+      "physical_type": "string",
+      "logical_type": "identifier",
+      "semantic_type": "site_identifier",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:csv_medium_water_quality:site_code:1",
+      "type": "evidence_record",
+      "dataset_id": "csv_medium_water_quality",
+      "field_path": "site_code",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/csv/csv_medium_water_quality/water_quality.csv",
+      "detail": "header='site_code'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:csv_medium_water_quality:site_code:2",
+      "type": "evidence_record",
+      "dataset_id": "csv_medium_water_quality",
+      "field_path": "site_code",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/csv/csv_medium_water_quality/water_quality.csv",
+      "detail": "sampled_rows=4",
+      "confidence": 0.9
+    },
+    {
+      "id": "field:csv_medium_water_quality:collection_date",
+      "type": "field_schema",
+      "dataset_id": "csv_medium_water_quality",
+      "field_path": "collection_date",
+      "physical_type": "datetime",
+      "logical_type": "attribute",
+      "semantic_type": "collection_date",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:csv_medium_water_quality:collection_date:1",
+      "type": "evidence_record",
+      "dataset_id": "csv_medium_water_quality",
+      "field_path": "collection_date",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/csv/csv_medium_water_quality/water_quality.csv",
+      "detail": "header='collection_date'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:csv_medium_water_quality:collection_date:2",
+      "type": "evidence_record",
+      "dataset_id": "csv_medium_water_quality",
+      "field_path": "collection_date",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/csv/csv_medium_water_quality/water_quality.csv",
+      "detail": "sampled_rows=4",
+      "confidence": 0.9
+    },
+    {
+      "id": "field:csv_medium_water_quality:ph",
+      "type": "field_schema",
+      "dataset_id": "csv_medium_water_quality",
+      "field_path": "ph",
+      "physical_type": "float",
+      "logical_type": "measurement",
+      "semantic_type": "acidity_ph",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:csv_medium_water_quality:ph:1",
+      "type": "evidence_record",
+      "dataset_id": "csv_medium_water_quality",
+      "field_path": "ph",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/csv/csv_medium_water_quality/water_quality.csv",
+      "detail": "header='ph'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:csv_medium_water_quality:ph:2",
+      "type": "evidence_record",
+      "dataset_id": "csv_medium_water_quality",
+      "field_path": "ph",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/csv/csv_medium_water_quality/water_quality.csv",
+      "detail": "sampled_rows=4",
+      "confidence": 0.9
+    },
+    {
+      "id": "field:csv_medium_water_quality:do_mg_l",
+      "type": "field_schema",
+      "dataset_id": "csv_medium_water_quality",
+      "field_path": "do_mg_l",
+      "physical_type": "float",
+      "logical_type": "measurement",
+      "semantic_type": "dissolved_oxygen",
+      "unit": "milligram_per_liter",
+      "unit_normalization_status": "normalized_ucum"
+    },
+    {
+      "id": "evidence:csv_medium_water_quality:do_mg_l:1",
+      "type": "evidence_record",
+      "dataset_id": "csv_medium_water_quality",
+      "field_path": "do_mg_l",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/csv/csv_medium_water_quality/water_quality.csv",
+      "detail": "header='do_mg_l'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:csv_medium_water_quality:do_mg_l:2",
+      "type": "evidence_record",
+      "dataset_id": "csv_medium_water_quality",
+      "field_path": "do_mg_l",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/csv/csv_medium_water_quality/water_quality.csv",
+      "detail": "sampled_rows=4",
+      "confidence": 0.9
+    },
+    {
+      "id": "evidence:csv_medium_water_quality:do_mg_l:3",
+      "type": "evidence_record",
+      "dataset_id": "csv_medium_water_quality",
+      "field_path": "do_mg_l",
+      "tier": "structural",
+      "evidence_type": "column_name_unit_hint",
+      "source": "do_mg_l",
+      "detail": "inferred unit from column suffix: milligram_per_liter",
+      "confidence": 0.82
+    },
+    {
+      "id": "field:csv_medium_water_quality:turbidity_ntu",
+      "type": "field_schema",
+      "dataset_id": "csv_medium_water_quality",
+      "field_path": "turbidity_ntu",
+      "physical_type": "float",
+      "logical_type": "measurement",
+      "semantic_type": "turbidity",
+      "unit": "NTU",
+      "unit_normalization_status": "normalized_ucum"
+    },
+    {
+      "id": "evidence:csv_medium_water_quality:turbidity_ntu:1",
+      "type": "evidence_record",
+      "dataset_id": "csv_medium_water_quality",
+      "field_path": "turbidity_ntu",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/csv/csv_medium_water_quality/water_quality.csv",
+      "detail": "header='turbidity_ntu'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:csv_medium_water_quality:turbidity_ntu:2",
+      "type": "evidence_record",
+      "dataset_id": "csv_medium_water_quality",
+      "field_path": "turbidity_ntu",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/csv/csv_medium_water_quality/water_quality.csv",
+      "detail": "sampled_rows=4",
+      "confidence": 0.9
+    },
+    {
+      "id": "evidence:csv_medium_water_quality:turbidity_ntu:3",
+      "type": "evidence_record",
+      "dataset_id": "csv_medium_water_quality",
+      "field_path": "turbidity_ntu",
+      "tier": "structural",
+      "evidence_type": "column_name_unit_hint",
+      "source": "turbidity_ntu",
+      "detail": "inferred unit from column suffix: NTU",
+      "confidence": 0.82
+    },
+    {
+      "id": "field:csv_medium_water_quality:notes",
+      "type": "field_schema",
+      "dataset_id": "csv_medium_water_quality",
+      "field_path": "notes",
+      "physical_type": "string",
+      "logical_type": "label",
+      "semantic_type": "free_text_note",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:csv_medium_water_quality:notes:1",
+      "type": "evidence_record",
+      "dataset_id": "csv_medium_water_quality",
+      "field_path": "notes",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/csv/csv_medium_water_quality/water_quality.csv",
+      "detail": "header='notes'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:csv_medium_water_quality:notes:2",
+      "type": "evidence_record",
+      "dataset_id": "csv_medium_water_quality",
+      "field_path": "notes",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/csv/csv_medium_water_quality/water_quality.csv",
+      "detail": "sampled_rows=4",
+      "confidence": 0.9
+    },
+    {
+      "id": "source_file:raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5",
+      "type": "source_file",
+      "path": "data/raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5",
+      "file_format": "hdf5",
+      "category": "hdf5",
+      "difficulty": "easy"
+    },
+    {
+      "id": "derived_schema:hdf5_easy_climate_cube",
+      "type": "derived_schema",
+      "path": "data/derived/hdf5/hdf5_easy_climate_cube.schema.json",
+      "dataset_id": "hdf5_easy_climate_cube"
+    },
+    {
+      "id": "field:hdf5_easy_climate_cube:__coords__station_id",
+      "type": "field_schema",
+      "dataset_id": "hdf5_easy_climate_cube",
+      "field_path": "/coords/station_id",
+      "physical_type": "string",
+      "logical_type": "identifier",
+      "semantic_type": "station_identifier",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:hdf5_easy_climate_cube:__coords__station_id:1",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_easy_climate_cube",
+      "field_path": "/coords/station_id",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_dataset_path",
+      "source": "data/raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5",
+      "detail": "/coords/station_id",
+      "confidence": 1.0
+    },
+    {
+      "id": "field:hdf5_easy_climate_cube:__coords__time",
+      "type": "field_schema",
+      "dataset_id": "hdf5_easy_climate_cube",
+      "field_path": "/coords/time",
+      "physical_type": "int32",
+      "logical_type": "time_axis",
+      "semantic_type": "forecast_hour",
+      "unit": "hours since 2026-01-01 00:00:00 UTC",
+      "unit_normalization_status": "unmapped_unit"
+    },
+    {
+      "id": "evidence:hdf5_easy_climate_cube:__coords__time:1",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_easy_climate_cube",
+      "field_path": "/coords/time",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_dataset_path",
+      "source": "data/raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5",
+      "detail": "/coords/time",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:hdf5_easy_climate_cube:__coords__time:2",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_easy_climate_cube",
+      "field_path": "/coords/time",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_attribute",
+      "source": "/coords/time",
+      "detail": "unit=hours since 2026-01-01 00:00:00 UTC",
+      "confidence": 0.99
+    },
+    {
+      "id": "field:hdf5_easy_climate_cube:__observations__humidity",
+      "type": "field_schema",
+      "dataset_id": "hdf5_easy_climate_cube",
+      "field_path": "/observations/humidity",
+      "physical_type": "float32",
+      "logical_type": "measurement",
+      "semantic_type": "relative_humidity",
+      "unit": "%",
+      "unit_normalization_status": "normalized_ucum"
+    },
+    {
+      "id": "evidence:hdf5_easy_climate_cube:__observations__humidity:1",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_easy_climate_cube",
+      "field_path": "/observations/humidity",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_dataset_path",
+      "source": "data/raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5",
+      "detail": "/observations/humidity",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:hdf5_easy_climate_cube:__observations__humidity:2",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_easy_climate_cube",
+      "field_path": "/observations/humidity",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_attribute",
+      "source": "/observations/humidity",
+      "detail": "unit=%",
+      "confidence": 0.99
+    },
+    {
+      "id": "field:hdf5_easy_climate_cube:__observations__temperature",
+      "type": "field_schema",
+      "dataset_id": "hdf5_easy_climate_cube",
+      "field_path": "/observations/temperature",
+      "physical_type": "float32",
+      "logical_type": "measurement",
+      "semantic_type": "air_temperature",
+      "unit": "C",
+      "unit_normalization_status": "normalized_ucum"
+    },
+    {
+      "id": "evidence:hdf5_easy_climate_cube:__observations__temperature:1",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_easy_climate_cube",
+      "field_path": "/observations/temperature",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_dataset_path",
+      "source": "data/raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5",
+      "detail": "/observations/temperature",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:hdf5_easy_climate_cube:__observations__temperature:2",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_easy_climate_cube",
+      "field_path": "/observations/temperature",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_attribute",
+      "source": "/observations/temperature",
+      "detail": "unit=C",
+      "confidence": 0.99
+    },
+    {
+      "id": "source_file:raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5",
+      "type": "source_file",
+      "path": "data/raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5",
+      "file_format": "hdf5",
+      "category": "hdf5",
+      "difficulty": "hard"
+    },
+    {
+      "id": "derived_schema:hdf5_hard_ocean_profile",
+      "type": "derived_schema",
+      "path": "data/derived/hdf5/hdf5_hard_ocean_profile.schema.json",
+      "dataset_id": "hdf5_hard_ocean_profile"
+    },
+    {
+      "id": "field:hdf5_hard_ocean_profile:__campaign__meta__platform",
+      "type": "field_schema",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "field_path": "/campaign/meta/platform",
+      "physical_type": "string",
+      "logical_type": "label",
+      "semantic_type": "unknown",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:hdf5_hard_ocean_profile:__campaign__meta__platform:1",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "field_path": "/campaign/meta/platform",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_dataset_path",
+      "source": "data/raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5",
+      "detail": "/campaign/meta/platform",
+      "confidence": 1.0
+    },
+    {
+      "id": "field:hdf5_hard_ocean_profile:__campaign__meta__station_code",
+      "type": "field_schema",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "field_path": "/campaign/meta/station_code",
+      "physical_type": "string",
+      "logical_type": "identifier",
+      "semantic_type": "station_identifier",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:hdf5_hard_ocean_profile:__campaign__meta__station_code:1",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "field_path": "/campaign/meta/station_code",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_dataset_path",
+      "source": "data/raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5",
+      "detail": "/campaign/meta/station_code",
+      "confidence": 1.0
+    },
+    {
+      "id": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__depth_m",
+      "type": "field_schema",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "field_path": "/campaign/run_01/cast_0001/depth_m",
+      "physical_type": "int32",
+      "logical_type": "coordinate",
+      "semantic_type": "depth",
+      "unit": "m",
+      "unit_normalization_status": "normalized_ucum"
+    },
+    {
+      "id": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__depth_m:1",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "field_path": "/campaign/run_01/cast_0001/depth_m",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_dataset_path",
+      "source": "data/raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5",
+      "detail": "/campaign/run_01/cast_0001/depth_m",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__depth_m:2",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "field_path": "/campaign/run_01/cast_0001/depth_m",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_attribute",
+      "source": "/campaign/run_01/cast_0001/depth_m",
+      "detail": "unit=m",
+      "confidence": 0.99
+    },
+    {
+      "id": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__qc_flag",
+      "type": "field_schema",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "field_path": "/campaign/run_01/cast_0001/qc_flag",
+      "physical_type": "string",
+      "logical_type": "label",
+      "semantic_type": "quality_flag",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__qc_flag:1",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "field_path": "/campaign/run_01/cast_0001/qc_flag",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_dataset_path",
+      "source": "data/raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5",
+      "detail": "/campaign/run_01/cast_0001/qc_flag",
+      "confidence": 1.0
+    },
+    {
+      "id": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__salinity_psu",
+      "type": "field_schema",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "field_path": "/campaign/run_01/cast_0001/salinity_psu",
+      "physical_type": "float32",
+      "logical_type": "measurement",
+      "semantic_type": "salinity",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__salinity_psu:1",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "field_path": "/campaign/run_01/cast_0001/salinity_psu",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_dataset_path",
+      "source": "data/raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5",
+      "detail": "/campaign/run_01/cast_0001/salinity_psu",
+      "confidence": 1.0
+    },
+    {
+      "id": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__temp",
+      "type": "field_schema",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "field_path": "/campaign/run_01/cast_0001/temp",
+      "physical_type": "float32",
+      "logical_type": "measurement",
+      "semantic_type": "water_temperature",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__temp:1",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "field_path": "/campaign/run_01/cast_0001/temp",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_dataset_path",
+      "source": "data/raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5",
+      "detail": "/campaign/run_01/cast_0001/temp",
+      "confidence": 1.0
+    },
+    {
+      "id": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__depth_m",
+      "type": "field_schema",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "field_path": "/campaign/run_01/cast_0002/depth_m",
+      "physical_type": "int32",
+      "logical_type": "coordinate",
+      "semantic_type": "depth",
+      "unit": "m",
+      "unit_normalization_status": "normalized_ucum"
+    },
+    {
+      "id": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__depth_m:1",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "field_path": "/campaign/run_01/cast_0002/depth_m",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_dataset_path",
+      "source": "data/raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5",
+      "detail": "/campaign/run_01/cast_0002/depth_m",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__depth_m:2",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "field_path": "/campaign/run_01/cast_0002/depth_m",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_attribute",
+      "source": "/campaign/run_01/cast_0002/depth_m",
+      "detail": "unit=m",
+      "confidence": 0.99
+    },
+    {
+      "id": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__qc_flag",
+      "type": "field_schema",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "field_path": "/campaign/run_01/cast_0002/qc_flag",
+      "physical_type": "string",
+      "logical_type": "label",
+      "semantic_type": "quality_flag",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__qc_flag:1",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "field_path": "/campaign/run_01/cast_0002/qc_flag",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_dataset_path",
+      "source": "data/raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5",
+      "detail": "/campaign/run_01/cast_0002/qc_flag",
+      "confidence": 1.0
+    },
+    {
+      "id": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__salinity_psu",
+      "type": "field_schema",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "field_path": "/campaign/run_01/cast_0002/salinity_psu",
+      "physical_type": "float32",
+      "logical_type": "measurement",
+      "semantic_type": "salinity",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__salinity_psu:1",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "field_path": "/campaign/run_01/cast_0002/salinity_psu",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_dataset_path",
+      "source": "data/raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5",
+      "detail": "/campaign/run_01/cast_0002/salinity_psu",
+      "confidence": 1.0
+    },
+    {
+      "id": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__temp",
+      "type": "field_schema",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "field_path": "/campaign/run_01/cast_0002/temp",
+      "physical_type": "float32",
+      "logical_type": "measurement",
+      "semantic_type": "water_temperature",
+      "unit": "C",
+      "unit_normalization_status": "normalized_ucum"
+    },
+    {
+      "id": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__temp:1",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "field_path": "/campaign/run_01/cast_0002/temp",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_dataset_path",
+      "source": "data/raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5",
+      "detail": "/campaign/run_01/cast_0002/temp",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__temp:2",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "field_path": "/campaign/run_01/cast_0002/temp",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_attribute",
+      "source": "/campaign/run_01/cast_0002/temp",
+      "detail": "unit=C",
+      "confidence": 0.99
+    },
+    {
+      "id": "source_file:raw/hdf5/hdf5_medium_station_hierarchy/station_hierarchy.h5",
+      "type": "source_file",
+      "path": "data/raw/hdf5/hdf5_medium_station_hierarchy/station_hierarchy.h5",
+      "file_format": "hdf5",
+      "category": "hdf5",
+      "difficulty": "medium"
+    },
+    {
+      "id": "derived_schema:hdf5_medium_station_hierarchy",
+      "type": "derived_schema",
+      "path": "data/derived/hdf5/hdf5_medium_station_hierarchy.schema.json",
+      "dataset_id": "hdf5_medium_station_hierarchy"
+    },
+    {
+      "id": "field:hdf5_medium_station_hierarchy:__weather__station_001__pressure",
+      "type": "field_schema",
+      "dataset_id": "hdf5_medium_station_hierarchy",
+      "field_path": "/weather/station_001/pressure",
+      "physical_type": "float32",
+      "logical_type": "measurement",
+      "semantic_type": "surface_pressure",
+      "unit": "hPa",
+      "unit_normalization_status": "unmapped_unit"
+    },
+    {
+      "id": "evidence:hdf5_medium_station_hierarchy:__weather__station_001__pressure:1",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_medium_station_hierarchy",
+      "field_path": "/weather/station_001/pressure",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_dataset_path",
+      "source": "data/raw/hdf5/hdf5_medium_station_hierarchy/station_hierarchy.h5",
+      "detail": "/weather/station_001/pressure",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:hdf5_medium_station_hierarchy:__weather__station_001__pressure:2",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_medium_station_hierarchy",
+      "field_path": "/weather/station_001/pressure",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_attribute",
+      "source": "/weather/station_001/pressure",
+      "detail": "unit=hPa",
+      "confidence": 0.99
+    },
+    {
+      "id": "field:hdf5_medium_station_hierarchy:__weather__station_001__temp",
+      "type": "field_schema",
+      "dataset_id": "hdf5_medium_station_hierarchy",
+      "field_path": "/weather/station_001/temp",
+      "physical_type": "float32",
+      "logical_type": "measurement",
+      "semantic_type": "air_temperature",
+      "unit": "C",
+      "unit_normalization_status": "normalized_ucum"
+    },
+    {
+      "id": "evidence:hdf5_medium_station_hierarchy:__weather__station_001__temp:1",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_medium_station_hierarchy",
+      "field_path": "/weather/station_001/temp",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_dataset_path",
+      "source": "data/raw/hdf5/hdf5_medium_station_hierarchy/station_hierarchy.h5",
+      "detail": "/weather/station_001/temp",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:hdf5_medium_station_hierarchy:__weather__station_001__temp:2",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_medium_station_hierarchy",
+      "field_path": "/weather/station_001/temp",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_attribute",
+      "source": "/weather/station_001/temp",
+      "detail": "unit=C",
+      "confidence": 0.99
+    },
+    {
+      "id": "field:hdf5_medium_station_hierarchy:__weather__station_002__pressure",
+      "type": "field_schema",
+      "dataset_id": "hdf5_medium_station_hierarchy",
+      "field_path": "/weather/station_002/pressure",
+      "physical_type": "float32",
+      "logical_type": "measurement",
+      "semantic_type": "surface_pressure",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:hdf5_medium_station_hierarchy:__weather__station_002__pressure:1",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_medium_station_hierarchy",
+      "field_path": "/weather/station_002/pressure",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_dataset_path",
+      "source": "data/raw/hdf5/hdf5_medium_station_hierarchy/station_hierarchy.h5",
+      "detail": "/weather/station_002/pressure",
+      "confidence": 1.0
+    },
+    {
+      "id": "field:hdf5_medium_station_hierarchy:__weather__station_002__temp",
+      "type": "field_schema",
+      "dataset_id": "hdf5_medium_station_hierarchy",
+      "field_path": "/weather/station_002/temp",
+      "physical_type": "float32",
+      "logical_type": "measurement",
+      "semantic_type": "air_temperature",
+      "unit": "C",
+      "unit_normalization_status": "normalized_ucum"
+    },
+    {
+      "id": "evidence:hdf5_medium_station_hierarchy:__weather__station_002__temp:1",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_medium_station_hierarchy",
+      "field_path": "/weather/station_002/temp",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_dataset_path",
+      "source": "data/raw/hdf5/hdf5_medium_station_hierarchy/station_hierarchy.h5",
+      "detail": "/weather/station_002/temp",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:hdf5_medium_station_hierarchy:__weather__station_002__temp:2",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_medium_station_hierarchy",
+      "field_path": "/weather/station_002/temp",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_attribute",
+      "source": "/weather/station_002/temp",
+      "detail": "unit=C",
+      "confidence": 0.99
+    },
+    {
+      "id": "field:hdf5_medium_station_hierarchy:__weather__timestamp",
+      "type": "field_schema",
+      "dataset_id": "hdf5_medium_station_hierarchy",
+      "field_path": "/weather/timestamp",
+      "physical_type": "string",
+      "logical_type": "time_axis",
+      "semantic_type": "observation_time",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:hdf5_medium_station_hierarchy:__weather__timestamp:1",
+      "type": "evidence_record",
+      "dataset_id": "hdf5_medium_station_hierarchy",
+      "field_path": "/weather/timestamp",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_dataset_path",
+      "source": "data/raw/hdf5/hdf5_medium_station_hierarchy/station_hierarchy.h5",
+      "detail": "/weather/timestamp",
+      "confidence": 1.0
+    },
+    {
+      "id": "source_file:raw/time_series/ts_easy_hourly_weather/hourly_weather.csv",
+      "type": "source_file",
+      "path": "data/raw/time_series/ts_easy_hourly_weather/hourly_weather.csv",
+      "file_format": "csv",
+      "category": "time_series",
+      "difficulty": "easy"
+    },
+    {
+      "id": "derived_schema:ts_easy_hourly_weather",
+      "type": "derived_schema",
+      "path": "data/derived/time_series/ts_easy_hourly_weather.schema.json",
+      "dataset_id": "ts_easy_hourly_weather"
+    },
+    {
+      "id": "field:ts_easy_hourly_weather:station_id",
+      "type": "field_schema",
+      "dataset_id": "ts_easy_hourly_weather",
+      "field_path": "station_id",
+      "physical_type": "string",
+      "logical_type": "identifier",
+      "semantic_type": "station_identifier",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:ts_easy_hourly_weather:station_id:1",
+      "type": "evidence_record",
+      "dataset_id": "ts_easy_hourly_weather",
+      "field_path": "station_id",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/time_series/ts_easy_hourly_weather/hourly_weather.csv",
+      "detail": "header='station_id'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:ts_easy_hourly_weather:station_id:2",
+      "type": "evidence_record",
+      "dataset_id": "ts_easy_hourly_weather",
+      "field_path": "station_id",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/time_series/ts_easy_hourly_weather/hourly_weather.csv",
+      "detail": "sampled_rows=5",
+      "confidence": 0.9
+    },
+    {
+      "id": "field:ts_easy_hourly_weather:timestamp",
+      "type": "field_schema",
+      "dataset_id": "ts_easy_hourly_weather",
+      "field_path": "timestamp",
+      "physical_type": "datetime",
+      "logical_type": "time_axis",
+      "semantic_type": "observation_time",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:ts_easy_hourly_weather:timestamp:1",
+      "type": "evidence_record",
+      "dataset_id": "ts_easy_hourly_weather",
+      "field_path": "timestamp",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/time_series/ts_easy_hourly_weather/hourly_weather.csv",
+      "detail": "header='timestamp'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:ts_easy_hourly_weather:timestamp:2",
+      "type": "evidence_record",
+      "dataset_id": "ts_easy_hourly_weather",
+      "field_path": "timestamp",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/time_series/ts_easy_hourly_weather/hourly_weather.csv",
+      "detail": "sampled_rows=5",
+      "confidence": 0.9
+    },
+    {
+      "id": "field:ts_easy_hourly_weather:temp_C",
+      "type": "field_schema",
+      "dataset_id": "ts_easy_hourly_weather",
+      "field_path": "temp_C",
+      "physical_type": "float",
+      "logical_type": "measurement",
+      "semantic_type": "air_temperature",
+      "unit": "Celsius",
+      "unit_normalization_status": "normalized_ucum"
+    },
+    {
+      "id": "evidence:ts_easy_hourly_weather:temp_C:1",
+      "type": "evidence_record",
+      "dataset_id": "ts_easy_hourly_weather",
+      "field_path": "temp_C",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/time_series/ts_easy_hourly_weather/hourly_weather.csv",
+      "detail": "header='temp_C'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:ts_easy_hourly_weather:temp_C:2",
+      "type": "evidence_record",
+      "dataset_id": "ts_easy_hourly_weather",
+      "field_path": "temp_C",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/time_series/ts_easy_hourly_weather/hourly_weather.csv",
+      "detail": "sampled_rows=5",
+      "confidence": 0.9
+    },
+    {
+      "id": "evidence:ts_easy_hourly_weather:temp_C:3",
+      "type": "evidence_record",
+      "dataset_id": "ts_easy_hourly_weather",
+      "field_path": "temp_C",
+      "tier": "structural",
+      "evidence_type": "column_name_unit_hint",
+      "source": "temp_C",
+      "detail": "inferred unit from column suffix: Celsius",
+      "confidence": 0.82
+    },
+    {
+      "id": "field:ts_easy_hourly_weather:humidity_pct",
+      "type": "field_schema",
+      "dataset_id": "ts_easy_hourly_weather",
+      "field_path": "humidity_pct",
+      "physical_type": "float",
+      "logical_type": "measurement",
+      "semantic_type": "relative_humidity",
+      "unit": "percent",
+      "unit_normalization_status": "normalized_ucum"
+    },
+    {
+      "id": "evidence:ts_easy_hourly_weather:humidity_pct:1",
+      "type": "evidence_record",
+      "dataset_id": "ts_easy_hourly_weather",
+      "field_path": "humidity_pct",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/time_series/ts_easy_hourly_weather/hourly_weather.csv",
+      "detail": "header='humidity_pct'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:ts_easy_hourly_weather:humidity_pct:2",
+      "type": "evidence_record",
+      "dataset_id": "ts_easy_hourly_weather",
+      "field_path": "humidity_pct",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/time_series/ts_easy_hourly_weather/hourly_weather.csv",
+      "detail": "sampled_rows=5",
+      "confidence": 0.9
+    },
+    {
+      "id": "evidence:ts_easy_hourly_weather:humidity_pct:3",
+      "type": "evidence_record",
+      "dataset_id": "ts_easy_hourly_weather",
+      "field_path": "humidity_pct",
+      "tier": "structural",
+      "evidence_type": "column_name_unit_hint",
+      "source": "humidity_pct",
+      "detail": "inferred unit from column suffix: percent",
+      "confidence": 0.82
+    },
+    {
+      "id": "field:ts_easy_hourly_weather:wind_speed_m_s",
+      "type": "field_schema",
+      "dataset_id": "ts_easy_hourly_weather",
+      "field_path": "wind_speed_m_s",
+      "physical_type": "float",
+      "logical_type": "measurement",
+      "semantic_type": "wind_speed",
+      "unit": "meter_per_second",
+      "unit_normalization_status": "normalized_ucum"
+    },
+    {
+      "id": "evidence:ts_easy_hourly_weather:wind_speed_m_s:1",
+      "type": "evidence_record",
+      "dataset_id": "ts_easy_hourly_weather",
+      "field_path": "wind_speed_m_s",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/time_series/ts_easy_hourly_weather/hourly_weather.csv",
+      "detail": "header='wind_speed_m_s'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:ts_easy_hourly_weather:wind_speed_m_s:2",
+      "type": "evidence_record",
+      "dataset_id": "ts_easy_hourly_weather",
+      "field_path": "wind_speed_m_s",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/time_series/ts_easy_hourly_weather/hourly_weather.csv",
+      "detail": "sampled_rows=5",
+      "confidence": 0.9
+    },
+    {
+      "id": "evidence:ts_easy_hourly_weather:wind_speed_m_s:3",
+      "type": "evidence_record",
+      "dataset_id": "ts_easy_hourly_weather",
+      "field_path": "wind_speed_m_s",
+      "tier": "structural",
+      "evidence_type": "column_name_unit_hint",
+      "source": "wind_speed_m_s",
+      "detail": "inferred unit from column suffix: meter_per_second",
+      "confidence": 0.82
+    },
+    {
+      "id": "source_file:raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv",
+      "type": "source_file",
+      "path": "data/raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv",
+      "file_format": "csv",
+      "category": "time_series",
+      "difficulty": "hard"
+    },
+    {
+      "id": "derived_schema:ts_hard_irregular_buoy",
+      "type": "derived_schema",
+      "path": "data/derived/time_series/ts_hard_irregular_buoy.schema.json",
+      "dataset_id": "ts_hard_irregular_buoy"
+    },
+    {
+      "id": "field:ts_hard_irregular_buoy:buoy_id",
+      "type": "field_schema",
+      "dataset_id": "ts_hard_irregular_buoy",
+      "field_path": "buoy_id",
+      "physical_type": "string",
+      "logical_type": "identifier",
+      "semantic_type": "buoy_identifier",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:ts_hard_irregular_buoy:buoy_id:1",
+      "type": "evidence_record",
+      "dataset_id": "ts_hard_irregular_buoy",
+      "field_path": "buoy_id",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv",
+      "detail": "header='buoy_id'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:ts_hard_irregular_buoy:buoy_id:2",
+      "type": "evidence_record",
+      "dataset_id": "ts_hard_irregular_buoy",
+      "field_path": "buoy_id",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv",
+      "detail": "sampled_rows=5",
+      "confidence": 0.9
+    },
+    {
+      "id": "field:ts_hard_irregular_buoy:event_time",
+      "type": "field_schema",
+      "dataset_id": "ts_hard_irregular_buoy",
+      "field_path": "event_time",
+      "physical_type": "datetime",
+      "logical_type": "time_axis",
+      "semantic_type": "observation_time",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:ts_hard_irregular_buoy:event_time:1",
+      "type": "evidence_record",
+      "dataset_id": "ts_hard_irregular_buoy",
+      "field_path": "event_time",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv",
+      "detail": "header='event_time'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:ts_hard_irregular_buoy:event_time:2",
+      "type": "evidence_record",
+      "dataset_id": "ts_hard_irregular_buoy",
+      "field_path": "event_time",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv",
+      "detail": "sampled_rows=5",
+      "confidence": 0.9
+    },
+    {
+      "id": "field:ts_hard_irregular_buoy:temp_C",
+      "type": "field_schema",
+      "dataset_id": "ts_hard_irregular_buoy",
+      "field_path": "temp_C",
+      "physical_type": "float",
+      "logical_type": "measurement",
+      "semantic_type": "water_temperature",
+      "unit": "Celsius",
+      "unit_normalization_status": "normalized_ucum"
+    },
+    {
+      "id": "evidence:ts_hard_irregular_buoy:temp_C:1",
+      "type": "evidence_record",
+      "dataset_id": "ts_hard_irregular_buoy",
+      "field_path": "temp_C",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv",
+      "detail": "header='temp_C'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:ts_hard_irregular_buoy:temp_C:2",
+      "type": "evidence_record",
+      "dataset_id": "ts_hard_irregular_buoy",
+      "field_path": "temp_C",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv",
+      "detail": "sampled_rows=5",
+      "confidence": 0.9
+    },
+    {
+      "id": "evidence:ts_hard_irregular_buoy:temp_C:3",
+      "type": "evidence_record",
+      "dataset_id": "ts_hard_irregular_buoy",
+      "field_path": "temp_C",
+      "tier": "structural",
+      "evidence_type": "column_name_unit_hint",
+      "source": "temp_C",
+      "detail": "inferred unit from column suffix: Celsius",
+      "confidence": 0.82
+    },
+    {
+      "id": "field:ts_hard_irregular_buoy:salinity_psu",
+      "type": "field_schema",
+      "dataset_id": "ts_hard_irregular_buoy",
+      "field_path": "salinity_psu",
+      "physical_type": "float",
+      "logical_type": "measurement",
+      "semantic_type": "salinity",
+      "unit": "PSU",
+      "unit_normalization_status": "normalized_ucum"
+    },
+    {
+      "id": "evidence:ts_hard_irregular_buoy:salinity_psu:1",
+      "type": "evidence_record",
+      "dataset_id": "ts_hard_irregular_buoy",
+      "field_path": "salinity_psu",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv",
+      "detail": "header='salinity_psu'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:ts_hard_irregular_buoy:salinity_psu:2",
+      "type": "evidence_record",
+      "dataset_id": "ts_hard_irregular_buoy",
+      "field_path": "salinity_psu",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv",
+      "detail": "sampled_rows=5",
+      "confidence": 0.9
+    },
+    {
+      "id": "evidence:ts_hard_irregular_buoy:salinity_psu:3",
+      "type": "evidence_record",
+      "dataset_id": "ts_hard_irregular_buoy",
+      "field_path": "salinity_psu",
+      "tier": "structural",
+      "evidence_type": "column_name_unit_hint",
+      "source": "salinity_psu",
+      "detail": "inferred unit from column suffix: PSU",
+      "confidence": 0.82
+    },
+    {
+      "id": "field:ts_hard_irregular_buoy:qc_flag",
+      "type": "field_schema",
+      "dataset_id": "ts_hard_irregular_buoy",
+      "field_path": "qc_flag",
+      "physical_type": "string",
+      "logical_type": "label",
+      "semantic_type": "quality_flag",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:ts_hard_irregular_buoy:qc_flag:1",
+      "type": "evidence_record",
+      "dataset_id": "ts_hard_irregular_buoy",
+      "field_path": "qc_flag",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv",
+      "detail": "header='qc_flag'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:ts_hard_irregular_buoy:qc_flag:2",
+      "type": "evidence_record",
+      "dataset_id": "ts_hard_irregular_buoy",
+      "field_path": "qc_flag",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv",
+      "detail": "sampled_rows=5",
+      "confidence": 0.9
+    },
+    {
+      "id": "source_file:raw/time_series/ts_medium_power_meter/power_meter.csv",
+      "type": "source_file",
+      "path": "data/raw/time_series/ts_medium_power_meter/power_meter.csv",
+      "file_format": "csv",
+      "category": "time_series",
+      "difficulty": "medium"
+    },
+    {
+      "id": "derived_schema:ts_medium_power_meter",
+      "type": "derived_schema",
+      "path": "data/derived/time_series/ts_medium_power_meter.schema.json",
+      "dataset_id": "ts_medium_power_meter"
+    },
+    {
+      "id": "field:ts_medium_power_meter:sensor_id",
+      "type": "field_schema",
+      "dataset_id": "ts_medium_power_meter",
+      "field_path": "sensor_id",
+      "physical_type": "string",
+      "logical_type": "identifier",
+      "semantic_type": "sensor_identifier",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:ts_medium_power_meter:sensor_id:1",
+      "type": "evidence_record",
+      "dataset_id": "ts_medium_power_meter",
+      "field_path": "sensor_id",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/time_series/ts_medium_power_meter/power_meter.csv",
+      "detail": "header='sensor_id'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:ts_medium_power_meter:sensor_id:2",
+      "type": "evidence_record",
+      "dataset_id": "ts_medium_power_meter",
+      "field_path": "sensor_id",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/time_series/ts_medium_power_meter/power_meter.csv",
+      "detail": "sampled_rows=6",
+      "confidence": 0.9
+    },
+    {
+      "id": "field:ts_medium_power_meter:ts_utc",
+      "type": "field_schema",
+      "dataset_id": "ts_medium_power_meter",
+      "field_path": "ts_utc",
+      "physical_type": "datetime",
+      "logical_type": "time_axis",
+      "semantic_type": "observation_time",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:ts_medium_power_meter:ts_utc:1",
+      "type": "evidence_record",
+      "dataset_id": "ts_medium_power_meter",
+      "field_path": "ts_utc",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/time_series/ts_medium_power_meter/power_meter.csv",
+      "detail": "header='ts_utc'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:ts_medium_power_meter:ts_utc:2",
+      "type": "evidence_record",
+      "dataset_id": "ts_medium_power_meter",
+      "field_path": "ts_utc",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/time_series/ts_medium_power_meter/power_meter.csv",
+      "detail": "sampled_rows=6",
+      "confidence": 0.9
+    },
+    {
+      "id": "field:ts_medium_power_meter:power_kw",
+      "type": "field_schema",
+      "dataset_id": "ts_medium_power_meter",
+      "field_path": "power_kw",
+      "physical_type": "float",
+      "logical_type": "measurement",
+      "semantic_type": "power",
+      "unit": "kilowatt",
+      "unit_normalization_status": "normalized_ucum"
+    },
+    {
+      "id": "evidence:ts_medium_power_meter:power_kw:1",
+      "type": "evidence_record",
+      "dataset_id": "ts_medium_power_meter",
+      "field_path": "power_kw",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/time_series/ts_medium_power_meter/power_meter.csv",
+      "detail": "header='power_kw'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:ts_medium_power_meter:power_kw:2",
+      "type": "evidence_record",
+      "dataset_id": "ts_medium_power_meter",
+      "field_path": "power_kw",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/time_series/ts_medium_power_meter/power_meter.csv",
+      "detail": "sampled_rows=6",
+      "confidence": 0.9
+    },
+    {
+      "id": "evidence:ts_medium_power_meter:power_kw:3",
+      "type": "evidence_record",
+      "dataset_id": "ts_medium_power_meter",
+      "field_path": "power_kw",
+      "tier": "structural",
+      "evidence_type": "column_name_unit_hint",
+      "source": "power_kw",
+      "detail": "inferred unit from column suffix: kilowatt",
+      "confidence": 0.82
+    },
+    {
+      "id": "field:ts_medium_power_meter:voltage_v",
+      "type": "field_schema",
+      "dataset_id": "ts_medium_power_meter",
+      "field_path": "voltage_v",
+      "physical_type": "float",
+      "logical_type": "measurement",
+      "semantic_type": "voltage",
+      "unit": "volt",
+      "unit_normalization_status": "normalized_ucum"
+    },
+    {
+      "id": "evidence:ts_medium_power_meter:voltage_v:1",
+      "type": "evidence_record",
+      "dataset_id": "ts_medium_power_meter",
+      "field_path": "voltage_v",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/time_series/ts_medium_power_meter/power_meter.csv",
+      "detail": "header='voltage_v'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:ts_medium_power_meter:voltage_v:2",
+      "type": "evidence_record",
+      "dataset_id": "ts_medium_power_meter",
+      "field_path": "voltage_v",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/time_series/ts_medium_power_meter/power_meter.csv",
+      "detail": "sampled_rows=6",
+      "confidence": 0.9
+    },
+    {
+      "id": "evidence:ts_medium_power_meter:voltage_v:3",
+      "type": "evidence_record",
+      "dataset_id": "ts_medium_power_meter",
+      "field_path": "voltage_v",
+      "tier": "structural",
+      "evidence_type": "column_name_unit_hint",
+      "source": "voltage_v",
+      "detail": "inferred unit from column suffix: volt",
+      "confidence": 0.82
+    },
+    {
+      "id": "field:ts_medium_power_meter:status",
+      "type": "field_schema",
+      "dataset_id": "ts_medium_power_meter",
+      "field_path": "status",
+      "physical_type": "string",
+      "logical_type": "label",
+      "semantic_type": "operational_status",
+      "unit": null,
+      "unit_normalization_status": "no_unit_claim"
+    },
+    {
+      "id": "evidence:ts_medium_power_meter:status:1",
+      "type": "evidence_record",
+      "dataset_id": "ts_medium_power_meter",
+      "field_path": "status",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "data/raw/time_series/ts_medium_power_meter/power_meter.csv",
+      "detail": "header='status'",
+      "confidence": 1.0
+    },
+    {
+      "id": "evidence:ts_medium_power_meter:status:2",
+      "type": "evidence_record",
+      "dataset_id": "ts_medium_power_meter",
+      "field_path": "status",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "data/raw/time_series/ts_medium_power_meter/power_meter.csv",
+      "detail": "sampled_rows=6",
+      "confidence": 0.9
+    },
+    {
+      "id": "semantic_task:semantic_grounding/internal/hdf5_hard_ocean_profile.task.json",
+      "type": "semantic_grounding_task",
+      "path": "data/semantic_grounding/internal/hdf5_hard_ocean_profile.task.json",
+      "scope": "internal"
+    },
+    {
+      "id": "semantic_annotation:semantic_annotations/internal/hdf5_hard_ocean_profile.result.json",
+      "type": "semantic_annotation_result",
+      "path": "data/semantic_annotations/internal/hdf5_hard_ocean_profile.result.json",
+      "scope": "internal"
+    },
+    {
+      "id": "semantic_task:semantic_grounding/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.task.json",
+      "type": "semantic_grounding_task",
+      "path": "data/semantic_grounding/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.task.json",
+      "scope": "external"
+    },
+    {
+      "id": "semantic_annotation:semantic_annotations/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.result.json",
+      "type": "semantic_annotation_result",
+      "path": "data/semantic_annotations/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.result.json",
+      "scope": "external"
+    },
+    {
+      "id": "semantic_task:semantic_grounding/external/external_weatherMQ-FP-20261011_3f95de2293.task.json",
+      "type": "semantic_grounding_task",
+      "path": "data/semantic_grounding/external/external_weatherMQ-FP-20261011_3f95de2293.task.json",
+      "scope": "external"
+    },
+    {
+      "id": "semantic_annotation:semantic_annotations/external/external_weatherMQ-FP-20261011_3f95de2293.result.json",
+      "type": "semantic_annotation_result",
+      "path": "data/semantic_annotations/external/external_weatherMQ-FP-20261011_3f95de2293.result.json",
+      "scope": "external"
+    },
+    {
+      "id": "semantic_task:semantic_grounding/external/zenodo__record_15008662__unique_tracks_90.csv.task.json",
+      "type": "semantic_grounding_task",
+      "path": "data/semantic_grounding/external/zenodo__record_15008662__unique_tracks_90.csv.task.json",
+      "scope": "external"
+    },
+    {
+      "id": "semantic_annotation:semantic_annotations/external/zenodo__record_15008662__unique_tracks_90.csv.result.json",
+      "type": "semantic_annotation_result",
+      "path": "data/semantic_annotations/external/zenodo__record_15008662__unique_tracks_90.csv.result.json",
+      "scope": "external"
+    },
+    {
+      "id": "semantic_task:semantic_grounding/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.task.json",
+      "type": "semantic_grounding_task",
+      "path": "data/semantic_grounding/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.task.json",
+      "scope": "external"
+    },
+    {
+      "id": "semantic_annotation:semantic_annotations/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.result.json",
+      "type": "semantic_annotation_result",
+      "path": "data/semantic_annotations/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.result.json",
+      "scope": "external"
+    },
+    {
+      "id": "semantic_task:semantic_grounding/internal/csv_hard_field_campaign.task.json",
+      "type": "semantic_grounding_task",
+      "path": "data/semantic_grounding/internal/csv_hard_field_campaign.task.json",
+      "scope": "internal"
+    },
+    {
+      "id": "semantic_annotation:semantic_annotations/internal/csv_hard_field_campaign.result.json",
+      "type": "semantic_annotation_result",
+      "path": "data/semantic_annotations/internal/csv_hard_field_campaign.result.json",
+      "scope": "internal"
+    },
+    {
+      "id": "semantic_task:semantic_grounding/external/external_functional_traits_7e780659c0.task.json",
+      "type": "semantic_grounding_task",
+      "path": "data/semantic_grounding/external/external_functional_traits_7e780659c0.task.json",
+      "scope": "external"
+    },
+    {
+      "id": "semantic_annotation:semantic_annotations/external/external_functional_traits_7e780659c0.result.json",
+      "type": "semantic_annotation_result",
+      "path": "data/semantic_annotations/external/external_functional_traits_7e780659c0.result.json",
+      "scope": "external"
+    },
+    {
+      "id": "semantic_task:semantic_grounding/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.task.json",
+      "type": "semantic_grounding_task",
+      "path": "data/semantic_grounding/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.task.json",
+      "scope": "external"
+    },
+    {
+      "id": "semantic_annotation:semantic_annotations/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.result.json",
+      "type": "semantic_annotation_result",
+      "path": "data/semantic_annotations/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.result.json",
+      "scope": "external"
+    },
+    {
+      "id": "semantic_task:semantic_grounding/internal/csv_easy_weather_stations.task.json",
+      "type": "semantic_grounding_task",
+      "path": "data/semantic_grounding/internal/csv_easy_weather_stations.task.json",
+      "scope": "internal"
+    },
+    {
+      "id": "semantic_annotation:semantic_annotations/internal/csv_easy_weather_stations.result.json",
+      "type": "semantic_annotation_result",
+      "path": "data/semantic_annotations/internal/csv_easy_weather_stations.result.json",
+      "scope": "internal"
+    },
+    {
+      "id": "semantic_merged:semantic_merged/internal/hdf5_hard_ocean_profile.merged.json",
+      "type": "semantic_merged_schema",
+      "path": "data/semantic_merged/internal/hdf5_hard_ocean_profile.merged.json",
+      "scope": "internal"
+    },
+    {
+      "id": "semantic_merged:semantic_merged/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.merged.json",
+      "type": "semantic_merged_schema",
+      "path": "data/semantic_merged/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.merged.json",
+      "scope": "external"
+    },
+    {
+      "id": "semantic_merged:semantic_merged/external/external_weatherMQ-FP-20261011_3f95de2293.merged.json",
+      "type": "semantic_merged_schema",
+      "path": "data/semantic_merged/external/external_weatherMQ-FP-20261011_3f95de2293.merged.json",
+      "scope": "external"
+    },
+    {
+      "id": "semantic_merged:semantic_merged/external/zenodo__record_15008662__unique_tracks_90.csv.merged.json",
+      "type": "semantic_merged_schema",
+      "path": "data/semantic_merged/external/zenodo__record_15008662__unique_tracks_90.csv.merged.json",
+      "scope": "external"
+    },
+    {
+      "id": "semantic_merged:semantic_merged/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.merged.json",
+      "type": "semantic_merged_schema",
+      "path": "data/semantic_merged/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.merged.json",
+      "scope": "external"
+    },
+    {
+      "id": "semantic_merged:semantic_merged/internal/csv_hard_field_campaign.merged.json",
+      "type": "semantic_merged_schema",
+      "path": "data/semantic_merged/internal/csv_hard_field_campaign.merged.json",
+      "scope": "internal"
+    },
+    {
+      "id": "semantic_merged:semantic_merged/external/external_functional_traits_7e780659c0.merged.json",
+      "type": "semantic_merged_schema",
+      "path": "data/semantic_merged/external/external_functional_traits_7e780659c0.merged.json",
+      "scope": "external"
+    },
+    {
+      "id": "semantic_merged:semantic_merged/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.merged.json",
+      "type": "semantic_merged_schema",
+      "path": "data/semantic_merged/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.merged.json",
+      "scope": "external"
+    },
+    {
+      "id": "semantic_merged:semantic_merged/internal/csv_easy_weather_stations.merged.json",
+      "type": "semantic_merged_schema",
+      "path": "data/semantic_merged/internal/csv_easy_weather_stations.merged.json",
+      "scope": "internal"
+    },
+    {
+      "id": "report:internal_baseline",
+      "type": "evaluation_report",
+      "path": "data/derived/internal_baseline_report.json"
+    },
+    {
+      "id": "report:semantic_merge",
+      "type": "evaluation_report",
+      "path": "data/semantic_merged/semantic_merge_report.json"
+    },
+    {
+      "id": "report:retrieval",
+      "type": "evaluation_report",
+      "path": "data/retrieval/external_candidate_pool/retrieval_report.json"
+    },
+    {
+      "id": "report:paper_tables",
+      "type": "paper_table_report",
+      "path": "docs/paper_result_tables_2026-05-15.json"
+    },
+    {
+      "id": "retrieval_artifact:metadata_only",
+      "type": "retrieval_artifact",
+      "path": "data/retrieval/external_candidate_pool/metadata_only.json",
+      "artifact_name": "metadata_only"
+    },
+    {
+      "id": "retrieval_artifact:readme_only",
+      "type": "retrieval_artifact",
+      "path": "data/retrieval/external_candidate_pool/readme_only.json",
+      "artifact_name": "readme_only"
+    },
+    {
+      "id": "retrieval_artifact:schema_enhanced",
+      "type": "retrieval_artifact",
+      "path": "data/retrieval/external_candidate_pool/schema_enhanced.json",
+      "artifact_name": "schema_enhanced"
+    },
+    {
+      "id": "retrieval_artifact:schema_enhanced_deterministic",
+      "type": "retrieval_artifact",
+      "path": "data/retrieval/external_candidate_pool/schema_enhanced_deterministic.json",
+      "artifact_name": "schema_enhanced_deterministic"
+    },
+    {
+      "id": "retrieval_artifact:schema_enhanced_semantic_merged",
+      "type": "retrieval_artifact",
+      "path": "data/retrieval/external_candidate_pool/schema_enhanced_semantic_merged.json",
+      "artifact_name": "schema_enhanced_semantic_merged"
+    },
+    {
+      "id": "retrieval_artifact:queries",
+      "type": "retrieval_artifact",
+      "path": "data/retrieval/external_candidate_pool/queries.json",
+      "artifact_name": "queries"
+    },
+    {
+      "id": "retrieval_artifact:qrels",
+      "type": "retrieval_artifact",
+      "path": "data/retrieval/external_candidate_pool/qrels.json",
+      "artifact_name": "qrels"
+    }
+  ],
+  "activities": [
+    {
+      "id": "activity:deterministic_extraction:csv_easy_weather_stations",
+      "type": "deterministic_extraction",
+      "dataset_id": "csv_easy_weather_stations",
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "id": "activity:deterministic_extraction:csv_hard_field_campaign",
+      "type": "deterministic_extraction",
+      "dataset_id": "csv_hard_field_campaign",
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "id": "activity:deterministic_extraction:csv_medium_water_quality",
+      "type": "deterministic_extraction",
+      "dataset_id": "csv_medium_water_quality",
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "id": "activity:deterministic_extraction:hdf5_easy_climate_cube",
+      "type": "deterministic_extraction",
+      "dataset_id": "hdf5_easy_climate_cube",
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "id": "activity:deterministic_extraction:hdf5_hard_ocean_profile",
+      "type": "deterministic_extraction",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "id": "activity:deterministic_extraction:hdf5_medium_station_hierarchy",
+      "type": "deterministic_extraction",
+      "dataset_id": "hdf5_medium_station_hierarchy",
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "id": "activity:deterministic_extraction:ts_easy_hourly_weather",
+      "type": "deterministic_extraction",
+      "dataset_id": "ts_easy_hourly_weather",
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "id": "activity:deterministic_extraction:ts_hard_irregular_buoy",
+      "type": "deterministic_extraction",
+      "dataset_id": "ts_hard_irregular_buoy",
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "id": "activity:deterministic_extraction:ts_medium_power_meter",
+      "type": "deterministic_extraction",
+      "dataset_id": "ts_medium_power_meter",
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "id": "activity:semantic_annotation:semantic_annotations/internal/hdf5_hard_ocean_profile.result.json",
+      "type": "semantic_annotation",
+      "scope": "internal"
+    },
+    {
+      "id": "activity:semantic_annotation:semantic_annotations/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.result.json",
+      "type": "semantic_annotation",
+      "scope": "external"
+    },
+    {
+      "id": "activity:semantic_annotation:semantic_annotations/external/external_weatherMQ-FP-20261011_3f95de2293.result.json",
+      "type": "semantic_annotation",
+      "scope": "external"
+    },
+    {
+      "id": "activity:semantic_annotation:semantic_annotations/external/zenodo__record_15008662__unique_tracks_90.csv.result.json",
+      "type": "semantic_annotation",
+      "scope": "external"
+    },
+    {
+      "id": "activity:semantic_annotation:semantic_annotations/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.result.json",
+      "type": "semantic_annotation",
+      "scope": "external"
+    },
+    {
+      "id": "activity:semantic_annotation:semantic_annotations/internal/csv_hard_field_campaign.result.json",
+      "type": "semantic_annotation",
+      "scope": "internal"
+    },
+    {
+      "id": "activity:semantic_annotation:semantic_annotations/external/external_functional_traits_7e780659c0.result.json",
+      "type": "semantic_annotation",
+      "scope": "external"
+    },
+    {
+      "id": "activity:semantic_annotation:semantic_annotations/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.result.json",
+      "type": "semantic_annotation",
+      "scope": "external"
+    },
+    {
+      "id": "activity:semantic_annotation:semantic_annotations/internal/csv_easy_weather_stations.result.json",
+      "type": "semantic_annotation",
+      "scope": "internal"
+    },
+    {
+      "id": "activity:semantic_merge:semantic_merged/internal/hdf5_hard_ocean_profile.merged.json",
+      "type": "semantic_merge",
+      "scope": "internal",
+      "conflict_count": 1
+    },
+    {
+      "id": "activity:semantic_merge:semantic_merged/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.merged.json",
+      "type": "semantic_merge",
+      "scope": "external",
+      "conflict_count": 1
+    },
+    {
+      "id": "activity:semantic_merge:semantic_merged/external/external_weatherMQ-FP-20261011_3f95de2293.merged.json",
+      "type": "semantic_merge",
+      "scope": "external",
+      "conflict_count": 0
+    },
+    {
+      "id": "activity:semantic_merge:semantic_merged/external/zenodo__record_15008662__unique_tracks_90.csv.merged.json",
+      "type": "semantic_merge",
+      "scope": "external",
+      "conflict_count": 0
+    },
+    {
+      "id": "activity:semantic_merge:semantic_merged/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.merged.json",
+      "type": "semantic_merge",
+      "scope": "external",
+      "conflict_count": 1
+    },
+    {
+      "id": "activity:semantic_merge:semantic_merged/internal/csv_hard_field_campaign.merged.json",
+      "type": "semantic_merge",
+      "scope": "internal",
+      "conflict_count": 0
+    },
+    {
+      "id": "activity:semantic_merge:semantic_merged/external/external_functional_traits_7e780659c0.merged.json",
+      "type": "semantic_merge",
+      "scope": "external",
+      "conflict_count": 0
+    },
+    {
+      "id": "activity:semantic_merge:semantic_merged/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.merged.json",
+      "type": "semantic_merge",
+      "scope": "external",
+      "conflict_count": 0
+    },
+    {
+      "id": "activity:semantic_merge:semantic_merged/internal/csv_easy_weather_stations.merged.json",
+      "type": "semantic_merge",
+      "scope": "internal",
+      "conflict_count": 0
+    },
+    {
+      "id": "activity:evaluate_internal_baseline",
+      "type": "evaluation_report"
+    },
+    {
+      "id": "activity:evaluate_semantic_merge",
+      "type": "evaluation_report"
+    },
+    {
+      "id": "activity:evaluate_retrieval",
+      "type": "evaluation_report"
+    },
+    {
+      "id": "activity:build_paper_tables",
+      "type": "paper_table_report"
+    }
+  ],
+  "relations": {
+    "used": [
+      {
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations",
+        "entity": "source_file:raw/csv/csv_easy_weather_stations/stations_precip.csv"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations",
+        "entity": "evidence:csv_easy_weather_stations:station_id:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations",
+        "entity": "evidence:csv_easy_weather_stations:station_id:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations",
+        "entity": "evidence:csv_easy_weather_stations:station_name:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations",
+        "entity": "evidence:csv_easy_weather_stations:station_name:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations",
+        "entity": "evidence:csv_easy_weather_stations:latitude_deg:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations",
+        "entity": "evidence:csv_easy_weather_stations:latitude_deg:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations",
+        "entity": "evidence:csv_easy_weather_stations:latitude_deg:3"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations",
+        "entity": "evidence:csv_easy_weather_stations:longitude_deg:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations",
+        "entity": "evidence:csv_easy_weather_stations:longitude_deg:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations",
+        "entity": "evidence:csv_easy_weather_stations:longitude_deg:3"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations",
+        "entity": "evidence:csv_easy_weather_stations:elevation_m:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations",
+        "entity": "evidence:csv_easy_weather_stations:elevation_m:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations",
+        "entity": "evidence:csv_easy_weather_stations:elevation_m:3"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations",
+        "entity": "evidence:csv_easy_weather_stations:precip_mm:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations",
+        "entity": "evidence:csv_easy_weather_stations:precip_mm:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations",
+        "entity": "evidence:csv_easy_weather_stations:precip_mm:3"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign",
+        "entity": "source_file:raw/csv/csv_hard_field_campaign/field_campaign.csv"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign",
+        "entity": "evidence:csv_hard_field_campaign:rec:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign",
+        "entity": "evidence:csv_hard_field_campaign:rec:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign",
+        "entity": "evidence:csv_hard_field_campaign:dt_obs:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign",
+        "entity": "evidence:csv_hard_field_campaign:dt_obs:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign",
+        "entity": "evidence:csv_hard_field_campaign:zc:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign",
+        "entity": "evidence:csv_hard_field_campaign:zc:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign",
+        "entity": "evidence:csv_hard_field_campaign:val:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign",
+        "entity": "evidence:csv_hard_field_campaign:val:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign",
+        "entity": "evidence:csv_hard_field_campaign:flag:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign",
+        "entity": "evidence:csv_hard_field_campaign:flag:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign",
+        "entity": "evidence:csv_hard_field_campaign:device:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign",
+        "entity": "evidence:csv_hard_field_campaign:device:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality",
+        "entity": "source_file:raw/csv/csv_medium_water_quality/water_quality.csv"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality",
+        "entity": "evidence:csv_medium_water_quality:sample_id:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality",
+        "entity": "evidence:csv_medium_water_quality:sample_id:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality",
+        "entity": "evidence:csv_medium_water_quality:site_code:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality",
+        "entity": "evidence:csv_medium_water_quality:site_code:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality",
+        "entity": "evidence:csv_medium_water_quality:collection_date:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality",
+        "entity": "evidence:csv_medium_water_quality:collection_date:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality",
+        "entity": "evidence:csv_medium_water_quality:ph:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality",
+        "entity": "evidence:csv_medium_water_quality:ph:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality",
+        "entity": "evidence:csv_medium_water_quality:do_mg_l:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality",
+        "entity": "evidence:csv_medium_water_quality:do_mg_l:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality",
+        "entity": "evidence:csv_medium_water_quality:do_mg_l:3"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality",
+        "entity": "evidence:csv_medium_water_quality:turbidity_ntu:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality",
+        "entity": "evidence:csv_medium_water_quality:turbidity_ntu:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality",
+        "entity": "evidence:csv_medium_water_quality:turbidity_ntu:3"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality",
+        "entity": "evidence:csv_medium_water_quality:notes:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality",
+        "entity": "evidence:csv_medium_water_quality:notes:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_easy_climate_cube",
+        "entity": "source_file:raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_easy_climate_cube",
+        "entity": "evidence:hdf5_easy_climate_cube:__coords__station_id:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_easy_climate_cube",
+        "entity": "evidence:hdf5_easy_climate_cube:__coords__time:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_easy_climate_cube",
+        "entity": "evidence:hdf5_easy_climate_cube:__coords__time:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_easy_climate_cube",
+        "entity": "evidence:hdf5_easy_climate_cube:__observations__humidity:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_easy_climate_cube",
+        "entity": "evidence:hdf5_easy_climate_cube:__observations__humidity:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_easy_climate_cube",
+        "entity": "evidence:hdf5_easy_climate_cube:__observations__temperature:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_easy_climate_cube",
+        "entity": "evidence:hdf5_easy_climate_cube:__observations__temperature:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile",
+        "entity": "source_file:raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile",
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__meta__platform:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile",
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__meta__station_code:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile",
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__depth_m:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile",
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__depth_m:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile",
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__qc_flag:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile",
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__salinity_psu:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile",
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__temp:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile",
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__depth_m:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile",
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__depth_m:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile",
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__qc_flag:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile",
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__salinity_psu:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile",
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__temp:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile",
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__temp:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_medium_station_hierarchy",
+        "entity": "source_file:raw/hdf5/hdf5_medium_station_hierarchy/station_hierarchy.h5"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_medium_station_hierarchy",
+        "entity": "evidence:hdf5_medium_station_hierarchy:__weather__station_001__pressure:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_medium_station_hierarchy",
+        "entity": "evidence:hdf5_medium_station_hierarchy:__weather__station_001__pressure:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_medium_station_hierarchy",
+        "entity": "evidence:hdf5_medium_station_hierarchy:__weather__station_001__temp:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_medium_station_hierarchy",
+        "entity": "evidence:hdf5_medium_station_hierarchy:__weather__station_001__temp:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_medium_station_hierarchy",
+        "entity": "evidence:hdf5_medium_station_hierarchy:__weather__station_002__pressure:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_medium_station_hierarchy",
+        "entity": "evidence:hdf5_medium_station_hierarchy:__weather__station_002__temp:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_medium_station_hierarchy",
+        "entity": "evidence:hdf5_medium_station_hierarchy:__weather__station_002__temp:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:hdf5_medium_station_hierarchy",
+        "entity": "evidence:hdf5_medium_station_hierarchy:__weather__timestamp:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather",
+        "entity": "source_file:raw/time_series/ts_easy_hourly_weather/hourly_weather.csv"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather",
+        "entity": "evidence:ts_easy_hourly_weather:station_id:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather",
+        "entity": "evidence:ts_easy_hourly_weather:station_id:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather",
+        "entity": "evidence:ts_easy_hourly_weather:timestamp:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather",
+        "entity": "evidence:ts_easy_hourly_weather:timestamp:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather",
+        "entity": "evidence:ts_easy_hourly_weather:temp_C:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather",
+        "entity": "evidence:ts_easy_hourly_weather:temp_C:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather",
+        "entity": "evidence:ts_easy_hourly_weather:temp_C:3"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather",
+        "entity": "evidence:ts_easy_hourly_weather:humidity_pct:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather",
+        "entity": "evidence:ts_easy_hourly_weather:humidity_pct:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather",
+        "entity": "evidence:ts_easy_hourly_weather:humidity_pct:3"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather",
+        "entity": "evidence:ts_easy_hourly_weather:wind_speed_m_s:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather",
+        "entity": "evidence:ts_easy_hourly_weather:wind_speed_m_s:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather",
+        "entity": "evidence:ts_easy_hourly_weather:wind_speed_m_s:3"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy",
+        "entity": "source_file:raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy",
+        "entity": "evidence:ts_hard_irregular_buoy:buoy_id:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy",
+        "entity": "evidence:ts_hard_irregular_buoy:buoy_id:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy",
+        "entity": "evidence:ts_hard_irregular_buoy:event_time:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy",
+        "entity": "evidence:ts_hard_irregular_buoy:event_time:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy",
+        "entity": "evidence:ts_hard_irregular_buoy:temp_C:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy",
+        "entity": "evidence:ts_hard_irregular_buoy:temp_C:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy",
+        "entity": "evidence:ts_hard_irregular_buoy:temp_C:3"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy",
+        "entity": "evidence:ts_hard_irregular_buoy:salinity_psu:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy",
+        "entity": "evidence:ts_hard_irregular_buoy:salinity_psu:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy",
+        "entity": "evidence:ts_hard_irregular_buoy:salinity_psu:3"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy",
+        "entity": "evidence:ts_hard_irregular_buoy:qc_flag:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy",
+        "entity": "evidence:ts_hard_irregular_buoy:qc_flag:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter",
+        "entity": "source_file:raw/time_series/ts_medium_power_meter/power_meter.csv"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter",
+        "entity": "evidence:ts_medium_power_meter:sensor_id:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter",
+        "entity": "evidence:ts_medium_power_meter:sensor_id:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter",
+        "entity": "evidence:ts_medium_power_meter:ts_utc:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter",
+        "entity": "evidence:ts_medium_power_meter:ts_utc:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter",
+        "entity": "evidence:ts_medium_power_meter:power_kw:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter",
+        "entity": "evidence:ts_medium_power_meter:power_kw:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter",
+        "entity": "evidence:ts_medium_power_meter:power_kw:3"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter",
+        "entity": "evidence:ts_medium_power_meter:voltage_v:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter",
+        "entity": "evidence:ts_medium_power_meter:voltage_v:2"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter",
+        "entity": "evidence:ts_medium_power_meter:voltage_v:3"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter",
+        "entity": "evidence:ts_medium_power_meter:status:1"
+      },
+      {
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter",
+        "entity": "evidence:ts_medium_power_meter:status:2"
+      },
+      {
+        "activity": "activity:semantic_annotation:semantic_annotations/internal/hdf5_hard_ocean_profile.result.json",
+        "entity": "semantic_task:semantic_grounding/internal/hdf5_hard_ocean_profile.task.json"
+      },
+      {
+        "activity": "activity:semantic_annotation:semantic_annotations/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.result.json",
+        "entity": "semantic_task:semantic_grounding/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.task.json"
+      },
+      {
+        "activity": "activity:semantic_annotation:semantic_annotations/external/external_weatherMQ-FP-20261011_3f95de2293.result.json",
+        "entity": "semantic_task:semantic_grounding/external/external_weatherMQ-FP-20261011_3f95de2293.task.json"
+      },
+      {
+        "activity": "activity:semantic_annotation:semantic_annotations/external/zenodo__record_15008662__unique_tracks_90.csv.result.json",
+        "entity": "semantic_task:semantic_grounding/external/zenodo__record_15008662__unique_tracks_90.csv.task.json"
+      },
+      {
+        "activity": "activity:semantic_annotation:semantic_annotations/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.result.json",
+        "entity": "semantic_task:semantic_grounding/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.task.json"
+      },
+      {
+        "activity": "activity:semantic_annotation:semantic_annotations/internal/csv_hard_field_campaign.result.json",
+        "entity": "semantic_task:semantic_grounding/internal/csv_hard_field_campaign.task.json"
+      },
+      {
+        "activity": "activity:semantic_annotation:semantic_annotations/external/external_functional_traits_7e780659c0.result.json",
+        "entity": "semantic_task:semantic_grounding/external/external_functional_traits_7e780659c0.task.json"
+      },
+      {
+        "activity": "activity:semantic_annotation:semantic_annotations/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.result.json",
+        "entity": "semantic_task:semantic_grounding/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.task.json"
+      },
+      {
+        "activity": "activity:semantic_annotation:semantic_annotations/internal/csv_easy_weather_stations.result.json",
+        "entity": "semantic_task:semantic_grounding/internal/csv_easy_weather_stations.task.json"
+      },
+      {
+        "activity": "activity:semantic_merge:semantic_merged/internal/hdf5_hard_ocean_profile.merged.json",
+        "entity": "semantic_task:semantic_grounding/internal/hdf5_hard_ocean_profile.task.json"
+      },
+      {
+        "activity": "activity:semantic_merge:semantic_merged/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.merged.json",
+        "entity": "semantic_task:semantic_grounding/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.task.json"
+      },
+      {
+        "activity": "activity:semantic_merge:semantic_merged/external/external_weatherMQ-FP-20261011_3f95de2293.merged.json",
+        "entity": "semantic_task:semantic_grounding/external/external_weatherMQ-FP-20261011_3f95de2293.task.json"
+      },
+      {
+        "activity": "activity:semantic_merge:semantic_merged/external/zenodo__record_15008662__unique_tracks_90.csv.merged.json",
+        "entity": "semantic_task:semantic_grounding/external/zenodo__record_15008662__unique_tracks_90.csv.task.json"
+      },
+      {
+        "activity": "activity:semantic_merge:semantic_merged/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.merged.json",
+        "entity": "semantic_task:semantic_grounding/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.task.json"
+      },
+      {
+        "activity": "activity:semantic_merge:semantic_merged/internal/csv_hard_field_campaign.merged.json",
+        "entity": "semantic_task:semantic_grounding/internal/csv_hard_field_campaign.task.json"
+      },
+      {
+        "activity": "activity:semantic_merge:semantic_merged/external/external_functional_traits_7e780659c0.merged.json",
+        "entity": "semantic_task:semantic_grounding/external/external_functional_traits_7e780659c0.task.json"
+      },
+      {
+        "activity": "activity:semantic_merge:semantic_merged/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.merged.json",
+        "entity": "semantic_task:semantic_grounding/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.task.json"
+      },
+      {
+        "activity": "activity:semantic_merge:semantic_merged/internal/csv_easy_weather_stations.merged.json",
+        "entity": "semantic_task:semantic_grounding/internal/csv_easy_weather_stations.task.json"
+      },
+      {
+        "activity": "activity:evaluate_retrieval",
+        "entity": "retrieval_artifact:metadata_only"
+      },
+      {
+        "activity": "activity:evaluate_retrieval",
+        "entity": "retrieval_artifact:readme_only"
+      },
+      {
+        "activity": "activity:evaluate_retrieval",
+        "entity": "retrieval_artifact:schema_enhanced"
+      },
+      {
+        "activity": "activity:evaluate_retrieval",
+        "entity": "retrieval_artifact:schema_enhanced_deterministic"
+      },
+      {
+        "activity": "activity:evaluate_retrieval",
+        "entity": "retrieval_artifact:schema_enhanced_semantic_merged"
+      },
+      {
+        "activity": "activity:evaluate_retrieval",
+        "entity": "retrieval_artifact:queries"
+      },
+      {
+        "activity": "activity:evaluate_retrieval",
+        "entity": "retrieval_artifact:qrels"
+      }
+    ],
+    "wasGeneratedBy": [
+      {
+        "entity": "derived_schema:csv_easy_weather_stations",
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations"
+      },
+      {
+        "entity": "field:csv_easy_weather_stations:station_id",
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations"
+      },
+      {
+        "entity": "evidence:csv_easy_weather_stations:station_id:1",
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations"
+      },
+      {
+        "entity": "evidence:csv_easy_weather_stations:station_id:2",
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations"
+      },
+      {
+        "entity": "field:csv_easy_weather_stations:station_name",
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations"
+      },
+      {
+        "entity": "evidence:csv_easy_weather_stations:station_name:1",
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations"
+      },
+      {
+        "entity": "evidence:csv_easy_weather_stations:station_name:2",
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations"
+      },
+      {
+        "entity": "field:csv_easy_weather_stations:latitude_deg",
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations"
+      },
+      {
+        "entity": "evidence:csv_easy_weather_stations:latitude_deg:1",
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations"
+      },
+      {
+        "entity": "evidence:csv_easy_weather_stations:latitude_deg:2",
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations"
+      },
+      {
+        "entity": "evidence:csv_easy_weather_stations:latitude_deg:3",
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations"
+      },
+      {
+        "entity": "field:csv_easy_weather_stations:longitude_deg",
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations"
+      },
+      {
+        "entity": "evidence:csv_easy_weather_stations:longitude_deg:1",
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations"
+      },
+      {
+        "entity": "evidence:csv_easy_weather_stations:longitude_deg:2",
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations"
+      },
+      {
+        "entity": "evidence:csv_easy_weather_stations:longitude_deg:3",
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations"
+      },
+      {
+        "entity": "field:csv_easy_weather_stations:elevation_m",
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations"
+      },
+      {
+        "entity": "evidence:csv_easy_weather_stations:elevation_m:1",
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations"
+      },
+      {
+        "entity": "evidence:csv_easy_weather_stations:elevation_m:2",
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations"
+      },
+      {
+        "entity": "evidence:csv_easy_weather_stations:elevation_m:3",
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations"
+      },
+      {
+        "entity": "field:csv_easy_weather_stations:precip_mm",
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations"
+      },
+      {
+        "entity": "evidence:csv_easy_weather_stations:precip_mm:1",
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations"
+      },
+      {
+        "entity": "evidence:csv_easy_weather_stations:precip_mm:2",
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations"
+      },
+      {
+        "entity": "evidence:csv_easy_weather_stations:precip_mm:3",
+        "activity": "activity:deterministic_extraction:csv_easy_weather_stations"
+      },
+      {
+        "entity": "derived_schema:csv_hard_field_campaign",
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign"
+      },
+      {
+        "entity": "field:csv_hard_field_campaign:rec",
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign"
+      },
+      {
+        "entity": "evidence:csv_hard_field_campaign:rec:1",
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign"
+      },
+      {
+        "entity": "evidence:csv_hard_field_campaign:rec:2",
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign"
+      },
+      {
+        "entity": "field:csv_hard_field_campaign:dt_obs",
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign"
+      },
+      {
+        "entity": "evidence:csv_hard_field_campaign:dt_obs:1",
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign"
+      },
+      {
+        "entity": "evidence:csv_hard_field_campaign:dt_obs:2",
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign"
+      },
+      {
+        "entity": "field:csv_hard_field_campaign:zc",
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign"
+      },
+      {
+        "entity": "evidence:csv_hard_field_campaign:zc:1",
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign"
+      },
+      {
+        "entity": "evidence:csv_hard_field_campaign:zc:2",
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign"
+      },
+      {
+        "entity": "field:csv_hard_field_campaign:val",
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign"
+      },
+      {
+        "entity": "evidence:csv_hard_field_campaign:val:1",
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign"
+      },
+      {
+        "entity": "evidence:csv_hard_field_campaign:val:2",
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign"
+      },
+      {
+        "entity": "field:csv_hard_field_campaign:flag",
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign"
+      },
+      {
+        "entity": "evidence:csv_hard_field_campaign:flag:1",
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign"
+      },
+      {
+        "entity": "evidence:csv_hard_field_campaign:flag:2",
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign"
+      },
+      {
+        "entity": "field:csv_hard_field_campaign:device",
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign"
+      },
+      {
+        "entity": "evidence:csv_hard_field_campaign:device:1",
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign"
+      },
+      {
+        "entity": "evidence:csv_hard_field_campaign:device:2",
+        "activity": "activity:deterministic_extraction:csv_hard_field_campaign"
+      },
+      {
+        "entity": "derived_schema:csv_medium_water_quality",
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality"
+      },
+      {
+        "entity": "field:csv_medium_water_quality:sample_id",
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality"
+      },
+      {
+        "entity": "evidence:csv_medium_water_quality:sample_id:1",
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality"
+      },
+      {
+        "entity": "evidence:csv_medium_water_quality:sample_id:2",
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality"
+      },
+      {
+        "entity": "field:csv_medium_water_quality:site_code",
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality"
+      },
+      {
+        "entity": "evidence:csv_medium_water_quality:site_code:1",
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality"
+      },
+      {
+        "entity": "evidence:csv_medium_water_quality:site_code:2",
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality"
+      },
+      {
+        "entity": "field:csv_medium_water_quality:collection_date",
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality"
+      },
+      {
+        "entity": "evidence:csv_medium_water_quality:collection_date:1",
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality"
+      },
+      {
+        "entity": "evidence:csv_medium_water_quality:collection_date:2",
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality"
+      },
+      {
+        "entity": "field:csv_medium_water_quality:ph",
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality"
+      },
+      {
+        "entity": "evidence:csv_medium_water_quality:ph:1",
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality"
+      },
+      {
+        "entity": "evidence:csv_medium_water_quality:ph:2",
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality"
+      },
+      {
+        "entity": "field:csv_medium_water_quality:do_mg_l",
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality"
+      },
+      {
+        "entity": "evidence:csv_medium_water_quality:do_mg_l:1",
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality"
+      },
+      {
+        "entity": "evidence:csv_medium_water_quality:do_mg_l:2",
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality"
+      },
+      {
+        "entity": "evidence:csv_medium_water_quality:do_mg_l:3",
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality"
+      },
+      {
+        "entity": "field:csv_medium_water_quality:turbidity_ntu",
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality"
+      },
+      {
+        "entity": "evidence:csv_medium_water_quality:turbidity_ntu:1",
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality"
+      },
+      {
+        "entity": "evidence:csv_medium_water_quality:turbidity_ntu:2",
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality"
+      },
+      {
+        "entity": "evidence:csv_medium_water_quality:turbidity_ntu:3",
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality"
+      },
+      {
+        "entity": "field:csv_medium_water_quality:notes",
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality"
+      },
+      {
+        "entity": "evidence:csv_medium_water_quality:notes:1",
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality"
+      },
+      {
+        "entity": "evidence:csv_medium_water_quality:notes:2",
+        "activity": "activity:deterministic_extraction:csv_medium_water_quality"
+      },
+      {
+        "entity": "derived_schema:hdf5_easy_climate_cube",
+        "activity": "activity:deterministic_extraction:hdf5_easy_climate_cube"
+      },
+      {
+        "entity": "field:hdf5_easy_climate_cube:__coords__station_id",
+        "activity": "activity:deterministic_extraction:hdf5_easy_climate_cube"
+      },
+      {
+        "entity": "evidence:hdf5_easy_climate_cube:__coords__station_id:1",
+        "activity": "activity:deterministic_extraction:hdf5_easy_climate_cube"
+      },
+      {
+        "entity": "field:hdf5_easy_climate_cube:__coords__time",
+        "activity": "activity:deterministic_extraction:hdf5_easy_climate_cube"
+      },
+      {
+        "entity": "evidence:hdf5_easy_climate_cube:__coords__time:1",
+        "activity": "activity:deterministic_extraction:hdf5_easy_climate_cube"
+      },
+      {
+        "entity": "evidence:hdf5_easy_climate_cube:__coords__time:2",
+        "activity": "activity:deterministic_extraction:hdf5_easy_climate_cube"
+      },
+      {
+        "entity": "field:hdf5_easy_climate_cube:__observations__humidity",
+        "activity": "activity:deterministic_extraction:hdf5_easy_climate_cube"
+      },
+      {
+        "entity": "evidence:hdf5_easy_climate_cube:__observations__humidity:1",
+        "activity": "activity:deterministic_extraction:hdf5_easy_climate_cube"
+      },
+      {
+        "entity": "evidence:hdf5_easy_climate_cube:__observations__humidity:2",
+        "activity": "activity:deterministic_extraction:hdf5_easy_climate_cube"
+      },
+      {
+        "entity": "field:hdf5_easy_climate_cube:__observations__temperature",
+        "activity": "activity:deterministic_extraction:hdf5_easy_climate_cube"
+      },
+      {
+        "entity": "evidence:hdf5_easy_climate_cube:__observations__temperature:1",
+        "activity": "activity:deterministic_extraction:hdf5_easy_climate_cube"
+      },
+      {
+        "entity": "evidence:hdf5_easy_climate_cube:__observations__temperature:2",
+        "activity": "activity:deterministic_extraction:hdf5_easy_climate_cube"
+      },
+      {
+        "entity": "derived_schema:hdf5_hard_ocean_profile",
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile"
+      },
+      {
+        "entity": "field:hdf5_hard_ocean_profile:__campaign__meta__platform",
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile"
+      },
+      {
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__meta__platform:1",
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile"
+      },
+      {
+        "entity": "field:hdf5_hard_ocean_profile:__campaign__meta__station_code",
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile"
+      },
+      {
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__meta__station_code:1",
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile"
+      },
+      {
+        "entity": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__depth_m",
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile"
+      },
+      {
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__depth_m:1",
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile"
+      },
+      {
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__depth_m:2",
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile"
+      },
+      {
+        "entity": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__qc_flag",
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile"
+      },
+      {
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__qc_flag:1",
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile"
+      },
+      {
+        "entity": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__salinity_psu",
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile"
+      },
+      {
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__salinity_psu:1",
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile"
+      },
+      {
+        "entity": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__temp",
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile"
+      },
+      {
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__temp:1",
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile"
+      },
+      {
+        "entity": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__depth_m",
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile"
+      },
+      {
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__depth_m:1",
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile"
+      },
+      {
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__depth_m:2",
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile"
+      },
+      {
+        "entity": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__qc_flag",
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile"
+      },
+      {
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__qc_flag:1",
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile"
+      },
+      {
+        "entity": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__salinity_psu",
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile"
+      },
+      {
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__salinity_psu:1",
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile"
+      },
+      {
+        "entity": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__temp",
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile"
+      },
+      {
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__temp:1",
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile"
+      },
+      {
+        "entity": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__temp:2",
+        "activity": "activity:deterministic_extraction:hdf5_hard_ocean_profile"
+      },
+      {
+        "entity": "derived_schema:hdf5_medium_station_hierarchy",
+        "activity": "activity:deterministic_extraction:hdf5_medium_station_hierarchy"
+      },
+      {
+        "entity": "field:hdf5_medium_station_hierarchy:__weather__station_001__pressure",
+        "activity": "activity:deterministic_extraction:hdf5_medium_station_hierarchy"
+      },
+      {
+        "entity": "evidence:hdf5_medium_station_hierarchy:__weather__station_001__pressure:1",
+        "activity": "activity:deterministic_extraction:hdf5_medium_station_hierarchy"
+      },
+      {
+        "entity": "evidence:hdf5_medium_station_hierarchy:__weather__station_001__pressure:2",
+        "activity": "activity:deterministic_extraction:hdf5_medium_station_hierarchy"
+      },
+      {
+        "entity": "field:hdf5_medium_station_hierarchy:__weather__station_001__temp",
+        "activity": "activity:deterministic_extraction:hdf5_medium_station_hierarchy"
+      },
+      {
+        "entity": "evidence:hdf5_medium_station_hierarchy:__weather__station_001__temp:1",
+        "activity": "activity:deterministic_extraction:hdf5_medium_station_hierarchy"
+      },
+      {
+        "entity": "evidence:hdf5_medium_station_hierarchy:__weather__station_001__temp:2",
+        "activity": "activity:deterministic_extraction:hdf5_medium_station_hierarchy"
+      },
+      {
+        "entity": "field:hdf5_medium_station_hierarchy:__weather__station_002__pressure",
+        "activity": "activity:deterministic_extraction:hdf5_medium_station_hierarchy"
+      },
+      {
+        "entity": "evidence:hdf5_medium_station_hierarchy:__weather__station_002__pressure:1",
+        "activity": "activity:deterministic_extraction:hdf5_medium_station_hierarchy"
+      },
+      {
+        "entity": "field:hdf5_medium_station_hierarchy:__weather__station_002__temp",
+        "activity": "activity:deterministic_extraction:hdf5_medium_station_hierarchy"
+      },
+      {
+        "entity": "evidence:hdf5_medium_station_hierarchy:__weather__station_002__temp:1",
+        "activity": "activity:deterministic_extraction:hdf5_medium_station_hierarchy"
+      },
+      {
+        "entity": "evidence:hdf5_medium_station_hierarchy:__weather__station_002__temp:2",
+        "activity": "activity:deterministic_extraction:hdf5_medium_station_hierarchy"
+      },
+      {
+        "entity": "field:hdf5_medium_station_hierarchy:__weather__timestamp",
+        "activity": "activity:deterministic_extraction:hdf5_medium_station_hierarchy"
+      },
+      {
+        "entity": "evidence:hdf5_medium_station_hierarchy:__weather__timestamp:1",
+        "activity": "activity:deterministic_extraction:hdf5_medium_station_hierarchy"
+      },
+      {
+        "entity": "derived_schema:ts_easy_hourly_weather",
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather"
+      },
+      {
+        "entity": "field:ts_easy_hourly_weather:station_id",
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather"
+      },
+      {
+        "entity": "evidence:ts_easy_hourly_weather:station_id:1",
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather"
+      },
+      {
+        "entity": "evidence:ts_easy_hourly_weather:station_id:2",
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather"
+      },
+      {
+        "entity": "field:ts_easy_hourly_weather:timestamp",
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather"
+      },
+      {
+        "entity": "evidence:ts_easy_hourly_weather:timestamp:1",
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather"
+      },
+      {
+        "entity": "evidence:ts_easy_hourly_weather:timestamp:2",
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather"
+      },
+      {
+        "entity": "field:ts_easy_hourly_weather:temp_C",
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather"
+      },
+      {
+        "entity": "evidence:ts_easy_hourly_weather:temp_C:1",
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather"
+      },
+      {
+        "entity": "evidence:ts_easy_hourly_weather:temp_C:2",
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather"
+      },
+      {
+        "entity": "evidence:ts_easy_hourly_weather:temp_C:3",
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather"
+      },
+      {
+        "entity": "field:ts_easy_hourly_weather:humidity_pct",
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather"
+      },
+      {
+        "entity": "evidence:ts_easy_hourly_weather:humidity_pct:1",
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather"
+      },
+      {
+        "entity": "evidence:ts_easy_hourly_weather:humidity_pct:2",
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather"
+      },
+      {
+        "entity": "evidence:ts_easy_hourly_weather:humidity_pct:3",
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather"
+      },
+      {
+        "entity": "field:ts_easy_hourly_weather:wind_speed_m_s",
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather"
+      },
+      {
+        "entity": "evidence:ts_easy_hourly_weather:wind_speed_m_s:1",
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather"
+      },
+      {
+        "entity": "evidence:ts_easy_hourly_weather:wind_speed_m_s:2",
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather"
+      },
+      {
+        "entity": "evidence:ts_easy_hourly_weather:wind_speed_m_s:3",
+        "activity": "activity:deterministic_extraction:ts_easy_hourly_weather"
+      },
+      {
+        "entity": "derived_schema:ts_hard_irregular_buoy",
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy"
+      },
+      {
+        "entity": "field:ts_hard_irregular_buoy:buoy_id",
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy"
+      },
+      {
+        "entity": "evidence:ts_hard_irregular_buoy:buoy_id:1",
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy"
+      },
+      {
+        "entity": "evidence:ts_hard_irregular_buoy:buoy_id:2",
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy"
+      },
+      {
+        "entity": "field:ts_hard_irregular_buoy:event_time",
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy"
+      },
+      {
+        "entity": "evidence:ts_hard_irregular_buoy:event_time:1",
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy"
+      },
+      {
+        "entity": "evidence:ts_hard_irregular_buoy:event_time:2",
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy"
+      },
+      {
+        "entity": "field:ts_hard_irregular_buoy:temp_C",
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy"
+      },
+      {
+        "entity": "evidence:ts_hard_irregular_buoy:temp_C:1",
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy"
+      },
+      {
+        "entity": "evidence:ts_hard_irregular_buoy:temp_C:2",
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy"
+      },
+      {
+        "entity": "evidence:ts_hard_irregular_buoy:temp_C:3",
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy"
+      },
+      {
+        "entity": "field:ts_hard_irregular_buoy:salinity_psu",
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy"
+      },
+      {
+        "entity": "evidence:ts_hard_irregular_buoy:salinity_psu:1",
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy"
+      },
+      {
+        "entity": "evidence:ts_hard_irregular_buoy:salinity_psu:2",
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy"
+      },
+      {
+        "entity": "evidence:ts_hard_irregular_buoy:salinity_psu:3",
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy"
+      },
+      {
+        "entity": "field:ts_hard_irregular_buoy:qc_flag",
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy"
+      },
+      {
+        "entity": "evidence:ts_hard_irregular_buoy:qc_flag:1",
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy"
+      },
+      {
+        "entity": "evidence:ts_hard_irregular_buoy:qc_flag:2",
+        "activity": "activity:deterministic_extraction:ts_hard_irregular_buoy"
+      },
+      {
+        "entity": "derived_schema:ts_medium_power_meter",
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter"
+      },
+      {
+        "entity": "field:ts_medium_power_meter:sensor_id",
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter"
+      },
+      {
+        "entity": "evidence:ts_medium_power_meter:sensor_id:1",
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter"
+      },
+      {
+        "entity": "evidence:ts_medium_power_meter:sensor_id:2",
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter"
+      },
+      {
+        "entity": "field:ts_medium_power_meter:ts_utc",
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter"
+      },
+      {
+        "entity": "evidence:ts_medium_power_meter:ts_utc:1",
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter"
+      },
+      {
+        "entity": "evidence:ts_medium_power_meter:ts_utc:2",
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter"
+      },
+      {
+        "entity": "field:ts_medium_power_meter:power_kw",
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter"
+      },
+      {
+        "entity": "evidence:ts_medium_power_meter:power_kw:1",
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter"
+      },
+      {
+        "entity": "evidence:ts_medium_power_meter:power_kw:2",
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter"
+      },
+      {
+        "entity": "evidence:ts_medium_power_meter:power_kw:3",
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter"
+      },
+      {
+        "entity": "field:ts_medium_power_meter:voltage_v",
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter"
+      },
+      {
+        "entity": "evidence:ts_medium_power_meter:voltage_v:1",
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter"
+      },
+      {
+        "entity": "evidence:ts_medium_power_meter:voltage_v:2",
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter"
+      },
+      {
+        "entity": "evidence:ts_medium_power_meter:voltage_v:3",
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter"
+      },
+      {
+        "entity": "field:ts_medium_power_meter:status",
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter"
+      },
+      {
+        "entity": "evidence:ts_medium_power_meter:status:1",
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter"
+      },
+      {
+        "entity": "evidence:ts_medium_power_meter:status:2",
+        "activity": "activity:deterministic_extraction:ts_medium_power_meter"
+      },
+      {
+        "entity": "semantic_annotation:semantic_annotations/internal/hdf5_hard_ocean_profile.result.json",
+        "activity": "activity:semantic_annotation:semantic_annotations/internal/hdf5_hard_ocean_profile.result.json"
+      },
+      {
+        "entity": "semantic_annotation:semantic_annotations/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.result.json",
+        "activity": "activity:semantic_annotation:semantic_annotations/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.result.json"
+      },
+      {
+        "entity": "semantic_annotation:semantic_annotations/external/external_weatherMQ-FP-20261011_3f95de2293.result.json",
+        "activity": "activity:semantic_annotation:semantic_annotations/external/external_weatherMQ-FP-20261011_3f95de2293.result.json"
+      },
+      {
+        "entity": "semantic_annotation:semantic_annotations/external/zenodo__record_15008662__unique_tracks_90.csv.result.json",
+        "activity": "activity:semantic_annotation:semantic_annotations/external/zenodo__record_15008662__unique_tracks_90.csv.result.json"
+      },
+      {
+        "entity": "semantic_annotation:semantic_annotations/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.result.json",
+        "activity": "activity:semantic_annotation:semantic_annotations/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.result.json"
+      },
+      {
+        "entity": "semantic_annotation:semantic_annotations/internal/csv_hard_field_campaign.result.json",
+        "activity": "activity:semantic_annotation:semantic_annotations/internal/csv_hard_field_campaign.result.json"
+      },
+      {
+        "entity": "semantic_annotation:semantic_annotations/external/external_functional_traits_7e780659c0.result.json",
+        "activity": "activity:semantic_annotation:semantic_annotations/external/external_functional_traits_7e780659c0.result.json"
+      },
+      {
+        "entity": "semantic_annotation:semantic_annotations/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.result.json",
+        "activity": "activity:semantic_annotation:semantic_annotations/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.result.json"
+      },
+      {
+        "entity": "semantic_annotation:semantic_annotations/internal/csv_easy_weather_stations.result.json",
+        "activity": "activity:semantic_annotation:semantic_annotations/internal/csv_easy_weather_stations.result.json"
+      },
+      {
+        "entity": "semantic_merged:semantic_merged/internal/hdf5_hard_ocean_profile.merged.json",
+        "activity": "activity:semantic_merge:semantic_merged/internal/hdf5_hard_ocean_profile.merged.json"
+      },
+      {
+        "entity": "semantic_merged:semantic_merged/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.merged.json",
+        "activity": "activity:semantic_merge:semantic_merged/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.merged.json"
+      },
+      {
+        "entity": "semantic_merged:semantic_merged/external/external_weatherMQ-FP-20261011_3f95de2293.merged.json",
+        "activity": "activity:semantic_merge:semantic_merged/external/external_weatherMQ-FP-20261011_3f95de2293.merged.json"
+      },
+      {
+        "entity": "semantic_merged:semantic_merged/external/zenodo__record_15008662__unique_tracks_90.csv.merged.json",
+        "activity": "activity:semantic_merge:semantic_merged/external/zenodo__record_15008662__unique_tracks_90.csv.merged.json"
+      },
+      {
+        "entity": "semantic_merged:semantic_merged/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.merged.json",
+        "activity": "activity:semantic_merge:semantic_merged/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.merged.json"
+      },
+      {
+        "entity": "semantic_merged:semantic_merged/internal/csv_hard_field_campaign.merged.json",
+        "activity": "activity:semantic_merge:semantic_merged/internal/csv_hard_field_campaign.merged.json"
+      },
+      {
+        "entity": "semantic_merged:semantic_merged/external/external_functional_traits_7e780659c0.merged.json",
+        "activity": "activity:semantic_merge:semantic_merged/external/external_functional_traits_7e780659c0.merged.json"
+      },
+      {
+        "entity": "semantic_merged:semantic_merged/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.merged.json",
+        "activity": "activity:semantic_merge:semantic_merged/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.merged.json"
+      },
+      {
+        "entity": "semantic_merged:semantic_merged/internal/csv_easy_weather_stations.merged.json",
+        "activity": "activity:semantic_merge:semantic_merged/internal/csv_easy_weather_stations.merged.json"
+      },
+      {
+        "entity": "report:internal_baseline",
+        "activity": "activity:evaluate_internal_baseline"
+      },
+      {
+        "entity": "report:semantic_merge",
+        "activity": "activity:evaluate_semantic_merge"
+      },
+      {
+        "entity": "report:retrieval",
+        "activity": "activity:evaluate_retrieval"
+      },
+      {
+        "entity": "report:paper_tables",
+        "activity": "activity:build_paper_tables"
+      }
+    ],
+    "wasDerivedFrom": [
+      {
+        "generated": "derived_schema:csv_easy_weather_stations",
+        "source": "source_file:raw/csv/csv_easy_weather_stations/stations_precip.csv"
+      },
+      {
+        "generated": "field:csv_easy_weather_stations:station_id",
+        "source": "derived_schema:csv_easy_weather_stations"
+      },
+      {
+        "generated": "evidence:csv_easy_weather_stations:station_id:1",
+        "source": "source_file:raw/csv/csv_easy_weather_stations/stations_precip.csv"
+      },
+      {
+        "generated": "evidence:csv_easy_weather_stations:station_id:2",
+        "source": "source_file:raw/csv/csv_easy_weather_stations/stations_precip.csv"
+      },
+      {
+        "generated": "field:csv_easy_weather_stations:station_name",
+        "source": "derived_schema:csv_easy_weather_stations"
+      },
+      {
+        "generated": "evidence:csv_easy_weather_stations:station_name:1",
+        "source": "source_file:raw/csv/csv_easy_weather_stations/stations_precip.csv"
+      },
+      {
+        "generated": "evidence:csv_easy_weather_stations:station_name:2",
+        "source": "source_file:raw/csv/csv_easy_weather_stations/stations_precip.csv"
+      },
+      {
+        "generated": "field:csv_easy_weather_stations:latitude_deg",
+        "source": "derived_schema:csv_easy_weather_stations"
+      },
+      {
+        "generated": "evidence:csv_easy_weather_stations:latitude_deg:1",
+        "source": "source_file:raw/csv/csv_easy_weather_stations/stations_precip.csv"
+      },
+      {
+        "generated": "evidence:csv_easy_weather_stations:latitude_deg:2",
+        "source": "source_file:raw/csv/csv_easy_weather_stations/stations_precip.csv"
+      },
+      {
+        "generated": "evidence:csv_easy_weather_stations:latitude_deg:3",
+        "source": "source_file:raw/csv/csv_easy_weather_stations/stations_precip.csv"
+      },
+      {
+        "generated": "field:csv_easy_weather_stations:longitude_deg",
+        "source": "derived_schema:csv_easy_weather_stations"
+      },
+      {
+        "generated": "evidence:csv_easy_weather_stations:longitude_deg:1",
+        "source": "source_file:raw/csv/csv_easy_weather_stations/stations_precip.csv"
+      },
+      {
+        "generated": "evidence:csv_easy_weather_stations:longitude_deg:2",
+        "source": "source_file:raw/csv/csv_easy_weather_stations/stations_precip.csv"
+      },
+      {
+        "generated": "evidence:csv_easy_weather_stations:longitude_deg:3",
+        "source": "source_file:raw/csv/csv_easy_weather_stations/stations_precip.csv"
+      },
+      {
+        "generated": "field:csv_easy_weather_stations:elevation_m",
+        "source": "derived_schema:csv_easy_weather_stations"
+      },
+      {
+        "generated": "evidence:csv_easy_weather_stations:elevation_m:1",
+        "source": "source_file:raw/csv/csv_easy_weather_stations/stations_precip.csv"
+      },
+      {
+        "generated": "evidence:csv_easy_weather_stations:elevation_m:2",
+        "source": "source_file:raw/csv/csv_easy_weather_stations/stations_precip.csv"
+      },
+      {
+        "generated": "evidence:csv_easy_weather_stations:elevation_m:3",
+        "source": "source_file:raw/csv/csv_easy_weather_stations/stations_precip.csv"
+      },
+      {
+        "generated": "field:csv_easy_weather_stations:precip_mm",
+        "source": "derived_schema:csv_easy_weather_stations"
+      },
+      {
+        "generated": "evidence:csv_easy_weather_stations:precip_mm:1",
+        "source": "source_file:raw/csv/csv_easy_weather_stations/stations_precip.csv"
+      },
+      {
+        "generated": "evidence:csv_easy_weather_stations:precip_mm:2",
+        "source": "source_file:raw/csv/csv_easy_weather_stations/stations_precip.csv"
+      },
+      {
+        "generated": "evidence:csv_easy_weather_stations:precip_mm:3",
+        "source": "source_file:raw/csv/csv_easy_weather_stations/stations_precip.csv"
+      },
+      {
+        "generated": "derived_schema:csv_hard_field_campaign",
+        "source": "source_file:raw/csv/csv_hard_field_campaign/field_campaign.csv"
+      },
+      {
+        "generated": "field:csv_hard_field_campaign:rec",
+        "source": "derived_schema:csv_hard_field_campaign"
+      },
+      {
+        "generated": "evidence:csv_hard_field_campaign:rec:1",
+        "source": "source_file:raw/csv/csv_hard_field_campaign/field_campaign.csv"
+      },
+      {
+        "generated": "evidence:csv_hard_field_campaign:rec:2",
+        "source": "source_file:raw/csv/csv_hard_field_campaign/field_campaign.csv"
+      },
+      {
+        "generated": "field:csv_hard_field_campaign:dt_obs",
+        "source": "derived_schema:csv_hard_field_campaign"
+      },
+      {
+        "generated": "evidence:csv_hard_field_campaign:dt_obs:1",
+        "source": "source_file:raw/csv/csv_hard_field_campaign/field_campaign.csv"
+      },
+      {
+        "generated": "evidence:csv_hard_field_campaign:dt_obs:2",
+        "source": "source_file:raw/csv/csv_hard_field_campaign/field_campaign.csv"
+      },
+      {
+        "generated": "field:csv_hard_field_campaign:zc",
+        "source": "derived_schema:csv_hard_field_campaign"
+      },
+      {
+        "generated": "evidence:csv_hard_field_campaign:zc:1",
+        "source": "source_file:raw/csv/csv_hard_field_campaign/field_campaign.csv"
+      },
+      {
+        "generated": "evidence:csv_hard_field_campaign:zc:2",
+        "source": "source_file:raw/csv/csv_hard_field_campaign/field_campaign.csv"
+      },
+      {
+        "generated": "field:csv_hard_field_campaign:val",
+        "source": "derived_schema:csv_hard_field_campaign"
+      },
+      {
+        "generated": "evidence:csv_hard_field_campaign:val:1",
+        "source": "source_file:raw/csv/csv_hard_field_campaign/field_campaign.csv"
+      },
+      {
+        "generated": "evidence:csv_hard_field_campaign:val:2",
+        "source": "source_file:raw/csv/csv_hard_field_campaign/field_campaign.csv"
+      },
+      {
+        "generated": "field:csv_hard_field_campaign:flag",
+        "source": "derived_schema:csv_hard_field_campaign"
+      },
+      {
+        "generated": "evidence:csv_hard_field_campaign:flag:1",
+        "source": "source_file:raw/csv/csv_hard_field_campaign/field_campaign.csv"
+      },
+      {
+        "generated": "evidence:csv_hard_field_campaign:flag:2",
+        "source": "source_file:raw/csv/csv_hard_field_campaign/field_campaign.csv"
+      },
+      {
+        "generated": "field:csv_hard_field_campaign:device",
+        "source": "derived_schema:csv_hard_field_campaign"
+      },
+      {
+        "generated": "evidence:csv_hard_field_campaign:device:1",
+        "source": "source_file:raw/csv/csv_hard_field_campaign/field_campaign.csv"
+      },
+      {
+        "generated": "evidence:csv_hard_field_campaign:device:2",
+        "source": "source_file:raw/csv/csv_hard_field_campaign/field_campaign.csv"
+      },
+      {
+        "generated": "derived_schema:csv_medium_water_quality",
+        "source": "source_file:raw/csv/csv_medium_water_quality/water_quality.csv"
+      },
+      {
+        "generated": "field:csv_medium_water_quality:sample_id",
+        "source": "derived_schema:csv_medium_water_quality"
+      },
+      {
+        "generated": "evidence:csv_medium_water_quality:sample_id:1",
+        "source": "source_file:raw/csv/csv_medium_water_quality/water_quality.csv"
+      },
+      {
+        "generated": "evidence:csv_medium_water_quality:sample_id:2",
+        "source": "source_file:raw/csv/csv_medium_water_quality/water_quality.csv"
+      },
+      {
+        "generated": "field:csv_medium_water_quality:site_code",
+        "source": "derived_schema:csv_medium_water_quality"
+      },
+      {
+        "generated": "evidence:csv_medium_water_quality:site_code:1",
+        "source": "source_file:raw/csv/csv_medium_water_quality/water_quality.csv"
+      },
+      {
+        "generated": "evidence:csv_medium_water_quality:site_code:2",
+        "source": "source_file:raw/csv/csv_medium_water_quality/water_quality.csv"
+      },
+      {
+        "generated": "field:csv_medium_water_quality:collection_date",
+        "source": "derived_schema:csv_medium_water_quality"
+      },
+      {
+        "generated": "evidence:csv_medium_water_quality:collection_date:1",
+        "source": "source_file:raw/csv/csv_medium_water_quality/water_quality.csv"
+      },
+      {
+        "generated": "evidence:csv_medium_water_quality:collection_date:2",
+        "source": "source_file:raw/csv/csv_medium_water_quality/water_quality.csv"
+      },
+      {
+        "generated": "field:csv_medium_water_quality:ph",
+        "source": "derived_schema:csv_medium_water_quality"
+      },
+      {
+        "generated": "evidence:csv_medium_water_quality:ph:1",
+        "source": "source_file:raw/csv/csv_medium_water_quality/water_quality.csv"
+      },
+      {
+        "generated": "evidence:csv_medium_water_quality:ph:2",
+        "source": "source_file:raw/csv/csv_medium_water_quality/water_quality.csv"
+      },
+      {
+        "generated": "field:csv_medium_water_quality:do_mg_l",
+        "source": "derived_schema:csv_medium_water_quality"
+      },
+      {
+        "generated": "evidence:csv_medium_water_quality:do_mg_l:1",
+        "source": "source_file:raw/csv/csv_medium_water_quality/water_quality.csv"
+      },
+      {
+        "generated": "evidence:csv_medium_water_quality:do_mg_l:2",
+        "source": "source_file:raw/csv/csv_medium_water_quality/water_quality.csv"
+      },
+      {
+        "generated": "evidence:csv_medium_water_quality:do_mg_l:3",
+        "source": "source_file:raw/csv/csv_medium_water_quality/water_quality.csv"
+      },
+      {
+        "generated": "field:csv_medium_water_quality:turbidity_ntu",
+        "source": "derived_schema:csv_medium_water_quality"
+      },
+      {
+        "generated": "evidence:csv_medium_water_quality:turbidity_ntu:1",
+        "source": "source_file:raw/csv/csv_medium_water_quality/water_quality.csv"
+      },
+      {
+        "generated": "evidence:csv_medium_water_quality:turbidity_ntu:2",
+        "source": "source_file:raw/csv/csv_medium_water_quality/water_quality.csv"
+      },
+      {
+        "generated": "evidence:csv_medium_water_quality:turbidity_ntu:3",
+        "source": "source_file:raw/csv/csv_medium_water_quality/water_quality.csv"
+      },
+      {
+        "generated": "field:csv_medium_water_quality:notes",
+        "source": "derived_schema:csv_medium_water_quality"
+      },
+      {
+        "generated": "evidence:csv_medium_water_quality:notes:1",
+        "source": "source_file:raw/csv/csv_medium_water_quality/water_quality.csv"
+      },
+      {
+        "generated": "evidence:csv_medium_water_quality:notes:2",
+        "source": "source_file:raw/csv/csv_medium_water_quality/water_quality.csv"
+      },
+      {
+        "generated": "derived_schema:hdf5_easy_climate_cube",
+        "source": "source_file:raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5"
+      },
+      {
+        "generated": "field:hdf5_easy_climate_cube:__coords__station_id",
+        "source": "derived_schema:hdf5_easy_climate_cube"
+      },
+      {
+        "generated": "evidence:hdf5_easy_climate_cube:__coords__station_id:1",
+        "source": "source_file:raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5"
+      },
+      {
+        "generated": "field:hdf5_easy_climate_cube:__coords__time",
+        "source": "derived_schema:hdf5_easy_climate_cube"
+      },
+      {
+        "generated": "evidence:hdf5_easy_climate_cube:__coords__time:1",
+        "source": "source_file:raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5"
+      },
+      {
+        "generated": "evidence:hdf5_easy_climate_cube:__coords__time:2",
+        "source": "source_file:raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5"
+      },
+      {
+        "generated": "field:hdf5_easy_climate_cube:__observations__humidity",
+        "source": "derived_schema:hdf5_easy_climate_cube"
+      },
+      {
+        "generated": "evidence:hdf5_easy_climate_cube:__observations__humidity:1",
+        "source": "source_file:raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5"
+      },
+      {
+        "generated": "evidence:hdf5_easy_climate_cube:__observations__humidity:2",
+        "source": "source_file:raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5"
+      },
+      {
+        "generated": "field:hdf5_easy_climate_cube:__observations__temperature",
+        "source": "derived_schema:hdf5_easy_climate_cube"
+      },
+      {
+        "generated": "evidence:hdf5_easy_climate_cube:__observations__temperature:1",
+        "source": "source_file:raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5"
+      },
+      {
+        "generated": "evidence:hdf5_easy_climate_cube:__observations__temperature:2",
+        "source": "source_file:raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5"
+      },
+      {
+        "generated": "derived_schema:hdf5_hard_ocean_profile",
+        "source": "source_file:raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5"
+      },
+      {
+        "generated": "field:hdf5_hard_ocean_profile:__campaign__meta__platform",
+        "source": "derived_schema:hdf5_hard_ocean_profile"
+      },
+      {
+        "generated": "evidence:hdf5_hard_ocean_profile:__campaign__meta__platform:1",
+        "source": "source_file:raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5"
+      },
+      {
+        "generated": "field:hdf5_hard_ocean_profile:__campaign__meta__station_code",
+        "source": "derived_schema:hdf5_hard_ocean_profile"
+      },
+      {
+        "generated": "evidence:hdf5_hard_ocean_profile:__campaign__meta__station_code:1",
+        "source": "source_file:raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5"
+      },
+      {
+        "generated": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__depth_m",
+        "source": "derived_schema:hdf5_hard_ocean_profile"
+      },
+      {
+        "generated": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__depth_m:1",
+        "source": "source_file:raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5"
+      },
+      {
+        "generated": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__depth_m:2",
+        "source": "source_file:raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5"
+      },
+      {
+        "generated": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__qc_flag",
+        "source": "derived_schema:hdf5_hard_ocean_profile"
+      },
+      {
+        "generated": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__qc_flag:1",
+        "source": "source_file:raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5"
+      },
+      {
+        "generated": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__salinity_psu",
+        "source": "derived_schema:hdf5_hard_ocean_profile"
+      },
+      {
+        "generated": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__salinity_psu:1",
+        "source": "source_file:raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5"
+      },
+      {
+        "generated": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__temp",
+        "source": "derived_schema:hdf5_hard_ocean_profile"
+      },
+      {
+        "generated": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__temp:1",
+        "source": "source_file:raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5"
+      },
+      {
+        "generated": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__depth_m",
+        "source": "derived_schema:hdf5_hard_ocean_profile"
+      },
+      {
+        "generated": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__depth_m:1",
+        "source": "source_file:raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5"
+      },
+      {
+        "generated": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__depth_m:2",
+        "source": "source_file:raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5"
+      },
+      {
+        "generated": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__qc_flag",
+        "source": "derived_schema:hdf5_hard_ocean_profile"
+      },
+      {
+        "generated": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__qc_flag:1",
+        "source": "source_file:raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5"
+      },
+      {
+        "generated": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__salinity_psu",
+        "source": "derived_schema:hdf5_hard_ocean_profile"
+      },
+      {
+        "generated": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__salinity_psu:1",
+        "source": "source_file:raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5"
+      },
+      {
+        "generated": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__temp",
+        "source": "derived_schema:hdf5_hard_ocean_profile"
+      },
+      {
+        "generated": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__temp:1",
+        "source": "source_file:raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5"
+      },
+      {
+        "generated": "evidence:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__temp:2",
+        "source": "source_file:raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5"
+      },
+      {
+        "generated": "derived_schema:hdf5_medium_station_hierarchy",
+        "source": "source_file:raw/hdf5/hdf5_medium_station_hierarchy/station_hierarchy.h5"
+      },
+      {
+        "generated": "field:hdf5_medium_station_hierarchy:__weather__station_001__pressure",
+        "source": "derived_schema:hdf5_medium_station_hierarchy"
+      },
+      {
+        "generated": "evidence:hdf5_medium_station_hierarchy:__weather__station_001__pressure:1",
+        "source": "source_file:raw/hdf5/hdf5_medium_station_hierarchy/station_hierarchy.h5"
+      },
+      {
+        "generated": "evidence:hdf5_medium_station_hierarchy:__weather__station_001__pressure:2",
+        "source": "source_file:raw/hdf5/hdf5_medium_station_hierarchy/station_hierarchy.h5"
+      },
+      {
+        "generated": "field:hdf5_medium_station_hierarchy:__weather__station_001__temp",
+        "source": "derived_schema:hdf5_medium_station_hierarchy"
+      },
+      {
+        "generated": "evidence:hdf5_medium_station_hierarchy:__weather__station_001__temp:1",
+        "source": "source_file:raw/hdf5/hdf5_medium_station_hierarchy/station_hierarchy.h5"
+      },
+      {
+        "generated": "evidence:hdf5_medium_station_hierarchy:__weather__station_001__temp:2",
+        "source": "source_file:raw/hdf5/hdf5_medium_station_hierarchy/station_hierarchy.h5"
+      },
+      {
+        "generated": "field:hdf5_medium_station_hierarchy:__weather__station_002__pressure",
+        "source": "derived_schema:hdf5_medium_station_hierarchy"
+      },
+      {
+        "generated": "evidence:hdf5_medium_station_hierarchy:__weather__station_002__pressure:1",
+        "source": "source_file:raw/hdf5/hdf5_medium_station_hierarchy/station_hierarchy.h5"
+      },
+      {
+        "generated": "field:hdf5_medium_station_hierarchy:__weather__station_002__temp",
+        "source": "derived_schema:hdf5_medium_station_hierarchy"
+      },
+      {
+        "generated": "evidence:hdf5_medium_station_hierarchy:__weather__station_002__temp:1",
+        "source": "source_file:raw/hdf5/hdf5_medium_station_hierarchy/station_hierarchy.h5"
+      },
+      {
+        "generated": "evidence:hdf5_medium_station_hierarchy:__weather__station_002__temp:2",
+        "source": "source_file:raw/hdf5/hdf5_medium_station_hierarchy/station_hierarchy.h5"
+      },
+      {
+        "generated": "field:hdf5_medium_station_hierarchy:__weather__timestamp",
+        "source": "derived_schema:hdf5_medium_station_hierarchy"
+      },
+      {
+        "generated": "evidence:hdf5_medium_station_hierarchy:__weather__timestamp:1",
+        "source": "source_file:raw/hdf5/hdf5_medium_station_hierarchy/station_hierarchy.h5"
+      },
+      {
+        "generated": "derived_schema:ts_easy_hourly_weather",
+        "source": "source_file:raw/time_series/ts_easy_hourly_weather/hourly_weather.csv"
+      },
+      {
+        "generated": "field:ts_easy_hourly_weather:station_id",
+        "source": "derived_schema:ts_easy_hourly_weather"
+      },
+      {
+        "generated": "evidence:ts_easy_hourly_weather:station_id:1",
+        "source": "source_file:raw/time_series/ts_easy_hourly_weather/hourly_weather.csv"
+      },
+      {
+        "generated": "evidence:ts_easy_hourly_weather:station_id:2",
+        "source": "source_file:raw/time_series/ts_easy_hourly_weather/hourly_weather.csv"
+      },
+      {
+        "generated": "field:ts_easy_hourly_weather:timestamp",
+        "source": "derived_schema:ts_easy_hourly_weather"
+      },
+      {
+        "generated": "evidence:ts_easy_hourly_weather:timestamp:1",
+        "source": "source_file:raw/time_series/ts_easy_hourly_weather/hourly_weather.csv"
+      },
+      {
+        "generated": "evidence:ts_easy_hourly_weather:timestamp:2",
+        "source": "source_file:raw/time_series/ts_easy_hourly_weather/hourly_weather.csv"
+      },
+      {
+        "generated": "field:ts_easy_hourly_weather:temp_C",
+        "source": "derived_schema:ts_easy_hourly_weather"
+      },
+      {
+        "generated": "evidence:ts_easy_hourly_weather:temp_C:1",
+        "source": "source_file:raw/time_series/ts_easy_hourly_weather/hourly_weather.csv"
+      },
+      {
+        "generated": "evidence:ts_easy_hourly_weather:temp_C:2",
+        "source": "source_file:raw/time_series/ts_easy_hourly_weather/hourly_weather.csv"
+      },
+      {
+        "generated": "evidence:ts_easy_hourly_weather:temp_C:3",
+        "source": "source_file:raw/time_series/ts_easy_hourly_weather/hourly_weather.csv"
+      },
+      {
+        "generated": "field:ts_easy_hourly_weather:humidity_pct",
+        "source": "derived_schema:ts_easy_hourly_weather"
+      },
+      {
+        "generated": "evidence:ts_easy_hourly_weather:humidity_pct:1",
+        "source": "source_file:raw/time_series/ts_easy_hourly_weather/hourly_weather.csv"
+      },
+      {
+        "generated": "evidence:ts_easy_hourly_weather:humidity_pct:2",
+        "source": "source_file:raw/time_series/ts_easy_hourly_weather/hourly_weather.csv"
+      },
+      {
+        "generated": "evidence:ts_easy_hourly_weather:humidity_pct:3",
+        "source": "source_file:raw/time_series/ts_easy_hourly_weather/hourly_weather.csv"
+      },
+      {
+        "generated": "field:ts_easy_hourly_weather:wind_speed_m_s",
+        "source": "derived_schema:ts_easy_hourly_weather"
+      },
+      {
+        "generated": "evidence:ts_easy_hourly_weather:wind_speed_m_s:1",
+        "source": "source_file:raw/time_series/ts_easy_hourly_weather/hourly_weather.csv"
+      },
+      {
+        "generated": "evidence:ts_easy_hourly_weather:wind_speed_m_s:2",
+        "source": "source_file:raw/time_series/ts_easy_hourly_weather/hourly_weather.csv"
+      },
+      {
+        "generated": "evidence:ts_easy_hourly_weather:wind_speed_m_s:3",
+        "source": "source_file:raw/time_series/ts_easy_hourly_weather/hourly_weather.csv"
+      },
+      {
+        "generated": "derived_schema:ts_hard_irregular_buoy",
+        "source": "source_file:raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv"
+      },
+      {
+        "generated": "field:ts_hard_irregular_buoy:buoy_id",
+        "source": "derived_schema:ts_hard_irregular_buoy"
+      },
+      {
+        "generated": "evidence:ts_hard_irregular_buoy:buoy_id:1",
+        "source": "source_file:raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv"
+      },
+      {
+        "generated": "evidence:ts_hard_irregular_buoy:buoy_id:2",
+        "source": "source_file:raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv"
+      },
+      {
+        "generated": "field:ts_hard_irregular_buoy:event_time",
+        "source": "derived_schema:ts_hard_irregular_buoy"
+      },
+      {
+        "generated": "evidence:ts_hard_irregular_buoy:event_time:1",
+        "source": "source_file:raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv"
+      },
+      {
+        "generated": "evidence:ts_hard_irregular_buoy:event_time:2",
+        "source": "source_file:raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv"
+      },
+      {
+        "generated": "field:ts_hard_irregular_buoy:temp_C",
+        "source": "derived_schema:ts_hard_irregular_buoy"
+      },
+      {
+        "generated": "evidence:ts_hard_irregular_buoy:temp_C:1",
+        "source": "source_file:raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv"
+      },
+      {
+        "generated": "evidence:ts_hard_irregular_buoy:temp_C:2",
+        "source": "source_file:raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv"
+      },
+      {
+        "generated": "evidence:ts_hard_irregular_buoy:temp_C:3",
+        "source": "source_file:raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv"
+      },
+      {
+        "generated": "field:ts_hard_irregular_buoy:salinity_psu",
+        "source": "derived_schema:ts_hard_irregular_buoy"
+      },
+      {
+        "generated": "evidence:ts_hard_irregular_buoy:salinity_psu:1",
+        "source": "source_file:raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv"
+      },
+      {
+        "generated": "evidence:ts_hard_irregular_buoy:salinity_psu:2",
+        "source": "source_file:raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv"
+      },
+      {
+        "generated": "evidence:ts_hard_irregular_buoy:salinity_psu:3",
+        "source": "source_file:raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv"
+      },
+      {
+        "generated": "field:ts_hard_irregular_buoy:qc_flag",
+        "source": "derived_schema:ts_hard_irregular_buoy"
+      },
+      {
+        "generated": "evidence:ts_hard_irregular_buoy:qc_flag:1",
+        "source": "source_file:raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv"
+      },
+      {
+        "generated": "evidence:ts_hard_irregular_buoy:qc_flag:2",
+        "source": "source_file:raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv"
+      },
+      {
+        "generated": "derived_schema:ts_medium_power_meter",
+        "source": "source_file:raw/time_series/ts_medium_power_meter/power_meter.csv"
+      },
+      {
+        "generated": "field:ts_medium_power_meter:sensor_id",
+        "source": "derived_schema:ts_medium_power_meter"
+      },
+      {
+        "generated": "evidence:ts_medium_power_meter:sensor_id:1",
+        "source": "source_file:raw/time_series/ts_medium_power_meter/power_meter.csv"
+      },
+      {
+        "generated": "evidence:ts_medium_power_meter:sensor_id:2",
+        "source": "source_file:raw/time_series/ts_medium_power_meter/power_meter.csv"
+      },
+      {
+        "generated": "field:ts_medium_power_meter:ts_utc",
+        "source": "derived_schema:ts_medium_power_meter"
+      },
+      {
+        "generated": "evidence:ts_medium_power_meter:ts_utc:1",
+        "source": "source_file:raw/time_series/ts_medium_power_meter/power_meter.csv"
+      },
+      {
+        "generated": "evidence:ts_medium_power_meter:ts_utc:2",
+        "source": "source_file:raw/time_series/ts_medium_power_meter/power_meter.csv"
+      },
+      {
+        "generated": "field:ts_medium_power_meter:power_kw",
+        "source": "derived_schema:ts_medium_power_meter"
+      },
+      {
+        "generated": "evidence:ts_medium_power_meter:power_kw:1",
+        "source": "source_file:raw/time_series/ts_medium_power_meter/power_meter.csv"
+      },
+      {
+        "generated": "evidence:ts_medium_power_meter:power_kw:2",
+        "source": "source_file:raw/time_series/ts_medium_power_meter/power_meter.csv"
+      },
+      {
+        "generated": "evidence:ts_medium_power_meter:power_kw:3",
+        "source": "source_file:raw/time_series/ts_medium_power_meter/power_meter.csv"
+      },
+      {
+        "generated": "field:ts_medium_power_meter:voltage_v",
+        "source": "derived_schema:ts_medium_power_meter"
+      },
+      {
+        "generated": "evidence:ts_medium_power_meter:voltage_v:1",
+        "source": "source_file:raw/time_series/ts_medium_power_meter/power_meter.csv"
+      },
+      {
+        "generated": "evidence:ts_medium_power_meter:voltage_v:2",
+        "source": "source_file:raw/time_series/ts_medium_power_meter/power_meter.csv"
+      },
+      {
+        "generated": "evidence:ts_medium_power_meter:voltage_v:3",
+        "source": "source_file:raw/time_series/ts_medium_power_meter/power_meter.csv"
+      },
+      {
+        "generated": "field:ts_medium_power_meter:status",
+        "source": "derived_schema:ts_medium_power_meter"
+      },
+      {
+        "generated": "evidence:ts_medium_power_meter:status:1",
+        "source": "source_file:raw/time_series/ts_medium_power_meter/power_meter.csv"
+      },
+      {
+        "generated": "evidence:ts_medium_power_meter:status:2",
+        "source": "source_file:raw/time_series/ts_medium_power_meter/power_meter.csv"
+      },
+      {
+        "generated": "semantic_annotation:semantic_annotations/internal/hdf5_hard_ocean_profile.result.json",
+        "source": "semantic_task:semantic_grounding/internal/hdf5_hard_ocean_profile.task.json"
+      },
+      {
+        "generated": "semantic_annotation:semantic_annotations/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.result.json",
+        "source": "semantic_task:semantic_grounding/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.task.json"
+      },
+      {
+        "generated": "semantic_annotation:semantic_annotations/external/external_weatherMQ-FP-20261011_3f95de2293.result.json",
+        "source": "semantic_task:semantic_grounding/external/external_weatherMQ-FP-20261011_3f95de2293.task.json"
+      },
+      {
+        "generated": "semantic_annotation:semantic_annotations/external/zenodo__record_15008662__unique_tracks_90.csv.result.json",
+        "source": "semantic_task:semantic_grounding/external/zenodo__record_15008662__unique_tracks_90.csv.task.json"
+      },
+      {
+        "generated": "semantic_annotation:semantic_annotations/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.result.json",
+        "source": "semantic_task:semantic_grounding/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.task.json"
+      },
+      {
+        "generated": "semantic_annotation:semantic_annotations/internal/csv_hard_field_campaign.result.json",
+        "source": "semantic_task:semantic_grounding/internal/csv_hard_field_campaign.task.json"
+      },
+      {
+        "generated": "semantic_annotation:semantic_annotations/external/external_functional_traits_7e780659c0.result.json",
+        "source": "semantic_task:semantic_grounding/external/external_functional_traits_7e780659c0.task.json"
+      },
+      {
+        "generated": "semantic_annotation:semantic_annotations/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.result.json",
+        "source": "semantic_task:semantic_grounding/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.task.json"
+      },
+      {
+        "generated": "semantic_annotation:semantic_annotations/internal/csv_easy_weather_stations.result.json",
+        "source": "semantic_task:semantic_grounding/internal/csv_easy_weather_stations.task.json"
+      },
+      {
+        "generated": "semantic_merged:semantic_merged/internal/hdf5_hard_ocean_profile.merged.json",
+        "source": "semantic_task:semantic_grounding/internal/hdf5_hard_ocean_profile.task.json"
+      },
+      {
+        "generated": "semantic_merged:semantic_merged/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.merged.json",
+        "source": "semantic_task:semantic_grounding/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.task.json"
+      },
+      {
+        "generated": "semantic_merged:semantic_merged/external/external_weatherMQ-FP-20261011_3f95de2293.merged.json",
+        "source": "semantic_task:semantic_grounding/external/external_weatherMQ-FP-20261011_3f95de2293.task.json"
+      },
+      {
+        "generated": "semantic_merged:semantic_merged/external/zenodo__record_15008662__unique_tracks_90.csv.merged.json",
+        "source": "semantic_task:semantic_grounding/external/zenodo__record_15008662__unique_tracks_90.csv.task.json"
+      },
+      {
+        "generated": "semantic_merged:semantic_merged/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.merged.json",
+        "source": "semantic_task:semantic_grounding/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.task.json"
+      },
+      {
+        "generated": "semantic_merged:semantic_merged/internal/csv_hard_field_campaign.merged.json",
+        "source": "semantic_task:semantic_grounding/internal/csv_hard_field_campaign.task.json"
+      },
+      {
+        "generated": "semantic_merged:semantic_merged/external/external_functional_traits_7e780659c0.merged.json",
+        "source": "semantic_task:semantic_grounding/external/external_functional_traits_7e780659c0.task.json"
+      },
+      {
+        "generated": "semantic_merged:semantic_merged/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.merged.json",
+        "source": "semantic_task:semantic_grounding/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.task.json"
+      },
+      {
+        "generated": "semantic_merged:semantic_merged/internal/csv_easy_weather_stations.merged.json",
+        "source": "semantic_task:semantic_grounding/internal/csv_easy_weather_stations.task.json"
+      }
+    ],
+    "wasAttributedTo": [
+      {
+        "entity": "derived_schema:csv_easy_weather_stations",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:csv_easy_weather_stations:station_id",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:csv_easy_weather_stations:station_name",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:csv_easy_weather_stations:latitude_deg",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:csv_easy_weather_stations:longitude_deg",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:csv_easy_weather_stations:elevation_m",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:csv_easy_weather_stations:precip_mm",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "derived_schema:csv_hard_field_campaign",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:csv_hard_field_campaign:rec",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:csv_hard_field_campaign:dt_obs",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:csv_hard_field_campaign:zc",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:csv_hard_field_campaign:val",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:csv_hard_field_campaign:flag",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:csv_hard_field_campaign:device",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "derived_schema:csv_medium_water_quality",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:csv_medium_water_quality:sample_id",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:csv_medium_water_quality:site_code",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:csv_medium_water_quality:collection_date",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:csv_medium_water_quality:ph",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:csv_medium_water_quality:do_mg_l",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:csv_medium_water_quality:turbidity_ntu",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:csv_medium_water_quality:notes",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "derived_schema:hdf5_easy_climate_cube",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:hdf5_easy_climate_cube:__coords__station_id",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:hdf5_easy_climate_cube:__coords__time",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:hdf5_easy_climate_cube:__observations__humidity",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:hdf5_easy_climate_cube:__observations__temperature",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "derived_schema:hdf5_hard_ocean_profile",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:hdf5_hard_ocean_profile:__campaign__meta__platform",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:hdf5_hard_ocean_profile:__campaign__meta__station_code",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__depth_m",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__qc_flag",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__salinity_psu",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0001__temp",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__depth_m",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__qc_flag",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__salinity_psu",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:hdf5_hard_ocean_profile:__campaign__run_01__cast_0002__temp",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "derived_schema:hdf5_medium_station_hierarchy",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:hdf5_medium_station_hierarchy:__weather__station_001__pressure",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:hdf5_medium_station_hierarchy:__weather__station_001__temp",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:hdf5_medium_station_hierarchy:__weather__station_002__pressure",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:hdf5_medium_station_hierarchy:__weather__station_002__temp",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:hdf5_medium_station_hierarchy:__weather__timestamp",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "derived_schema:ts_easy_hourly_weather",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:ts_easy_hourly_weather:station_id",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:ts_easy_hourly_weather:timestamp",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:ts_easy_hourly_weather:temp_C",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:ts_easy_hourly_weather:humidity_pct",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:ts_easy_hourly_weather:wind_speed_m_s",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "derived_schema:ts_hard_irregular_buoy",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:ts_hard_irregular_buoy:buoy_id",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:ts_hard_irregular_buoy:event_time",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:ts_hard_irregular_buoy:temp_C",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:ts_hard_irregular_buoy:salinity_psu",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:ts_hard_irregular_buoy:qc_flag",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "derived_schema:ts_medium_power_meter",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:ts_medium_power_meter:sensor_id",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:ts_medium_power_meter:ts_utc",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:ts_medium_power_meter:power_kw",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:ts_medium_power_meter:voltage_v",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "field:ts_medium_power_meter:status",
+        "agent": "agent:deterministic_extractors"
+      },
+      {
+        "entity": "semantic_annotation:semantic_annotations/internal/hdf5_hard_ocean_profile.result.json",
+        "agent": "agent:semantic_annotation_model"
+      },
+      {
+        "entity": "semantic_annotation:semantic_annotations/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.result.json",
+        "agent": "agent:semantic_annotation_model"
+      },
+      {
+        "entity": "semantic_annotation:semantic_annotations/external/external_weatherMQ-FP-20261011_3f95de2293.result.json",
+        "agent": "agent:semantic_annotation_model"
+      },
+      {
+        "entity": "semantic_annotation:semantic_annotations/external/zenodo__record_15008662__unique_tracks_90.csv.result.json",
+        "agent": "agent:semantic_annotation_model"
+      },
+      {
+        "entity": "semantic_annotation:semantic_annotations/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.result.json",
+        "agent": "agent:semantic_annotation_model"
+      },
+      {
+        "entity": "semantic_annotation:semantic_annotations/internal/csv_hard_field_campaign.result.json",
+        "agent": "agent:semantic_annotation_model"
+      },
+      {
+        "entity": "semantic_annotation:semantic_annotations/external/external_functional_traits_7e780659c0.result.json",
+        "agent": "agent:semantic_annotation_model"
+      },
+      {
+        "entity": "semantic_annotation:semantic_annotations/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.result.json",
+        "agent": "agent:semantic_annotation_model"
+      },
+      {
+        "entity": "semantic_annotation:semantic_annotations/internal/csv_easy_weather_stations.result.json",
+        "agent": "agent:semantic_annotation_model"
+      },
+      {
+        "entity": "semantic_merged:semantic_merged/internal/hdf5_hard_ocean_profile.merged.json",
+        "agent": "agent:semantic_merge_policy"
+      },
+      {
+        "entity": "semantic_merged:semantic_merged/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.merged.json",
+        "agent": "agent:semantic_merge_policy"
+      },
+      {
+        "entity": "semantic_merged:semantic_merged/external/external_weatherMQ-FP-20261011_3f95de2293.merged.json",
+        "agent": "agent:semantic_merge_policy"
+      },
+      {
+        "entity": "semantic_merged:semantic_merged/external/zenodo__record_15008662__unique_tracks_90.csv.merged.json",
+        "agent": "agent:semantic_merge_policy"
+      },
+      {
+        "entity": "semantic_merged:semantic_merged/external/zenodo__record_18195710__ensensia_raw_20230728-20251202_school_5.csv.merged.json",
+        "agent": "agent:semantic_merge_policy"
+      },
+      {
+        "entity": "semantic_merged:semantic_merged/internal/csv_hard_field_campaign.merged.json",
+        "agent": "agent:semantic_merge_policy"
+      },
+      {
+        "entity": "semantic_merged:semantic_merged/external/external_functional_traits_7e780659c0.merged.json",
+        "agent": "agent:semantic_merge_policy"
+      },
+      {
+        "entity": "semantic_merged:semantic_merged/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.merged.json",
+        "agent": "agent:semantic_merge_policy"
+      },
+      {
+        "entity": "semantic_merged:semantic_merged/internal/csv_easy_weather_stations.merged.json",
+        "agent": "agent:semantic_merge_policy"
+      },
+      {
+        "entity": "report:internal_baseline",
+        "agent": "agent:evaluation_scripts"
+      },
+      {
+        "entity": "report:semantic_merge",
+        "agent": "agent:evaluation_scripts"
+      },
+      {
+        "entity": "report:retrieval",
+        "agent": "agent:evaluation_scripts"
+      },
+      {
+        "entity": "report:paper_tables",
+        "agent": "agent:paper_table_builder"
+      }
+    ]
+  }
+}

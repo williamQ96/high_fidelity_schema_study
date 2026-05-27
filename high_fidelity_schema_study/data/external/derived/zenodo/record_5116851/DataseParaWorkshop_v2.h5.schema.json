@@ -1,0 +1,115 @@
+{
+  "dataset_id": "DataseParaWorkshop_v2",
+  "file_id": "DataseParaWorkshop_v2.h5",
+  "file_format": "hdf5",
+  "data_modality": "hierarchical",
+  "fields": [
+    {
+      "field_name": "Teste",
+      "field_path": "/Teste",
+      "physical_type": "float64",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        2,
+        849,
+        7,
+        7
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5116851\\DataseParaWorkshop_v2.h5",
+          "detail": "/Teste",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "Treino",
+      "field_path": "/Treino",
+      "physical_type": "float64",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        2,
+        5840,
+        7,
+        7
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5116851\\DataseParaWorkshop_v2.h5",
+          "detail": "/Treino",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    },
+    {
+      "field_name": "Validacao",
+      "field_path": "/Validacao",
+      "physical_type": "float64",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": true,
+      "unique_ratio": null,
+      "shape": [
+        2,
+        2928,
+        7,
+        7
+      ],
+      "unit": null,
+      "description": null,
+      "example_values": [],
+      "missing_count": 0,
+      "value_range": null,
+      "source_evidence": [
+        {
+          "tier": "explicit_metadata",
+          "evidence_type": "hdf5_dataset_path",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5116851\\DataseParaWorkshop_v2.h5",
+          "detail": "/Validacao",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "h5py_structure_traversal"
+    }
+  ],
+  "groups": [],
+  "metadata": {
+    "field_count": 3,
+    "group_count": 0,
+    "extraction_errors": []
+  },
+  "notes": [],
+  "external_source": "zenodo",
+  "external_label": "single h5 workshop dataset",
+  "external_record_directory": "zenodo/record_5116851",
+  "external_source_file": "zenodo/record_5116851/DataseParaWorkshop_v2.h5"
+}

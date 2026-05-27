@@ -19,6 +19,7 @@ SCHEMA_ENHANCED_PATH = RETRIEVAL_ROOT / "schema_enhanced.json"
 SCHEMA_ENHANCED_DETERMINISTIC_PATH = RETRIEVAL_ROOT / "schema_enhanced_deterministic.json"
 SCHEMA_ENHANCED_SEMANTIC_MERGED_PATH = RETRIEVAL_ROOT / "schema_enhanced_semantic_merged.json"
 QUERIES_PATH = RETRIEVAL_ROOT / "queries.json"
+QRELS_PATH = RETRIEVAL_ROOT / "qrels.json"
 SEMANTIC_MERGED_MANIFEST_PATH = DATA_ROOT / "semantic_merged" / "manifest.json"
 
 
@@ -284,6 +285,37 @@ def build_queries(target_entries: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     ]
 
 
+def build_qrels(queries: List[Dict[str, Any]]) -> Dict[str, Any]:
+    qrels = []
+    for query in queries:
+        qrels.append(
+            {
+                "query_id": query["query_id"],
+                "candidate_id": query["expected_candidate_id"],
+                "relevance_grade": 2,
+                "relevance_label": "highly_relevant",
+                "query_source": "planted",
+                "relevance_reason": "The query was intentionally written to target this candidate in the frozen external retrieval slice.",
+            }
+        )
+    return {
+        "qrels_schema": "single_positive_planted_v1",
+        "query_count": len(queries),
+        "judgment_count": len(qrels),
+        "relevance_scale": {
+            "0": "not judged or not relevant",
+            "1": "partially relevant",
+            "2": "highly relevant planted target",
+        },
+        "limitations": [
+            "Current qrels contain one positive planted target per query.",
+            "They support controlled offline comparison, not broad real-world dataset-search robustness.",
+            "Future qrels should add graded judgments and user- or repository-inspired queries.",
+        ],
+        "qrels": qrels,
+    }
+
+
 def main() -> None:
     ensure_dir(RETRIEVAL_ROOT)
     pool_manifest = load_json(POOL_MANIFEST_PATH)
@@ -313,6 +345,7 @@ def main() -> None:
         schema_semantic_merged_docs.append(semantic_doc)
 
     queries = build_queries(target_entries)
+    qrels = build_qrels(queries)
 
     METADATA_ONLY_PATH.write_text(json.dumps({"documents": metadata_docs}, indent=2) + "\n", encoding="utf-8")
     README_ONLY_PATH.write_text(json.dumps({"documents": readme_docs}, indent=2) + "\n", encoding="utf-8")
@@ -320,6 +353,7 @@ def main() -> None:
     SCHEMA_ENHANCED_DETERMINISTIC_PATH.write_text(json.dumps({"documents": schema_deterministic_docs}, indent=2) + "\n", encoding="utf-8")
     SCHEMA_ENHANCED_SEMANTIC_MERGED_PATH.write_text(json.dumps({"documents": schema_semantic_merged_docs}, indent=2) + "\n", encoding="utf-8")
     QUERIES_PATH.write_text(json.dumps({"queries": queries}, indent=2) + "\n", encoding="utf-8")
+    QRELS_PATH.write_text(json.dumps(qrels, indent=2) + "\n", encoding="utf-8")
     ARTIFACT_MANIFEST_PATH.write_text(
         json.dumps(
             {
@@ -332,6 +366,7 @@ def main() -> None:
                     "schema_enhanced_deterministic": str(SCHEMA_ENHANCED_DETERMINISTIC_PATH.relative_to(DATA_ROOT)).replace("\\", "/"),
                     "schema_enhanced_semantic_merged": str(SCHEMA_ENHANCED_SEMANTIC_MERGED_PATH.relative_to(DATA_ROOT)).replace("\\", "/"),
                     "queries": str(QUERIES_PATH.relative_to(DATA_ROOT)).replace("\\", "/"),
+                    "qrels": str(QRELS_PATH.relative_to(DATA_ROOT)).replace("\\", "/"),
                 },
                 "notes": [
                     "The readme_only artifact is currently a README-like text baseline derived from source record descriptions and notes, because the imported Zenodo records do not provide standalone README files.",
@@ -340,6 +375,7 @@ def main() -> None:
                     "The schema_enhanced_semantic_merged artifact uses semantic_merged schemas where available and deterministic fallback otherwise.",
                     "Schema-enhanced artifacts include file-slice terms such as year1/year2 and month names to support same-family disambiguation.",
                     "This artifact bundle is built from retrieval-pool entries, which may include distractors that are not promoted benchmark targets.",
+                    "The qrels file currently records one highly relevant planted target per query.",
                 ],
             },
             indent=2,

@@ -1,0 +1,540 @@
+{
+  "report_id": "paper-result-tables-2026-05-15",
+  "generated_from": {
+    "benchmark_freeze": "docs/benchmark_freeze_2026-05-04.json",
+    "internal_baseline": "data/derived/internal_baseline_report.json",
+    "retrieval_report": "data/retrieval/external_candidate_pool/retrieval_report.json",
+    "semantic_merge_report": "data/semantic_merged/semantic_merge_report.json",
+    "derived_manifest": "data/derived/derived_manifest.json",
+    "relationship_profile": "data/derived/internal_relationship_profile.json",
+    "provenance_manifest": "data/derived/provenance_manifest.json",
+    "qrels": "data/retrieval/external_candidate_pool/qrels.json",
+    "schema_claim_model": "docs/schema_claim_model.md",
+    "benchmark_card": "docs/benchmark_card_2026-05-15.md"
+  },
+  "tables": {
+    "benchmark_slice": [
+      {
+        "measure": "Internal pilot datasets",
+        "value": 9,
+        "source": "data/pilot_corpus_manifest.json"
+      },
+      {
+        "measure": "External retrieval candidate files",
+        "value": 16,
+        "source": "data/retrieval/external_candidate_pool/pool_manifest.json"
+      },
+      {
+        "measure": "Promoted external target files",
+        "value": 10,
+        "source": "data/retrieval/external_candidate_pool/pool_manifest.json"
+      },
+      {
+        "measure": "External distractor files",
+        "value": 6,
+        "source": "data/retrieval/external_candidate_pool/pool_manifest.json"
+      },
+      {
+        "measure": "Current retrieval systems",
+        "value": 4,
+        "source": "data/retrieval/external_candidate_pool/artifact_manifest.json"
+      },
+      {
+        "measure": "Locked external field-subset regression groups",
+        "value": 3,
+        "source": "docs/benchmark_freeze_2026-05-04.json"
+      }
+    ],
+    "internal_baseline_aggregate": [
+      {
+        "metric": "physical_completeness",
+        "value": 1.0
+      },
+      {
+        "metric": "physical_accuracy",
+        "value": 0.9815
+      },
+      {
+        "metric": "logical_completeness",
+        "value": 0.963
+      },
+      {
+        "metric": "logical_accuracy",
+        "value": 0.9444
+      },
+      {
+        "metric": "semantic_completeness",
+        "value": 0.9815
+      },
+      {
+        "metric": "semantic_accuracy",
+        "value": 1.0
+      },
+      {
+        "metric": "unit_accuracy",
+        "value": 0.8889
+      },
+      {
+        "metric": "high_necessity_coverage",
+        "value": 1.0
+      },
+      {
+        "metric": "high_necessity_physical_accuracy",
+        "value": 1.0
+      },
+      {
+        "metric": "time_axis_accuracy",
+        "value": 0.6667
+      }
+    ],
+    "internal_baseline_by_category": [
+      {
+        "category": "csv",
+        "physical_completeness": 1.0,
+        "physical_accuracy": 0.9444,
+        "logical_accuracy": 0.8333,
+        "semantic_accuracy": 1.0,
+        "unit_accuracy": 0.6667,
+        "time_axis_accuracy": 1.0
+      },
+      {
+        "category": "hdf5",
+        "physical_completeness": 1.0,
+        "physical_accuracy": 1.0,
+        "logical_accuracy": 1.0,
+        "semantic_accuracy": 1.0,
+        "unit_accuracy": 1.0,
+        "time_axis_accuracy": 1.0
+      },
+      {
+        "category": "time_series",
+        "physical_completeness": 1.0,
+        "physical_accuracy": 1.0,
+        "logical_accuracy": 1.0,
+        "semantic_accuracy": 1.0,
+        "unit_accuracy": 1.0,
+        "time_axis_accuracy": 0.0
+      }
+    ],
+    "internal_error_modes": [
+      {
+        "error_mode": "time_axis_mismatch",
+        "count": 3
+      },
+      {
+        "error_mode": "unexpected_field",
+        "count": 3
+      },
+      {
+        "error_mode": "logical_unknown",
+        "count": 2
+      },
+      {
+        "error_mode": "logical_mismatch",
+        "count": 1
+      },
+      {
+        "error_mode": "physical_type_mismatch",
+        "count": 1
+      }
+    ],
+    "evidence_adequacy_summary": [
+      {
+        "metric": "Derived fields with source evidence",
+        "numerator": 53,
+        "denominator": 53,
+        "value": 1.0,
+        "interpretation": "Every deterministic field should be auditable back to file evidence."
+      },
+      {
+        "metric": "Derived fields with confidence",
+        "numerator": 53,
+        "denominator": 53,
+        "value": 1.0,
+        "interpretation": "Confidence is reported separately from correctness."
+      },
+      {
+        "metric": "Derived fields with uncertainty reason",
+        "numerator": 15,
+        "denominator": 53,
+        "value": 0.283,
+        "interpretation": "Reasons are attached when the deterministic layer is conservative."
+      },
+      {
+        "metric": "Unit claims with unit evidence",
+        "numerator": 22,
+        "denominator": 22,
+        "value": 1.0,
+        "interpretation": "Units should come from explicit metadata or deterministic name evidence."
+      },
+      {
+        "metric": "Explicit-metadata unit claims",
+        "numerator": 9,
+        "denominator": 22,
+        "value": 0.4091,
+        "interpretation": "HDF5 unit attributes are stronger than name-based unit hints."
+      },
+      {
+        "metric": "Name-inferred unit claims",
+        "numerator": 13,
+        "denominator": 22,
+        "value": 0.5909,
+        "interpretation": "CSV suffix units are useful but weaker than explicit metadata."
+      },
+      {
+        "metric": "Accepted semantic merges with support",
+        "numerator": 3,
+        "denominator": 3,
+        "value": 1.0,
+        "interpretation": "Accepted semantic merge decisions should cite supporting evidence."
+      },
+      {
+        "metric": "Unsupported accepted semantic merges",
+        "numerator": 0,
+        "denominator": 3,
+        "value": 0.0,
+        "interpretation": "This should stay at zero under the merge safety policy."
+      }
+    ],
+    "source_evidence_type_counts": [
+      {
+        "evidence_type": "column_name_unit_hint",
+        "field_count": 13
+      },
+      {
+        "evidence_type": "csv_header",
+        "field_count": 34
+      },
+      {
+        "evidence_type": "hdf5_attribute",
+        "field_count": 9
+      },
+      {
+        "evidence_type": "hdf5_dataset_path",
+        "field_count": 19
+      },
+      {
+        "evidence_type": "sample_rows",
+        "field_count": 34
+      },
+      {
+        "evidence_type": "total_evidence_records",
+        "field_count": 109
+      }
+    ],
+    "unit_normalization_status": [
+      {
+        "status": "no_unit_claim",
+        "field_count": 31,
+        "unit_claim_count": 0
+      },
+      {
+        "status": "normalized_ucum",
+        "field_count": 20,
+        "unit_claim_count": 20
+      },
+      {
+        "status": "unmapped_unit",
+        "field_count": 2,
+        "unit_claim_count": 2
+      }
+    ],
+    "unit_normalization_evidence_basis": [
+      {
+        "evidence_basis": "explicit_metadata",
+        "unit_claim_count": 9
+      },
+      {
+        "evidence_basis": "name_pattern",
+        "unit_claim_count": 13
+      }
+    ],
+    "retrieval_metrics": [
+      {
+        "system": "metadata_only",
+        "schema_source": "metadata only",
+        "query_count": 10,
+        "recall_at_1": 0.7,
+        "recall_at_3": 0.7,
+        "precision_at_1": 0.7,
+        "precision_at_3": 0.2333,
+        "mrr": 0.7617,
+        "ndcg_at_3": 0.7
+      },
+      {
+        "system": "readme_only",
+        "schema_source": "README text only",
+        "query_count": 10,
+        "recall_at_1": 0.5,
+        "recall_at_3": 0.8,
+        "precision_at_1": 0.5,
+        "precision_at_3": 0.2667,
+        "mrr": 0.661,
+        "ndcg_at_3": 0.6762
+      },
+      {
+        "system": "schema_enhanced",
+        "schema_source": "deterministic schema, compatibility alias",
+        "query_count": 10,
+        "recall_at_1": 1.0,
+        "recall_at_3": 1.0,
+        "precision_at_1": 1.0,
+        "precision_at_3": 0.3333,
+        "mrr": 1.0,
+        "ndcg_at_3": 1.0
+      },
+      {
+        "system": "schema_enhanced_deterministic",
+        "schema_source": "deterministic schema",
+        "query_count": 10,
+        "recall_at_1": 1.0,
+        "recall_at_3": 1.0,
+        "precision_at_1": 1.0,
+        "precision_at_3": 0.3333,
+        "mrr": 1.0,
+        "ndcg_at_3": 1.0
+      },
+      {
+        "system": "schema_enhanced_semantic_merged",
+        "schema_source": "semantic-merged schema",
+        "query_count": 10,
+        "recall_at_1": 1.0,
+        "recall_at_3": 1.0,
+        "precision_at_1": 1.0,
+        "precision_at_3": 0.3333,
+        "mrr": 1.0,
+        "ndcg_at_3": 1.0
+      }
+    ],
+    "retrieval_gain_vs_metadata": [
+      {
+        "system": "readme_only",
+        "recall_at_1_delta": -0.2,
+        "recall_at_3_delta": 0.1,
+        "precision_at_1_delta": -0.2,
+        "mrr_delta": -0.1007,
+        "ndcg_at_3_delta": -0.0238
+      },
+      {
+        "system": "schema_enhanced",
+        "recall_at_1_delta": 0.3,
+        "recall_at_3_delta": 0.3,
+        "precision_at_1_delta": 0.3,
+        "mrr_delta": 0.2383,
+        "ndcg_at_3_delta": 0.3
+      },
+      {
+        "system": "schema_enhanced_deterministic",
+        "recall_at_1_delta": 0.3,
+        "recall_at_3_delta": 0.3,
+        "precision_at_1_delta": 0.3,
+        "mrr_delta": 0.2383,
+        "ndcg_at_3_delta": 0.3
+      },
+      {
+        "system": "schema_enhanced_semantic_merged",
+        "recall_at_1_delta": 0.3,
+        "recall_at_3_delta": 0.3,
+        "precision_at_1_delta": 0.3,
+        "mrr_delta": 0.2383,
+        "ndcg_at_3_delta": 0.3
+      }
+    ],
+    "semantic_merge_aggregate": [
+      {
+        "dataset_count": 3,
+        "improved_dataset_count": 2,
+        "accepted_for_merge_count": 3,
+        "conflict_count": 1,
+        "mean_logical_accuracy_delta": 0.1667
+      }
+    ],
+    "semantic_merge_dataset_delta": [
+      {
+        "dataset_id": "hdf5_hard_ocean_profile",
+        "accepted_merges": 0,
+        "conflicts": 1,
+        "baseline_logical_accuracy": 1.0,
+        "merged_logical_accuracy": 1.0,
+        "logical_accuracy_delta": 0.0,
+        "baseline_semantic_accuracy": 1.0,
+        "merged_semantic_accuracy": 1.0,
+        "semantic_accuracy_delta": 0.0,
+        "baseline_unit_accuracy": 1.0,
+        "merged_unit_accuracy": 1.0,
+        "unit_accuracy_delta": 0.0
+      },
+      {
+        "dataset_id": "csv_hard_field_campaign",
+        "accepted_merges": 2,
+        "conflicts": 0,
+        "baseline_logical_accuracy": 0.6667,
+        "merged_logical_accuracy": 1.0,
+        "logical_accuracy_delta": 0.3333,
+        "baseline_semantic_accuracy": 1.0,
+        "merged_semantic_accuracy": 1.0,
+        "semantic_accuracy_delta": 0.0,
+        "baseline_unit_accuracy": 0.0,
+        "merged_unit_accuracy": 0.0,
+        "unit_accuracy_delta": 0.0
+      },
+      {
+        "dataset_id": "csv_easy_weather_stations",
+        "accepted_merges": 1,
+        "conflicts": 0,
+        "baseline_logical_accuracy": 0.8333,
+        "merged_logical_accuracy": 1.0,
+        "logical_accuracy_delta": 0.1667,
+        "baseline_semantic_accuracy": 1.0,
+        "merged_semantic_accuracy": 1.0,
+        "semantic_accuracy_delta": 0.0,
+        "baseline_unit_accuracy": 1.0,
+        "merged_unit_accuracy": 1.0,
+        "unit_accuracy_delta": 0.0
+      }
+    ],
+    "deterministic_profile_summary": [
+      {
+        "metric": "Internal datasets with deterministic profile",
+        "value": 9,
+        "interpretation": "All frozen internal pilot datasets have profile metadata."
+      },
+      {
+        "metric": "Derived fields profiled",
+        "value": 53,
+        "interpretation": "Field-level missingness and identifier checks are attached to schemas."
+      },
+      {
+        "metric": "Fields with sampled missing values",
+        "value": 1,
+        "interpretation": "Missingness is rare in the current synthetic internal slice."
+      },
+      {
+        "metric": "Total sampled missing cells",
+        "value": 2,
+        "interpretation": "Counted from deterministic file scans where rows are sampled."
+      },
+      {
+        "metric": "Identifier candidates",
+        "value": 10,
+        "interpretation": "Fields that look like identifiers by logical or semantic labels."
+      },
+      {
+        "metric": "Best identifier fields",
+        "value": 5,
+        "interpretation": "Identifier candidates with unique or group-identifier quality."
+      },
+      {
+        "metric": "Cross-file relationship candidates",
+        "value": 22,
+        "interpretation": "Deterministic candidates only; not asserted joins."
+      }
+    ],
+    "deterministic_profile_relationships": [
+      {
+        "relationship_type": "shared_identifier_semantic",
+        "count": 6
+      },
+      {
+        "relationship_type": "shared_measurement_semantic",
+        "count": 6
+      },
+      {
+        "relationship_type": "shared_temporal_semantic",
+        "count": 4
+      },
+      {
+        "relationship_type": "shared_time_axis_semantic",
+        "count": 6
+      }
+    ],
+    "provenance_summary": [
+      {
+        "metric": "dataset_count",
+        "value": 9
+      },
+      {
+        "metric": "field_entity_count",
+        "value": 53
+      },
+      {
+        "metric": "evidence_entity_count",
+        "value": 109
+      },
+      {
+        "metric": "semantic_annotation_result_count",
+        "value": 9
+      },
+      {
+        "metric": "semantic_merge_output_count",
+        "value": 9
+      },
+      {
+        "metric": "entity_count",
+        "value": 218
+      },
+      {
+        "metric": "activity_count",
+        "value": 31
+      },
+      {
+        "metric": "agent_count",
+        "value": 6
+      }
+    ],
+    "qrels_summary": [
+      {
+        "metric": "Qrels schema",
+        "value": "single_positive_planted_v1"
+      },
+      {
+        "metric": "Query count",
+        "value": 10
+      },
+      {
+        "metric": "Judgment count",
+        "value": 10
+      },
+      {
+        "metric": "Planted judgments",
+        "value": 10
+      },
+      {
+        "metric": "Highly relevant judgments",
+        "value": 10
+      },
+      {
+        "metric": "Judgment style",
+        "value": "one positive planted target per query"
+      }
+    ],
+    "locked_regression_subsets": [
+      {
+        "subset": "greenland_cod_year1",
+        "field_count": 6,
+        "fields": "Hourbin, COA_Lat, COA_Lon, Tag, Transplant, Cove"
+      },
+      {
+        "subset": "functional_traits",
+        "field_count": 2,
+        "fields": "Species, Mass.g"
+      },
+      {
+        "subset": "weatherMQ_FP",
+        "field_count": 6,
+        "fields": "dateTime, temperature, relativeHumidity, barometricPressure, rainfall, windSpeed"
+      }
+    ],
+    "known_limitations": [
+      {
+        "limitation": "Semantic-merged external fields are protected as high-confidence working annotations, not final gold references."
+      },
+      {
+        "limitation": "Perfect planted-query retrieval is not broad retrieval robustness; harder non-planted queries remain future work."
+      },
+      {
+        "limitation": "Remaining time-axis accuracy gaps should be resolved separately through deterministic profiling or evaluation logic."
+      }
+    ]
+  }
+}

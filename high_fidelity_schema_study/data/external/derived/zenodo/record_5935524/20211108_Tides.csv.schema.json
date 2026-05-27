@@ -1,0 +1,320 @@
+{
+  "dataset_id": "20211108_Tides",
+  "file_id": "20211108_Tides.csv",
+  "file_format": "csv",
+  "data_modality": "time_series",
+  "fields": [
+    {
+      "field_name": "Year",
+      "field_path": "Year",
+      "physical_type": "int",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.005,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "2021"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        2021.0,
+        2021.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Tides.csv",
+          "detail": "header='Year'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Tides.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "Month",
+      "field_path": "Month",
+      "physical_type": "int",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.005,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "11"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        11.0,
+        11.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Tides.csv",
+          "detail": "header='Month'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Tides.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "Day",
+      "field_path": "Day",
+      "physical_type": "int",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.005,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "8"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        8.0,
+        8.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Tides.csv",
+          "detail": "header='Day'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Tides.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "Hour",
+      "field_path": "Hour",
+      "physical_type": "int",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.1,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "0"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        19.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Tides.csv",
+          "detail": "header='Hour'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Tides.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "Minute",
+      "field_path": "Minute",
+      "physical_type": "int",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.05,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "0",
+        "6",
+        "12"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        54.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Tides.csv",
+          "detail": "header='Minute'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Tides.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "Second",
+      "field_path": "Second",
+      "physical_type": "int",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.005,
+      "shape": null,
+      "unit": null,
+      "description": null,
+      "example_values": [
+        "0"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        0.0,
+        0.0
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Tides.csv",
+          "detail": "header='Second'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Tides.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    },
+    {
+      "field_name": "Still_Water_Level_m",
+      "field_path": "Still_Water_Level_m",
+      "physical_type": "float",
+      "logical_type": "unknown",
+      "semantic_type": "unknown",
+      "nullable": false,
+      "unique_ratio": 0.9,
+      "shape": null,
+      "unit": "meter",
+      "description": null,
+      "example_values": [
+        "0.727000000000000",
+        "0.729000000000000",
+        "0.721000000000000"
+      ],
+      "missing_count": 0,
+      "value_range": [
+        -0.134,
+        1.301
+      ],
+      "source_evidence": [
+        {
+          "tier": "structural",
+          "evidence_type": "csv_header",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Tides.csv",
+          "detail": "header='Still_Water_Level_m'",
+          "confidence": 1.0
+        },
+        {
+          "tier": "statistical",
+          "evidence_type": "sample_rows",
+          "source": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_5935524\\20211108_Tides.csv",
+          "detail": "sampled_rows=200",
+          "confidence": 0.9
+        },
+        {
+          "tier": "structural",
+          "evidence_type": "column_name_unit_hint",
+          "source": "Still_Water_Level_m",
+          "detail": "inferred unit from column suffix: meter",
+          "confidence": 0.82
+        }
+      ],
+      "confidence": 1.0,
+      "uncertainty_reason": null,
+      "extraction_method": "csv_conservative_profiler"
+    }
+  ],
+  "groups": [],
+  "metadata": {
+    "sampled_rows": 200,
+    "column_count": 7,
+    "time_series": {
+      "time_axis": {
+        "field": "computed_from_parts",
+        "computed_from": [
+          "Year",
+          "Month",
+          "Day",
+          "Hour",
+          "Minute",
+          "Second"
+        ],
+        "type": "datetime",
+        "frequency": "6 minutes",
+        "regularity": "regular",
+        "missing_intervals": 0
+      },
+      "series_identifier": null,
+      "measurements": [
+        "Still_Water_Level_m"
+      ]
+    }
+  },
+  "notes": [],
+  "external_source_file": "zenodo/record_5935524/20211108_Tides.csv"
+}

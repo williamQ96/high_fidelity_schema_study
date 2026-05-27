@@ -30,6 +30,8 @@ class CsvExtractorTests(unittest.TestCase):
         self.assertEqual(fields["timestamp"].logical_type, "time_axis")
         self.assertEqual(fields["temp_C"].physical_type, "float")
         self.assertEqual(fields["temp_C"].unit, "Celsius")
+        self.assertEqual(fields["temp_C"].unit_normalization["status"], "normalized_ucum")
+        self.assertEqual(fields["temp_C"].unit_normalization["ucum_code"], "Cel")
         self.assertEqual(fields["temp_C"].logical_type, "measurement")
         self.assertEqual(fields["temp_C"].semantic_type, "air_temperature")
         self.assertEqual(schema.metadata["time_series"]["time_axis"]["frequency"], "1 hour")

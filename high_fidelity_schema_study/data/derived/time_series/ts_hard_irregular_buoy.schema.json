@@ -14,6 +14,13 @@
       "unique_ratio": 0.2,
       "shape": null,
       "unit": null,
+      "unit_normalization": {
+        "status": "no_unit_claim",
+        "original_unit": null,
+        "canonical_unit": null,
+        "ucum_code": null,
+        "evidence_basis": "not_applicable"
+      },
       "description": null,
       "example_values": [
         "B-17"
@@ -50,6 +57,13 @@
       "unique_ratio": 1.0,
       "shape": null,
       "unit": null,
+      "unit_normalization": {
+        "status": "no_unit_claim",
+        "original_unit": null,
+        "canonical_unit": null,
+        "ucum_code": null,
+        "evidence_basis": "not_applicable"
+      },
       "description": null,
       "example_values": [
         "2026-08-01T00:07:00",
@@ -88,6 +102,13 @@
       "unique_ratio": 1.0,
       "shape": null,
       "unit": "Celsius",
+      "unit_normalization": {
+        "status": "normalized_ucum",
+        "original_unit": "Celsius",
+        "canonical_unit": "Celsius",
+        "ucum_code": "Cel",
+        "evidence_basis": "name_pattern"
+      },
       "description": null,
       "example_values": [
         "17.4",
@@ -136,6 +157,13 @@
       "unique_ratio": 0.8,
       "shape": null,
       "unit": "PSU",
+      "unit_normalization": {
+        "status": "normalized_ucum",
+        "original_unit": "PSU",
+        "canonical_unit": "PSU",
+        "ucum_code": "{PSU}",
+        "evidence_basis": "name_pattern"
+      },
       "description": null,
       "example_values": [
         "33.2",
@@ -184,6 +212,13 @@
       "unique_ratio": 0.4,
       "shape": null,
       "unit": null,
+      "unit_normalization": {
+        "status": "no_unit_claim",
+        "original_unit": null,
+        "canonical_unit": null,
+        "ucum_code": null,
+        "evidence_basis": "not_applicable"
+      },
       "description": null,
       "example_values": [
         "A",
