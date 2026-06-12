@@ -1,0 +1,84 @@
+{
+  "agent_export_version": "1.0.0",
+  "policy": {
+    "canonical_mutation_allowed": false,
+    "silent_claim_promotion_allowed": false,
+    "suggestions_are_noncanonical": true,
+    "reruns_require_explicit_request": true
+  },
+  "schema_summary": {
+    "identity": {
+      "dataset_id": "opaque",
+      "file_id": "opaque.bin",
+      "file_format": "raw_binary",
+      "data_modality": "unknown",
+      "resource_kind": "file"
+    },
+    "outcome_status": "abstained",
+    "field_count": 0,
+    "claim_count": 0,
+    "evidence_count": 0,
+    "conflict_count": 0,
+    "abstention_count": 1,
+    "fields": []
+  },
+  "claim_records": [],
+  "evidence_records": [],
+  "provenance_graph": {
+    "entities": [
+      {
+        "id": "source:opaque.bin",
+        "type": "source_resource",
+        "file_id": "opaque.bin"
+      },
+      {
+        "id": "envelope:opaque",
+        "type": "unified_schema_envelope",
+        "version": "1.0.0"
+      }
+    ],
+    "activities": [
+      {
+        "id": "activity:deterministic_extraction",
+        "type": "deterministic_extraction",
+        "used": "source:opaque.bin",
+        "generated": "envelope:opaque"
+      },
+      {
+        "id": "activity:unified_projection",
+        "type": "deterministic_projection",
+        "generated": "envelope:opaque"
+      }
+    ],
+    "agents": [
+      {
+        "id": "extractor:none",
+        "type": "registered_extractor",
+        "version": null,
+        "determinism_class": null
+      }
+    ]
+  },
+  "retrieval_context": {
+    "title": "opaque",
+    "format": "raw_binary",
+    "field_paths": [],
+    "supported_claims": [],
+    "conflicts": [],
+    "unsupported_features": []
+  },
+  "requestable_actions": [
+    {
+      "action": "inspect_evidence",
+      "effect": "read_only"
+    },
+    {
+      "action": "suggest_noncanonical_annotation",
+      "effect": "suggestion_only"
+    },
+    {
+      "action": "request_explicit_rerun",
+      "effect": "requires_user_or_orchestrator_approval"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "status": "failed",
+  "format_decision": {
+    "selected_format": "parquet",
+    "basis": "magic",
+    "support_score": 1.0,
+    "signals": [
+      {
+        "format": "parquet",
+        "basis": "magic",
+        "support_score": 1.0,
+        "detail": "Parquet signature"
+      },
+      {
+        "format": "parquet",
+        "basis": "suffix",
+        "support_score": 0.72,
+        "detail": "filename suffix .parquet"
+      }
+    ],
+    "conflicted": false
+  },
+  "extractor": {
+    "extractor_id": "parquet_arrow_metadata_extractor",
+    "version": "0.1.0",
+    "formats": [
+      "parquet"
+    ],
+    "suffixes": [
+      ".parquet"
+    ],
+    "magic_prefixes": [
+      "50415231"
+    ],
+    "operations": [
+      "enumerate_arrow_fields",
+      "read_arrow_types",
+      "read_nullability",
+      "read_row_groups",
+      "read_encodings",
+      "read_compression",
+      "read_footer_statistics",
+      "read_key_value_metadata"
+    ],
+    "determinism_class": "strict_metadata_only",
+    "evidence_types": [
+      "arrow_schema_field",
+      "arrow_field_metadata",
+      "parquet_schema_column",
+      "parquet_row_group",
+      "parquet_column_chunk",
+      "parquet_footer_statistics"
+    ],
+    "resource_kinds": [
+      "file"
+    ]
+  },
+  "schema": null,
+  "issues": [
+    {
+      "code": "parser_error",
+      "stage": "extraction",
+      "severity": "error",
+      "message": "Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.",
+      "details": {}
+    }
+  ]
+}

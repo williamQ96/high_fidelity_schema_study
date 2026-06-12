@@ -1,0 +1,608 @@
+{
+  "agent_export_version": "1.0.0",
+  "policy": {
+    "canonical_mutation_allowed": false,
+    "silent_claim_promotion_allowed": false,
+    "suggestions_are_noncanonical": true,
+    "reruns_require_explicit_request": true
+  },
+  "schema_summary": {
+    "identity": {
+      "dataset_id": "primitives",
+      "file_id": "primitives.parquet",
+      "file_format": "parquet",
+      "data_modality": "tabular",
+      "resource_kind": "file"
+    },
+    "outcome_status": "success",
+    "field_count": 4,
+    "claim_count": 21,
+    "evidence_count": 17,
+    "conflict_count": 0,
+    "abstention_count": 0,
+    "fields": [
+      {
+        "field_path": "id",
+        "physical_type": "int64",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": false
+      },
+      {
+        "field_path": "value",
+        "physical_type": "float",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": true
+      },
+      {
+        "field_path": "label",
+        "physical_type": "string",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": true
+      },
+      {
+        "field_path": "active",
+        "physical_type": "bool",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": true
+      }
+    ]
+  },
+  "claim_records": [
+    {
+      "claim_id": "c0001",
+      "subject": "id",
+      "property": "physical_type",
+      "value": "int64",
+      "state": "supported",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0001",
+        "e0002"
+      ]
+    },
+    {
+      "claim_id": "c0002",
+      "subject": "id",
+      "property": "nullable",
+      "value": false,
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0001",
+        "e0002"
+      ]
+    },
+    {
+      "claim_id": "c0003",
+      "subject": "value",
+      "property": "physical_type",
+      "value": "float",
+      "state": "supported",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0003"
+      ]
+    },
+    {
+      "claim_id": "c0004",
+      "subject": "value",
+      "property": "nullable",
+      "value": true,
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0003"
+      ]
+    },
+    {
+      "claim_id": "c0005",
+      "subject": "label",
+      "property": "physical_type",
+      "value": "string",
+      "state": "supported",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0004"
+      ]
+    },
+    {
+      "claim_id": "c0006",
+      "subject": "label",
+      "property": "nullable",
+      "value": true,
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0004"
+      ]
+    },
+    {
+      "claim_id": "c0007",
+      "subject": "active",
+      "property": "physical_type",
+      "value": "bool",
+      "state": "supported",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0005"
+      ]
+    },
+    {
+      "claim_id": "c0008",
+      "subject": "active",
+      "property": "nullable",
+      "value": true,
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0005"
+      ]
+    },
+    {
+      "claim_id": "c0009",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "derived",
+      "reason_code": "arrow_leaf_parquet_column_ordinal",
+      "evidence_refs": [
+        "e0006"
+      ]
+    },
+    {
+      "claim_id": "c0010",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "derived",
+      "reason_code": "arrow_leaf_parquet_column_ordinal",
+      "evidence_refs": [
+        "e0007"
+      ]
+    },
+    {
+      "claim_id": "c0011",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "derived",
+      "reason_code": "arrow_leaf_parquet_column_ordinal",
+      "evidence_refs": [
+        "e0008"
+      ]
+    },
+    {
+      "claim_id": "c0012",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "derived",
+      "reason_code": "arrow_leaf_parquet_column_ordinal",
+      "evidence_refs": [
+        "e0009"
+      ]
+    },
+    {
+      "claim_id": "c0013",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": "parquet_footer_statistics",
+      "evidence_refs": [
+        "e0010"
+      ]
+    },
+    {
+      "claim_id": "c0014",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": "parquet_footer_statistics",
+      "evidence_refs": [
+        "e0011"
+      ]
+    },
+    {
+      "claim_id": "c0015",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": "parquet_footer_statistics",
+      "evidence_refs": [
+        "e0012"
+      ]
+    },
+    {
+      "claim_id": "c0016",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": "parquet_footer_statistics",
+      "evidence_refs": [
+        "e0013"
+      ]
+    },
+    {
+      "claim_id": "c0017",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": "parquet_footer_statistics",
+      "evidence_refs": [
+        "e0014"
+      ]
+    },
+    {
+      "claim_id": "c0018",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": "parquet_footer_statistics",
+      "evidence_refs": [
+        "e0015"
+      ]
+    },
+    {
+      "claim_id": "c0019",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": "parquet_footer_statistics",
+      "evidence_refs": [
+        "e0016"
+      ]
+    },
+    {
+      "claim_id": "c0020",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": "parquet_footer_statistics",
+      "evidence_refs": [
+        "e0017"
+      ]
+    },
+    {
+      "claim_id": "c0021",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "unknown",
+      "reason_code": "row_values_not_read",
+      "evidence_refs": []
+    }
+  ],
+  "evidence_records": [
+    {
+      "evidence_id": "e0001",
+      "tier": "explicit_metadata",
+      "evidence_type": "arrow_schema_field",
+      "source": "arrow_schema:id",
+      "detail": "Arrow field declaration, type, and nullability",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0002",
+      "tier": "explicit_metadata",
+      "evidence_type": "arrow_field_metadata",
+      "source": "arrow_schema:id",
+      "detail": "Arrow field key-value metadata",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0003",
+      "tier": "explicit_metadata",
+      "evidence_type": "arrow_schema_field",
+      "source": "arrow_schema:value",
+      "detail": "Arrow field declaration, type, and nullability",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0004",
+      "tier": "explicit_metadata",
+      "evidence_type": "arrow_schema_field",
+      "source": "arrow_schema:label",
+      "detail": "Arrow field declaration, type, and nullability",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0005",
+      "tier": "explicit_metadata",
+      "evidence_type": "arrow_schema_field",
+      "source": "arrow_schema:active",
+      "detail": "Arrow field declaration, type, and nullability",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0006",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "parquet_footer:schema.column[0]",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0007",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "parquet_footer:schema.column[1]",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0008",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "parquet_footer:schema.column[2]",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0009",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "parquet_footer:schema.column[3]",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0010",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "parquet_footer:row_group[0].column[0]",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0011",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "parquet_footer:row_group[0].column[1]",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0012",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "parquet_footer:row_group[0].column[2]",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0013",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "parquet_footer:row_group[0].column[3]",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0014",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "parquet_footer:row_group[1].column[0]",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0015",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "parquet_footer:row_group[1].column[1]",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0016",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "parquet_footer:row_group[1].column[2]",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0017",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "parquet_footer:row_group[1].column[3]",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    }
+  ],
+  "provenance_graph": {
+    "entities": [
+      {
+        "id": "source:primitives.parquet",
+        "type": "source_resource",
+        "file_id": "primitives.parquet"
+      },
+      {
+        "id": "envelope:primitives",
+        "type": "unified_schema_envelope",
+        "version": "1.0.0"
+      }
+    ],
+    "activities": [
+      {
+        "id": "activity:deterministic_extraction",
+        "type": "deterministic_extraction",
+        "used": "source:primitives.parquet",
+        "generated": "envelope:primitives"
+      },
+      {
+        "id": "activity:unified_projection",
+        "type": "deterministic_projection",
+        "generated": "envelope:primitives"
+      }
+    ],
+    "agents": [
+      {
+        "id": "extractor:parquet_arrow_metadata_extractor",
+        "type": "registered_extractor",
+        "version": "0.1.0",
+        "determinism_class": "strict_metadata_only"
+      }
+    ]
+  },
+  "retrieval_context": {
+    "title": "primitives",
+    "format": "parquet",
+    "field_paths": [
+      "id",
+      "value",
+      "label",
+      "active"
+    ],
+    "supported_claims": [
+      {
+        "subject": "id",
+        "property": "physical_type",
+        "value": "int64",
+        "state": "supported"
+      },
+      {
+        "subject": "id",
+        "property": "nullable",
+        "value": false,
+        "state": "supported"
+      },
+      {
+        "subject": "value",
+        "property": "physical_type",
+        "value": "float",
+        "state": "supported"
+      },
+      {
+        "subject": "value",
+        "property": "nullable",
+        "value": true,
+        "state": "supported"
+      },
+      {
+        "subject": "label",
+        "property": "physical_type",
+        "value": "string",
+        "state": "supported"
+      },
+      {
+        "subject": "label",
+        "property": "nullable",
+        "value": true,
+        "state": "supported"
+      },
+      {
+        "subject": "active",
+        "property": "physical_type",
+        "value": "bool",
+        "state": "supported"
+      },
+      {
+        "subject": "active",
+        "property": "nullable",
+        "value": true,
+        "state": "supported"
+      },
+      {
+        "subject": "dataset",
+        "property": "format_specific_claim",
+        "value": null,
+        "state": "derived"
+      },
+      {
+        "subject": "dataset",
+        "property": "format_specific_claim",
+        "value": null,
+        "state": "derived"
+      },
+      {
+        "subject": "dataset",
+        "property": "format_specific_claim",
+        "value": null,
+        "state": "derived"
+      },
+      {
+        "subject": "dataset",
+        "property": "format_specific_claim",
+        "value": null,
+        "state": "derived"
+      },
+      {
+        "subject": "dataset",
+        "property": "format_specific_claim",
+        "value": null,
+        "state": "observed"
+      },
+      {
+        "subject": "dataset",
+        "property": "format_specific_claim",
+        "value": null,
+        "state": "observed"
+      },
+      {
+        "subject": "dataset",
+        "property": "format_specific_claim",
+        "value": null,
+        "state": "observed"
+      },
+      {
+        "subject": "dataset",
+        "property": "format_specific_claim",
+        "value": null,
+        "state": "observed"
+      },
+      {
+        "subject": "dataset",
+        "property": "format_specific_claim",
+        "value": null,
+        "state": "observed"
+      },
+      {
+        "subject": "dataset",
+        "property": "format_specific_claim",
+        "value": null,
+        "state": "observed"
+      },
+      {
+        "subject": "dataset",
+        "property": "format_specific_claim",
+        "value": null,
+        "state": "observed"
+      },
+      {
+        "subject": "dataset",
+        "property": "format_specific_claim",
+        "value": null,
+        "state": "observed"
+      }
+    ],
+    "conflicts": [],
+    "unsupported_features": []
+  },
+  "requestable_actions": [
+    {
+      "action": "inspect_evidence",
+      "effect": "read_only"
+    },
+    {
+      "action": "suggest_noncanonical_annotation",
+      "effect": "suggestion_only"
+    },
+    {
+      "action": "request_explicit_rerun",
+      "effect": "requires_user_or_orchestrator_approval"
+    }
+  ]
+}

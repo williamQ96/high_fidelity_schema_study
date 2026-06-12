@@ -1,0 +1,1110 @@
+{
+  "schema_envelope_version": "1.0.0",
+  "identity": {
+    "dataset_id": "primitives",
+    "file_id": "primitives.parquet",
+    "file_format": "parquet",
+    "data_modality": "tabular",
+    "resource_kind": "file"
+  },
+  "format_detection": {
+    "selected_format": "parquet",
+    "basis": "magic",
+    "support_score": 1.0,
+    "signals": [
+      {
+        "format": "parquet",
+        "basis": "magic",
+        "support_score": 1.0,
+        "detail": "Parquet signature"
+      },
+      {
+        "format": "parquet",
+        "basis": "suffix",
+        "support_score": 0.72,
+        "detail": "filename suffix .parquet"
+      }
+    ],
+    "conflicted": false
+  },
+  "extractor_capability": {
+    "extractor_id": "parquet_arrow_metadata_extractor",
+    "version": "0.1.0",
+    "formats": [
+      "parquet"
+    ],
+    "suffixes": [
+      ".parquet"
+    ],
+    "magic_prefixes": [
+      "50415231"
+    ],
+    "operations": [
+      "enumerate_arrow_fields",
+      "read_arrow_types",
+      "read_nullability",
+      "read_row_groups",
+      "read_encodings",
+      "read_compression",
+      "read_footer_statistics",
+      "read_key_value_metadata"
+    ],
+    "determinism_class": "strict_metadata_only",
+    "evidence_types": [
+      "arrow_schema_field",
+      "arrow_field_metadata",
+      "parquet_schema_column",
+      "parquet_row_group",
+      "parquet_column_chunk",
+      "parquet_footer_statistics"
+    ],
+    "resource_kinds": [
+      "file"
+    ]
+  },
+  "outcome": {
+    "status": "success",
+    "issues": []
+  },
+  "physical_structure": {
+    "fields": [
+      {
+        "field_name": "id",
+        "field_path": "id",
+        "physical_type": "int64",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": false,
+        "unique_ratio": null,
+        "shape": null,
+        "unit": null,
+        "unit_normalization": null,
+        "description": null,
+        "example_values": [],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "arrow_schema_field",
+            "source": "arrow_schema:id",
+            "detail": "Arrow field declaration, type, and nullability",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "arrow_field_metadata",
+            "source": "arrow_schema:id",
+            "detail": "Arrow field key-value metadata",
+            "confidence": 1.0
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "parquet_footer_arrow_schema"
+      },
+      {
+        "field_name": "value",
+        "field_path": "value",
+        "physical_type": "float",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": true,
+        "unique_ratio": null,
+        "shape": null,
+        "unit": null,
+        "unit_normalization": null,
+        "description": null,
+        "example_values": [],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "arrow_schema_field",
+            "source": "arrow_schema:value",
+            "detail": "Arrow field declaration, type, and nullability",
+            "confidence": 1.0
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "parquet_footer_arrow_schema"
+      },
+      {
+        "field_name": "label",
+        "field_path": "label",
+        "physical_type": "string",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": true,
+        "unique_ratio": null,
+        "shape": null,
+        "unit": null,
+        "unit_normalization": null,
+        "description": null,
+        "example_values": [],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "arrow_schema_field",
+            "source": "arrow_schema:label",
+            "detail": "Arrow field declaration, type, and nullability",
+            "confidence": 1.0
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "parquet_footer_arrow_schema"
+      },
+      {
+        "field_name": "active",
+        "field_path": "active",
+        "physical_type": "bool",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": true,
+        "unique_ratio": null,
+        "shape": null,
+        "unit": null,
+        "unit_normalization": null,
+        "description": null,
+        "example_values": [],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "arrow_schema_field",
+            "source": "arrow_schema:active",
+            "detail": "Arrow field declaration, type, and nullability",
+            "confidence": 1.0
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "parquet_footer_arrow_schema"
+      }
+    ],
+    "groups": [],
+    "dimensions": {},
+    "format_specific": {
+      "parquet_analysis": {
+        "arrow_fields": [
+          {
+            "field_path": "id",
+            "parent_path": null,
+            "name": "id",
+            "nullable": false,
+            "metadata": {
+              "role": "identifier"
+            },
+            "type": {
+              "arrow_type": "int64",
+              "type_id": "9"
+            },
+            "container": false,
+            "leaf": true,
+            "evidence_refs": [
+              "arrow_schema:id",
+              "parquet_footer:schema.column[0]"
+            ],
+            "parquet_column": {
+              "column_index": 0,
+              "path": "id",
+              "name": "id",
+              "physical_type": "INT64",
+              "logical_type": "None",
+              "converted_type": "NONE",
+              "max_definition_level": 0,
+              "max_repetition_level": 0,
+              "evidence_refs": [
+                "parquet_footer:schema.column[0]"
+              ]
+            },
+            "physical_path_mapping": {
+              "state": "derived",
+              "reason_code": "arrow_leaf_parquet_column_ordinal",
+              "arrow_path": "id",
+              "parquet_path": "id",
+              "evidence_refs": [
+                "parquet_footer:schema.column[0]"
+              ]
+            }
+          },
+          {
+            "field_path": "value",
+            "parent_path": null,
+            "name": "value",
+            "nullable": true,
+            "metadata": {},
+            "type": {
+              "arrow_type": "float",
+              "type_id": "11"
+            },
+            "container": false,
+            "leaf": true,
+            "evidence_refs": [
+              "arrow_schema:value",
+              "parquet_footer:schema.column[1]"
+            ],
+            "parquet_column": {
+              "column_index": 1,
+              "path": "value",
+              "name": "value",
+              "physical_type": "FLOAT",
+              "logical_type": "None",
+              "converted_type": "NONE",
+              "max_definition_level": 1,
+              "max_repetition_level": 0,
+              "evidence_refs": [
+                "parquet_footer:schema.column[1]"
+              ]
+            },
+            "physical_path_mapping": {
+              "state": "derived",
+              "reason_code": "arrow_leaf_parquet_column_ordinal",
+              "arrow_path": "value",
+              "parquet_path": "value",
+              "evidence_refs": [
+                "parquet_footer:schema.column[1]"
+              ]
+            }
+          },
+          {
+            "field_path": "label",
+            "parent_path": null,
+            "name": "label",
+            "nullable": true,
+            "metadata": {},
+            "type": {
+              "arrow_type": "string",
+              "type_id": "13"
+            },
+            "container": false,
+            "leaf": true,
+            "evidence_refs": [
+              "arrow_schema:label",
+              "parquet_footer:schema.column[2]"
+            ],
+            "parquet_column": {
+              "column_index": 2,
+              "path": "label",
+              "name": "label",
+              "physical_type": "BYTE_ARRAY",
+              "logical_type": "String",
+              "converted_type": "UTF8",
+              "max_definition_level": 1,
+              "max_repetition_level": 0,
+              "evidence_refs": [
+                "parquet_footer:schema.column[2]"
+              ]
+            },
+            "physical_path_mapping": {
+              "state": "derived",
+              "reason_code": "arrow_leaf_parquet_column_ordinal",
+              "arrow_path": "label",
+              "parquet_path": "label",
+              "evidence_refs": [
+                "parquet_footer:schema.column[2]"
+              ]
+            }
+          },
+          {
+            "field_path": "active",
+            "parent_path": null,
+            "name": "active",
+            "nullable": true,
+            "metadata": {},
+            "type": {
+              "arrow_type": "bool",
+              "type_id": "1"
+            },
+            "container": false,
+            "leaf": true,
+            "evidence_refs": [
+              "arrow_schema:active",
+              "parquet_footer:schema.column[3]"
+            ],
+            "parquet_column": {
+              "column_index": 3,
+              "path": "active",
+              "name": "active",
+              "physical_type": "BOOLEAN",
+              "logical_type": "None",
+              "converted_type": "NONE",
+              "max_definition_level": 1,
+              "max_repetition_level": 0,
+              "evidence_refs": [
+                "parquet_footer:schema.column[3]"
+              ]
+            },
+            "physical_path_mapping": {
+              "state": "derived",
+              "reason_code": "arrow_leaf_parquet_column_ordinal",
+              "arrow_path": "active",
+              "parquet_path": "active",
+              "evidence_refs": [
+                "parquet_footer:schema.column[3]"
+              ]
+            }
+          }
+        ],
+        "parquet_columns": [
+          {
+            "column_index": 0,
+            "path": "id",
+            "name": "id",
+            "physical_type": "INT64",
+            "logical_type": "None",
+            "converted_type": "NONE",
+            "max_definition_level": 0,
+            "max_repetition_level": 0,
+            "evidence_refs": [
+              "parquet_footer:schema.column[0]"
+            ]
+          },
+          {
+            "column_index": 1,
+            "path": "value",
+            "name": "value",
+            "physical_type": "FLOAT",
+            "logical_type": "None",
+            "converted_type": "NONE",
+            "max_definition_level": 1,
+            "max_repetition_level": 0,
+            "evidence_refs": [
+              "parquet_footer:schema.column[1]"
+            ]
+          },
+          {
+            "column_index": 2,
+            "path": "label",
+            "name": "label",
+            "physical_type": "BYTE_ARRAY",
+            "logical_type": "String",
+            "converted_type": "UTF8",
+            "max_definition_level": 1,
+            "max_repetition_level": 0,
+            "evidence_refs": [
+              "parquet_footer:schema.column[2]"
+            ]
+          },
+          {
+            "column_index": 3,
+            "path": "active",
+            "name": "active",
+            "physical_type": "BOOLEAN",
+            "logical_type": "None",
+            "converted_type": "NONE",
+            "max_definition_level": 1,
+            "max_repetition_level": 0,
+            "evidence_refs": [
+              "parquet_footer:schema.column[3]"
+            ]
+          }
+        ],
+        "row_groups": [
+          {
+            "row_group_index": 0,
+            "num_rows": 2,
+            "total_byte_size": 278,
+            "sorting_columns": [],
+            "columns": [
+              {
+                "column_index": 0,
+                "path": "id",
+                "physical_type": "INT64",
+                "compression": "SNAPPY",
+                "encodings": [
+                  "PLAIN",
+                  "RLE",
+                  "RLE_DICTIONARY"
+                ],
+                "num_values": 2,
+                "total_compressed_size": 100,
+                "total_uncompressed_size": 96,
+                "statistics": {
+                  "state": "observed",
+                  "reason_code": "parquet_footer_statistics",
+                  "source": "parquet_footer",
+                  "evidence_refs": [
+                    "parquet_footer:row_group[0].column[0]"
+                  ],
+                  "has_min_max": true,
+                  "null_count": 0,
+                  "distinct_count": null,
+                  "num_values": 2,
+                  "physical_type": "INT64",
+                  "min_raw": 1,
+                  "max_raw": 2,
+                  "min": 1,
+                  "max": 2
+                },
+                "evidence_refs": [
+                  "parquet_footer:row_group[0].column[0]"
+                ]
+              },
+              {
+                "column_index": 1,
+                "path": "value",
+                "physical_type": "FLOAT",
+                "compression": "SNAPPY",
+                "encodings": [
+                  "PLAIN",
+                  "RLE",
+                  "RLE_DICTIONARY"
+                ],
+                "num_values": 2,
+                "total_compressed_size": 82,
+                "total_uncompressed_size": 78,
+                "statistics": {
+                  "state": "observed",
+                  "reason_code": "parquet_footer_statistics",
+                  "source": "parquet_footer",
+                  "evidence_refs": [
+                    "parquet_footer:row_group[0].column[1]"
+                  ],
+                  "has_min_max": true,
+                  "null_count": 0,
+                  "distinct_count": null,
+                  "num_values": 2,
+                  "physical_type": "FLOAT",
+                  "min_raw": 1.5,
+                  "max_raw": 2.5,
+                  "min": 1.5,
+                  "max": 2.5
+                },
+                "evidence_refs": [
+                  "parquet_footer:row_group[0].column[1]"
+                ]
+              },
+              {
+                "column_index": 2,
+                "path": "label",
+                "physical_type": "BYTE_ARRAY",
+                "compression": "SNAPPY",
+                "encodings": [
+                  "PLAIN",
+                  "RLE",
+                  "RLE_DICTIONARY"
+                ],
+                "num_values": 2,
+                "total_compressed_size": 66,
+                "total_uncompressed_size": 62,
+                "statistics": {
+                  "state": "observed",
+                  "reason_code": "parquet_footer_statistics",
+                  "source": "parquet_footer",
+                  "evidence_refs": [
+                    "parquet_footer:row_group[0].column[2]"
+                  ],
+                  "has_min_max": true,
+                  "null_count": 0,
+                  "distinct_count": null,
+                  "num_values": 2,
+                  "physical_type": "BYTE_ARRAY",
+                  "min_raw": "a",
+                  "max_raw": "b",
+                  "min": "a",
+                  "max": "b"
+                },
+                "evidence_refs": [
+                  "parquet_footer:row_group[0].column[2]"
+                ]
+              },
+              {
+                "column_index": 3,
+                "path": "active",
+                "physical_type": "BOOLEAN",
+                "compression": "SNAPPY",
+                "encodings": [
+                  "RLE",
+                  "PLAIN"
+                ],
+                "num_values": 2,
+                "total_compressed_size": 44,
+                "total_uncompressed_size": 42,
+                "statistics": {
+                  "state": "observed",
+                  "reason_code": "parquet_footer_statistics",
+                  "source": "parquet_footer",
+                  "evidence_refs": [
+                    "parquet_footer:row_group[0].column[3]"
+                  ],
+                  "has_min_max": true,
+                  "null_count": 0,
+                  "distinct_count": null,
+                  "num_values": 2,
+                  "physical_type": "BOOLEAN",
+                  "min_raw": false,
+                  "max_raw": true,
+                  "min": false,
+                  "max": true
+                },
+                "evidence_refs": [
+                  "parquet_footer:row_group[0].column[3]"
+                ]
+              }
+            ],
+            "evidence_refs": [
+              "parquet_footer:row_group[0]"
+            ]
+          },
+          {
+            "row_group_index": 1,
+            "num_rows": 2,
+            "total_byte_size": 269,
+            "sorting_columns": [],
+            "columns": [
+              {
+                "column_index": 0,
+                "path": "id",
+                "physical_type": "INT64",
+                "compression": "SNAPPY",
+                "encodings": [
+                  "PLAIN",
+                  "RLE",
+                  "RLE_DICTIONARY"
+                ],
+                "num_values": 2,
+                "total_compressed_size": 100,
+                "total_uncompressed_size": 96,
+                "statistics": {
+                  "state": "observed",
+                  "reason_code": "parquet_footer_statistics",
+                  "source": "parquet_footer",
+                  "evidence_refs": [
+                    "parquet_footer:row_group[1].column[0]"
+                  ],
+                  "has_min_max": true,
+                  "null_count": 0,
+                  "distinct_count": null,
+                  "num_values": 2,
+                  "physical_type": "INT64",
+                  "min_raw": 3,
+                  "max_raw": 4,
+                  "min": 3,
+                  "max": 4
+                },
+                "evidence_refs": [
+                  "parquet_footer:row_group[1].column[0]"
+                ]
+              },
+              {
+                "column_index": 1,
+                "path": "value",
+                "physical_type": "FLOAT",
+                "compression": "SNAPPY",
+                "encodings": [
+                  "PLAIN",
+                  "RLE",
+                  "RLE_DICTIONARY"
+                ],
+                "num_values": 2,
+                "total_compressed_size": 78,
+                "total_uncompressed_size": 74,
+                "statistics": {
+                  "state": "observed",
+                  "reason_code": "parquet_footer_statistics",
+                  "source": "parquet_footer",
+                  "evidence_refs": [
+                    "parquet_footer:row_group[1].column[1]"
+                  ],
+                  "has_min_max": true,
+                  "null_count": 1,
+                  "distinct_count": null,
+                  "num_values": 1,
+                  "physical_type": "FLOAT",
+                  "min_raw": 4.5,
+                  "max_raw": 4.5,
+                  "min": 4.5,
+                  "max": 4.5
+                },
+                "evidence_refs": [
+                  "parquet_footer:row_group[1].column[1]"
+                ]
+              },
+              {
+                "column_index": 2,
+                "path": "label",
+                "physical_type": "BYTE_ARRAY",
+                "compression": "SNAPPY",
+                "encodings": [
+                  "PLAIN",
+                  "RLE",
+                  "RLE_DICTIONARY"
+                ],
+                "num_values": 2,
+                "total_compressed_size": 61,
+                "total_uncompressed_size": 57,
+                "statistics": {
+                  "state": "observed",
+                  "reason_code": "parquet_footer_statistics",
+                  "source": "parquet_footer",
+                  "evidence_refs": [
+                    "parquet_footer:row_group[1].column[2]"
+                  ],
+                  "has_min_max": true,
+                  "null_count": 1,
+                  "distinct_count": null,
+                  "num_values": 1,
+                  "physical_type": "BYTE_ARRAY",
+                  "min_raw": "b",
+                  "max_raw": "b",
+                  "min": "b",
+                  "max": "b"
+                },
+                "evidence_refs": [
+                  "parquet_footer:row_group[1].column[2]"
+                ]
+              },
+              {
+                "column_index": 3,
+                "path": "active",
+                "physical_type": "BOOLEAN",
+                "compression": "SNAPPY",
+                "encodings": [
+                  "RLE",
+                  "PLAIN"
+                ],
+                "num_values": 2,
+                "total_compressed_size": 44,
+                "total_uncompressed_size": 42,
+                "statistics": {
+                  "state": "observed",
+                  "reason_code": "parquet_footer_statistics",
+                  "source": "parquet_footer",
+                  "evidence_refs": [
+                    "parquet_footer:row_group[1].column[3]"
+                  ],
+                  "has_min_max": true,
+                  "null_count": 0,
+                  "distinct_count": null,
+                  "num_values": 2,
+                  "physical_type": "BOOLEAN",
+                  "min_raw": true,
+                  "max_raw": true,
+                  "min": true,
+                  "max": true
+                },
+                "evidence_refs": [
+                  "parquet_footer:row_group[1].column[3]"
+                ]
+              }
+            ],
+            "evidence_refs": [
+              "parquet_footer:row_group[1]"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "logical_roles": [],
+  "semantic_hints": [],
+  "units": [],
+  "temporal_semantics": {},
+  "relationships": {
+    "dimensions": {},
+    "groups": []
+  },
+  "claims": [
+    {
+      "claim_id": "c0001",
+      "subject": "id",
+      "property": "physical_type",
+      "value": "int64",
+      "state": "supported",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0001",
+        "e0002"
+      ]
+    },
+    {
+      "claim_id": "c0002",
+      "subject": "id",
+      "property": "nullable",
+      "value": false,
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0001",
+        "e0002"
+      ]
+    },
+    {
+      "claim_id": "c0003",
+      "subject": "value",
+      "property": "physical_type",
+      "value": "float",
+      "state": "supported",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0003"
+      ]
+    },
+    {
+      "claim_id": "c0004",
+      "subject": "value",
+      "property": "nullable",
+      "value": true,
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0003"
+      ]
+    },
+    {
+      "claim_id": "c0005",
+      "subject": "label",
+      "property": "physical_type",
+      "value": "string",
+      "state": "supported",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0004"
+      ]
+    },
+    {
+      "claim_id": "c0006",
+      "subject": "label",
+      "property": "nullable",
+      "value": true,
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0004"
+      ]
+    },
+    {
+      "claim_id": "c0007",
+      "subject": "active",
+      "property": "physical_type",
+      "value": "bool",
+      "state": "supported",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0005"
+      ]
+    },
+    {
+      "claim_id": "c0008",
+      "subject": "active",
+      "property": "nullable",
+      "value": true,
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0005"
+      ]
+    },
+    {
+      "claim_id": "c0009",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "derived",
+      "reason_code": "arrow_leaf_parquet_column_ordinal",
+      "evidence_refs": [
+        "e0006"
+      ]
+    },
+    {
+      "claim_id": "c0010",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "derived",
+      "reason_code": "arrow_leaf_parquet_column_ordinal",
+      "evidence_refs": [
+        "e0007"
+      ]
+    },
+    {
+      "claim_id": "c0011",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "derived",
+      "reason_code": "arrow_leaf_parquet_column_ordinal",
+      "evidence_refs": [
+        "e0008"
+      ]
+    },
+    {
+      "claim_id": "c0012",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "derived",
+      "reason_code": "arrow_leaf_parquet_column_ordinal",
+      "evidence_refs": [
+        "e0009"
+      ]
+    },
+    {
+      "claim_id": "c0013",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": "parquet_footer_statistics",
+      "evidence_refs": [
+        "e0010"
+      ]
+    },
+    {
+      "claim_id": "c0014",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": "parquet_footer_statistics",
+      "evidence_refs": [
+        "e0011"
+      ]
+    },
+    {
+      "claim_id": "c0015",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": "parquet_footer_statistics",
+      "evidence_refs": [
+        "e0012"
+      ]
+    },
+    {
+      "claim_id": "c0016",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": "parquet_footer_statistics",
+      "evidence_refs": [
+        "e0013"
+      ]
+    },
+    {
+      "claim_id": "c0017",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": "parquet_footer_statistics",
+      "evidence_refs": [
+        "e0014"
+      ]
+    },
+    {
+      "claim_id": "c0018",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": "parquet_footer_statistics",
+      "evidence_refs": [
+        "e0015"
+      ]
+    },
+    {
+      "claim_id": "c0019",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": "parquet_footer_statistics",
+      "evidence_refs": [
+        "e0016"
+      ]
+    },
+    {
+      "claim_id": "c0020",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": "parquet_footer_statistics",
+      "evidence_refs": [
+        "e0017"
+      ]
+    },
+    {
+      "claim_id": "c0021",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "unknown",
+      "reason_code": "row_values_not_read",
+      "evidence_refs": []
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "e0001",
+      "tier": "explicit_metadata",
+      "evidence_type": "arrow_schema_field",
+      "source": "arrow_schema:id",
+      "detail": "Arrow field declaration, type, and nullability",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0002",
+      "tier": "explicit_metadata",
+      "evidence_type": "arrow_field_metadata",
+      "source": "arrow_schema:id",
+      "detail": "Arrow field key-value metadata",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0003",
+      "tier": "explicit_metadata",
+      "evidence_type": "arrow_schema_field",
+      "source": "arrow_schema:value",
+      "detail": "Arrow field declaration, type, and nullability",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0004",
+      "tier": "explicit_metadata",
+      "evidence_type": "arrow_schema_field",
+      "source": "arrow_schema:label",
+      "detail": "Arrow field declaration, type, and nullability",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0005",
+      "tier": "explicit_metadata",
+      "evidence_type": "arrow_schema_field",
+      "source": "arrow_schema:active",
+      "detail": "Arrow field declaration, type, and nullability",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0006",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "parquet_footer:schema.column[0]",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0007",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "parquet_footer:schema.column[1]",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0008",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "parquet_footer:schema.column[2]",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0009",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "parquet_footer:schema.column[3]",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0010",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "parquet_footer:row_group[0].column[0]",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0011",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "parquet_footer:row_group[0].column[1]",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0012",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "parquet_footer:row_group[0].column[2]",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0013",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "parquet_footer:row_group[0].column[3]",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0014",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "parquet_footer:row_group[1].column[0]",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0015",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "parquet_footer:row_group[1].column[1]",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0016",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "parquet_footer:row_group[1].column[2]",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0017",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "parquet_footer:row_group[1].column[3]",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    }
+  ],
+  "provenance": {
+    "source_file_id": "primitives.parquet",
+    "extractor_id": "parquet_arrow_metadata_extractor",
+    "extractor_version": "0.1.0",
+    "determinism_class": "strict_metadata_only",
+    "transformation": "deterministic_unified_envelope_projection"
+  },
+  "conflicts": [],
+  "abstentions": [],
+  "unsupported_features": [],
+  "evaluation_metadata": {
+    "claim_state_vocabulary": [
+      "observed",
+      "declared",
+      "derived",
+      "supported",
+      "conflicted",
+      "unknown",
+      "unsupported",
+      "abstained"
+    ],
+    "source_outcome_status": "success",
+    "backward_compatibility": "Legacy ExtractionOutcome.schema remains authoritative and unchanged.",
+    "claim_boundary": "The envelope normalizes existing extractor claims; it does not promote new semantic truth."
+  }
+}

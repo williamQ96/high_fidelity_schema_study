@@ -1,0 +1,15 @@
+{
+  "zarr_format": 2,
+  "shape": [
+    3
+  ],
+  "chunks": [
+    3
+  ],
+  "dtype": "<f8",
+  "compressor": null,
+  "fill_value": null,
+  "order": "C",
+  "filters": null,
+  "dimension_separator": "."
+}

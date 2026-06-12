@@ -1,0 +1,534 @@
+{
+  "status": "success",
+  "format_decision": {
+    "selected_format": "zarr",
+    "basis": "zarr_store_metadata",
+    "support_score": 1.0,
+    "signals": [
+      {
+        "format": "zarr",
+        "basis": "zarr_store_metadata",
+        "support_score": 1.0,
+        "detail": "Zarr store metadata documents: .zgroup"
+      },
+      {
+        "format": "zarr",
+        "basis": "suffix",
+        "support_score": 0.72,
+        "detail": "filename suffix .zarr"
+      }
+    ],
+    "conflicted": false
+  },
+  "extractor": {
+    "extractor_id": "zarr_v2_metadata_extractor",
+    "version": "0.2.0",
+    "formats": [
+      "zarr"
+    ],
+    "suffixes": [
+      ".zarr"
+    ],
+    "magic_prefixes": [],
+    "operations": [
+      "enumerate_groups",
+      "enumerate_arrays",
+      "read_array_metadata",
+      "read_attributes",
+      "interpret_xarray_dimensions",
+      "interpret_cf_coordinates"
+    ],
+    "determinism_class": "strict_metadata_only",
+    "evidence_types": [
+      "zarr_group_metadata",
+      "zarr_array_metadata",
+      "zarr_attribute",
+      "zarr_consolidated_metadata"
+    ],
+    "resource_kinds": [
+      "directory_store"
+    ]
+  },
+  "schema": {
+    "dataset_id": "xarray_coordinates",
+    "file_id": "xarray_coordinates.zarr",
+    "file_format": "zarr",
+    "data_modality": "multidimensional",
+    "fields": [
+      {
+        "field_name": "lat",
+        "field_path": "lat",
+        "physical_type": "<f4",
+        "logical_type": "coordinate",
+        "semantic_type": "latitude",
+        "nullable": false,
+        "unique_ratio": null,
+        "shape": [
+          3
+        ],
+        "unit": "degrees_north",
+        "unit_normalization": {
+          "status": "unmapped_unit",
+          "original_unit": "degrees_north",
+          "canonical_unit": "degrees_north",
+          "ucum_code": null,
+          "evidence_basis": "explicit_metadata"
+        },
+        "description": null,
+        "example_values": [],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "zarr_array_metadata",
+            "source": "lat/.zarray",
+            "detail": "keys=dtype,shape,chunks,compressor,fill_value,order,filters,dimension_separator",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "zarr_attribute",
+            "source": "lat/.zattrs",
+            "detail": "explicit array attributes",
+            "confidence": 0.99
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "zarr_v2_metadata_extractor"
+      },
+      {
+        "field_name": "temperature",
+        "field_path": "temperature",
+        "physical_type": "<f4",
+        "logical_type": "measurement",
+        "semantic_type": "air_temperature",
+        "nullable": false,
+        "unique_ratio": null,
+        "shape": [
+          3,
+          3
+        ],
+        "unit": "K",
+        "unit_normalization": {
+          "status": "normalized_ucum",
+          "original_unit": "K",
+          "canonical_unit": "Kelvin",
+          "ucum_code": "K",
+          "evidence_basis": "explicit_metadata"
+        },
+        "description": null,
+        "example_values": [],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "zarr_array_metadata",
+            "source": "temperature/.zarray",
+            "detail": "keys=dtype,shape,chunks,compressor,fill_value,order,filters,dimension_separator",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "zarr_attribute",
+            "source": "temperature/.zattrs",
+            "detail": "explicit array attributes",
+            "confidence": 0.99
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "zarr_v2_metadata_extractor"
+      },
+      {
+        "field_name": "time",
+        "field_path": "time",
+        "physical_type": "<f8",
+        "logical_type": "temporal_coordinate",
+        "semantic_type": "observation_time",
+        "nullable": false,
+        "unique_ratio": null,
+        "shape": [
+          3
+        ],
+        "unit": "hours since 2026-01-01 00:00:00 UTC",
+        "unit_normalization": {
+          "status": "unmapped_unit",
+          "original_unit": "hours since 2026-01-01 00:00:00 UTC",
+          "canonical_unit": "hours since 2026-01-01 00:00:00 UTC",
+          "ucum_code": null,
+          "evidence_basis": "explicit_metadata"
+        },
+        "description": null,
+        "example_values": [],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "zarr_array_metadata",
+            "source": "time/.zarray",
+            "detail": "keys=dtype,shape,chunks,compressor,fill_value,order,filters,dimension_separator",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "zarr_attribute",
+            "source": "time/.zattrs",
+            "detail": "explicit array attributes",
+            "confidence": 0.99
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "zarr_v2_metadata_extractor"
+      }
+    ],
+    "groups": [
+      {
+        "path": "/",
+        "kind": "group",
+        "attributes": {},
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "zarr_group_metadata",
+            "source": ".zgroup",
+            "detail": "zarr_format=2",
+            "confidence": 1.0
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "resource_kind": "directory_store",
+      "zarr_format": 2,
+      "metadata_only": true,
+      "chunk_payloads_read": false,
+      "value_observation": {
+        "state": "unknown",
+        "reason_code": "chunk_payloads_not_read",
+        "properties": [
+          "missing_count",
+          "missing_ratio",
+          "unique_ratio",
+          "value_range",
+          "example_values"
+        ]
+      },
+      "documents_discovered": [
+        ".zgroup",
+        "lat/.zarray",
+        "lat/.zattrs",
+        "temperature/.zarray",
+        "temperature/.zattrs",
+        "time/.zarray",
+        "time/.zattrs"
+      ],
+      "store_inventory": {
+        "metadata_document_count": 7,
+        "observed_non_metadata_file_count": 0,
+        "pruned_array_directory_count": 0,
+        "walk_strategy": "array_boundary_aware",
+        "payload_bytes_read": 0
+      },
+      "dimensions": {
+        "lat": {
+          "size": 3,
+          "source_arrays": [
+            "lat",
+            "temperature"
+          ],
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_attribute",
+              "source": "lat/.zattrs",
+              "detail": "_ARRAY_DIMENSIONS[0]='lat'",
+              "confidence": 0.99
+            },
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_attribute",
+              "source": "temperature/.zattrs",
+              "detail": "_ARRAY_DIMENSIONS[1]='lat'",
+              "confidence": 0.99
+            }
+          ],
+          "state": "supported",
+          "reason_code": "explicit_xarray_dimensions"
+        },
+        "time": {
+          "size": 3,
+          "source_arrays": [
+            "temperature",
+            "time"
+          ],
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_attribute",
+              "source": "temperature/.zattrs",
+              "detail": "_ARRAY_DIMENSIONS[0]='time'",
+              "confidence": 0.99
+            },
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_attribute",
+              "source": "time/.zattrs",
+              "detail": "_ARRAY_DIMENSIONS[0]='time'",
+              "confidence": 0.99
+            }
+          ],
+          "state": "supported",
+          "reason_code": "explicit_xarray_dimensions"
+        }
+      },
+      "zarr_analysis": {
+        "arrays": [
+          {
+            "field_path": "lat",
+            "metadata_source": "lat/.zarray",
+            "attributes": {
+              "_ARRAY_DIMENSIONS": [
+                "lat"
+              ],
+              "standard_name": "latitude",
+              "axis": "Y",
+              "units": "degrees_north"
+            },
+            "array_metadata": {
+              "dtype": "<f4",
+              "shape": [
+                3
+              ],
+              "chunks": [
+                3
+              ],
+              "compressor": null,
+              "fill_value": null,
+              "order": "C",
+              "filters": null,
+              "dimension_separator": "."
+            },
+            "dimensions": [
+              "lat"
+            ],
+            "dimension_claim": {
+              "value": [
+                "lat"
+              ],
+              "state": "supported",
+              "reason_code": "explicit_xarray_dimensions",
+              "evidence_refs": [
+                "attribute:_ARRAY_DIMENSIONS"
+              ]
+            },
+            "coordinate_roles": [
+              "dimension_coordinate",
+              "auxiliary_coordinate",
+              "axis_y",
+              "standard_latitude",
+              "geospatial_coordinate"
+            ],
+            "coordinate_role_claim": {
+              "value": [
+                "dimension_coordinate",
+                "auxiliary_coordinate",
+                "axis_y",
+                "standard_latitude",
+                "geospatial_coordinate"
+              ],
+              "state": "supported",
+              "reason_code": "explicit_coordinate_evidence",
+              "evidence_refs": [
+                "attribute:_ARRAY_DIMENSIONS",
+                "attribute:coordinates",
+                "attribute:axis",
+                "attribute:standard_name",
+                "attribute:units"
+              ]
+            },
+            "unit_claim": {
+              "value": "degrees_north",
+              "state": "supported",
+              "reason_code": "explicit_units_attribute",
+              "evidence_refs": [
+                "attribute:units"
+              ]
+            }
+          },
+          {
+            "field_path": "temperature",
+            "metadata_source": "temperature/.zarray",
+            "attributes": {
+              "_ARRAY_DIMENSIONS": [
+                "time",
+                "lat"
+              ],
+              "coordinates": "time lat",
+              "standard_name": "air_temperature",
+              "units": "K"
+            },
+            "array_metadata": {
+              "dtype": "<f4",
+              "shape": [
+                3,
+                3
+              ],
+              "chunks": [
+                1,
+                3
+              ],
+              "compressor": null,
+              "fill_value": null,
+              "order": "C",
+              "filters": null,
+              "dimension_separator": "."
+            },
+            "dimensions": [
+              "time",
+              "lat"
+            ],
+            "dimension_claim": {
+              "value": [
+                "time",
+                "lat"
+              ],
+              "state": "supported",
+              "reason_code": "explicit_xarray_dimensions",
+              "evidence_refs": [
+                "attribute:_ARRAY_DIMENSIONS"
+              ]
+            },
+            "coordinate_roles": [],
+            "coordinate_role_claim": {
+              "value": [],
+              "state": "unknown",
+              "reason_code": "no_coordinate_evidence",
+              "evidence_refs": []
+            },
+            "unit_claim": {
+              "value": "K",
+              "state": "supported",
+              "reason_code": "explicit_units_attribute",
+              "evidence_refs": [
+                "attribute:units"
+              ]
+            }
+          },
+          {
+            "field_path": "time",
+            "metadata_source": "time/.zarray",
+            "attributes": {
+              "_ARRAY_DIMENSIONS": [
+                "time"
+              ],
+              "standard_name": "time",
+              "axis": "T",
+              "units": "hours since 2026-01-01 00:00:00 UTC",
+              "calendar": "standard"
+            },
+            "array_metadata": {
+              "dtype": "<f8",
+              "shape": [
+                3
+              ],
+              "chunks": [
+                3
+              ],
+              "compressor": null,
+              "fill_value": null,
+              "order": "C",
+              "filters": null,
+              "dimension_separator": "."
+            },
+            "dimensions": [
+              "time"
+            ],
+            "dimension_claim": {
+              "value": [
+                "time"
+              ],
+              "state": "supported",
+              "reason_code": "explicit_xarray_dimensions",
+              "evidence_refs": [
+                "attribute:_ARRAY_DIMENSIONS"
+              ]
+            },
+            "coordinate_roles": [
+              "dimension_coordinate",
+              "auxiliary_coordinate",
+              "axis_t",
+              "standard_time"
+            ],
+            "coordinate_role_claim": {
+              "value": [
+                "dimension_coordinate",
+                "auxiliary_coordinate",
+                "axis_t",
+                "standard_time"
+              ],
+              "state": "supported",
+              "reason_code": "explicit_coordinate_evidence",
+              "evidence_refs": [
+                "attribute:_ARRAY_DIMENSIONS",
+                "attribute:coordinates",
+                "attribute:axis",
+                "attribute:standard_name"
+              ]
+            },
+            "unit_claim": {
+              "value": "hours since 2026-01-01 00:00:00 UTC",
+              "state": "supported",
+              "reason_code": "explicit_units_attribute",
+              "evidence_refs": [
+                "attribute:units"
+              ]
+            }
+          }
+        ],
+        "calendar_claims": {
+          "time": {
+            "value": "standard",
+            "state": "supported",
+            "reason_code": "explicit_cf_calendar_metadata_only",
+            "evidence_refs": [
+              "attribute:units",
+              "attribute:calendar"
+            ]
+          }
+        },
+        "temporal": {
+          "analysis_version": "phase12_temporal_v1",
+          "candidates": [],
+          "selected_candidate": null,
+          "property_claims": {},
+          "validator_results": {
+            "candidate_count": 0,
+            "eligible_candidate_count": 0,
+            "measurement_count": 1,
+            "selection_abstained": true
+          },
+          "issues": [
+            {
+              "code": "metadata_only_no_temporal_samples",
+              "severity": "note",
+              "detail": "Metadata-only Zarr extraction does not read chunk payloads, so no canonical time axis is selected from numeric arrays."
+            }
+          ]
+        },
+        "compatibility_gaps": []
+      },
+      "extraction_errors": []
+    },
+    "notes": [
+      "The current Zarr extractor reads Zarr v2 metadata only and does not read chunk payloads.",
+      "Convention-backed claims remain unknown or conflicted when explicit metadata is absent or inconsistent.",
+      "Value-level statistics remain unknown because chunk payloads are not read."
+    ]
+  },
+  "issues": []
+}

@@ -356,25 +356,484 @@
       }
       .bar-row { grid-template-columns: 120px minmax(0, 1fr) 48px; }
     }
+
+    /* Release workbench theme: precise surfaces, scarce accent, visible semantic states. */
+    :root {
+      --bg: #09090b;
+      --panel: #111214;
+      --panel-raised: #17181b;
+      --panel-strong: #1d1e22;
+      --ink: #f4f4f5;
+      --muted: #a1a1aa;
+      --subtle: #71717a;
+      --line: #292b31;
+      --line-strong: #3a3d46;
+      --green: #58c493;
+      --blue: #76b7e5;
+      --amber: #e2b866;
+      --red: #ed8177;
+      --accent: #7c83ff;
+      --accent-hover: #9298ff;
+      --shadow: none;
+    }
+
+    body {
+      background: var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+
+    header {
+      background: rgba(9, 9, 11, 0.96);
+      border-color: var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .topbar {
+      max-width: 1500px;
+      min-height: 62px;
+      padding: 10px 20px;
+    }
+
+    .brand-lockup,
+    .top-status,
+    .status-cluster,
+    .panel-heading,
+    .result-heading {
+      align-items: center;
+      display: flex;
+    }
+
+    .brand-lockup { gap: 10px; }
+
+    .brand-mark {
+      align-items: center;
+      background: var(--accent);
+      border-radius: 6px;
+      color: #fff;
+      display: inline-flex;
+      font-size: 11px;
+      font-weight: 700;
+      height: 30px;
+      justify-content: center;
+      width: 30px;
+    }
+
+    .brand-copy {
+      color: var(--subtle);
+      display: block;
+      font-size: 11px;
+      margin-top: 1px;
+    }
+
+    h1 { font-size: 15px; font-weight: 650; }
+    h2 { font-size: 15px; font-weight: 650; }
+
+    .top-status {
+      flex-wrap: wrap;
+      gap: 7px;
+      justify-content: flex-end;
+    }
+
+    .status-chip,
+    .pill {
+      align-items: center;
+      background: var(--panel-raised);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      display: inline-flex;
+      font-size: 11px;
+      gap: 6px;
+      line-height: 1.2;
+      padding: 4px 8px;
+    }
+
+    .status-chip::before {
+      background: var(--subtle);
+      border-radius: 50%;
+      content: "";
+      height: 6px;
+      width: 6px;
+    }
+
+    .status-chip.ready::before { background: var(--green); }
+    .status-chip.info::before { background: var(--blue); }
+    .status-chip.warn::before { background: var(--amber); }
+
+    .status {
+      color: var(--muted);
+      font-size: 11px;
+      max-width: none;
+    }
+
+    .layout {
+      grid-template-columns: 220px minmax(0, 1fr);
+      max-width: 1500px;
+      min-height: calc(100vh - 62px);
+    }
+
+    nav {
+      background: #0c0c0f;
+      border-color: var(--line);
+      padding: 18px 12px;
+    }
+
+    .nav-label {
+      color: var(--subtle);
+      font-size: 10px;
+      font-weight: 650;
+      margin: 14px 8px 7px;
+      text-transform: uppercase;
+    }
+
+    nav button {
+      border-radius: 6px;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 3px;
+      min-height: 38px;
+      padding: 8px 10px;
+    }
+
+    nav button.active,
+    nav button:hover {
+      background: var(--panel-raised);
+      border-color: var(--line);
+      color: var(--ink);
+    }
+
+    nav button.active {
+      box-shadow: inset 2px 0 var(--accent);
+    }
+
+    main {
+      min-width: 0;
+      padding: 22px;
+    }
+
+    .section-head {
+      align-items: start;
+      margin-bottom: 16px;
+    }
+
+    .section-head h2 {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .note { color: var(--muted); }
+
+    .panel,
+    .metric,
+    .boundary {
+      background: var(--panel);
+      border-color: var(--line);
+      border-radius: 8px;
+      box-shadow: none;
+    }
+
+    .panel { padding: 16px; }
+    .metric { min-height: 90px; padding: 13px; }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 11px;
+      min-height: 30px;
+    }
+
+    .metric-value {
+      color: var(--ink);
+      font-size: 19px;
+      line-height: 1.2;
+      overflow-wrap: anywhere;
+    }
+
+    .boundary {
+      background: #15130f;
+      border-color: #4b402a;
+      margin-bottom: 18px;
+      padding: 10px 12px;
+    }
+
+    .boundary h2 {
+      color: var(--amber);
+      font-size: 12px;
+      margin: 0 0 7px;
+    }
+
+    .boundary-grid { gap: 10px; }
+    .boundary-grid .note { font-size: 11px; }
+
+    .panel-heading,
+    .result-heading {
+      gap: 10px;
+      justify-content: space-between;
+      margin-bottom: 13px;
+    }
+
+    .panel-heading h2,
+    .result-heading h2 { font-size: 14px; }
+
+    .workbench-grid {
+      align-items: start;
+      display: grid;
+      gap: 12px;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+    }
+
+    .example-list {
+      display: grid;
+      gap: 6px;
+      max-height: 410px;
+      margin-top: 12px;
+      overflow: auto;
+      padding-right: 3px;
+    }
+
+    .example-row {
+      align-items: center;
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      color: var(--ink);
+      cursor: pointer;
+      display: grid;
+      font: inherit;
+      gap: 4px 10px;
+      grid-template-columns: minmax(0, 1fr) auto;
+      min-height: 54px;
+      padding: 9px 10px;
+      text-align: left;
+      width: 100%;
+    }
+
+    .example-row:hover {
+      background: var(--panel-raised);
+      border-color: var(--line-strong);
+    }
+
+    .example-row strong { font-size: 12px; font-weight: 650; }
+    .example-row small { color: var(--muted); font-size: 11px; grid-column: 1 / -1; }
+
+    .example-format {
+      color: var(--blue);
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 10px;
+    }
+
+    .demo-status {
+      border-top: 1px solid var(--line);
+      display: grid;
+      gap: 7px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 14px;
+      padding-top: 12px;
+    }
+
+    .demo-status div { color: var(--muted); font-size: 10px; }
+    .demo-status strong { color: var(--ink); display: block; font-size: 12px; margin-top: 2px; }
+
+    select,
+    input,
+    textarea {
+      background: var(--panel-raised);
+      border-color: var(--line-strong);
+      border-radius: 6px;
+      color: var(--ink);
+      min-height: 40px;
+    }
+
+    select:focus,
+    input:focus,
+    button:focus-visible,
+    summary:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .primary-button {
+      background: var(--accent);
+      border-color: var(--accent);
+      border-radius: 6px;
+      min-height: 40px;
+    }
+
+    .primary-button:hover { background: var(--accent-hover); }
+
+    .extract-summary {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      margin-top: 14px;
+    }
+
+    .outcome-grid {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 12px;
+    }
+
+    .detail-list {
+      display: grid;
+      gap: 7px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .detail-list li {
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 11px;
+      list-style: none;
+      padding-bottom: 7px;
+    }
+
+    .detail-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+    .detail-list strong { color: var(--ink); font-weight: 600; }
+
+    .claim-state-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pill.ok { background: #10221a; border-color: #285a43; color: var(--green); }
+    .pill.warn { background: #211c11; border-color: #5d4c29; color: var(--amber); }
+    .pill.bad { background: #251412; border-color: #69342f; color: var(--red); }
+    .pill.info { background: #111d26; border-color: #2b526b; color: var(--blue); }
+    .pill.neutral { background: var(--panel-raised); border-color: var(--line-strong); color: var(--muted); }
+
+    .empty-state {
+      border: 1px dashed var(--line-strong);
+      border-radius: 8px;
+      color: var(--muted);
+      margin-top: 14px;
+      padding: 28px 18px;
+      text-align: center;
+    }
+
+    .empty-state strong { color: var(--ink); display: block; font-size: 13px; margin-bottom: 5px; }
+
+    .result-section { margin-top: 14px; }
+
+    .json-details {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-top: 12px;
+      overflow: hidden;
+    }
+
+    .json-details summary {
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 12px;
+      padding: 12px 14px;
+    }
+
+    .json-box {
+      background: #070708;
+      border-radius: 0;
+      border-top: 1px solid var(--line);
+      color: #d4d4d8;
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      margin: 0;
+      max-height: 520px;
+      padding: 14px;
+    }
+
+    .scroll {
+      max-width: 100%;
+      overflow: auto;
+    }
+
+    table { min-width: 720px; }
+    th { background: var(--panel-raised); color: var(--muted); font-size: 11px; }
+    td { border-color: var(--line); }
+    code { background: var(--panel-raised); color: #d8d9ff; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .bar-track { background: var(--panel-strong); }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+    }
+
+    [hidden] { display: none !important; }
+
+    @media (max-width: 1100px) {
+      .workbench-grid,
+      .extract-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 900px) {
+      .topbar { align-items: flex-start; }
+      .top-status { justify-content: flex-start; }
+      .layout { grid-template-columns: 1fr; }
+      nav {
+        border-bottom: 1px solid var(--line);
+        border-right: 0;
+        display: flex;
+        gap: 4px;
+        overflow-x: auto;
+        padding: 8px 12px;
+        scrollbar-width: none;
+      }
+      nav::-webkit-scrollbar { display: none; }
+      .nav-label { display: none; }
+      nav button {
+        margin: 0;
+        min-width: max-content;
+        padding: 8px 12px;
+      }
+      nav button.active { box-shadow: inset 0 -2px var(--accent); }
+      main { padding: 14px; }
+      .workbench-grid,
+      .outcome-grid,
+      .grid.cols-2,
+      .grid.cols-3,
+      .grid.cols-4,
+      .boundary-grid,
+      .form-grid,
+      .extract-summary,
+      .split {
+        grid-template-columns: 1fr;
+      }
+      .demo-status { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="topbar">
-      <h1>High-Fidelity Schema Extraction</h1>
-      <div id="load-status" class="status">Loading frozen artifacts...</div>
+      <div class="brand-lockup">
+        <span class="brand-mark" aria-hidden="true">HF</span>
+        <div>
+          <h1>Schema Workbench</h1>
+          <span class="brand-copy">Deterministic-first extraction and evidence review</span>
+        </div>
+      </div>
+      <div class="top-status" aria-label="Workbench status">
+        <span id="release-chip" class="status-chip ready">Release audit</span>
+        <span id="evaluator-chip" class="status-chip info">Evaluator</span>
+        <span id="load-status" class="status-chip">Loading artifacts</span>
+      </div>
     </div>
   </header>
 
   <div class="layout">
     <nav aria-label="Demo views">
-      <button data-view="overview" class="active">Overview</button>
+      <div class="nav-label">Workbench</div>
+      <button data-view="extract" class="active">Extract</button>
+      <button data-view="overview">Release Overview</button>
+      <div class="nav-label">Evidence</div>
       <button data-view="evidence">Evidence</button>
       <button data-view="fields">Fields</button>
       <button data-view="semantic">Semantic Merge</button>
       <button data-view="retrieval">Retrieval</button>
       <button data-view="provenance">Provenance</button>
-      <button data-view="extract">Extract</button>
+      <div class="nav-label">Policy</div>
       <button data-view="limits">Limits</button>
     </nav>
 
@@ -389,7 +848,7 @@
         </div>
       </section>
 
-      <section id="overview" class="view active">
+      <section id="overview" class="view">
         <div class="section-head">
           <div>
             <h2>Frozen Slice Summary</h2>
@@ -509,45 +968,102 @@
         <div id="provenance-metrics" class="grid cols-4"></div>
       </section>
 
-      <section id="extract" class="view">
+      <section id="extract" class="view active">
         <div class="section-head">
           <div>
-            <h2>Scratch Schema Extraction</h2>
-            <div class="note">Upload a local HDF5 file, CSV time-series file, or raw binary payload and inspect the deterministic-first schema result. This scratch path does not write to frozen artifacts or paper metrics.</div>
+            <h2>Deterministic Extraction Workbench</h2>
+            <div class="note">Run an allowlisted example, upload a local file, or select a Zarr v2 directory. Results expose evidence, uncertainty, conflict, abstention, and provenance without writing to frozen artifacts.</div>
           </div>
         </div>
-        <div class="panel">
-          <form id="extract-form">
-            <div class="form-grid">
-              <div class="form-row">
-                <label for="extract-file" class="note">File</label>
-                <input id="extract-file" name="file" type="file" required>
-              </div>
-              <div class="form-row">
-                <label for="extract-mode" class="note">Mode</label>
-                <select id="extract-mode" name="mode">
-                  <option value="auto">Auto detect</option>
-                  <option value="hdf5">HDF5 / self-describing binary</option>
-                  <option value="timeseries">CSV time-series</option>
-                  <option value="binary">Raw binary abstention</option>
-                </select>
-              </div>
-              <div class="form-row">
-                <label for="sample-limit" class="note">Sample rows</label>
-                <input id="sample-limit" name="sample_limit" type="number" min="1" max="10000" value="200">
+        <div class="workbench-grid">
+          <div class="panel">
+            <div class="panel-heading">
+              <div>
+                <h2>Run local extraction</h2>
+                <div class="note">Auto detection prefers trusted container signatures.</div>
               </div>
             </div>
-            <div class="actions" style="margin-top: 12px;">
-              <button id="extract-submit" class="primary-button" type="submit">Extract Schema</button>
-              <span id="extract-status" class="note">Choose a file to run local scratch extraction.</span>
+            <form id="extract-form">
+              <div class="form-grid">
+                <div class="form-row">
+                  <label for="extract-file" class="note">File</label>
+                  <input id="extract-file" type="file">
+                </div>
+                <div class="form-row">
+                  <label for="extract-directory" class="note">Zarr directory</label>
+                  <input id="extract-directory" type="file" webkitdirectory multiple>
+                </div>
+                <div class="form-row">
+                  <label for="extract-mode" class="note">Format hint</label>
+                  <select id="extract-mode" name="mode">
+                    <option value="auto">Auto detect</option>
+                    <option value="zarr">Zarr v2 directory metadata</option>
+                    <option value="parquet">Parquet / Arrow metadata</option>
+                    <option value="json">JSON bounded structure</option>
+                    <option value="xml">XML / XSD structure</option>
+                    <option value="netcdf">NetCDF / CF conventions</option>
+                    <option value="hdf5">HDF5 / self-describing binary</option>
+                    <option value="timeseries">CSV time-series</option>
+                    <option value="binary">Raw binary abstention</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <label for="sample-limit" class="note">Sample limit</label>
+                  <input id="sample-limit" name="sample_limit" type="number" min="1" max="10000" value="200">
+                </div>
+              </div>
+              <div class="actions" style="margin-top: 12px;">
+                <button id="extract-submit" class="primary-button" type="submit">Extract schema</button>
+                <span id="extract-status" class="note" role="status">Choose a file or run an example.</span>
+              </div>
+            </form>
+          </div>
+          <div class="panel">
+            <div class="panel-heading">
+              <div>
+                <h2>Runnable examples</h2>
+                <div class="note">Small controlled cases for exploring supported and abstained outcomes.</div>
+              </div>
+              <span class="pill warn">bounded</span>
             </div>
-          </form>
+            <div id="example-list" class="example-list">
+              <div class="note">Loading example manifest...</div>
+            </div>
+            <div id="demo-status" class="demo-status" aria-label="Demo status"></div>
+          </div>
         </div>
-        <div id="extract-summary" class="extract-summary"></div>
-        <div class="grid cols-2" style="margin-top: 12px;">
-          <div class="panel scroll">
-            <h2>Extracted Fields</h2>
-            <table style="margin-top: 10px;">
+
+        <div id="extract-empty" class="empty-state">
+          <strong>No extraction result yet</strong>
+          Run a controlled example or choose a local resource. The result will keep unsupported, unknown, conflict, and abstention states visible.
+        </div>
+
+        <div id="extract-result" hidden>
+          <div id="extract-summary" class="extract-summary"></div>
+          <div class="outcome-grid">
+            <div class="panel">
+              <div class="result-heading"><h2>Format decision</h2><span id="format-state-pill" class="pill neutral">pending</span></div>
+              <ul id="extract-format-detail" class="detail-list"></ul>
+            </div>
+            <div class="panel">
+              <div class="result-heading"><h2>Issues and conflicts</h2><span id="issue-count-pill" class="pill neutral">0</span></div>
+              <ul id="extract-issue-detail" class="detail-list"></ul>
+            </div>
+            <div class="panel">
+              <div class="result-heading"><h2>Claim states</h2><span class="pill info">evidence linked</span></div>
+              <div id="extract-claim-detail" class="claim-state-list"></div>
+            </div>
+            <div class="panel">
+              <div class="result-heading"><h2>Provenance</h2><span class="pill neutral">read only</span></div>
+              <ul id="extract-provenance-detail" class="detail-list"></ul>
+            </div>
+          </div>
+          <div class="panel scroll result-section">
+            <div class="result-heading">
+              <h2>Extracted fields</h2>
+              <span class="note">Physical claims remain parser-grounded.</span>
+            </div>
+            <table>
               <thead>
                 <tr>
                   <th>Field</th>
@@ -560,10 +1076,10 @@
               <tbody id="extract-field-table"></tbody>
             </table>
           </div>
-          <div class="panel">
-            <h2>Schema JSON</h2>
-            <pre id="extract-json" class="json-box" style="margin-top: 10px;">No scratch extraction has run yet.</pre>
-          </div>
+          <details class="json-details">
+            <summary>Inspect structured outcome, unified envelope, and schema JSON</summary>
+            <pre id="extract-json" class="json-box">No scratch extraction has run yet.</pre>
+          </details>
         </div>
       </section>
 
@@ -595,7 +1111,9 @@
       retrieval: "../data/retrieval/external_candidate_pool/retrieval_report.json",
       semantic: "../data/semantic_merged/semantic_merge_report.json",
       provenance: "../data/derived/provenance_manifest.json",
-      qrels: "../data/retrieval/external_candidate_pool/qrels.json"
+      qrels: "../data/retrieval/external_candidate_pool/qrels.json",
+      release: "../data/experiments/phase20_release_readiness/report.json",
+      evaluation: "../data/experiments/phase18_unified_evaluation/report.json"
     };
 
     const fallback = {
@@ -651,7 +1169,9 @@
         entities: [],
         activities: [],
         agents: []
-      }
+      },
+      release: null,
+      evaluation: null
     };
 
     const fmt = (value) => {
@@ -680,6 +1200,18 @@
       box.appendChild(el("div", "metric-label", label));
       box.appendChild(el("div", "metric-value", fmt(value)));
       return box;
+    }
+
+    function toneForState(state) {
+      const normalized = String(state || "").toLowerCase();
+      if (["success", "supported", "observed", "declared", "derived", "ready"].includes(normalized)) return "ok";
+      if (["failed", "conflicted", "conflict", "error"].includes(normalized)) return "bad";
+      if (["partial", "abstained", "unsupported", "unknown", "warning"].includes(normalized)) return "warn";
+      return "neutral";
+    }
+
+    function statusPill(label, state) {
+      return `<span class="pill ${toneForState(state)}">${esc(label)}</span>`;
     }
 
     function bars(container, rows, labelKey, valueKey, maxValue, tone = "green") {
@@ -722,12 +1254,33 @@
         retrieval: loaded.retrieval || fallback.retrieval,
         semantic: loaded.semantic || fallback.semantic,
         provenance: loaded.provenance || fallback.provenance,
-        qrels: loaded.qrels || null
+        qrels: loaded.qrels || null,
+        release: loaded.release || fallback.release,
+        evaluation: loaded.evaluation || fallback.evaluation
       };
-      document.getElementById("load-status").textContent = usingFallback
+      const loadStatus = document.getElementById("load-status");
+      loadStatus.textContent = usingFallback
         ? `Loaded with fallback for: ${failed.join(", ")}`
         : "Loaded live frozen artifacts";
+      loadStatus.className = `status-chip ${usingFallback ? "warn" : "ready"}`;
       return data;
+    }
+
+    function renderSystemStatus(data) {
+      const releaseReady = data.release?.ready === true;
+      const trackCount = data.evaluation?.track_count;
+      const aggregate = data.evaluation?.aggregate_score;
+      const releaseChip = document.getElementById("release-chip");
+      const evaluatorChip = document.getElementById("evaluator-chip");
+      releaseChip.textContent = releaseReady ? "Release audit ready" : "Release audit unavailable";
+      releaseChip.className = `status-chip ${releaseReady ? "ready" : "warn"}`;
+      evaluatorChip.textContent = trackCount ? `${trackCount} evaluator tracks` : "Evaluator unavailable";
+      evaluatorChip.className = `status-chip ${trackCount ? "info" : "warn"}`;
+      document.getElementById("demo-status").innerHTML = `
+        <div>Release audit<strong>${releaseReady ? "ready" : "unavailable"}</strong></div>
+        <div>Evaluator tracks<strong>${esc(trackCount ?? "unavailable")}</strong></div>
+        <div>Aggregate score<strong>${aggregate === null ? "intentionally null" : esc(aggregate ?? "unavailable")}</strong></div>
+      `;
     }
 
     function renderOverview(data) {
@@ -901,14 +1454,67 @@
 
     function renderExtractResult(payload) {
       const schema = payload.schema || {};
+      const outcome = payload.extraction_outcome || {};
+      const envelope = payload.unified_schema_envelope || {};
       const fields = schema.fields || [];
       const groups = schema.groups || [];
+      document.getElementById("extract-empty").hidden = true;
+      document.getElementById("extract-result").hidden = false;
       const summary = document.getElementById("extract-summary");
       summary.innerHTML = "";
       summary.appendChild(metric("Detected mode", payload.detected_mode || ""));
       summary.appendChild(metric("File format", schema.file_format || ""));
+      summary.appendChild(metric("Outcome", outcome.status || ""));
+      summary.appendChild(metric("Extractor", outcome.extractor?.extractor_id || "abstained"));
       summary.appendChild(metric("Fields", String(fields.length)));
       summary.appendChild(metric("Groups", String(groups.length)));
+
+      const decision = outcome.format_decision || {};
+      const formatState = document.getElementById("format-state-pill");
+      formatState.textContent = decision.conflicted ? "conflicted" : decision.selected_format || "no selection";
+      formatState.className = `pill ${toneForState(decision.conflicted ? "conflicted" : outcome.status)}`;
+      const formatDetail = document.getElementById("extract-format-detail");
+      const signals = decision.signals || [];
+      formatDetail.innerHTML = `
+        <li><strong>Selected:</strong> ${esc(decision.selected_format || "none")} via ${esc(decision.basis || "unknown")} (${esc(fmt(decision.support_score ?? 0))})</li>
+        ${signals.length
+          ? signals.map((signal) => `<li>${statusPill(signal.format, signal.basis === "magic" ? "supported" : "unknown")} <strong>${esc(signal.basis)}</strong> ${esc(signal.detail)} (${esc(fmt(signal.support_score))})</li>`).join("")
+          : "<li>No trusted format signals were emitted.</li>"}
+      `;
+
+      const issues = outcome.issues || [];
+      const conflicts = envelope.conflicts || [];
+      const issueCount = issues.length + conflicts.length;
+      const issuePill = document.getElementById("issue-count-pill");
+      issuePill.textContent = String(issueCount);
+      issuePill.className = `pill ${issueCount ? "warn" : "ok"}`;
+      document.getElementById("extract-issue-detail").innerHTML = issueCount
+        ? [
+            ...issues.map((issue) => `<li>${statusPill(issue.code || issue.severity, issue.severity)} <strong>${esc(issue.stage || "issue")}</strong> ${esc(issue.message || "")}</li>`),
+            ...conflicts.map((conflict) => `<li>${statusPill(conflict.category || "conflict", "conflicted")} ${esc(conflict.detail?.code || conflict.detail?.reason_code || "Declared and observed evidence disagree.")}</li>`)
+          ].join("")
+        : "<li>No structured issues or conflicts were emitted.</li>";
+
+      const claims = envelope.claims || [];
+      const stateCounts = claims.reduce((counts, claim) => {
+        const state = claim.state || "unknown";
+        counts[state] = (counts[state] || 0) + 1;
+        return counts;
+      }, {});
+      document.getElementById("extract-claim-detail").innerHTML = Object.keys(stateCounts).length
+        ? Object.entries(stateCounts)
+            .sort(([left], [right]) => left.localeCompare(right))
+            .map(([state, count]) => statusPill(`${state}: ${count}`, state))
+            .join("")
+        : statusPill(outcome.status === "abstained" ? "no claims: abstained" : "no normalized claims", outcome.status);
+
+      const provenance = envelope.provenance || {};
+      document.getElementById("extract-provenance-detail").innerHTML = `
+        <li><strong>Extractor:</strong> ${esc(provenance.extractor_id || outcome.extractor?.extractor_id || "none")}</li>
+        <li><strong>Version:</strong> ${esc(provenance.extractor_version || outcome.extractor?.version || "n/a")} / ${esc(provenance.determinism_class || outcome.extractor?.determinism_class || "n/a")}</li>
+        <li><strong>Source:</strong> ${esc(provenance.source_file_id || schema.file_id || payload.filename || "n/a")}</li>
+        <li><strong>Projection:</strong> ${esc(provenance.transformation || "legacy outcome only")}</li>
+      `;
 
       const body = document.getElementById("extract-field-table");
       body.innerHTML = "";
@@ -935,7 +1541,51 @@
         ...(schema.notes || [])
       ];
       const jsonBox = document.getElementById("extract-json");
-      jsonBox.textContent = JSON.stringify({ notes, schema }, null, 2);
+      jsonBox.textContent = JSON.stringify(
+        {
+          example: payload.example || null,
+          notes,
+          extraction_outcome: outcome,
+          unified_schema_envelope: envelope,
+          schema
+        },
+        null,
+        2
+      );
+    }
+
+    async function setupExamples() {
+      const list = document.getElementById("example-list");
+      const status = document.getElementById("extract-status");
+      try {
+        const payload = await loadJson("/api/examples");
+        list.innerHTML = "";
+        (payload.examples || []).forEach((example) => {
+          const button = el("button", "example-row");
+          button.type = "button";
+          button.dataset.exampleId = example.id;
+          button.appendChild(el("strong", "", example.label));
+          button.appendChild(el("span", "example-format", example.format));
+          button.appendChild(el("small", "", `${example.summary} Focus: ${example.focus}.`));
+          button.addEventListener("click", async () => {
+            button.disabled = true;
+            status.textContent = `Running ${example.label}...`;
+            try {
+              const sampleLimit = document.getElementById("sample-limit").value;
+              const result = await loadJson(`/api/extract-example?id=${encodeURIComponent(example.id)}&sample_limit=${encodeURIComponent(sampleLimit)}`);
+              renderExtractResult(result);
+              status.textContent = `Loaded example: ${example.label}`;
+            } catch (error) {
+              status.textContent = error.message;
+            } finally {
+              button.disabled = false;
+            }
+          });
+          list.appendChild(button);
+        });
+      } catch (error) {
+        list.innerHTML = '<div class="note">Example runner requires the GUI server. Uploaded scratch extraction is also unavailable in static mode.</div>';
+      }
     }
 
     function setupExtractor() {
@@ -945,16 +1595,38 @@
       form.addEventListener("submit", async (event) => {
         event.preventDefault();
         const fileInput = document.getElementById("extract-file");
-        if (!fileInput.files.length) {
-          status.textContent = "Choose a file first.";
+        const directoryInput = document.getElementById("extract-directory");
+        if (!fileInput.files.length && !directoryInput.files.length) {
+          status.textContent = "Choose a file or Zarr directory first.";
+          return;
+        }
+        if (fileInput.files.length && directoryInput.files.length) {
+          status.textContent = "Choose either one file or one Zarr directory.";
           return;
         }
         button.disabled = true;
         status.textContent = "Extracting schema...";
         try {
+          const formData = new FormData();
+          formData.append("mode", document.getElementById("extract-mode").value);
+          formData.append("sample_limit", document.getElementById("sample-limit").value);
+          if (directoryInput.files.length) {
+            const metadataFiles = Array.from(directoryInput.files).filter((file) => {
+              const name = file.name;
+              return [".zgroup", ".zarray", ".zattrs", ".zmetadata", "zarr.json"].includes(name);
+            });
+            if (!metadataFiles.length) {
+              throw new Error("The selected directory does not contain supported Zarr metadata files.");
+            }
+            metadataFiles.forEach((file) => {
+              formData.append("file", file, file.webkitRelativePath || file.name);
+            });
+          } else {
+            formData.append("file", fileInput.files[0], fileInput.files[0].name);
+          }
           const response = await fetch("/api/extract-schema", {
             method: "POST",
-            body: new FormData(form)
+            body: formData
           });
           let payload;
           try {
@@ -993,12 +1665,13 @@
         });
       });
 
-      const initialView = location.hash.replace("#", "") || "overview";
+      const initialView = location.hash.replace("#", "") || "extract";
       activate(initialView);
     }
 
     loadArtifacts().then((data) => {
       setupNav();
+      renderSystemStatus(data);
       renderOverview(data);
       renderEvidence(data);
       renderFields(data);
@@ -1006,6 +1679,7 @@
       renderRetrieval(data);
       renderProvenance(data);
       setupExtractor();
+      setupExamples();
     });
   </script>
 </body>

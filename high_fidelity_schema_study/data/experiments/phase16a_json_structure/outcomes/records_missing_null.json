@@ -1,0 +1,215 @@
+{
+  "case_id": "records_missing_null",
+  "outcome": {
+    "status": "success",
+    "format_decision": {
+      "selected_format": "json",
+      "basis": "suffix",
+      "support_score": 0.72,
+      "signals": [
+        {
+          "format": "json",
+          "basis": "suffix",
+          "support_score": 0.72,
+          "detail": "filename suffix .json"
+        }
+      ],
+      "conflicted": false
+    },
+    "extractor": {
+      "extractor_id": "json_bounded_structure_extractor",
+      "version": "0.1.0",
+      "formats": [
+        "json"
+      ],
+      "suffixes": [
+        ".json",
+        ".jsonl",
+        ".ndjson"
+      ],
+      "magic_prefixes": [],
+      "operations": [
+        "observe_bounded_paths",
+        "observe_type_sets",
+        "observe_nullability",
+        "observe_missingness",
+        "observe_array_shapes",
+        "read_json_schema_declarations"
+      ],
+      "determinism_class": "strict_with_bounded_sample",
+      "evidence_types": [
+        "json_sample_observation",
+        "json_schema_declaration"
+      ],
+      "resource_kinds": [
+        "file"
+      ]
+    },
+    "schema": {
+      "dataset_id": "records_missing_null",
+      "file_id": "records_missing_null.json",
+      "file_format": "json",
+      "data_modality": "semi_structured",
+      "fields": [
+        {
+          "field_name": "id",
+          "field_path": "$.id",
+          "physical_type": "integer",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "sample_observation",
+              "evidence_type": "json_sample_observation",
+              "source": "json_sample:$.id",
+              "detail": "Observed JSON path and bounded type set",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": "sample_bounded_observation",
+          "extraction_method": "bounded_json_structure_observation"
+        },
+        {
+          "field_name": "label",
+          "field_path": "$.label",
+          "physical_type": "string",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 1,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "sample_observation",
+              "evidence_type": "json_sample_observation",
+              "source": "json_sample:$.label",
+              "detail": "Observed JSON path and bounded type set",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": "sample_bounded_observation",
+          "extraction_method": "bounded_json_structure_observation"
+        },
+        {
+          "field_name": "value",
+          "field_path": "$.value",
+          "physical_type": "null | number",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 1,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "sample_observation",
+              "evidence_type": "json_sample_observation",
+              "source": "json_sample:$.value",
+              "detail": "Observed JSON path and bounded type set",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": "sample_bounded_observation",
+          "extraction_method": "bounded_json_structure_observation"
+        }
+      ],
+      "groups": [],
+      "metadata": {
+        "resource_kind": "file",
+        "json_analysis": {
+          "mode": "bounded_observed_structure",
+          "declared_fields": [],
+          "observed_fields": [
+            {
+              "field_path": "$.id",
+              "state": "observed",
+              "observed_types": [
+                "integer"
+              ],
+              "observed_record_count": 3,
+              "sample_record_count": 3,
+              "missing_count": 0,
+              "null_count": 0,
+              "evidence_refs": [
+                "json_sample:$.id"
+              ]
+            },
+            {
+              "field_path": "$.label",
+              "state": "observed",
+              "observed_types": [
+                "string"
+              ],
+              "observed_record_count": 2,
+              "sample_record_count": 3,
+              "missing_count": 1,
+              "null_count": 0,
+              "evidence_refs": [
+                "json_sample:$.label"
+              ]
+            },
+            {
+              "field_path": "$.value",
+              "state": "observed",
+              "observed_types": [
+                "null",
+                "number"
+              ],
+              "observed_record_count": 2,
+              "sample_record_count": 3,
+              "missing_count": 1,
+              "null_count": 1,
+              "evidence_refs": [
+                "json_sample:$.value"
+              ]
+            }
+          ],
+          "conflicts": []
+        },
+        "sampling": {
+          "organization": "top_level_array",
+          "observed_record_count": 3,
+          "known_total_record_count": 3,
+          "sample_truncated": false,
+          "sample_limit": 200,
+          "claim_scope": "bounded_sample",
+          "schema_example_count": 0
+        },
+        "value_observation": {
+          "state": "observed_bounded_sample",
+          "reason_code": "bounded_json_structure_sample"
+        },
+        "extraction_errors": []
+      },
+      "notes": [
+        "Observed JSON structure is sample-bounded and is not a universal schema claim.",
+        "JSON Schema properties are preserved as declarations and are not treated as observed data.",
+        "Semantic roles are not inferred from JSON field names."
+      ]
+    },
+    "issues": []
+  }
+}

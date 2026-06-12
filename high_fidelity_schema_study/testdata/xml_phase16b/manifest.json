@@ -1,0 +1,76 @@
+{
+  "experiment_id": "phase16b_xml_xsd_structure",
+  "claim_boundary": "Controlled XML/XSD challenge pack; observed XML paths are sample-bounded and external schemas are not loaded.",
+  "cases": [
+    {
+      "case_id": "basic_repeated",
+      "file": "basic.xml",
+      "expected_mode": "bounded_observed_structure",
+      "expected_paths": [
+        "/catalog/item",
+        "/catalog/item/@id",
+        "/catalog/item/value",
+        "/catalog/item/label"
+      ],
+      "expected_repeated": [
+        "/catalog/item"
+      ]
+    },
+    {
+      "case_id": "namespaced",
+      "file": "namespaced.xml",
+      "expected_mode": "bounded_observed_structure",
+      "expected_paths": [
+        "/{urn:example:observations}collection/{urn:example:observations}record",
+        "/{urn:example:observations}collection/{urn:example:observations}record/@{urn:example:geo}station",
+        "/{urn:example:observations}collection/{urn:example:observations}record/{urn:example:geo}lat"
+      ],
+      "expected_namespaces": [
+        "urn:example:observations",
+        "urn:example:geo"
+      ]
+    },
+    {
+      "case_id": "xsi_conflict",
+      "file": "xsi_conflict.xml",
+      "expected_mode": "bounded_observed_structure",
+      "expected_paths": [
+        "/root/value",
+        "/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type"
+      ],
+      "expected_conflict_count": 1
+    },
+    {
+      "case_id": "declared_xsd",
+      "file": "schema.xsd",
+      "expected_mode": "declared_xsd",
+      "expected_paths": [
+        "/catalog",
+        "/catalog/item",
+        "/catalog/item/value",
+        "/catalog/item/@id"
+      ],
+      "expected_declarations": {
+        "/catalog/item": {
+          "min_occurs": "0",
+          "max_occurs": "unbounded"
+        },
+        "/catalog/item/@id": {
+          "required": true
+        }
+      }
+    },
+    {
+      "case_id": "sampled",
+      "file": "sampled.xml",
+      "sample_limit": 4,
+      "expected_mode": "bounded_observed_structure",
+      "expected_paths": [
+        "/root",
+        "/root/item",
+        "/root/item/value"
+      ],
+      "expected_sampling_issue": true
+    }
+  ]
+}

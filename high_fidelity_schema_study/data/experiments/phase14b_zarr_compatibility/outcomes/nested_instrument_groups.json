@@ -1,0 +1,625 @@
+{
+  "status": "success",
+  "format_decision": {
+    "selected_format": "zarr",
+    "basis": "zarr_store_metadata",
+    "support_score": 1.0,
+    "signals": [
+      {
+        "format": "zarr",
+        "basis": "zarr_store_metadata",
+        "support_score": 1.0,
+        "detail": "Zarr store metadata documents: .zgroup"
+      },
+      {
+        "format": "zarr",
+        "basis": "suffix",
+        "support_score": 0.72,
+        "detail": "filename suffix .zarr"
+      }
+    ],
+    "conflicted": false
+  },
+  "extractor": {
+    "extractor_id": "zarr_v2_metadata_extractor",
+    "version": "0.2.0",
+    "formats": [
+      "zarr"
+    ],
+    "suffixes": [
+      ".zarr"
+    ],
+    "magic_prefixes": [],
+    "operations": [
+      "enumerate_groups",
+      "enumerate_arrays",
+      "read_array_metadata",
+      "read_attributes",
+      "interpret_xarray_dimensions",
+      "interpret_cf_coordinates"
+    ],
+    "determinism_class": "strict_metadata_only",
+    "evidence_types": [
+      "zarr_group_metadata",
+      "zarr_array_metadata",
+      "zarr_attribute",
+      "zarr_consolidated_metadata"
+    ],
+    "resource_kinds": [
+      "directory_store"
+    ]
+  },
+  "schema": {
+    "dataset_id": "nested_instrument_groups",
+    "file_id": "nested_instrument_groups.zarr",
+    "file_format": "zarr",
+    "data_modality": "multidimensional",
+    "fields": [
+      {
+        "field_name": "measurement",
+        "field_path": "station_a/measurement",
+        "physical_type": "<f4",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": false,
+        "unique_ratio": null,
+        "shape": [
+          10
+        ],
+        "unit": null,
+        "unit_normalization": {
+          "status": "no_unit_claim",
+          "original_unit": null,
+          "canonical_unit": null,
+          "ucum_code": null,
+          "evidence_basis": "not_applicable"
+        },
+        "description": "instrument measurement",
+        "example_values": [],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "zarr_array_metadata",
+            "source": "station_a/measurement/.zarray",
+            "detail": "keys=dtype,shape,chunks,compressor,fill_value,order,filters,dimension_separator",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "zarr_attribute",
+            "source": "station_a/measurement/.zattrs",
+            "detail": "explicit array attributes",
+            "confidence": 0.99
+          }
+        ],
+        "confidence": 0.9,
+        "uncertainty_reason": "Zarr/Xarray/CF metadata does not support a precise logical or semantic claim",
+        "extraction_method": "zarr_v2_metadata_extractor"
+      },
+      {
+        "field_name": "qc",
+        "field_path": "station_a/qc",
+        "physical_type": "|u1",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": false,
+        "unique_ratio": null,
+        "shape": [
+          10
+        ],
+        "unit": null,
+        "unit_normalization": {
+          "status": "no_unit_claim",
+          "original_unit": null,
+          "canonical_unit": null,
+          "ucum_code": null,
+          "evidence_basis": "not_applicable"
+        },
+        "description": "quality flag",
+        "example_values": [],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "zarr_array_metadata",
+            "source": "station_a/qc/.zarray",
+            "detail": "keys=dtype,shape,chunks,compressor,fill_value,order,filters,dimension_separator",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "zarr_attribute",
+            "source": "station_a/qc/.zattrs",
+            "detail": "explicit array attributes",
+            "confidence": 0.99
+          }
+        ],
+        "confidence": 0.9,
+        "uncertainty_reason": "Zarr/Xarray/CF metadata does not support a precise logical or semantic claim",
+        "extraction_method": "zarr_v2_metadata_extractor"
+      },
+      {
+        "field_name": "measurement",
+        "field_path": "station_b/measurement",
+        "physical_type": "<f4",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": false,
+        "unique_ratio": null,
+        "shape": [
+          10
+        ],
+        "unit": null,
+        "unit_normalization": {
+          "status": "no_unit_claim",
+          "original_unit": null,
+          "canonical_unit": null,
+          "ucum_code": null,
+          "evidence_basis": "not_applicable"
+        },
+        "description": "instrument measurement",
+        "example_values": [],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "zarr_array_metadata",
+            "source": "station_b/measurement/.zarray",
+            "detail": "keys=dtype,shape,chunks,compressor,fill_value,order,filters,dimension_separator",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "zarr_attribute",
+            "source": "station_b/measurement/.zattrs",
+            "detail": "explicit array attributes",
+            "confidence": 0.99
+          }
+        ],
+        "confidence": 0.9,
+        "uncertainty_reason": "Zarr/Xarray/CF metadata does not support a precise logical or semantic claim",
+        "extraction_method": "zarr_v2_metadata_extractor"
+      },
+      {
+        "field_name": "qc",
+        "field_path": "station_b/qc",
+        "physical_type": "|u1",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": false,
+        "unique_ratio": null,
+        "shape": [
+          10
+        ],
+        "unit": null,
+        "unit_normalization": {
+          "status": "no_unit_claim",
+          "original_unit": null,
+          "canonical_unit": null,
+          "ucum_code": null,
+          "evidence_basis": "not_applicable"
+        },
+        "description": "quality flag",
+        "example_values": [],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "zarr_array_metadata",
+            "source": "station_b/qc/.zarray",
+            "detail": "keys=dtype,shape,chunks,compressor,fill_value,order,filters,dimension_separator",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "zarr_attribute",
+            "source": "station_b/qc/.zattrs",
+            "detail": "explicit array attributes",
+            "confidence": 0.99
+          }
+        ],
+        "confidence": 0.9,
+        "uncertainty_reason": "Zarr/Xarray/CF metadata does not support a precise logical or semantic claim",
+        "extraction_method": "zarr_v2_metadata_extractor"
+      }
+    ],
+    "groups": [
+      {
+        "path": "/",
+        "kind": "group",
+        "attributes": {
+          "title": "Grouped station reference layout"
+        },
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "zarr_group_metadata",
+            "source": ".zgroup",
+            "detail": "zarr_format=2",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "zarr_attribute",
+            "source": ".zattrs",
+            "detail": "explicit group attributes",
+            "confidence": 0.99
+          }
+        ]
+      },
+      {
+        "path": "station_a",
+        "kind": "group",
+        "attributes": {
+          "station_id": "STATION_A"
+        },
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "zarr_group_metadata",
+            "source": "station_a/.zgroup",
+            "detail": "zarr_format=2",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "zarr_attribute",
+            "source": "station_a/.zattrs",
+            "detail": "explicit group attributes",
+            "confidence": 0.99
+          }
+        ]
+      },
+      {
+        "path": "station_b",
+        "kind": "group",
+        "attributes": {
+          "station_id": "STATION_B"
+        },
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "zarr_group_metadata",
+            "source": "station_b/.zgroup",
+            "detail": "zarr_format=2",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "zarr_attribute",
+            "source": "station_b/.zattrs",
+            "detail": "explicit group attributes",
+            "confidence": 0.99
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "resource_kind": "directory_store",
+      "zarr_format": 2,
+      "metadata_only": true,
+      "chunk_payloads_read": false,
+      "value_observation": {
+        "state": "unknown",
+        "reason_code": "chunk_payloads_not_read",
+        "properties": [
+          "missing_count",
+          "missing_ratio",
+          "unique_ratio",
+          "value_range",
+          "example_values"
+        ]
+      },
+      "documents_discovered": [
+        ".zattrs",
+        ".zgroup",
+        "station_a/.zattrs",
+        "station_a/.zgroup",
+        "station_a/measurement/.zarray",
+        "station_a/measurement/.zattrs",
+        "station_a/qc/.zarray",
+        "station_a/qc/.zattrs",
+        "station_b/.zattrs",
+        "station_b/.zgroup",
+        "station_b/measurement/.zarray",
+        "station_b/measurement/.zattrs",
+        "station_b/qc/.zarray",
+        "station_b/qc/.zattrs"
+      ],
+      "store_inventory": {
+        "metadata_document_count": 14,
+        "observed_non_metadata_file_count": 0,
+        "pruned_array_directory_count": 0,
+        "walk_strategy": "array_boundary_aware",
+        "payload_bytes_read": 0
+      },
+      "dimensions": {
+        "record": {
+          "size": 10,
+          "source_arrays": [
+            "station_a/measurement",
+            "station_a/qc",
+            "station_b/measurement",
+            "station_b/qc"
+          ],
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_attribute",
+              "source": "station_a/measurement/.zattrs",
+              "detail": "_ARRAY_DIMENSIONS[0]='record'",
+              "confidence": 0.99
+            },
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_attribute",
+              "source": "station_a/qc/.zattrs",
+              "detail": "_ARRAY_DIMENSIONS[0]='record'",
+              "confidence": 0.99
+            },
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_attribute",
+              "source": "station_b/measurement/.zattrs",
+              "detail": "_ARRAY_DIMENSIONS[0]='record'",
+              "confidence": 0.99
+            },
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_attribute",
+              "source": "station_b/qc/.zattrs",
+              "detail": "_ARRAY_DIMENSIONS[0]='record'",
+              "confidence": 0.99
+            }
+          ],
+          "state": "supported",
+          "reason_code": "explicit_xarray_dimensions"
+        }
+      },
+      "zarr_analysis": {
+        "arrays": [
+          {
+            "field_path": "station_a/measurement",
+            "metadata_source": "station_a/measurement/.zarray",
+            "attributes": {
+              "_ARRAY_DIMENSIONS": [
+                "record"
+              ],
+              "coordinates": "qc",
+              "long_name": "instrument measurement"
+            },
+            "array_metadata": {
+              "dtype": "<f4",
+              "shape": [
+                10
+              ],
+              "chunks": [
+                5
+              ],
+              "compressor": null,
+              "fill_value": null,
+              "order": "C",
+              "filters": null,
+              "dimension_separator": "."
+            },
+            "dimensions": [
+              "record"
+            ],
+            "dimension_claim": {
+              "value": [
+                "record"
+              ],
+              "state": "supported",
+              "reason_code": "explicit_xarray_dimensions",
+              "evidence_refs": [
+                "attribute:_ARRAY_DIMENSIONS"
+              ]
+            },
+            "coordinate_roles": [],
+            "coordinate_role_claim": {
+              "value": [],
+              "state": "unknown",
+              "reason_code": "no_coordinate_evidence",
+              "evidence_refs": []
+            },
+            "unit_claim": {
+              "value": null,
+              "state": "unknown",
+              "reason_code": "missing_units_attribute",
+              "evidence_refs": []
+            }
+          },
+          {
+            "field_path": "station_a/qc",
+            "metadata_source": "station_a/qc/.zarray",
+            "attributes": {
+              "_ARRAY_DIMENSIONS": [
+                "record"
+              ],
+              "long_name": "quality flag"
+            },
+            "array_metadata": {
+              "dtype": "|u1",
+              "shape": [
+                10
+              ],
+              "chunks": [
+                10
+              ],
+              "compressor": null,
+              "fill_value": null,
+              "order": "C",
+              "filters": null,
+              "dimension_separator": "."
+            },
+            "dimensions": [
+              "record"
+            ],
+            "dimension_claim": {
+              "value": [
+                "record"
+              ],
+              "state": "supported",
+              "reason_code": "explicit_xarray_dimensions",
+              "evidence_refs": [
+                "attribute:_ARRAY_DIMENSIONS"
+              ]
+            },
+            "coordinate_roles": [
+              "auxiliary_coordinate"
+            ],
+            "coordinate_role_claim": {
+              "value": [
+                "auxiliary_coordinate"
+              ],
+              "state": "supported",
+              "reason_code": "explicit_coordinate_evidence",
+              "evidence_refs": [
+                "attribute:coordinates"
+              ]
+            },
+            "unit_claim": {
+              "value": null,
+              "state": "unknown",
+              "reason_code": "missing_units_attribute",
+              "evidence_refs": []
+            }
+          },
+          {
+            "field_path": "station_b/measurement",
+            "metadata_source": "station_b/measurement/.zarray",
+            "attributes": {
+              "_ARRAY_DIMENSIONS": [
+                "record"
+              ],
+              "long_name": "instrument measurement"
+            },
+            "array_metadata": {
+              "dtype": "<f4",
+              "shape": [
+                10
+              ],
+              "chunks": [
+                5
+              ],
+              "compressor": null,
+              "fill_value": null,
+              "order": "C",
+              "filters": null,
+              "dimension_separator": "."
+            },
+            "dimensions": [
+              "record"
+            ],
+            "dimension_claim": {
+              "value": [
+                "record"
+              ],
+              "state": "supported",
+              "reason_code": "explicit_xarray_dimensions",
+              "evidence_refs": [
+                "attribute:_ARRAY_DIMENSIONS"
+              ]
+            },
+            "coordinate_roles": [],
+            "coordinate_role_claim": {
+              "value": [],
+              "state": "unknown",
+              "reason_code": "no_coordinate_evidence",
+              "evidence_refs": []
+            },
+            "unit_claim": {
+              "value": null,
+              "state": "unknown",
+              "reason_code": "missing_units_attribute",
+              "evidence_refs": []
+            }
+          },
+          {
+            "field_path": "station_b/qc",
+            "metadata_source": "station_b/qc/.zarray",
+            "attributes": {
+              "_ARRAY_DIMENSIONS": [
+                "record"
+              ],
+              "long_name": "quality flag"
+            },
+            "array_metadata": {
+              "dtype": "|u1",
+              "shape": [
+                10
+              ],
+              "chunks": [
+                10
+              ],
+              "compressor": null,
+              "fill_value": null,
+              "order": "C",
+              "filters": null,
+              "dimension_separator": "."
+            },
+            "dimensions": [
+              "record"
+            ],
+            "dimension_claim": {
+              "value": [
+                "record"
+              ],
+              "state": "supported",
+              "reason_code": "explicit_xarray_dimensions",
+              "evidence_refs": [
+                "attribute:_ARRAY_DIMENSIONS"
+              ]
+            },
+            "coordinate_roles": [],
+            "coordinate_role_claim": {
+              "value": [],
+              "state": "unknown",
+              "reason_code": "no_coordinate_evidence",
+              "evidence_refs": []
+            },
+            "unit_claim": {
+              "value": null,
+              "state": "unknown",
+              "reason_code": "missing_units_attribute",
+              "evidence_refs": []
+            }
+          }
+        ],
+        "calendar_claims": {},
+        "temporal": {
+          "analysis_version": "phase12_temporal_v1",
+          "candidates": [],
+          "selected_candidate": null,
+          "property_claims": {},
+          "validator_results": {
+            "candidate_count": 0,
+            "eligible_candidate_count": 0,
+            "measurement_count": 4,
+            "selection_abstained": true
+          },
+          "issues": [
+            {
+              "code": "metadata_only_no_temporal_samples",
+              "severity": "note",
+              "detail": "Metadata-only Zarr extraction does not read chunk payloads, so no canonical time axis is selected from numeric arrays."
+            }
+          ]
+        },
+        "compatibility_gaps": []
+      },
+      "extraction_errors": []
+    },
+    "notes": [
+      "The current Zarr extractor reads Zarr v2 metadata only and does not read chunk payloads.",
+      "Convention-backed claims remain unknown or conflicted when explicit metadata is absent or inconsistent.",
+      "Value-level statistics remain unknown because chunk payloads are not read."
+    ]
+  },
+  "issues": []
+}

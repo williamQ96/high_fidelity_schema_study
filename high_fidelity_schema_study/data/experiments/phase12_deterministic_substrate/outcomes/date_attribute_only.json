@@ -1,0 +1,213 @@
+{
+  "status": "success",
+  "format_decision": {
+    "selected_format": "csv",
+    "basis": "suffix",
+    "support_score": 0.72,
+    "signals": [
+      {
+        "format": "csv",
+        "basis": "suffix",
+        "support_score": 0.72,
+        "detail": "filename suffix .csv"
+      },
+      {
+        "format": "csv",
+        "basis": "text_probe",
+        "support_score": 0.8,
+        "detail": "consistent delimited UTF-8 text sample"
+      }
+    ],
+    "conflicted": false
+  },
+  "extractor": {
+    "extractor_id": "csv_conservative_profiler",
+    "version": "1.0.0",
+    "formats": [
+      "csv"
+    ],
+    "suffixes": [
+      ".csv",
+      ".tsv"
+    ],
+    "magic_prefixes": [],
+    "operations": [
+      "enumerate_fields",
+      "sample_values",
+      "infer_physical_types",
+      "profile_time_series"
+    ],
+    "determinism_class": "strict_with_sampled_profiles",
+    "evidence_types": [
+      "csv_header",
+      "sample_rows",
+      "column_name_unit_hint"
+    ],
+    "resource_kinds": [
+      "file"
+    ]
+  },
+  "schema": {
+    "dataset_id": "date_attribute_only",
+    "file_id": "date_attribute_only.csv",
+    "file_format": "csv",
+    "data_modality": "tabular",
+    "fields": [
+      {
+        "field_name": "collection_date",
+        "field_path": "collection_date",
+        "physical_type": "datetime",
+        "logical_type": "attribute",
+        "semantic_type": "collection_date",
+        "nullable": false,
+        "unique_ratio": 1.0,
+        "shape": null,
+        "unit": null,
+        "unit_normalization": {
+          "status": "no_unit_claim",
+          "original_unit": null,
+          "canonical_unit": null,
+          "ucum_code": null,
+          "evidence_basis": "not_applicable"
+        },
+        "description": null,
+        "example_values": [
+          "2026-01-01",
+          "2026-01-02",
+          "2026-01-03"
+        ],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "structural",
+            "evidence_type": "csv_header",
+            "source": "testdata/temporal_phase12/date_attribute_only.csv",
+            "detail": "header='collection_date'",
+            "confidence": 1.0
+          },
+          {
+            "tier": "statistical",
+            "evidence_type": "sample_rows",
+            "source": "testdata/temporal_phase12/date_attribute_only.csv",
+            "detail": "sampled_rows=3",
+            "confidence": 0.9
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "csv_conservative_profiler"
+      },
+      {
+        "field_name": "status",
+        "field_path": "status",
+        "physical_type": "string",
+        "logical_type": "label",
+        "semantic_type": "operational_status",
+        "nullable": false,
+        "unique_ratio": 0.6667,
+        "shape": null,
+        "unit": null,
+        "unit_normalization": {
+          "status": "no_unit_claim",
+          "original_unit": null,
+          "canonical_unit": null,
+          "ucum_code": null,
+          "evidence_basis": "not_applicable"
+        },
+        "description": null,
+        "example_values": [
+          "open",
+          "closed"
+        ],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "structural",
+            "evidence_type": "csv_header",
+            "source": "testdata/temporal_phase12/date_attribute_only.csv",
+            "detail": "header='status'",
+            "confidence": 1.0
+          },
+          {
+            "tier": "statistical",
+            "evidence_type": "sample_rows",
+            "source": "testdata/temporal_phase12/date_attribute_only.csv",
+            "detail": "sampled_rows=3",
+            "confidence": 0.9
+          }
+        ],
+        "confidence": 0.9,
+        "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+        "extraction_method": "csv_conservative_profiler"
+      }
+    ],
+    "groups": [],
+    "metadata": {
+      "sampled_rows": 3,
+      "column_count": 2,
+      "temporal_analysis": {
+        "analysis_version": "phase12_temporal_v1",
+        "candidates": [
+          {
+            "field": "collection_date",
+            "field_path": "collection_date",
+            "score": 0.4,
+            "parse_rate": 1.0,
+            "reasons": [
+              "physical_datetime"
+            ]
+          }
+        ],
+        "selected_candidate": null,
+        "property_claims": {},
+        "validator_results": {
+          "candidate_count": 1,
+          "eligible_candidate_count": 0,
+          "measurement_count": 0,
+          "selection_abstained": true
+        },
+        "issues": [
+          {
+            "code": "no_supported_time_axis_candidate",
+            "severity": "note",
+            "detail": "Temporal-looking fields exist, but none meet the deterministic selection threshold."
+          }
+        ]
+      },
+      "deterministic_profile": {
+        "missingness": {
+          "basis": "sampled_rows",
+          "sampled_rows": 3,
+          "field_count": 2,
+          "fields_with_missing_count": 0,
+          "total_missing_cells": 0,
+          "fields": [
+            {
+              "field_path": "collection_date",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false,
+              "basis": "sampled_rows"
+            },
+            {
+              "field_path": "status",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false,
+              "basis": "sampled_rows"
+            }
+          ]
+        },
+        "identifier_quality": {
+          "candidate_count": 0,
+          "best_identifier_fields": [],
+          "fields": []
+        }
+      }
+    },
+    "notes": []
+  },
+  "issues": []
+}

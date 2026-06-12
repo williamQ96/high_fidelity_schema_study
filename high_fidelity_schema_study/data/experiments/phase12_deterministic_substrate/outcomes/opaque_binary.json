@@ -1,0 +1,40 @@
+{
+  "status": "abstained",
+  "format_decision": {
+    "selected_format": null,
+    "basis": "no_supported_signal",
+    "support_score": 0.0,
+    "signals": [],
+    "conflicted": false
+  },
+  "extractor": null,
+  "schema": {
+    "dataset_id": "opaque",
+    "file_id": "opaque.bin",
+    "file_format": "raw_binary",
+    "data_modality": "unknown",
+    "fields": [],
+    "groups": [],
+    "metadata": {
+      "resource_kind": "file",
+      "byte_size": 46,
+      "entry_count": null,
+      "magic_hex_prefix": "6f 70 61 71 75 65 20 70 61 79 6c 6f 61 64 20 77",
+      "field_claim_policy": "abstain_without_spec_backed_extractor",
+      "extraction_errors": []
+    },
+    "notes": [
+      "The payload does not have a selected spec-backed deterministic extractor.",
+      "The high-fidelity policy records file-level evidence and abstains from unsupported field claims."
+    ]
+  },
+  "issues": [
+    {
+      "code": "unknown_no_signature",
+      "stage": "format_detection",
+      "severity": "warning",
+      "message": "No trustworthy format signature, hint, suffix, or text probe selected a parser.",
+      "details": {}
+    }
+  ]
+}

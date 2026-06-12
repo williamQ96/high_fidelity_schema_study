@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/measurement.schema.json",
+  "type": "object",
+  "required": [
+    "id"
+  ],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Declared identifier"
+    },
+    "value": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "context": {
+      "type": "object",
+      "required": [
+        "source"
+      ],
+      "properties": {
+        "source": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "id": 1,
+      "value": 12.5,
+      "context": {
+        "source": "sensor"
+      }
+    },
+    {
+      "id": 2,
+      "value": "not-a-number",
+      "context": {
+        "source": "manual"
+      }
+    }
+  ]
+}

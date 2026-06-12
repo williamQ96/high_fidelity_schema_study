@@ -1,0 +1,28 @@
+[
+  {
+    "station": {
+      "id": "A",
+      "location": {
+        "lat": 10.0,
+        "lon": 20.0
+      }
+    },
+    "values": [
+      {
+        "v": 1
+      },
+      {
+        "v": 2
+      }
+    ]
+  },
+  {
+    "station": {
+      "id": "B",
+      "location": {
+        "lat": 11.0
+      }
+    },
+    "values": []
+  }
+]

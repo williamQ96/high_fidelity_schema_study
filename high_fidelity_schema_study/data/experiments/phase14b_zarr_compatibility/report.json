@@ -1,0 +1,711 @@
+{
+  "experiment_id": "phase14b_zarr_compatibility",
+  "manifest": "testdata/zarr_phase14b_compatibility/manifest.json",
+  "corpus_origin": "locally reconstructed producer-shaped Zarr v2 reference layouts",
+  "corpus_claim_boundary": "This is a realistic compatibility corpus, not a downloaded representative ecosystem sample.",
+  "metrics": {
+    "case_count": 17,
+    "supported_case_count": 10,
+    "supported_compatibility_rate": 1.0,
+    "unsupported_feature_visibility": 1.0,
+    "malformed_failure_quality": 1.0,
+    "structured_abstention_quality": 1.0,
+    "overall_expectation_match": 1.0,
+    "evidence_coverage": 1.0,
+    "path_portability_accuracy": 1.0,
+    "chunk_payload_non_claim_rate": 1.0,
+    "value_observation_abstention_accuracy": 1.0,
+    "compatibility_gap_count": 2,
+    "unsupported_promotion_count": 0,
+    "true_bug_count": 0
+  },
+  "classification_summary": {
+    "malformed_failure": {
+      "case_count": 2,
+      "expectations_met": 2
+    },
+    "structured_abstention": {
+      "case_count": 1,
+      "expectations_met": 1
+    },
+    "supported": {
+      "case_count": 10,
+      "expectations_met": 10
+    },
+    "unsupported_feature": {
+      "case_count": 4,
+      "expectations_met": 4
+    }
+  },
+  "compatibility_gap_summary": {
+    "dimension_size_conflict": 1,
+    "unresolved_coordinate_reference": 1
+  },
+  "notes": [
+    "The corpus reconstructs common local Zarr v2 producer layouts; it is not a downloaded representative ecosystem sample.",
+    "Chunk keys contain dummy invalid bytes and are never used to create schema or value-level claims.",
+    "Unsupported features and malformed stores are successful compatibility observations when surfaced as expected.",
+    "Remote stores, Zarr v3 extraction, chunk decoding, and full Xarray reconstruction remain out of scope."
+  ],
+  "cases": [
+    {
+      "case_id": "root_array_numpy_style",
+      "store": "root_array_numpy_style.zarr",
+      "producer_profile": "standalone NumPy-style root array",
+      "classification": "supported",
+      "expected_status": "success",
+      "actual_status": "success",
+      "checks": {
+        "status": true,
+        "fields": true,
+        "groups": true,
+        "physical": true,
+        "issues": true,
+        "gaps": true,
+        "coordinates": true,
+        "unknowns": true,
+        "evidence": true,
+        "portable": true,
+        "chunk_safe": true,
+        "value_abstained": true,
+        "array_walk_pruned": true
+      },
+      "physical_matches": {
+        "/:dtype": true,
+        "/:shape": true,
+        "/:chunks": true
+      },
+      "coordinate_matches": {},
+      "unknown_matches": {},
+      "issue_codes": [],
+      "gap_codes": [],
+      "compatibility_gaps": [],
+      "actual_fields": [
+        "/"
+      ],
+      "all_expectations_met": true
+    },
+    {
+      "case_id": "xarray_weather_nonconsolidated",
+      "store": "xarray_weather_nonconsolidated.zarr",
+      "producer_profile": "Xarray-style non-consolidated multidimensional dataset",
+      "classification": "supported",
+      "expected_status": "success",
+      "actual_status": "success",
+      "checks": {
+        "status": true,
+        "fields": true,
+        "groups": true,
+        "physical": true,
+        "issues": true,
+        "gaps": true,
+        "coordinates": true,
+        "unknowns": true,
+        "evidence": true,
+        "portable": true,
+        "chunk_safe": true,
+        "value_abstained": true,
+        "array_walk_pruned": true
+      },
+      "physical_matches": {
+        "temperature:shape": true,
+        "temperature:chunks": true,
+        "temperature:compressor": true,
+        "temperature:fill_value": true
+      },
+      "coordinate_matches": {
+        "time": true,
+        "latitude": true,
+        "longitude": true
+      },
+      "unknown_matches": {},
+      "issue_codes": [],
+      "gap_codes": [],
+      "compatibility_gaps": [],
+      "actual_fields": [
+        "latitude",
+        "longitude",
+        "temperature",
+        "time"
+      ],
+      "all_expectations_met": true
+    },
+    {
+      "case_id": "xarray_ocean_consolidated",
+      "store": "xarray_ocean_consolidated.zarr",
+      "producer_profile": "Xarray-style consolidated ocean dataset",
+      "classification": "supported",
+      "expected_status": "success",
+      "actual_status": "success",
+      "checks": {
+        "status": true,
+        "fields": true,
+        "groups": true,
+        "physical": true,
+        "issues": true,
+        "gaps": true,
+        "coordinates": true,
+        "unknowns": true,
+        "evidence": true,
+        "portable": true,
+        "chunk_safe": true,
+        "value_abstained": true,
+        "array_walk_pruned": true
+      },
+      "physical_matches": {
+        "salinity:compressor": true
+      },
+      "coordinate_matches": {
+        "depth": true
+      },
+      "unknown_matches": {},
+      "issue_codes": [],
+      "gap_codes": [],
+      "compatibility_gaps": [],
+      "actual_fields": [
+        "depth",
+        "salinity"
+      ],
+      "all_expectations_met": true
+    },
+    {
+      "case_id": "nested_instrument_groups",
+      "store": "nested_instrument_groups.zarr",
+      "producer_profile": "Nested grouped station dataset with repeated variable names",
+      "classification": "supported",
+      "expected_status": "success",
+      "actual_status": "success",
+      "checks": {
+        "status": true,
+        "fields": true,
+        "groups": true,
+        "physical": true,
+        "issues": true,
+        "gaps": true,
+        "coordinates": true,
+        "unknowns": true,
+        "evidence": true,
+        "portable": true,
+        "chunk_safe": true,
+        "value_abstained": true,
+        "array_walk_pruned": true
+      },
+      "physical_matches": {},
+      "coordinate_matches": {
+        "station_a/qc": true,
+        "station_b/qc:not_coordinate": true
+      },
+      "unknown_matches": {},
+      "issue_codes": [],
+      "gap_codes": [],
+      "compatibility_gaps": [],
+      "actual_fields": [
+        "station_a/measurement",
+        "station_a/qc",
+        "station_b/measurement",
+        "station_b/qc"
+      ],
+      "all_expectations_met": true
+    },
+    {
+      "case_id": "scalar_and_zero_length",
+      "store": "scalar_and_zero_length.zarr",
+      "producer_profile": "Scalar and empty scientific arrays",
+      "classification": "supported",
+      "expected_status": "success",
+      "actual_status": "success",
+      "checks": {
+        "status": true,
+        "fields": true,
+        "groups": true,
+        "physical": true,
+        "issues": true,
+        "gaps": true,
+        "coordinates": true,
+        "unknowns": true,
+        "evidence": true,
+        "portable": true,
+        "chunk_safe": true,
+        "value_abstained": true,
+        "array_walk_pruned": true
+      },
+      "physical_matches": {
+        "scalar:shape": true,
+        "scalar:chunks": true,
+        "empty:shape": true,
+        "empty:chunks": true
+      },
+      "coordinate_matches": {},
+      "unknown_matches": {},
+      "issue_codes": [],
+      "gap_codes": [],
+      "compatibility_gaps": [],
+      "actual_fields": [
+        "empty",
+        "scalar"
+      ],
+      "all_expectations_met": true
+    },
+    {
+      "case_id": "structured_dtype_records",
+      "store": "structured_dtype_records.zarr",
+      "producer_profile": "NumPy structured-record array",
+      "classification": "supported",
+      "expected_status": "success",
+      "actual_status": "success",
+      "checks": {
+        "status": true,
+        "fields": true,
+        "groups": true,
+        "physical": true,
+        "issues": true,
+        "gaps": true,
+        "coordinates": true,
+        "unknowns": true,
+        "evidence": true,
+        "portable": true,
+        "chunk_safe": true,
+        "value_abstained": true,
+        "array_walk_pruned": true
+      },
+      "physical_matches": {
+        "records:dtype": true,
+        "records:shape": true
+      },
+      "coordinate_matches": {},
+      "unknown_matches": {},
+      "issue_codes": [],
+      "gap_codes": [],
+      "compatibility_gaps": [],
+      "actual_fields": [
+        "records"
+      ],
+      "all_expectations_met": true
+    },
+    {
+      "case_id": "object_vlen_utf8",
+      "store": "object_vlen_utf8.zarr",
+      "producer_profile": "Object array with vlen UTF-8 filter metadata",
+      "classification": "supported",
+      "expected_status": "success",
+      "actual_status": "success",
+      "checks": {
+        "status": true,
+        "fields": true,
+        "groups": true,
+        "physical": true,
+        "issues": true,
+        "gaps": true,
+        "coordinates": true,
+        "unknowns": true,
+        "evidence": true,
+        "portable": true,
+        "chunk_safe": true,
+        "value_abstained": true,
+        "array_walk_pruned": true
+      },
+      "physical_matches": {
+        "labels:dtype": true,
+        "labels:filters": true
+      },
+      "coordinate_matches": {},
+      "unknown_matches": {
+        "labels": true
+      },
+      "issue_codes": [],
+      "gap_codes": [],
+      "compatibility_gaps": [],
+      "actual_fields": [
+        "labels"
+      ],
+      "all_expectations_met": true
+    },
+    {
+      "case_id": "slash_separator_tree",
+      "store": "slash_separator_tree.zarr",
+      "producer_profile": "Large image array with slash-separated chunk keys",
+      "classification": "supported",
+      "expected_status": "success",
+      "actual_status": "success",
+      "checks": {
+        "status": true,
+        "fields": true,
+        "groups": true,
+        "physical": true,
+        "issues": true,
+        "gaps": true,
+        "coordinates": true,
+        "unknowns": true,
+        "evidence": true,
+        "portable": true,
+        "chunk_safe": true,
+        "value_abstained": true,
+        "array_walk_pruned": true
+      },
+      "physical_matches": {
+        "image:dimension_separator": true
+      },
+      "coordinate_matches": {},
+      "unknown_matches": {},
+      "issue_codes": [],
+      "gap_codes": [],
+      "compatibility_gaps": [],
+      "actual_fields": [
+        "image"
+      ],
+      "all_expectations_met": true
+    },
+    {
+      "case_id": "special_fill_values",
+      "store": "special_fill_values.zarr",
+      "producer_profile": "Floating arrays with JSON special fill values",
+      "classification": "supported",
+      "expected_status": "success",
+      "actual_status": "success",
+      "checks": {
+        "status": true,
+        "fields": true,
+        "groups": true,
+        "physical": true,
+        "issues": true,
+        "gaps": true,
+        "coordinates": true,
+        "unknowns": true,
+        "evidence": true,
+        "portable": true,
+        "chunk_safe": true,
+        "value_abstained": true,
+        "array_walk_pruned": true
+      },
+      "physical_matches": {
+        "nan_fill:fill_value": true,
+        "positive_infinity_fill:fill_value": true
+      },
+      "coordinate_matches": {},
+      "unknown_matches": {},
+      "issue_codes": [],
+      "gap_codes": [],
+      "compatibility_gaps": [],
+      "actual_fields": [
+        "nan_fill",
+        "positive_infinity_fill"
+      ],
+      "all_expectations_met": true
+    },
+    {
+      "case_id": "unknown_codec_metadata",
+      "store": "unknown_codec_metadata.zarr",
+      "producer_profile": "Site-defined codec metadata preserved without execution",
+      "classification": "supported",
+      "expected_status": "success",
+      "actual_status": "success",
+      "checks": {
+        "status": true,
+        "fields": true,
+        "groups": true,
+        "physical": true,
+        "issues": true,
+        "gaps": true,
+        "coordinates": true,
+        "unknowns": true,
+        "evidence": true,
+        "portable": true,
+        "chunk_safe": true,
+        "value_abstained": true,
+        "array_walk_pruned": true
+      },
+      "physical_matches": {
+        "signal:compressor": true,
+        "signal:filters": true
+      },
+      "coordinate_matches": {},
+      "unknown_matches": {
+        "signal": true
+      },
+      "issue_codes": [],
+      "gap_codes": [],
+      "compatibility_gaps": [],
+      "actual_fields": [
+        "signal"
+      ],
+      "all_expectations_met": true
+    },
+    {
+      "case_id": "unresolved_coordinate_reference",
+      "store": "unresolved_coordinate_reference.zarr",
+      "producer_profile": "Xarray-style dataset with one missing coordinate target",
+      "classification": "unsupported_feature",
+      "expected_status": "success",
+      "actual_status": "success",
+      "checks": {
+        "status": true,
+        "fields": true,
+        "groups": true,
+        "physical": true,
+        "issues": true,
+        "gaps": true,
+        "coordinates": true,
+        "unknowns": true,
+        "evidence": true,
+        "portable": true,
+        "chunk_safe": true,
+        "value_abstained": true,
+        "array_walk_pruned": true
+      },
+      "physical_matches": {},
+      "coordinate_matches": {
+        "lat": true
+      },
+      "unknown_matches": {},
+      "issue_codes": [],
+      "gap_codes": [
+        "unresolved_coordinate_reference"
+      ],
+      "compatibility_gaps": [
+        {
+          "code": "unresolved_coordinate_reference",
+          "state": "unknown",
+          "owner_path": "measurement",
+          "reference": "missing_lon",
+          "evidence_source": "measurement/.zattrs",
+          "evidence_refs": [
+            "measurement/.zattrs#coordinates"
+          ]
+        }
+      ],
+      "actual_fields": [
+        "lat",
+        "measurement"
+      ],
+      "all_expectations_met": true
+    },
+    {
+      "case_id": "dimension_conflict_group",
+      "store": "dimension_conflict_group.zarr",
+      "producer_profile": "Inconsistent Xarray dimension-size declarations",
+      "classification": "unsupported_feature",
+      "expected_status": "success",
+      "actual_status": "success",
+      "checks": {
+        "status": true,
+        "fields": true,
+        "groups": true,
+        "physical": true,
+        "issues": true,
+        "gaps": true,
+        "coordinates": true,
+        "unknowns": true,
+        "evidence": true,
+        "portable": true,
+        "chunk_safe": true,
+        "value_abstained": true,
+        "array_walk_pruned": true
+      },
+      "physical_matches": {},
+      "coordinate_matches": {},
+      "unknown_matches": {},
+      "issue_codes": [],
+      "gap_codes": [
+        "dimension_size_conflict"
+      ],
+      "compatibility_gaps": [
+        {
+          "code": "dimension_size_conflict",
+          "state": "conflicted",
+          "dimension": "record",
+          "observed_sizes": [
+            3,
+            4
+          ],
+          "source_arrays": [
+            "first",
+            "second"
+          ],
+          "evidence_refs": [
+            "first/.zattrs",
+            "second/.zattrs"
+          ]
+        }
+      ],
+      "actual_fields": [
+        "first",
+        "second"
+      ],
+      "all_expectations_met": true
+    },
+    {
+      "case_id": "stale_consolidated_metadata",
+      "store": "stale_consolidated_metadata.zarr",
+      "producer_profile": "Direct metadata newer than stale consolidated metadata",
+      "classification": "unsupported_feature",
+      "expected_status": "partial",
+      "actual_status": "partial",
+      "checks": {
+        "status": true,
+        "fields": true,
+        "groups": true,
+        "physical": true,
+        "issues": true,
+        "gaps": true,
+        "coordinates": true,
+        "unknowns": true,
+        "evidence": true,
+        "portable": true,
+        "chunk_safe": true,
+        "value_abstained": true,
+        "array_walk_pruned": true
+      },
+      "physical_matches": {
+        "temperature:shape": true,
+        "temperature:chunks": true
+      },
+      "coordinate_matches": {},
+      "unknown_matches": {},
+      "issue_codes": [
+        "partial_extraction",
+        "zarr_consolidated_conflict"
+      ],
+      "gap_codes": [],
+      "compatibility_gaps": [],
+      "actual_fields": [
+        "temperature"
+      ],
+      "all_expectations_met": true
+    },
+    {
+      "case_id": "malformed_optional_attrs",
+      "store": "malformed_optional_attrs.zarr",
+      "producer_profile": "Valid array with malformed optional attributes",
+      "classification": "malformed_failure",
+      "expected_status": "partial",
+      "actual_status": "partial",
+      "checks": {
+        "status": true,
+        "fields": true,
+        "groups": true,
+        "physical": true,
+        "issues": true,
+        "gaps": true,
+        "coordinates": true,
+        "unknowns": true,
+        "evidence": true,
+        "portable": true,
+        "chunk_safe": true,
+        "value_abstained": true,
+        "array_walk_pruned": true
+      },
+      "physical_matches": {},
+      "coordinate_matches": {},
+      "unknown_matches": {},
+      "issue_codes": [
+        "partial_extraction",
+        "zarr_metadata_malformed"
+      ],
+      "gap_codes": [],
+      "compatibility_gaps": [],
+      "actual_fields": [
+        "valid"
+      ],
+      "all_expectations_met": true
+    },
+    {
+      "case_id": "malformed_only_array",
+      "store": "malformed_only_array.zarr",
+      "producer_profile": "Malformed root array metadata",
+      "classification": "malformed_failure",
+      "expected_status": "failed",
+      "actual_status": "failed",
+      "checks": {
+        "status": true,
+        "fields": true,
+        "groups": true,
+        "physical": true,
+        "issues": true,
+        "gaps": true,
+        "coordinates": true,
+        "unknowns": true,
+        "evidence": true,
+        "portable": true,
+        "chunk_safe": true,
+        "value_abstained": true,
+        "array_walk_pruned": true
+      },
+      "physical_matches": {},
+      "coordinate_matches": {},
+      "unknown_matches": {},
+      "issue_codes": [
+        "zarr_metadata_malformed"
+      ],
+      "gap_codes": [],
+      "compatibility_gaps": [],
+      "actual_fields": [],
+      "all_expectations_met": true
+    },
+    {
+      "case_id": "zarr_v3_reference",
+      "store": "zarr_v3_reference.zarr",
+      "producer_profile": "Recognized Zarr v3 group",
+      "classification": "unsupported_feature",
+      "expected_status": "abstained",
+      "actual_status": "abstained",
+      "checks": {
+        "status": true,
+        "fields": true,
+        "groups": true,
+        "physical": true,
+        "issues": true,
+        "gaps": true,
+        "coordinates": true,
+        "unknowns": true,
+        "evidence": true,
+        "portable": true,
+        "chunk_safe": true,
+        "value_abstained": true,
+        "array_walk_pruned": true
+      },
+      "physical_matches": {},
+      "coordinate_matches": {},
+      "unknown_matches": {},
+      "issue_codes": [
+        "unsupported_zarr_version"
+      ],
+      "gap_codes": [],
+      "compatibility_gaps": [],
+      "actual_fields": [],
+      "all_expectations_met": true
+    },
+    {
+      "case_id": "empty_suffix_only",
+      "store": "empty_suffix_only.zarr",
+      "producer_profile": "Directory suffix without spec-backed metadata",
+      "classification": "structured_abstention",
+      "expected_status": "abstained",
+      "actual_status": "abstained",
+      "checks": {
+        "status": true,
+        "fields": true,
+        "groups": true,
+        "physical": true,
+        "issues": true,
+        "gaps": true,
+        "coordinates": true,
+        "unknowns": true,
+        "evidence": true,
+        "portable": true,
+        "chunk_safe": true,
+        "value_abstained": true,
+        "array_walk_pruned": true
+      },
+      "physical_matches": {},
+      "coordinate_matches": {},
+      "unknown_matches": {},
+      "issue_codes": [
+        "zarr_metadata_missing"
+      ],
+      "gap_codes": [],
+      "compatibility_gaps": [],
+      "actual_fields": [],
+      "all_expectations_met": true
+    }
+  ]
+}

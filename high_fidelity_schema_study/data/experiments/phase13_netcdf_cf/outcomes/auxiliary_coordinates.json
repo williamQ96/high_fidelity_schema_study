@@ -1,0 +1,446 @@
+{
+  "status": "success",
+  "format_decision": {
+    "selected_format": "netcdf",
+    "basis": "magic",
+    "support_score": 1.0,
+    "signals": [
+      {
+        "format": "netcdf",
+        "basis": "magic",
+        "support_score": 1.0,
+        "detail": "NetCDF classic signature"
+      },
+      {
+        "format": "netcdf",
+        "basis": "suffix",
+        "support_score": 0.72,
+        "detail": "filename suffix .nc"
+      }
+    ],
+    "conflicted": false
+  },
+  "extractor": {
+    "extractor_id": "netcdf_cf_deterministic_extractor",
+    "version": "1.0.0",
+    "formats": [
+      "netcdf"
+    ],
+    "suffixes": [
+      ".nc",
+      ".cdf"
+    ],
+    "magic_prefixes": [
+      "43444601",
+      "43444602",
+      "43444605",
+      "894844460d0a1a0a"
+    ],
+    "operations": [
+      "enumerate_dimensions",
+      "enumerate_groups",
+      "enumerate_variables",
+      "read_shapes",
+      "read_attributes",
+      "interpret_cf_coordinates",
+      "decode_cf_time"
+    ],
+    "determinism_class": "strict_with_sampled_profiles",
+    "evidence_types": [
+      "netcdf_dimension",
+      "netcdf_group",
+      "netcdf_variable",
+      "netcdf_attribute"
+    ]
+  },
+  "schema": {
+    "dataset_id": "auxiliary_coordinates",
+    "file_id": "auxiliary_coordinates.nc",
+    "file_format": "netcdf",
+    "data_modality": "multidimensional",
+    "fields": [
+      {
+        "field_name": "lat",
+        "field_path": "lat",
+        "physical_type": ">f4",
+        "logical_type": "coordinate",
+        "semantic_type": "latitude",
+        "nullable": false,
+        "unique_ratio": null,
+        "shape": [
+          3
+        ],
+        "unit": "degrees_north",
+        "unit_normalization": {
+          "status": "unmapped_unit",
+          "original_unit": "degrees_north",
+          "canonical_unit": "degrees_north",
+          "ucum_code": null,
+          "evidence_basis": "explicit_metadata"
+        },
+        "description": null,
+        "example_values": [
+          "10.0",
+          "11.0",
+          "12.0"
+        ],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_variable",
+            "source": "testdata/netcdf_cf_phase13/auxiliary_coordinates.nc:lat",
+            "detail": "dimensions=['obs']; shape=[3]; dtype=>f4",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/auxiliary_coordinates.nc:lat",
+            "detail": "standard_name='latitude'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/auxiliary_coordinates.nc:lat",
+            "detail": "units='degrees_north'",
+            "confidence": 0.99
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "netcdf_cf_deterministic_extractor"
+      },
+      {
+        "field_name": "lon",
+        "field_path": "lon",
+        "physical_type": ">f4",
+        "logical_type": "coordinate",
+        "semantic_type": "longitude",
+        "nullable": false,
+        "unique_ratio": null,
+        "shape": [
+          3
+        ],
+        "unit": "degrees_east",
+        "unit_normalization": {
+          "status": "unmapped_unit",
+          "original_unit": "degrees_east",
+          "canonical_unit": "degrees_east",
+          "ucum_code": null,
+          "evidence_basis": "explicit_metadata"
+        },
+        "description": null,
+        "example_values": [
+          "100.0",
+          "101.0",
+          "102.0"
+        ],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_variable",
+            "source": "testdata/netcdf_cf_phase13/auxiliary_coordinates.nc:lon",
+            "detail": "dimensions=['obs']; shape=[3]; dtype=>f4",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/auxiliary_coordinates.nc:lon",
+            "detail": "standard_name='longitude'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/auxiliary_coordinates.nc:lon",
+            "detail": "units='degrees_east'",
+            "confidence": 0.99
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "netcdf_cf_deterministic_extractor"
+      },
+      {
+        "field_name": "temperature",
+        "field_path": "temperature",
+        "physical_type": ">f4",
+        "logical_type": "measurement",
+        "semantic_type": "air_temperature",
+        "nullable": false,
+        "unique_ratio": null,
+        "shape": [
+          3
+        ],
+        "unit": "K",
+        "unit_normalization": {
+          "status": "normalized_ucum",
+          "original_unit": "K",
+          "canonical_unit": "Kelvin",
+          "ucum_code": "K",
+          "evidence_basis": "explicit_metadata"
+        },
+        "description": "air temperature",
+        "example_values": [
+          "280.0",
+          "281.0",
+          "282.0"
+        ],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_variable",
+            "source": "testdata/netcdf_cf_phase13/auxiliary_coordinates.nc:temperature",
+            "detail": "dimensions=['obs']; shape=[3]; dtype=>f4",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/auxiliary_coordinates.nc:temperature",
+            "detail": "standard_name='air_temperature'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/auxiliary_coordinates.nc:temperature",
+            "detail": "long_name='air temperature'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/auxiliary_coordinates.nc:temperature",
+            "detail": "units='K'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/auxiliary_coordinates.nc:temperature",
+            "detail": "coordinates='lat lon'",
+            "confidence": 0.99
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "netcdf_cf_deterministic_extractor"
+      }
+    ],
+    "groups": [],
+    "metadata": {
+      "backend": "scipy.io.netcdf_file",
+      "dimensions": {
+        "obs": {
+          "size": 3,
+          "unlimited": false,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "netcdf_dimension",
+              "source": "testdata/netcdf_cf_phase13/auxiliary_coordinates.nc:obs",
+              "detail": "size=3; unlimited=False",
+              "confidence": 1.0
+            }
+          ]
+        }
+      },
+      "file_attributes": {
+        "Conventions": "CF-1.8"
+      },
+      "cf_analysis": {
+        "variables": [
+          {
+            "field_path": "lat",
+            "dimensions": [
+              "obs"
+            ],
+            "attributes": {
+              "standard_name": "latitude",
+              "units": "degrees_north"
+            },
+            "coordinate_roles": [
+              "auxiliary_coordinate",
+              "standard_latitude",
+              "geospatial_coordinate"
+            ],
+            "coordinate_role_claim": {
+              "value": [
+                "auxiliary_coordinate",
+                "standard_latitude",
+                "geospatial_coordinate"
+              ],
+              "state": "supported",
+              "reason_code": "explicit_cf_coordinate_evidence",
+              "evidence_refs": [
+                "attribute:coordinates",
+                "attribute:standard_name",
+                "attribute:units"
+              ]
+            },
+            "is_bounds_variable": false,
+            "bounds_claim": {
+              "value": false,
+              "state": "unknown",
+              "reason_code": "not_referenced_as_bounds",
+              "evidence_refs": []
+            },
+            "unit_claim": {
+              "value": "degrees_north",
+              "state": "supported",
+              "reason_code": "explicit_units_attribute",
+              "evidence_refs": [
+                "attribute:units"
+              ]
+            }
+          },
+          {
+            "field_path": "lon",
+            "dimensions": [
+              "obs"
+            ],
+            "attributes": {
+              "standard_name": "longitude",
+              "units": "degrees_east"
+            },
+            "coordinate_roles": [
+              "auxiliary_coordinate",
+              "standard_longitude",
+              "geospatial_coordinate"
+            ],
+            "coordinate_role_claim": {
+              "value": [
+                "auxiliary_coordinate",
+                "standard_longitude",
+                "geospatial_coordinate"
+              ],
+              "state": "supported",
+              "reason_code": "explicit_cf_coordinate_evidence",
+              "evidence_refs": [
+                "attribute:coordinates",
+                "attribute:standard_name",
+                "attribute:units"
+              ]
+            },
+            "is_bounds_variable": false,
+            "bounds_claim": {
+              "value": false,
+              "state": "unknown",
+              "reason_code": "not_referenced_as_bounds",
+              "evidence_refs": []
+            },
+            "unit_claim": {
+              "value": "degrees_east",
+              "state": "supported",
+              "reason_code": "explicit_units_attribute",
+              "evidence_refs": [
+                "attribute:units"
+              ]
+            }
+          },
+          {
+            "field_path": "temperature",
+            "dimensions": [
+              "obs"
+            ],
+            "attributes": {
+              "standard_name": "air_temperature",
+              "long_name": "air temperature",
+              "units": "K",
+              "coordinates": "lat lon"
+            },
+            "coordinate_roles": [],
+            "coordinate_role_claim": {
+              "value": [],
+              "state": "unknown",
+              "reason_code": "no_coordinate_evidence",
+              "evidence_refs": []
+            },
+            "is_bounds_variable": false,
+            "bounds_claim": {
+              "value": false,
+              "state": "unknown",
+              "reason_code": "not_referenced_as_bounds",
+              "evidence_refs": []
+            },
+            "unit_claim": {
+              "value": "K",
+              "state": "supported",
+              "reason_code": "explicit_units_attribute",
+              "evidence_refs": [
+                "attribute:units"
+              ]
+            }
+          }
+        ],
+        "temporal": {
+          "candidate_paths": [],
+          "calendar_claims": {},
+          "decoded_with_temporal_semantics": false,
+          "selection": {
+            "analysis_version": "phase12_temporal_v1",
+            "candidates": [],
+            "selected_candidate": null,
+            "property_claims": {},
+            "validator_results": {
+              "candidate_count": 0,
+              "eligible_candidate_count": 0,
+              "measurement_count": 0,
+              "selection_abstained": true
+            },
+            "issues": []
+          }
+        }
+      },
+      "extraction_errors": [],
+      "deterministic_profile": {
+        "missingness": {
+          "basis": "field_metadata",
+          "sampled_rows": null,
+          "field_count": 3,
+          "fields_with_missing_count": 0,
+          "total_missing_cells": 0,
+          "fields": [
+            {
+              "field_path": "lat",
+              "missing_count": 0,
+              "missing_ratio": null,
+              "nullable": false,
+              "basis": "field_metadata"
+            },
+            {
+              "field_path": "lon",
+              "missing_count": 0,
+              "missing_ratio": null,
+              "nullable": false,
+              "basis": "field_metadata"
+            },
+            {
+              "field_path": "temperature",
+              "missing_count": 0,
+              "missing_ratio": null,
+              "nullable": false,
+              "basis": "field_metadata"
+            }
+          ]
+        },
+        "identifier_quality": {
+          "candidate_count": 0,
+          "best_identifier_fields": [],
+          "fields": []
+        }
+      }
+    },
+    "notes": []
+  },
+  "issues": []
+}

@@ -1,0 +1,22 @@
+{
+  "zarr_consolidated_format": 1,
+  "metadata": {
+    ".zgroup": {
+      "zarr_format": 2
+    },
+    "temperature/.zarray": {
+      "zarr_format": 2,
+      "shape": [
+        99
+      ],
+      "chunks": [
+        3
+      ],
+      "dtype": "<f4",
+      "compressor": null,
+      "fill_value": null,
+      "order": "C",
+      "filters": null
+    }
+  }
+}

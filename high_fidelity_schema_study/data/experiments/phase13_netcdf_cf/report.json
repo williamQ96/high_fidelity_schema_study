@@ -1,0 +1,309 @@
+{
+  "experiment_id": "phase13_netcdf_cf",
+  "manifest": "testdata/netcdf_cf_phase13/manifest.json",
+  "metrics": {
+    "case_count": 14,
+    "format_detection_accuracy": 1.0,
+    "extractor_routing_accuracy": 1.0,
+    "physical_extraction_accuracy": 1.0,
+    "coordinate_role_accuracy": 1.0,
+    "time_axis_accuracy": 1.0,
+    "calendar_handling_accuracy": 1.0,
+    "unit_mapping_accuracy": 1.0,
+    "temporal_abstention_precision": 1.0,
+    "temporal_abstention_recall": 1.0,
+    "unsupported_promotion_count": 0,
+    "evidence_coverage": 1.0
+  },
+  "notes": [
+    "Phase 13 is isolated from the frozen Artifact Paper benchmark.",
+    "NetCDF/CF semantic claims are promoted only from explicit attributes or deterministic structure.",
+    "Non-standard calendars are preserved but not decoded by the standard-calendar temporal path."
+  ],
+  "cases": [
+    {
+      "case_id": "standard_coordinates",
+      "status": "success",
+      "format_match": true,
+      "routing_match": true,
+      "physical_matches": {
+        "time": true,
+        "lat": true,
+        "lon": true,
+        "temperature": true,
+        "dimension:time": true,
+        "dimension:lat": true,
+        "dimension:lon": true
+      },
+      "coordinate_matches": {
+        "time": true,
+        "lat": true,
+        "lon": true
+      },
+      "time_axis_match": true,
+      "calendar_matches": {
+        "time": true
+      },
+      "unit_matches": {
+        "temperature": true
+      },
+      "expected_temporal_abstention": false,
+      "actual_temporal_abstention": false
+    },
+    {
+      "case_id": "auxiliary_coordinates",
+      "status": "success",
+      "format_match": true,
+      "routing_match": true,
+      "physical_matches": {
+        "lat": true,
+        "lon": true,
+        "temperature": true,
+        "dimension:obs": true
+      },
+      "coordinate_matches": {
+        "lat": true,
+        "lon": true
+      },
+      "time_axis_match": true,
+      "calendar_matches": {},
+      "unit_matches": {},
+      "expected_temporal_abstention": true,
+      "actual_temporal_abstention": true
+    },
+    {
+      "case_id": "days_since",
+      "status": "success",
+      "format_match": true,
+      "routing_match": true,
+      "physical_matches": {
+        "time": true,
+        "temperature": true
+      },
+      "coordinate_matches": {
+        "time": true
+      },
+      "time_axis_match": true,
+      "calendar_matches": {
+        "time": true
+      },
+      "unit_matches": {},
+      "expected_temporal_abstention": false,
+      "actual_temporal_abstention": false
+    },
+    {
+      "case_id": "calendar_360_day",
+      "status": "success",
+      "format_match": true,
+      "routing_match": true,
+      "physical_matches": {
+        "time": true,
+        "temperature": true
+      },
+      "coordinate_matches": {
+        "time": true
+      },
+      "time_axis_match": true,
+      "calendar_matches": {
+        "time": true
+      },
+      "unit_matches": {},
+      "expected_temporal_abstention": true,
+      "actual_temporal_abstention": true
+    },
+    {
+      "case_id": "multiple_time_variables",
+      "status": "success",
+      "format_match": true,
+      "routing_match": true,
+      "physical_matches": {
+        "time": true,
+        "forecast_time": true,
+        "temperature": true
+      },
+      "coordinate_matches": {
+        "time": true,
+        "forecast_time": true
+      },
+      "time_axis_match": true,
+      "calendar_matches": {
+        "time": true,
+        "forecast_time": true
+      },
+      "unit_matches": {},
+      "expected_temporal_abstention": true,
+      "actual_temporal_abstention": true
+    },
+    {
+      "case_id": "irregular_sampling",
+      "status": "success",
+      "format_match": true,
+      "routing_match": true,
+      "physical_matches": {
+        "time": true,
+        "temperature": true
+      },
+      "coordinate_matches": {
+        "time": true
+      },
+      "time_axis_match": true,
+      "calendar_matches": {
+        "time": true
+      },
+      "unit_matches": {},
+      "expected_temporal_abstention": false,
+      "actual_temporal_abstention": false
+    },
+    {
+      "case_id": "bounds_variable",
+      "status": "success",
+      "format_match": true,
+      "routing_match": true,
+      "physical_matches": {
+        "time": true,
+        "time_bnds": true,
+        "temperature": true,
+        "dimension:time": true,
+        "dimension:nv": true,
+        "bounds:time_bnds": true
+      },
+      "coordinate_matches": {
+        "time": true
+      },
+      "time_axis_match": true,
+      "calendar_matches": {
+        "time": true
+      },
+      "unit_matches": {},
+      "expected_temporal_abstention": false,
+      "actual_temporal_abstention": false
+    },
+    {
+      "case_id": "missing_metadata",
+      "status": "success",
+      "format_match": true,
+      "routing_match": true,
+      "physical_matches": {
+        "mystery": true
+      },
+      "coordinate_matches": {},
+      "time_axis_match": true,
+      "calendar_matches": {},
+      "unit_matches": {},
+      "expected_temporal_abstention": true,
+      "actual_temporal_abstention": true
+    },
+    {
+      "case_id": "name_only_coordinate",
+      "status": "success",
+      "format_match": true,
+      "routing_match": true,
+      "physical_matches": {
+        "lat": true
+      },
+      "coordinate_matches": {},
+      "time_axis_match": true,
+      "calendar_matches": {},
+      "unit_matches": {},
+      "expected_temporal_abstention": true,
+      "actual_temporal_abstention": true
+    },
+    {
+      "case_id": "coordinate_conflict",
+      "status": "success",
+      "format_match": true,
+      "routing_match": true,
+      "physical_matches": {
+        "position": true
+      },
+      "coordinate_matches": {
+        "position": true,
+        "position:claim_state": true
+      },
+      "time_axis_match": true,
+      "calendar_matches": {},
+      "unit_matches": {},
+      "expected_temporal_abstention": true,
+      "actual_temporal_abstention": true
+    },
+    {
+      "case_id": "malformed_cf_time",
+      "status": "success",
+      "format_match": true,
+      "routing_match": true,
+      "physical_matches": {
+        "time": true,
+        "temperature": true
+      },
+      "coordinate_matches": {
+        "time": true
+      },
+      "time_axis_match": true,
+      "calendar_matches": {
+        "time": true
+      },
+      "unit_matches": {},
+      "expected_temporal_abstention": true,
+      "actual_temporal_abstention": true
+    },
+    {
+      "case_id": "unmapped_unit",
+      "status": "success",
+      "format_match": true,
+      "routing_match": true,
+      "physical_matches": {
+        "signal": true
+      },
+      "coordinate_matches": {},
+      "time_axis_match": true,
+      "calendar_matches": {},
+      "unit_matches": {
+        "signal": true
+      },
+      "expected_temporal_abstention": true,
+      "actual_temporal_abstention": true
+    },
+    {
+      "case_id": "missing_markers",
+      "status": "success",
+      "format_match": true,
+      "routing_match": true,
+      "physical_matches": {
+        "temperature": true,
+        "nullable:temperature": true
+      },
+      "coordinate_matches": {},
+      "time_axis_match": true,
+      "calendar_matches": {},
+      "unit_matches": {
+        "temperature": true
+      },
+      "expected_temporal_abstention": true,
+      "actual_temporal_abstention": true
+    },
+    {
+      "case_id": "grouped_netcdf4",
+      "status": "success",
+      "format_match": true,
+      "routing_match": true,
+      "physical_matches": {
+        "/observations/time": true,
+        "/observations/temperature": true,
+        "group:/observations": true,
+        "dimension:time": true
+      },
+      "coordinate_matches": {
+        "/observations/time": true
+      },
+      "time_axis_match": true,
+      "calendar_matches": {
+        "/observations/time": true
+      },
+      "unit_matches": {
+        "/observations/temperature": true
+      },
+      "expected_temporal_abstention": false,
+      "actual_temporal_abstention": false
+    }
+  ]
+}

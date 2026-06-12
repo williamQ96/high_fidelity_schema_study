@@ -1,0 +1,79 @@
+{
+  "schema_envelope_version": "1.0.0",
+  "identity": {
+    "dataset_id": "opaque",
+    "file_id": "opaque.bin",
+    "file_format": "raw_binary",
+    "data_modality": "unknown",
+    "resource_kind": "file"
+  },
+  "format_detection": {
+    "selected_format": null,
+    "basis": "no_supported_signal",
+    "support_score": 0.0,
+    "signals": [],
+    "conflicted": false
+  },
+  "extractor_capability": null,
+  "outcome": {
+    "status": "abstained",
+    "issues": [
+      {
+        "code": "unknown_no_signature",
+        "stage": "format_detection",
+        "severity": "warning",
+        "message": "No trustworthy format signature, hint, suffix, or text probe selected a parser.",
+        "details": {}
+      }
+    ]
+  },
+  "physical_structure": {
+    "fields": [],
+    "groups": [],
+    "dimensions": {},
+    "format_specific": {}
+  },
+  "logical_roles": [],
+  "semantic_hints": [],
+  "units": [],
+  "temporal_semantics": {},
+  "relationships": {
+    "dimensions": {},
+    "groups": []
+  },
+  "claims": [],
+  "evidence": [],
+  "provenance": {
+    "source_file_id": "opaque.bin",
+    "extractor_id": null,
+    "extractor_version": null,
+    "determinism_class": null,
+    "transformation": "deterministic_unified_envelope_projection"
+  },
+  "conflicts": [],
+  "abstentions": [
+    {
+      "code": "unknown_no_signature",
+      "stage": "format_detection",
+      "severity": "warning",
+      "message": "No trustworthy format signature, hint, suffix, or text probe selected a parser.",
+      "details": {}
+    }
+  ],
+  "unsupported_features": [],
+  "evaluation_metadata": {
+    "claim_state_vocabulary": [
+      "observed",
+      "declared",
+      "derived",
+      "supported",
+      "conflicted",
+      "unknown",
+      "unsupported",
+      "abstained"
+    ],
+    "source_outcome_status": "abstained",
+    "backward_compatibility": "Legacy ExtractionOutcome.schema remains authoritative and unchanged.",
+    "claim_boundary": "The envelope normalizes existing extractor claims; it does not promote new semantic truth."
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "registry_version": "1.0.0",
+  "capabilities": [
+    {
+      "extractor_id": "csv_conservative_profiler",
+      "version": "1.0.0",
+      "formats": [
+        "csv"
+      ],
+      "suffixes": [
+        ".csv",
+        ".tsv"
+      ],
+      "magic_prefixes": [],
+      "operations": [
+        "enumerate_fields",
+        "sample_values",
+        "infer_physical_types",
+        "profile_time_series"
+      ],
+      "determinism_class": "strict_with_sampled_profiles",
+      "evidence_types": [
+        "csv_header",
+        "sample_rows",
+        "column_name_unit_hint"
+      ],
+      "resource_kinds": [
+        "file"
+      ]
+    },
+    {
+      "extractor_id": "h5py_structure_traversal",
+      "version": "1.0.0",
+      "formats": [
+        "hdf5"
+      ],
+      "suffixes": [
+        ".h5",
+        ".hdf5",
+        ".hdf",
+        ".he5"
+      ],
+      "magic_prefixes": [
+        "894844460d0a1a0a"
+      ],
+      "operations": [
+        "enumerate_groups",
+        "enumerate_fields",
+        "read_shapes",
+        "read_attributes"
+      ],
+      "determinism_class": "strict",
+      "evidence_types": [
+        "hdf5_dataset_path",
+        "hdf5_attribute"
+      ],
+      "resource_kinds": [
+        "file"
+      ]
+    },
+    {
+      "extractor_id": "json_bounded_structure_extractor",
+      "version": "0.1.0",
+      "formats": [
+        "json"
+      ],
+      "suffixes": [
+        ".json",
+        ".jsonl",
+        ".ndjson"
+      ],
+      "magic_prefixes": [],
+      "operations": [
+        "observe_bounded_paths",
+        "observe_type_sets",
+        "observe_nullability",
+        "observe_missingness",
+        "observe_array_shapes",
+        "read_json_schema_declarations"
+      ],
+      "determinism_class": "strict_with_bounded_sample",
+      "evidence_types": [
+        "json_sample_observation",
+        "json_schema_declaration"
+      ],
+      "resource_kinds": [
+        "file"
+      ]
+    },
+    {
+      "extractor_id": "netcdf_cf_deterministic_extractor",
+      "version": "1.0.0",
+      "formats": [
+        "netcdf"
+      ],
+      "suffixes": [
+        ".nc",
+        ".cdf"
+      ],
+      "magic_prefixes": [
+        "43444601",
+        "43444602",
+        "43444605",
+        "894844460d0a1a0a"
+      ],
+      "operations": [
+        "enumerate_dimensions",
+        "enumerate_groups",
+        "enumerate_variables",
+        "read_shapes",
+        "read_attributes",
+        "interpret_cf_coordinates",
+        "decode_cf_time"
+      ],
+      "determinism_class": "strict_with_sampled_profiles",
+      "evidence_types": [
+        "netcdf_dimension",
+        "netcdf_group",
+        "netcdf_variable",
+        "netcdf_attribute"
+      ],
+      "resource_kinds": [
+        "file"
+      ]
+    },
+    {
+      "extractor_id": "parquet_arrow_metadata_extractor",
+      "version": "0.1.0",
+      "formats": [
+        "parquet"
+      ],
+      "suffixes": [
+        ".parquet"
+      ],
+      "magic_prefixes": [
+        "50415231"
+      ],
+      "operations": [
+        "enumerate_arrow_fields",
+        "read_arrow_types",
+        "read_nullability",
+        "read_row_groups",
+        "read_encodings",
+        "read_compression",
+        "read_footer_statistics",
+        "read_key_value_metadata"
+      ],
+      "determinism_class": "strict_metadata_only",
+      "evidence_types": [
+        "arrow_schema_field",
+        "arrow_field_metadata",
+        "parquet_schema_column",
+        "parquet_row_group",
+        "parquet_column_chunk",
+        "parquet_footer_statistics"
+      ],
+      "resource_kinds": [
+        "file"
+      ]
+    },
+    {
+      "extractor_id": "xml_xsd_bounded_structure_extractor",
+      "version": "0.1.0",
+      "formats": [
+        "xml"
+      ],
+      "suffixes": [
+        ".xml",
+        ".xsd"
+      ],
+      "magic_prefixes": [],
+      "operations": [
+        "observe_bounded_elements",
+        "observe_attributes",
+        "observe_namespaces",
+        "observe_repeated_paths",
+        "read_xsd_declarations",
+        "compare_xsi_type_observation"
+      ],
+      "determinism_class": "strict_with_bounded_sample",
+      "evidence_types": [
+        "xml_sample_observation",
+        "xsd_element_declaration",
+        "xsd_attribute_declaration"
+      ],
+      "resource_kinds": [
+        "file"
+      ]
+    },
+    {
+      "extractor_id": "zarr_v2_metadata_extractor",
+      "version": "0.2.0",
+      "formats": [
+        "zarr"
+      ],
+      "suffixes": [
+        ".zarr"
+      ],
+      "magic_prefixes": [],
+      "operations": [
+        "enumerate_groups",
+        "enumerate_arrays",
+        "read_array_metadata",
+        "read_attributes",
+        "interpret_xarray_dimensions",
+        "interpret_cf_coordinates"
+      ],
+      "determinism_class": "strict_metadata_only",
+      "evidence_types": [
+        "zarr_group_metadata",
+        "zarr_array_metadata",
+        "zarr_attribute",
+        "zarr_consolidated_metadata"
+      ],
+      "resource_kinds": [
+        "directory_store"
+      ]
+    }
+  ],
+  "policy": {
+    "canonical_claims_require_registered_deterministic_extractor": true,
+    "agent_can_register_or_promote_claims": false
+  }
+}

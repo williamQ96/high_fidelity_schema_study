@@ -1,0 +1,509 @@
+{
+  "agent_export_version": "1.0.0",
+  "policy": {
+    "canonical_mutation_allowed": false,
+    "silent_claim_promotion_allowed": false,
+    "suggestions_are_noncanonical": true,
+    "reruns_require_explicit_request": true
+  },
+  "schema_summary": {
+    "identity": {
+      "dataset_id": "declared_schema",
+      "file_id": "declared_schema.json",
+      "file_format": "json",
+      "data_modality": "schema_document",
+      "resource_kind": "file"
+    },
+    "outcome_status": "success",
+    "field_count": 4,
+    "claim_count": 16,
+    "evidence_count": 12,
+    "conflict_count": 1,
+    "abstention_count": 0,
+    "fields": [
+      {
+        "field_path": "$.id",
+        "physical_type": "integer",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": false
+      },
+      {
+        "field_path": "$.value",
+        "physical_type": "number | null",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": true
+      },
+      {
+        "field_path": "$.context",
+        "physical_type": "object",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": true
+      },
+      {
+        "field_path": "$.context.source",
+        "physical_type": "string",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": false
+      }
+    ]
+  },
+  "claim_records": [
+    {
+      "claim_id": "c0001",
+      "subject": "$.id",
+      "property": "physical_type",
+      "value": "integer",
+      "state": "declared",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0001"
+      ]
+    },
+    {
+      "claim_id": "c0002",
+      "subject": "$.id",
+      "property": "nullable",
+      "value": false,
+      "state": "declared",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0001"
+      ]
+    },
+    {
+      "claim_id": "c0003",
+      "subject": "$.value",
+      "property": "physical_type",
+      "value": "number | null",
+      "state": "declared",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0002"
+      ]
+    },
+    {
+      "claim_id": "c0004",
+      "subject": "$.value",
+      "property": "nullable",
+      "value": true,
+      "state": "declared",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0002"
+      ]
+    },
+    {
+      "claim_id": "c0005",
+      "subject": "$.context",
+      "property": "physical_type",
+      "value": "object",
+      "state": "declared",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0003"
+      ]
+    },
+    {
+      "claim_id": "c0006",
+      "subject": "$.context",
+      "property": "nullable",
+      "value": true,
+      "state": "declared",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0003"
+      ]
+    },
+    {
+      "claim_id": "c0007",
+      "subject": "$.context.source",
+      "property": "physical_type",
+      "value": "string",
+      "state": "declared",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0004"
+      ]
+    },
+    {
+      "claim_id": "c0008",
+      "subject": "$.context.source",
+      "property": "nullable",
+      "value": false,
+      "state": "declared",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0004"
+      ]
+    },
+    {
+      "claim_id": "c0009",
+      "subject": "$.id",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "declared",
+      "reason_code": null,
+      "evidence_refs": [
+        "e0005"
+      ]
+    },
+    {
+      "claim_id": "c0010",
+      "subject": "$.value",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "declared",
+      "reason_code": null,
+      "evidence_refs": [
+        "e0006"
+      ]
+    },
+    {
+      "claim_id": "c0011",
+      "subject": "$.context",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "declared",
+      "reason_code": null,
+      "evidence_refs": [
+        "e0007"
+      ]
+    },
+    {
+      "claim_id": "c0012",
+      "subject": "$.context.source",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "declared",
+      "reason_code": null,
+      "evidence_refs": [
+        "e0008"
+      ]
+    },
+    {
+      "claim_id": "c0013",
+      "subject": "$.context",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": null,
+      "evidence_refs": [
+        "e0009"
+      ]
+    },
+    {
+      "claim_id": "c0014",
+      "subject": "$.context.source",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": null,
+      "evidence_refs": [
+        "e0010"
+      ]
+    },
+    {
+      "claim_id": "c0015",
+      "subject": "$.id",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": null,
+      "evidence_refs": [
+        "e0011"
+      ]
+    },
+    {
+      "claim_id": "c0016",
+      "subject": "$.value",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": null,
+      "evidence_refs": [
+        "e0012"
+      ]
+    }
+  ],
+  "evidence_records": [
+    {
+      "evidence_id": "e0001",
+      "tier": "sample_observation",
+      "evidence_type": "json_schema_declaration",
+      "source": "json_schema:$.id",
+      "detail": "JSON Schema property declaration",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0002",
+      "tier": "sample_observation",
+      "evidence_type": "json_schema_declaration",
+      "source": "json_schema:$.value",
+      "detail": "JSON Schema property declaration",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0003",
+      "tier": "sample_observation",
+      "evidence_type": "json_schema_declaration",
+      "source": "json_schema:$.context",
+      "detail": "JSON Schema property declaration",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0004",
+      "tier": "sample_observation",
+      "evidence_type": "json_schema_declaration",
+      "source": "json_schema:$.context.source",
+      "detail": "JSON Schema property declaration",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0005",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "json_schema:$.id",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0006",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "json_schema:$.value",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0007",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "json_schema:$.context",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0008",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "json_schema:$.context.source",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0009",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "json_sample:$.context",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0010",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "json_sample:$.context.source",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0011",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "json_sample:$.id",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0012",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "json_sample:$.value",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    }
+  ],
+  "provenance_graph": {
+    "entities": [
+      {
+        "id": "source:declared_schema.json",
+        "type": "source_resource",
+        "file_id": "declared_schema.json"
+      },
+      {
+        "id": "envelope:declared_schema",
+        "type": "unified_schema_envelope",
+        "version": "1.0.0"
+      }
+    ],
+    "activities": [
+      {
+        "id": "activity:deterministic_extraction",
+        "type": "deterministic_extraction",
+        "used": "source:declared_schema.json",
+        "generated": "envelope:declared_schema"
+      },
+      {
+        "id": "activity:unified_projection",
+        "type": "deterministic_projection",
+        "generated": "envelope:declared_schema"
+      }
+    ],
+    "agents": [
+      {
+        "id": "extractor:json_bounded_structure_extractor",
+        "type": "registered_extractor",
+        "version": "0.1.0",
+        "determinism_class": "strict_with_bounded_sample"
+      }
+    ]
+  },
+  "retrieval_context": {
+    "title": "declared_schema",
+    "format": "json",
+    "field_paths": [
+      "$.id",
+      "$.value",
+      "$.context",
+      "$.context.source"
+    ],
+    "supported_claims": [
+      {
+        "subject": "$.id",
+        "property": "physical_type",
+        "value": "integer",
+        "state": "declared"
+      },
+      {
+        "subject": "$.id",
+        "property": "nullable",
+        "value": false,
+        "state": "declared"
+      },
+      {
+        "subject": "$.value",
+        "property": "physical_type",
+        "value": "number | null",
+        "state": "declared"
+      },
+      {
+        "subject": "$.value",
+        "property": "nullable",
+        "value": true,
+        "state": "declared"
+      },
+      {
+        "subject": "$.context",
+        "property": "physical_type",
+        "value": "object",
+        "state": "declared"
+      },
+      {
+        "subject": "$.context",
+        "property": "nullable",
+        "value": true,
+        "state": "declared"
+      },
+      {
+        "subject": "$.context.source",
+        "property": "physical_type",
+        "value": "string",
+        "state": "declared"
+      },
+      {
+        "subject": "$.context.source",
+        "property": "nullable",
+        "value": false,
+        "state": "declared"
+      },
+      {
+        "subject": "$.id",
+        "property": "format_specific_claim",
+        "value": null,
+        "state": "declared"
+      },
+      {
+        "subject": "$.value",
+        "property": "format_specific_claim",
+        "value": null,
+        "state": "declared"
+      },
+      {
+        "subject": "$.context",
+        "property": "format_specific_claim",
+        "value": null,
+        "state": "declared"
+      },
+      {
+        "subject": "$.context.source",
+        "property": "format_specific_claim",
+        "value": null,
+        "state": "declared"
+      },
+      {
+        "subject": "$.context",
+        "property": "format_specific_claim",
+        "value": null,
+        "state": "observed"
+      },
+      {
+        "subject": "$.context.source",
+        "property": "format_specific_claim",
+        "value": null,
+        "state": "observed"
+      },
+      {
+        "subject": "$.id",
+        "property": "format_specific_claim",
+        "value": null,
+        "state": "observed"
+      },
+      {
+        "subject": "$.value",
+        "property": "format_specific_claim",
+        "value": null,
+        "state": "observed"
+      }
+    ],
+    "conflicts": [
+      {
+        "category": "conflicts",
+        "detail": {
+          "field_path": "$.value",
+          "code": "declared_observed_type_conflict",
+          "declared_types": [
+            "null",
+            "number"
+          ],
+          "observed_types": [
+            "number",
+            "string"
+          ],
+          "evidence_refs": [
+            "json_schema:$.value",
+            "json_sample:$.value"
+          ]
+        }
+      }
+    ],
+    "unsupported_features": []
+  },
+  "requestable_actions": [
+    {
+      "action": "inspect_evidence",
+      "effect": "read_only"
+    },
+    {
+      "action": "suggest_noncanonical_annotation",
+      "effect": "suggestion_only"
+    },
+    {
+      "action": "request_explicit_rerun",
+      "effect": "requires_user_or_orchestrator_approval"
+    }
+  ]
+}

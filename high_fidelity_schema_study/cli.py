@@ -4,8 +4,13 @@ import argparse
 import json
 from pathlib import Path
 
+from .extractors.base import ExtractionRequest
 from .extractors.csv_extractor import extract_csv_schema
 from .extractors.hdf5_extractor import extract_hdf5_schema
+from .extractors.registry import extract_path
+from .unified_schema import build_unified_schema_envelope
+from .unified_evaluation import evaluate_all_tracks
+from .agent_exports import export_agent_bundle
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -24,6 +29,31 @@ def build_parser() -> argparse.ArgumentParser:
     hdf5_parser = subparsers.add_parser("extract-hdf5", help="Extract HDF5 hierarchy and field schema.")
     hdf5_parser.add_argument("--input", required=True, help="Path to the HDF5 file.")
     hdf5_parser.add_argument("--output", help="Optional JSON output path.")
+
+    extract_parser = subparsers.add_parser("extract", help="Detect a format and run a registered deterministic extractor.")
+    extract_parser.add_argument("--input", required=True, help="Path to the input file or supported directory store.")
+    extract_parser.add_argument("--format", default="auto", help="Optional format hint; defaults to auto detection.")
+    extract_parser.add_argument("--sample-limit", type=int, default=200, help="Maximum rows to sample for tabular profiling.")
+    extract_parser.add_argument("--output", help="Optional JSON output path.")
+    extract_parser.add_argument(
+        "--output-shape",
+        choices=["legacy", "envelope", "both"],
+        default="legacy",
+        help="Select the legacy outcome, unified envelope, or both.",
+    )
+    evaluate_parser = subparsers.add_parser("evaluate", help="Run the unified post-freeze evaluation entrypoint.")
+    evaluate_parser.add_argument(
+        "--scope",
+        choices=["extensions", "all"],
+        default="all",
+        help="Include only post-freeze extension tracks or include frozen reference metrics.",
+    )
+    evaluate_parser.add_argument("--output", help="Optional JSON output path.")
+    agent_parser = subparsers.add_parser("agent-export", help="Export a read-only agent context bundle.")
+    agent_parser.add_argument("--input", required=True, help="Path to the input resource.")
+    agent_parser.add_argument("--format", default="auto", help="Optional format hint.")
+    agent_parser.add_argument("--sample-limit", type=int, default=200)
+    agent_parser.add_argument("--output", help="Optional JSON output path.")
 
     return parser
 
@@ -71,6 +101,40 @@ def main() -> None:
     if args.command == "extract-hdf5":
         result = extract_hdf5_schema(args.input)
         write_or_print(result.to_dict(), args.output)
+        return
+
+    if args.command == "extract":
+        outcome = extract_path(
+            ExtractionRequest(
+                path=args.input,
+                format_hint=args.format,
+                sample_limit=max(1, args.sample_limit),
+            )
+        )
+        legacy = outcome.to_dict()
+        envelope = build_unified_schema_envelope(legacy)
+        payload = (
+            legacy
+            if args.output_shape == "legacy"
+            else envelope
+            if args.output_shape == "envelope"
+            else {"extraction_outcome": legacy, "unified_schema_envelope": envelope}
+        )
+        write_or_print(payload, args.output)
+        return
+
+    if args.command == "evaluate":
+        write_or_print(
+            evaluate_all_tracks(include_frozen_references=args.scope == "all"),
+            args.output,
+        )
+        return
+
+    if args.command == "agent-export":
+        outcome = extract_path(
+            ExtractionRequest(args.input, format_hint=args.format, sample_limit=max(1, args.sample_limit))
+        )
+        write_or_print(export_agent_bundle(build_unified_schema_envelope(outcome)), args.output)
         return
 
     parser.error(f"Unsupported command: {args.command}")

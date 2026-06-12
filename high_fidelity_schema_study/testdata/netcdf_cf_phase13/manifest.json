@@ -1,0 +1,356 @@
+{
+  "experiment_id": "phase13_netcdf_cf",
+  "cases": [
+    {
+      "case_id": "standard_coordinates",
+      "file": "standard_coordinates.nc",
+      "expected_variables": [
+        "time",
+        "lat",
+        "lon",
+        "temperature"
+      ],
+      "expected_dimensions": [
+        "time",
+        "lat",
+        "lon"
+      ],
+      "expected_coordinate_roles": {
+        "time": [
+          "dimension_coordinate",
+          "axis_t",
+          "standard_time"
+        ],
+        "lat": [
+          "dimension_coordinate",
+          "axis_y",
+          "standard_latitude",
+          "geospatial_coordinate"
+        ],
+        "lon": [
+          "dimension_coordinate",
+          "axis_x",
+          "standard_longitude",
+          "geospatial_coordinate"
+        ]
+      },
+      "expected_time_field": "time",
+      "expected_calendar": {
+        "time": [
+          "standard",
+          "supported"
+        ]
+      },
+      "expected_units": {
+        "temperature": "normalized_ucum"
+      },
+      "expect_temporal_abstention": false
+    },
+    {
+      "case_id": "auxiliary_coordinates",
+      "file": "auxiliary_coordinates.nc",
+      "expected_variables": [
+        "lat",
+        "lon",
+        "temperature"
+      ],
+      "expected_dimensions": [
+        "obs"
+      ],
+      "expected_coordinate_roles": {
+        "lat": [
+          "auxiliary_coordinate"
+        ],
+        "lon": [
+          "auxiliary_coordinate"
+        ]
+      },
+      "expected_time_field": null,
+      "expected_calendar": {},
+      "expected_units": {},
+      "expect_temporal_abstention": true
+    },
+    {
+      "case_id": "days_since",
+      "file": "days_since.nc",
+      "expected_variables": [
+        "time",
+        "temperature"
+      ],
+      "expected_coordinate_roles": {
+        "time": [
+          "dimension_coordinate",
+          "axis_t",
+          "standard_time"
+        ]
+      },
+      "expected_time_field": "time",
+      "expected_calendar": {
+        "time": [
+          "standard",
+          "supported"
+        ]
+      },
+      "expected_units": {},
+      "expect_temporal_abstention": false
+    },
+    {
+      "case_id": "calendar_360_day",
+      "file": "calendar_360_day.nc",
+      "expected_variables": [
+        "time",
+        "temperature"
+      ],
+      "expected_coordinate_roles": {
+        "time": [
+          "dimension_coordinate",
+          "axis_t",
+          "standard_time"
+        ]
+      },
+      "expected_time_field": null,
+      "expected_calendar": {
+        "time": [
+          "360_day",
+          "supported"
+        ]
+      },
+      "expected_units": {},
+      "expect_temporal_abstention": true
+    },
+    {
+      "case_id": "multiple_time_variables",
+      "file": "multiple_time_variables.nc",
+      "expected_variables": [
+        "time",
+        "forecast_time",
+        "temperature"
+      ],
+      "expected_coordinate_roles": {
+        "time": [
+          "dimension_coordinate",
+          "axis_t",
+          "standard_time"
+        ],
+        "forecast_time": [
+          "axis_t",
+          "standard_time"
+        ]
+      },
+      "expected_time_field": null,
+      "expected_calendar": {
+        "time": [
+          "standard",
+          "supported"
+        ],
+        "forecast_time": [
+          "standard",
+          "supported"
+        ]
+      },
+      "expected_units": {},
+      "expect_temporal_abstention": true
+    },
+    {
+      "case_id": "irregular_sampling",
+      "file": "irregular_sampling.nc",
+      "expected_variables": [
+        "time",
+        "temperature"
+      ],
+      "expected_coordinate_roles": {
+        "time": [
+          "dimension_coordinate",
+          "axis_t",
+          "standard_time"
+        ]
+      },
+      "expected_time_field": "time",
+      "expected_calendar": {
+        "time": [
+          "standard",
+          "supported"
+        ]
+      },
+      "expected_time_properties": {
+        "frequency": "mixed",
+        "regularity": "irregular",
+        "missing_intervals": null
+      },
+      "expected_units": {},
+      "expect_temporal_abstention": false
+    },
+    {
+      "case_id": "bounds_variable",
+      "file": "bounds_variable.nc",
+      "expected_variables": [
+        "time",
+        "time_bnds",
+        "temperature"
+      ],
+      "expected_dimensions": [
+        "time",
+        "nv"
+      ],
+      "expected_coordinate_roles": {
+        "time": [
+          "dimension_coordinate",
+          "axis_t",
+          "standard_time"
+        ]
+      },
+      "expected_bounds_variables": [
+        "time_bnds"
+      ],
+      "expected_time_field": "time",
+      "expected_calendar": {
+        "time": [
+          "standard",
+          "supported"
+        ]
+      },
+      "expected_units": {},
+      "expect_temporal_abstention": false
+    },
+    {
+      "case_id": "missing_metadata",
+      "file": "missing_metadata.nc",
+      "expected_variables": [
+        "mystery"
+      ],
+      "expected_coordinate_roles": {},
+      "expected_unknown_fields": [
+        "mystery"
+      ],
+      "expected_time_field": null,
+      "expected_calendar": {},
+      "expected_units": {},
+      "expect_temporal_abstention": true
+    },
+    {
+      "case_id": "name_only_coordinate",
+      "file": "name_only_coordinate.nc",
+      "expected_variables": [
+        "lat"
+      ],
+      "expected_coordinate_roles": {},
+      "expected_unknown_fields": [
+        "lat"
+      ],
+      "expected_time_field": null,
+      "expected_calendar": {},
+      "expected_units": {},
+      "expect_temporal_abstention": true
+    },
+    {
+      "case_id": "coordinate_conflict",
+      "file": "coordinate_conflict.nc",
+      "expected_variables": [
+        "position"
+      ],
+      "expected_coordinate_roles": {
+        "position": [
+          "axis_x",
+          "standard_latitude"
+        ]
+      },
+      "expected_coordinate_claim_states": {
+        "position": "conflicted"
+      },
+      "expected_unknown_fields": [
+        "position"
+      ],
+      "expected_time_field": null,
+      "expected_calendar": {},
+      "expected_units": {},
+      "expect_temporal_abstention": true
+    },
+    {
+      "case_id": "malformed_cf_time",
+      "file": "malformed_cf_time.nc",
+      "expected_variables": [
+        "time",
+        "temperature"
+      ],
+      "expected_coordinate_roles": {
+        "time": [
+          "dimension_coordinate",
+          "axis_t",
+          "standard_time"
+        ]
+      },
+      "expected_time_field": null,
+      "expected_calendar": {
+        "time": [
+          "standard",
+          "conflicted"
+        ]
+      },
+      "expected_units": {},
+      "expect_temporal_abstention": true
+    },
+    {
+      "case_id": "unmapped_unit",
+      "file": "unmapped_unit.nc",
+      "expected_variables": [
+        "signal"
+      ],
+      "expected_coordinate_roles": {},
+      "expected_time_field": null,
+      "expected_calendar": {},
+      "expected_units": {
+        "signal": "unmapped_unit"
+      },
+      "expect_temporal_abstention": true
+    },
+    {
+      "case_id": "missing_markers",
+      "file": "missing_markers.nc",
+      "expected_variables": [
+        "temperature"
+      ],
+      "expected_coordinate_roles": {},
+      "expected_nullable_fields": [
+        "temperature"
+      ],
+      "expected_time_field": null,
+      "expected_calendar": {},
+      "expected_units": {
+        "temperature": "normalized_ucum"
+      },
+      "expect_temporal_abstention": true
+    },
+    {
+      "case_id": "grouped_netcdf4",
+      "file": "grouped_netcdf4.nc",
+      "expected_variables": [
+        "/observations/time",
+        "/observations/temperature"
+      ],
+      "expected_dimensions": [
+        "time"
+      ],
+      "expected_groups": [
+        "/observations"
+      ],
+      "expected_coordinate_roles": {
+        "/observations/time": [
+          "dimension_coordinate",
+          "axis_t",
+          "standard_time"
+        ]
+      },
+      "expected_time_field": "time",
+      "expected_calendar": {
+        "/observations/time": [
+          "standard",
+          "supported"
+        ]
+      },
+      "expected_units": {
+        "/observations/temperature": "normalized_ucum"
+      },
+      "expect_temporal_abstention": false
+    }
+  ]
+}

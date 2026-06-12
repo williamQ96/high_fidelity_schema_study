@@ -1,0 +1,58 @@
+{
+  "status": "abstained",
+  "format_decision": {
+    "selected_format": "zarr",
+    "basis": "suffix",
+    "support_score": 0.72,
+    "signals": [
+      {
+        "format": "zarr",
+        "basis": "suffix",
+        "support_score": 0.72,
+        "detail": "filename suffix .zarr"
+      }
+    ],
+    "conflicted": false
+  },
+  "extractor": {
+    "extractor_id": "zarr_v2_metadata_extractor",
+    "version": "0.2.0",
+    "formats": [
+      "zarr"
+    ],
+    "suffixes": [
+      ".zarr"
+    ],
+    "magic_prefixes": [],
+    "operations": [
+      "enumerate_groups",
+      "enumerate_arrays",
+      "read_array_metadata",
+      "read_attributes",
+      "interpret_xarray_dimensions",
+      "interpret_cf_coordinates"
+    ],
+    "determinism_class": "strict_metadata_only",
+    "evidence_types": [
+      "zarr_group_metadata",
+      "zarr_array_metadata",
+      "zarr_attribute",
+      "zarr_consolidated_metadata"
+    ],
+    "resource_kinds": [
+      "directory_store"
+    ]
+  },
+  "schema": null,
+  "issues": [
+    {
+      "code": "zarr_metadata_missing",
+      "stage": "extraction",
+      "severity": "warning",
+      "message": "No valid Zarr v2 group or array metadata could be extracted.",
+      "details": {
+        "error_count": 0
+      }
+    }
+  ]
+}

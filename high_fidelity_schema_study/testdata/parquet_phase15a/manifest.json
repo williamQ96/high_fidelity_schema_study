@@ -1,0 +1,154 @@
+{
+  "experiment_id": "phase15a_parquet_arrow",
+  "claim_boundary": "Controlled PyArrow-produced Parquet challenge pack; validates metadata-first extraction and does not establish broad Parquet ecosystem robustness.",
+  "generation": {
+    "library": "pyarrow",
+    "version": "24.0.0",
+    "method": "create_phase15a_parquet_challenge.py"
+  },
+  "cases": [
+    {
+      "case_id": "primitives",
+      "file": "primitives.parquet",
+      "expected_fields": [
+        "id",
+        "value",
+        "label",
+        "active"
+      ],
+      "expected_columns": [
+        "id",
+        "value",
+        "label",
+        "active"
+      ],
+      "expected_row_groups": 2,
+      "expected_compression": [
+        "SNAPPY"
+      ],
+      "expected_metadata_keys": [
+        "dataset"
+      ],
+      "expected_field_metadata": {
+        "id": [
+          "role"
+        ]
+      }
+    },
+    {
+      "case_id": "nested_struct_list",
+      "file": "nested_struct_list.parquet",
+      "expected_fields": [
+        "entity_id",
+        "profile",
+        "profile.age",
+        "profile.tags",
+        "profile.tags.element",
+        "scores",
+        "scores.element"
+      ],
+      "expected_columns": [
+        "entity_id",
+        "profile.age",
+        "profile.tags.list.element",
+        "scores.list.element"
+      ],
+      "expected_row_groups": 1,
+      "expected_compression": [
+        "GZIP"
+      ]
+    },
+    {
+      "case_id": "timestamps",
+      "file": "timestamps.parquet",
+      "expected_fields": [
+        "event_time",
+        "local_time"
+      ],
+      "expected_columns": [
+        "event_time",
+        "local_time"
+      ],
+      "expected_row_groups": 1,
+      "expected_compression": [
+        "ZSTD"
+      ],
+      "expected_timezones": {
+        "event_time": "UTC",
+        "local_time": "unknown"
+      }
+    },
+    {
+      "case_id": "dictionary",
+      "file": "dictionary.parquet",
+      "expected_fields": [
+        "category"
+      ],
+      "expected_columns": [
+        "category"
+      ],
+      "expected_row_groups": 1,
+      "expected_encodings": [
+        "RLE_DICTIONARY"
+      ]
+    },
+    {
+      "case_id": "required_nullable",
+      "file": "required_nullable.parquet",
+      "expected_fields": [
+        "required_id",
+        "optional_value"
+      ],
+      "expected_columns": [
+        "required_id",
+        "optional_value"
+      ],
+      "expected_row_groups": 1,
+      "expected_nullability": {
+        "required_id": false,
+        "optional_value": true
+      }
+    },
+    {
+      "case_id": "no_statistics",
+      "file": "no_statistics.parquet",
+      "expected_fields": [
+        "value"
+      ],
+      "expected_columns": [
+        "value"
+      ],
+      "expected_row_groups": 1,
+      "expected_statistics_state": "unknown"
+    },
+    {
+      "case_id": "decimal_binary",
+      "file": "decimal_binary.parquet",
+      "expected_fields": [
+        "amount",
+        "payload"
+      ],
+      "expected_columns": [
+        "amount",
+        "payload"
+      ],
+      "expected_row_groups": 1,
+      "expected_compression": [
+        "UNCOMPRESSED"
+      ]
+    },
+    {
+      "case_id": "empty",
+      "file": "empty.parquet",
+      "expected_fields": [
+        "id",
+        "name"
+      ],
+      "expected_columns": [
+        "id",
+        "name"
+      ],
+      "expected_row_groups": 1
+    }
+  ]
+}

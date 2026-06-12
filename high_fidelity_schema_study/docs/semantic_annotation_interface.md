@@ -23,7 +23,7 @@ Each semantic annotation task contains:
 - prioritized grounding snippets
 - explicit instructions
 
-The current machine-readable task shape is defined in [semantic_layer.py](D:\github\searnxg\llm-schema\high_fidelity_schema_study\semantic_layer.py).
+The current machine-readable task shape is defined in [semantic_layer.py](../semantic_layer.py).
 
 ## Grounding Priorities
 

@@ -1,0 +1,4 @@
+<catalog>
+          <item id="a"><value>10</value><label>alpha</label></item>
+          <item id="b"><value>11.5</value><label>beta</label></item>
+        </catalog>

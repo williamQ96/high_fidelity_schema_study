@@ -1,0 +1,25 @@
+{
+  "zarr_format": 2,
+  "shape": [
+    4,
+    6
+  ],
+  "chunks": [
+    2,
+    3
+  ],
+  "dtype": "<i2",
+  "compressor": {
+    "id": "zlib",
+    "level": 1
+  },
+  "fill_value": -9999,
+  "order": "F",
+  "filters": [
+    {
+      "id": "delta",
+      "dtype": "<i2"
+    }
+  ],
+  "dimension_separator": "/"
+}

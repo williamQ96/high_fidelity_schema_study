@@ -1,0 +1,158 @@
+{
+  "experiment_id": "phase17_unified_schema_envelope",
+  "schema_envelope_version": "1.0.0",
+  "metrics": {
+    "case_count": 8,
+    "section_completeness": 1.0,
+    "identity_accuracy": 1.0,
+    "format_projection_accuracy": 1.0,
+    "capability_or_abstention_accuracy": 1.0,
+    "physical_structure_fidelity": 1.0,
+    "claim_state_validity": 1.0,
+    "claim_evidence_integrity": 1.0,
+    "provenance_completeness": 1.0,
+    "conflict_projection_accuracy": 1.0,
+    "abstention_projection_accuracy": 1.0,
+    "legacy_outcome_immutability": 1.0
+  },
+  "claim_state_vocabulary": [
+    "observed",
+    "declared",
+    "derived",
+    "supported",
+    "conflicted",
+    "unknown",
+    "unsupported",
+    "abstained"
+  ],
+  "notes": [
+    "The unified envelope is an additive deterministic projection over legacy outcomes.",
+    "Legacy ExtractionOutcome.schema remains authoritative and unchanged.",
+    "The envelope does not promote new semantic truth."
+  ],
+  "cases": [
+    {
+      "case_id": "csv",
+      "source": "testdata/temporal_phase12/utc_z_regular.csv",
+      "checks": {
+        "sections": true,
+        "identity": true,
+        "format": true,
+        "capability": true,
+        "physical": true,
+        "states": true,
+        "evidence": true,
+        "provenance": true,
+        "compatibility": true
+      }
+    },
+    {
+      "case_id": "hdf5",
+      "source": "data/raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5",
+      "checks": {
+        "sections": true,
+        "identity": true,
+        "format": true,
+        "capability": true,
+        "physical": true,
+        "states": true,
+        "evidence": true,
+        "provenance": true,
+        "compatibility": true
+      }
+    },
+    {
+      "case_id": "netcdf",
+      "source": "testdata/netcdf_cf_phase13/standard_coordinates.nc",
+      "checks": {
+        "sections": true,
+        "identity": true,
+        "format": true,
+        "capability": true,
+        "physical": true,
+        "states": true,
+        "evidence": true,
+        "provenance": true,
+        "compatibility": true
+      }
+    },
+    {
+      "case_id": "zarr",
+      "source": "testdata/zarr_phase14a/basic_array.zarr",
+      "checks": {
+        "sections": true,
+        "identity": true,
+        "format": true,
+        "capability": true,
+        "physical": true,
+        "states": true,
+        "evidence": true,
+        "provenance": true,
+        "compatibility": true
+      }
+    },
+    {
+      "case_id": "parquet",
+      "source": "testdata/parquet_phase15a/primitives.parquet",
+      "checks": {
+        "sections": true,
+        "identity": true,
+        "format": true,
+        "capability": true,
+        "physical": true,
+        "states": true,
+        "evidence": true,
+        "provenance": true,
+        "compatibility": true
+      }
+    },
+    {
+      "case_id": "json",
+      "source": "testdata/json_phase16a/declared_schema.json",
+      "checks": {
+        "sections": true,
+        "identity": true,
+        "format": true,
+        "capability": true,
+        "physical": true,
+        "states": true,
+        "evidence": true,
+        "provenance": true,
+        "compatibility": true,
+        "conflict": true
+      }
+    },
+    {
+      "case_id": "xml",
+      "source": "testdata/xml_phase16b/xsi_conflict.xml",
+      "checks": {
+        "sections": true,
+        "identity": true,
+        "format": true,
+        "capability": true,
+        "physical": true,
+        "states": true,
+        "evidence": true,
+        "provenance": true,
+        "compatibility": true,
+        "conflict": true
+      }
+    },
+    {
+      "case_id": "raw_binary",
+      "source": "testdata/temporal_phase12/opaque.bin",
+      "checks": {
+        "sections": true,
+        "identity": true,
+        "format": true,
+        "capability": true,
+        "physical": true,
+        "states": true,
+        "evidence": true,
+        "provenance": true,
+        "compatibility": true,
+        "abstention": true
+      }
+    }
+  ]
+}

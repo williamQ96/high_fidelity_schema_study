@@ -1,0 +1,53 @@
+{
+  "status": "abstained",
+  "format_decision": {
+    "selected_format": "parquet",
+    "basis": "magic",
+    "support_score": 1.0,
+    "signals": [
+      {
+        "format": "parquet",
+        "basis": "magic",
+        "support_score": 1.0,
+        "detail": "Parquet signature"
+      },
+      {
+        "format": "parquet",
+        "basis": "suffix",
+        "support_score": 0.72,
+        "detail": "filename suffix .parquet"
+      }
+    ],
+    "conflicted": false
+  },
+  "extractor": null,
+  "schema": {
+    "dataset_id": "unsupported",
+    "file_id": "unsupported.parquet",
+    "file_format": "raw_binary",
+    "data_modality": "unknown",
+    "fields": [],
+    "groups": [],
+    "metadata": {
+      "byte_size": 58,
+      "magic_hex_prefix": "50 41 52 31 70 6c 61 63 65 68 6f 6c 64 65 72 20",
+      "field_claim_policy": "abstain_without_spec_backed_extractor",
+      "extraction_errors": []
+    },
+    "notes": [
+      "The payload does not have a selected spec-backed deterministic extractor.",
+      "The high-fidelity policy records file-level evidence and abstains from unsupported field claims."
+    ]
+  },
+  "issues": [
+    {
+      "code": "unknown_no_spec_backed_extractor",
+      "stage": "extractor_selection",
+      "severity": "warning",
+      "message": "The format is recognized but no spec-backed extractor is registered.",
+      "details": {
+        "selected_format": "parquet"
+      }
+    }
+  ]
+}

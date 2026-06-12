@@ -1,0 +1,3 @@
+<obs:collection xmlns:obs="urn:example:observations" xmlns:geo="urn:example:geo">
+          <obs:record geo:station="A"><geo:lat>10.5</geo:lat><geo:lon>20.5</geo:lon></obs:record>
+        </obs:collection>

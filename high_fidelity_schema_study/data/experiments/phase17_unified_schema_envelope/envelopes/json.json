@@ -1,0 +1,637 @@
+{
+  "schema_envelope_version": "1.0.0",
+  "identity": {
+    "dataset_id": "declared_schema",
+    "file_id": "declared_schema.json",
+    "file_format": "json",
+    "data_modality": "schema_document",
+    "resource_kind": "file"
+  },
+  "format_detection": {
+    "selected_format": "json",
+    "basis": "suffix",
+    "support_score": 0.72,
+    "signals": [
+      {
+        "format": "json",
+        "basis": "suffix",
+        "support_score": 0.72,
+        "detail": "filename suffix .json"
+      }
+    ],
+    "conflicted": false
+  },
+  "extractor_capability": {
+    "extractor_id": "json_bounded_structure_extractor",
+    "version": "0.1.0",
+    "formats": [
+      "json"
+    ],
+    "suffixes": [
+      ".json",
+      ".jsonl",
+      ".ndjson"
+    ],
+    "magic_prefixes": [],
+    "operations": [
+      "observe_bounded_paths",
+      "observe_type_sets",
+      "observe_nullability",
+      "observe_missingness",
+      "observe_array_shapes",
+      "read_json_schema_declarations"
+    ],
+    "determinism_class": "strict_with_bounded_sample",
+    "evidence_types": [
+      "json_sample_observation",
+      "json_schema_declaration"
+    ],
+    "resource_kinds": [
+      "file"
+    ]
+  },
+  "outcome": {
+    "status": "success",
+    "issues": []
+  },
+  "physical_structure": {
+    "fields": [
+      {
+        "field_name": "id",
+        "field_path": "$.id",
+        "physical_type": "integer",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": false,
+        "unique_ratio": null,
+        "shape": null,
+        "unit": null,
+        "unit_normalization": null,
+        "description": "Declared identifier",
+        "example_values": [],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "sample_observation",
+            "evidence_type": "json_schema_declaration",
+            "source": "json_schema:$.id",
+            "detail": "JSON Schema property declaration",
+            "confidence": 1.0
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "json_schema_declaration"
+      },
+      {
+        "field_name": "value",
+        "field_path": "$.value",
+        "physical_type": "number | null",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": true,
+        "unique_ratio": null,
+        "shape": null,
+        "unit": null,
+        "unit_normalization": null,
+        "description": null,
+        "example_values": [],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "sample_observation",
+            "evidence_type": "json_schema_declaration",
+            "source": "json_schema:$.value",
+            "detail": "JSON Schema property declaration",
+            "confidence": 1.0
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "json_schema_declaration"
+      },
+      {
+        "field_name": "context",
+        "field_path": "$.context",
+        "physical_type": "object",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": true,
+        "unique_ratio": null,
+        "shape": null,
+        "unit": null,
+        "unit_normalization": null,
+        "description": null,
+        "example_values": [],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "sample_observation",
+            "evidence_type": "json_schema_declaration",
+            "source": "json_schema:$.context",
+            "detail": "JSON Schema property declaration",
+            "confidence": 1.0
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "json_schema_declaration"
+      },
+      {
+        "field_name": "source",
+        "field_path": "$.context.source",
+        "physical_type": "string",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": false,
+        "unique_ratio": null,
+        "shape": null,
+        "unit": null,
+        "unit_normalization": null,
+        "description": null,
+        "example_values": [],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "sample_observation",
+            "evidence_type": "json_schema_declaration",
+            "source": "json_schema:$.context.source",
+            "detail": "JSON Schema property declaration",
+            "confidence": 1.0
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "json_schema_declaration"
+      }
+    ],
+    "groups": [],
+    "dimensions": {},
+    "format_specific": {
+      "json_analysis": {
+        "mode": "declared_json_schema",
+        "declared_fields": [
+          {
+            "field_path": "$.id",
+            "state": "declared",
+            "declared_types": [
+              "integer"
+            ],
+            "required": true,
+            "description": "Declared identifier",
+            "evidence_refs": [
+              "json_schema:$.id"
+            ]
+          },
+          {
+            "field_path": "$.value",
+            "state": "declared",
+            "declared_types": [
+              "number",
+              "null"
+            ],
+            "required": false,
+            "description": null,
+            "evidence_refs": [
+              "json_schema:$.value"
+            ]
+          },
+          {
+            "field_path": "$.context",
+            "state": "declared",
+            "declared_types": [
+              "object"
+            ],
+            "required": false,
+            "description": null,
+            "evidence_refs": [
+              "json_schema:$.context"
+            ]
+          },
+          {
+            "field_path": "$.context.source",
+            "state": "declared",
+            "declared_types": [
+              "string"
+            ],
+            "required": true,
+            "description": null,
+            "evidence_refs": [
+              "json_schema:$.context.source"
+            ]
+          }
+        ],
+        "observed_fields": [
+          {
+            "field_path": "$.context",
+            "state": "observed",
+            "observed_types": [
+              "object"
+            ],
+            "observed_record_count": 2,
+            "sample_record_count": 2,
+            "missing_count": 0,
+            "null_count": 0,
+            "evidence_refs": [
+              "json_sample:$.context"
+            ]
+          },
+          {
+            "field_path": "$.context.source",
+            "state": "observed",
+            "observed_types": [
+              "string"
+            ],
+            "observed_record_count": 2,
+            "sample_record_count": 2,
+            "missing_count": 0,
+            "null_count": 0,
+            "evidence_refs": [
+              "json_sample:$.context.source"
+            ]
+          },
+          {
+            "field_path": "$.id",
+            "state": "observed",
+            "observed_types": [
+              "integer"
+            ],
+            "observed_record_count": 2,
+            "sample_record_count": 2,
+            "missing_count": 0,
+            "null_count": 0,
+            "evidence_refs": [
+              "json_sample:$.id"
+            ]
+          },
+          {
+            "field_path": "$.value",
+            "state": "observed",
+            "observed_types": [
+              "number",
+              "string"
+            ],
+            "observed_record_count": 2,
+            "sample_record_count": 2,
+            "missing_count": 0,
+            "null_count": 0,
+            "evidence_refs": [
+              "json_sample:$.value"
+            ]
+          }
+        ],
+        "conflicts": [
+          {
+            "field_path": "$.value",
+            "code": "declared_observed_type_conflict",
+            "declared_types": [
+              "null",
+              "number"
+            ],
+            "observed_types": [
+              "number",
+              "string"
+            ],
+            "evidence_refs": [
+              "json_schema:$.value",
+              "json_sample:$.value"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "logical_roles": [],
+  "semantic_hints": [],
+  "units": [],
+  "temporal_semantics": {},
+  "relationships": {
+    "dimensions": {},
+    "groups": []
+  },
+  "claims": [
+    {
+      "claim_id": "c0001",
+      "subject": "$.id",
+      "property": "physical_type",
+      "value": "integer",
+      "state": "declared",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0001"
+      ]
+    },
+    {
+      "claim_id": "c0002",
+      "subject": "$.id",
+      "property": "nullable",
+      "value": false,
+      "state": "declared",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0001"
+      ]
+    },
+    {
+      "claim_id": "c0003",
+      "subject": "$.value",
+      "property": "physical_type",
+      "value": "number | null",
+      "state": "declared",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0002"
+      ]
+    },
+    {
+      "claim_id": "c0004",
+      "subject": "$.value",
+      "property": "nullable",
+      "value": true,
+      "state": "declared",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0002"
+      ]
+    },
+    {
+      "claim_id": "c0005",
+      "subject": "$.context",
+      "property": "physical_type",
+      "value": "object",
+      "state": "declared",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0003"
+      ]
+    },
+    {
+      "claim_id": "c0006",
+      "subject": "$.context",
+      "property": "nullable",
+      "value": true,
+      "state": "declared",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0003"
+      ]
+    },
+    {
+      "claim_id": "c0007",
+      "subject": "$.context.source",
+      "property": "physical_type",
+      "value": "string",
+      "state": "declared",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0004"
+      ]
+    },
+    {
+      "claim_id": "c0008",
+      "subject": "$.context.source",
+      "property": "nullable",
+      "value": false,
+      "state": "declared",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0004"
+      ]
+    },
+    {
+      "claim_id": "c0009",
+      "subject": "$.id",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "declared",
+      "reason_code": null,
+      "evidence_refs": [
+        "e0005"
+      ]
+    },
+    {
+      "claim_id": "c0010",
+      "subject": "$.value",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "declared",
+      "reason_code": null,
+      "evidence_refs": [
+        "e0006"
+      ]
+    },
+    {
+      "claim_id": "c0011",
+      "subject": "$.context",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "declared",
+      "reason_code": null,
+      "evidence_refs": [
+        "e0007"
+      ]
+    },
+    {
+      "claim_id": "c0012",
+      "subject": "$.context.source",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "declared",
+      "reason_code": null,
+      "evidence_refs": [
+        "e0008"
+      ]
+    },
+    {
+      "claim_id": "c0013",
+      "subject": "$.context",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": null,
+      "evidence_refs": [
+        "e0009"
+      ]
+    },
+    {
+      "claim_id": "c0014",
+      "subject": "$.context.source",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": null,
+      "evidence_refs": [
+        "e0010"
+      ]
+    },
+    {
+      "claim_id": "c0015",
+      "subject": "$.id",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": null,
+      "evidence_refs": [
+        "e0011"
+      ]
+    },
+    {
+      "claim_id": "c0016",
+      "subject": "$.value",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": null,
+      "evidence_refs": [
+        "e0012"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "e0001",
+      "tier": "sample_observation",
+      "evidence_type": "json_schema_declaration",
+      "source": "json_schema:$.id",
+      "detail": "JSON Schema property declaration",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0002",
+      "tier": "sample_observation",
+      "evidence_type": "json_schema_declaration",
+      "source": "json_schema:$.value",
+      "detail": "JSON Schema property declaration",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0003",
+      "tier": "sample_observation",
+      "evidence_type": "json_schema_declaration",
+      "source": "json_schema:$.context",
+      "detail": "JSON Schema property declaration",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0004",
+      "tier": "sample_observation",
+      "evidence_type": "json_schema_declaration",
+      "source": "json_schema:$.context.source",
+      "detail": "JSON Schema property declaration",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0005",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "json_schema:$.id",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0006",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "json_schema:$.value",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0007",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "json_schema:$.context",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0008",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "json_schema:$.context.source",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0009",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "json_sample:$.context",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0010",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "json_sample:$.context.source",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0011",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "json_sample:$.id",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0012",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "json_sample:$.value",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    }
+  ],
+  "provenance": {
+    "source_file_id": "declared_schema.json",
+    "extractor_id": "json_bounded_structure_extractor",
+    "extractor_version": "0.1.0",
+    "determinism_class": "strict_with_bounded_sample",
+    "transformation": "deterministic_unified_envelope_projection"
+  },
+  "conflicts": [
+    {
+      "category": "conflicts",
+      "detail": {
+        "field_path": "$.value",
+        "code": "declared_observed_type_conflict",
+        "declared_types": [
+          "null",
+          "number"
+        ],
+        "observed_types": [
+          "number",
+          "string"
+        ],
+        "evidence_refs": [
+          "json_schema:$.value",
+          "json_sample:$.value"
+        ]
+      }
+    }
+  ],
+  "abstentions": [],
+  "unsupported_features": [],
+  "evaluation_metadata": {
+    "claim_state_vocabulary": [
+      "observed",
+      "declared",
+      "derived",
+      "supported",
+      "conflicted",
+      "unknown",
+      "unsupported",
+      "abstained"
+    ],
+    "source_outcome_status": "success",
+    "backward_compatibility": "Legacy ExtractionOutcome.schema remains authoritative and unchanged.",
+    "claim_boundary": "The envelope normalizes existing extractor claims; it does not promote new semantic truth."
+  }
+}

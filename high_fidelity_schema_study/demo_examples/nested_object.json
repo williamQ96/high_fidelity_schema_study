@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "name": "alpha",
+  "active": true,
+  "metadata": {
+    "source": "sensor",
+    "quality": 3
+  }
+}

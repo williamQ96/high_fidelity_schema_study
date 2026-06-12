@@ -1,0 +1,19 @@
+{
+  "zarr_format": 2,
+  "shape": [
+    12
+  ],
+  "chunks": [
+    12
+  ],
+  "dtype": "|O",
+  "compressor": null,
+  "fill_value": null,
+  "order": "C",
+  "filters": [
+    {
+      "id": "vlen-utf8"
+    }
+  ],
+  "dimension_separator": "."
+}

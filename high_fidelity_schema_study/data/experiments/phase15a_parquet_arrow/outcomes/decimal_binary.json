@@ -1,0 +1,355 @@
+{
+  "case_id": "decimal_binary",
+  "outcome": {
+    "status": "success",
+    "format_decision": {
+      "selected_format": "parquet",
+      "basis": "magic",
+      "support_score": 1.0,
+      "signals": [
+        {
+          "format": "parquet",
+          "basis": "magic",
+          "support_score": 1.0,
+          "detail": "Parquet signature"
+        },
+        {
+          "format": "parquet",
+          "basis": "suffix",
+          "support_score": 0.72,
+          "detail": "filename suffix .parquet"
+        }
+      ],
+      "conflicted": false
+    },
+    "extractor": {
+      "extractor_id": "parquet_arrow_metadata_extractor",
+      "version": "0.1.0",
+      "formats": [
+        "parquet"
+      ],
+      "suffixes": [
+        ".parquet"
+      ],
+      "magic_prefixes": [
+        "50415231"
+      ],
+      "operations": [
+        "enumerate_arrow_fields",
+        "read_arrow_types",
+        "read_nullability",
+        "read_row_groups",
+        "read_encodings",
+        "read_compression",
+        "read_footer_statistics",
+        "read_key_value_metadata"
+      ],
+      "determinism_class": "strict_metadata_only",
+      "evidence_types": [
+        "arrow_schema_field",
+        "arrow_field_metadata",
+        "parquet_schema_column",
+        "parquet_row_group",
+        "parquet_column_chunk",
+        "parquet_footer_statistics"
+      ],
+      "resource_kinds": [
+        "file"
+      ]
+    },
+    "schema": {
+      "dataset_id": "decimal_binary",
+      "file_id": "decimal_binary.parquet",
+      "file_format": "parquet",
+      "data_modality": "tabular",
+      "fields": [
+        {
+          "field_name": "amount",
+          "field_path": "amount",
+          "physical_type": "decimal128(10, 2)",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "arrow_schema_field",
+              "source": "arrow_schema:amount",
+              "detail": "Arrow field declaration, type, and nullability",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "parquet_footer_arrow_schema"
+        },
+        {
+          "field_name": "payload",
+          "field_path": "payload",
+          "physical_type": "binary",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "arrow_schema_field",
+              "source": "arrow_schema:payload",
+              "detail": "Arrow field declaration, type, and nullability",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "parquet_footer_arrow_schema"
+        }
+      ],
+      "groups": [],
+      "metadata": {
+        "backend": "pyarrow 24.0.0",
+        "resource_kind": "file",
+        "num_rows": 2,
+        "num_columns": 2,
+        "num_row_groups": 1,
+        "created_by": "parquet-cpp-arrow version 24.0.0",
+        "format_version": "2.6",
+        "serialized_size": 559,
+        "key_value_metadata": {
+          "ARROW:schema": "/////7AAAAAQAAAAAAAKAAwABgAFAAgACgAAAAABBAAMAAAACAAIAAAABAAIAAAABAAAAAIAAABEAAAABAAAANT///8AAAEEEAAAABwAAAAEAAAAAAAAAAcAAABwYXlsb2FkAAQABAAEAAAAEAAUAAgABgAHAAwAAAAQABAAAAAAAAEHEAAAACAAAAAEAAAAAAAAAAYAAABhbW91bnQAAAgADAAEAAgACAAAAAoAAAACAAAAAAAAAA=="
+        },
+        "arrow_schema_metadata": {},
+        "parquet_analysis": {
+          "arrow_fields": [
+            {
+              "field_path": "amount",
+              "parent_path": null,
+              "name": "amount",
+              "nullable": true,
+              "metadata": {},
+              "type": {
+                "arrow_type": "decimal128(10, 2)",
+                "type_id": "23",
+                "precision": 10,
+                "scale": 2
+              },
+              "container": false,
+              "leaf": true,
+              "evidence_refs": [
+                "arrow_schema:amount",
+                "parquet_footer:schema.column[0]"
+              ],
+              "parquet_column": {
+                "column_index": 0,
+                "path": "amount",
+                "name": "amount",
+                "physical_type": "FIXED_LEN_BYTE_ARRAY",
+                "logical_type": "Decimal(precision=10, scale=2)",
+                "converted_type": "DECIMAL",
+                "max_definition_level": 1,
+                "max_repetition_level": 0,
+                "evidence_refs": [
+                  "parquet_footer:schema.column[0]"
+                ]
+              },
+              "physical_path_mapping": {
+                "state": "derived",
+                "reason_code": "arrow_leaf_parquet_column_ordinal",
+                "arrow_path": "amount",
+                "parquet_path": "amount",
+                "evidence_refs": [
+                  "parquet_footer:schema.column[0]"
+                ]
+              }
+            },
+            {
+              "field_path": "payload",
+              "parent_path": null,
+              "name": "payload",
+              "nullable": true,
+              "metadata": {},
+              "type": {
+                "arrow_type": "binary",
+                "type_id": "14"
+              },
+              "container": false,
+              "leaf": true,
+              "evidence_refs": [
+                "arrow_schema:payload",
+                "parquet_footer:schema.column[1]"
+              ],
+              "parquet_column": {
+                "column_index": 1,
+                "path": "payload",
+                "name": "payload",
+                "physical_type": "BYTE_ARRAY",
+                "logical_type": "None",
+                "converted_type": "NONE",
+                "max_definition_level": 1,
+                "max_repetition_level": 0,
+                "evidence_refs": [
+                  "parquet_footer:schema.column[1]"
+                ]
+              },
+              "physical_path_mapping": {
+                "state": "derived",
+                "reason_code": "arrow_leaf_parquet_column_ordinal",
+                "arrow_path": "payload",
+                "parquet_path": "payload",
+                "evidence_refs": [
+                  "parquet_footer:schema.column[1]"
+                ]
+              }
+            }
+          ],
+          "parquet_columns": [
+            {
+              "column_index": 0,
+              "path": "amount",
+              "name": "amount",
+              "physical_type": "FIXED_LEN_BYTE_ARRAY",
+              "logical_type": "Decimal(precision=10, scale=2)",
+              "converted_type": "DECIMAL",
+              "max_definition_level": 1,
+              "max_repetition_level": 0,
+              "evidence_refs": [
+                "parquet_footer:schema.column[0]"
+              ]
+            },
+            {
+              "column_index": 1,
+              "path": "payload",
+              "name": "payload",
+              "physical_type": "BYTE_ARRAY",
+              "logical_type": "None",
+              "converted_type": "NONE",
+              "max_definition_level": 1,
+              "max_repetition_level": 0,
+              "evidence_refs": [
+                "parquet_footer:schema.column[1]"
+              ]
+            }
+          ],
+          "row_groups": [
+            {
+              "row_group_index": 0,
+              "num_rows": 2,
+              "total_byte_size": 150,
+              "sorting_columns": [],
+              "columns": [
+                {
+                  "column_index": 0,
+                  "path": "amount",
+                  "physical_type": "FIXED_LEN_BYTE_ARRAY",
+                  "compression": "UNCOMPRESSED",
+                  "encodings": [
+                    "PLAIN",
+                    "RLE",
+                    "RLE_DICTIONARY"
+                  ],
+                  "num_values": 2,
+                  "total_compressed_size": 84,
+                  "total_uncompressed_size": 84,
+                  "statistics": {
+                    "state": "observed",
+                    "reason_code": "parquet_footer_statistics",
+                    "source": "parquet_footer",
+                    "evidence_refs": [
+                      "parquet_footer:row_group[0].column[0]"
+                    ],
+                    "has_min_max": true,
+                    "null_count": 0,
+                    "distinct_count": null,
+                    "num_values": 2,
+                    "physical_type": "FIXED_LEN_BYTE_ARRAY",
+                    "min_raw": {
+                      "encoding": "hex",
+                      "value": "00000004d2"
+                    },
+                    "max_raw": "\u0000\u0000\u0000\u0016.",
+                    "min": "12.34",
+                    "max": "56.78"
+                  },
+                  "evidence_refs": [
+                    "parquet_footer:row_group[0].column[0]"
+                  ]
+                },
+                {
+                  "column_index": 1,
+                  "path": "payload",
+                  "physical_type": "BYTE_ARRAY",
+                  "compression": "UNCOMPRESSED",
+                  "encodings": [
+                    "PLAIN",
+                    "RLE",
+                    "RLE_DICTIONARY"
+                  ],
+                  "num_values": 2,
+                  "total_compressed_size": 66,
+                  "total_uncompressed_size": 66,
+                  "statistics": {
+                    "state": "observed",
+                    "reason_code": "parquet_footer_statistics",
+                    "source": "parquet_footer",
+                    "evidence_refs": [
+                      "parquet_footer:row_group[0].column[1]"
+                    ],
+                    "has_min_max": true,
+                    "null_count": 0,
+                    "distinct_count": null,
+                    "num_values": 2,
+                    "physical_type": "BYTE_ARRAY",
+                    "min_raw": {
+                      "encoding": "hex",
+                      "value": "00ff"
+                    },
+                    "max_raw": "ok",
+                    "min": {
+                      "encoding": "hex",
+                      "value": "00ff"
+                    },
+                    "max": "ok"
+                  },
+                  "evidence_refs": [
+                    "parquet_footer:row_group[0].column[1]"
+                  ]
+                }
+              ],
+              "evidence_refs": [
+                "parquet_footer:row_group[0]"
+              ]
+            }
+          ]
+        },
+        "value_observation": {
+          "state": "unknown",
+          "reason_code": "row_values_not_read",
+          "row_values_read": 0,
+          "statistics_source": "parquet_footer_only"
+        },
+        "extraction_errors": []
+      },
+      "notes": [
+        "Parquet and Arrow schema metadata were extracted without reading row values.",
+        "Min/max, null counts, and distinct counts are reported only when present in the Parquet footer.",
+        "Arrow logical and temporal types are declarations; semantic roles are not inferred from field names."
+      ]
+    },
+    "issues": []
+  }
+}

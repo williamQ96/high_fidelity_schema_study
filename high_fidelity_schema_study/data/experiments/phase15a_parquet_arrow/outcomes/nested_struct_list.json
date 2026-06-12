@@ -1,0 +1,704 @@
+{
+  "case_id": "nested_struct_list",
+  "outcome": {
+    "status": "success",
+    "format_decision": {
+      "selected_format": "parquet",
+      "basis": "magic",
+      "support_score": 1.0,
+      "signals": [
+        {
+          "format": "parquet",
+          "basis": "magic",
+          "support_score": 1.0,
+          "detail": "Parquet signature"
+        },
+        {
+          "format": "parquet",
+          "basis": "suffix",
+          "support_score": 0.72,
+          "detail": "filename suffix .parquet"
+        }
+      ],
+      "conflicted": false
+    },
+    "extractor": {
+      "extractor_id": "parquet_arrow_metadata_extractor",
+      "version": "0.1.0",
+      "formats": [
+        "parquet"
+      ],
+      "suffixes": [
+        ".parquet"
+      ],
+      "magic_prefixes": [
+        "50415231"
+      ],
+      "operations": [
+        "enumerate_arrow_fields",
+        "read_arrow_types",
+        "read_nullability",
+        "read_row_groups",
+        "read_encodings",
+        "read_compression",
+        "read_footer_statistics",
+        "read_key_value_metadata"
+      ],
+      "determinism_class": "strict_metadata_only",
+      "evidence_types": [
+        "arrow_schema_field",
+        "arrow_field_metadata",
+        "parquet_schema_column",
+        "parquet_row_group",
+        "parquet_column_chunk",
+        "parquet_footer_statistics"
+      ],
+      "resource_kinds": [
+        "file"
+      ]
+    },
+    "schema": {
+      "dataset_id": "nested_struct_list",
+      "file_id": "nested_struct_list.parquet",
+      "file_format": "parquet",
+      "data_modality": "tabular",
+      "fields": [
+        {
+          "field_name": "entity_id",
+          "field_path": "entity_id",
+          "physical_type": "int64",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "arrow_schema_field",
+              "source": "arrow_schema:entity_id",
+              "detail": "Arrow field declaration, type, and nullability",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "parquet_footer_arrow_schema"
+        },
+        {
+          "field_name": "profile",
+          "field_path": "profile",
+          "physical_type": "struct<age: int32, tags: list<element: string not null>>",
+          "logical_type": "struct",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "arrow_schema_field",
+              "source": "arrow_schema:profile",
+              "detail": "Arrow field declaration, type, and nullability",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "parquet_footer_arrow_schema"
+        },
+        {
+          "field_name": "age",
+          "field_path": "profile.age",
+          "physical_type": "int32",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "arrow_schema_field",
+              "source": "arrow_schema:profile.age",
+              "detail": "Arrow field declaration, type, and nullability",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "parquet_footer_arrow_schema"
+        },
+        {
+          "field_name": "tags",
+          "field_path": "profile.tags",
+          "physical_type": "list<element: string not null>",
+          "logical_type": "list",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "arrow_schema_field",
+              "source": "arrow_schema:profile.tags",
+              "detail": "Arrow field declaration, type, and nullability",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "parquet_footer_arrow_schema"
+        },
+        {
+          "field_name": "element",
+          "field_path": "profile.tags.element",
+          "physical_type": "string",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "arrow_schema_field",
+              "source": "arrow_schema:profile.tags.element",
+              "detail": "Arrow field declaration, type, and nullability",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "parquet_footer_arrow_schema"
+        },
+        {
+          "field_name": "scores",
+          "field_path": "scores",
+          "physical_type": "list<element: double>",
+          "logical_type": "list",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "arrow_schema_field",
+              "source": "arrow_schema:scores",
+              "detail": "Arrow field declaration, type, and nullability",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "parquet_footer_arrow_schema"
+        },
+        {
+          "field_name": "element",
+          "field_path": "scores.element",
+          "physical_type": "double",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "arrow_schema_field",
+              "source": "arrow_schema:scores.element",
+              "detail": "Arrow field declaration, type, and nullability",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "parquet_footer_arrow_schema"
+        }
+      ],
+      "groups": [],
+      "metadata": {
+        "backend": "pyarrow 24.0.0",
+        "resource_kind": "file",
+        "num_rows": 2,
+        "num_columns": 4,
+        "num_row_groups": 1,
+        "created_by": "parquet-cpp-arrow version 24.0.0",
+        "format_version": "2.6",
+        "serialized_size": 1245,
+        "key_value_metadata": {
+          "ARROW:schema": "/////6gBAAAQAAAAAAAKAAwABgAFAAgACgAAAAABBAAMAAAACAAIAAAABAAIAAAABAAAAAMAAAA8AQAAZAAAAAQAAADg/v//AAABDBQAAAAcAAAABAAAAAEAAAAUAAAABgAAAHNjb3JlcwAAPP///wz///8AAAEDEAAAABwAAAAEAAAAAAAAAAQAAABpdGVtAAAGAAgABgAGAAAAAAACADz///8AAAENGAAAACAAAAAEAAAAAgAAAIAAAAAUAAAABwAAAHByb2ZpbGUAnP///2z///8AAAEMFAAAABwAAAAEAAAAAQAAACQAAAAEAAAAdGFncwAAAADI////EAAUAAgAAAAHAAwAAAAQABAAAAAAAAAFEAAAABwAAAAEAAAAAAAAAAcAAABlbGVtZW50AAQABAAEAAAA1P///wAAAQIQAAAAFAAAAAQAAAAAAAAAAwAAAGFnZQC8////AAAAASAAAAAQABQACAAGAAcADAAAABAAEAAAAAAAAQIQAAAAJAAAAAQAAAAAAAAACQAAAGVudGl0eV9pZAAAAAgADAAIAAcACAAAAAAAAAFAAAAA"
+        },
+        "arrow_schema_metadata": {},
+        "parquet_analysis": {
+          "arrow_fields": [
+            {
+              "field_path": "entity_id",
+              "parent_path": null,
+              "name": "entity_id",
+              "nullable": true,
+              "metadata": {},
+              "type": {
+                "arrow_type": "int64",
+                "type_id": "9"
+              },
+              "container": false,
+              "leaf": true,
+              "evidence_refs": [
+                "arrow_schema:entity_id",
+                "parquet_footer:schema.column[0]"
+              ],
+              "parquet_column": {
+                "column_index": 0,
+                "path": "entity_id",
+                "name": "entity_id",
+                "physical_type": "INT64",
+                "logical_type": "None",
+                "converted_type": "NONE",
+                "max_definition_level": 1,
+                "max_repetition_level": 0,
+                "evidence_refs": [
+                  "parquet_footer:schema.column[0]"
+                ]
+              },
+              "physical_path_mapping": {
+                "state": "derived",
+                "reason_code": "arrow_leaf_parquet_column_ordinal",
+                "arrow_path": "entity_id",
+                "parquet_path": "entity_id",
+                "evidence_refs": [
+                  "parquet_footer:schema.column[0]"
+                ]
+              }
+            },
+            {
+              "field_path": "profile",
+              "parent_path": null,
+              "name": "profile",
+              "nullable": true,
+              "metadata": {},
+              "type": {
+                "arrow_type": "struct<age: int32, tags: list<element: string not null>>",
+                "type_id": "26"
+              },
+              "container": true,
+              "leaf": false,
+              "evidence_refs": [
+                "arrow_schema:profile"
+              ]
+            },
+            {
+              "field_path": "profile.age",
+              "parent_path": "profile",
+              "name": "age",
+              "nullable": true,
+              "metadata": {},
+              "type": {
+                "arrow_type": "int32",
+                "type_id": "7"
+              },
+              "container": false,
+              "leaf": true,
+              "evidence_refs": [
+                "arrow_schema:profile.age",
+                "parquet_footer:schema.column[1]"
+              ],
+              "parquet_column": {
+                "column_index": 1,
+                "path": "profile.age",
+                "name": "age",
+                "physical_type": "INT32",
+                "logical_type": "None",
+                "converted_type": "NONE",
+                "max_definition_level": 2,
+                "max_repetition_level": 0,
+                "evidence_refs": [
+                  "parquet_footer:schema.column[1]"
+                ]
+              },
+              "physical_path_mapping": {
+                "state": "derived",
+                "reason_code": "arrow_leaf_parquet_column_ordinal",
+                "arrow_path": "profile.age",
+                "parquet_path": "profile.age",
+                "evidence_refs": [
+                  "parquet_footer:schema.column[1]"
+                ]
+              }
+            },
+            {
+              "field_path": "profile.tags",
+              "parent_path": "profile",
+              "name": "tags",
+              "nullable": true,
+              "metadata": {},
+              "type": {
+                "arrow_type": "list<element: string not null>",
+                "type_id": "25"
+              },
+              "container": true,
+              "leaf": false,
+              "evidence_refs": [
+                "arrow_schema:profile.tags"
+              ]
+            },
+            {
+              "field_path": "profile.tags.element",
+              "parent_path": "profile.tags",
+              "name": "element",
+              "nullable": false,
+              "metadata": {},
+              "type": {
+                "arrow_type": "string",
+                "type_id": "13"
+              },
+              "container": false,
+              "leaf": true,
+              "evidence_refs": [
+                "arrow_schema:profile.tags.element",
+                "parquet_footer:schema.column[2]"
+              ],
+              "parquet_column": {
+                "column_index": 2,
+                "path": "profile.tags.list.element",
+                "name": "element",
+                "physical_type": "BYTE_ARRAY",
+                "logical_type": "String",
+                "converted_type": "UTF8",
+                "max_definition_level": 3,
+                "max_repetition_level": 1,
+                "evidence_refs": [
+                  "parquet_footer:schema.column[2]"
+                ]
+              },
+              "physical_path_mapping": {
+                "state": "derived",
+                "reason_code": "arrow_leaf_parquet_column_ordinal",
+                "arrow_path": "profile.tags.element",
+                "parquet_path": "profile.tags.list.element",
+                "evidence_refs": [
+                  "parquet_footer:schema.column[2]"
+                ]
+              }
+            },
+            {
+              "field_path": "scores",
+              "parent_path": null,
+              "name": "scores",
+              "nullable": true,
+              "metadata": {},
+              "type": {
+                "arrow_type": "list<element: double>",
+                "type_id": "25"
+              },
+              "container": true,
+              "leaf": false,
+              "evidence_refs": [
+                "arrow_schema:scores"
+              ]
+            },
+            {
+              "field_path": "scores.element",
+              "parent_path": "scores",
+              "name": "element",
+              "nullable": true,
+              "metadata": {},
+              "type": {
+                "arrow_type": "double",
+                "type_id": "12"
+              },
+              "container": false,
+              "leaf": true,
+              "evidence_refs": [
+                "arrow_schema:scores.element",
+                "parquet_footer:schema.column[3]"
+              ],
+              "parquet_column": {
+                "column_index": 3,
+                "path": "scores.list.element",
+                "name": "element",
+                "physical_type": "DOUBLE",
+                "logical_type": "None",
+                "converted_type": "NONE",
+                "max_definition_level": 3,
+                "max_repetition_level": 1,
+                "evidence_refs": [
+                  "parquet_footer:schema.column[3]"
+                ]
+              },
+              "physical_path_mapping": {
+                "state": "derived",
+                "reason_code": "arrow_leaf_parquet_column_ordinal",
+                "arrow_path": "scores.element",
+                "parquet_path": "scores.list.element",
+                "evidence_refs": [
+                  "parquet_footer:schema.column[3]"
+                ]
+              }
+            }
+          ],
+          "parquet_columns": [
+            {
+              "column_index": 0,
+              "path": "entity_id",
+              "name": "entity_id",
+              "physical_type": "INT64",
+              "logical_type": "None",
+              "converted_type": "NONE",
+              "max_definition_level": 1,
+              "max_repetition_level": 0,
+              "evidence_refs": [
+                "parquet_footer:schema.column[0]"
+              ]
+            },
+            {
+              "column_index": 1,
+              "path": "profile.age",
+              "name": "age",
+              "physical_type": "INT32",
+              "logical_type": "None",
+              "converted_type": "NONE",
+              "max_definition_level": 2,
+              "max_repetition_level": 0,
+              "evidence_refs": [
+                "parquet_footer:schema.column[1]"
+              ]
+            },
+            {
+              "column_index": 2,
+              "path": "profile.tags.list.element",
+              "name": "element",
+              "physical_type": "BYTE_ARRAY",
+              "logical_type": "String",
+              "converted_type": "UTF8",
+              "max_definition_level": 3,
+              "max_repetition_level": 1,
+              "evidence_refs": [
+                "parquet_footer:schema.column[2]"
+              ]
+            },
+            {
+              "column_index": 3,
+              "path": "scores.list.element",
+              "name": "element",
+              "physical_type": "DOUBLE",
+              "logical_type": "None",
+              "converted_type": "NONE",
+              "max_definition_level": 3,
+              "max_repetition_level": 1,
+              "evidence_refs": [
+                "parquet_footer:schema.column[3]"
+              ]
+            }
+          ],
+          "row_groups": [
+            {
+              "row_group_index": 0,
+              "num_rows": 2,
+              "total_byte_size": 369,
+              "sorting_columns": [],
+              "columns": [
+                {
+                  "column_index": 0,
+                  "path": "entity_id",
+                  "physical_type": "INT64",
+                  "compression": "GZIP",
+                  "encodings": [
+                    "PLAIN",
+                    "RLE",
+                    "RLE_DICTIONARY"
+                  ],
+                  "num_values": 2,
+                  "total_compressed_size": 132,
+                  "total_uncompressed_size": 102,
+                  "statistics": {
+                    "state": "observed",
+                    "reason_code": "parquet_footer_statistics",
+                    "source": "parquet_footer",
+                    "evidence_refs": [
+                      "parquet_footer:row_group[0].column[0]"
+                    ],
+                    "has_min_max": true,
+                    "null_count": 0,
+                    "distinct_count": null,
+                    "num_values": 2,
+                    "physical_type": "INT64",
+                    "min_raw": 1,
+                    "max_raw": 2,
+                    "min": 1,
+                    "max": 2
+                  },
+                  "evidence_refs": [
+                    "parquet_footer:row_group[0].column[0]"
+                  ]
+                },
+                {
+                  "column_index": 1,
+                  "path": "profile.age",
+                  "physical_type": "INT32",
+                  "compression": "GZIP",
+                  "encodings": [
+                    "PLAIN",
+                    "RLE",
+                    "RLE_DICTIONARY"
+                  ],
+                  "num_values": 2,
+                  "total_compressed_size": 115,
+                  "total_uncompressed_size": 75,
+                  "statistics": {
+                    "state": "observed",
+                    "reason_code": "parquet_footer_statistics",
+                    "source": "parquet_footer",
+                    "evidence_refs": [
+                      "parquet_footer:row_group[0].column[1]"
+                    ],
+                    "has_min_max": true,
+                    "null_count": 1,
+                    "distinct_count": null,
+                    "num_values": 1,
+                    "physical_type": "INT32",
+                    "min_raw": 30,
+                    "max_raw": 30,
+                    "min": 30,
+                    "max": 30
+                  },
+                  "evidence_refs": [
+                    "parquet_footer:row_group[0].column[1]"
+                  ]
+                },
+                {
+                  "column_index": 2,
+                  "path": "profile.tags.list.element",
+                  "physical_type": "BYTE_ARRAY",
+                  "compression": "GZIP",
+                  "encodings": [
+                    "PLAIN",
+                    "RLE",
+                    "RLE_DICTIONARY"
+                  ],
+                  "num_values": 3,
+                  "total_compressed_size": 118,
+                  "total_uncompressed_size": 83,
+                  "statistics": {
+                    "state": "observed",
+                    "reason_code": "parquet_footer_statistics",
+                    "source": "parquet_footer",
+                    "evidence_refs": [
+                      "parquet_footer:row_group[0].column[2]"
+                    ],
+                    "has_min_max": true,
+                    "null_count": 1,
+                    "distinct_count": null,
+                    "num_values": 2,
+                    "physical_type": "BYTE_ARRAY",
+                    "min_raw": "alpha",
+                    "max_raw": "beta",
+                    "min": "alpha",
+                    "max": "beta"
+                  },
+                  "evidence_refs": [
+                    "parquet_footer:row_group[0].column[2]"
+                  ]
+                },
+                {
+                  "column_index": 3,
+                  "path": "scores.list.element",
+                  "physical_type": "DOUBLE",
+                  "compression": "GZIP",
+                  "encodings": [
+                    "PLAIN",
+                    "RLE",
+                    "RLE_DICTIONARY"
+                  ],
+                  "num_values": 3,
+                  "total_compressed_size": 139,
+                  "total_uncompressed_size": 109,
+                  "statistics": {
+                    "state": "observed",
+                    "reason_code": "parquet_footer_statistics",
+                    "source": "parquet_footer",
+                    "evidence_refs": [
+                      "parquet_footer:row_group[0].column[3]"
+                    ],
+                    "has_min_max": true,
+                    "null_count": 1,
+                    "distinct_count": null,
+                    "num_values": 2,
+                    "physical_type": "DOUBLE",
+                    "min_raw": 1.0,
+                    "max_raw": 2.0,
+                    "min": 1.0,
+                    "max": 2.0
+                  },
+                  "evidence_refs": [
+                    "parquet_footer:row_group[0].column[3]"
+                  ]
+                }
+              ],
+              "evidence_refs": [
+                "parquet_footer:row_group[0]"
+              ]
+            }
+          ]
+        },
+        "value_observation": {
+          "state": "unknown",
+          "reason_code": "row_values_not_read",
+          "row_values_read": 0,
+          "statistics_source": "parquet_footer_only"
+        },
+        "extraction_errors": []
+      },
+      "notes": [
+        "Parquet and Arrow schema metadata were extracted without reading row values.",
+        "Min/max, null counts, and distinct counts are reported only when present in the Parquet footer.",
+        "Arrow logical and temporal types are declarations; semantic roles are not inferred from field names."
+      ]
+    },
+    "issues": []
+  }
+}

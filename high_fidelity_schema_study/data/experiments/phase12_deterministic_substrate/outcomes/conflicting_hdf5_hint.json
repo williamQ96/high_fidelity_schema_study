@@ -1,0 +1,64 @@
+{
+  "status": "abstained",
+  "format_decision": {
+    "selected_format": null,
+    "basis": "conflicting_strong_signals",
+    "support_score": 0.0,
+    "signals": [
+      {
+        "format": "hdf5",
+        "basis": "magic",
+        "support_score": 1.0,
+        "detail": "HDF5 signature"
+      },
+      {
+        "format": "csv",
+        "basis": "explicit_hint",
+        "support_score": 0.99,
+        "detail": "requested format hint csv"
+      },
+      {
+        "format": "hdf5",
+        "basis": "suffix",
+        "support_score": 0.72,
+        "detail": "filename suffix .h5"
+      }
+    ],
+    "conflicted": true
+  },
+  "extractor": null,
+  "schema": {
+    "dataset_id": "climate_cube",
+    "file_id": "climate_cube.h5",
+    "file_format": "raw_binary",
+    "data_modality": "unknown",
+    "fields": [],
+    "groups": [],
+    "metadata": {
+      "resource_kind": "file",
+      "byte_size": 10864,
+      "entry_count": null,
+      "magic_hex_prefix": "89 48 44 46 0d 0a 1a 0a 00 00 00 00 00 08 08 00",
+      "field_claim_policy": "abstain_without_spec_backed_extractor",
+      "extraction_errors": []
+    },
+    "notes": [
+      "The payload does not have a selected spec-backed deterministic extractor.",
+      "The high-fidelity policy records file-level evidence and abstains from unsupported field claims."
+    ]
+  },
+  "issues": [
+    {
+      "code": "unknown_conflicting_format_signals",
+      "stage": "format_detection",
+      "severity": "warning",
+      "message": "Strong format signals conflict; no extractor was selected.",
+      "details": {
+        "formats": [
+          "csv",
+          "hdf5"
+        ]
+      }
+    }
+  ]
+}

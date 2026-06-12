@@ -1,0 +1,184 @@
+{
+  "agent_export_version": "1.0.0",
+  "policy": {
+    "canonical_mutation_allowed": false,
+    "silent_claim_promotion_allowed": false,
+    "suggestions_are_noncanonical": true,
+    "reruns_require_explicit_request": true
+  },
+  "schema_summary": {
+    "identity": {
+      "dataset_id": "basic_array",
+      "file_id": "basic_array.zarr",
+      "file_format": "zarr",
+      "data_modality": "multidimensional",
+      "resource_kind": "directory_store"
+    },
+    "outcome_status": "success",
+    "field_count": 1,
+    "claim_count": 6,
+    "evidence_count": 1,
+    "conflict_count": 1,
+    "abstention_count": 0,
+    "fields": [
+      {
+        "field_path": "temperature",
+        "physical_type": "<f4",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": false
+      }
+    ]
+  },
+  "claim_records": [
+    {
+      "claim_id": "c0001",
+      "subject": "temperature",
+      "property": "physical_type",
+      "value": "<f4",
+      "state": "supported",
+      "reason_code": "Zarr/Xarray/CF metadata does not support a precise logical or semantic claim",
+      "evidence_refs": [
+        "e0001"
+      ]
+    },
+    {
+      "claim_id": "c0002",
+      "subject": "temperature",
+      "property": "nullable",
+      "value": false,
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0001"
+      ]
+    },
+    {
+      "claim_id": "c0003",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "unknown",
+      "reason_code": "chunk_payloads_not_read",
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "c0004",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": [],
+      "state": "unknown",
+      "reason_code": "array_dimensions_missing",
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "c0005",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": [],
+      "state": "unknown",
+      "reason_code": "no_coordinate_evidence",
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "c0006",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "unknown",
+      "reason_code": "missing_units_attribute",
+      "evidence_refs": []
+    }
+  ],
+  "evidence_records": [
+    {
+      "evidence_id": "e0001",
+      "tier": "explicit_metadata",
+      "evidence_type": "zarr_array_metadata",
+      "source": "temperature/.zarray",
+      "detail": "keys=dtype,shape,chunks,compressor,fill_value,order,filters,dimension_separator",
+      "confidence": 1.0
+    }
+  ],
+  "provenance_graph": {
+    "entities": [
+      {
+        "id": "source:basic_array.zarr",
+        "type": "source_resource",
+        "file_id": "basic_array.zarr"
+      },
+      {
+        "id": "envelope:basic_array",
+        "type": "unified_schema_envelope",
+        "version": "1.0.0"
+      }
+    ],
+    "activities": [
+      {
+        "id": "activity:deterministic_extraction",
+        "type": "deterministic_extraction",
+        "used": "source:basic_array.zarr",
+        "generated": "envelope:basic_array"
+      },
+      {
+        "id": "activity:unified_projection",
+        "type": "deterministic_projection",
+        "generated": "envelope:basic_array"
+      }
+    ],
+    "agents": [
+      {
+        "id": "extractor:zarr_v2_metadata_extractor",
+        "type": "registered_extractor",
+        "version": "0.2.0",
+        "determinism_class": "strict_metadata_only"
+      }
+    ]
+  },
+  "retrieval_context": {
+    "title": "basic_array",
+    "format": "zarr",
+    "field_paths": [
+      "temperature"
+    ],
+    "supported_claims": [
+      {
+        "subject": "temperature",
+        "property": "physical_type",
+        "value": "<f4",
+        "state": "supported"
+      },
+      {
+        "subject": "temperature",
+        "property": "nullable",
+        "value": false,
+        "state": "supported"
+      }
+    ],
+    "conflicts": [
+      {
+        "category": "issues",
+        "detail": {
+          "code": "metadata_only_no_temporal_samples",
+          "severity": "note",
+          "detail": "Metadata-only Zarr extraction does not read chunk payloads, so no canonical time axis is selected from numeric arrays."
+        }
+      }
+    ],
+    "unsupported_features": []
+  },
+  "requestable_actions": [
+    {
+      "action": "inspect_evidence",
+      "effect": "read_only"
+    },
+    {
+      "action": "suggest_noncanonical_annotation",
+      "effect": "suggestion_only"
+    },
+    {
+      "action": "request_explicit_rerun",
+      "effect": "requires_user_or_orchestrator_approval"
+    }
+  ]
+}

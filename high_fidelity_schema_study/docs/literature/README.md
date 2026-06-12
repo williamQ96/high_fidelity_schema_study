@@ -19,8 +19,13 @@ Current seed papers:
 
 Use `deep_research_prompt_established_work.md` to search for established work that can strengthen the high-fidelity schema extraction study.
 
+Use `deep_research_prompt_data_agent_comparison_2026-06-10.md` to compare the project with the latest OpenAI, Anthropic, Databricks, Google, Microsoft, Snowflake, DataHub, open-source, and non-agent data architectures. It keeps the target explicit: heterogeneous raw files -> high-fidelity extraction -> high-confidence evidence-grounded schema.
+
 Generated research and assessment:
 
+- `deep_research_report_data_agent_comparison_2026-06-10.md`
+  - Compares the project with leading data-agent and deterministic data architectures.
+  - Recommends an agent-ready, deterministic-first schema substrate with verification gates.
 - `deep_research_report_2026-05-14.md`
   - Copied local deep-research output.
   - Summarizes established work across data readiness, FAIR/provenance, schema extraction, semantic typing, dataset search, evidence-constrained LLMs, and reproducibility.

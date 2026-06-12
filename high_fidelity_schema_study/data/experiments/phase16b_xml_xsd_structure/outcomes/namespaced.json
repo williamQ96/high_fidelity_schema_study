@@ -1,0 +1,291 @@
+{
+  "case_id": "namespaced",
+  "outcome": {
+    "status": "success",
+    "format_decision": {
+      "selected_format": "xml",
+      "basis": "suffix",
+      "support_score": 0.72,
+      "signals": [
+        {
+          "format": "xml",
+          "basis": "suffix",
+          "support_score": 0.72,
+          "detail": "filename suffix .xml"
+        }
+      ],
+      "conflicted": false
+    },
+    "extractor": {
+      "extractor_id": "xml_xsd_bounded_structure_extractor",
+      "version": "0.1.0",
+      "formats": [
+        "xml"
+      ],
+      "suffixes": [
+        ".xml",
+        ".xsd"
+      ],
+      "magic_prefixes": [],
+      "operations": [
+        "observe_bounded_elements",
+        "observe_attributes",
+        "observe_namespaces",
+        "observe_repeated_paths",
+        "read_xsd_declarations",
+        "compare_xsi_type_observation"
+      ],
+      "determinism_class": "strict_with_bounded_sample",
+      "evidence_types": [
+        "xml_sample_observation",
+        "xsd_element_declaration",
+        "xsd_attribute_declaration"
+      ],
+      "resource_kinds": [
+        "file"
+      ]
+    },
+    "schema": {
+      "dataset_id": "namespaced",
+      "file_id": "namespaced.xml",
+      "file_format": "xml",
+      "data_modality": "semi_structured",
+      "fields": [
+        {
+          "field_name": "{urn:example:observations}collection",
+          "field_path": "/{urn:example:observations}collection",
+          "physical_type": "empty",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "sample_observation",
+              "evidence_type": "xml_sample_observation",
+              "source": "xml_sample:/{urn:example:observations}collection",
+              "detail": "Observed bounded XML path and type set",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": "sample_bounded_observation",
+          "extraction_method": "bounded_xml_structure_observation"
+        },
+        {
+          "field_name": "{urn:example:observations}record",
+          "field_path": "/{urn:example:observations}collection/{urn:example:observations}record",
+          "physical_type": "empty",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "sample_observation",
+              "evidence_type": "xml_sample_observation",
+              "source": "xml_sample:/{urn:example:observations}collection/{urn:example:observations}record",
+              "detail": "Observed bounded XML path and type set",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": "sample_bounded_observation",
+          "extraction_method": "bounded_xml_structure_observation"
+        },
+        {
+          "field_name": "@{urn:example:geo}station",
+          "field_path": "/{urn:example:observations}collection/{urn:example:observations}record/@{urn:example:geo}station",
+          "physical_type": "string",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "sample_observation",
+              "evidence_type": "xml_sample_observation",
+              "source": "xml_sample:/{urn:example:observations}collection/{urn:example:observations}record/@{urn:example:geo}station",
+              "detail": "Observed bounded XML path and type set",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": "sample_bounded_observation",
+          "extraction_method": "bounded_xml_structure_observation"
+        },
+        {
+          "field_name": "{urn:example:geo}lat",
+          "field_path": "/{urn:example:observations}collection/{urn:example:observations}record/{urn:example:geo}lat",
+          "physical_type": "number",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "sample_observation",
+              "evidence_type": "xml_sample_observation",
+              "source": "xml_sample:/{urn:example:observations}collection/{urn:example:observations}record/{urn:example:geo}lat",
+              "detail": "Observed bounded XML path and type set",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": "sample_bounded_observation",
+          "extraction_method": "bounded_xml_structure_observation"
+        },
+        {
+          "field_name": "{urn:example:geo}lon",
+          "field_path": "/{urn:example:observations}collection/{urn:example:observations}record/{urn:example:geo}lon",
+          "physical_type": "number",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "sample_observation",
+              "evidence_type": "xml_sample_observation",
+              "source": "xml_sample:/{urn:example:observations}collection/{urn:example:observations}record/{urn:example:geo}lon",
+              "detail": "Observed bounded XML path and type set",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": "sample_bounded_observation",
+          "extraction_method": "bounded_xml_structure_observation"
+        }
+      ],
+      "groups": [],
+      "metadata": {
+        "resource_kind": "file",
+        "xml_analysis": {
+          "mode": "bounded_observed_structure",
+          "declared_fields": [],
+          "observed_fields": [
+            {
+              "field_path": "/{urn:example:observations}collection",
+              "state": "observed",
+              "observed_types": [
+                "empty"
+              ],
+              "occurrence_count": 1,
+              "max_sibling_occurs": 1,
+              "repeated": false,
+              "evidence_refs": [
+                "xml_sample:/{urn:example:observations}collection"
+              ]
+            },
+            {
+              "field_path": "/{urn:example:observations}collection/{urn:example:observations}record",
+              "state": "observed",
+              "observed_types": [
+                "empty"
+              ],
+              "occurrence_count": 1,
+              "max_sibling_occurs": 1,
+              "repeated": false,
+              "evidence_refs": [
+                "xml_sample:/{urn:example:observations}collection/{urn:example:observations}record"
+              ]
+            },
+            {
+              "field_path": "/{urn:example:observations}collection/{urn:example:observations}record/@{urn:example:geo}station",
+              "state": "observed",
+              "observed_types": [
+                "string"
+              ],
+              "occurrence_count": 1,
+              "max_sibling_occurs": 1,
+              "repeated": false,
+              "evidence_refs": [
+                "xml_sample:/{urn:example:observations}collection/{urn:example:observations}record/@{urn:example:geo}station"
+              ]
+            },
+            {
+              "field_path": "/{urn:example:observations}collection/{urn:example:observations}record/{urn:example:geo}lat",
+              "state": "observed",
+              "observed_types": [
+                "number"
+              ],
+              "occurrence_count": 1,
+              "max_sibling_occurs": 1,
+              "repeated": false,
+              "evidence_refs": [
+                "xml_sample:/{urn:example:observations}collection/{urn:example:observations}record/{urn:example:geo}lat"
+              ]
+            },
+            {
+              "field_path": "/{urn:example:observations}collection/{urn:example:observations}record/{urn:example:geo}lon",
+              "state": "observed",
+              "observed_types": [
+                "number"
+              ],
+              "occurrence_count": 1,
+              "max_sibling_occurs": 1,
+              "repeated": false,
+              "evidence_refs": [
+                "xml_sample:/{urn:example:observations}collection/{urn:example:observations}record/{urn:example:geo}lon"
+              ]
+            }
+          ],
+          "conflicts": [],
+          "namespaces": {
+            "ns0": "urn:example:observations",
+            "ns1": "urn:example:geo"
+          }
+        },
+        "sampling": {
+          "visited_element_count": 4,
+          "sample_limit": 200,
+          "sample_truncated": false,
+          "claim_scope": "bounded_sample"
+        },
+        "extraction_errors": []
+      },
+      "notes": [
+        "Observed XML structure is sample-bounded and is not a universal schema claim.",
+        "XSD and xsi:type declarations remain separate from observed instance structure.",
+        "External schemas and entities are not loaded.",
+        "Semantic roles are not inferred from XML names."
+      ]
+    },
+    "issues": []
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "zarr_consolidated_format": 1,
+  "metadata": {
+    ".zattrs": {
+      "title": "Ocean profile reference layout"
+    },
+    ".zgroup": {
+      "zarr_format": 2
+    },
+    "depth/.zarray": {
+      "zarr_format": 2,
+      "shape": [
+        50
+      ],
+      "chunks": [
+        50
+      ],
+      "dtype": "<f4",
+      "compressor": null,
+      "fill_value": null,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": "."
+    },
+    "depth/.zattrs": {
+      "_ARRAY_DIMENSIONS": [
+        "depth"
+      ],
+      "standard_name": "depth",
+      "axis": "Z",
+      "positive": "down",
+      "units": "m"
+    },
+    "salinity/.zarray": {
+      "zarr_format": 2,
+      "shape": [
+        8,
+        50
+      ],
+      "chunks": [
+        1,
+        50
+      ],
+      "dtype": "<f4",
+      "compressor": {
+        "id": "zlib",
+        "level": 4
+      },
+      "fill_value": -9999.0,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": "."
+    },
+    "salinity/.zattrs": {
+      "_ARRAY_DIMENSIONS": [
+        "profile",
+        "depth"
+      ],
+      "coordinates": "depth",
+      "standard_name": "sea_water_salinity",
+      "units": "1"
+    }
+  }
+}

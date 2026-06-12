@@ -1,0 +1,301 @@
+{
+  "status": "success",
+  "format_decision": {
+    "selected_format": "hdf5",
+    "basis": "magic",
+    "support_score": 1.0,
+    "signals": [
+      {
+        "format": "hdf5",
+        "basis": "magic",
+        "support_score": 1.0,
+        "detail": "HDF5 signature"
+      },
+      {
+        "format": "hdf5",
+        "basis": "suffix",
+        "support_score": 0.72,
+        "detail": "filename suffix .h5"
+      }
+    ],
+    "conflicted": false
+  },
+  "extractor": {
+    "extractor_id": "h5py_structure_traversal",
+    "version": "1.0.0",
+    "formats": [
+      "hdf5"
+    ],
+    "suffixes": [
+      ".h5",
+      ".hdf5",
+      ".hdf",
+      ".he5"
+    ],
+    "magic_prefixes": [
+      "894844460d0a1a0a"
+    ],
+    "operations": [
+      "enumerate_groups",
+      "enumerate_fields",
+      "read_shapes",
+      "read_attributes"
+    ],
+    "determinism_class": "strict",
+    "evidence_types": [
+      "hdf5_dataset_path",
+      "hdf5_attribute"
+    ],
+    "resource_kinds": [
+      "file"
+    ]
+  },
+  "schema": {
+    "dataset_id": "climate_cube",
+    "file_id": "climate_cube.h5",
+    "file_format": "hdf5",
+    "data_modality": "hierarchical",
+    "fields": [
+      {
+        "field_name": "station_id",
+        "field_path": "/coords/station_id",
+        "physical_type": "string",
+        "logical_type": "identifier",
+        "semantic_type": "station_identifier",
+        "nullable": true,
+        "unique_ratio": null,
+        "shape": [
+          2
+        ],
+        "unit": null,
+        "unit_normalization": {
+          "status": "no_unit_claim",
+          "original_unit": null,
+          "canonical_unit": null,
+          "ucum_code": null,
+          "evidence_basis": "not_applicable"
+        },
+        "description": "weather station identifier",
+        "example_values": [],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "hdf5_dataset_path",
+            "source": "data/raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5",
+            "detail": "/coords/station_id",
+            "confidence": 1.0
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "h5py_structure_traversal"
+      },
+      {
+        "field_name": "time",
+        "field_path": "/coords/time",
+        "physical_type": "int32",
+        "logical_type": "time_axis",
+        "semantic_type": "forecast_hour",
+        "nullable": true,
+        "unique_ratio": null,
+        "shape": [
+          4
+        ],
+        "unit": "hours since 2026-01-01 00:00:00 UTC",
+        "unit_normalization": {
+          "status": "unmapped_unit",
+          "original_unit": "hours since 2026-01-01 00:00:00 UTC",
+          "canonical_unit": "hours since 2026-01-01 00:00:00 UTC",
+          "ucum_code": null,
+          "evidence_basis": "explicit_metadata"
+        },
+        "description": "forecast lead hour",
+        "example_values": [],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "hdf5_dataset_path",
+            "source": "data/raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5",
+            "detail": "/coords/time",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "hdf5_attribute",
+            "source": "/coords/time",
+            "detail": "unit=hours since 2026-01-01 00:00:00 UTC",
+            "confidence": 0.99
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "h5py_structure_traversal"
+      },
+      {
+        "field_name": "humidity",
+        "field_path": "/observations/humidity",
+        "physical_type": "float32",
+        "logical_type": "measurement",
+        "semantic_type": "relative_humidity",
+        "nullable": true,
+        "unique_ratio": null,
+        "shape": [
+          4,
+          2
+        ],
+        "unit": "%",
+        "unit_normalization": {
+          "status": "normalized_ucum",
+          "original_unit": "%",
+          "canonical_unit": "percent",
+          "ucum_code": "%",
+          "evidence_basis": "explicit_metadata"
+        },
+        "description": "relative humidity",
+        "example_values": [],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "hdf5_dataset_path",
+            "source": "data/raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5",
+            "detail": "/observations/humidity",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "hdf5_attribute",
+            "source": "/observations/humidity",
+            "detail": "unit=%",
+            "confidence": 0.99
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "h5py_structure_traversal"
+      },
+      {
+        "field_name": "temperature",
+        "field_path": "/observations/temperature",
+        "physical_type": "float32",
+        "logical_type": "measurement",
+        "semantic_type": "air_temperature",
+        "nullable": true,
+        "unique_ratio": null,
+        "shape": [
+          4,
+          2
+        ],
+        "unit": "C",
+        "unit_normalization": {
+          "status": "normalized_ucum",
+          "original_unit": "C",
+          "canonical_unit": "Celsius",
+          "ucum_code": "Cel",
+          "evidence_basis": "explicit_metadata"
+        },
+        "description": "air temperature",
+        "example_values": [],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "hdf5_dataset_path",
+            "source": "data/raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5",
+            "detail": "/observations/temperature",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "hdf5_attribute",
+            "source": "/observations/temperature",
+            "detail": "unit=C",
+            "confidence": 0.99
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "h5py_structure_traversal"
+      }
+    ],
+    "groups": [
+      {
+        "path": "/coords",
+        "kind": "group",
+        "attributes": {}
+      },
+      {
+        "path": "/observations",
+        "kind": "group",
+        "attributes": {}
+      }
+    ],
+    "metadata": {
+      "field_count": 4,
+      "group_count": 2,
+      "extraction_errors": [],
+      "deterministic_profile": {
+        "missingness": {
+          "basis": "field_metadata",
+          "sampled_rows": null,
+          "field_count": 4,
+          "fields_with_missing_count": 0,
+          "total_missing_cells": 0,
+          "fields": [
+            {
+              "field_path": "/coords/station_id",
+              "missing_count": 0,
+              "missing_ratio": null,
+              "nullable": true,
+              "basis": "field_metadata"
+            },
+            {
+              "field_path": "/coords/time",
+              "missing_count": 0,
+              "missing_ratio": null,
+              "nullable": true,
+              "basis": "field_metadata"
+            },
+            {
+              "field_path": "/observations/humidity",
+              "missing_count": 0,
+              "missing_ratio": null,
+              "nullable": true,
+              "basis": "field_metadata"
+            },
+            {
+              "field_path": "/observations/temperature",
+              "missing_count": 0,
+              "missing_ratio": null,
+              "nullable": true,
+              "basis": "field_metadata"
+            }
+          ]
+        },
+        "identifier_quality": {
+          "candidate_count": 1,
+          "best_identifier_fields": [],
+          "fields": [
+            {
+              "field_path": "/coords/station_id",
+              "semantic_type": "station_identifier",
+              "unique_ratio": null,
+              "missing_ratio": null,
+              "non_missing_rows": null,
+              "duplicate_count": null,
+              "quality": "not_profiled"
+            }
+          ]
+        }
+      }
+    },
+    "notes": []
+  },
+  "issues": []
+}

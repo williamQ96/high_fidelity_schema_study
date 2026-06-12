@@ -1,0 +1,534 @@
+{
+  "status": "success",
+  "format_decision": {
+    "selected_format": "netcdf",
+    "basis": "magic",
+    "support_score": 1.0,
+    "signals": [
+      {
+        "format": "netcdf",
+        "basis": "magic",
+        "support_score": 1.0,
+        "detail": "NetCDF classic signature"
+      },
+      {
+        "format": "netcdf",
+        "basis": "suffix",
+        "support_score": 0.72,
+        "detail": "filename suffix .nc"
+      }
+    ],
+    "conflicted": false
+  },
+  "extractor": {
+    "extractor_id": "netcdf_cf_deterministic_extractor",
+    "version": "1.0.0",
+    "formats": [
+      "netcdf"
+    ],
+    "suffixes": [
+      ".nc",
+      ".cdf"
+    ],
+    "magic_prefixes": [
+      "43444601",
+      "43444602",
+      "43444605",
+      "894844460d0a1a0a"
+    ],
+    "operations": [
+      "enumerate_dimensions",
+      "enumerate_groups",
+      "enumerate_variables",
+      "read_shapes",
+      "read_attributes",
+      "interpret_cf_coordinates",
+      "decode_cf_time"
+    ],
+    "determinism_class": "strict_with_sampled_profiles",
+    "evidence_types": [
+      "netcdf_dimension",
+      "netcdf_group",
+      "netcdf_variable",
+      "netcdf_attribute"
+    ]
+  },
+  "schema": {
+    "dataset_id": "multiple_time_variables",
+    "file_id": "multiple_time_variables.nc",
+    "file_format": "netcdf",
+    "data_modality": "multidimensional",
+    "fields": [
+      {
+        "field_name": "time",
+        "field_path": "time",
+        "physical_type": ">f8",
+        "logical_type": "temporal_coordinate",
+        "semantic_type": "observation_time",
+        "nullable": false,
+        "unique_ratio": null,
+        "shape": [
+          3
+        ],
+        "unit": "hours since 2026-01-01 00:00:00 UTC",
+        "unit_normalization": {
+          "status": "unmapped_unit",
+          "original_unit": "hours since 2026-01-01 00:00:00 UTC",
+          "canonical_unit": "hours since 2026-01-01 00:00:00 UTC",
+          "ucum_code": null,
+          "evidence_basis": "explicit_metadata"
+        },
+        "description": null,
+        "example_values": [
+          "0.0",
+          "1.0",
+          "2.0"
+        ],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_variable",
+            "source": "testdata/netcdf_cf_phase13/multiple_time_variables.nc:time",
+            "detail": "dimensions=['time']; shape=[3]; dtype=>f8",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/multiple_time_variables.nc:time",
+            "detail": "standard_name='time'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/multiple_time_variables.nc:time",
+            "detail": "units='hours since 2026-01-01 00:00:00 UTC'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/multiple_time_variables.nc:time",
+            "detail": "axis='T'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/multiple_time_variables.nc:time",
+            "detail": "calendar='standard'",
+            "confidence": 0.99
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "netcdf_cf_deterministic_extractor"
+      },
+      {
+        "field_name": "forecast_time",
+        "field_path": "forecast_time",
+        "physical_type": ">f8",
+        "logical_type": "temporal_coordinate",
+        "semantic_type": "observation_time",
+        "nullable": false,
+        "unique_ratio": null,
+        "shape": [
+          3
+        ],
+        "unit": "hours since 2026-01-01 00:00:00 UTC",
+        "unit_normalization": {
+          "status": "unmapped_unit",
+          "original_unit": "hours since 2026-01-01 00:00:00 UTC",
+          "canonical_unit": "hours since 2026-01-01 00:00:00 UTC",
+          "ucum_code": null,
+          "evidence_basis": "explicit_metadata"
+        },
+        "description": null,
+        "example_values": [
+          "0.0",
+          "1.0",
+          "2.0"
+        ],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_variable",
+            "source": "testdata/netcdf_cf_phase13/multiple_time_variables.nc:forecast_time",
+            "detail": "dimensions=['time']; shape=[3]; dtype=>f8",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/multiple_time_variables.nc:forecast_time",
+            "detail": "standard_name='time'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/multiple_time_variables.nc:forecast_time",
+            "detail": "units='hours since 2026-01-01 00:00:00 UTC'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/multiple_time_variables.nc:forecast_time",
+            "detail": "axis='T'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/multiple_time_variables.nc:forecast_time",
+            "detail": "calendar='standard'",
+            "confidence": 0.99
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "netcdf_cf_deterministic_extractor"
+      },
+      {
+        "field_name": "temperature",
+        "field_path": "temperature",
+        "physical_type": ">f4",
+        "logical_type": "measurement",
+        "semantic_type": "air_temperature",
+        "nullable": false,
+        "unique_ratio": null,
+        "shape": [
+          3
+        ],
+        "unit": "K",
+        "unit_normalization": {
+          "status": "normalized_ucum",
+          "original_unit": "K",
+          "canonical_unit": "Kelvin",
+          "ucum_code": "K",
+          "evidence_basis": "explicit_metadata"
+        },
+        "description": "air temperature",
+        "example_values": [
+          "280.0",
+          "281.0",
+          "282.0"
+        ],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_variable",
+            "source": "testdata/netcdf_cf_phase13/multiple_time_variables.nc:temperature",
+            "detail": "dimensions=['time']; shape=[3]; dtype=>f4",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/multiple_time_variables.nc:temperature",
+            "detail": "standard_name='air_temperature'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/multiple_time_variables.nc:temperature",
+            "detail": "long_name='air temperature'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/multiple_time_variables.nc:temperature",
+            "detail": "units='K'",
+            "confidence": 0.99
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "netcdf_cf_deterministic_extractor"
+      }
+    ],
+    "groups": [],
+    "metadata": {
+      "backend": "scipy.io.netcdf_file",
+      "dimensions": {
+        "time": {
+          "size": 3,
+          "unlimited": false,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "netcdf_dimension",
+              "source": "testdata/netcdf_cf_phase13/multiple_time_variables.nc:time",
+              "detail": "size=3; unlimited=False",
+              "confidence": 1.0
+            }
+          ]
+        }
+      },
+      "file_attributes": {
+        "Conventions": "CF-1.8"
+      },
+      "cf_analysis": {
+        "variables": [
+          {
+            "field_path": "time",
+            "dimensions": [
+              "time"
+            ],
+            "attributes": {
+              "standard_name": "time",
+              "units": "hours since 2026-01-01 00:00:00 UTC",
+              "calendar": "standard",
+              "axis": "T"
+            },
+            "coordinate_roles": [
+              "dimension_coordinate",
+              "axis_t",
+              "standard_time"
+            ],
+            "coordinate_role_claim": {
+              "value": [
+                "dimension_coordinate",
+                "axis_t",
+                "standard_time"
+              ],
+              "state": "supported",
+              "reason_code": "explicit_cf_coordinate_evidence",
+              "evidence_refs": [
+                "structure:dimension_coordinate",
+                "attribute:axis",
+                "attribute:standard_name"
+              ]
+            },
+            "is_bounds_variable": false,
+            "bounds_claim": {
+              "value": false,
+              "state": "unknown",
+              "reason_code": "not_referenced_as_bounds",
+              "evidence_refs": []
+            },
+            "unit_claim": {
+              "value": "hours since 2026-01-01 00:00:00 UTC",
+              "state": "supported",
+              "reason_code": "explicit_units_attribute",
+              "evidence_refs": [
+                "attribute:units"
+              ]
+            }
+          },
+          {
+            "field_path": "forecast_time",
+            "dimensions": [
+              "time"
+            ],
+            "attributes": {
+              "standard_name": "time",
+              "units": "hours since 2026-01-01 00:00:00 UTC",
+              "calendar": "standard",
+              "axis": "T"
+            },
+            "coordinate_roles": [
+              "axis_t",
+              "standard_time"
+            ],
+            "coordinate_role_claim": {
+              "value": [
+                "axis_t",
+                "standard_time"
+              ],
+              "state": "supported",
+              "reason_code": "explicit_cf_coordinate_evidence",
+              "evidence_refs": [
+                "attribute:axis",
+                "attribute:standard_name"
+              ]
+            },
+            "is_bounds_variable": false,
+            "bounds_claim": {
+              "value": false,
+              "state": "unknown",
+              "reason_code": "not_referenced_as_bounds",
+              "evidence_refs": []
+            },
+            "unit_claim": {
+              "value": "hours since 2026-01-01 00:00:00 UTC",
+              "state": "supported",
+              "reason_code": "explicit_units_attribute",
+              "evidence_refs": [
+                "attribute:units"
+              ]
+            }
+          },
+          {
+            "field_path": "temperature",
+            "dimensions": [
+              "time"
+            ],
+            "attributes": {
+              "standard_name": "air_temperature",
+              "long_name": "air temperature",
+              "units": "K"
+            },
+            "coordinate_roles": [],
+            "coordinate_role_claim": {
+              "value": [],
+              "state": "unknown",
+              "reason_code": "no_coordinate_evidence",
+              "evidence_refs": []
+            },
+            "is_bounds_variable": false,
+            "bounds_claim": {
+              "value": false,
+              "state": "unknown",
+              "reason_code": "not_referenced_as_bounds",
+              "evidence_refs": []
+            },
+            "unit_claim": {
+              "value": "K",
+              "state": "supported",
+              "reason_code": "explicit_units_attribute",
+              "evidence_refs": [
+                "attribute:units"
+              ]
+            }
+          }
+        ],
+        "temporal": {
+          "candidate_paths": [
+            "time",
+            "forecast_time"
+          ],
+          "calendar_claims": {
+            "time": {
+              "value": "standard",
+              "state": "supported",
+              "reason_code": "explicit_cf_calendar",
+              "evidence_refs": [
+                "attribute:units",
+                "attribute:calendar"
+              ]
+            },
+            "forecast_time": {
+              "value": "standard",
+              "state": "supported",
+              "reason_code": "explicit_cf_calendar",
+              "evidence_refs": [
+                "attribute:units",
+                "attribute:calendar"
+              ]
+            }
+          },
+          "decoded_with_temporal_semantics": true,
+          "selection": {
+            "analysis_version": "phase12_temporal_v1",
+            "candidates": [
+              {
+                "field": "forecast_time",
+                "field_path": "forecast_time",
+                "score": 1.0,
+                "parse_rate": 1.0,
+                "reasons": [
+                  "high_datetime_parse_rate",
+                  "strong_time_name",
+                  "observation_time_semantic",
+                  "explicit_temporal_coordinate"
+                ]
+              },
+              {
+                "field": "time",
+                "field_path": "time",
+                "score": 1.0,
+                "parse_rate": 1.0,
+                "reasons": [
+                  "high_datetime_parse_rate",
+                  "strong_time_name",
+                  "observation_time_semantic",
+                  "explicit_temporal_coordinate"
+                ]
+              }
+            ],
+            "selected_candidate": null,
+            "property_claims": {},
+            "validator_results": {
+              "candidate_count": 2,
+              "eligible_candidate_count": 2,
+              "measurement_count": 1,
+              "selection_abstained": true
+            },
+            "issues": [
+              {
+                "code": "ambiguous_time_axis_candidates",
+                "severity": "warning",
+                "detail": "Multiple temporal candidates have approximately equal deterministic support.",
+                "candidates": [
+                  "forecast_time",
+                  "time"
+                ]
+              }
+            ]
+          }
+        },
+        "issues": [
+          {
+            "code": "ambiguous_cf_time_candidates",
+            "severity": "warning",
+            "candidate_paths": [
+              "time",
+              "forecast_time"
+            ]
+          }
+        ]
+      },
+      "extraction_errors": [],
+      "deterministic_profile": {
+        "missingness": {
+          "basis": "field_metadata",
+          "sampled_rows": null,
+          "field_count": 3,
+          "fields_with_missing_count": 0,
+          "total_missing_cells": 0,
+          "fields": [
+            {
+              "field_path": "time",
+              "missing_count": 0,
+              "missing_ratio": null,
+              "nullable": false,
+              "basis": "field_metadata"
+            },
+            {
+              "field_path": "forecast_time",
+              "missing_count": 0,
+              "missing_ratio": null,
+              "nullable": false,
+              "basis": "field_metadata"
+            },
+            {
+              "field_path": "temperature",
+              "missing_count": 0,
+              "missing_ratio": null,
+              "nullable": false,
+              "basis": "field_metadata"
+            }
+          ]
+        },
+        "identifier_quality": {
+          "candidate_count": 0,
+          "best_identifier_fields": [],
+          "fields": []
+        }
+      }
+    },
+    "notes": []
+  },
+  "issues": []
+}

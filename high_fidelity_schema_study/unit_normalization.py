@@ -40,7 +40,7 @@ def _unit_key(unit: str) -> str:
 
 def _evidence_basis(evidence_types: Iterable[str]) -> str:
     evidence_type_set = set(evidence_types)
-    if "hdf5_attribute" in evidence_type_set:
+    if {"hdf5_attribute", "netcdf_attribute", "zarr_attribute"} & evidence_type_set:
         return "explicit_metadata"
     if "column_name_unit_hint" in evidence_type_set:
         return "name_pattern"

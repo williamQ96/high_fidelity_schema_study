@@ -1,0 +1,90 @@
+{
+  "collection_id": "release_demo_examples",
+  "claim_boundary": "Small controlled examples for demonstrating deterministic extraction behavior; they do not establish broad format compatibility.",
+  "license_note": "Repository-generated controlled fixtures and internal pilot data; no external or sensitive data is included.",
+  "examples": [
+    {
+      "id": "utc_csv",
+      "label": "UTC time series",
+      "format": "csv",
+      "path": "utc_series.csv",
+      "source": "testdata/temporal_phase12/utc_z_regular.csv",
+      "sha256": "0e58ca0110e430990f80357d460ab2c04536964a6b67615a975f08c836812be7",
+      "summary": "Regular UTC timestamps with a deterministic canonical time axis.",
+      "focus": "temporal semantics"
+    },
+    {
+      "id": "opaque_binary",
+      "label": "Opaque binary",
+      "format": "raw_binary",
+      "path": "opaque.bin",
+      "source": "testdata/temporal_phase12/opaque.bin",
+      "sha256": "b96a6abf2074cb3d4298f3c68903f8594ba27526b1b869e3f50be32754cb1c1a",
+      "summary": "Unsupported bytes that intentionally produce a field-level abstention.",
+      "focus": "structured abstention"
+    },
+    {
+      "id": "netcdf_cf",
+      "label": "NetCDF / CF",
+      "format": "netcdf",
+      "path": "cf_coordinates.nc",
+      "source": "testdata/netcdf_cf_phase13/standard_coordinates.nc",
+      "sha256": "cff653c4c6d225cb4d763b206ef1dc832c6a2e314a5a135ba139832a506d555b",
+      "summary": "Compact CF coordinate and time-axis metadata.",
+      "focus": "coordinates and evidence"
+    },
+    {
+      "id": "hdf5",
+      "label": "HDF5 hierarchy",
+      "format": "hdf5",
+      "path": "climate_cube.h5",
+      "source": "data/raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5",
+      "sha256": "99ad5c7e009ae5b286c8dad0ba44963a4dfdb13f3e54f1a21a8f8c9541acfb92",
+      "summary": "Small self-describing hierarchy with groups, datasets, shapes, and attributes.",
+      "focus": "physical structure"
+    },
+    {
+      "id": "zarr_v2",
+      "label": "Zarr v2 store",
+      "format": "zarr",
+      "path": "basic_array.zarr",
+      "source": "testdata/zarr_phase14a/basic_array.zarr",
+      "sha256_files": {
+        ".zgroup": "f5fc66b6ac3bbb797e622786117c06800a729eacf0faf68d6dd507f5eb5afabd",
+        "temperature/.zarray": "91b4303bd8f47e8e6b86d91d7b6319047205613183d944bc0b36222c24db0f73"
+      },
+      "summary": "Metadata-only local directory store with no chunk payload.",
+      "focus": "directory intake"
+    },
+    {
+      "id": "parquet_arrow",
+      "label": "Parquet / Arrow",
+      "format": "parquet",
+      "path": "arrow_metadata.parquet",
+      "source": "testdata/parquet_phase15a/primitives.parquet",
+      "sha256": "c576742de1576078bd837079f6d7fd5798de1669a6081bed5816d39d56c371fe",
+      "summary": "Arrow schema and Parquet footer metadata without reading row values.",
+      "focus": "metadata-only extraction"
+    },
+    {
+      "id": "json",
+      "label": "Nested JSON",
+      "format": "json",
+      "path": "nested_object.json",
+      "source": "testdata/json_phase16a/single_object.json",
+      "sha256": "3ff5ad6f8dab7097410157b5b14685f21c6848350e431462af2a89c4b3cf5270",
+      "summary": "Small nested object for bounded observed-structure extraction.",
+      "focus": "sample-bounded structure"
+    },
+    {
+      "id": "xml_conflict",
+      "label": "XML conflict",
+      "format": "xml",
+      "path": "declared_observed_conflict.xml",
+      "source": "testdata/xml_phase16b/xsi_conflict.xml",
+      "sha256": "e9c2d478552c8ea8753f5e5f872e3949481e18845244f84b037d48e7a6deaba0",
+      "summary": "An explicit xsi:type declaration that conflicts with observed text.",
+      "focus": "visible conflict"
+    }
+  ]
+}

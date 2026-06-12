@@ -1,0 +1,347 @@
+{
+  "experiment_id": "phase14c_zarr_external_conformance",
+  "corpus_claim_boundary": "This corpus combines one public-source metadata subset with pinned library-produced metadata-only stores; it is not representative of the full Zarr ecosystem.",
+  "generation_environment": {
+    "zarr": "2.18.7",
+    "numcodecs": "0.15.1",
+    "xarray": "2024.11.0",
+    "dask": "2024.11.2",
+    "numpy": "2.4.6",
+    "pandas": "3.0.3"
+  },
+  "chunk_payload_policy": "No chunk payloads are written, copied, decoded, or used for canonical claims.",
+  "cases": [
+    {
+      "case_id": "official_zarr_python_fixture_subset",
+      "store": "official_zarr_python_fixture_subset.zarr",
+      "classification": "supported",
+      "source": {
+        "source_kind": "external_public_sdist",
+        "upstream": "zarr-python",
+        "version": "2.18.7",
+        "license": "MIT",
+        "source_url": "https://pypi.org/project/zarr/2.18.7/",
+        "generation_method": "Exact metadata-only subset extracted from the public Zarr Python 2.18.7 source-distribution fixture.",
+        "usage_note": "Only .zgroup, .zarray, and .zattrs documents are retained; fixture chunk payloads are excluded.",
+        "source_sha256": "b2b8f66f14dac4af66b180d2338819981b981f70e196c9a66e6bfaa9e59572f5"
+      },
+      "selected_source_members": [
+        "zarr-2.18.7/fixture/.zattrs",
+        "zarr-2.18.7/fixture/.zgroup",
+        "zarr-2.18.7/fixture/0/.zattrs",
+        "zarr-2.18.7/fixture/0/.zgroup",
+        "zarr-2.18.7/fixture/0/0/.zarray",
+        "zarr-2.18.7/fixture/0/0/.zattrs",
+        "zarr-2.18.7/fixture/0/1/.zarray",
+        "zarr-2.18.7/fixture/0/1/.zattrs",
+        "zarr-2.18.7/fixture/0/2/.zarray",
+        "zarr-2.18.7/fixture/0/2/.zattrs",
+        "zarr-2.18.7/fixture/0/3/.zarray",
+        "zarr-2.18.7/fixture/0/3/.zattrs",
+        "zarr-2.18.7/fixture/0/4/.zarray",
+        "zarr-2.18.7/fixture/0/4/.zattrs",
+        "zarr-2.18.7/fixture/0/5/.zarray",
+        "zarr-2.18.7/fixture/0/5/.zattrs",
+        "zarr-2.18.7/fixture/0/6/.zarray",
+        "zarr-2.18.7/fixture/0/6/.zattrs",
+        "zarr-2.18.7/fixture/flat/.zarray",
+        "zarr-2.18.7/fixture/meta/.zarray",
+        "zarr-2.18.7/fixture/nested/.zarray"
+      ],
+      "expected_status": "success",
+      "expected_features": [
+        "public source fixture",
+        "groups",
+        "flat and nested dimension separators",
+        "Blosc metadata"
+      ],
+      "cross_parser": {
+        "zarr": true,
+        "xarray": false
+      }
+    },
+    {
+      "case_id": "official_zarr_python_utf8attrs_orphan",
+      "store": "official_zarr_python_utf8attrs_orphan.zarr",
+      "classification": "structured_abstention",
+      "source": {
+        "source_kind": "external_public_sdist",
+        "upstream": "zarr-python",
+        "version": "2.18.7",
+        "license": "MIT",
+        "source_url": "https://pypi.org/project/zarr/2.18.7/",
+        "generation_method": "Exact metadata-only subset extracted from the public Zarr Python 2.18.7 source-distribution fixture.",
+        "usage_note": "Only .zgroup, .zarray, and .zattrs documents are retained; fixture chunk payloads are excluded.",
+        "source_sha256": "b2b8f66f14dac4af66b180d2338819981b981f70e196c9a66e6bfaa9e59572f5"
+      },
+      "selected_source_members": [
+        "zarr-2.18.7/fixture/utf8attrs/.zattrs"
+      ],
+      "expected_status": "abstained",
+      "expected_issue_codes": [
+        "zarr_metadata_missing"
+      ],
+      "expected_features": [
+        "public source fixture",
+        "UTF-8 attributes without group or array metadata"
+      ],
+      "cross_parser": {
+        "zarr": true,
+        "xarray": false,
+        "expected_zarr_open": false
+      }
+    },
+    {
+      "case_id": "zarr_library_root_array",
+      "store": "zarr_library_root_array.zarr",
+      "classification": "supported",
+      "source": {
+        "source_kind": "library_produced",
+        "upstream": "zarr-python",
+        "version": "2.18.7",
+        "license": "MIT",
+        "source_url": "https://pypi.org/project/zarr/2.18.7/",
+        "generation_method": "Created by create_phase14c_zarr_external_corpus.py using Zarr Python APIs without writing array values.",
+        "usage_note": "Metadata-only local store generated from a pinned public library."
+      },
+      "expected_status": "success",
+      "expected_features": [
+        "root array",
+        "Blosc compressor",
+        "fill value"
+      ],
+      "cross_parser": {
+        "zarr": true,
+        "xarray": false
+      }
+    },
+    {
+      "case_id": "zarr_library_group_hierarchy",
+      "store": "zarr_library_group_hierarchy.zarr",
+      "classification": "supported",
+      "source": {
+        "source_kind": "library_produced",
+        "upstream": "zarr-python",
+        "version": "2.18.7",
+        "license": "MIT",
+        "source_url": "https://pypi.org/project/zarr/2.18.7/",
+        "generation_method": "Created by create_phase14c_zarr_external_corpus.py using Zarr Python APIs without writing array values.",
+        "usage_note": "Metadata-only local store generated from a pinned public library."
+      },
+      "expected_status": "success",
+      "expected_features": [
+        "nested group",
+        "group attributes",
+        "multiple arrays"
+      ],
+      "cross_parser": {
+        "zarr": true,
+        "xarray": false
+      }
+    },
+    {
+      "case_id": "zarr_library_structured_records",
+      "store": "zarr_library_structured_records.zarr",
+      "classification": "supported",
+      "source": {
+        "source_kind": "library_produced",
+        "upstream": "zarr-python",
+        "version": "2.18.7",
+        "license": "MIT",
+        "source_url": "https://pypi.org/project/zarr/2.18.7/",
+        "generation_method": "Created by create_phase14c_zarr_external_corpus.py using Zarr Python APIs without writing array values.",
+        "usage_note": "Metadata-only local store generated from a pinned public library."
+      },
+      "expected_status": "success",
+      "expected_features": [
+        "structured dtype",
+        "Zlib compressor"
+      ],
+      "cross_parser": {
+        "zarr": true,
+        "xarray": false
+      }
+    },
+    {
+      "case_id": "zarr_library_nested_separator",
+      "store": "zarr_library_nested_separator.zarr",
+      "classification": "supported",
+      "source": {
+        "source_kind": "library_produced",
+        "upstream": "zarr-python",
+        "version": "2.18.7",
+        "license": "MIT",
+        "source_url": "https://pypi.org/project/zarr/2.18.7/",
+        "generation_method": "Created by create_phase14c_zarr_external_corpus.py using Zarr Python APIs without writing array values.",
+        "usage_note": "Metadata-only local store generated from a pinned public library."
+      },
+      "expected_status": "success",
+      "expected_features": [
+        "slash dimension separator",
+        "metadata-only array"
+      ],
+      "cross_parser": {
+        "zarr": true,
+        "xarray": false
+      }
+    },
+    {
+      "case_id": "zarr_library_vlen_utf8",
+      "store": "zarr_library_vlen_utf8.zarr",
+      "classification": "supported",
+      "source": {
+        "source_kind": "library_produced",
+        "upstream": "zarr-python",
+        "version": "2.18.7",
+        "license": "MIT",
+        "source_url": "https://pypi.org/project/zarr/2.18.7/",
+        "generation_method": "Created by create_phase14c_zarr_external_corpus.py using Zarr Python APIs without writing array values.",
+        "usage_note": "Metadata-only local store generated from a pinned public library."
+      },
+      "expected_status": "success",
+      "expected_features": [
+        "object dtype",
+        "VLenUTF8 object codec"
+      ],
+      "expected_unknown_fields": [
+        "labels"
+      ],
+      "cross_parser": {
+        "zarr": true,
+        "xarray": false
+      }
+    },
+    {
+      "case_id": "xarray_library_nonconsolidated",
+      "store": "xarray_library_nonconsolidated.zarr",
+      "classification": "supported",
+      "source": {
+        "source_kind": "library_produced",
+        "upstream": "xarray",
+        "version": "2024.11.0",
+        "license": "Apache-2.0",
+        "source_url": "https://docs.xarray.dev/en/v2024.11.0/generated/xarray.Dataset.to_zarr.html",
+        "generation_method": "Created by Xarray Dataset.to_zarr(compute=False, zarr_format=2) using pinned libraries.",
+        "usage_note": "Generated by a pinned public library; any eagerly written non-metadata objects were mechanically removed before corpus inclusion."
+      },
+      "expected_status": "success",
+      "expected_features": [
+        "Xarray metadata",
+        "non-consolidated",
+        "coordinates",
+        "object string variable"
+      ],
+      "cross_parser": {
+        "zarr": true,
+        "xarray": true,
+        "consolidated": false
+      }
+    },
+    {
+      "case_id": "xarray_library_consolidated",
+      "store": "xarray_library_consolidated.zarr",
+      "classification": "supported",
+      "source": {
+        "source_kind": "library_produced",
+        "upstream": "xarray",
+        "version": "2024.11.0",
+        "license": "Apache-2.0",
+        "source_url": "https://docs.xarray.dev/en/v2024.11.0/generated/xarray.Dataset.to_zarr.html",
+        "generation_method": "Created by Xarray Dataset.to_zarr(compute=False, zarr_format=2) using pinned libraries.",
+        "usage_note": "Generated by a pinned public library; any eagerly written non-metadata objects were mechanically removed before corpus inclusion."
+      },
+      "expected_status": "success",
+      "expected_features": [
+        "Xarray metadata",
+        "consolidated metadata",
+        "coordinates"
+      ],
+      "cross_parser": {
+        "zarr": true,
+        "xarray": true,
+        "consolidated": true
+      }
+    },
+    {
+      "case_id": "xarray_library_nested_group",
+      "store": "xarray_library_nested_group.zarr",
+      "classification": "supported",
+      "source": {
+        "source_kind": "library_produced",
+        "upstream": "xarray",
+        "version": "2024.11.0",
+        "license": "Apache-2.0",
+        "source_url": "https://docs.xarray.dev/en/v2024.11.0/generated/xarray.Dataset.to_zarr.html",
+        "generation_method": "Created by Xarray Dataset.to_zarr(compute=False, zarr_format=2) using pinned libraries.",
+        "usage_note": "Generated by a pinned public library; any eagerly written non-metadata objects were mechanically removed before corpus inclusion."
+      },
+      "expected_status": "success",
+      "expected_features": [
+        "Xarray metadata",
+        "nested group",
+        "coordinates"
+      ],
+      "cross_parser": {
+        "zarr": true,
+        "xarray": true,
+        "consolidated": false,
+        "group": "observations"
+      }
+    },
+    {
+      "case_id": "xarray_library_dangling_coordinate",
+      "store": "xarray_library_dangling_coordinate.zarr",
+      "classification": "unsupported_feature",
+      "source": {
+        "source_kind": "library_derived_edge",
+        "upstream": "xarray",
+        "version": "2024.11.0",
+        "license": "Apache-2.0",
+        "source_url": "https://docs.xarray.dev/en/v2024.11.0/generated/xarray.Dataset.to_zarr.html",
+        "generation_method": "Generated by Xarray, then one explicit coordinates attribute was changed to include a missing target.",
+        "usage_note": "Generated by a pinned public library; any eagerly written non-metadata objects were mechanically removed before corpus inclusion."
+      },
+      "expected_status": "success",
+      "expected_gap_codes": [
+        "unresolved_coordinate_reference"
+      ],
+      "expected_features": [
+        "Xarray metadata",
+        "dangling explicit coordinate reference"
+      ],
+      "cross_parser": {
+        "zarr": true,
+        "xarray": true,
+        "consolidated": false
+      }
+    },
+    {
+      "case_id": "zarr_library_malformed_optional_attrs",
+      "store": "zarr_library_malformed_optional_attrs.zarr",
+      "classification": "malformed_edge",
+      "source": {
+        "source_kind": "library_derived_edge",
+        "upstream": "zarr-python",
+        "version": "2.18.7",
+        "license": "MIT",
+        "source_url": "https://pypi.org/project/zarr/2.18.7/",
+        "generation_method": "Generated by Zarr Python, then the optional array .zattrs document was deliberately malformed.",
+        "usage_note": "Metadata-only local store generated from a pinned public library."
+      },
+      "expected_status": "partial",
+      "expected_issue_codes": [
+        "partial_extraction",
+        "zarr_metadata_malformed"
+      ],
+      "expected_features": [
+        "valid library-generated array metadata",
+        "malformed optional attributes"
+      ],
+      "cross_parser": {
+        "zarr": true,
+        "xarray": false,
+        "expected_zarr_open": false
+      }
+    }
+  ]
+}

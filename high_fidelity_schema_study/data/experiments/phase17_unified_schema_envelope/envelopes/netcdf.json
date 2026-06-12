@@ -1,0 +1,1754 @@
+{
+  "schema_envelope_version": "1.0.0",
+  "identity": {
+    "dataset_id": "standard_coordinates",
+    "file_id": "standard_coordinates.nc",
+    "file_format": "netcdf",
+    "data_modality": "time_series",
+    "resource_kind": "file"
+  },
+  "format_detection": {
+    "selected_format": "netcdf",
+    "basis": "magic",
+    "support_score": 1.0,
+    "signals": [
+      {
+        "format": "netcdf",
+        "basis": "magic",
+        "support_score": 1.0,
+        "detail": "NetCDF classic signature"
+      },
+      {
+        "format": "netcdf",
+        "basis": "suffix",
+        "support_score": 0.72,
+        "detail": "filename suffix .nc"
+      }
+    ],
+    "conflicted": false
+  },
+  "extractor_capability": {
+    "extractor_id": "netcdf_cf_deterministic_extractor",
+    "version": "1.0.0",
+    "formats": [
+      "netcdf"
+    ],
+    "suffixes": [
+      ".nc",
+      ".cdf"
+    ],
+    "magic_prefixes": [
+      "43444601",
+      "43444602",
+      "43444605",
+      "894844460d0a1a0a"
+    ],
+    "operations": [
+      "enumerate_dimensions",
+      "enumerate_groups",
+      "enumerate_variables",
+      "read_shapes",
+      "read_attributes",
+      "interpret_cf_coordinates",
+      "decode_cf_time"
+    ],
+    "determinism_class": "strict_with_sampled_profiles",
+    "evidence_types": [
+      "netcdf_dimension",
+      "netcdf_group",
+      "netcdf_variable",
+      "netcdf_attribute"
+    ],
+    "resource_kinds": [
+      "file"
+    ]
+  },
+  "outcome": {
+    "status": "success",
+    "issues": []
+  },
+  "physical_structure": {
+    "fields": [
+      {
+        "field_name": "temperature",
+        "field_path": "temperature",
+        "physical_type": ">f4",
+        "logical_type": "measurement",
+        "semantic_type": "air_temperature",
+        "nullable": false,
+        "unique_ratio": null,
+        "shape": [
+          3,
+          2,
+          2
+        ],
+        "unit": "K",
+        "unit_normalization": {
+          "status": "normalized_ucum",
+          "original_unit": "K",
+          "canonical_unit": "Kelvin",
+          "ucum_code": "K",
+          "evidence_basis": "explicit_metadata"
+        },
+        "description": "air temperature",
+        "example_values": [
+          "0.0",
+          "1.0",
+          "2.0"
+        ],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_variable",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:temperature",
+            "detail": "dimensions=['time', 'lat', 'lon']; shape=[3, 2, 2]; dtype=>f4",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:temperature",
+            "detail": "standard_name='air_temperature'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:temperature",
+            "detail": "long_name='air temperature'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:temperature",
+            "detail": "units='K'",
+            "confidence": 0.99
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "netcdf_cf_deterministic_extractor"
+      },
+      {
+        "field_name": "time",
+        "field_path": "time",
+        "physical_type": ">f8",
+        "logical_type": "time_axis",
+        "semantic_type": "observation_time",
+        "nullable": false,
+        "unique_ratio": null,
+        "shape": [
+          3
+        ],
+        "unit": "hours since 2026-01-01 00:00:00 UTC",
+        "unit_normalization": {
+          "status": "unmapped_unit",
+          "original_unit": "hours since 2026-01-01 00:00:00 UTC",
+          "canonical_unit": "hours since 2026-01-01 00:00:00 UTC",
+          "ucum_code": null,
+          "evidence_basis": "explicit_metadata"
+        },
+        "description": "observation time",
+        "example_values": [
+          "0.0",
+          "1.0",
+          "2.0"
+        ],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_variable",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:time",
+            "detail": "dimensions=['time']; shape=[3]; dtype=>f8",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:time",
+            "detail": "standard_name='time'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:time",
+            "detail": "long_name='observation time'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:time",
+            "detail": "units='hours since 2026-01-01 00:00:00 UTC'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:time",
+            "detail": "axis='T'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:time",
+            "detail": "calendar='standard'",
+            "confidence": 0.99
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "netcdf_cf_deterministic_extractor"
+      },
+      {
+        "field_name": "lat",
+        "field_path": "lat",
+        "physical_type": ">f4",
+        "logical_type": "coordinate",
+        "semantic_type": "latitude",
+        "nullable": false,
+        "unique_ratio": null,
+        "shape": [
+          2
+        ],
+        "unit": "degrees_north",
+        "unit_normalization": {
+          "status": "unmapped_unit",
+          "original_unit": "degrees_north",
+          "canonical_unit": "degrees_north",
+          "ucum_code": null,
+          "evidence_basis": "explicit_metadata"
+        },
+        "description": null,
+        "example_values": [
+          "10.0",
+          "20.0"
+        ],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_variable",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:lat",
+            "detail": "dimensions=['lat']; shape=[2]; dtype=>f4",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:lat",
+            "detail": "standard_name='latitude'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:lat",
+            "detail": "units='degrees_north'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:lat",
+            "detail": "axis='Y'",
+            "confidence": 0.99
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "netcdf_cf_deterministic_extractor"
+      },
+      {
+        "field_name": "lon",
+        "field_path": "lon",
+        "physical_type": ">f4",
+        "logical_type": "coordinate",
+        "semantic_type": "longitude",
+        "nullable": false,
+        "unique_ratio": null,
+        "shape": [
+          2
+        ],
+        "unit": "degrees_east",
+        "unit_normalization": {
+          "status": "unmapped_unit",
+          "original_unit": "degrees_east",
+          "canonical_unit": "degrees_east",
+          "ucum_code": null,
+          "evidence_basis": "explicit_metadata"
+        },
+        "description": null,
+        "example_values": [
+          "100.0",
+          "110.0"
+        ],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_variable",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:lon",
+            "detail": "dimensions=['lon']; shape=[2]; dtype=>f4",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:lon",
+            "detail": "standard_name='longitude'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:lon",
+            "detail": "units='degrees_east'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:lon",
+            "detail": "axis='X'",
+            "confidence": 0.99
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "netcdf_cf_deterministic_extractor"
+      }
+    ],
+    "groups": [],
+    "dimensions": {
+      "time": {
+        "size": 3,
+        "unlimited": false,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_dimension",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:time",
+            "detail": "size=3; unlimited=False",
+            "confidence": 1.0
+          }
+        ]
+      },
+      "lat": {
+        "size": 2,
+        "unlimited": false,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_dimension",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:lat",
+            "detail": "size=2; unlimited=False",
+            "confidence": 1.0
+          }
+        ]
+      },
+      "lon": {
+        "size": 2,
+        "unlimited": false,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_dimension",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:lon",
+            "detail": "size=2; unlimited=False",
+            "confidence": 1.0
+          }
+        ]
+      }
+    },
+    "format_specific": {
+      "dimensions": {
+        "time": {
+          "size": 3,
+          "unlimited": false,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "netcdf_dimension",
+              "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:time",
+              "detail": "size=3; unlimited=False",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "lat": {
+          "size": 2,
+          "unlimited": false,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "netcdf_dimension",
+              "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:lat",
+              "detail": "size=2; unlimited=False",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "lon": {
+          "size": 2,
+          "unlimited": false,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "netcdf_dimension",
+              "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:lon",
+              "detail": "size=2; unlimited=False",
+              "confidence": 1.0
+            }
+          ]
+        }
+      },
+      "cf_analysis": {
+        "variables": [
+          {
+            "field_path": "temperature",
+            "dimensions": [
+              "time",
+              "lat",
+              "lon"
+            ],
+            "attributes": {
+              "standard_name": "air_temperature",
+              "long_name": "air temperature",
+              "units": "K"
+            },
+            "coordinate_roles": [],
+            "coordinate_role_claim": {
+              "value": [],
+              "state": "unknown",
+              "reason_code": "no_coordinate_evidence",
+              "evidence_refs": []
+            },
+            "is_bounds_variable": false,
+            "bounds_claim": {
+              "value": false,
+              "state": "unknown",
+              "reason_code": "not_referenced_as_bounds",
+              "evidence_refs": []
+            },
+            "unit_claim": {
+              "value": "K",
+              "state": "supported",
+              "reason_code": "explicit_units_attribute",
+              "evidence_refs": [
+                "attribute:units"
+              ]
+            }
+          },
+          {
+            "field_path": "time",
+            "dimensions": [
+              "time"
+            ],
+            "attributes": {
+              "standard_name": "time",
+              "long_name": "observation time",
+              "units": "hours since 2026-01-01 00:00:00 UTC",
+              "calendar": "standard",
+              "axis": "T"
+            },
+            "coordinate_roles": [
+              "dimension_coordinate",
+              "axis_t",
+              "standard_time"
+            ],
+            "coordinate_role_claim": {
+              "value": [
+                "dimension_coordinate",
+                "axis_t",
+                "standard_time"
+              ],
+              "state": "supported",
+              "reason_code": "explicit_cf_coordinate_evidence",
+              "evidence_refs": [
+                "structure:dimension_coordinate",
+                "attribute:axis",
+                "attribute:standard_name"
+              ]
+            },
+            "is_bounds_variable": false,
+            "bounds_claim": {
+              "value": false,
+              "state": "unknown",
+              "reason_code": "not_referenced_as_bounds",
+              "evidence_refs": []
+            },
+            "unit_claim": {
+              "value": "hours since 2026-01-01 00:00:00 UTC",
+              "state": "supported",
+              "reason_code": "explicit_units_attribute",
+              "evidence_refs": [
+                "attribute:units"
+              ]
+            }
+          },
+          {
+            "field_path": "lat",
+            "dimensions": [
+              "lat"
+            ],
+            "attributes": {
+              "standard_name": "latitude",
+              "units": "degrees_north",
+              "axis": "Y"
+            },
+            "coordinate_roles": [
+              "dimension_coordinate",
+              "axis_y",
+              "standard_latitude",
+              "geospatial_coordinate"
+            ],
+            "coordinate_role_claim": {
+              "value": [
+                "dimension_coordinate",
+                "axis_y",
+                "standard_latitude",
+                "geospatial_coordinate"
+              ],
+              "state": "supported",
+              "reason_code": "explicit_cf_coordinate_evidence",
+              "evidence_refs": [
+                "structure:dimension_coordinate",
+                "attribute:axis",
+                "attribute:standard_name",
+                "attribute:units"
+              ]
+            },
+            "is_bounds_variable": false,
+            "bounds_claim": {
+              "value": false,
+              "state": "unknown",
+              "reason_code": "not_referenced_as_bounds",
+              "evidence_refs": []
+            },
+            "unit_claim": {
+              "value": "degrees_north",
+              "state": "supported",
+              "reason_code": "explicit_units_attribute",
+              "evidence_refs": [
+                "attribute:units"
+              ]
+            }
+          },
+          {
+            "field_path": "lon",
+            "dimensions": [
+              "lon"
+            ],
+            "attributes": {
+              "standard_name": "longitude",
+              "units": "degrees_east",
+              "axis": "X"
+            },
+            "coordinate_roles": [
+              "dimension_coordinate",
+              "axis_x",
+              "standard_longitude",
+              "geospatial_coordinate"
+            ],
+            "coordinate_role_claim": {
+              "value": [
+                "dimension_coordinate",
+                "axis_x",
+                "standard_longitude",
+                "geospatial_coordinate"
+              ],
+              "state": "supported",
+              "reason_code": "explicit_cf_coordinate_evidence",
+              "evidence_refs": [
+                "structure:dimension_coordinate",
+                "attribute:axis",
+                "attribute:standard_name",
+                "attribute:units"
+              ]
+            },
+            "is_bounds_variable": false,
+            "bounds_claim": {
+              "value": false,
+              "state": "unknown",
+              "reason_code": "not_referenced_as_bounds",
+              "evidence_refs": []
+            },
+            "unit_claim": {
+              "value": "degrees_east",
+              "state": "supported",
+              "reason_code": "explicit_units_attribute",
+              "evidence_refs": [
+                "attribute:units"
+              ]
+            }
+          }
+        ],
+        "temporal": {
+          "candidate_paths": [
+            "time"
+          ],
+          "calendar_claims": {
+            "time": {
+              "value": "standard",
+              "state": "supported",
+              "reason_code": "explicit_cf_calendar",
+              "evidence_refs": [
+                "attribute:units",
+                "attribute:calendar"
+              ]
+            }
+          },
+          "decoded_with_temporal_semantics": true,
+          "selection": {
+            "analysis_version": "phase12_temporal_v1",
+            "candidates": [
+              {
+                "field": "time",
+                "field_path": "time",
+                "score": 1.0,
+                "parse_rate": 1.0,
+                "reasons": [
+                  "high_datetime_parse_rate",
+                  "strong_time_name",
+                  "observation_time_semantic",
+                  "explicit_temporal_coordinate"
+                ]
+              }
+            ],
+            "selected_candidate": {
+              "field": "time",
+              "field_path": "time",
+              "score": 1.0,
+              "parse_rate": 1.0,
+              "reasons": [
+                "high_datetime_parse_rate",
+                "strong_time_name",
+                "observation_time_semantic",
+                "explicit_temporal_coordinate"
+              ]
+            },
+            "property_claims": {
+              "field": {
+                "value": "time",
+                "state": "supported",
+                "reason_code": "ranked_temporal_candidate",
+                "evidence_refs": [
+                  "field:time:name",
+                  "field:time:sample_values"
+                ]
+              },
+              "type": {
+                "value": "datetime",
+                "state": "supported",
+                "reason_code": "datetime_parse_success",
+                "evidence_refs": [
+                  "field:time:name",
+                  "field:time:sample_values"
+                ]
+              },
+              "timezone": {
+                "value": "UTC",
+                "state": "supported",
+                "reason_code": "explicit_timezone_offset",
+                "evidence_refs": [
+                  "sample_values:timezone_markers"
+                ]
+              },
+              "frequency": {
+                "value": "1 hour",
+                "state": "derived",
+                "reason_code": "sample_delta_profile",
+                "evidence_refs": [
+                  "sample_values:ordered_deltas"
+                ]
+              },
+              "regularity": {
+                "value": "regular",
+                "state": "derived",
+                "reason_code": "sample_delta_profile",
+                "evidence_refs": [
+                  "sample_values:ordered_deltas"
+                ]
+              },
+              "missing_intervals": {
+                "value": 0,
+                "state": "derived",
+                "reason_code": "dominant_interval_grid",
+                "evidence_refs": [
+                  "sample_values:ordered_deltas"
+                ]
+              }
+            },
+            "validator_results": {
+              "candidate_count": 1,
+              "eligible_candidate_count": 1,
+              "measurement_count": 1,
+              "selection_abstained": false
+            },
+            "issues": []
+          }
+        }
+      },
+      "temporal_analysis": {
+        "analysis_version": "phase12_temporal_v1",
+        "candidates": [
+          {
+            "field": "time",
+            "field_path": "time",
+            "score": 1.0,
+            "parse_rate": 1.0,
+            "reasons": [
+              "high_datetime_parse_rate",
+              "strong_time_name",
+              "observation_time_semantic",
+              "explicit_temporal_coordinate"
+            ]
+          }
+        ],
+        "selected_candidate": {
+          "field": "time",
+          "field_path": "time",
+          "score": 1.0,
+          "parse_rate": 1.0,
+          "reasons": [
+            "high_datetime_parse_rate",
+            "strong_time_name",
+            "observation_time_semantic",
+            "explicit_temporal_coordinate"
+          ]
+        },
+        "property_claims": {
+          "field": {
+            "value": "time",
+            "state": "supported",
+            "reason_code": "ranked_temporal_candidate",
+            "evidence_refs": [
+              "field:time:name",
+              "field:time:sample_values"
+            ]
+          },
+          "type": {
+            "value": "datetime",
+            "state": "supported",
+            "reason_code": "datetime_parse_success",
+            "evidence_refs": [
+              "field:time:name",
+              "field:time:sample_values"
+            ]
+          },
+          "timezone": {
+            "value": "UTC",
+            "state": "supported",
+            "reason_code": "explicit_timezone_offset",
+            "evidence_refs": [
+              "sample_values:timezone_markers"
+            ]
+          },
+          "frequency": {
+            "value": "1 hour",
+            "state": "derived",
+            "reason_code": "sample_delta_profile",
+            "evidence_refs": [
+              "sample_values:ordered_deltas"
+            ]
+          },
+          "regularity": {
+            "value": "regular",
+            "state": "derived",
+            "reason_code": "sample_delta_profile",
+            "evidence_refs": [
+              "sample_values:ordered_deltas"
+            ]
+          },
+          "missing_intervals": {
+            "value": 0,
+            "state": "derived",
+            "reason_code": "dominant_interval_grid",
+            "evidence_refs": [
+              "sample_values:ordered_deltas"
+            ]
+          }
+        },
+        "validator_results": {
+          "candidate_count": 1,
+          "eligible_candidate_count": 1,
+          "measurement_count": 1,
+          "selection_abstained": false
+        },
+        "issues": []
+      }
+    }
+  },
+  "logical_roles": [
+    {
+      "field_path": "temperature",
+      "logical_type": "measurement"
+    },
+    {
+      "field_path": "time",
+      "logical_type": "time_axis"
+    },
+    {
+      "field_path": "lat",
+      "logical_type": "coordinate"
+    },
+    {
+      "field_path": "lon",
+      "logical_type": "coordinate"
+    }
+  ],
+  "semantic_hints": [
+    {
+      "field_path": "temperature",
+      "semantic_type": "air_temperature"
+    },
+    {
+      "field_path": "time",
+      "semantic_type": "observation_time"
+    },
+    {
+      "field_path": "lat",
+      "semantic_type": "latitude"
+    },
+    {
+      "field_path": "lon",
+      "semantic_type": "longitude"
+    }
+  ],
+  "units": [
+    {
+      "field_path": "temperature",
+      "unit": "K",
+      "normalization": {
+        "status": "normalized_ucum",
+        "original_unit": "K",
+        "canonical_unit": "Kelvin",
+        "ucum_code": "K",
+        "evidence_basis": "explicit_metadata"
+      }
+    },
+    {
+      "field_path": "time",
+      "unit": "hours since 2026-01-01 00:00:00 UTC",
+      "normalization": {
+        "status": "unmapped_unit",
+        "original_unit": "hours since 2026-01-01 00:00:00 UTC",
+        "canonical_unit": "hours since 2026-01-01 00:00:00 UTC",
+        "ucum_code": null,
+        "evidence_basis": "explicit_metadata"
+      }
+    },
+    {
+      "field_path": "lat",
+      "unit": "degrees_north",
+      "normalization": {
+        "status": "unmapped_unit",
+        "original_unit": "degrees_north",
+        "canonical_unit": "degrees_north",
+        "ucum_code": null,
+        "evidence_basis": "explicit_metadata"
+      }
+    },
+    {
+      "field_path": "lon",
+      "unit": "degrees_east",
+      "normalization": {
+        "status": "unmapped_unit",
+        "original_unit": "degrees_east",
+        "canonical_unit": "degrees_east",
+        "ucum_code": null,
+        "evidence_basis": "explicit_metadata"
+      }
+    }
+  ],
+  "temporal_semantics": {
+    "temporal_analysis": {
+      "analysis_version": "phase12_temporal_v1",
+      "candidates": [
+        {
+          "field": "time",
+          "field_path": "time",
+          "score": 1.0,
+          "parse_rate": 1.0,
+          "reasons": [
+            "high_datetime_parse_rate",
+            "strong_time_name",
+            "observation_time_semantic",
+            "explicit_temporal_coordinate"
+          ]
+        }
+      ],
+      "selected_candidate": {
+        "field": "time",
+        "field_path": "time",
+        "score": 1.0,
+        "parse_rate": 1.0,
+        "reasons": [
+          "high_datetime_parse_rate",
+          "strong_time_name",
+          "observation_time_semantic",
+          "explicit_temporal_coordinate"
+        ]
+      },
+      "property_claims": {
+        "field": {
+          "value": "time",
+          "state": "supported",
+          "reason_code": "ranked_temporal_candidate",
+          "evidence_refs": [
+            "field:time:name",
+            "field:time:sample_values"
+          ]
+        },
+        "type": {
+          "value": "datetime",
+          "state": "supported",
+          "reason_code": "datetime_parse_success",
+          "evidence_refs": [
+            "field:time:name",
+            "field:time:sample_values"
+          ]
+        },
+        "timezone": {
+          "value": "UTC",
+          "state": "supported",
+          "reason_code": "explicit_timezone_offset",
+          "evidence_refs": [
+            "sample_values:timezone_markers"
+          ]
+        },
+        "frequency": {
+          "value": "1 hour",
+          "state": "derived",
+          "reason_code": "sample_delta_profile",
+          "evidence_refs": [
+            "sample_values:ordered_deltas"
+          ]
+        },
+        "regularity": {
+          "value": "regular",
+          "state": "derived",
+          "reason_code": "sample_delta_profile",
+          "evidence_refs": [
+            "sample_values:ordered_deltas"
+          ]
+        },
+        "missing_intervals": {
+          "value": 0,
+          "state": "derived",
+          "reason_code": "dominant_interval_grid",
+          "evidence_refs": [
+            "sample_values:ordered_deltas"
+          ]
+        }
+      },
+      "validator_results": {
+        "candidate_count": 1,
+        "eligible_candidate_count": 1,
+        "measurement_count": 1,
+        "selection_abstained": false
+      },
+      "issues": []
+    },
+    "time_series": {
+      "time_axis": {
+        "field": "time",
+        "type": "datetime",
+        "timezone": "UTC",
+        "frequency": "1 hour",
+        "regularity": "regular",
+        "missing_intervals": 0
+      },
+      "series_identifier": null,
+      "measurements": [
+        "temperature"
+      ]
+    }
+  },
+  "relationships": {
+    "dimensions": {
+      "time": {
+        "size": 3,
+        "unlimited": false,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_dimension",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:time",
+            "detail": "size=3; unlimited=False",
+            "confidence": 1.0
+          }
+        ]
+      },
+      "lat": {
+        "size": 2,
+        "unlimited": false,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_dimension",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:lat",
+            "detail": "size=2; unlimited=False",
+            "confidence": 1.0
+          }
+        ]
+      },
+      "lon": {
+        "size": 2,
+        "unlimited": false,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_dimension",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:lon",
+            "detail": "size=2; unlimited=False",
+            "confidence": 1.0
+          }
+        ]
+      }
+    },
+    "groups": []
+  },
+  "claims": [
+    {
+      "claim_id": "c0001",
+      "subject": "temperature",
+      "property": "physical_type",
+      "value": ">f4",
+      "state": "supported",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0001",
+        "e0002",
+        "e0003",
+        "e0004"
+      ]
+    },
+    {
+      "claim_id": "c0002",
+      "subject": "temperature",
+      "property": "logical_type",
+      "value": "measurement",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0001",
+        "e0002",
+        "e0003",
+        "e0004"
+      ]
+    },
+    {
+      "claim_id": "c0003",
+      "subject": "temperature",
+      "property": "semantic_type",
+      "value": "air_temperature",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0001",
+        "e0002",
+        "e0003",
+        "e0004"
+      ]
+    },
+    {
+      "claim_id": "c0004",
+      "subject": "temperature",
+      "property": "unit",
+      "value": "K",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0001",
+        "e0002",
+        "e0003",
+        "e0004"
+      ]
+    },
+    {
+      "claim_id": "c0005",
+      "subject": "temperature",
+      "property": "nullable",
+      "value": false,
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0001",
+        "e0002",
+        "e0003",
+        "e0004"
+      ]
+    },
+    {
+      "claim_id": "c0006",
+      "subject": "time",
+      "property": "physical_type",
+      "value": ">f8",
+      "state": "supported",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0005",
+        "e0006",
+        "e0007",
+        "e0008",
+        "e0009",
+        "e0010"
+      ]
+    },
+    {
+      "claim_id": "c0007",
+      "subject": "time",
+      "property": "logical_type",
+      "value": "time_axis",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0005",
+        "e0006",
+        "e0007",
+        "e0008",
+        "e0009",
+        "e0010"
+      ]
+    },
+    {
+      "claim_id": "c0008",
+      "subject": "time",
+      "property": "semantic_type",
+      "value": "observation_time",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0005",
+        "e0006",
+        "e0007",
+        "e0008",
+        "e0009",
+        "e0010"
+      ]
+    },
+    {
+      "claim_id": "c0009",
+      "subject": "time",
+      "property": "unit",
+      "value": "hours since 2026-01-01 00:00:00 UTC",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0005",
+        "e0006",
+        "e0007",
+        "e0008",
+        "e0009",
+        "e0010"
+      ]
+    },
+    {
+      "claim_id": "c0010",
+      "subject": "time",
+      "property": "nullable",
+      "value": false,
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0005",
+        "e0006",
+        "e0007",
+        "e0008",
+        "e0009",
+        "e0010"
+      ]
+    },
+    {
+      "claim_id": "c0011",
+      "subject": "lat",
+      "property": "physical_type",
+      "value": ">f4",
+      "state": "supported",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0011",
+        "e0012",
+        "e0013",
+        "e0014"
+      ]
+    },
+    {
+      "claim_id": "c0012",
+      "subject": "lat",
+      "property": "logical_type",
+      "value": "coordinate",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0011",
+        "e0012",
+        "e0013",
+        "e0014"
+      ]
+    },
+    {
+      "claim_id": "c0013",
+      "subject": "lat",
+      "property": "semantic_type",
+      "value": "latitude",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0011",
+        "e0012",
+        "e0013",
+        "e0014"
+      ]
+    },
+    {
+      "claim_id": "c0014",
+      "subject": "lat",
+      "property": "unit",
+      "value": "degrees_north",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0011",
+        "e0012",
+        "e0013",
+        "e0014"
+      ]
+    },
+    {
+      "claim_id": "c0015",
+      "subject": "lat",
+      "property": "nullable",
+      "value": false,
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0011",
+        "e0012",
+        "e0013",
+        "e0014"
+      ]
+    },
+    {
+      "claim_id": "c0016",
+      "subject": "lon",
+      "property": "physical_type",
+      "value": ">f4",
+      "state": "supported",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0015",
+        "e0016",
+        "e0017",
+        "e0018"
+      ]
+    },
+    {
+      "claim_id": "c0017",
+      "subject": "lon",
+      "property": "logical_type",
+      "value": "coordinate",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0015",
+        "e0016",
+        "e0017",
+        "e0018"
+      ]
+    },
+    {
+      "claim_id": "c0018",
+      "subject": "lon",
+      "property": "semantic_type",
+      "value": "longitude",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0015",
+        "e0016",
+        "e0017",
+        "e0018"
+      ]
+    },
+    {
+      "claim_id": "c0019",
+      "subject": "lon",
+      "property": "unit",
+      "value": "degrees_east",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0015",
+        "e0016",
+        "e0017",
+        "e0018"
+      ]
+    },
+    {
+      "claim_id": "c0020",
+      "subject": "lon",
+      "property": "nullable",
+      "value": false,
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0015",
+        "e0016",
+        "e0017",
+        "e0018"
+      ]
+    },
+    {
+      "claim_id": "c0021",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": [],
+      "state": "unknown",
+      "reason_code": "no_coordinate_evidence",
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "c0022",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": false,
+      "state": "unknown",
+      "reason_code": "not_referenced_as_bounds",
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "c0023",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": "K",
+      "state": "supported",
+      "reason_code": "explicit_units_attribute",
+      "evidence_refs": [
+        "e0019"
+      ]
+    },
+    {
+      "claim_id": "c0024",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": [
+        "dimension_coordinate",
+        "axis_t",
+        "standard_time"
+      ],
+      "state": "supported",
+      "reason_code": "explicit_cf_coordinate_evidence",
+      "evidence_refs": [
+        "e0020",
+        "e0021",
+        "e0022"
+      ]
+    },
+    {
+      "claim_id": "c0025",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": "hours since 2026-01-01 00:00:00 UTC",
+      "state": "supported",
+      "reason_code": "explicit_units_attribute",
+      "evidence_refs": [
+        "e0019"
+      ]
+    },
+    {
+      "claim_id": "c0026",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": [
+        "dimension_coordinate",
+        "axis_y",
+        "standard_latitude",
+        "geospatial_coordinate"
+      ],
+      "state": "supported",
+      "reason_code": "explicit_cf_coordinate_evidence",
+      "evidence_refs": [
+        "e0020",
+        "e0021",
+        "e0022",
+        "e0019"
+      ]
+    },
+    {
+      "claim_id": "c0027",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": "degrees_north",
+      "state": "supported",
+      "reason_code": "explicit_units_attribute",
+      "evidence_refs": [
+        "e0019"
+      ]
+    },
+    {
+      "claim_id": "c0028",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": [
+        "dimension_coordinate",
+        "axis_x",
+        "standard_longitude",
+        "geospatial_coordinate"
+      ],
+      "state": "supported",
+      "reason_code": "explicit_cf_coordinate_evidence",
+      "evidence_refs": [
+        "e0020",
+        "e0021",
+        "e0022",
+        "e0019"
+      ]
+    },
+    {
+      "claim_id": "c0029",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": "degrees_east",
+      "state": "supported",
+      "reason_code": "explicit_units_attribute",
+      "evidence_refs": [
+        "e0019"
+      ]
+    },
+    {
+      "claim_id": "c0030",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": "standard",
+      "state": "supported",
+      "reason_code": "explicit_cf_calendar",
+      "evidence_refs": [
+        "e0019",
+        "e0023"
+      ]
+    },
+    {
+      "claim_id": "c0031",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": "time",
+      "state": "supported",
+      "reason_code": "ranked_temporal_candidate",
+      "evidence_refs": [
+        "e0024",
+        "e0025"
+      ]
+    },
+    {
+      "claim_id": "c0032",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": "datetime",
+      "state": "supported",
+      "reason_code": "datetime_parse_success",
+      "evidence_refs": [
+        "e0024",
+        "e0025"
+      ]
+    },
+    {
+      "claim_id": "c0033",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": "UTC",
+      "state": "supported",
+      "reason_code": "explicit_timezone_offset",
+      "evidence_refs": [
+        "e0026"
+      ]
+    },
+    {
+      "claim_id": "c0034",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": "1 hour",
+      "state": "derived",
+      "reason_code": "sample_delta_profile",
+      "evidence_refs": [
+        "e0027"
+      ]
+    },
+    {
+      "claim_id": "c0035",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": "regular",
+      "state": "derived",
+      "reason_code": "sample_delta_profile",
+      "evidence_refs": [
+        "e0027"
+      ]
+    },
+    {
+      "claim_id": "c0036",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": 0,
+      "state": "derived",
+      "reason_code": "dominant_interval_grid",
+      "evidence_refs": [
+        "e0027"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "e0001",
+      "tier": "explicit_metadata",
+      "evidence_type": "netcdf_variable",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:temperature",
+      "detail": "dimensions=['time', 'lat', 'lon']; shape=[3, 2, 2]; dtype=>f4",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0002",
+      "tier": "explicit_metadata",
+      "evidence_type": "netcdf_attribute",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:temperature",
+      "detail": "standard_name='air_temperature'",
+      "confidence": 0.99
+    },
+    {
+      "evidence_id": "e0003",
+      "tier": "explicit_metadata",
+      "evidence_type": "netcdf_attribute",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:temperature",
+      "detail": "long_name='air temperature'",
+      "confidence": 0.99
+    },
+    {
+      "evidence_id": "e0004",
+      "tier": "explicit_metadata",
+      "evidence_type": "netcdf_attribute",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:temperature",
+      "detail": "units='K'",
+      "confidence": 0.99
+    },
+    {
+      "evidence_id": "e0005",
+      "tier": "explicit_metadata",
+      "evidence_type": "netcdf_variable",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:time",
+      "detail": "dimensions=['time']; shape=[3]; dtype=>f8",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0006",
+      "tier": "explicit_metadata",
+      "evidence_type": "netcdf_attribute",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:time",
+      "detail": "standard_name='time'",
+      "confidence": 0.99
+    },
+    {
+      "evidence_id": "e0007",
+      "tier": "explicit_metadata",
+      "evidence_type": "netcdf_attribute",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:time",
+      "detail": "long_name='observation time'",
+      "confidence": 0.99
+    },
+    {
+      "evidence_id": "e0008",
+      "tier": "explicit_metadata",
+      "evidence_type": "netcdf_attribute",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:time",
+      "detail": "units='hours since 2026-01-01 00:00:00 UTC'",
+      "confidence": 0.99
+    },
+    {
+      "evidence_id": "e0009",
+      "tier": "explicit_metadata",
+      "evidence_type": "netcdf_attribute",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:time",
+      "detail": "axis='T'",
+      "confidence": 0.99
+    },
+    {
+      "evidence_id": "e0010",
+      "tier": "explicit_metadata",
+      "evidence_type": "netcdf_attribute",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:time",
+      "detail": "calendar='standard'",
+      "confidence": 0.99
+    },
+    {
+      "evidence_id": "e0011",
+      "tier": "explicit_metadata",
+      "evidence_type": "netcdf_variable",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:lat",
+      "detail": "dimensions=['lat']; shape=[2]; dtype=>f4",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0012",
+      "tier": "explicit_metadata",
+      "evidence_type": "netcdf_attribute",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:lat",
+      "detail": "standard_name='latitude'",
+      "confidence": 0.99
+    },
+    {
+      "evidence_id": "e0013",
+      "tier": "explicit_metadata",
+      "evidence_type": "netcdf_attribute",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:lat",
+      "detail": "units='degrees_north'",
+      "confidence": 0.99
+    },
+    {
+      "evidence_id": "e0014",
+      "tier": "explicit_metadata",
+      "evidence_type": "netcdf_attribute",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:lat",
+      "detail": "axis='Y'",
+      "confidence": 0.99
+    },
+    {
+      "evidence_id": "e0015",
+      "tier": "explicit_metadata",
+      "evidence_type": "netcdf_variable",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:lon",
+      "detail": "dimensions=['lon']; shape=[2]; dtype=>f4",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0016",
+      "tier": "explicit_metadata",
+      "evidence_type": "netcdf_attribute",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:lon",
+      "detail": "standard_name='longitude'",
+      "confidence": 0.99
+    },
+    {
+      "evidence_id": "e0017",
+      "tier": "explicit_metadata",
+      "evidence_type": "netcdf_attribute",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:lon",
+      "detail": "units='degrees_east'",
+      "confidence": 0.99
+    },
+    {
+      "evidence_id": "e0018",
+      "tier": "explicit_metadata",
+      "evidence_type": "netcdf_attribute",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\netcdf_cf_phase13\\standard_coordinates.nc:lon",
+      "detail": "axis='X'",
+      "confidence": 0.99
+    },
+    {
+      "evidence_id": "e0019",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "attribute:units",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0020",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "structure:dimension_coordinate",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0021",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "attribute:axis",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0022",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "attribute:standard_name",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0023",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "attribute:calendar",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0024",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "field:time:name",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0025",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "field:time:sample_values",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0026",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "sample_values:timezone_markers",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0027",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "sample_values:ordered_deltas",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    }
+  ],
+  "provenance": {
+    "source_file_id": "standard_coordinates.nc",
+    "extractor_id": "netcdf_cf_deterministic_extractor",
+    "extractor_version": "1.0.0",
+    "determinism_class": "strict_with_sampled_profiles",
+    "transformation": "deterministic_unified_envelope_projection"
+  },
+  "conflicts": [],
+  "abstentions": [],
+  "unsupported_features": [],
+  "evaluation_metadata": {
+    "claim_state_vocabulary": [
+      "observed",
+      "declared",
+      "derived",
+      "supported",
+      "conflicted",
+      "unknown",
+      "unsupported",
+      "abstained"
+    ],
+    "source_outcome_status": "success",
+    "backward_compatibility": "Legacy ExtractionOutcome.schema remains authoritative and unchanged.",
+    "claim_boundary": "The envelope normalizes existing extractor claims; it does not promote new semantic truth."
+  }
+}

@@ -1,0 +1,733 @@
+{
+  "schema_envelope_version": "1.0.0",
+  "identity": {
+    "dataset_id": "utc_z_regular",
+    "file_id": "utc_z_regular.csv",
+    "file_format": "csv",
+    "data_modality": "time_series",
+    "resource_kind": "file"
+  },
+  "format_detection": {
+    "selected_format": "csv",
+    "basis": "suffix",
+    "support_score": 0.72,
+    "signals": [
+      {
+        "format": "csv",
+        "basis": "suffix",
+        "support_score": 0.72,
+        "detail": "filename suffix .csv"
+      },
+      {
+        "format": "csv",
+        "basis": "text_probe",
+        "support_score": 0.8,
+        "detail": "consistent delimited UTF-8 text sample"
+      }
+    ],
+    "conflicted": false
+  },
+  "extractor_capability": {
+    "extractor_id": "csv_conservative_profiler",
+    "version": "1.0.0",
+    "formats": [
+      "csv"
+    ],
+    "suffixes": [
+      ".csv",
+      ".tsv"
+    ],
+    "magic_prefixes": [],
+    "operations": [
+      "enumerate_fields",
+      "sample_values",
+      "infer_physical_types",
+      "profile_time_series"
+    ],
+    "determinism_class": "strict_with_sampled_profiles",
+    "evidence_types": [
+      "csv_header",
+      "sample_rows",
+      "column_name_unit_hint"
+    ],
+    "resource_kinds": [
+      "file"
+    ]
+  },
+  "outcome": {
+    "status": "success",
+    "issues": []
+  },
+  "physical_structure": {
+    "fields": [
+      {
+        "field_name": "sensor_id",
+        "field_path": "sensor_id",
+        "physical_type": "string",
+        "logical_type": "identifier",
+        "semantic_type": "sensor_identifier",
+        "nullable": false,
+        "unique_ratio": 0.3333,
+        "shape": null,
+        "unit": null,
+        "unit_normalization": {
+          "status": "no_unit_claim",
+          "original_unit": null,
+          "canonical_unit": null,
+          "ucum_code": null,
+          "evidence_basis": "not_applicable"
+        },
+        "description": null,
+        "example_values": [
+          "A"
+        ],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "structural",
+            "evidence_type": "csv_header",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\temporal_phase12\\utc_z_regular.csv",
+            "detail": "header='sensor_id'",
+            "confidence": 1.0
+          },
+          {
+            "tier": "statistical",
+            "evidence_type": "sample_rows",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\temporal_phase12\\utc_z_regular.csv",
+            "detail": "sampled_rows=3",
+            "confidence": 0.9
+          }
+        ],
+        "confidence": 0.9,
+        "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+        "extraction_method": "csv_conservative_profiler"
+      },
+      {
+        "field_name": "ts_utc",
+        "field_path": "ts_utc",
+        "physical_type": "datetime",
+        "logical_type": "time_axis",
+        "semantic_type": "observation_time",
+        "nullable": false,
+        "unique_ratio": 1.0,
+        "shape": null,
+        "unit": null,
+        "unit_normalization": {
+          "status": "no_unit_claim",
+          "original_unit": null,
+          "canonical_unit": null,
+          "ucum_code": null,
+          "evidence_basis": "not_applicable"
+        },
+        "description": null,
+        "example_values": [
+          "2026-01-01T00:00:00Z",
+          "2026-01-01T01:00:00Z",
+          "2026-01-01T02:00:00Z"
+        ],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "structural",
+            "evidence_type": "csv_header",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\temporal_phase12\\utc_z_regular.csv",
+            "detail": "header='ts_utc'",
+            "confidence": 1.0
+          },
+          {
+            "tier": "statistical",
+            "evidence_type": "sample_rows",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\temporal_phase12\\utc_z_regular.csv",
+            "detail": "sampled_rows=3",
+            "confidence": 0.9
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "csv_conservative_profiler"
+      },
+      {
+        "field_name": "value",
+        "field_path": "value",
+        "physical_type": "int",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": false,
+        "unique_ratio": 1.0,
+        "shape": null,
+        "unit": null,
+        "unit_normalization": {
+          "status": "no_unit_claim",
+          "original_unit": null,
+          "canonical_unit": null,
+          "ucum_code": null,
+          "evidence_basis": "not_applicable"
+        },
+        "description": null,
+        "example_values": [
+          "1",
+          "2",
+          "3"
+        ],
+        "missing_count": 0,
+        "value_range": [
+          1.0,
+          3.0
+        ],
+        "source_evidence": [
+          {
+            "tier": "structural",
+            "evidence_type": "csv_header",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\temporal_phase12\\utc_z_regular.csv",
+            "detail": "header='value'",
+            "confidence": 1.0
+          },
+          {
+            "tier": "statistical",
+            "evidence_type": "sample_rows",
+            "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\temporal_phase12\\utc_z_regular.csv",
+            "detail": "sampled_rows=3",
+            "confidence": 0.9
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "csv_conservative_profiler"
+      }
+    ],
+    "groups": [],
+    "dimensions": {},
+    "format_specific": {
+      "temporal_analysis": {
+        "analysis_version": "phase12_temporal_v1",
+        "candidates": [
+          {
+            "field": "ts_utc",
+            "field_path": "ts_utc",
+            "score": 0.95,
+            "parse_rate": 1.0,
+            "reasons": [
+              "physical_datetime",
+              "strong_time_name",
+              "observation_time_semantic"
+            ]
+          }
+        ],
+        "selected_candidate": {
+          "field": "ts_utc",
+          "field_path": "ts_utc",
+          "score": 0.95,
+          "parse_rate": 1.0,
+          "reasons": [
+            "physical_datetime",
+            "strong_time_name",
+            "observation_time_semantic"
+          ]
+        },
+        "property_claims": {
+          "field": {
+            "value": "ts_utc",
+            "state": "supported",
+            "reason_code": "ranked_temporal_candidate",
+            "evidence_refs": [
+              "field:ts_utc:name",
+              "field:ts_utc:sample_values"
+            ]
+          },
+          "type": {
+            "value": "datetime",
+            "state": "supported",
+            "reason_code": "datetime_parse_success",
+            "evidence_refs": [
+              "field:ts_utc:name",
+              "field:ts_utc:sample_values"
+            ]
+          },
+          "timezone": {
+            "value": "UTC",
+            "state": "supported",
+            "reason_code": "explicit_timezone_offset",
+            "evidence_refs": [
+              "sample_values:timezone_markers"
+            ]
+          },
+          "frequency": {
+            "value": "1 hour",
+            "state": "derived",
+            "reason_code": "sample_delta_profile",
+            "evidence_refs": [
+              "sample_values:ordered_deltas"
+            ]
+          },
+          "regularity": {
+            "value": "regular",
+            "state": "derived",
+            "reason_code": "sample_delta_profile",
+            "evidence_refs": [
+              "sample_values:ordered_deltas"
+            ]
+          },
+          "missing_intervals": {
+            "value": 0,
+            "state": "derived",
+            "reason_code": "dominant_interval_grid",
+            "evidence_refs": [
+              "sample_values:ordered_deltas"
+            ]
+          }
+        },
+        "validator_results": {
+          "candidate_count": 1,
+          "eligible_candidate_count": 1,
+          "measurement_count": 1,
+          "selection_abstained": false
+        },
+        "issues": []
+      }
+    }
+  },
+  "logical_roles": [
+    {
+      "field_path": "sensor_id",
+      "logical_type": "identifier"
+    },
+    {
+      "field_path": "ts_utc",
+      "logical_type": "time_axis"
+    }
+  ],
+  "semantic_hints": [
+    {
+      "field_path": "sensor_id",
+      "semantic_type": "sensor_identifier"
+    },
+    {
+      "field_path": "ts_utc",
+      "semantic_type": "observation_time"
+    }
+  ],
+  "units": [
+    {
+      "field_path": "sensor_id",
+      "unit": null,
+      "normalization": {
+        "status": "no_unit_claim",
+        "original_unit": null,
+        "canonical_unit": null,
+        "ucum_code": null,
+        "evidence_basis": "not_applicable"
+      }
+    },
+    {
+      "field_path": "ts_utc",
+      "unit": null,
+      "normalization": {
+        "status": "no_unit_claim",
+        "original_unit": null,
+        "canonical_unit": null,
+        "ucum_code": null,
+        "evidence_basis": "not_applicable"
+      }
+    },
+    {
+      "field_path": "value",
+      "unit": null,
+      "normalization": {
+        "status": "no_unit_claim",
+        "original_unit": null,
+        "canonical_unit": null,
+        "ucum_code": null,
+        "evidence_basis": "not_applicable"
+      }
+    }
+  ],
+  "temporal_semantics": {
+    "temporal_analysis": {
+      "analysis_version": "phase12_temporal_v1",
+      "candidates": [
+        {
+          "field": "ts_utc",
+          "field_path": "ts_utc",
+          "score": 0.95,
+          "parse_rate": 1.0,
+          "reasons": [
+            "physical_datetime",
+            "strong_time_name",
+            "observation_time_semantic"
+          ]
+        }
+      ],
+      "selected_candidate": {
+        "field": "ts_utc",
+        "field_path": "ts_utc",
+        "score": 0.95,
+        "parse_rate": 1.0,
+        "reasons": [
+          "physical_datetime",
+          "strong_time_name",
+          "observation_time_semantic"
+        ]
+      },
+      "property_claims": {
+        "field": {
+          "value": "ts_utc",
+          "state": "supported",
+          "reason_code": "ranked_temporal_candidate",
+          "evidence_refs": [
+            "field:ts_utc:name",
+            "field:ts_utc:sample_values"
+          ]
+        },
+        "type": {
+          "value": "datetime",
+          "state": "supported",
+          "reason_code": "datetime_parse_success",
+          "evidence_refs": [
+            "field:ts_utc:name",
+            "field:ts_utc:sample_values"
+          ]
+        },
+        "timezone": {
+          "value": "UTC",
+          "state": "supported",
+          "reason_code": "explicit_timezone_offset",
+          "evidence_refs": [
+            "sample_values:timezone_markers"
+          ]
+        },
+        "frequency": {
+          "value": "1 hour",
+          "state": "derived",
+          "reason_code": "sample_delta_profile",
+          "evidence_refs": [
+            "sample_values:ordered_deltas"
+          ]
+        },
+        "regularity": {
+          "value": "regular",
+          "state": "derived",
+          "reason_code": "sample_delta_profile",
+          "evidence_refs": [
+            "sample_values:ordered_deltas"
+          ]
+        },
+        "missing_intervals": {
+          "value": 0,
+          "state": "derived",
+          "reason_code": "dominant_interval_grid",
+          "evidence_refs": [
+            "sample_values:ordered_deltas"
+          ]
+        }
+      },
+      "validator_results": {
+        "candidate_count": 1,
+        "eligible_candidate_count": 1,
+        "measurement_count": 1,
+        "selection_abstained": false
+      },
+      "issues": []
+    },
+    "time_series": {
+      "time_axis": {
+        "field": "ts_utc",
+        "type": "datetime",
+        "timezone": "UTC",
+        "frequency": "1 hour",
+        "regularity": "regular",
+        "missing_intervals": 0
+      },
+      "series_identifier": "sensor_id",
+      "measurements": [
+        "value"
+      ]
+    }
+  },
+  "relationships": {
+    "dimensions": {},
+    "groups": []
+  },
+  "claims": [
+    {
+      "claim_id": "c0001",
+      "subject": "sensor_id",
+      "property": "physical_type",
+      "value": "string",
+      "state": "supported",
+      "reason_code": "conservative fallback to string to avoid over-claiming",
+      "evidence_refs": [
+        "e0001",
+        "e0002"
+      ]
+    },
+    {
+      "claim_id": "c0002",
+      "subject": "sensor_id",
+      "property": "logical_type",
+      "value": "identifier",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0001",
+        "e0002"
+      ]
+    },
+    {
+      "claim_id": "c0003",
+      "subject": "sensor_id",
+      "property": "semantic_type",
+      "value": "sensor_identifier",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0001",
+        "e0002"
+      ]
+    },
+    {
+      "claim_id": "c0004",
+      "subject": "sensor_id",
+      "property": "nullable",
+      "value": false,
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0001",
+        "e0002"
+      ]
+    },
+    {
+      "claim_id": "c0005",
+      "subject": "ts_utc",
+      "property": "physical_type",
+      "value": "datetime",
+      "state": "supported",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0003",
+        "e0002"
+      ]
+    },
+    {
+      "claim_id": "c0006",
+      "subject": "ts_utc",
+      "property": "logical_type",
+      "value": "time_axis",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0003",
+        "e0002"
+      ]
+    },
+    {
+      "claim_id": "c0007",
+      "subject": "ts_utc",
+      "property": "semantic_type",
+      "value": "observation_time",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0003",
+        "e0002"
+      ]
+    },
+    {
+      "claim_id": "c0008",
+      "subject": "ts_utc",
+      "property": "nullable",
+      "value": false,
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0003",
+        "e0002"
+      ]
+    },
+    {
+      "claim_id": "c0009",
+      "subject": "value",
+      "property": "physical_type",
+      "value": "int",
+      "state": "supported",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0004",
+        "e0002"
+      ]
+    },
+    {
+      "claim_id": "c0010",
+      "subject": "value",
+      "property": "nullable",
+      "value": false,
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0004",
+        "e0002"
+      ]
+    },
+    {
+      "claim_id": "c0011",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": "ts_utc",
+      "state": "supported",
+      "reason_code": "ranked_temporal_candidate",
+      "evidence_refs": [
+        "e0005",
+        "e0006"
+      ]
+    },
+    {
+      "claim_id": "c0012",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": "datetime",
+      "state": "supported",
+      "reason_code": "datetime_parse_success",
+      "evidence_refs": [
+        "e0005",
+        "e0006"
+      ]
+    },
+    {
+      "claim_id": "c0013",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": "UTC",
+      "state": "supported",
+      "reason_code": "explicit_timezone_offset",
+      "evidence_refs": [
+        "e0007"
+      ]
+    },
+    {
+      "claim_id": "c0014",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": "1 hour",
+      "state": "derived",
+      "reason_code": "sample_delta_profile",
+      "evidence_refs": [
+        "e0008"
+      ]
+    },
+    {
+      "claim_id": "c0015",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": "regular",
+      "state": "derived",
+      "reason_code": "sample_delta_profile",
+      "evidence_refs": [
+        "e0008"
+      ]
+    },
+    {
+      "claim_id": "c0016",
+      "subject": "dataset",
+      "property": "format_specific_claim",
+      "value": 0,
+      "state": "derived",
+      "reason_code": "dominant_interval_grid",
+      "evidence_refs": [
+        "e0008"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "e0001",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\temporal_phase12\\utc_z_regular.csv",
+      "detail": "header='sensor_id'",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0002",
+      "tier": "statistical",
+      "evidence_type": "sample_rows",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\temporal_phase12\\utc_z_regular.csv",
+      "detail": "sampled_rows=3",
+      "confidence": 0.9
+    },
+    {
+      "evidence_id": "e0003",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\temporal_phase12\\utc_z_regular.csv",
+      "detail": "header='ts_utc'",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0004",
+      "tier": "structural",
+      "evidence_type": "csv_header",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\testdata\\temporal_phase12\\utc_z_regular.csv",
+      "detail": "header='value'",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0005",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "field:ts_utc:name",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0006",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "field:ts_utc:sample_values",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0007",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "sample_values:timezone_markers",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0008",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "sample_values:ordered_deltas",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    }
+  ],
+  "provenance": {
+    "source_file_id": "utc_z_regular.csv",
+    "extractor_id": "csv_conservative_profiler",
+    "extractor_version": "1.0.0",
+    "determinism_class": "strict_with_sampled_profiles",
+    "transformation": "deterministic_unified_envelope_projection"
+  },
+  "conflicts": [],
+  "abstentions": [],
+  "unsupported_features": [],
+  "evaluation_metadata": {
+    "claim_state_vocabulary": [
+      "observed",
+      "declared",
+      "derived",
+      "supported",
+      "conflicted",
+      "unknown",
+      "unsupported",
+      "abstained"
+    ],
+    "source_outcome_status": "success",
+    "backward_compatibility": "Legacy ExtractionOutcome.schema remains authoritative and unchanged.",
+    "claim_boundary": "The envelope normalizes existing extractor claims; it does not promote new semantic truth."
+  }
+}

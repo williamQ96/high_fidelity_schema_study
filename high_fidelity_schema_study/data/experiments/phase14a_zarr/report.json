@@ -1,0 +1,387 @@
+{
+  "experiment_id": "phase14a_zarr",
+  "manifest": "testdata/zarr_phase14a/manifest.json",
+  "metrics": {
+    "case_count": 14,
+    "store_detection_accuracy": 1.0,
+    "extractor_routing_accuracy": 1.0,
+    "outcome_status_accuracy": 1.0,
+    "group_discovery_accuracy": 1.0,
+    "array_discovery_accuracy": 1.0,
+    "physical_metadata_accuracy": 1.0,
+    "attribute_extraction_accuracy": 1.0,
+    "xarray_dimension_accuracy": 1.0,
+    "coordinate_role_accuracy": 1.0,
+    "calendar_handling_accuracy": 1.0,
+    "unit_mapping_accuracy": 1.0,
+    "reason_code_coverage": 1.0,
+    "partial_extraction_accuracy": 1.0,
+    "temporal_abstention_precision": 1.0,
+    "temporal_abstention_recall": 1.0,
+    "value_observation_abstention_accuracy": 1.0,
+    "evidence_coverage": 1.0,
+    "unsupported_promotion_count": 0,
+    "path_portability_accuracy": 1.0
+  },
+  "notes": [
+    "Phase 14A evaluates local directory-store Zarr v2 metadata extraction only.",
+    "Chunk payloads, remote stores, Zarr v3, and full Xarray semantic reconstruction are out of scope.",
+    "All temporal candidates abstain because Phase 14A does not read chunk payload samples.",
+    "Value-level statistics remain unknown because Phase 14A does not read chunk payload samples."
+  ],
+  "cases": [
+    {
+      "case_id": "minimal_group",
+      "status": "success",
+      "detection_match": true,
+      "routing_match": true,
+      "status_match": true,
+      "group_matches": {
+        "/": true
+      },
+      "array_matches": {},
+      "physical_matches": {},
+      "attribute_matches": {},
+      "dimension_matches": {},
+      "coordinate_matches": {},
+      "calendar_matches": {},
+      "unit_matches": {},
+      "expected_temporal_abstention": true,
+      "actual_temporal_abstention": true,
+      "value_observation_abstained": true,
+      "path_portable": true
+    },
+    {
+      "case_id": "basic_array",
+      "status": "success",
+      "detection_match": true,
+      "routing_match": true,
+      "status_match": true,
+      "group_matches": {
+        "/": true
+      },
+      "array_matches": {
+        "temperature": true
+      },
+      "physical_matches": {
+        "temperature:dtype": true,
+        "temperature:shape": true,
+        "temperature:chunks": true,
+        "temperature:order": true,
+        "temperature:fill_value": true
+      },
+      "attribute_matches": {},
+      "dimension_matches": {},
+      "coordinate_matches": {},
+      "calendar_matches": {},
+      "unit_matches": {},
+      "expected_temporal_abstention": true,
+      "actual_temporal_abstention": true,
+      "value_observation_abstained": true,
+      "path_portable": true
+    },
+    {
+      "case_id": "nested_hierarchy",
+      "status": "success",
+      "detection_match": true,
+      "routing_match": true,
+      "status_match": true,
+      "group_matches": {
+        "/": true,
+        "observations": true
+      },
+      "array_matches": {
+        "observations/temperature": true
+      },
+      "physical_matches": {
+        "observations/temperature:shape": true,
+        "observations/temperature:chunks": true
+      },
+      "attribute_matches": {},
+      "dimension_matches": {},
+      "coordinate_matches": {},
+      "calendar_matches": {},
+      "unit_matches": {},
+      "expected_temporal_abstention": true,
+      "actual_temporal_abstention": true,
+      "value_observation_abstained": true,
+      "path_portable": true
+    },
+    {
+      "case_id": "physical_metadata",
+      "status": "success",
+      "detection_match": true,
+      "routing_match": true,
+      "status_match": true,
+      "group_matches": {
+        "/": true
+      },
+      "array_matches": {
+        "signal": true
+      },
+      "physical_matches": {
+        "signal:dtype": true,
+        "signal:shape": true,
+        "signal:chunks": true,
+        "signal:order": true,
+        "signal:fill_value": true,
+        "signal:compressor": true,
+        "signal:filters": true,
+        "signal:dimension_separator": true
+      },
+      "attribute_matches": {
+        "signal": true
+      },
+      "dimension_matches": {},
+      "coordinate_matches": {},
+      "calendar_matches": {},
+      "unit_matches": {},
+      "expected_temporal_abstention": true,
+      "actual_temporal_abstention": true,
+      "value_observation_abstained": true,
+      "path_portable": true
+    },
+    {
+      "case_id": "xarray_coordinates",
+      "status": "success",
+      "detection_match": true,
+      "routing_match": true,
+      "status_match": true,
+      "group_matches": {
+        "/": true
+      },
+      "array_matches": {
+        "time": true,
+        "lat": true,
+        "temperature": true
+      },
+      "physical_matches": {},
+      "attribute_matches": {},
+      "dimension_matches": {
+        "time": true,
+        "lat": true
+      },
+      "coordinate_matches": {
+        "time": true,
+        "lat": true
+      },
+      "calendar_matches": {
+        "time": true
+      },
+      "unit_matches": {
+        "temperature": true
+      },
+      "expected_temporal_abstention": true,
+      "actual_temporal_abstention": true,
+      "value_observation_abstained": true,
+      "path_portable": true
+    },
+    {
+      "case_id": "coordinate_conflict",
+      "status": "success",
+      "detection_match": true,
+      "routing_match": true,
+      "status_match": true,
+      "group_matches": {
+        "/": true
+      },
+      "array_matches": {
+        "position": true
+      },
+      "physical_matches": {},
+      "attribute_matches": {},
+      "dimension_matches": {},
+      "coordinate_matches": {
+        "position:state": true
+      },
+      "calendar_matches": {},
+      "unit_matches": {},
+      "expected_temporal_abstention": true,
+      "actual_temporal_abstention": true,
+      "value_observation_abstained": true,
+      "path_portable": true
+    },
+    {
+      "case_id": "name_only_unknown",
+      "status": "success",
+      "detection_match": true,
+      "routing_match": true,
+      "status_match": true,
+      "group_matches": {
+        "/": true
+      },
+      "array_matches": {
+        "lat": true
+      },
+      "physical_matches": {},
+      "attribute_matches": {},
+      "dimension_matches": {},
+      "coordinate_matches": {},
+      "calendar_matches": {},
+      "unit_matches": {},
+      "expected_temporal_abstention": true,
+      "actual_temporal_abstention": true,
+      "value_observation_abstained": true,
+      "path_portable": true
+    },
+    {
+      "case_id": "partial_malformed",
+      "status": "partial",
+      "detection_match": true,
+      "routing_match": true,
+      "status_match": true,
+      "group_matches": {
+        "/": true
+      },
+      "array_matches": {
+        "valid": true
+      },
+      "physical_matches": {},
+      "attribute_matches": {},
+      "dimension_matches": {},
+      "coordinate_matches": {},
+      "calendar_matches": {},
+      "unit_matches": {},
+      "expected_temporal_abstention": true,
+      "actual_temporal_abstention": true,
+      "value_observation_abstained": true,
+      "path_portable": true
+    },
+    {
+      "case_id": "malformed_root",
+      "status": "failed",
+      "detection_match": true,
+      "routing_match": true,
+      "status_match": true,
+      "group_matches": {},
+      "array_matches": {},
+      "physical_matches": {},
+      "attribute_matches": {},
+      "dimension_matches": {},
+      "coordinate_matches": {},
+      "calendar_matches": {},
+      "unit_matches": {},
+      "expected_temporal_abstention": true,
+      "actual_temporal_abstention": true,
+      "value_observation_abstained": null,
+      "path_portable": true
+    },
+    {
+      "case_id": "missing_metadata",
+      "status": "abstained",
+      "detection_match": true,
+      "routing_match": true,
+      "status_match": true,
+      "group_matches": {},
+      "array_matches": {},
+      "physical_matches": {},
+      "attribute_matches": {},
+      "dimension_matches": {},
+      "coordinate_matches": {},
+      "calendar_matches": {},
+      "unit_matches": {},
+      "expected_temporal_abstention": true,
+      "actual_temporal_abstention": true,
+      "value_observation_abstained": null,
+      "path_portable": true
+    },
+    {
+      "case_id": "zarr_v3",
+      "status": "abstained",
+      "detection_match": true,
+      "routing_match": true,
+      "status_match": true,
+      "group_matches": {},
+      "array_matches": {},
+      "physical_matches": {},
+      "attribute_matches": {},
+      "dimension_matches": {},
+      "coordinate_matches": {},
+      "calendar_matches": {},
+      "unit_matches": {},
+      "expected_temporal_abstention": true,
+      "actual_temporal_abstention": true,
+      "value_observation_abstained": null,
+      "path_portable": true
+    },
+    {
+      "case_id": "consolidated_only",
+      "status": "success",
+      "detection_match": true,
+      "routing_match": true,
+      "status_match": true,
+      "group_matches": {
+        "/": true
+      },
+      "array_matches": {
+        "temperature": true
+      },
+      "physical_matches": {
+        "temperature:shape": true,
+        "temperature:chunks": true
+      },
+      "attribute_matches": {},
+      "dimension_matches": {},
+      "coordinate_matches": {},
+      "calendar_matches": {},
+      "unit_matches": {
+        "temperature": true
+      },
+      "expected_temporal_abstention": true,
+      "actual_temporal_abstention": true,
+      "value_observation_abstained": true,
+      "path_portable": true
+    },
+    {
+      "case_id": "consolidated_conflict",
+      "status": "partial",
+      "detection_match": true,
+      "routing_match": true,
+      "status_match": true,
+      "group_matches": {
+        "/": true
+      },
+      "array_matches": {
+        "temperature": true
+      },
+      "physical_matches": {
+        "temperature:shape": true,
+        "temperature:chunks": true
+      },
+      "attribute_matches": {},
+      "dimension_matches": {},
+      "coordinate_matches": {},
+      "calendar_matches": {},
+      "unit_matches": {},
+      "expected_temporal_abstention": true,
+      "actual_temporal_abstention": true,
+      "value_observation_abstained": true,
+      "path_portable": true
+    },
+    {
+      "case_id": "unknown_codec",
+      "status": "success",
+      "detection_match": true,
+      "routing_match": true,
+      "status_match": true,
+      "group_matches": {
+        "/": true
+      },
+      "array_matches": {
+        "signal": true
+      },
+      "physical_matches": {
+        "signal:compressor": true
+      },
+      "attribute_matches": {},
+      "dimension_matches": {},
+      "coordinate_matches": {},
+      "calendar_matches": {},
+      "unit_matches": {},
+      "expected_temporal_abstention": true,
+      "actual_temporal_abstention": true,
+      "value_observation_abstained": true,
+      "path_portable": true
+    }
+  ]
+}

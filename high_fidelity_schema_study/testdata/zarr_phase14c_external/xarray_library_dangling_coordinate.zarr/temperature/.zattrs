@@ -1,0 +1,10 @@
+{
+    "_ARRAY_DIMENSIONS": [
+        "time",
+        "latitude",
+        "longitude"
+    ],
+    "coordinates": "time latitude longitude missing_station_coordinate",
+    "standard_name": "air_temperature",
+    "units": "K"
+}

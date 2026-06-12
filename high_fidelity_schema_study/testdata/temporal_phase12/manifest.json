@@ -1,0 +1,184 @@
+{
+  "experiment_id": "phase12_deterministic_substrate",
+  "temporal_cases": [
+    {
+      "case_id": "utc_z_regular",
+      "file": "utc_z_regular.csv",
+      "expected_format": "csv",
+      "expected_extractor": "csv_conservative_profiler",
+      "expected_status": "success",
+      "expected_selected_field": "ts_utc",
+      "expected_properties": {
+        "timezone": "UTC",
+        "frequency": "1 hour",
+        "regularity": "regular",
+        "missing_intervals": 0
+      },
+      "expected_property_states": {
+        "timezone": "supported"
+      },
+      "expect_abstention": false
+    },
+    {
+      "case_id": "positive_offset",
+      "file": "positive_offset.csv",
+      "expected_format": "csv",
+      "expected_extractor": "csv_conservative_profiler",
+      "expected_status": "success",
+      "expected_selected_field": "timestamp",
+      "expected_properties": {
+        "timezone": "+05:30",
+        "frequency": "1 hour",
+        "regularity": "regular",
+        "missing_intervals": 0
+      },
+      "expected_property_states": {
+        "timezone": "supported"
+      },
+      "expect_abstention": false
+    },
+    {
+      "case_id": "naive_timezone_unknown",
+      "file": "naive_timezone_unknown.csv",
+      "expected_format": "csv",
+      "expected_extractor": "csv_conservative_profiler",
+      "expected_status": "success",
+      "expected_selected_field": "timestamp",
+      "expected_properties": {
+        "timezone": "unknown",
+        "frequency": "1 hour",
+        "regularity": "regular",
+        "missing_intervals": 0
+      },
+      "expected_property_states": {
+        "timezone": "unknown"
+      },
+      "expect_abstention": false
+    },
+    {
+      "case_id": "mixed_offsets_conflicted",
+      "file": "mixed_offsets_conflicted.csv",
+      "expected_format": "csv",
+      "expected_extractor": "csv_conservative_profiler",
+      "expected_status": "success",
+      "expected_selected_field": "event_time",
+      "expected_properties": {
+        "timezone": "unknown"
+      },
+      "expected_property_states": {
+        "timezone": "conflicted"
+      },
+      "expect_abstention": false
+    },
+    {
+      "case_id": "missing_interval",
+      "file": "missing_interval.csv",
+      "expected_format": "csv",
+      "expected_extractor": "csv_conservative_profiler",
+      "expected_status": "success",
+      "expected_selected_field": "ts_utc",
+      "expected_properties": {
+        "timezone": "UTC",
+        "frequency": "15 minutes",
+        "regularity": "mostly_regular",
+        "missing_intervals": 1
+      },
+      "expected_property_states": {},
+      "expect_abstention": false
+    },
+    {
+      "case_id": "irregular_series",
+      "file": "irregular_series.csv",
+      "expected_format": "csv",
+      "expected_extractor": "csv_conservative_profiler",
+      "expected_status": "success",
+      "expected_selected_field": "event_time",
+      "expected_properties": {
+        "timezone": "unknown",
+        "frequency": "mixed",
+        "regularity": "irregular",
+        "missing_intervals": null
+      },
+      "expected_property_states": {},
+      "expect_abstention": false
+    },
+    {
+      "case_id": "split_date_parts",
+      "file": "split_date_parts.csv",
+      "expected_format": "csv",
+      "expected_extractor": "csv_conservative_profiler",
+      "expected_status": "success",
+      "expected_selected_field": "computed_from_parts",
+      "expected_properties": {
+        "timezone": "unknown",
+        "frequency": "1 second",
+        "regularity": "regular",
+        "missing_intervals": 0
+      },
+      "expected_property_states": {
+        "timezone": "unknown"
+      },
+      "expect_abstention": false
+    },
+    {
+      "case_id": "ambiguous_time_candidates",
+      "file": "ambiguous_time_candidates.csv",
+      "expected_format": "csv",
+      "expected_extractor": "csv_conservative_profiler",
+      "expected_status": "success",
+      "expected_selected_field": null,
+      "expected_properties": {},
+      "expected_property_states": {},
+      "expect_abstention": true
+    },
+    {
+      "case_id": "date_attribute_only",
+      "file": "date_attribute_only.csv",
+      "expected_format": "csv",
+      "expected_extractor": "csv_conservative_profiler",
+      "expected_status": "success",
+      "expected_selected_field": null,
+      "expected_properties": {},
+      "expected_property_states": {},
+      "expect_abstention": true
+    }
+  ],
+  "format_cases": [
+    {
+      "case_id": "opaque_binary",
+      "file": "opaque.bin",
+      "expected_format": null,
+      "expected_extractor": null,
+      "expected_status": "abstained",
+      "expected_issue_code": "unknown_no_signature",
+      "expect_abstention": true
+    },
+    {
+      "case_id": "malformed_parquet_after_registry_extension",
+      "file": "unsupported.parquet",
+      "expected_format": "parquet",
+      "expected_extractor": "parquet_arrow_metadata_extractor",
+      "expected_status": "failed",
+      "expected_issue_code": "parser_error",
+      "expect_abstention": false
+    },
+    {
+      "case_id": "registered_hdf5",
+      "file": "../../data/raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5",
+      "expected_format": "hdf5",
+      "expected_extractor": "h5py_structure_traversal",
+      "expected_status": "success",
+      "expect_abstention": false
+    },
+    {
+      "case_id": "conflicting_hdf5_hint",
+      "file": "../../data/raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5",
+      "format_hint": "csv",
+      "expected_format": null,
+      "expected_extractor": null,
+      "expected_status": "abstained",
+      "expected_issue_code": "unknown_conflicting_format_signals",
+      "expect_abstention": true
+    }
+  ]
+}

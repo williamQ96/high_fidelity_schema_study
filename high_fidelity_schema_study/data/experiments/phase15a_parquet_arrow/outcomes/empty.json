@@ -1,0 +1,324 @@
+{
+  "case_id": "empty",
+  "outcome": {
+    "status": "success",
+    "format_decision": {
+      "selected_format": "parquet",
+      "basis": "magic",
+      "support_score": 1.0,
+      "signals": [
+        {
+          "format": "parquet",
+          "basis": "magic",
+          "support_score": 1.0,
+          "detail": "Parquet signature"
+        },
+        {
+          "format": "parquet",
+          "basis": "suffix",
+          "support_score": 0.72,
+          "detail": "filename suffix .parquet"
+        }
+      ],
+      "conflicted": false
+    },
+    "extractor": {
+      "extractor_id": "parquet_arrow_metadata_extractor",
+      "version": "0.1.0",
+      "formats": [
+        "parquet"
+      ],
+      "suffixes": [
+        ".parquet"
+      ],
+      "magic_prefixes": [
+        "50415231"
+      ],
+      "operations": [
+        "enumerate_arrow_fields",
+        "read_arrow_types",
+        "read_nullability",
+        "read_row_groups",
+        "read_encodings",
+        "read_compression",
+        "read_footer_statistics",
+        "read_key_value_metadata"
+      ],
+      "determinism_class": "strict_metadata_only",
+      "evidence_types": [
+        "arrow_schema_field",
+        "arrow_field_metadata",
+        "parquet_schema_column",
+        "parquet_row_group",
+        "parquet_column_chunk",
+        "parquet_footer_statistics"
+      ],
+      "resource_kinds": [
+        "file"
+      ]
+    },
+    "schema": {
+      "dataset_id": "empty",
+      "file_id": "empty.parquet",
+      "file_format": "parquet",
+      "data_modality": "tabular",
+      "fields": [
+        {
+          "field_name": "id",
+          "field_path": "id",
+          "physical_type": "int64",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "arrow_schema_field",
+              "source": "arrow_schema:id",
+              "detail": "Arrow field declaration, type, and nullability",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "parquet_footer_arrow_schema"
+        },
+        {
+          "field_name": "name",
+          "field_path": "name",
+          "physical_type": "string",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "arrow_schema_field",
+              "source": "arrow_schema:name",
+              "detail": "Arrow field declaration, type, and nullability",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "parquet_footer_arrow_schema"
+        }
+      ],
+      "groups": [],
+      "metadata": {
+        "backend": "pyarrow 24.0.0",
+        "resource_kind": "file",
+        "num_rows": 0,
+        "num_columns": 2,
+        "num_row_groups": 1,
+        "created_by": "parquet-cpp-arrow version 24.0.0",
+        "format_version": "2.6",
+        "serialized_size": 433,
+        "key_value_metadata": {
+          "ARROW:schema": "/////6gAAAAQAAAAAAAKAAwABgAFAAgACgAAAAABBAAMAAAACAAIAAAABAAIAAAABAAAAAIAAABEAAAABAAAANT///8AAAEFEAAAABwAAAAEAAAAAAAAAAQAAABuYW1lAAAAAAQABAAEAAAAEAAUAAgABgAHAAwAAAAQABAAAAAAAAECEAAAABwAAAAEAAAAAAAAAAIAAABpZAAACAAMAAgABwAIAAAAAAAAAUAAAAA="
+        },
+        "arrow_schema_metadata": {},
+        "parquet_analysis": {
+          "arrow_fields": [
+            {
+              "field_path": "id",
+              "parent_path": null,
+              "name": "id",
+              "nullable": true,
+              "metadata": {},
+              "type": {
+                "arrow_type": "int64",
+                "type_id": "9"
+              },
+              "container": false,
+              "leaf": true,
+              "evidence_refs": [
+                "arrow_schema:id",
+                "parquet_footer:schema.column[0]"
+              ],
+              "parquet_column": {
+                "column_index": 0,
+                "path": "id",
+                "name": "id",
+                "physical_type": "INT64",
+                "logical_type": "None",
+                "converted_type": "NONE",
+                "max_definition_level": 1,
+                "max_repetition_level": 0,
+                "evidence_refs": [
+                  "parquet_footer:schema.column[0]"
+                ]
+              },
+              "physical_path_mapping": {
+                "state": "derived",
+                "reason_code": "arrow_leaf_parquet_column_ordinal",
+                "arrow_path": "id",
+                "parquet_path": "id",
+                "evidence_refs": [
+                  "parquet_footer:schema.column[0]"
+                ]
+              }
+            },
+            {
+              "field_path": "name",
+              "parent_path": null,
+              "name": "name",
+              "nullable": true,
+              "metadata": {},
+              "type": {
+                "arrow_type": "string",
+                "type_id": "13"
+              },
+              "container": false,
+              "leaf": true,
+              "evidence_refs": [
+                "arrow_schema:name",
+                "parquet_footer:schema.column[1]"
+              ],
+              "parquet_column": {
+                "column_index": 1,
+                "path": "name",
+                "name": "name",
+                "physical_type": "BYTE_ARRAY",
+                "logical_type": "String",
+                "converted_type": "UTF8",
+                "max_definition_level": 1,
+                "max_repetition_level": 0,
+                "evidence_refs": [
+                  "parquet_footer:schema.column[1]"
+                ]
+              },
+              "physical_path_mapping": {
+                "state": "derived",
+                "reason_code": "arrow_leaf_parquet_column_ordinal",
+                "arrow_path": "name",
+                "parquet_path": "name",
+                "evidence_refs": [
+                  "parquet_footer:schema.column[1]"
+                ]
+              }
+            }
+          ],
+          "parquet_columns": [
+            {
+              "column_index": 0,
+              "path": "id",
+              "name": "id",
+              "physical_type": "INT64",
+              "logical_type": "None",
+              "converted_type": "NONE",
+              "max_definition_level": 1,
+              "max_repetition_level": 0,
+              "evidence_refs": [
+                "parquet_footer:schema.column[0]"
+              ]
+            },
+            {
+              "column_index": 1,
+              "path": "name",
+              "name": "name",
+              "physical_type": "BYTE_ARRAY",
+              "logical_type": "String",
+              "converted_type": "UTF8",
+              "max_definition_level": 1,
+              "max_repetition_level": 0,
+              "evidence_refs": [
+                "parquet_footer:schema.column[1]"
+              ]
+            }
+          ],
+          "row_groups": [
+            {
+              "row_group_index": 0,
+              "num_rows": 0,
+              "total_byte_size": 28,
+              "sorting_columns": [],
+              "columns": [
+                {
+                  "column_index": 0,
+                  "path": "id",
+                  "physical_type": "INT64",
+                  "compression": "SNAPPY",
+                  "encodings": [
+                    "PLAIN",
+                    "RLE"
+                  ],
+                  "num_values": 0,
+                  "total_compressed_size": 15,
+                  "total_uncompressed_size": 14,
+                  "statistics": {
+                    "state": "unknown",
+                    "reason_code": "footer_statistics_absent",
+                    "source": "parquet_footer",
+                    "evidence_refs": [
+                      "parquet_footer:row_group[0].column[0]"
+                    ]
+                  },
+                  "evidence_refs": [
+                    "parquet_footer:row_group[0].column[0]"
+                  ]
+                },
+                {
+                  "column_index": 1,
+                  "path": "name",
+                  "physical_type": "BYTE_ARRAY",
+                  "compression": "SNAPPY",
+                  "encodings": [
+                    "PLAIN",
+                    "RLE"
+                  ],
+                  "num_values": 0,
+                  "total_compressed_size": 15,
+                  "total_uncompressed_size": 14,
+                  "statistics": {
+                    "state": "unknown",
+                    "reason_code": "footer_statistics_absent",
+                    "source": "parquet_footer",
+                    "evidence_refs": [
+                      "parquet_footer:row_group[0].column[1]"
+                    ]
+                  },
+                  "evidence_refs": [
+                    "parquet_footer:row_group[0].column[1]"
+                  ]
+                }
+              ],
+              "evidence_refs": [
+                "parquet_footer:row_group[0]"
+              ]
+            }
+          ]
+        },
+        "value_observation": {
+          "state": "unknown",
+          "reason_code": "row_values_not_read",
+          "row_values_read": 0,
+          "statistics_source": "parquet_footer_only"
+        },
+        "extraction_errors": []
+      },
+      "notes": [
+        "Parquet and Arrow schema metadata were extracted without reading row values.",
+        "Min/max, null counts, and distinct counts are reported only when present in the Parquet footer.",
+        "Arrow logical and temporal types are declarations; semantic roles are not inferred from field names."
+      ]
+    },
+    "issues": []
+  }
+}

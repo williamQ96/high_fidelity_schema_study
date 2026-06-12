@@ -1,0 +1,324 @@
+{
+  "case_id": "declared_schema",
+  "outcome": {
+    "status": "success",
+    "format_decision": {
+      "selected_format": "json",
+      "basis": "suffix",
+      "support_score": 0.72,
+      "signals": [
+        {
+          "format": "json",
+          "basis": "suffix",
+          "support_score": 0.72,
+          "detail": "filename suffix .json"
+        }
+      ],
+      "conflicted": false
+    },
+    "extractor": {
+      "extractor_id": "json_bounded_structure_extractor",
+      "version": "0.1.0",
+      "formats": [
+        "json"
+      ],
+      "suffixes": [
+        ".json",
+        ".jsonl",
+        ".ndjson"
+      ],
+      "magic_prefixes": [],
+      "operations": [
+        "observe_bounded_paths",
+        "observe_type_sets",
+        "observe_nullability",
+        "observe_missingness",
+        "observe_array_shapes",
+        "read_json_schema_declarations"
+      ],
+      "determinism_class": "strict_with_bounded_sample",
+      "evidence_types": [
+        "json_sample_observation",
+        "json_schema_declaration"
+      ],
+      "resource_kinds": [
+        "file"
+      ]
+    },
+    "schema": {
+      "dataset_id": "declared_schema",
+      "file_id": "declared_schema.json",
+      "file_format": "json",
+      "data_modality": "schema_document",
+      "fields": [
+        {
+          "field_name": "id",
+          "field_path": "$.id",
+          "physical_type": "integer",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": "Declared identifier",
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "sample_observation",
+              "evidence_type": "json_schema_declaration",
+              "source": "json_schema:$.id",
+              "detail": "JSON Schema property declaration",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "json_schema_declaration"
+        },
+        {
+          "field_name": "value",
+          "field_path": "$.value",
+          "physical_type": "number | null",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "sample_observation",
+              "evidence_type": "json_schema_declaration",
+              "source": "json_schema:$.value",
+              "detail": "JSON Schema property declaration",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "json_schema_declaration"
+        },
+        {
+          "field_name": "context",
+          "field_path": "$.context",
+          "physical_type": "object",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "sample_observation",
+              "evidence_type": "json_schema_declaration",
+              "source": "json_schema:$.context",
+              "detail": "JSON Schema property declaration",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "json_schema_declaration"
+        },
+        {
+          "field_name": "source",
+          "field_path": "$.context.source",
+          "physical_type": "string",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "sample_observation",
+              "evidence_type": "json_schema_declaration",
+              "source": "json_schema:$.context.source",
+              "detail": "JSON Schema property declaration",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "json_schema_declaration"
+        }
+      ],
+      "groups": [],
+      "metadata": {
+        "resource_kind": "file",
+        "json_analysis": {
+          "mode": "declared_json_schema",
+          "declared_fields": [
+            {
+              "field_path": "$.id",
+              "state": "declared",
+              "declared_types": [
+                "integer"
+              ],
+              "required": true,
+              "description": "Declared identifier",
+              "evidence_refs": [
+                "json_schema:$.id"
+              ]
+            },
+            {
+              "field_path": "$.value",
+              "state": "declared",
+              "declared_types": [
+                "number",
+                "null"
+              ],
+              "required": false,
+              "description": null,
+              "evidence_refs": [
+                "json_schema:$.value"
+              ]
+            },
+            {
+              "field_path": "$.context",
+              "state": "declared",
+              "declared_types": [
+                "object"
+              ],
+              "required": false,
+              "description": null,
+              "evidence_refs": [
+                "json_schema:$.context"
+              ]
+            },
+            {
+              "field_path": "$.context.source",
+              "state": "declared",
+              "declared_types": [
+                "string"
+              ],
+              "required": true,
+              "description": null,
+              "evidence_refs": [
+                "json_schema:$.context.source"
+              ]
+            }
+          ],
+          "observed_fields": [
+            {
+              "field_path": "$.context",
+              "state": "observed",
+              "observed_types": [
+                "object"
+              ],
+              "observed_record_count": 2,
+              "sample_record_count": 2,
+              "missing_count": 0,
+              "null_count": 0,
+              "evidence_refs": [
+                "json_sample:$.context"
+              ]
+            },
+            {
+              "field_path": "$.context.source",
+              "state": "observed",
+              "observed_types": [
+                "string"
+              ],
+              "observed_record_count": 2,
+              "sample_record_count": 2,
+              "missing_count": 0,
+              "null_count": 0,
+              "evidence_refs": [
+                "json_sample:$.context.source"
+              ]
+            },
+            {
+              "field_path": "$.id",
+              "state": "observed",
+              "observed_types": [
+                "integer"
+              ],
+              "observed_record_count": 2,
+              "sample_record_count": 2,
+              "missing_count": 0,
+              "null_count": 0,
+              "evidence_refs": [
+                "json_sample:$.id"
+              ]
+            },
+            {
+              "field_path": "$.value",
+              "state": "observed",
+              "observed_types": [
+                "number",
+                "string"
+              ],
+              "observed_record_count": 2,
+              "sample_record_count": 2,
+              "missing_count": 0,
+              "null_count": 0,
+              "evidence_refs": [
+                "json_sample:$.value"
+              ]
+            }
+          ],
+          "conflicts": [
+            {
+              "field_path": "$.value",
+              "code": "declared_observed_type_conflict",
+              "declared_types": [
+                "null",
+                "number"
+              ],
+              "observed_types": [
+                "number",
+                "string"
+              ],
+              "evidence_refs": [
+                "json_schema:$.value",
+                "json_sample:$.value"
+              ]
+            }
+          ]
+        },
+        "sampling": {
+          "organization": "single_document",
+          "observed_record_count": 1,
+          "known_total_record_count": 1,
+          "sample_truncated": false,
+          "sample_limit": 200,
+          "claim_scope": "declared_document",
+          "schema_example_count": 2
+        },
+        "value_observation": {
+          "state": "not_applicable",
+          "reason_code": "json_schema_declaration"
+        },
+        "extraction_errors": []
+      },
+      "notes": [
+        "Observed JSON structure is sample-bounded and is not a universal schema claim.",
+        "JSON Schema properties are preserved as declarations and are not treated as observed data.",
+        "Semantic roles are not inferred from JSON field names."
+      ]
+    },
+    "issues": []
+  }
+}

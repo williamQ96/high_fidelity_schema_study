@@ -1,0 +1,353 @@
+{
+  "agent_export_version": "1.0.0",
+  "policy": {
+    "canonical_mutation_allowed": false,
+    "silent_claim_promotion_allowed": false,
+    "suggestions_are_noncanonical": true,
+    "reruns_require_explicit_request": true
+  },
+  "schema_summary": {
+    "identity": {
+      "dataset_id": "xsi_conflict",
+      "file_id": "xsi_conflict.xml",
+      "file_format": "xml",
+      "data_modality": "semi_structured",
+      "resource_kind": "file"
+    },
+    "outcome_status": "success",
+    "field_count": 3,
+    "claim_count": 10,
+    "evidence_count": 7,
+    "conflict_count": 1,
+    "abstention_count": 0,
+    "fields": [
+      {
+        "field_path": "/root",
+        "physical_type": "empty",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": true
+      },
+      {
+        "field_path": "/root/value",
+        "physical_type": "string",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": false
+      },
+      {
+        "field_path": "/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+        "physical_type": "string",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": false
+      }
+    ]
+  },
+  "claim_records": [
+    {
+      "claim_id": "c0001",
+      "subject": "/root",
+      "property": "physical_type",
+      "value": "empty",
+      "state": "observed",
+      "reason_code": "sample_bounded_observation",
+      "evidence_refs": [
+        "e0001"
+      ]
+    },
+    {
+      "claim_id": "c0002",
+      "subject": "/root",
+      "property": "nullable",
+      "value": true,
+      "state": "observed",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0001"
+      ]
+    },
+    {
+      "claim_id": "c0003",
+      "subject": "/root/value",
+      "property": "physical_type",
+      "value": "string",
+      "state": "observed",
+      "reason_code": "sample_bounded_observation",
+      "evidence_refs": [
+        "e0002"
+      ]
+    },
+    {
+      "claim_id": "c0004",
+      "subject": "/root/value",
+      "property": "nullable",
+      "value": false,
+      "state": "observed",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0002"
+      ]
+    },
+    {
+      "claim_id": "c0005",
+      "subject": "/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+      "property": "physical_type",
+      "value": "string",
+      "state": "observed",
+      "reason_code": "sample_bounded_observation",
+      "evidence_refs": [
+        "e0003"
+      ]
+    },
+    {
+      "claim_id": "c0006",
+      "subject": "/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+      "property": "nullable",
+      "value": false,
+      "state": "observed",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0003"
+      ]
+    },
+    {
+      "claim_id": "c0007",
+      "subject": "/root/value",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "declared",
+      "reason_code": "xsi_type_declaration",
+      "evidence_refs": [
+        "e0004"
+      ]
+    },
+    {
+      "claim_id": "c0008",
+      "subject": "/root",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": null,
+      "evidence_refs": [
+        "e0005"
+      ]
+    },
+    {
+      "claim_id": "c0009",
+      "subject": "/root/value",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": null,
+      "evidence_refs": [
+        "e0006"
+      ]
+    },
+    {
+      "claim_id": "c0010",
+      "subject": "/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": null,
+      "evidence_refs": [
+        "e0007"
+      ]
+    }
+  ],
+  "evidence_records": [
+    {
+      "evidence_id": "e0001",
+      "tier": "sample_observation",
+      "evidence_type": "xml_sample_observation",
+      "source": "xml_sample:/root",
+      "detail": "Observed bounded XML path and type set",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0002",
+      "tier": "sample_observation",
+      "evidence_type": "xml_sample_observation",
+      "source": "xml_sample:/root/value",
+      "detail": "Observed bounded XML path and type set",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0003",
+      "tier": "sample_observation",
+      "evidence_type": "xml_sample_observation",
+      "source": "xml_sample:/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+      "detail": "Observed bounded XML path and type set",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0004",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "xml_attribute:/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0005",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "xml_sample:/root",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0006",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "xml_sample:/root/value",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0007",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "xml_sample:/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    }
+  ],
+  "provenance_graph": {
+    "entities": [
+      {
+        "id": "source:xsi_conflict.xml",
+        "type": "source_resource",
+        "file_id": "xsi_conflict.xml"
+      },
+      {
+        "id": "envelope:xsi_conflict",
+        "type": "unified_schema_envelope",
+        "version": "1.0.0"
+      }
+    ],
+    "activities": [
+      {
+        "id": "activity:deterministic_extraction",
+        "type": "deterministic_extraction",
+        "used": "source:xsi_conflict.xml",
+        "generated": "envelope:xsi_conflict"
+      },
+      {
+        "id": "activity:unified_projection",
+        "type": "deterministic_projection",
+        "generated": "envelope:xsi_conflict"
+      }
+    ],
+    "agents": [
+      {
+        "id": "extractor:xml_xsd_bounded_structure_extractor",
+        "type": "registered_extractor",
+        "version": "0.1.0",
+        "determinism_class": "strict_with_bounded_sample"
+      }
+    ]
+  },
+  "retrieval_context": {
+    "title": "xsi_conflict",
+    "format": "xml",
+    "field_paths": [
+      "/root",
+      "/root/value",
+      "/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type"
+    ],
+    "supported_claims": [
+      {
+        "subject": "/root",
+        "property": "physical_type",
+        "value": "empty",
+        "state": "observed"
+      },
+      {
+        "subject": "/root",
+        "property": "nullable",
+        "value": true,
+        "state": "observed"
+      },
+      {
+        "subject": "/root/value",
+        "property": "physical_type",
+        "value": "string",
+        "state": "observed"
+      },
+      {
+        "subject": "/root/value",
+        "property": "nullable",
+        "value": false,
+        "state": "observed"
+      },
+      {
+        "subject": "/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+        "property": "physical_type",
+        "value": "string",
+        "state": "observed"
+      },
+      {
+        "subject": "/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+        "property": "nullable",
+        "value": false,
+        "state": "observed"
+      },
+      {
+        "subject": "/root/value",
+        "property": "format_specific_claim",
+        "value": null,
+        "state": "declared"
+      },
+      {
+        "subject": "/root",
+        "property": "format_specific_claim",
+        "value": null,
+        "state": "observed"
+      },
+      {
+        "subject": "/root/value",
+        "property": "format_specific_claim",
+        "value": null,
+        "state": "observed"
+      },
+      {
+        "subject": "/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+        "property": "format_specific_claim",
+        "value": null,
+        "state": "observed"
+      }
+    ],
+    "conflicts": [
+      {
+        "category": "conflicts",
+        "detail": {
+          "field_path": "/root/value",
+          "code": "declared_observed_type_conflict",
+          "declared_type": "xs:int",
+          "observed_type": "string",
+          "evidence_refs": [
+            "xml_attribute:/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+            "xml_sample:/root/value"
+          ]
+        }
+      }
+    ],
+    "unsupported_features": []
+  },
+  "requestable_actions": [
+    {
+      "action": "inspect_evidence",
+      "effect": "read_only"
+    },
+    {
+      "action": "suggest_noncanonical_annotation",
+      "effect": "suggestion_only"
+    },
+    {
+      "action": "request_explicit_rerun",
+      "effect": "requires_user_or_orchestrator_approval"
+    }
+  ]
+}

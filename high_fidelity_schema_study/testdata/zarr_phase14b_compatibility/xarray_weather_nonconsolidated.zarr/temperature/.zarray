@@ -1,0 +1,25 @@
+{
+  "zarr_format": 2,
+  "shape": [
+    24,
+    180,
+    360
+  ],
+  "chunks": [
+    1,
+    90,
+    180
+  ],
+  "dtype": "<f4",
+  "compressor": {
+    "id": "blosc",
+    "cname": "zstd",
+    "clevel": 5,
+    "shuffle": 2,
+    "blocksize": 0
+  },
+  "fill_value": "NaN",
+  "order": "C",
+  "filters": null,
+  "dimension_separator": "."
+}

@@ -1,0 +1,24 @@
+{
+  "zarr_format": 2,
+  "shape": [
+    3
+  ],
+  "chunks": [
+    3
+  ],
+  "dtype": "<f4",
+  "compressor": {
+    "id": "site.custom-codec",
+    "configuration": {
+      "level": 7
+    }
+  },
+  "fill_value": null,
+  "order": "C",
+  "filters": [
+    {
+      "id": "site.custom-filter"
+    }
+  ],
+  "dimension_separator": "."
+}

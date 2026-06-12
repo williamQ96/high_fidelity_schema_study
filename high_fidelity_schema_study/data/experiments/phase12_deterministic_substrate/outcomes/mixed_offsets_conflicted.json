@@ -1,0 +1,348 @@
+{
+  "status": "success",
+  "format_decision": {
+    "selected_format": "csv",
+    "basis": "suffix",
+    "support_score": 0.72,
+    "signals": [
+      {
+        "format": "csv",
+        "basis": "suffix",
+        "support_score": 0.72,
+        "detail": "filename suffix .csv"
+      },
+      {
+        "format": "csv",
+        "basis": "text_probe",
+        "support_score": 0.8,
+        "detail": "consistent delimited UTF-8 text sample"
+      }
+    ],
+    "conflicted": false
+  },
+  "extractor": {
+    "extractor_id": "csv_conservative_profiler",
+    "version": "1.0.0",
+    "formats": [
+      "csv"
+    ],
+    "suffixes": [
+      ".csv",
+      ".tsv"
+    ],
+    "magic_prefixes": [],
+    "operations": [
+      "enumerate_fields",
+      "sample_values",
+      "infer_physical_types",
+      "profile_time_series"
+    ],
+    "determinism_class": "strict_with_sampled_profiles",
+    "evidence_types": [
+      "csv_header",
+      "sample_rows",
+      "column_name_unit_hint"
+    ],
+    "resource_kinds": [
+      "file"
+    ]
+  },
+  "schema": {
+    "dataset_id": "mixed_offsets_conflicted",
+    "file_id": "mixed_offsets_conflicted.csv",
+    "file_format": "csv",
+    "data_modality": "time_series",
+    "fields": [
+      {
+        "field_name": "sensor_id",
+        "field_path": "sensor_id",
+        "physical_type": "string",
+        "logical_type": "identifier",
+        "semantic_type": "sensor_identifier",
+        "nullable": false,
+        "unique_ratio": 0.3333,
+        "shape": null,
+        "unit": null,
+        "unit_normalization": {
+          "status": "no_unit_claim",
+          "original_unit": null,
+          "canonical_unit": null,
+          "ucum_code": null,
+          "evidence_basis": "not_applicable"
+        },
+        "description": null,
+        "example_values": [
+          "A"
+        ],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "structural",
+            "evidence_type": "csv_header",
+            "source": "testdata/temporal_phase12/mixed_offsets_conflicted.csv",
+            "detail": "header='sensor_id'",
+            "confidence": 1.0
+          },
+          {
+            "tier": "statistical",
+            "evidence_type": "sample_rows",
+            "source": "testdata/temporal_phase12/mixed_offsets_conflicted.csv",
+            "detail": "sampled_rows=3",
+            "confidence": 0.9
+          }
+        ],
+        "confidence": 0.9,
+        "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+        "extraction_method": "csv_conservative_profiler"
+      },
+      {
+        "field_name": "event_time",
+        "field_path": "event_time",
+        "physical_type": "datetime",
+        "logical_type": "time_axis",
+        "semantic_type": "observation_time",
+        "nullable": false,
+        "unique_ratio": 1.0,
+        "shape": null,
+        "unit": null,
+        "unit_normalization": {
+          "status": "no_unit_claim",
+          "original_unit": null,
+          "canonical_unit": null,
+          "ucum_code": null,
+          "evidence_basis": "not_applicable"
+        },
+        "description": null,
+        "example_values": [
+          "2026-01-01T00:00:00Z",
+          "2026-01-01T02:00:00+01:00",
+          "2026-01-01T03:00:00+01:00"
+        ],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "structural",
+            "evidence_type": "csv_header",
+            "source": "testdata/temporal_phase12/mixed_offsets_conflicted.csv",
+            "detail": "header='event_time'",
+            "confidence": 1.0
+          },
+          {
+            "tier": "statistical",
+            "evidence_type": "sample_rows",
+            "source": "testdata/temporal_phase12/mixed_offsets_conflicted.csv",
+            "detail": "sampled_rows=3",
+            "confidence": 0.9
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "csv_conservative_profiler"
+      },
+      {
+        "field_name": "value",
+        "field_path": "value",
+        "physical_type": "int",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": false,
+        "unique_ratio": 1.0,
+        "shape": null,
+        "unit": null,
+        "unit_normalization": {
+          "status": "no_unit_claim",
+          "original_unit": null,
+          "canonical_unit": null,
+          "ucum_code": null,
+          "evidence_basis": "not_applicable"
+        },
+        "description": null,
+        "example_values": [
+          "1",
+          "2",
+          "3"
+        ],
+        "missing_count": 0,
+        "value_range": [
+          1.0,
+          3.0
+        ],
+        "source_evidence": [
+          {
+            "tier": "structural",
+            "evidence_type": "csv_header",
+            "source": "testdata/temporal_phase12/mixed_offsets_conflicted.csv",
+            "detail": "header='value'",
+            "confidence": 1.0
+          },
+          {
+            "tier": "statistical",
+            "evidence_type": "sample_rows",
+            "source": "testdata/temporal_phase12/mixed_offsets_conflicted.csv",
+            "detail": "sampled_rows=3",
+            "confidence": 0.9
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "csv_conservative_profiler"
+      }
+    ],
+    "groups": [],
+    "metadata": {
+      "sampled_rows": 3,
+      "column_count": 3,
+      "temporal_analysis": {
+        "analysis_version": "phase12_temporal_v1",
+        "candidates": [
+          {
+            "field": "event_time",
+            "field_path": "event_time",
+            "score": 0.95,
+            "parse_rate": 1.0,
+            "reasons": [
+              "physical_datetime",
+              "strong_time_name",
+              "observation_time_semantic"
+            ]
+          }
+        ],
+        "selected_candidate": {
+          "field": "event_time",
+          "field_path": "event_time",
+          "score": 0.95,
+          "parse_rate": 1.0,
+          "reasons": [
+            "physical_datetime",
+            "strong_time_name",
+            "observation_time_semantic"
+          ]
+        },
+        "property_claims": {
+          "field": {
+            "value": "event_time",
+            "state": "supported",
+            "reason_code": "ranked_temporal_candidate",
+            "evidence_refs": [
+              "field:event_time:name",
+              "field:event_time:sample_values"
+            ]
+          },
+          "type": {
+            "value": "datetime",
+            "state": "supported",
+            "reason_code": "datetime_parse_success",
+            "evidence_refs": [
+              "field:event_time:name",
+              "field:event_time:sample_values"
+            ]
+          },
+          "timezone": {
+            "value": "unknown",
+            "state": "conflicted",
+            "reason_code": "conflicting_timezone_offsets",
+            "evidence_refs": [
+              "sample_values:timezone_markers"
+            ]
+          },
+          "frequency": {
+            "value": "1 hour",
+            "state": "derived",
+            "reason_code": "sample_delta_profile",
+            "evidence_refs": [
+              "sample_values:ordered_deltas"
+            ]
+          },
+          "regularity": {
+            "value": "regular",
+            "state": "derived",
+            "reason_code": "sample_delta_profile",
+            "evidence_refs": [
+              "sample_values:ordered_deltas"
+            ]
+          },
+          "missing_intervals": {
+            "value": 0,
+            "state": "derived",
+            "reason_code": "dominant_interval_grid",
+            "evidence_refs": [
+              "sample_values:ordered_deltas"
+            ]
+          }
+        },
+        "validator_results": {
+          "candidate_count": 1,
+          "eligible_candidate_count": 1,
+          "measurement_count": 1,
+          "selection_abstained": false
+        },
+        "issues": []
+      },
+      "time_series": {
+        "time_axis": {
+          "field": "event_time",
+          "type": "datetime",
+          "timezone": "unknown",
+          "frequency": "1 hour",
+          "regularity": "regular",
+          "missing_intervals": 0
+        },
+        "series_identifier": "sensor_id",
+        "measurements": [
+          "value"
+        ]
+      },
+      "deterministic_profile": {
+        "missingness": {
+          "basis": "sampled_rows",
+          "sampled_rows": 3,
+          "field_count": 3,
+          "fields_with_missing_count": 0,
+          "total_missing_cells": 0,
+          "fields": [
+            {
+              "field_path": "sensor_id",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false,
+              "basis": "sampled_rows"
+            },
+            {
+              "field_path": "event_time",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false,
+              "basis": "sampled_rows"
+            },
+            {
+              "field_path": "value",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false,
+              "basis": "sampled_rows"
+            }
+          ]
+        },
+        "identifier_quality": {
+          "candidate_count": 1,
+          "best_identifier_fields": [],
+          "fields": [
+            {
+              "field_path": "sensor_id",
+              "semantic_type": "sensor_identifier",
+              "unique_ratio": 0.3333,
+              "missing_ratio": 0.0,
+              "non_missing_rows": 3,
+              "duplicate_count": 2,
+              "quality": "low_cardinality_identifier"
+            }
+          ]
+        }
+      }
+    },
+    "notes": []
+  },
+  "issues": []
+}

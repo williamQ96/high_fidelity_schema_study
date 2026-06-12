@@ -1,0 +1,225 @@
+{
+  "status": "success",
+  "format_decision": {
+    "selected_format": "netcdf",
+    "basis": "magic",
+    "support_score": 1.0,
+    "signals": [
+      {
+        "format": "netcdf",
+        "basis": "magic",
+        "support_score": 1.0,
+        "detail": "NetCDF classic signature"
+      },
+      {
+        "format": "netcdf",
+        "basis": "suffix",
+        "support_score": 0.72,
+        "detail": "filename suffix .nc"
+      }
+    ],
+    "conflicted": false
+  },
+  "extractor": {
+    "extractor_id": "netcdf_cf_deterministic_extractor",
+    "version": "1.0.0",
+    "formats": [
+      "netcdf"
+    ],
+    "suffixes": [
+      ".nc",
+      ".cdf"
+    ],
+    "magic_prefixes": [
+      "43444601",
+      "43444602",
+      "43444605",
+      "894844460d0a1a0a"
+    ],
+    "operations": [
+      "enumerate_dimensions",
+      "enumerate_groups",
+      "enumerate_variables",
+      "read_shapes",
+      "read_attributes",
+      "interpret_cf_coordinates",
+      "decode_cf_time"
+    ],
+    "determinism_class": "strict_with_sampled_profiles",
+    "evidence_types": [
+      "netcdf_dimension",
+      "netcdf_group",
+      "netcdf_variable",
+      "netcdf_attribute"
+    ]
+  },
+  "schema": {
+    "dataset_id": "coordinate_conflict",
+    "file_id": "coordinate_conflict.nc",
+    "file_format": "netcdf",
+    "data_modality": "multidimensional",
+    "fields": [
+      {
+        "field_name": "position",
+        "field_path": "position",
+        "physical_type": ">f4",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": false,
+        "unique_ratio": null,
+        "shape": [
+          3
+        ],
+        "unit": null,
+        "unit_normalization": {
+          "status": "no_unit_claim",
+          "original_unit": null,
+          "canonical_unit": null,
+          "ucum_code": null,
+          "evidence_basis": "not_applicable"
+        },
+        "description": null,
+        "example_values": [
+          "10.0",
+          "11.0",
+          "12.0"
+        ],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_variable",
+            "source": "testdata/netcdf_cf_phase13/coordinate_conflict.nc:position",
+            "detail": "dimensions=['record']; shape=[3]; dtype=>f4",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/coordinate_conflict.nc:position",
+            "detail": "standard_name='latitude'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/coordinate_conflict.nc:position",
+            "detail": "axis='X'",
+            "confidence": 0.99
+          }
+        ],
+        "confidence": 0.9,
+        "uncertainty_reason": "Conflicting CF coordinate evidence",
+        "extraction_method": "netcdf_cf_deterministic_extractor"
+      }
+    ],
+    "groups": [],
+    "metadata": {
+      "backend": "scipy.io.netcdf_file",
+      "dimensions": {
+        "record": {
+          "size": 3,
+          "unlimited": false,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "netcdf_dimension",
+              "source": "testdata/netcdf_cf_phase13/coordinate_conflict.nc:record",
+              "detail": "size=3; unlimited=False",
+              "confidence": 1.0
+            }
+          ]
+        }
+      },
+      "file_attributes": {},
+      "cf_analysis": {
+        "variables": [
+          {
+            "field_path": "position",
+            "dimensions": [
+              "record"
+            ],
+            "attributes": {
+              "standard_name": "latitude",
+              "axis": "X"
+            },
+            "coordinate_roles": [
+              "axis_x",
+              "standard_latitude"
+            ],
+            "coordinate_role_claim": {
+              "value": [
+                "axis_x",
+                "standard_latitude"
+              ],
+              "state": "conflicted",
+              "reason_code": "conflicting_cf_coordinate_evidence",
+              "evidence_refs": [
+                "attribute:axis",
+                "attribute:standard_name"
+              ]
+            },
+            "is_bounds_variable": false,
+            "bounds_claim": {
+              "value": false,
+              "state": "unknown",
+              "reason_code": "not_referenced_as_bounds",
+              "evidence_refs": []
+            },
+            "unit_claim": {
+              "value": null,
+              "state": "unknown",
+              "reason_code": "missing_units_attribute",
+              "evidence_refs": []
+            }
+          }
+        ],
+        "temporal": {
+          "candidate_paths": [],
+          "calendar_claims": {},
+          "decoded_with_temporal_semantics": false,
+          "selection": {
+            "analysis_version": "phase12_temporal_v1",
+            "candidates": [],
+            "selected_candidate": null,
+            "property_claims": {},
+            "validator_results": {
+              "candidate_count": 0,
+              "eligible_candidate_count": 0,
+              "measurement_count": 0,
+              "selection_abstained": true
+            },
+            "issues": []
+          }
+        }
+      },
+      "extraction_errors": [],
+      "deterministic_profile": {
+        "missingness": {
+          "basis": "field_metadata",
+          "sampled_rows": null,
+          "field_count": 1,
+          "fields_with_missing_count": 0,
+          "total_missing_cells": 0,
+          "fields": [
+            {
+              "field_path": "position",
+              "missing_count": 0,
+              "missing_ratio": null,
+              "nullable": false,
+              "basis": "field_metadata"
+            }
+          ]
+        },
+        "identifier_quality": {
+          "candidate_count": 0,
+          "best_identifier_fields": [],
+          "fields": []
+        }
+      }
+    },
+    "notes": []
+  },
+  "issues": []
+}

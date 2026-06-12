@@ -1,0 +1,305 @@
+{
+  "experiment_id": "phase18_unified_evaluation",
+  "track_count": 11,
+  "category_summary": {
+    "bounded_challenge": 6,
+    "compatibility": 1,
+    "cross_format_contract": 1,
+    "external_conformance": 1,
+    "frozen_artifact_paper": 2
+  },
+  "tracks": [
+    {
+      "track_id": "frozen_internal_baseline",
+      "category": "frozen_artifact_paper",
+      "source": "data/derived/internal_baseline_report.json",
+      "metrics": {
+        "physical_completeness": 1.0,
+        "physical_accuracy": 0.9815,
+        "logical_completeness": 0.963,
+        "logical_accuracy": 0.9444,
+        "semantic_completeness": 0.9815,
+        "semantic_accuracy": 1.0,
+        "unit_accuracy": 0.8889,
+        "high_necessity_coverage": 1.0,
+        "high_necessity_physical_accuracy": 1.0,
+        "time_axis_accuracy": 0.6667
+      },
+      "status": "reference_only_not_rerun"
+    },
+    {
+      "track_id": "frozen_retrieval_slice",
+      "category": "frozen_artifact_paper",
+      "source": "data/retrieval/external_candidate_pool/retrieval_report.json",
+      "metrics": {
+        "metadata_only": {
+          "recall_at_1": 0.7,
+          "recall_at_3": 0.7,
+          "precision_at_1": 0.7,
+          "precision_at_3": 0.2333,
+          "mrr": 0.7617,
+          "ndcg_at_3": 0.7
+        },
+        "readme_only": {
+          "recall_at_1": 0.5,
+          "recall_at_3": 0.8,
+          "precision_at_1": 0.5,
+          "precision_at_3": 0.2667,
+          "mrr": 0.661,
+          "ndcg_at_3": 0.6762
+        },
+        "schema_enhanced": {
+          "recall_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "precision_at_1": 1.0,
+          "precision_at_3": 0.3333,
+          "mrr": 1.0,
+          "ndcg_at_3": 1.0
+        },
+        "schema_enhanced_deterministic": {
+          "recall_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "precision_at_1": 1.0,
+          "precision_at_3": 0.3333,
+          "mrr": 1.0,
+          "ndcg_at_3": 1.0
+        },
+        "schema_enhanced_semantic_merged": {
+          "recall_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "precision_at_1": 1.0,
+          "precision_at_3": 0.3333,
+          "mrr": 1.0,
+          "ndcg_at_3": 1.0
+        }
+      },
+      "status": "reference_only_not_rerun"
+    },
+    {
+      "track_id": "phase12_deterministic_substrate",
+      "category": "bounded_challenge",
+      "metrics": {
+        "case_count": 13,
+        "temporal_case_count": 9,
+        "format_detection_accuracy": 1.0,
+        "extractor_routing_accuracy": 1.0,
+        "structured_failure_artifact_completeness": 1.0,
+        "time_axis_selection_accuracy": 1.0,
+        "per_property_temporal_accuracy": 1.0,
+        "exact_temporal_profile_accuracy": 1.0,
+        "abstention_precision": 1.0,
+        "abstention_recall": 1.0,
+        "reason_code_coverage": 1.0,
+        "evidence_coverage": 1.0,
+        "unsupported_promotion_count": 0
+      },
+      "status": "evaluated",
+      "claim_boundary": [
+        "This Phase 12 experiment is separate from the frozen Artifact Paper benchmark.",
+        "Support scores are deterministic rule strengths, not calibrated probabilities.",
+        "Sidecar documentation is not used to promote canonical temporal claims."
+      ]
+    },
+    {
+      "track_id": "phase13_netcdf_cf",
+      "category": "bounded_challenge",
+      "metrics": {
+        "case_count": 14,
+        "format_detection_accuracy": 1.0,
+        "extractor_routing_accuracy": 1.0,
+        "physical_extraction_accuracy": 1.0,
+        "coordinate_role_accuracy": 1.0,
+        "time_axis_accuracy": 1.0,
+        "calendar_handling_accuracy": 1.0,
+        "unit_mapping_accuracy": 1.0,
+        "temporal_abstention_precision": 1.0,
+        "temporal_abstention_recall": 1.0,
+        "unsupported_promotion_count": 0,
+        "evidence_coverage": 1.0
+      },
+      "status": "evaluated",
+      "claim_boundary": [
+        "Phase 13 is isolated from the frozen Artifact Paper benchmark.",
+        "NetCDF/CF semantic claims are promoted only from explicit attributes or deterministic structure.",
+        "Non-standard calendars are preserved but not decoded by the standard-calendar temporal path."
+      ]
+    },
+    {
+      "track_id": "phase14a_zarr",
+      "category": "bounded_challenge",
+      "metrics": {
+        "case_count": 14,
+        "store_detection_accuracy": 1.0,
+        "extractor_routing_accuracy": 1.0,
+        "outcome_status_accuracy": 1.0,
+        "group_discovery_accuracy": 1.0,
+        "array_discovery_accuracy": 1.0,
+        "physical_metadata_accuracy": 1.0,
+        "attribute_extraction_accuracy": 1.0,
+        "xarray_dimension_accuracy": 1.0,
+        "coordinate_role_accuracy": 1.0,
+        "calendar_handling_accuracy": 1.0,
+        "unit_mapping_accuracy": 1.0,
+        "reason_code_coverage": 1.0,
+        "partial_extraction_accuracy": 1.0,
+        "temporal_abstention_precision": 1.0,
+        "temporal_abstention_recall": 1.0,
+        "value_observation_abstention_accuracy": 1.0,
+        "evidence_coverage": 1.0,
+        "unsupported_promotion_count": 0,
+        "path_portability_accuracy": 1.0
+      },
+      "status": "evaluated",
+      "claim_boundary": [
+        "Phase 14A evaluates local directory-store Zarr v2 metadata extraction only.",
+        "Chunk payloads, remote stores, Zarr v3, and full Xarray semantic reconstruction are out of scope.",
+        "All temporal candidates abstain because Phase 14A does not read chunk payload samples.",
+        "Value-level statistics remain unknown because Phase 14A does not read chunk payload samples."
+      ]
+    },
+    {
+      "track_id": "phase14b_zarr_compatibility",
+      "category": "compatibility",
+      "metrics": {
+        "case_count": 17,
+        "supported_case_count": 10,
+        "supported_compatibility_rate": 1.0,
+        "unsupported_feature_visibility": 1.0,
+        "malformed_failure_quality": 1.0,
+        "structured_abstention_quality": 1.0,
+        "overall_expectation_match": 1.0,
+        "evidence_coverage": 1.0,
+        "path_portability_accuracy": 1.0,
+        "chunk_payload_non_claim_rate": 1.0,
+        "value_observation_abstention_accuracy": 1.0,
+        "compatibility_gap_count": 2,
+        "unsupported_promotion_count": 0,
+        "true_bug_count": 0
+      },
+      "status": "evaluated",
+      "claim_boundary": "This is a realistic compatibility corpus, not a downloaded representative ecosystem sample."
+    },
+    {
+      "track_id": "phase14c_zarr_external_conformance",
+      "category": "external_conformance",
+      "metrics": {
+        "case_count": 12,
+        "external_public_case_count": 2,
+        "library_produced_case_count": 8,
+        "library_derived_edge_count": 2,
+        "supported_compatibility_rate": 1.0,
+        "structured_abstention_quality": 1.0,
+        "unsupported_feature_visibility": 1.0,
+        "malformed_edge_quality": 1.0,
+        "source_documentation_completeness": 1.0,
+        "evidence_coverage": 1.0,
+        "path_portability_accuracy": 1.0,
+        "chunk_payload_non_claim_rate": 1.0,
+        "unsupported_promotion_count": 0,
+        "true_bug_count": 0,
+        "zarr_conformance_assessed_count": 0,
+        "zarr_physical_conformance_rate": 0.0,
+        "xarray_conformance_assessed_count": 0,
+        "xarray_structure_conformance_rate": 0.0,
+        "conformance_difference_count": 0,
+        "unexplained_conformance_difference_count": 0
+      },
+      "status": "evaluated",
+      "claim_boundary": "This corpus combines one public-source metadata subset with pinned library-produced metadata-only stores; it is not representative of the full Zarr ecosystem."
+    },
+    {
+      "track_id": "phase15a_parquet_arrow",
+      "category": "bounded_challenge",
+      "metrics": {
+        "case_count": 8,
+        "format_detection_accuracy": 1.0,
+        "extractor_routing_accuracy": 1.0,
+        "arrow_field_accuracy": 1.0,
+        "parquet_column_accuracy": 1.0,
+        "row_group_accuracy": 1.0,
+        "compression_accuracy": 1.0,
+        "encoding_accuracy": 1.0,
+        "statistics_policy_accuracy": 1.0,
+        "nullability_accuracy": 1.0,
+        "timestamp_timezone_accuracy": 1.0,
+        "metadata_accuracy": 1.0,
+        "evidence_coverage": 1.0,
+        "row_value_abstention_accuracy": 1.0,
+        "unsupported_promotion_count": 0
+      },
+      "status": "evaluated",
+      "claim_boundary": "Controlled PyArrow-produced Parquet challenge pack; validates metadata-first extraction and does not establish broad Parquet ecosystem robustness."
+    },
+    {
+      "track_id": "phase16a_json_structure",
+      "category": "bounded_challenge",
+      "metrics": {
+        "case_count": 6,
+        "format_detection_accuracy": 1.0,
+        "extractor_routing_accuracy": 1.0,
+        "mode_accuracy": 1.0,
+        "path_accuracy": 1.0,
+        "missingness_accuracy": 1.0,
+        "nullability_accuracy": 1.0,
+        "heterogeneous_array_accuracy": 1.0,
+        "declared_schema_accuracy": 1.0,
+        "declared_observed_conflict_accuracy": 1.0,
+        "sampling_issue_accuracy": 1.0,
+        "evidence_coverage": 1.0,
+        "unsupported_promotion_count": 0
+      },
+      "status": "evaluated",
+      "claim_boundary": "Controlled JSON challenge pack; observed structures are sample-bounded and not universal schema truth."
+    },
+    {
+      "track_id": "phase16b_xml_xsd_structure",
+      "category": "bounded_challenge",
+      "metrics": {
+        "case_count": 5,
+        "format_detection_accuracy": 1.0,
+        "extractor_routing_accuracy": 1.0,
+        "mode_accuracy": 1.0,
+        "path_accuracy": 1.0,
+        "repeated_path_accuracy": 1.0,
+        "namespace_accuracy": 1.0,
+        "declared_xsd_accuracy": 1.0,
+        "declared_observed_conflict_accuracy": 1.0,
+        "sampling_issue_accuracy": 1.0,
+        "evidence_coverage": 1.0,
+        "unsupported_promotion_count": 0
+      },
+      "status": "evaluated",
+      "claim_boundary": "Controlled XML/XSD challenge pack; observed XML paths are sample-bounded and external schemas are not loaded."
+    },
+    {
+      "track_id": "phase17_unified_schema_envelope",
+      "category": "cross_format_contract",
+      "metrics": {
+        "case_count": 8,
+        "section_completeness": 1.0,
+        "identity_accuracy": 1.0,
+        "format_projection_accuracy": 1.0,
+        "capability_or_abstention_accuracy": 1.0,
+        "physical_structure_fidelity": 1.0,
+        "claim_state_validity": 1.0,
+        "claim_evidence_integrity": 1.0,
+        "provenance_completeness": 1.0,
+        "conflict_projection_accuracy": 1.0,
+        "abstention_projection_accuracy": 1.0,
+        "legacy_outcome_immutability": 1.0
+      },
+      "status": "evaluated",
+      "claim_boundary": [
+        "The unified envelope is an additive deterministic projection over legacy outcomes.",
+        "Legacy ExtractionOutcome.schema remains authoritative and unchanged.",
+        "The envelope does not promote new semantic truth."
+      ]
+    }
+  ],
+  "aggregate_score": null,
+  "notes": [
+    "No cross-track aggregate score is computed because track scopes and claim boundaries differ.",
+    "Frozen Artifact Paper metrics are referenced only and are not rerun or rewritten.",
+    "Bounded challenge, compatibility, external-conformance, and cross-format-contract tracks remain separate."
+  ]
+}

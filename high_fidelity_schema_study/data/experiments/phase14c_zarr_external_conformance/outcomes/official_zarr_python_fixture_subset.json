@@ -1,0 +1,1291 @@
+{
+  "case_id": "official_zarr_python_fixture_subset",
+  "classification": "supported",
+  "source": {
+    "source_kind": "external_public_sdist",
+    "upstream": "zarr-python",
+    "version": "2.18.7",
+    "license": "MIT",
+    "source_url": "https://pypi.org/project/zarr/2.18.7/",
+    "generation_method": "Exact metadata-only subset extracted from the public Zarr Python 2.18.7 source-distribution fixture.",
+    "usage_note": "Only .zgroup, .zarray, and .zattrs documents are retained; fixture chunk payloads are excluded.",
+    "source_sha256": "b2b8f66f14dac4af66b180d2338819981b981f70e196c9a66e6bfaa9e59572f5"
+  },
+  "canonical_outcome": {
+    "status": "success",
+    "format_decision": {
+      "selected_format": "zarr",
+      "basis": "zarr_store_metadata",
+      "support_score": 1.0,
+      "signals": [
+        {
+          "format": "zarr",
+          "basis": "zarr_store_metadata",
+          "support_score": 1.0,
+          "detail": "Zarr store metadata documents: .zgroup"
+        },
+        {
+          "format": "zarr",
+          "basis": "suffix",
+          "support_score": 0.72,
+          "detail": "filename suffix .zarr"
+        }
+      ],
+      "conflicted": false
+    },
+    "extractor": {
+      "extractor_id": "zarr_v2_metadata_extractor",
+      "version": "0.2.0",
+      "formats": [
+        "zarr"
+      ],
+      "suffixes": [
+        ".zarr"
+      ],
+      "magic_prefixes": [],
+      "operations": [
+        "enumerate_groups",
+        "enumerate_arrays",
+        "read_array_metadata",
+        "read_attributes",
+        "interpret_xarray_dimensions",
+        "interpret_cf_coordinates"
+      ],
+      "determinism_class": "strict_metadata_only",
+      "evidence_types": [
+        "zarr_group_metadata",
+        "zarr_array_metadata",
+        "zarr_attribute",
+        "zarr_consolidated_metadata"
+      ],
+      "resource_kinds": [
+        "directory_store"
+      ]
+    },
+    "schema": {
+      "dataset_id": "official_zarr_python_fixture_subset",
+      "file_id": "official_zarr_python_fixture_subset.zarr",
+      "file_format": "zarr",
+      "data_modality": "multidimensional",
+      "fields": [
+        {
+          "field_name": "0",
+          "field_path": "0/0",
+          "physical_type": "|i1",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": [
+            1111
+          ],
+          "unit": null,
+          "unit_normalization": {
+            "status": "no_unit_claim",
+            "original_unit": null,
+            "canonical_unit": null,
+            "ucum_code": null,
+            "evidence_basis": "not_applicable"
+          },
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_array_metadata",
+              "source": "0/0/.zarray",
+              "detail": "keys=dtype,shape,chunks,compressor,fill_value,order,filters,dimension_separator",
+              "confidence": 1.0
+            },
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_attribute",
+              "source": "0/0/.zattrs",
+              "detail": "explicit array attributes",
+              "confidence": 0.99
+            }
+          ],
+          "confidence": 0.9,
+          "uncertainty_reason": "Zarr/Xarray/CF metadata does not support a precise logical or semantic claim",
+          "extraction_method": "zarr_v2_metadata_extractor"
+        },
+        {
+          "field_name": "1",
+          "field_path": "0/1",
+          "physical_type": "|i1",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": [
+            1111
+          ],
+          "unit": null,
+          "unit_normalization": {
+            "status": "no_unit_claim",
+            "original_unit": null,
+            "canonical_unit": null,
+            "ucum_code": null,
+            "evidence_basis": "not_applicable"
+          },
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_array_metadata",
+              "source": "0/1/.zarray",
+              "detail": "keys=dtype,shape,chunks,compressor,fill_value,order,filters,dimension_separator",
+              "confidence": 1.0
+            },
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_attribute",
+              "source": "0/1/.zattrs",
+              "detail": "explicit array attributes",
+              "confidence": 0.99
+            }
+          ],
+          "confidence": 0.9,
+          "uncertainty_reason": "Zarr/Xarray/CF metadata does not support a precise logical or semantic claim",
+          "extraction_method": "zarr_v2_metadata_extractor"
+        },
+        {
+          "field_name": "2",
+          "field_path": "0/2",
+          "physical_type": "|i1",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": [
+            1111
+          ],
+          "unit": null,
+          "unit_normalization": {
+            "status": "no_unit_claim",
+            "original_unit": null,
+            "canonical_unit": null,
+            "ucum_code": null,
+            "evidence_basis": "not_applicable"
+          },
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_array_metadata",
+              "source": "0/2/.zarray",
+              "detail": "keys=dtype,shape,chunks,compressor,fill_value,order,filters,dimension_separator",
+              "confidence": 1.0
+            },
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_attribute",
+              "source": "0/2/.zattrs",
+              "detail": "explicit array attributes",
+              "confidence": 0.99
+            }
+          ],
+          "confidence": 0.9,
+          "uncertainty_reason": "Zarr/Xarray/CF metadata does not support a precise logical or semantic claim",
+          "extraction_method": "zarr_v2_metadata_extractor"
+        },
+        {
+          "field_name": "3",
+          "field_path": "0/3",
+          "physical_type": "|i1",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": [
+            1111
+          ],
+          "unit": null,
+          "unit_normalization": {
+            "status": "no_unit_claim",
+            "original_unit": null,
+            "canonical_unit": null,
+            "ucum_code": null,
+            "evidence_basis": "not_applicable"
+          },
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_array_metadata",
+              "source": "0/3/.zarray",
+              "detail": "keys=dtype,shape,chunks,compressor,fill_value,order,filters,dimension_separator",
+              "confidence": 1.0
+            },
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_attribute",
+              "source": "0/3/.zattrs",
+              "detail": "explicit array attributes",
+              "confidence": 0.99
+            }
+          ],
+          "confidence": 0.9,
+          "uncertainty_reason": "Zarr/Xarray/CF metadata does not support a precise logical or semantic claim",
+          "extraction_method": "zarr_v2_metadata_extractor"
+        },
+        {
+          "field_name": "4",
+          "field_path": "0/4",
+          "physical_type": "|i1",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": [
+            1111
+          ],
+          "unit": null,
+          "unit_normalization": {
+            "status": "no_unit_claim",
+            "original_unit": null,
+            "canonical_unit": null,
+            "ucum_code": null,
+            "evidence_basis": "not_applicable"
+          },
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_array_metadata",
+              "source": "0/4/.zarray",
+              "detail": "keys=dtype,shape,chunks,compressor,fill_value,order,filters,dimension_separator",
+              "confidence": 1.0
+            },
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_attribute",
+              "source": "0/4/.zattrs",
+              "detail": "explicit array attributes",
+              "confidence": 0.99
+            }
+          ],
+          "confidence": 0.9,
+          "uncertainty_reason": "Zarr/Xarray/CF metadata does not support a precise logical or semantic claim",
+          "extraction_method": "zarr_v2_metadata_extractor"
+        },
+        {
+          "field_name": "5",
+          "field_path": "0/5",
+          "physical_type": "|i1",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": [
+            1111
+          ],
+          "unit": null,
+          "unit_normalization": {
+            "status": "no_unit_claim",
+            "original_unit": null,
+            "canonical_unit": null,
+            "ucum_code": null,
+            "evidence_basis": "not_applicable"
+          },
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_array_metadata",
+              "source": "0/5/.zarray",
+              "detail": "keys=dtype,shape,chunks,compressor,fill_value,order,filters,dimension_separator",
+              "confidence": 1.0
+            },
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_attribute",
+              "source": "0/5/.zattrs",
+              "detail": "explicit array attributes",
+              "confidence": 0.99
+            }
+          ],
+          "confidence": 0.9,
+          "uncertainty_reason": "Zarr/Xarray/CF metadata does not support a precise logical or semantic claim",
+          "extraction_method": "zarr_v2_metadata_extractor"
+        },
+        {
+          "field_name": "6",
+          "field_path": "0/6",
+          "physical_type": "|i1",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": [
+            1111
+          ],
+          "unit": null,
+          "unit_normalization": {
+            "status": "no_unit_claim",
+            "original_unit": null,
+            "canonical_unit": null,
+            "ucum_code": null,
+            "evidence_basis": "not_applicable"
+          },
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_array_metadata",
+              "source": "0/6/.zarray",
+              "detail": "keys=dtype,shape,chunks,compressor,fill_value,order,filters,dimension_separator",
+              "confidence": 1.0
+            },
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_attribute",
+              "source": "0/6/.zattrs",
+              "detail": "explicit array attributes",
+              "confidence": 0.99
+            }
+          ],
+          "confidence": 0.9,
+          "uncertainty_reason": "Zarr/Xarray/CF metadata does not support a precise logical or semantic claim",
+          "extraction_method": "zarr_v2_metadata_extractor"
+        },
+        {
+          "field_name": "flat",
+          "field_path": "flat",
+          "physical_type": "<i8",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": [
+            2,
+            2
+          ],
+          "unit": null,
+          "unit_normalization": {
+            "status": "no_unit_claim",
+            "original_unit": null,
+            "canonical_unit": null,
+            "ucum_code": null,
+            "evidence_basis": "not_applicable"
+          },
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_array_metadata",
+              "source": "flat/.zarray",
+              "detail": "keys=dtype,shape,chunks,compressor,fill_value,order,filters,dimension_separator",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 0.9,
+          "uncertainty_reason": "Zarr/Xarray/CF metadata does not support a precise logical or semantic claim",
+          "extraction_method": "zarr_v2_metadata_extractor"
+        },
+        {
+          "field_name": "meta",
+          "field_path": "meta",
+          "physical_type": "<i8",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": [
+            2,
+            2
+          ],
+          "unit": null,
+          "unit_normalization": {
+            "status": "no_unit_claim",
+            "original_unit": null,
+            "canonical_unit": null,
+            "ucum_code": null,
+            "evidence_basis": "not_applicable"
+          },
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_array_metadata",
+              "source": "meta/.zarray",
+              "detail": "keys=dtype,shape,chunks,compressor,fill_value,order,filters,dimension_separator",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 0.9,
+          "uncertainty_reason": "Zarr/Xarray/CF metadata does not support a precise logical or semantic claim",
+          "extraction_method": "zarr_v2_metadata_extractor"
+        },
+        {
+          "field_name": "nested",
+          "field_path": "nested",
+          "physical_type": "<i8",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": [
+            2,
+            2
+          ],
+          "unit": null,
+          "unit_normalization": {
+            "status": "no_unit_claim",
+            "original_unit": null,
+            "canonical_unit": null,
+            "ucum_code": null,
+            "evidence_basis": "not_applicable"
+          },
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_array_metadata",
+              "source": "nested/.zarray",
+              "detail": "keys=dtype,shape,chunks,compressor,fill_value,order,filters,dimension_separator",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 0.9,
+          "uncertainty_reason": "Zarr/Xarray/CF metadata does not support a precise logical or semantic claim",
+          "extraction_method": "zarr_v2_metadata_extractor"
+        }
+      ],
+      "groups": [
+        {
+          "path": "/",
+          "kind": "group",
+          "attributes": {},
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_group_metadata",
+              "source": ".zgroup",
+              "detail": "zarr_format=2",
+              "confidence": 1.0
+            },
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_attribute",
+              "source": ".zattrs",
+              "detail": "explicit group attributes",
+              "confidence": 0.99
+            }
+          ]
+        },
+        {
+          "path": "0",
+          "kind": "group",
+          "attributes": {},
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_group_metadata",
+              "source": "0/.zgroup",
+              "detail": "zarr_format=2",
+              "confidence": 1.0
+            },
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "zarr_attribute",
+              "source": "0/.zattrs",
+              "detail": "explicit group attributes",
+              "confidence": 0.99
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "resource_kind": "directory_store",
+        "zarr_format": 2,
+        "metadata_only": true,
+        "chunk_payloads_read": false,
+        "value_observation": {
+          "state": "unknown",
+          "reason_code": "chunk_payloads_not_read",
+          "properties": [
+            "missing_count",
+            "missing_ratio",
+            "unique_ratio",
+            "value_range",
+            "example_values"
+          ]
+        },
+        "documents_discovered": [
+          ".zattrs",
+          ".zgroup",
+          "0/.zattrs",
+          "0/.zgroup",
+          "0/0/.zarray",
+          "0/0/.zattrs",
+          "0/1/.zarray",
+          "0/1/.zattrs",
+          "0/2/.zarray",
+          "0/2/.zattrs",
+          "0/3/.zarray",
+          "0/3/.zattrs",
+          "0/4/.zarray",
+          "0/4/.zattrs",
+          "0/5/.zarray",
+          "0/5/.zattrs",
+          "0/6/.zarray",
+          "0/6/.zattrs",
+          "flat/.zarray",
+          "meta/.zarray",
+          "nested/.zarray"
+        ],
+        "store_inventory": {
+          "metadata_document_count": 21,
+          "observed_non_metadata_file_count": 0,
+          "pruned_array_directory_count": 0,
+          "walk_strategy": "array_boundary_aware",
+          "payload_bytes_read": 0
+        },
+        "dimensions": {},
+        "zarr_analysis": {
+          "arrays": [
+            {
+              "field_path": "0/0",
+              "metadata_source": "0/0/.zarray",
+              "attributes": {},
+              "array_metadata": {
+                "dtype": "|i1",
+                "shape": [
+                  1111
+                ],
+                "chunks": [
+                  100
+                ],
+                "compressor": null,
+                "fill_value": 0,
+                "order": "F",
+                "filters": null,
+                "dimension_separator": "."
+              },
+              "dimensions": [],
+              "dimension_claim": {
+                "value": [],
+                "state": "unknown",
+                "reason_code": "array_dimensions_missing",
+                "evidence_refs": []
+              },
+              "coordinate_roles": [],
+              "coordinate_role_claim": {
+                "value": [],
+                "state": "unknown",
+                "reason_code": "no_coordinate_evidence",
+                "evidence_refs": []
+              },
+              "unit_claim": {
+                "value": null,
+                "state": "unknown",
+                "reason_code": "missing_units_attribute",
+                "evidence_refs": []
+              }
+            },
+            {
+              "field_path": "0/1",
+              "metadata_source": "0/1/.zarray",
+              "attributes": {},
+              "array_metadata": {
+                "dtype": "|i1",
+                "shape": [
+                  1111
+                ],
+                "chunks": [
+                  100
+                ],
+                "compressor": {
+                  "id": "zlib",
+                  "level": 1
+                },
+                "fill_value": 0,
+                "order": "F",
+                "filters": null,
+                "dimension_separator": "."
+              },
+              "dimensions": [],
+              "dimension_claim": {
+                "value": [],
+                "state": "unknown",
+                "reason_code": "array_dimensions_missing",
+                "evidence_refs": []
+              },
+              "coordinate_roles": [],
+              "coordinate_role_claim": {
+                "value": [],
+                "state": "unknown",
+                "reason_code": "no_coordinate_evidence",
+                "evidence_refs": []
+              },
+              "unit_claim": {
+                "value": null,
+                "state": "unknown",
+                "reason_code": "missing_units_attribute",
+                "evidence_refs": []
+              }
+            },
+            {
+              "field_path": "0/2",
+              "metadata_source": "0/2/.zarray",
+              "attributes": {},
+              "array_metadata": {
+                "dtype": "|i1",
+                "shape": [
+                  1111
+                ],
+                "chunks": [
+                  100
+                ],
+                "compressor": {
+                  "id": "bz2",
+                  "level": 1
+                },
+                "fill_value": 0,
+                "order": "F",
+                "filters": null,
+                "dimension_separator": "."
+              },
+              "dimensions": [],
+              "dimension_claim": {
+                "value": [],
+                "state": "unknown",
+                "reason_code": "array_dimensions_missing",
+                "evidence_refs": []
+              },
+              "coordinate_roles": [],
+              "coordinate_role_claim": {
+                "value": [],
+                "state": "unknown",
+                "reason_code": "no_coordinate_evidence",
+                "evidence_refs": []
+              },
+              "unit_claim": {
+                "value": null,
+                "state": "unknown",
+                "reason_code": "missing_units_attribute",
+                "evidence_refs": []
+              }
+            },
+            {
+              "field_path": "0/3",
+              "metadata_source": "0/3/.zarray",
+              "attributes": {},
+              "array_metadata": {
+                "dtype": "|i1",
+                "shape": [
+                  1111
+                ],
+                "chunks": [
+                  100
+                ],
+                "compressor": {
+                  "clevel": 1,
+                  "cname": "zstd",
+                  "id": "blosc",
+                  "shuffle": 0
+                },
+                "fill_value": 0,
+                "order": "F",
+                "filters": null,
+                "dimension_separator": "."
+              },
+              "dimensions": [],
+              "dimension_claim": {
+                "value": [],
+                "state": "unknown",
+                "reason_code": "array_dimensions_missing",
+                "evidence_refs": []
+              },
+              "coordinate_roles": [],
+              "coordinate_role_claim": {
+                "value": [],
+                "state": "unknown",
+                "reason_code": "no_coordinate_evidence",
+                "evidence_refs": []
+              },
+              "unit_claim": {
+                "value": null,
+                "state": "unknown",
+                "reason_code": "missing_units_attribute",
+                "evidence_refs": []
+              }
+            },
+            {
+              "field_path": "0/4",
+              "metadata_source": "0/4/.zarray",
+              "attributes": {},
+              "array_metadata": {
+                "dtype": "|i1",
+                "shape": [
+                  1111
+                ],
+                "chunks": [
+                  100
+                ],
+                "compressor": {
+                  "clevel": 1,
+                  "cname": "zstd",
+                  "id": "blosc",
+                  "shuffle": 1
+                },
+                "fill_value": 0,
+                "order": "F",
+                "filters": null,
+                "dimension_separator": "."
+              },
+              "dimensions": [],
+              "dimension_claim": {
+                "value": [],
+                "state": "unknown",
+                "reason_code": "array_dimensions_missing",
+                "evidence_refs": []
+              },
+              "coordinate_roles": [],
+              "coordinate_role_claim": {
+                "value": [],
+                "state": "unknown",
+                "reason_code": "no_coordinate_evidence",
+                "evidence_refs": []
+              },
+              "unit_claim": {
+                "value": null,
+                "state": "unknown",
+                "reason_code": "missing_units_attribute",
+                "evidence_refs": []
+              }
+            },
+            {
+              "field_path": "0/5",
+              "metadata_source": "0/5/.zarray",
+              "attributes": {},
+              "array_metadata": {
+                "dtype": "|i1",
+                "shape": [
+                  1111
+                ],
+                "chunks": [
+                  100
+                ],
+                "compressor": {
+                  "clevel": 1,
+                  "cname": "zstd",
+                  "id": "blosc",
+                  "shuffle": 2
+                },
+                "fill_value": 0,
+                "order": "F",
+                "filters": null,
+                "dimension_separator": "."
+              },
+              "dimensions": [],
+              "dimension_claim": {
+                "value": [],
+                "state": "unknown",
+                "reason_code": "array_dimensions_missing",
+                "evidence_refs": []
+              },
+              "coordinate_roles": [],
+              "coordinate_role_claim": {
+                "value": [],
+                "state": "unknown",
+                "reason_code": "no_coordinate_evidence",
+                "evidence_refs": []
+              },
+              "unit_claim": {
+                "value": null,
+                "state": "unknown",
+                "reason_code": "missing_units_attribute",
+                "evidence_refs": []
+              }
+            },
+            {
+              "field_path": "0/6",
+              "metadata_source": "0/6/.zarray",
+              "attributes": {},
+              "array_metadata": {
+                "dtype": "|i1",
+                "shape": [
+                  1111
+                ],
+                "chunks": [
+                  100
+                ],
+                "compressor": {
+                  "clevel": 1,
+                  "cname": "lz4",
+                  "id": "blosc",
+                  "shuffle": 0
+                },
+                "fill_value": 0,
+                "order": "F",
+                "filters": null,
+                "dimension_separator": "."
+              },
+              "dimensions": [],
+              "dimension_claim": {
+                "value": [],
+                "state": "unknown",
+                "reason_code": "array_dimensions_missing",
+                "evidence_refs": []
+              },
+              "coordinate_roles": [],
+              "coordinate_role_claim": {
+                "value": [],
+                "state": "unknown",
+                "reason_code": "no_coordinate_evidence",
+                "evidence_refs": []
+              },
+              "unit_claim": {
+                "value": null,
+                "state": "unknown",
+                "reason_code": "missing_units_attribute",
+                "evidence_refs": []
+              }
+            },
+            {
+              "field_path": "flat",
+              "metadata_source": "flat/.zarray",
+              "attributes": {},
+              "array_metadata": {
+                "dtype": "<i8",
+                "shape": [
+                  2,
+                  2
+                ],
+                "chunks": [
+                  2,
+                  2
+                ],
+                "compressor": {
+                  "blocksize": 0,
+                  "clevel": 5,
+                  "cname": "lz4",
+                  "id": "blosc",
+                  "shuffle": 1
+                },
+                "fill_value": 0,
+                "order": "C",
+                "filters": null,
+                "dimension_separator": "."
+              },
+              "dimensions": [],
+              "dimension_claim": {
+                "value": [],
+                "state": "unknown",
+                "reason_code": "array_dimensions_missing",
+                "evidence_refs": []
+              },
+              "coordinate_roles": [],
+              "coordinate_role_claim": {
+                "value": [],
+                "state": "unknown",
+                "reason_code": "no_coordinate_evidence",
+                "evidence_refs": []
+              },
+              "unit_claim": {
+                "value": null,
+                "state": "unknown",
+                "reason_code": "missing_units_attribute",
+                "evidence_refs": []
+              }
+            },
+            {
+              "field_path": "meta",
+              "metadata_source": "meta/.zarray",
+              "attributes": {},
+              "array_metadata": {
+                "dtype": "<i8",
+                "shape": [
+                  2,
+                  2
+                ],
+                "chunks": [
+                  2,
+                  2
+                ],
+                "compressor": {
+                  "blocksize": 0,
+                  "clevel": 5,
+                  "cname": "lz4",
+                  "id": "blosc",
+                  "shuffle": 1
+                },
+                "fill_value": 0,
+                "order": "C",
+                "filters": null,
+                "dimension_separator": "."
+              },
+              "dimensions": [],
+              "dimension_claim": {
+                "value": [],
+                "state": "unknown",
+                "reason_code": "array_dimensions_missing",
+                "evidence_refs": []
+              },
+              "coordinate_roles": [],
+              "coordinate_role_claim": {
+                "value": [],
+                "state": "unknown",
+                "reason_code": "no_coordinate_evidence",
+                "evidence_refs": []
+              },
+              "unit_claim": {
+                "value": null,
+                "state": "unknown",
+                "reason_code": "missing_units_attribute",
+                "evidence_refs": []
+              }
+            },
+            {
+              "field_path": "nested",
+              "metadata_source": "nested/.zarray",
+              "attributes": {},
+              "array_metadata": {
+                "dtype": "<i8",
+                "shape": [
+                  2,
+                  2
+                ],
+                "chunks": [
+                  2,
+                  2
+                ],
+                "compressor": {
+                  "blocksize": 0,
+                  "clevel": 5,
+                  "cname": "lz4",
+                  "id": "blosc",
+                  "shuffle": 1
+                },
+                "fill_value": 0,
+                "order": "C",
+                "filters": null,
+                "dimension_separator": "/"
+              },
+              "dimensions": [],
+              "dimension_claim": {
+                "value": [],
+                "state": "unknown",
+                "reason_code": "array_dimensions_missing",
+                "evidence_refs": []
+              },
+              "coordinate_roles": [],
+              "coordinate_role_claim": {
+                "value": [],
+                "state": "unknown",
+                "reason_code": "no_coordinate_evidence",
+                "evidence_refs": []
+              },
+              "unit_claim": {
+                "value": null,
+                "state": "unknown",
+                "reason_code": "missing_units_attribute",
+                "evidence_refs": []
+              }
+            }
+          ],
+          "calendar_claims": {},
+          "temporal": {
+            "analysis_version": "phase12_temporal_v1",
+            "candidates": [],
+            "selected_candidate": null,
+            "property_claims": {},
+            "validator_results": {
+              "candidate_count": 0,
+              "eligible_candidate_count": 0,
+              "measurement_count": 10,
+              "selection_abstained": true
+            },
+            "issues": [
+              {
+                "code": "metadata_only_no_temporal_samples",
+                "severity": "note",
+                "detail": "Metadata-only Zarr extraction does not read chunk payloads, so no canonical time axis is selected from numeric arrays."
+              }
+            ]
+          },
+          "compatibility_gaps": []
+        },
+        "extraction_errors": []
+      },
+      "notes": [
+        "The current Zarr extractor reads Zarr v2 metadata only and does not read chunk payloads.",
+        "Convention-backed claims remain unknown or conflicted when explicit metadata is absent or inconsistent.",
+        "Value-level statistics remain unknown because chunk payloads are not read."
+      ]
+    },
+    "issues": []
+  },
+  "cross_parser": {
+    "role": "dev_only_supporting_evidence",
+    "value_reads": 0,
+    "zarr": {
+      "available": true,
+      "parser": "zarr",
+      "version": "2.18.7",
+      "status": "success",
+      "groups": {
+        "/": {
+          "attributes": {}
+        },
+        "0": {
+          "attributes": {}
+        }
+      },
+      "arrays": {
+        "0/0": {
+          "dtype": "|i1",
+          "shape": [
+            1111
+          ],
+          "chunks": [
+            100
+          ],
+          "compressor": null,
+          "fill_value": 0,
+          "order": "F",
+          "filters": null,
+          "attributes": {}
+        },
+        "0/1": {
+          "dtype": "|i1",
+          "shape": [
+            1111
+          ],
+          "chunks": [
+            100
+          ],
+          "compressor": {
+            "id": "zlib",
+            "level": 1
+          },
+          "fill_value": 0,
+          "order": "F",
+          "filters": null,
+          "attributes": {}
+        },
+        "0/2": {
+          "dtype": "|i1",
+          "shape": [
+            1111
+          ],
+          "chunks": [
+            100
+          ],
+          "compressor": {
+            "id": "bz2",
+            "level": 1
+          },
+          "fill_value": 0,
+          "order": "F",
+          "filters": null,
+          "attributes": {}
+        },
+        "0/3": {
+          "dtype": "|i1",
+          "shape": [
+            1111
+          ],
+          "chunks": [
+            100
+          ],
+          "compressor": {
+            "id": "blosc",
+            "cname": "zstd",
+            "clevel": 1,
+            "shuffle": 0,
+            "blocksize": 0
+          },
+          "fill_value": 0,
+          "order": "F",
+          "filters": null,
+          "attributes": {}
+        },
+        "0/4": {
+          "dtype": "|i1",
+          "shape": [
+            1111
+          ],
+          "chunks": [
+            100
+          ],
+          "compressor": {
+            "id": "blosc",
+            "cname": "zstd",
+            "clevel": 1,
+            "shuffle": 1,
+            "blocksize": 0
+          },
+          "fill_value": 0,
+          "order": "F",
+          "filters": null,
+          "attributes": {}
+        },
+        "0/5": {
+          "dtype": "|i1",
+          "shape": [
+            1111
+          ],
+          "chunks": [
+            100
+          ],
+          "compressor": {
+            "id": "blosc",
+            "cname": "zstd",
+            "clevel": 1,
+            "shuffle": 2,
+            "blocksize": 0
+          },
+          "fill_value": 0,
+          "order": "F",
+          "filters": null,
+          "attributes": {}
+        },
+        "0/6": {
+          "dtype": "|i1",
+          "shape": [
+            1111
+          ],
+          "chunks": [
+            100
+          ],
+          "compressor": {
+            "id": "blosc",
+            "cname": "lz4",
+            "clevel": 1,
+            "shuffle": 0,
+            "blocksize": 0
+          },
+          "fill_value": 0,
+          "order": "F",
+          "filters": null,
+          "attributes": {}
+        },
+        "flat": {
+          "dtype": "<i8",
+          "shape": [
+            2,
+            2
+          ],
+          "chunks": [
+            2,
+            2
+          ],
+          "compressor": {
+            "id": "blosc",
+            "cname": "lz4",
+            "clevel": 5,
+            "shuffle": 1,
+            "blocksize": 0
+          },
+          "fill_value": 0,
+          "order": "C",
+          "filters": null,
+          "attributes": {}
+        },
+        "meta": {
+          "dtype": "<i8",
+          "shape": [
+            2,
+            2
+          ],
+          "chunks": [
+            2,
+            2
+          ],
+          "compressor": {
+            "id": "blosc",
+            "cname": "lz4",
+            "clevel": 5,
+            "shuffle": 1,
+            "blocksize": 0
+          },
+          "fill_value": 0,
+          "order": "C",
+          "filters": null,
+          "attributes": {}
+        },
+        "nested": {
+          "dtype": "<i8",
+          "shape": [
+            2,
+            2
+          ],
+          "chunks": [
+            2,
+            2
+          ],
+          "compressor": {
+            "id": "blosc",
+            "cname": "lz4",
+            "clevel": 5,
+            "shuffle": 1,
+            "blocksize": 0
+          },
+          "fill_value": 0,
+          "order": "C",
+          "filters": null,
+          "attributes": {}
+        }
+      },
+      "value_reads": 0
+    }
+  },
+  "conformance_differences": [
+    {
+      "parser": "zarr",
+      "kind": "parser_default_materialization",
+      "field_path": "0/3",
+      "property": "compressor"
+    },
+    {
+      "parser": "zarr",
+      "kind": "parser_default_materialization",
+      "field_path": "0/4",
+      "property": "compressor"
+    },
+    {
+      "parser": "zarr",
+      "kind": "parser_default_materialization",
+      "field_path": "0/5",
+      "property": "compressor"
+    },
+    {
+      "parser": "zarr",
+      "kind": "parser_default_materialization",
+      "field_path": "0/6",
+      "property": "compressor"
+    }
+  ]
+}

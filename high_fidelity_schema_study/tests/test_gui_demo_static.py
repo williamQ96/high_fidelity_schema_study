@@ -14,8 +14,23 @@ def test_gui_demo_contains_core_inspection_views():
     assert "renderFields(data)" in html
     assert "setupExtractor()" in html
     assert "/api/extract-schema" in html
+    assert "/api/extract-example" in html
+    assert "/api/examples" in html
+    assert "NetCDF / CF conventions" in html
+    assert "Parquet / Arrow metadata" in html
+    assert "JSON bounded structure" in html
+    assert "XML / XSD structure" in html
+    assert "Zarr v2 directory metadata" in html
+    assert "webkitdirectory" in html
+    assert "file.webkitRelativePath" in html
+    assert "extraction_outcome: outcome" in html
     assert "field_results" in html
     assert "Artifact Boundary" in html
+    assert "Deterministic Extraction Workbench" in html
+    assert "Claim states" in html
+    assert "Issues and conflicts" in html
+    assert "Provenance" in html
+    assert 'class="view active"' in html
     assert "time-axis gap" in html
     assert "location.hash" in html
     assert "history.replaceState" in html
@@ -39,3 +54,5 @@ def test_gui_demo_mobile_status_wraps_in_css():
     assert "@media (max-width: 860px)" in html
     assert ".status" in html
     assert "white-space: normal" in html
+    assert "@media (max-width: 900px)" in html
+    assert ".workbench-grid" in html

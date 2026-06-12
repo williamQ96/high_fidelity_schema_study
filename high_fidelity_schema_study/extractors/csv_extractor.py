@@ -6,8 +6,8 @@ from typing import Dict, List, Optional
 
 from ..models import DatasetSchema, EvidenceRecord, FieldSchema
 from ..deterministic_profile import attach_dataset_profile
+from ..temporal_semantics import analyze_temporal_semantics, parse_datetime
 from ..unit_normalization import normalize_unit_claim
-from .timeseries_profiler import infer_time_series_metadata, parse_datetime
 
 
 def _looks_like_int(value: str) -> bool:
@@ -280,7 +280,9 @@ def extract_csv_schema(path: str, sample_limit: int = 200) -> DatasetSchema:
         },
     )
 
-    time_series_metadata = infer_time_series_metadata(column_samples, fields)
+    temporal_result = analyze_temporal_semantics(column_samples, fields)
+    dataset_schema.metadata["temporal_analysis"] = temporal_result["temporal_analysis"]
+    time_series_metadata = temporal_result["time_series"]
     if time_series_metadata:
         dataset_schema.data_modality = "time_series"
         dataset_schema.metadata["time_series"] = time_series_metadata

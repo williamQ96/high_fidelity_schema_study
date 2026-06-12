@@ -1,0 +1,436 @@
+{
+  "schema_envelope_version": "1.0.0",
+  "identity": {
+    "dataset_id": "xsi_conflict",
+    "file_id": "xsi_conflict.xml",
+    "file_format": "xml",
+    "data_modality": "semi_structured",
+    "resource_kind": "file"
+  },
+  "format_detection": {
+    "selected_format": "xml",
+    "basis": "suffix",
+    "support_score": 0.72,
+    "signals": [
+      {
+        "format": "xml",
+        "basis": "suffix",
+        "support_score": 0.72,
+        "detail": "filename suffix .xml"
+      }
+    ],
+    "conflicted": false
+  },
+  "extractor_capability": {
+    "extractor_id": "xml_xsd_bounded_structure_extractor",
+    "version": "0.1.0",
+    "formats": [
+      "xml"
+    ],
+    "suffixes": [
+      ".xml",
+      ".xsd"
+    ],
+    "magic_prefixes": [],
+    "operations": [
+      "observe_bounded_elements",
+      "observe_attributes",
+      "observe_namespaces",
+      "observe_repeated_paths",
+      "read_xsd_declarations",
+      "compare_xsi_type_observation"
+    ],
+    "determinism_class": "strict_with_bounded_sample",
+    "evidence_types": [
+      "xml_sample_observation",
+      "xsd_element_declaration",
+      "xsd_attribute_declaration"
+    ],
+    "resource_kinds": [
+      "file"
+    ]
+  },
+  "outcome": {
+    "status": "success",
+    "issues": []
+  },
+  "physical_structure": {
+    "fields": [
+      {
+        "field_name": "root",
+        "field_path": "/root",
+        "physical_type": "empty",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": true,
+        "unique_ratio": null,
+        "shape": null,
+        "unit": null,
+        "unit_normalization": null,
+        "description": null,
+        "example_values": [],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "sample_observation",
+            "evidence_type": "xml_sample_observation",
+            "source": "xml_sample:/root",
+            "detail": "Observed bounded XML path and type set",
+            "confidence": 1.0
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": "sample_bounded_observation",
+        "extraction_method": "bounded_xml_structure_observation"
+      },
+      {
+        "field_name": "value",
+        "field_path": "/root/value",
+        "physical_type": "string",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": false,
+        "unique_ratio": null,
+        "shape": null,
+        "unit": null,
+        "unit_normalization": null,
+        "description": null,
+        "example_values": [],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "sample_observation",
+            "evidence_type": "xml_sample_observation",
+            "source": "xml_sample:/root/value",
+            "detail": "Observed bounded XML path and type set",
+            "confidence": 1.0
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": "sample_bounded_observation",
+        "extraction_method": "bounded_xml_structure_observation"
+      },
+      {
+        "field_name": "XMLSchema-instance}type",
+        "field_path": "/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+        "physical_type": "string",
+        "logical_type": "unknown",
+        "semantic_type": "unknown",
+        "nullable": false,
+        "unique_ratio": null,
+        "shape": null,
+        "unit": null,
+        "unit_normalization": null,
+        "description": null,
+        "example_values": [],
+        "missing_count": 0,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "sample_observation",
+            "evidence_type": "xml_sample_observation",
+            "source": "xml_sample:/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+            "detail": "Observed bounded XML path and type set",
+            "confidence": 1.0
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": "sample_bounded_observation",
+        "extraction_method": "bounded_xml_structure_observation"
+      }
+    ],
+    "groups": [],
+    "dimensions": {},
+    "format_specific": {
+      "xml_analysis": {
+        "mode": "bounded_observed_structure",
+        "declared_fields": [
+          {
+            "field_path": "/root/value",
+            "state": "declared",
+            "declared_type": "xs:int",
+            "reason_code": "xsi_type_declaration",
+            "evidence_refs": [
+              "xml_attribute:/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type"
+            ]
+          }
+        ],
+        "observed_fields": [
+          {
+            "field_path": "/root",
+            "state": "observed",
+            "observed_types": [
+              "empty"
+            ],
+            "occurrence_count": 1,
+            "max_sibling_occurs": 1,
+            "repeated": false,
+            "evidence_refs": [
+              "xml_sample:/root"
+            ]
+          },
+          {
+            "field_path": "/root/value",
+            "state": "observed",
+            "observed_types": [
+              "string"
+            ],
+            "occurrence_count": 1,
+            "max_sibling_occurs": 1,
+            "repeated": false,
+            "evidence_refs": [
+              "xml_sample:/root/value"
+            ]
+          },
+          {
+            "field_path": "/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+            "state": "observed",
+            "observed_types": [
+              "string"
+            ],
+            "occurrence_count": 1,
+            "max_sibling_occurs": 1,
+            "repeated": false,
+            "evidence_refs": [
+              "xml_sample:/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type"
+            ]
+          }
+        ],
+        "conflicts": [
+          {
+            "field_path": "/root/value",
+            "code": "declared_observed_type_conflict",
+            "declared_type": "xs:int",
+            "observed_type": "string",
+            "evidence_refs": [
+              "xml_attribute:/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+              "xml_sample:/root/value"
+            ]
+          }
+        ],
+        "namespaces": {
+          "ns0": "http://www.w3.org/2001/XMLSchema-instance"
+        }
+      }
+    }
+  },
+  "logical_roles": [],
+  "semantic_hints": [],
+  "units": [],
+  "temporal_semantics": {},
+  "relationships": {
+    "dimensions": {},
+    "groups": []
+  },
+  "claims": [
+    {
+      "claim_id": "c0001",
+      "subject": "/root",
+      "property": "physical_type",
+      "value": "empty",
+      "state": "observed",
+      "reason_code": "sample_bounded_observation",
+      "evidence_refs": [
+        "e0001"
+      ]
+    },
+    {
+      "claim_id": "c0002",
+      "subject": "/root",
+      "property": "nullable",
+      "value": true,
+      "state": "observed",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0001"
+      ]
+    },
+    {
+      "claim_id": "c0003",
+      "subject": "/root/value",
+      "property": "physical_type",
+      "value": "string",
+      "state": "observed",
+      "reason_code": "sample_bounded_observation",
+      "evidence_refs": [
+        "e0002"
+      ]
+    },
+    {
+      "claim_id": "c0004",
+      "subject": "/root/value",
+      "property": "nullable",
+      "value": false,
+      "state": "observed",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0002"
+      ]
+    },
+    {
+      "claim_id": "c0005",
+      "subject": "/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+      "property": "physical_type",
+      "value": "string",
+      "state": "observed",
+      "reason_code": "sample_bounded_observation",
+      "evidence_refs": [
+        "e0003"
+      ]
+    },
+    {
+      "claim_id": "c0006",
+      "subject": "/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+      "property": "nullable",
+      "value": false,
+      "state": "observed",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0003"
+      ]
+    },
+    {
+      "claim_id": "c0007",
+      "subject": "/root/value",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "declared",
+      "reason_code": "xsi_type_declaration",
+      "evidence_refs": [
+        "e0004"
+      ]
+    },
+    {
+      "claim_id": "c0008",
+      "subject": "/root",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": null,
+      "evidence_refs": [
+        "e0005"
+      ]
+    },
+    {
+      "claim_id": "c0009",
+      "subject": "/root/value",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": null,
+      "evidence_refs": [
+        "e0006"
+      ]
+    },
+    {
+      "claim_id": "c0010",
+      "subject": "/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+      "property": "format_specific_claim",
+      "value": null,
+      "state": "observed",
+      "reason_code": null,
+      "evidence_refs": [
+        "e0007"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "e0001",
+      "tier": "sample_observation",
+      "evidence_type": "xml_sample_observation",
+      "source": "xml_sample:/root",
+      "detail": "Observed bounded XML path and type set",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0002",
+      "tier": "sample_observation",
+      "evidence_type": "xml_sample_observation",
+      "source": "xml_sample:/root/value",
+      "detail": "Observed bounded XML path and type set",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0003",
+      "tier": "sample_observation",
+      "evidence_type": "xml_sample_observation",
+      "source": "xml_sample:/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+      "detail": "Observed bounded XML path and type set",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0004",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "xml_attribute:/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0005",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "xml_sample:/root",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0006",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "xml_sample:/root/value",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0007",
+      "tier": "claim_reference",
+      "evidence_type": "format_specific_reference",
+      "source": "xml_sample:/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+      "detail": "Evidence reference preserved from format-specific analysis.",
+      "confidence": 1.0
+    }
+  ],
+  "provenance": {
+    "source_file_id": "xsi_conflict.xml",
+    "extractor_id": "xml_xsd_bounded_structure_extractor",
+    "extractor_version": "0.1.0",
+    "determinism_class": "strict_with_bounded_sample",
+    "transformation": "deterministic_unified_envelope_projection"
+  },
+  "conflicts": [
+    {
+      "category": "conflicts",
+      "detail": {
+        "field_path": "/root/value",
+        "code": "declared_observed_type_conflict",
+        "declared_type": "xs:int",
+        "observed_type": "string",
+        "evidence_refs": [
+          "xml_attribute:/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+          "xml_sample:/root/value"
+        ]
+      }
+    }
+  ],
+  "abstentions": [],
+  "unsupported_features": [],
+  "evaluation_metadata": {
+    "claim_state_vocabulary": [
+      "observed",
+      "declared",
+      "derived",
+      "supported",
+      "conflicted",
+      "unknown",
+      "unsupported",
+      "abstained"
+    ],
+    "source_outcome_status": "success",
+    "backward_compatibility": "Legacy ExtractionOutcome.schema remains authoritative and unchanged.",
+    "claim_boundary": "The envelope normalizes existing extractor claims; it does not promote new semantic truth."
+  }
+}

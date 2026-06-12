@@ -1,0 +1,229 @@
+{
+  "case_id": "xsi_conflict",
+  "outcome": {
+    "status": "success",
+    "format_decision": {
+      "selected_format": "xml",
+      "basis": "suffix",
+      "support_score": 0.72,
+      "signals": [
+        {
+          "format": "xml",
+          "basis": "suffix",
+          "support_score": 0.72,
+          "detail": "filename suffix .xml"
+        }
+      ],
+      "conflicted": false
+    },
+    "extractor": {
+      "extractor_id": "xml_xsd_bounded_structure_extractor",
+      "version": "0.1.0",
+      "formats": [
+        "xml"
+      ],
+      "suffixes": [
+        ".xml",
+        ".xsd"
+      ],
+      "magic_prefixes": [],
+      "operations": [
+        "observe_bounded_elements",
+        "observe_attributes",
+        "observe_namespaces",
+        "observe_repeated_paths",
+        "read_xsd_declarations",
+        "compare_xsi_type_observation"
+      ],
+      "determinism_class": "strict_with_bounded_sample",
+      "evidence_types": [
+        "xml_sample_observation",
+        "xsd_element_declaration",
+        "xsd_attribute_declaration"
+      ],
+      "resource_kinds": [
+        "file"
+      ]
+    },
+    "schema": {
+      "dataset_id": "xsi_conflict",
+      "file_id": "xsi_conflict.xml",
+      "file_format": "xml",
+      "data_modality": "semi_structured",
+      "fields": [
+        {
+          "field_name": "root",
+          "field_path": "/root",
+          "physical_type": "empty",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "sample_observation",
+              "evidence_type": "xml_sample_observation",
+              "source": "xml_sample:/root",
+              "detail": "Observed bounded XML path and type set",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": "sample_bounded_observation",
+          "extraction_method": "bounded_xml_structure_observation"
+        },
+        {
+          "field_name": "value",
+          "field_path": "/root/value",
+          "physical_type": "string",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "sample_observation",
+              "evidence_type": "xml_sample_observation",
+              "source": "xml_sample:/root/value",
+              "detail": "Observed bounded XML path and type set",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": "sample_bounded_observation",
+          "extraction_method": "bounded_xml_structure_observation"
+        },
+        {
+          "field_name": "XMLSchema-instance}type",
+          "field_path": "/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+          "physical_type": "string",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "sample_observation",
+              "evidence_type": "xml_sample_observation",
+              "source": "xml_sample:/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+              "detail": "Observed bounded XML path and type set",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": "sample_bounded_observation",
+          "extraction_method": "bounded_xml_structure_observation"
+        }
+      ],
+      "groups": [],
+      "metadata": {
+        "resource_kind": "file",
+        "xml_analysis": {
+          "mode": "bounded_observed_structure",
+          "declared_fields": [
+            {
+              "field_path": "/root/value",
+              "state": "declared",
+              "declared_type": "xs:int",
+              "reason_code": "xsi_type_declaration",
+              "evidence_refs": [
+                "xml_attribute:/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type"
+              ]
+            }
+          ],
+          "observed_fields": [
+            {
+              "field_path": "/root",
+              "state": "observed",
+              "observed_types": [
+                "empty"
+              ],
+              "occurrence_count": 1,
+              "max_sibling_occurs": 1,
+              "repeated": false,
+              "evidence_refs": [
+                "xml_sample:/root"
+              ]
+            },
+            {
+              "field_path": "/root/value",
+              "state": "observed",
+              "observed_types": [
+                "string"
+              ],
+              "occurrence_count": 1,
+              "max_sibling_occurs": 1,
+              "repeated": false,
+              "evidence_refs": [
+                "xml_sample:/root/value"
+              ]
+            },
+            {
+              "field_path": "/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+              "state": "observed",
+              "observed_types": [
+                "string"
+              ],
+              "occurrence_count": 1,
+              "max_sibling_occurs": 1,
+              "repeated": false,
+              "evidence_refs": [
+                "xml_sample:/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type"
+              ]
+            }
+          ],
+          "conflicts": [
+            {
+              "field_path": "/root/value",
+              "code": "declared_observed_type_conflict",
+              "declared_type": "xs:int",
+              "observed_type": "string",
+              "evidence_refs": [
+                "xml_attribute:/root/value/@{http://www.w3.org/2001/XMLSchema-instance}type",
+                "xml_sample:/root/value"
+              ]
+            }
+          ],
+          "namespaces": {
+            "ns0": "http://www.w3.org/2001/XMLSchema-instance"
+          }
+        },
+        "sampling": {
+          "visited_element_count": 2,
+          "sample_limit": 200,
+          "sample_truncated": false,
+          "claim_scope": "bounded_sample"
+        },
+        "extraction_errors": []
+      },
+      "notes": [
+        "Observed XML structure is sample-bounded and is not a universal schema claim.",
+        "XSD and xsi:type declarations remain separate from observed instance structure.",
+        "External schemas and entities are not loaded.",
+        "Semantic roles are not inferred from XML names."
+      ]
+    },
+    "issues": []
+  }
+}

@@ -1,0 +1,236 @@
+{
+  "status": "success",
+  "format_decision": {
+    "selected_format": "netcdf",
+    "basis": "magic",
+    "support_score": 1.0,
+    "signals": [
+      {
+        "format": "netcdf",
+        "basis": "magic",
+        "support_score": 1.0,
+        "detail": "NetCDF classic signature"
+      },
+      {
+        "format": "netcdf",
+        "basis": "suffix",
+        "support_score": 0.72,
+        "detail": "filename suffix .nc"
+      }
+    ],
+    "conflicted": false
+  },
+  "extractor": {
+    "extractor_id": "netcdf_cf_deterministic_extractor",
+    "version": "1.0.0",
+    "formats": [
+      "netcdf"
+    ],
+    "suffixes": [
+      ".nc",
+      ".cdf"
+    ],
+    "magic_prefixes": [
+      "43444601",
+      "43444602",
+      "43444605",
+      "894844460d0a1a0a"
+    ],
+    "operations": [
+      "enumerate_dimensions",
+      "enumerate_groups",
+      "enumerate_variables",
+      "read_shapes",
+      "read_attributes",
+      "interpret_cf_coordinates",
+      "decode_cf_time"
+    ],
+    "determinism_class": "strict_with_sampled_profiles",
+    "evidence_types": [
+      "netcdf_dimension",
+      "netcdf_group",
+      "netcdf_variable",
+      "netcdf_attribute"
+    ]
+  },
+  "schema": {
+    "dataset_id": "missing_markers",
+    "file_id": "missing_markers.nc",
+    "file_format": "netcdf",
+    "data_modality": "multidimensional",
+    "fields": [
+      {
+        "field_name": "temperature",
+        "field_path": "temperature",
+        "physical_type": ">f4",
+        "logical_type": "measurement",
+        "semantic_type": "air_temperature",
+        "nullable": true,
+        "unique_ratio": null,
+        "shape": [
+          3
+        ],
+        "unit": "K",
+        "unit_normalization": {
+          "status": "normalized_ucum",
+          "original_unit": "K",
+          "canonical_unit": "Kelvin",
+          "ucum_code": "K",
+          "evidence_basis": "explicit_metadata"
+        },
+        "description": null,
+        "example_values": [
+          "280.0",
+          "-9999.0",
+          "282.0"
+        ],
+        "missing_count": 1,
+        "value_range": null,
+        "source_evidence": [
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_variable",
+            "source": "testdata/netcdf_cf_phase13/missing_markers.nc:temperature",
+            "detail": "dimensions=['record']; shape=[3]; dtype=>f4",
+            "confidence": 1.0
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/missing_markers.nc:temperature",
+            "detail": "standard_name='air_temperature'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/missing_markers.nc:temperature",
+            "detail": "units='K'",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/missing_markers.nc:temperature",
+            "detail": "_FillValue=-9999.0",
+            "confidence": 0.99
+          },
+          {
+            "tier": "explicit_metadata",
+            "evidence_type": "netcdf_attribute",
+            "source": "testdata/netcdf_cf_phase13/missing_markers.nc:temperature",
+            "detail": "missing_value=-9999.0",
+            "confidence": 0.99
+          }
+        ],
+        "confidence": 1.0,
+        "uncertainty_reason": null,
+        "extraction_method": "netcdf_cf_deterministic_extractor"
+      }
+    ],
+    "groups": [],
+    "metadata": {
+      "backend": "scipy.io.netcdf_file",
+      "dimensions": {
+        "record": {
+          "size": 3,
+          "unlimited": false,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "netcdf_dimension",
+              "source": "testdata/netcdf_cf_phase13/missing_markers.nc:record",
+              "detail": "size=3; unlimited=False",
+              "confidence": 1.0
+            }
+          ]
+        }
+      },
+      "file_attributes": {
+        "Conventions": "CF-1.8"
+      },
+      "cf_analysis": {
+        "variables": [
+          {
+            "field_path": "temperature",
+            "dimensions": [
+              "record"
+            ],
+            "attributes": {
+              "standard_name": "air_temperature",
+              "units": "K",
+              "_FillValue": -9999.0,
+              "missing_value": -9999.0
+            },
+            "coordinate_roles": [],
+            "coordinate_role_claim": {
+              "value": [],
+              "state": "unknown",
+              "reason_code": "no_coordinate_evidence",
+              "evidence_refs": []
+            },
+            "is_bounds_variable": false,
+            "bounds_claim": {
+              "value": false,
+              "state": "unknown",
+              "reason_code": "not_referenced_as_bounds",
+              "evidence_refs": []
+            },
+            "unit_claim": {
+              "value": "K",
+              "state": "supported",
+              "reason_code": "explicit_units_attribute",
+              "evidence_refs": [
+                "attribute:units"
+              ]
+            }
+          }
+        ],
+        "temporal": {
+          "candidate_paths": [],
+          "calendar_claims": {},
+          "decoded_with_temporal_semantics": false,
+          "selection": {
+            "analysis_version": "phase12_temporal_v1",
+            "candidates": [],
+            "selected_candidate": null,
+            "property_claims": {},
+            "validator_results": {
+              "candidate_count": 0,
+              "eligible_candidate_count": 0,
+              "measurement_count": 0,
+              "selection_abstained": true
+            },
+            "issues": []
+          }
+        }
+      },
+      "extraction_errors": [],
+      "deterministic_profile": {
+        "missingness": {
+          "basis": "field_metadata",
+          "sampled_rows": null,
+          "field_count": 1,
+          "fields_with_missing_count": 1,
+          "total_missing_cells": 1,
+          "fields": [
+            {
+              "field_path": "temperature",
+              "missing_count": 1,
+              "missing_ratio": null,
+              "nullable": true,
+              "basis": "field_metadata"
+            }
+          ]
+        },
+        "identifier_quality": {
+          "candidate_count": 0,
+          "best_identifier_fields": [],
+          "fields": []
+        }
+      }
+    },
+    "notes": []
+  },
+  "issues": []
+}

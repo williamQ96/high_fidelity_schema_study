@@ -4,7 +4,7 @@ Date: 2026-04-29
 
 ## Checklist Status
 
-Based on the current [README.md](D:\github\searnxg\llm-schema\high_fidelity_schema_study\README.md) checklist:
+Based on the current [README.md](../README.md) checklist:
 
 - Checked items: `54`
 - Unchecked items: `14`
@@ -54,8 +54,8 @@ The repository can currently:
 
 Key artifacts:
 
-- [internal_baseline_report.md](D:\github\searnxg\llm-schema\high_fidelity_schema_study\data\derived\internal_baseline_report.md)
-- [internal_baseline_report.json](D:\github\searnxg\llm-schema\high_fidelity_schema_study\data\derived\internal_baseline_report.json)
+- [internal_baseline_report.md](../data/derived/internal_baseline_report.md)
+- [internal_baseline_report.json](../data/derived/internal_baseline_report.json)
 
 ### External corpus and retrieval
 
@@ -72,9 +72,9 @@ The repository can currently:
 
 Key artifacts:
 
-- [retrieval_report.md](D:\github\searnxg\llm-schema\high_fidelity_schema_study\data\retrieval\external_candidate_pool\retrieval_report.md)
-- [artifact_manifest.json](D:\github\searnxg\llm-schema\high_fidelity_schema_study\data\retrieval\external_candidate_pool\artifact_manifest.json)
-- [pool_manifest.json](D:\github\searnxg\llm-schema\high_fidelity_schema_study\data\retrieval\external_candidate_pool\pool_manifest.json)
+- [retrieval_report.md](../data/retrieval/external_candidate_pool/retrieval_report.md)
+- [artifact_manifest.json](../data/retrieval/external_candidate_pool/artifact_manifest.json)
+- [pool_manifest.json](../data/retrieval/external_candidate_pool/pool_manifest.json)
 
 Current retrieval snapshot on the expanded 16-file pool:
 
@@ -97,10 +97,10 @@ The repository can currently:
 
 Key artifacts:
 
-- [semantic_annotation_interface.md](D:\github\searnxg\llm-schema\high_fidelity_schema_study\docs\semantic_annotation_interface.md)
-- [semantic_annotations/manifest.json](D:\github\searnxg\llm-schema\high_fidelity_schema_study\data\semantic_annotations\manifest.json)
-- [semantic_merged/manifest.json](D:\github\searnxg\llm-schema\high_fidelity_schema_study\data\semantic_merged\manifest.json)
-- [semantic_merge_report.md](D:\github\searnxg\llm-schema\high_fidelity_schema_study\data\semantic_merged\semantic_merge_report.md)
+- [semantic_annotation_interface.md](semantic_annotation_interface.md)
+- [semantic_annotations/manifest.json](../data/semantic_annotations/manifest.json)
+- [semantic_merged/manifest.json](../data/semantic_merged/manifest.json)
+- [semantic_merge_report.md](../data/semantic_merged/semantic_merge_report.md)
 
 Current semantic status:
 

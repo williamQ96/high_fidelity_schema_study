@@ -1,0 +1,306 @@
+{
+  "experiment_id": "phase12_deterministic_substrate",
+  "manifest": "testdata/temporal_phase12/manifest.json",
+  "metrics": {
+    "case_count": 13,
+    "temporal_case_count": 9,
+    "format_detection_accuracy": 1.0,
+    "extractor_routing_accuracy": 1.0,
+    "structured_failure_artifact_completeness": 1.0,
+    "time_axis_selection_accuracy": 1.0,
+    "per_property_temporal_accuracy": 1.0,
+    "exact_temporal_profile_accuracy": 1.0,
+    "abstention_precision": 1.0,
+    "abstention_recall": 1.0,
+    "reason_code_coverage": 1.0,
+    "evidence_coverage": 1.0,
+    "unsupported_promotion_count": 0
+  },
+  "notes": [
+    "This Phase 12 experiment is separate from the frozen Artifact Paper benchmark.",
+    "Support scores are deterministic rule strengths, not calibrated probabilities.",
+    "Sidecar documentation is not used to promote canonical temporal claims."
+  ],
+  "cases": [
+    {
+      "case_id": "utc_z_regular",
+      "case_type": "temporal",
+      "source_file": "utc_z_regular.csv",
+      "expected_status": "success",
+      "actual_status": "success",
+      "format_match": true,
+      "routing_match": true,
+      "expected_abstention": false,
+      "actual_abstention": false,
+      "issue_codes": [],
+      "temporal": {
+        "expected_selected_field": "ts_utc",
+        "actual_selected_field": "ts_utc",
+        "selection_match": true,
+        "property_matches": {
+          "timezone": true,
+          "frequency": true,
+          "regularity": true,
+          "missing_intervals": true
+        },
+        "property_state_matches": {
+          "timezone": true
+        },
+        "exact_profile_match": true
+      }
+    },
+    {
+      "case_id": "positive_offset",
+      "case_type": "temporal",
+      "source_file": "positive_offset.csv",
+      "expected_status": "success",
+      "actual_status": "success",
+      "format_match": true,
+      "routing_match": true,
+      "expected_abstention": false,
+      "actual_abstention": false,
+      "issue_codes": [],
+      "temporal": {
+        "expected_selected_field": "timestamp",
+        "actual_selected_field": "timestamp",
+        "selection_match": true,
+        "property_matches": {
+          "timezone": true,
+          "frequency": true,
+          "regularity": true,
+          "missing_intervals": true
+        },
+        "property_state_matches": {
+          "timezone": true
+        },
+        "exact_profile_match": true
+      }
+    },
+    {
+      "case_id": "naive_timezone_unknown",
+      "case_type": "temporal",
+      "source_file": "naive_timezone_unknown.csv",
+      "expected_status": "success",
+      "actual_status": "success",
+      "format_match": true,
+      "routing_match": true,
+      "expected_abstention": false,
+      "actual_abstention": false,
+      "issue_codes": [],
+      "temporal": {
+        "expected_selected_field": "timestamp",
+        "actual_selected_field": "timestamp",
+        "selection_match": true,
+        "property_matches": {
+          "timezone": true,
+          "frequency": true,
+          "regularity": true,
+          "missing_intervals": true
+        },
+        "property_state_matches": {
+          "timezone": true
+        },
+        "exact_profile_match": true
+      }
+    },
+    {
+      "case_id": "mixed_offsets_conflicted",
+      "case_type": "temporal",
+      "source_file": "mixed_offsets_conflicted.csv",
+      "expected_status": "success",
+      "actual_status": "success",
+      "format_match": true,
+      "routing_match": true,
+      "expected_abstention": false,
+      "actual_abstention": false,
+      "issue_codes": [],
+      "temporal": {
+        "expected_selected_field": "event_time",
+        "actual_selected_field": "event_time",
+        "selection_match": true,
+        "property_matches": {
+          "timezone": true
+        },
+        "property_state_matches": {
+          "timezone": true
+        },
+        "exact_profile_match": true
+      }
+    },
+    {
+      "case_id": "missing_interval",
+      "case_type": "temporal",
+      "source_file": "missing_interval.csv",
+      "expected_status": "success",
+      "actual_status": "success",
+      "format_match": true,
+      "routing_match": true,
+      "expected_abstention": false,
+      "actual_abstention": false,
+      "issue_codes": [],
+      "temporal": {
+        "expected_selected_field": "ts_utc",
+        "actual_selected_field": "ts_utc",
+        "selection_match": true,
+        "property_matches": {
+          "timezone": true,
+          "frequency": true,
+          "regularity": true,
+          "missing_intervals": true
+        },
+        "property_state_matches": {},
+        "exact_profile_match": true
+      }
+    },
+    {
+      "case_id": "irregular_series",
+      "case_type": "temporal",
+      "source_file": "irregular_series.csv",
+      "expected_status": "success",
+      "actual_status": "success",
+      "format_match": true,
+      "routing_match": true,
+      "expected_abstention": false,
+      "actual_abstention": false,
+      "issue_codes": [],
+      "temporal": {
+        "expected_selected_field": "event_time",
+        "actual_selected_field": "event_time",
+        "selection_match": true,
+        "property_matches": {
+          "timezone": true,
+          "frequency": true,
+          "regularity": true,
+          "missing_intervals": true
+        },
+        "property_state_matches": {},
+        "exact_profile_match": true
+      }
+    },
+    {
+      "case_id": "split_date_parts",
+      "case_type": "temporal",
+      "source_file": "split_date_parts.csv",
+      "expected_status": "success",
+      "actual_status": "success",
+      "format_match": true,
+      "routing_match": true,
+      "expected_abstention": false,
+      "actual_abstention": false,
+      "issue_codes": [],
+      "temporal": {
+        "expected_selected_field": "computed_from_parts",
+        "actual_selected_field": "computed_from_parts",
+        "selection_match": true,
+        "property_matches": {
+          "timezone": true,
+          "frequency": true,
+          "regularity": true,
+          "missing_intervals": true
+        },
+        "property_state_matches": {
+          "timezone": true
+        },
+        "exact_profile_match": true
+      }
+    },
+    {
+      "case_id": "ambiguous_time_candidates",
+      "case_type": "temporal",
+      "source_file": "ambiguous_time_candidates.csv",
+      "expected_status": "success",
+      "actual_status": "success",
+      "format_match": true,
+      "routing_match": true,
+      "expected_abstention": true,
+      "actual_abstention": true,
+      "issue_codes": [],
+      "temporal": {
+        "expected_selected_field": null,
+        "actual_selected_field": null,
+        "selection_match": true,
+        "property_matches": {},
+        "property_state_matches": {},
+        "exact_profile_match": true
+      }
+    },
+    {
+      "case_id": "date_attribute_only",
+      "case_type": "temporal",
+      "source_file": "date_attribute_only.csv",
+      "expected_status": "success",
+      "actual_status": "success",
+      "format_match": true,
+      "routing_match": true,
+      "expected_abstention": true,
+      "actual_abstention": true,
+      "issue_codes": [],
+      "temporal": {
+        "expected_selected_field": null,
+        "actual_selected_field": null,
+        "selection_match": true,
+        "property_matches": {},
+        "property_state_matches": {},
+        "exact_profile_match": true
+      }
+    },
+    {
+      "case_id": "opaque_binary",
+      "case_type": "format",
+      "source_file": "opaque.bin",
+      "expected_status": "abstained",
+      "actual_status": "abstained",
+      "format_match": true,
+      "routing_match": true,
+      "expected_abstention": true,
+      "actual_abstention": true,
+      "issue_codes": [
+        "unknown_no_signature"
+      ],
+      "temporal": {}
+    },
+    {
+      "case_id": "malformed_parquet_after_registry_extension",
+      "case_type": "format",
+      "source_file": "unsupported.parquet",
+      "expected_status": "failed",
+      "actual_status": "failed",
+      "format_match": true,
+      "routing_match": true,
+      "expected_abstention": false,
+      "actual_abstention": false,
+      "issue_codes": [
+        "parser_error"
+      ],
+      "temporal": {}
+    },
+    {
+      "case_id": "registered_hdf5",
+      "case_type": "format",
+      "source_file": "../../data/raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5",
+      "expected_status": "success",
+      "actual_status": "success",
+      "format_match": true,
+      "routing_match": true,
+      "expected_abstention": false,
+      "actual_abstention": false,
+      "issue_codes": [],
+      "temporal": {}
+    },
+    {
+      "case_id": "conflicting_hdf5_hint",
+      "case_type": "format",
+      "source_file": "../../data/raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5",
+      "expected_status": "abstained",
+      "actual_status": "abstained",
+      "format_match": true,
+      "routing_match": true,
+      "expected_abstention": true,
+      "actual_abstention": true,
+      "issue_codes": [
+        "unknown_conflicting_format_signals"
+      ],
+      "temporal": {}
+    }
+  ]
+}

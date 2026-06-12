@@ -1,0 +1,240 @@
+{
+  "case_id": "declared_xsd",
+  "outcome": {
+    "status": "success",
+    "format_decision": {
+      "selected_format": "xml",
+      "basis": "suffix",
+      "support_score": 0.72,
+      "signals": [
+        {
+          "format": "xml",
+          "basis": "suffix",
+          "support_score": 0.72,
+          "detail": "filename suffix .xsd"
+        }
+      ],
+      "conflicted": false
+    },
+    "extractor": {
+      "extractor_id": "xml_xsd_bounded_structure_extractor",
+      "version": "0.1.0",
+      "formats": [
+        "xml"
+      ],
+      "suffixes": [
+        ".xml",
+        ".xsd"
+      ],
+      "magic_prefixes": [],
+      "operations": [
+        "observe_bounded_elements",
+        "observe_attributes",
+        "observe_namespaces",
+        "observe_repeated_paths",
+        "read_xsd_declarations",
+        "compare_xsi_type_observation"
+      ],
+      "determinism_class": "strict_with_bounded_sample",
+      "evidence_types": [
+        "xml_sample_observation",
+        "xsd_element_declaration",
+        "xsd_attribute_declaration"
+      ],
+      "resource_kinds": [
+        "file"
+      ]
+    },
+    "schema": {
+      "dataset_id": "schema",
+      "file_id": "schema.xsd",
+      "file_format": "xml",
+      "data_modality": "schema_document",
+      "fields": [
+        {
+          "field_name": "catalog",
+          "field_path": "/catalog",
+          "physical_type": "unknown",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "xsd_element_declaration",
+              "source": "xsd_declaration:/catalog",
+              "detail": "XSD element declaration",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "xsd_declaration"
+        },
+        {
+          "field_name": "item",
+          "field_path": "/catalog/item",
+          "physical_type": "unknown",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": true,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "xsd_element_declaration",
+              "source": "xsd_declaration:/catalog/item",
+              "detail": "XSD element declaration",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "xsd_declaration"
+        },
+        {
+          "field_name": "@id",
+          "field_path": "/catalog/item/@id",
+          "physical_type": "xs:string",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "xsd_attribute_declaration",
+              "source": "xsd_declaration:/catalog/item/@id",
+              "detail": "XSD attribute declaration",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "xsd_declaration"
+        },
+        {
+          "field_name": "value",
+          "field_path": "/catalog/item/value",
+          "physical_type": "xs:decimal",
+          "logical_type": "unknown",
+          "semantic_type": "unknown",
+          "nullable": false,
+          "unique_ratio": null,
+          "shape": null,
+          "unit": null,
+          "unit_normalization": null,
+          "description": null,
+          "example_values": [],
+          "missing_count": 0,
+          "value_range": null,
+          "source_evidence": [
+            {
+              "tier": "explicit_metadata",
+              "evidence_type": "xsd_element_declaration",
+              "source": "xsd_declaration:/catalog/item/value",
+              "detail": "XSD element declaration",
+              "confidence": 1.0
+            }
+          ],
+          "confidence": 1.0,
+          "uncertainty_reason": null,
+          "extraction_method": "xsd_declaration"
+        }
+      ],
+      "groups": [],
+      "metadata": {
+        "resource_kind": "file",
+        "xml_analysis": {
+          "mode": "declared_xsd",
+          "declared_fields": [
+            {
+              "field_path": "/catalog",
+              "kind": "element",
+              "state": "declared",
+              "declared_type": "unknown",
+              "min_occurs": "1",
+              "max_occurs": "1",
+              "evidence_refs": [
+                "xsd_declaration:/catalog"
+              ]
+            },
+            {
+              "field_path": "/catalog/item",
+              "kind": "element",
+              "state": "declared",
+              "declared_type": "unknown",
+              "min_occurs": "0",
+              "max_occurs": "unbounded",
+              "evidence_refs": [
+                "xsd_declaration:/catalog/item"
+              ]
+            },
+            {
+              "field_path": "/catalog/item/@id",
+              "kind": "attribute",
+              "state": "declared",
+              "declared_type": "xs:string",
+              "required": true,
+              "evidence_refs": [
+                "xsd_declaration:/catalog/item/@id"
+              ]
+            },
+            {
+              "field_path": "/catalog/item/value",
+              "kind": "element",
+              "state": "declared",
+              "declared_type": "xs:decimal",
+              "min_occurs": "1",
+              "max_occurs": "1",
+              "evidence_refs": [
+                "xsd_declaration:/catalog/item/value"
+              ]
+            }
+          ],
+          "observed_fields": [],
+          "conflicts": [],
+          "namespaces": {
+            "xsd": "http://www.w3.org/2001/XMLSchema"
+          }
+        },
+        "sampling": {
+          "visited_element_count": 0,
+          "sample_limit": 200,
+          "sample_truncated": false,
+          "claim_scope": "declared_document"
+        },
+        "extraction_errors": []
+      },
+      "notes": [
+        "Observed XML structure is sample-bounded and is not a universal schema claim.",
+        "XSD and xsi:type declarations remain separate from observed instance structure.",
+        "External schemas and entities are not loaded.",
+        "Semantic roles are not inferred from XML names."
+      ]
+    },
+    "issues": []
+  }
+}

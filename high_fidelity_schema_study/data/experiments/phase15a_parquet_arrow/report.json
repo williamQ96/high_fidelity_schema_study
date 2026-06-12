@@ -1,0 +1,309 @@
+{
+  "experiment_id": "phase15a_parquet_arrow",
+  "claim_boundary": "Controlled PyArrow-produced Parquet challenge pack; validates metadata-first extraction and does not establish broad Parquet ecosystem robustness.",
+  "generation": {
+    "library": "pyarrow",
+    "version": "24.0.0",
+    "method": "create_phase15a_parquet_challenge.py"
+  },
+  "metrics": {
+    "case_count": 8,
+    "format_detection_accuracy": 1.0,
+    "extractor_routing_accuracy": 1.0,
+    "arrow_field_accuracy": 1.0,
+    "parquet_column_accuracy": 1.0,
+    "row_group_accuracy": 1.0,
+    "compression_accuracy": 1.0,
+    "encoding_accuracy": 1.0,
+    "statistics_policy_accuracy": 1.0,
+    "nullability_accuracy": 1.0,
+    "timestamp_timezone_accuracy": 1.0,
+    "metadata_accuracy": 1.0,
+    "evidence_coverage": 1.0,
+    "row_value_abstention_accuracy": 1.0,
+    "unsupported_promotion_count": 0
+  },
+  "cases": [
+    {
+      "case_id": "primitives",
+      "checks": {
+        "format": true,
+        "routing": true,
+        "arrow_fields": {
+          "id": true,
+          "value": true,
+          "label": true,
+          "active": true
+        },
+        "parquet_columns": {
+          "id": true,
+          "value": true,
+          "label": true,
+          "active": true
+        },
+        "row_groups": true,
+        "compression": [
+          true
+        ],
+        "encodings": [],
+        "nullability": {},
+        "timezones": {},
+        "metadata": [
+          true,
+          true
+        ],
+        "evidence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "value_abstention": true
+      }
+    },
+    {
+      "case_id": "nested_struct_list",
+      "checks": {
+        "format": true,
+        "routing": true,
+        "arrow_fields": {
+          "entity_id": true,
+          "profile": true,
+          "profile.age": true,
+          "profile.tags": true,
+          "profile.tags.element": true,
+          "scores": true,
+          "scores.element": true
+        },
+        "parquet_columns": {
+          "entity_id": true,
+          "profile.age": true,
+          "profile.tags.list.element": true,
+          "scores.list.element": true
+        },
+        "row_groups": true,
+        "compression": [
+          true
+        ],
+        "encodings": [],
+        "nullability": {},
+        "timezones": {},
+        "metadata": [],
+        "evidence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "value_abstention": true
+      }
+    },
+    {
+      "case_id": "timestamps",
+      "checks": {
+        "format": true,
+        "routing": true,
+        "arrow_fields": {
+          "event_time": true,
+          "local_time": true
+        },
+        "parquet_columns": {
+          "event_time": true,
+          "local_time": true
+        },
+        "row_groups": true,
+        "compression": [
+          true
+        ],
+        "encodings": [],
+        "nullability": {},
+        "timezones": {
+          "event_time": true,
+          "local_time": true
+        },
+        "metadata": [],
+        "evidence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "value_abstention": true
+      }
+    },
+    {
+      "case_id": "dictionary",
+      "checks": {
+        "format": true,
+        "routing": true,
+        "arrow_fields": {
+          "category": true
+        },
+        "parquet_columns": {
+          "category": true
+        },
+        "row_groups": true,
+        "compression": [],
+        "encodings": [
+          true
+        ],
+        "nullability": {},
+        "timezones": {},
+        "metadata": [],
+        "evidence": [
+          true,
+          true,
+          true
+        ],
+        "value_abstention": true
+      }
+    },
+    {
+      "case_id": "required_nullable",
+      "checks": {
+        "format": true,
+        "routing": true,
+        "arrow_fields": {
+          "required_id": true,
+          "optional_value": true
+        },
+        "parquet_columns": {
+          "required_id": true,
+          "optional_value": true
+        },
+        "row_groups": true,
+        "compression": [],
+        "encodings": [],
+        "nullability": {
+          "required_id": true,
+          "optional_value": true
+        },
+        "timezones": {},
+        "metadata": [],
+        "evidence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "value_abstention": true
+      }
+    },
+    {
+      "case_id": "no_statistics",
+      "checks": {
+        "format": true,
+        "routing": true,
+        "arrow_fields": {
+          "value": true
+        },
+        "parquet_columns": {
+          "value": true
+        },
+        "row_groups": true,
+        "compression": [],
+        "encodings": [],
+        "statistics": [
+          true
+        ],
+        "nullability": {},
+        "timezones": {},
+        "metadata": [],
+        "evidence": [
+          true,
+          true,
+          true
+        ],
+        "value_abstention": true
+      }
+    },
+    {
+      "case_id": "decimal_binary",
+      "checks": {
+        "format": true,
+        "routing": true,
+        "arrow_fields": {
+          "amount": true,
+          "payload": true
+        },
+        "parquet_columns": {
+          "amount": true,
+          "payload": true
+        },
+        "row_groups": true,
+        "compression": [
+          true
+        ],
+        "encodings": [],
+        "nullability": {},
+        "timezones": {},
+        "metadata": [],
+        "evidence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "value_abstention": true
+      }
+    },
+    {
+      "case_id": "empty",
+      "checks": {
+        "format": true,
+        "routing": true,
+        "arrow_fields": {
+          "id": true,
+          "name": true
+        },
+        "parquet_columns": {
+          "id": true,
+          "name": true
+        },
+        "row_groups": true,
+        "compression": [],
+        "encodings": [],
+        "nullability": {},
+        "timezones": {},
+        "metadata": [],
+        "evidence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "value_abstention": true
+      }
+    }
+  ]
+}

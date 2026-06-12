@@ -23,8 +23,8 @@
 ### Decision 4
 
 - Acquisition will be manifest-driven instead of ad hoc.
-- Added [curated_sources.json](D:\github\searnxg\llm-schema\high_fidelity_schema_study\data\external\curated_sources.json) to pin the selected Dryad DOIs, Zenodo record ids, chosen files, and rationale.
-- Added [import_external_corpus.py](D:\github\searnxg\llm-schema\high_fidelity_schema_study\import_external_corpus.py) so imports can be re-run and audited.
+- Added [curated_sources.json](data/external/curated_sources.json) to pin the selected Dryad DOIs, Zenodo record ids, chosen files, and rationale.
+- Added [import_external_corpus.py](import_external_corpus.py) so imports can be re-run and audited.
 
 ### Candidate Selection Notes
 
@@ -52,8 +52,8 @@
 
 - Zenodo payload downloads succeeded for 8 files totaling about 28.27 MB.
 - Dryad payload downloads did not succeed in this environment, but record metadata and landing pages were staged locally for 4 selected Dryad records and 8 selected Dryad files.
-- Current machine-readable result is stored in [import_manifest.json](D:\github\searnxg\llm-schema\high_fidelity_schema_study\data\external\import_manifest.json).
-- Current staged corpus summary is stored in [data/external/README.md](D:\github\searnxg\llm-schema\high_fidelity_schema_study\data\external\README.md).
+- Current machine-readable result is stored in [import_manifest.json](data/external/import_manifest.json).
+- Current staged corpus summary is stored in [data/external/README.md](data/external/README.md).
 
 ### Decision 5
 
@@ -807,3 +807,155 @@ Action Points:
 Important Process:
 - This was a demo/workbench repair, not a new experiment or metric update.
 - The live extraction tab reuses existing deterministic extractors instead of introducing a separate GUI-only schema path.
+
+## 2026-06-10
+
+### Entry 1
+
+Summary:
+- Implemented Phase 12 as an isolated deterministic-substrate upgrade informed by the data-agent comparison deep research.
+- Added a central extractor capability registry, structured extraction outcomes, conservative format routing, and explicit failure/abstention reason codes.
+- Added an auditable temporal-semantics subsystem with timezone preservation, property-level claims, validator results, evidence references, and ambiguous-axis abstention.
+- Added a 13-case Phase 12 challenge pack, evaluator, generated experiment artifacts, and reviewer-facing report.
+
+Action Points:
+- Use the registry contract for the next standards-backed format experiment, starting with either Parquet/Arrow or NetCDF/CF.
+- Keep sidecar/code enrichment, context graphs, MCP exposure, and bounded semantic-agent orchestration out of the canonical extraction path until separately evaluated.
+- Preserve the current frozen Artifact Paper benchmark and headline metrics until a new freeze is explicitly approved.
+
+Important Process:
+- Phase 12 writes generated results only under `data/experiments/phase12_deterministic_substrate`.
+- Existing frozen artifacts, paper tables, figures, and manuscript claims were not regenerated or modified.
+- Support scores remain deterministic rule strengths, not calibrated probabilities.
+
+### Entry 2
+
+Summary:
+- Implemented Phase 13 as the first registry-backed standards format extension, adding deterministic NetCDF/CF extraction through NetCDF classic and HDF5-backed paths.
+- Added evidence-backed extraction and interpretation for dimensions, variables, dtype, shape, attributes, groups, missing markers, CF coordinates, time units, calendars, bounds, and units.
+- Added a 14-case NetCDF/CF challenge pack, independent evaluator, generated experiment artifacts, CLI/GUI integration, and reviewer-facing report.
+
+Action Points:
+- Validate the extractor against a separately curated real-world NetCDF/CF corpus.
+- Evaluate an optional standards-complete NetCDF backend and broaden physical-layout coverage.
+- Use the Phase 12 registry contract for the next Parquet/Arrow extension.
+
+Important Process:
+- Phase 13 writes generated results only under `data/experiments/phase13_netcdf_cf`.
+- Missing, malformed, ambiguous, and unsupported CF semantics remain unknown, conflicted, or abstained rather than promoted.
+- Existing frozen artifacts, paper tables, figures, manuscript claims, and headline metrics were not regenerated or modified.
+
+### Entry 3
+
+Summary:
+- Implemented Phase 14A local directory-store intake and a registry-backed, dependency-light Zarr v2 metadata extractor.
+- Added deterministic hierarchy, physical metadata, explicit attribute, bounded convention, portable evidence, structured failure/abstention, CLI, and GUI scratch support.
+- Added an isolated 14-case Zarr challenge pack, evaluator, generated artifacts, and reviewer-facing report.
+
+Action Points:
+- Validate Phase 14A against a separately curated real-world local Zarr v2 corpus.
+- Measure compatibility gaps before adding optional library-backed checks or considering remote-store support.
+- Keep Zarr v3, chunk payload decoding, and full Xarray reconstruction out of the current support claim.
+
+Important Process:
+- Phase 14A writes generated results only under `data/experiments/phase14a_zarr`.
+- Unknown, malformed, conflicted, and unsupported metadata remains explicit rather than promoted.
+- Existing frozen artifacts, paper tables, figures, manuscript claims, and headline metrics were not regenerated or modified.
+
+### Entry 4
+
+Summary:
+- Implemented Phase 14B as a 17-case producer-shaped local Zarr v2 compatibility validation round.
+- Fixed structured-dtype validation, pruned slash-separated chunk trees during metadata discovery, and scoped coordinate references to their owning groups.
+- Added a classified evaluator and report separating supported layouts, unsupported features, malformed failures, structured abstentions, and true bugs.
+
+Action Points:
+- Validate against an externally sourced local Zarr v2 corpus.
+- Evaluate optional library-backed cross-parser conformance before considering a broader support claim.
+- Continue deferring Zarr v3, remote stores, chunk decoding, and full Xarray reconstruction.
+
+Important Process:
+- Phase 14B writes generated results only under `data/experiments/phase14b_zarr_compatibility`.
+- Dummy chunk keys are never decoded or promoted into schema claims.
+- Existing frozen artifacts, paper tables, figures, manuscript claims, and headline metrics were not regenerated or modified.
+
+### Entry 5
+
+Summary:
+- Implemented Phase 14C as a 12-case metadata-only external and pinned-library-produced local Zarr v2 conformance round.
+- Added complete source/license/generation/limitation provenance and optional dev-only Zarr/Xarray cross-parser checks.
+- Classified all 5 observed cross-parser differences as parser default materialization or encoded fill-value interpretation; unexplained differences and canonical true bugs are `0`.
+- Completed the full regression suite with `125 passed`.
+
+Action Points:
+- Consider a larger independently curated local Zarr v2 corpus or return to a standards-backed Parquet/Arrow extension.
+- Keep cross-parser interpretation separate from canonical raw metadata truth.
+- Continue deferring Zarr v3, remote stores, chunk decoding, value-level profiling, and full Xarray reconstruction.
+
+Important Process:
+- Phase 14C writes generated results only under `data/experiments/phase14c_zarr_external_conformance`.
+- The corpus and generated artifacts retain metadata only and contain no local absolute paths.
+- Existing frozen artifacts, paper tables, figures, manuscript claims, and headline metrics were not regenerated or modified.
+
+## 2026-06-12
+
+### Entry 1
+
+Summary:
+- Implemented Phase 15A registry-backed Parquet/Arrow metadata-first extraction.
+- Added recursive Arrow schema and separate Parquet physical-path extraction, including nullability, row groups, encodings, compression, metadata, footer statistics, and timezone declarations.
+- Added an 8-case controlled challenge pack, evaluator, generated experiment artifacts, CLI/GUI compatibility, tests, and reviewer-facing report.
+- Updated the post-freeze Phase 12 malformed Parquet routing case for the now-registered extractor and completed the full regression suite with `136 passed`.
+
+Action Points:
+- Validate Parquet extraction against a small external or multi-producer compatibility corpus.
+- Begin conservative sampled JSON observed-structure extraction.
+- Preserve the distinction between footer statistics and independently observed row values.
+
+Important Process:
+- Phase 15A writes generated results only under `data/experiments/phase15a_parquet_arrow`.
+- The canonical extractor does not call row-reading APIs and reports `row_values_read=0`.
+- Existing frozen artifacts, paper tables, figures, manuscript claims, and headline metrics were not regenerated or modified.
+
+### Entry 2
+
+Summary:
+- Implemented Phase 16A registry-backed conservative JSON and JSON Lines structure extraction.
+- Added bounded path/type/null/missing/array observations plus JSON Schema declared fields and declared-observed example conflicts.
+- Added a 6-case challenge pack, evaluator, artifacts, CLI/GUI compatibility, tests, and reviewer-facing report.
+- Completed the full regression suite with `148 passed`.
+
+Action Points:
+- Add lightweight XML/XSD structure support or proceed to the unified schema envelope.
+- Validate JSON behavior against externally sourced and larger JSON Lines inputs.
+- Keep sampled observed structure separate from universal schema claims.
+
+Important Process:
+- Phase 16A writes generated results only under `data/experiments/phase16a_json_structure`.
+- JSON Schema declarations never get silently replaced by example observations.
+- Existing frozen artifacts, paper tables, figures, manuscript claims, and headline metrics were not regenerated or modified.
+
+### Entry 3
+
+Summary:
+- Implemented Phase 16B lightweight XML/XSD extraction with namespaces, repeated paths, XSD declarations, and `xsi:type` conflicts.
+- Implemented Phase 17 versioned unified schema envelope with normalized claim states, evidence, provenance, conflicts, abstentions, and compatibility-preserving CLI/GUI exports.
+- Added isolated evaluators, artifacts, tests, and reviewer-facing reports.
+
+Important Process:
+- XML observations remain sample-bounded; external schemas and entities are not loaded.
+- The unified envelope is additive and does not mutate or replace legacy outcomes.
+- Existing frozen artifacts, paper tables, figures, manuscript claims, and headline metrics were not regenerated or modified.
+
+### Entry 4
+
+Summary:
+- Implemented Phase 18 categorized unified evaluation with no misleading aggregate score.
+- Implemented Phase 19 read-only agent-ready schema, claim/evidence, provenance, capability, and retrieval-context exports.
+- Implemented Phase 20 reviewer demo script and generated release-readiness audit.
+- Completed the full regression suite with `173 passed`; release audit reports `ready=true`.
+
+Important Process:
+- Frozen Artifact Paper metrics are referenced, not rerun or rewritten.
+- Agents cannot silently promote or mutate canonical claims.
+- Generated experiment artifacts contain no local absolute paths and frozen paths remain unchanged.

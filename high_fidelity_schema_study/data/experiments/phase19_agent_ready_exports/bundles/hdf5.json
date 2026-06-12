@@ -1,0 +1,515 @@
+{
+  "agent_export_version": "1.0.0",
+  "policy": {
+    "canonical_mutation_allowed": false,
+    "silent_claim_promotion_allowed": false,
+    "suggestions_are_noncanonical": true,
+    "reruns_require_explicit_request": true
+  },
+  "schema_summary": {
+    "identity": {
+      "dataset_id": "climate_cube",
+      "file_id": "climate_cube.h5",
+      "file_format": "hdf5",
+      "data_modality": "hierarchical",
+      "resource_kind": "file"
+    },
+    "outcome_status": "success",
+    "field_count": 4,
+    "claim_count": 19,
+    "evidence_count": 7,
+    "conflict_count": 0,
+    "abstention_count": 0,
+    "fields": [
+      {
+        "field_path": "/coords/station_id",
+        "physical_type": "string",
+        "logical_type": "identifier",
+        "semantic_type": "station_identifier",
+        "nullable": true
+      },
+      {
+        "field_path": "/coords/time",
+        "physical_type": "int32",
+        "logical_type": "time_axis",
+        "semantic_type": "forecast_hour",
+        "nullable": true
+      },
+      {
+        "field_path": "/observations/humidity",
+        "physical_type": "float32",
+        "logical_type": "measurement",
+        "semantic_type": "relative_humidity",
+        "nullable": true
+      },
+      {
+        "field_path": "/observations/temperature",
+        "physical_type": "float32",
+        "logical_type": "measurement",
+        "semantic_type": "air_temperature",
+        "nullable": true
+      }
+    ]
+  },
+  "claim_records": [
+    {
+      "claim_id": "c0001",
+      "subject": "/coords/station_id",
+      "property": "physical_type",
+      "value": "string",
+      "state": "supported",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0001"
+      ]
+    },
+    {
+      "claim_id": "c0002",
+      "subject": "/coords/station_id",
+      "property": "logical_type",
+      "value": "identifier",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0001"
+      ]
+    },
+    {
+      "claim_id": "c0003",
+      "subject": "/coords/station_id",
+      "property": "semantic_type",
+      "value": "station_identifier",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0001"
+      ]
+    },
+    {
+      "claim_id": "c0004",
+      "subject": "/coords/station_id",
+      "property": "nullable",
+      "value": true,
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0001"
+      ]
+    },
+    {
+      "claim_id": "c0005",
+      "subject": "/coords/time",
+      "property": "physical_type",
+      "value": "int32",
+      "state": "supported",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0002",
+        "e0003"
+      ]
+    },
+    {
+      "claim_id": "c0006",
+      "subject": "/coords/time",
+      "property": "logical_type",
+      "value": "time_axis",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0002",
+        "e0003"
+      ]
+    },
+    {
+      "claim_id": "c0007",
+      "subject": "/coords/time",
+      "property": "semantic_type",
+      "value": "forecast_hour",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0002",
+        "e0003"
+      ]
+    },
+    {
+      "claim_id": "c0008",
+      "subject": "/coords/time",
+      "property": "unit",
+      "value": "hours since 2026-01-01 00:00:00 UTC",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0002",
+        "e0003"
+      ]
+    },
+    {
+      "claim_id": "c0009",
+      "subject": "/coords/time",
+      "property": "nullable",
+      "value": true,
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0002",
+        "e0003"
+      ]
+    },
+    {
+      "claim_id": "c0010",
+      "subject": "/observations/humidity",
+      "property": "physical_type",
+      "value": "float32",
+      "state": "supported",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0004",
+        "e0005"
+      ]
+    },
+    {
+      "claim_id": "c0011",
+      "subject": "/observations/humidity",
+      "property": "logical_type",
+      "value": "measurement",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0004",
+        "e0005"
+      ]
+    },
+    {
+      "claim_id": "c0012",
+      "subject": "/observations/humidity",
+      "property": "semantic_type",
+      "value": "relative_humidity",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0004",
+        "e0005"
+      ]
+    },
+    {
+      "claim_id": "c0013",
+      "subject": "/observations/humidity",
+      "property": "unit",
+      "value": "%",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0004",
+        "e0005"
+      ]
+    },
+    {
+      "claim_id": "c0014",
+      "subject": "/observations/humidity",
+      "property": "nullable",
+      "value": true,
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0004",
+        "e0005"
+      ]
+    },
+    {
+      "claim_id": "c0015",
+      "subject": "/observations/temperature",
+      "property": "physical_type",
+      "value": "float32",
+      "state": "supported",
+      "reason_code": "extractor_field_claim",
+      "evidence_refs": [
+        "e0006",
+        "e0007"
+      ]
+    },
+    {
+      "claim_id": "c0016",
+      "subject": "/observations/temperature",
+      "property": "logical_type",
+      "value": "measurement",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0006",
+        "e0007"
+      ]
+    },
+    {
+      "claim_id": "c0017",
+      "subject": "/observations/temperature",
+      "property": "semantic_type",
+      "value": "air_temperature",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0006",
+        "e0007"
+      ]
+    },
+    {
+      "claim_id": "c0018",
+      "subject": "/observations/temperature",
+      "property": "unit",
+      "value": "C",
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0006",
+        "e0007"
+      ]
+    },
+    {
+      "claim_id": "c0019",
+      "subject": "/observations/temperature",
+      "property": "nullable",
+      "value": true,
+      "state": "supported",
+      "reason_code": "extractor_field_property",
+      "evidence_refs": [
+        "e0006",
+        "e0007"
+      ]
+    }
+  ],
+  "evidence_records": [
+    {
+      "evidence_id": "e0001",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_dataset_path",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\data\\raw\\hdf5\\hdf5_easy_climate_cube\\climate_cube.h5",
+      "detail": "/coords/station_id",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0002",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_dataset_path",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\data\\raw\\hdf5\\hdf5_easy_climate_cube\\climate_cube.h5",
+      "detail": "/coords/time",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0003",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_attribute",
+      "source": "/coords/time",
+      "detail": "unit=hours since 2026-01-01 00:00:00 UTC",
+      "confidence": 0.99
+    },
+    {
+      "evidence_id": "e0004",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_dataset_path",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\data\\raw\\hdf5\\hdf5_easy_climate_cube\\climate_cube.h5",
+      "detail": "/observations/humidity",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0005",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_attribute",
+      "source": "/observations/humidity",
+      "detail": "unit=%",
+      "confidence": 0.99
+    },
+    {
+      "evidence_id": "e0006",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_dataset_path",
+      "source": "D:\\github\\searnxg\\high_fidelity_schema_study\\high_fidelity_schema_study\\data\\raw\\hdf5\\hdf5_easy_climate_cube\\climate_cube.h5",
+      "detail": "/observations/temperature",
+      "confidence": 1.0
+    },
+    {
+      "evidence_id": "e0007",
+      "tier": "explicit_metadata",
+      "evidence_type": "hdf5_attribute",
+      "source": "/observations/temperature",
+      "detail": "unit=C",
+      "confidence": 0.99
+    }
+  ],
+  "provenance_graph": {
+    "entities": [
+      {
+        "id": "source:climate_cube.h5",
+        "type": "source_resource",
+        "file_id": "climate_cube.h5"
+      },
+      {
+        "id": "envelope:climate_cube",
+        "type": "unified_schema_envelope",
+        "version": "1.0.0"
+      }
+    ],
+    "activities": [
+      {
+        "id": "activity:deterministic_extraction",
+        "type": "deterministic_extraction",
+        "used": "source:climate_cube.h5",
+        "generated": "envelope:climate_cube"
+      },
+      {
+        "id": "activity:unified_projection",
+        "type": "deterministic_projection",
+        "generated": "envelope:climate_cube"
+      }
+    ],
+    "agents": [
+      {
+        "id": "extractor:h5py_structure_traversal",
+        "type": "registered_extractor",
+        "version": "1.0.0",
+        "determinism_class": "strict"
+      }
+    ]
+  },
+  "retrieval_context": {
+    "title": "climate_cube",
+    "format": "hdf5",
+    "field_paths": [
+      "/coords/station_id",
+      "/coords/time",
+      "/observations/humidity",
+      "/observations/temperature"
+    ],
+    "supported_claims": [
+      {
+        "subject": "/coords/station_id",
+        "property": "physical_type",
+        "value": "string",
+        "state": "supported"
+      },
+      {
+        "subject": "/coords/station_id",
+        "property": "logical_type",
+        "value": "identifier",
+        "state": "supported"
+      },
+      {
+        "subject": "/coords/station_id",
+        "property": "semantic_type",
+        "value": "station_identifier",
+        "state": "supported"
+      },
+      {
+        "subject": "/coords/station_id",
+        "property": "nullable",
+        "value": true,
+        "state": "supported"
+      },
+      {
+        "subject": "/coords/time",
+        "property": "physical_type",
+        "value": "int32",
+        "state": "supported"
+      },
+      {
+        "subject": "/coords/time",
+        "property": "logical_type",
+        "value": "time_axis",
+        "state": "supported"
+      },
+      {
+        "subject": "/coords/time",
+        "property": "semantic_type",
+        "value": "forecast_hour",
+        "state": "supported"
+      },
+      {
+        "subject": "/coords/time",
+        "property": "unit",
+        "value": "hours since 2026-01-01 00:00:00 UTC",
+        "state": "supported"
+      },
+      {
+        "subject": "/coords/time",
+        "property": "nullable",
+        "value": true,
+        "state": "supported"
+      },
+      {
+        "subject": "/observations/humidity",
+        "property": "physical_type",
+        "value": "float32",
+        "state": "supported"
+      },
+      {
+        "subject": "/observations/humidity",
+        "property": "logical_type",
+        "value": "measurement",
+        "state": "supported"
+      },
+      {
+        "subject": "/observations/humidity",
+        "property": "semantic_type",
+        "value": "relative_humidity",
+        "state": "supported"
+      },
+      {
+        "subject": "/observations/humidity",
+        "property": "unit",
+        "value": "%",
+        "state": "supported"
+      },
+      {
+        "subject": "/observations/humidity",
+        "property": "nullable",
+        "value": true,
+        "state": "supported"
+      },
+      {
+        "subject": "/observations/temperature",
+        "property": "physical_type",
+        "value": "float32",
+        "state": "supported"
+      },
+      {
+        "subject": "/observations/temperature",
+        "property": "logical_type",
+        "value": "measurement",
+        "state": "supported"
+      },
+      {
+        "subject": "/observations/temperature",
+        "property": "semantic_type",
+        "value": "air_temperature",
+        "state": "supported"
+      },
+      {
+        "subject": "/observations/temperature",
+        "property": "unit",
+        "value": "C",
+        "state": "supported"
+      },
+      {
+        "subject": "/observations/temperature",
+        "property": "nullable",
+        "value": true,
+        "state": "supported"
+      }
+    ],
+    "conflicts": [],
+    "unsupported_features": []
+  },
+  "requestable_actions": [
+    {
+      "action": "inspect_evidence",
+      "effect": "read_only"
+    },
+    {
+      "action": "suggest_noncanonical_annotation",
+      "effect": "suggestion_only"
+    },
+    {
+      "action": "request_explicit_rerun",
+      "effect": "requires_user_or_orchestrator_approval"
+    }
+  ]
+}
