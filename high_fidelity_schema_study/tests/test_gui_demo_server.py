@@ -4,6 +4,7 @@ from pathlib import Path
 
 import pytest
 
+from high_fidelity_schema_study.extractors.registry import EXTRACTOR_RUNNERS
 from high_fidelity_schema_study.gui_demo.server import (
     HDF5_MAGIC,
     build_raw_binary_schema,
@@ -87,6 +88,26 @@ def test_extract_uploaded_binary_preserves_legacy_schema_and_adds_outcome(tmp_pa
     assert result["schema"]["metadata"]["field_claim_policy"] == "abstain_without_sidecar_metadata"
     assert result["extraction_outcome"]["status"] == "abstained"
     assert result["extraction_outcome"]["issues"][0]["code"] == "unknown_no_signature"
+
+
+def test_extract_uploaded_dependency_failure_preserves_structured_outcome(tmp_path, monkeypatch):
+    path = tmp_path / "payload.h5"
+    path.write_bytes(HDF5_MAGIC + b"rest")
+
+    def unavailable(_request):
+        raise RuntimeError("h5py is required for HDF5 extraction")
+
+    monkeypatch.setitem(EXTRACTOR_RUNNERS, "hdf5", unavailable)
+    result = extract_uploaded_schema(path, "payload.h5", "auto")
+
+    assert result["ok"] is False
+    assert result["schema"] is None
+    assert result["detected_mode"] == "hdf5"
+    assert result["extraction_outcome"]["status"] == "failed"
+    assert result["extraction_outcome"]["extractor"]["extractor_id"] == "h5py_structure_traversal"
+    assert result["extraction_outcome"]["issues"][0]["code"] == "dependency_unavailable"
+    assert result["unified_schema_envelope"]["outcome"]["status"] == "failed"
+    assert "h5py is required" in result["error"]
 
 
 def test_extract_uploaded_netcdf_uses_registry():

@@ -1,4 +1,9 @@
-from high_fidelity_schema_study.release_audit import ABSOLUTE_PATH_RE, REQUIRED_PATHS, audit_release_readiness
+from high_fidelity_schema_study.release_audit import (
+    ABSOLUTE_PATH_RE,
+    REPOSITORY_REQUIRED_PATHS,
+    REQUIRED_PATHS,
+    audit_release_readiness,
+)
 
 
 def test_release_readiness_checks_pass():
@@ -6,6 +11,9 @@ def test_release_readiness_checks_pass():
 
     assert report["ready"] is True
     assert all(report["checks"].values())
+    assert "requirements.txt" in REQUIRED_PATHS
+    assert "requirements-dev.txt" in REQUIRED_PATHS
+    assert ".github/workflows/ci.yml" in REPOSITORY_REQUIRED_PATHS
     assert "data/experiments/phase20_release_readiness/report.json" not in REQUIRED_PATHS
 
 

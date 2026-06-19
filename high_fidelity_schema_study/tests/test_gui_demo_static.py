@@ -30,6 +30,8 @@ def test_gui_demo_contains_core_inspection_views():
     assert "Claim states" in html
     assert "Issues and conflicts" in html
     assert "Provenance" in html
+    assert "inspect the structured issues above" in html
+    assert "payload.extraction_outcome" in html
     assert 'class="view active"' in html
     assert "time-axis gap" in html
     assert "location.hash" in html

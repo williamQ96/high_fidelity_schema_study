@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Python 3.11 / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: high_fidelity_schema_study/requirements-dev.txt
+
+      - name: Install pinned dependencies
+        run: python -m pip install -r high_fidelity_schema_study/requirements-dev.txt
+
+      - name: Run regression suite
+        run: python -m pytest high_fidelity_schema_study/tests -q
+
+      - name: Rebuild release audit
+        run: python -m high_fidelity_schema_study.build_phase20_release_audit
+
+      - name: Verify generated and frozen artifacts are unchanged
+        shell: bash
+        run: |
+          git diff --exit-code -- high_fidelity_schema_study/data/experiments/phase20_release_readiness
+          git diff --exit-code -- \
+            high_fidelity_schema_study/data/derived \
+            high_fidelity_schema_study/data/retrieval \
+            high_fidelity_schema_study/data/semantic_merged \
+            high_fidelity_schema_study/docs/paper_draft.md \
+            high_fidelity_schema_study/docs/paper_result_tables_2026-05-15.md \
+            high_fidelity_schema_study/docs/paper_result_tables_2026-05-15.json \
+            high_fidelity_schema_study/docs/figures \
+            high_fidelity_schema_study/docs/benchmark_freeze_2026-05-04.md \
+            high_fidelity_schema_study/docs/benchmark_freeze_2026-05-04.json

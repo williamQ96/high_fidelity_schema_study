@@ -3,6 +3,7 @@
 ## 1. Run Tests
 
 ```text
+python -m pip install -r high_fidelity_schema_study/requirements-dev.txt
 python -m pytest high_fidelity_schema_study/tests -q
 ```
 

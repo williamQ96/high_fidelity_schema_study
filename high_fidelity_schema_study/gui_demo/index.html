@@ -1463,7 +1463,7 @@
       const summary = document.getElementById("extract-summary");
       summary.innerHTML = "";
       summary.appendChild(metric("Detected mode", payload.detected_mode || ""));
-      summary.appendChild(metric("File format", schema.file_format || ""));
+      summary.appendChild(metric("File format", schema.file_format || outcome.format_decision?.selected_format || ""));
       summary.appendChild(metric("Outcome", outcome.status || ""));
       summary.appendChild(metric("Extractor", outcome.extractor?.extractor_id || "abstained"));
       summary.appendChild(metric("Fields", String(fields.length)));
@@ -1520,7 +1520,12 @@
       body.innerHTML = "";
       if (!fields.length) {
         const tr = document.createElement("tr");
-        tr.innerHTML = '<td colspan="5" class="note">No field claims were emitted. For raw binary without sidecar metadata, this is an intentional high-fidelity abstention.</td>';
+        const emptyDetail = outcome.status === "abstained"
+          ? "This is an intentional high-fidelity abstention."
+          : outcome.status === "failed"
+            ? "Extraction stopped before a schema payload was produced; inspect the structured issues above."
+            : "The extractor emitted no field claims.";
+        tr.innerHTML = `<td colspan="5" class="note">No field claims were emitted. ${esc(emptyDetail)}</td>`;
         body.appendChild(tr);
       }
       fields.forEach((field) => {
@@ -1574,7 +1579,9 @@
               const sampleLimit = document.getElementById("sample-limit").value;
               const result = await loadJson(`/api/extract-example?id=${encodeURIComponent(example.id)}&sample_limit=${encodeURIComponent(sampleLimit)}`);
               renderExtractResult(result);
-              status.textContent = `Loaded example: ${example.label}`;
+              status.textContent = result.ok
+                ? `Loaded example: ${example.label}`
+                : `Example returned ${result.extraction_outcome?.status || "failed"}: ${result.error || "inspect structured issues"}`;
             } catch (error) {
               status.textContent = error.message;
             } finally {
@@ -1634,11 +1641,16 @@
           } catch (error) {
             throw new Error("Upload endpoint unavailable. Start the demo with python -m high_fidelity_schema_study.gui_demo.server 8765.");
           }
+          if (payload.extraction_outcome) {
+            renderExtractResult(payload);
+            status.textContent = payload.ok
+              ? `Extracted ${payload.filename}`
+              : `Extraction returned ${payload.extraction_outcome.status}: ${payload.error || "inspect structured issues"}`;
+            return;
+          }
           if (!response.ok || !payload.ok) {
             throw new Error(payload.error || `Extraction failed with status ${response.status}`);
           }
-          renderExtractResult(payload);
-          status.textContent = `Extracted ${payload.filename}`;
         } catch (error) {
           status.textContent = error.message;
         } finally {

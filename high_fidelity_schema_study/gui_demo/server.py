@@ -90,15 +90,12 @@ def extract_uploaded_schema(
             sample_limit=sample_limit,
         )
     )
-    if outcome.schema is None:
-        issue_text = "; ".join(issue.message for issue in outcome.issues) or "Extraction failed."
-        raise ValueError(issue_text)
-
     schema = outcome.schema
-    schema.file_id = original_filename
-    schema.dataset_id = Path(original_filename).stem
-    if outcome.status == "abstained" and schema.file_format == "raw_binary":
-        schema.metadata["field_claim_policy"] = "abstain_without_sidecar_metadata"
+    if schema is not None:
+        schema.file_id = original_filename
+        schema.dataset_id = Path(original_filename).stem
+        if outcome.status == "abstained" and schema.file_format == "raw_binary":
+            schema.metadata["field_claim_policy"] = "abstain_without_sidecar_metadata"
     selected_format = outcome.format_decision.selected_format
     mode = (
         "timeseries"
@@ -129,17 +126,21 @@ def extract_uploaded_schema(
         )
     elif outcome.status == "abstained":
         runtime_notes.append("Abstained from unsupported field claims.")
+    elif outcome.status == "failed":
+        runtime_notes.append("Extraction failed before a schema payload could be produced.")
 
     outcome_payload = outcome.to_dict()
     outcome_payload.pop("schema", None)
     unified_envelope = build_unified_schema_envelope(outcome)
+    issue_text = "; ".join(issue.message for issue in outcome.issues)
 
     return {
-        "ok": True,
+        "ok": outcome.status != "failed",
+        "error": issue_text if outcome.status == "failed" else None,
         "requested_mode": requested_mode,
         "detected_mode": mode,
         "filename": original_filename,
-        "schema": schema.to_dict(),
+        "schema": schema.to_dict() if schema is not None else None,
         "extraction_outcome": outcome_payload,
         "unified_schema_envelope": unified_envelope,
         "runtime_notes": runtime_notes,

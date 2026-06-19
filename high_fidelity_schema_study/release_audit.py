@@ -8,6 +8,7 @@ from typing import Any, Dict
 
 
 ROOT = Path(__file__).resolve().parent
+REPOSITORY_ROOT = ROOT.parent
 DEFAULT_OUTPUT_ROOT = ROOT / "data" / "experiments" / "phase20_release_readiness"
 ABSOLUTE_PATH_RE = re.compile(
     r"(?<![A-Za-z])(?:[A-Za-z]:[\\/](?:Users|github)[\\/]|/(?:Users|home)/)",
@@ -35,6 +36,8 @@ LINK_AUDIT_PATHS = [
 ]
 REQUIRED_PATHS = [
     "README.md",
+    "requirements.txt",
+    "requirements-dev.txt",
     "docs/demo_script.md",
     "docs/evaluation_plan.md",
     "docs/project_log.md",
@@ -48,6 +51,9 @@ REQUIRED_PATHS = [
     "data/experiments/phase17_unified_schema_envelope/report.json",
     "data/experiments/phase18_unified_evaluation/report.json",
     "data/experiments/phase19_agent_ready_exports/report.json",
+]
+REPOSITORY_REQUIRED_PATHS = [
+    ".github/workflows/ci.yml",
 ]
 FROZEN_PATHS = [
     "data/derived",
@@ -97,6 +103,10 @@ def _absolute_path_matches(roots: list[Path]) -> list[str]:
 
 def audit_release_readiness() -> Dict[str, Any]:
     missing = [path for path in REQUIRED_PATHS if not (ROOT / path).exists()]
+    missing.extend(
+        path for path in REPOSITORY_REQUIRED_PATHS
+        if not (REPOSITORY_ROOT / path).exists()
+    )
     broken_links = []
     for relative_path in LINK_AUDIT_PATHS:
         path = ROOT / relative_path

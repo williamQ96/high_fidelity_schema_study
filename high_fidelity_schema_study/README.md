@@ -104,6 +104,29 @@ The additive unified API is `extract_unified(ExtractionRequest(...))`. It return
 
 Recognized-but-unregistered formats return structured abstention rather than parser-free schema claims. Phase 14A extends intake to local Zarr directory stores while preserving existing regular-file behavior.
 
+## Installation And Reproducibility
+
+Run commands from the repository root. The standard-library path supports CSV,
+JSON, XML, and raw-binary abstention without scientific backends. Install the
+pinned full runtime to enable HDF5, NetCDF/CF, Zarr metadata validation, and
+Parquet/Arrow:
+
+```bash
+python -m pip install -r high_fidelity_schema_study/requirements.txt
+```
+
+Install the pinned test environment and run the complete regression suite:
+
+```bash
+python -m pip install -r high_fidelity_schema_study/requirements-dev.txt
+python -m pytest high_fidelity_schema_study/tests -q
+```
+
+The generic `extract` command loads evaluation and agent-export dependencies
+only when those commands are requested. Missing format-specific backends are
+reported as structured `dependency_unavailable` outcomes rather than preventing
+CSV/JSON/XML extraction or CLI startup.
+
 ## Scope And Non-Goals
 
 Current scope is high-fidelity extraction and validation of supported inputs, plus isolated post-freeze format experiments.
@@ -302,7 +325,7 @@ These controlled results prove the declared challenge cases, not broad real-worl
 | Phase 18 unified evaluation | 11 categorized tracks; frozen references are not rerun; aggregate score is `null` | Common reporting entrypoint without collapsing evidence boundaries |
 | Phase 19 agent exports | 8 bundles; policy, fidelity, evidence, provenance, context, and bounded-action metrics `1.0000`; 7 capabilities | Agent-ready read-only context, not agent-controlled canonical extraction |
 | Phase 20 release readiness | Required paths, major documentation links, generated/documentation path hygiene, and frozen paths pass | Release-style repository readiness, not broader empirical validation |
-| Current regression suite | `179 passed` after final workbench and demo-example validation | Current repository regression status; it should be re-run after every later change |
+| Current regression suite | `181 passed` with pinned scientific backends and structured-failure regression coverage | Current repository regression status; it should be re-run after every later change |
 
 ## Current Target
 

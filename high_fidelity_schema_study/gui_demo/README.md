@@ -10,6 +10,10 @@ Scratch extraction is routed through the Phase 12 capability registry. Responses
 
 Responses also include the additive `unified_schema_envelope`, which normalizes claims, evidence, provenance, conflicts, and abstentions without replacing the legacy schema. The workbench surfaces format signals, structured issues, claim-state counts, conflicts, and provenance before the raw JSON.
 
+Failed parser or missing-backend outcomes remain visible in the workbench. The
+server returns the format decision, selected extractor, reason codes, issues,
+and unified envelope even when no schema payload can be produced.
+
 The visual system is documented in [DESIGN.md](DESIGN.md). It uses a compact developer-tool layout with visible semantic states and responsive navigation.
 
 The page includes a visible Artifact Boundary banner covering planted qrels, the small internal pilot, working external semantic annotations, and the known time-axis gap. Runnable controlled examples are documented in [demo_examples/README.md](../demo_examples/README.md).
@@ -19,6 +23,7 @@ The page includes a visible Artifact Boundary banner covering planted qrels, the
 For the full demo, including scratch uploads, run from the repository root:
 
 ```bash
+python -m pip install -r high_fidelity_schema_study/requirements.txt
 python -m high_fidelity_schema_study.gui_demo.server 8765
 ```
 

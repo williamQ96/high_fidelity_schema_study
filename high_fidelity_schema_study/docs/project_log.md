@@ -2,6 +2,22 @@
 
 This log records high-level architectural decisions and post-freeze milestones. Detailed acquisition and implementation history remains in `log.md`.
 
+## 2026-06-19: Reproducible Runtime And Structured Failure Closure
+
+- Added pinned full-runtime and development dependency manifests.
+- Changed the CLI to load unified evaluation and agent-export modules only for
+  their respective commands, preserving standard-library CSV/JSON/XML startup
+  when scientific backends are unavailable.
+- Preserved failed extraction outcomes in GUI payloads so dependency and parser
+  failures retain format decisions, extractor identity, reason codes, and the
+  unified envelope instead of collapsing to an unstructured HTTP error.
+- Added regression coverage for optional-dependency CLI startup and GUI
+  structured failure rendering.
+- Prepared the repository CI workflow for the complete test suite, release
+  audit, and frozen-artifact diff check. Its active GitHub location is
+  `.github/workflows/ci.yml`.
+- Verified the pinned full environment with `181 passed`.
+
 ## 2026-06-10: Deep Research Recommendation
 
 Source:

@@ -12,7 +12,7 @@ Date: 2026-06-12
 - Portable allowlisted demo examples with repository-relative sources and SHA-256 digests.
 - Extraction-first GUI result review for format signals, issues/conflicts, claim states, provenance, fields, and structured JSON.
 - Release-readiness audit covering required files, major documentation links, generated/documentation path hygiene, and frozen artifact diffs.
-- Full regression suite: `179 passed`.
+- Current full regression suite: `181 passed`.
 
 ## Release Audit
 

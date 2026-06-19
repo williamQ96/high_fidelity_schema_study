@@ -9,8 +9,6 @@ from .extractors.csv_extractor import extract_csv_schema
 from .extractors.hdf5_extractor import extract_hdf5_schema
 from .extractors.registry import extract_path
 from .unified_schema import build_unified_schema_envelope
-from .unified_evaluation import evaluate_all_tracks
-from .agent_exports import export_agent_bundle
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -124,6 +122,8 @@ def main() -> None:
         return
 
     if args.command == "evaluate":
+        from .unified_evaluation import evaluate_all_tracks
+
         write_or_print(
             evaluate_all_tracks(include_frozen_references=args.scope == "all"),
             args.output,
@@ -131,6 +131,8 @@ def main() -> None:
         return
 
     if args.command == "agent-export":
+        from .agent_exports import export_agent_bundle
+
         outcome = extract_path(
             ExtractionRequest(args.input, format_hint=args.format, sample_limit=max(1, args.sample_limit))
         )

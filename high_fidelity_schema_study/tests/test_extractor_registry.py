@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from pathlib import Path
 import subprocess
 import sys
@@ -145,3 +146,39 @@ assert len(list_capabilities()) == 7
     )
 
     assert completed.returncode == 0, completed.stderr
+
+
+def test_csv_cli_survives_missing_optional_dependencies(tmp_path):
+    path = tmp_path / "series.csv"
+    path.write_text(
+        "ts_utc,value\n"
+        "2026-01-01T00:00:00Z,1\n"
+        "2026-01-01T01:00:00Z,2\n",
+        encoding="utf-8",
+    )
+    code = f"""
+import sys
+
+class BlockOptionalDependencies:
+    def find_spec(self, fullname, path=None, target=None):
+        if fullname.split(".", 1)[0] in {{"h5py", "numpy", "pyarrow", "scipy"}}:
+            raise ModuleNotFoundError(fullname)
+        return None
+
+sys.meta_path.insert(0, BlockOptionalDependencies())
+sys.argv = ["schema-study", "extract", "--input", {str(path)!r}]
+from high_fidelity_schema_study import cli
+cli.main()
+"""
+    completed = subprocess.run(
+        [sys.executable, "-c", code],
+        cwd=Path(__file__).resolve().parents[2],
+        capture_output=True,
+        text=True,
+    )
+
+    assert completed.returncode == 0, completed.stderr
+    payload = json.loads(completed.stdout)
+    assert payload["status"] == "success"
+    assert payload["format_decision"]["selected_format"] == "csv"
+    assert payload["extractor"]["extractor_id"] == "csv_conservative_profiler"
