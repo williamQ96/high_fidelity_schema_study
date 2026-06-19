@@ -50,8 +50,8 @@
       "path": "basic_array.zarr",
       "source": "testdata/zarr_phase14a/basic_array.zarr",
       "sha256_files": {
-        ".zgroup": "f5fc66b6ac3bbb797e622786117c06800a729eacf0faf68d6dd507f5eb5afabd",
-        "temperature/.zarray": "91b4303bd8f47e8e6b86d91d7b6319047205613183d944bc0b36222c24db0f73"
+        ".zgroup": "e1e1914ae531ecb50e1ead685ef01895a5452faf5f25f35cd78f1f5de1367470",
+        "temperature/.zarray": "757141f68b87493d4fd3ed5a77981ce7ac81ebf4b8bc93832d9a72cf71c977ad"
       },
       "summary": "Metadata-only local directory store with no chunk payload.",
       "focus": "directory intake"
@@ -72,7 +72,7 @@
       "format": "json",
       "path": "nested_object.json",
       "source": "testdata/json_phase16a/single_object.json",
-      "sha256": "3ff5ad6f8dab7097410157b5b14685f21c6848350e431462af2a89c4b3cf5270",
+      "sha256": "9b0167ec151028c5d5d68af5ef7cdbcc86f1704d2093e211ef70782c4c4771fb",
       "summary": "Small nested object for bounded observed-structure extraction.",
       "focus": "sample-bounded structure"
     },
@@ -82,7 +82,7 @@
       "format": "xml",
       "path": "declared_observed_conflict.xml",
       "source": "testdata/xml_phase16b/xsi_conflict.xml",
-      "sha256": "e9c2d478552c8ea8753f5e5f872e3949481e18845244f84b037d48e7a6deaba0",
+      "sha256": "6e7427c71cb56f6cc75140f59ee21160dea1bb91832257c63f98aad448b38db7",
       "summary": "An explicit xsi:type declaration that conflicts with observed text.",
       "focus": "visible conflict"
     }

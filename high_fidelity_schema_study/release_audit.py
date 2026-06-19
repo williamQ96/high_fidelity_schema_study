@@ -53,6 +53,7 @@ REQUIRED_PATHS = [
     "data/experiments/phase19_agent_ready_exports/report.json",
 ]
 REPOSITORY_REQUIRED_PATHS = [
+    ".gitattributes",
     ".github/workflows/ci.yml",
 ]
 FROZEN_PATHS = [

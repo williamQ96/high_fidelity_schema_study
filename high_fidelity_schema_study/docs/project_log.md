@@ -16,6 +16,9 @@ This log records high-level architectural decisions and post-freeze milestones. 
 - Prepared the repository CI workflow for the complete test suite, release
   audit, and frozen-artifact diff check. Its active GitHub location is
   `.github/workflows/ci.yml`.
+- Fixed clean-checkout portability by pinning LF endings for hashed text demo
+  fixtures and tracking placeholder files for intentionally metadata-empty
+  Zarr directory cases.
 - Verified the pinned full environment with `181 passed`.
 
 ## 2026-06-10: Deep Research Recommendation

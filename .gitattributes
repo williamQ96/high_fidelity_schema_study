@@ -1,0 +1,10 @@
+high_fidelity_schema_study/demo_examples/utc_series.csv text eol=lf
+high_fidelity_schema_study/demo_examples/basic_array.zarr/.zgroup text eol=lf
+high_fidelity_schema_study/demo_examples/basic_array.zarr/temperature/.zarray text eol=lf
+high_fidelity_schema_study/demo_examples/nested_object.json text eol=lf
+high_fidelity_schema_study/demo_examples/declared_observed_conflict.xml text eol=lf
+high_fidelity_schema_study/demo_examples/manifest.json text eol=lf
+high_fidelity_schema_study/demo_examples/opaque.bin binary
+high_fidelity_schema_study/demo_examples/cf_coordinates.nc binary
+high_fidelity_schema_study/demo_examples/climate_cube.h5 binary
+high_fidelity_schema_study/demo_examples/arrow_metadata.parquet binary
