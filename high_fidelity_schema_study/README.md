@@ -17,6 +17,10 @@ Core guarantees:
 
 `A Deterministic-First Framework for High-Fidelity Schema Extraction from Scientific Data Files`
 
+## One-Page Abstract
+
+See [docs/project_abstract.md](docs/project_abstract.md) for a concise current-state summary of the project scope, architecture, evidence model, supported formats, release status, and boundaries.
+
 ## Core Questions
 
 1. How much physical schema can we recover deterministically across CSV, HDF5, NetCDF/CF, and time-series organization?
