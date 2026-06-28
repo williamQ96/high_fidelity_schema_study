@@ -1,0 +1,152 @@
+{"kind":"deck","id":"pr/xuhuhx","name":"Deck"}
+{"kind":"layout","layoutId":"326fe04c-0a84-4c1e-a9f2-dcc3fbba9241","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"0e5bea9a-3e1c-41b0-a0b1-9380164f986f","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/43j8gg","slide":1,"title":"从文件输入到统一模式信封输出","textShapes":11}
+{"kind":"shape","id":"sh/5kb6xkf6","slide":1,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/ytsvu9kn","slide":1,"text":"从文件输入到统一模式信封输出","textPreview":"从文件输入到统一模式信封输出","textChars":14,"textLines":1,"bbox":[74,86,900,86]}
+{"kind":"textbox","id":"sh/neloj2t8","slide":1,"text":"高保真 Schema 提取全生命周期流程详解与设计落地","textPreview":"高保真 Schema 提取全生命周期流程详解与设计落地","textChars":27,"textLines":1,"bbox":[78,170,850,40]}
+{"kind":"textbox","id":"sh/cbulwval","slide":1,"text":"先用程序证明结构与客观事实，再让 LLM 在证据约束下补充语义理解。","textPreview":"先用程序证明结构与客观事实，再让 LLM 在证据约束下补充语义理解。","textChars":34,"textLines":1,"bbox":[80,272,660,96]}
+{"kind":"shape","id":"sh/5sneloj2","slide":1,"bbox":[810,94,330,118]}
+{"kind":"textbox","id":"sh/u54zidon","slide":1,"text":"物理主导","textPreview":"物理主导","textChars":4,"textLines":1,"bbox":[832,112,286,30]}
+{"kind":"textbox","id":"sh/nqxs72x4","slide":1,"text":"解析器读取绝对客观的结构与内秉元数据。","textPreview":"解析器读取绝对客观的结构与内秉元数据。","textChars":19,"textLines":1,"bbox":[832,152,286,42]}
+{"kind":"shape","id":"sh/gbq1oryt","slide":1,"bbox":[810,244,330,142]}
+{"kind":"textbox","id":"sh/5wjudg7a","slide":1,"text":"图谱投影","textPreview":"图谱投影","textChars":4,"textLines":1,"bbox":[832,262,286,30]}
+{"kind":"textbox","id":"sh/54zidony","slide":1,"text":"主张与证据分离，全局去重并支持图谱化关联追溯。","textPreview":"主张与证据分离，全局去重并支持图谱化关联追溯。","textChars":23,"textLines":1,"bbox":[832,302,286,66]}
+{"kind":"textbox","id":"sh/cj6tovah","slide":1,"text":"Deterministic-first","textPreview":"Deterministic-first","textChars":19,"textLines":1,"bbox":[80,430,200,36]}
+{"kind":"textbox","id":"sh/nyd0z610","slide":1,"text":"Evidence-constrained","textPreview":"Evidence-constrained","textChars":20,"textLines":1,"bbox":[296,430,220,36]}
+{"kind":"textbox","id":"sh/udg7adsj","slide":1,"text":"Unified Schema Envelope","textPreview":"Unified Schema Envelope","textChars":23,"textLines":1,"bbox":[532,430,230,36]}
+{"kind":"textbox","id":"sh/5gbq1ory","slide":1,"text":"从文件输入到模式输出 (File In -> Schema Out) · 1/9","textPreview":"从文件输入到模式输出 (File In -> Schema Out) · 1/9","textChars":40,"textLines":1,"bbox":[64,678,600,24]}
+{"kind":"notes","id":"nt/43j8gg","slide":1,"text":"Explain the high-fidelity schema extraction pipeline stages: Intake, Extractor, Profiler, Semantics, and Envelope."}
+{"kind":"slide","id":"sl/485eto","slide":2,"title":"设计哲学：确定性优先 (Deterministic-First)","textShapes":10}
+{"kind":"shape","id":"sh/r65wjudg","slide":2,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/gr2p8nqx","slide":2,"text":"设计哲学：确定性优先 (Deterministic-First)","textPreview":"设计哲学：确定性优先 (Deterministic-First)","textChars":32,"textLines":1,"bbox":[64,44,900,62]}
+{"kind":"textbox","id":"sh/9cvixcze","slide":2,"text":"克服传统的“端到端 LLM 盲猜”模式所带来的不可审计、幻觉和无法复现等致命缺陷。","textPreview":"克服传统的“端到端 LLM 盲猜”模式所带来的不可审计、幻觉和无法复现等致命缺陷。","textChars":41,"textLines":1,"bbox":[66,104,900,36]}
+{"kind":"shape","id":"sh/yxobm58z","slide":2,"bbox":[64,146,1120,2]}
+{"kind":"shape","id":"sh/nih4byhg","slide":2,"bbox":[78,202,330,200]}
+{"kind":"textbox","id":"sh/g3ex0nux","slide":2,"text":"程序主导物理提取","textPreview":"程序主导物理提取","textChars":8,"textLines":1,"bbox":[100,220,286,30]}
+{"kind":"textbox","id":"sh/5o7qpg3e","slide":2,"text":"用高度稳定的专属解析器读取物理结构，包括列名、dtype、shape和属性，确保底座绝对客观准确。","textPreview":"用高度稳定的专属解析器读取物理结构，包括列名、dtype、shape和属性，确保底座绝对客观准确。","textChars":49,"textLines":1,"bbox":[100,260,286,124]}
+{"kind":"shape","id":"sh/y1kre1w7","slide":2,"bbox":[474,202,330,200]}
+{"kind":"textbox","id":"sh/rmhk3q5o","slide":2,"text":"过程捕捉过程证据","textPreview":"过程捕捉过程证据","textChars":8,"textLines":1,"bbox":[496,220,286,30]}
+{"kind":"textbox","id":"sh/fa9w3m94","slide":2,"text":"在提取中自动保留物理决策对应的文件片断或行号，建立不可篡改的 EvidenceRecord 池。","textPreview":"在提取中自动保留物理决策对应的文件片断或行号，建立不可篡改的 EvidenceRecord 池。","textChars":48,"textLines":1,"bbox":[496,260,286,124]}
+{"kind":"shape","id":"sh/qpg3ex0n","slide":2,"bbox":[870,202,330,200]}
+{"kind":"textbox","id":"sh/xczed8v6","slide":2,"text":"受限语义增强合并","textPreview":"受限语义增强合并","textChars":8,"textLines":1,"bbox":[892,220,286,30]}
+{"kind":"textbox","id":"sh/8v6psfil","slide":2,"text":"LLM 只能修改特定语义字段，所有修改必须有证据文本支撑，且必须通过系统兼容性校验校验。","textPreview":"LLM 只能修改特定语义字段，所有修改必须有证据文本支撑，且必须通过系统兼容性校验校验。","textChars":44,"textLines":1,"bbox":[892,260,286,124]}
+{"kind":"textbox","id":"sh/fyxobm58","slide":2,"text":"核心边界规则：任何高级的语义推断都不能覆盖底层明确的物理/结构证据。","textPreview":"核心边界规则：任何高级的语义推断都不能覆盖底层明确的物理/结构证据。","textChars":34,"textLines":1,"bbox":[108,468,1060,48]}
+{"kind":"textbox","id":"sh/qd4vmtwr","slide":2,"text":"从文件输入到模式输出 (File In -> Schema Out) · 2/9","textPreview":"从文件输入到模式输出 (File In -> Schema Out) · 2/9","textChars":40,"textLines":1,"bbox":[64,678,600,24]}
+{"kind":"notes","id":"nt/485eto","slide":2,"text":"Explain the high-fidelity schema extraction pipeline stages: Intake, Extractor, Profiler, Semantics, and Envelope."}
+{"kind":"slide","id":"sl/3p1up4","slide":3,"title":"第一阶段：文件摄入与类型检测 (File Intake)","textShapes":12}
+{"kind":"shape","id":"sh/9s36hcrm","slide":3,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/y1kre1w7","slide":3,"text":"第一阶段：文件摄入与类型检测 (File Intake)","textPreview":"第一阶段：文件摄入与类型检测 (File Intake)","textChars":28,"textLines":1,"bbox":[64,44,900,62]}
+{"kind":"textbox","id":"sh/rmhk3q5o","slide":3,"text":"智能匹配解析器并提供多级降级防冲突机制。","textPreview":"智能匹配解析器并提供多级降级防冲突机制。","textChars":20,"textLines":1,"bbox":[66,104,900,36]}
+{"kind":"shape","id":"sh/gfmlkjm1","slide":3,"bbox":[64,146,1120,2]}
+{"kind":"shape","id":"sh/90je9cvi","slide":3,"bbox":[70,192,260,210]}
+{"kind":"textbox","id":"sh/yd0z6103","slide":3,"text":"1. 资源边界校验","textPreview":"1. 资源边界校验","textChars":9,"textLines":1,"bbox":[92,210,216,30]}
+{"kind":"textbox","id":"sh/rytsvu9k","slide":3,"text":"通过 _actual_resource_kind 判定是 file 还是 directory_store (如 Zarr)。若与指定预期不符，立即拦截报错。","textPreview":"通过 _actual_resource_kind 判定是 file 还是 directory_store (如 Zarr)。若与指定预期不符，立即拦截报错。","textChars":78,"textLines":1,"bbox":[92,250,216,134]}
+{"kind":"shape","id":"sh/gr2p8nqx","slide":3,"bbox":[355,192,260,210]}
+{"kind":"textbox","id":"sh/9cvixcze","slide":3,"text":"2. 多重信号探测","textPreview":"2. 多重信号探测","textChars":9,"textLines":1,"bbox":[377,210,216,30]}
+{"kind":"textbox","id":"sh/tovahoza","slide":3,"text":"● 魔数优先 (HDF5/Parquet/NetCDF)\n● 目录元数据探测 (Zarr)\n● 后缀解析\n● csv.Sniffer 文本分列探针","textPreview":"● 魔数优先 (HDF5/Parquet/NetCDF) | ● 目录元数据探测 (Zarr) | ● 后缀解析 | ● csv.Sniffer 文本分列探针","textChars":73,"textLines":4,"bbox":[377,250,216,134]}
+{"kind":"shape","id":"sh/032lszqt","slide":3,"bbox":[640,192,260,210]}
+{"kind":"textbox","id":"sh/bi9s36hc","slide":3,"text":"3. 优先级决策与重写","textPreview":"3. 优先级决策与重写","textChars":11,"textLines":1,"bbox":[662,210,216,30]}
+{"kind":"textbox","id":"sh/ixczed8v","slide":3,"text":"● Magic > Hint > Suffix > Text\n● 特殊重写：若 HDF5 包含 NetCDF4 特征且后缀为 .nc/.cdf，自动升级为 netcdf 信号。","textPreview":"● Magic > Hint > Suffix > Text | ● 特殊重写：若 HDF5 包含 NetCDF4 特征且后缀为 .nc/.cdf，自动升级为 netcdf 信号。","textChars":88,"textLines":2,"bbox":[662,250,216,134]}
+{"kind":"shape","id":"sh/p0bi9s36","slide":3,"bbox":[925,192,280,210]}
+{"kind":"textbox","id":"sh/0fepkzup","slide":3,"text":"4. 冲突判定与安全回退","textPreview":"4. 冲突判定与安全回退","textChars":12,"textLines":1,"bbox":[947,210,236,30]}
+{"kind":"textbox","id":"sh/bulwval8","slide":3,"text":"若 Magic 信号与用户 Hint 强冲突，系统将判定为 conflicted 并主动弃权，回退输出通用的 raw_binary 模式。","textPreview":"若 Magic 信号与用户 Hint 强冲突，系统将判定为 conflicted 并主动弃权，回退输出通用的 raw_binary 模式。","textChars":69,"textLines":1,"bbox":[947,250,236,134]}
+{"kind":"textbox","id":"sh/i9s36hcr","slide":3,"text":"通过此模块，系统实现了多模态原始文件与专属确定性提取器（Extractor）的精准、安全路由。","textPreview":"通过此模块，系统实现了多模态原始文件与专属确定性提取器（Extractor）的精准、安全路由。","textChars":47,"textLines":1,"bbox":[120,470,1040,60]}
+{"kind":"textbox","id":"sh/t47y1kre","slide":3,"text":"从文件输入到模式输出 (File In -> Schema Out) · 3/9","textPreview":"从文件输入到模式输出 (File In -> Schema Out) · 3/9","textChars":40,"textLines":1,"bbox":[64,678,600,24]}
+{"kind":"notes","id":"nt/3p1up4","slide":3,"text":"Explain the high-fidelity schema extraction pipeline stages: Intake, Extractor, Profiler, Semantics, and Envelope."}
+{"kind":"slide","id":"sl/6xijcl","slide":4,"title":"第二阶段：确定性结构提取 - CSV & JSON Extractor","textShapes":8}
+{"kind":"shape","id":"sh/cbulwval","slide":4,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/nqxs72x4","slide":4,"text":"第二阶段：确定性结构提取 - CSV & JSON Extractor","textPreview":"第二阶段：确定性结构提取 - CSV & JSON Extractor","textChars":35,"textLines":1,"bbox":[64,44,900,62]}
+{"kind":"textbox","id":"sh/u54zidon","slide":4,"text":"对半结构化与结构化文本实施“保守提取”与“路径遍历”策略。","textPreview":"对半结构化与结构化文本实施“保守提取”与“路径遍历”策略。","textChars":29,"textLines":1,"bbox":[66,104,900,36]}
+{"kind":"shape","id":"sh/5kb6xkf6","slide":4,"bbox":[64,146,1120,2]}
+{"kind":"shape","id":"sh/czed8v6p","slide":4,"bbox":[78,190,520,280]}
+{"kind":"textbox","id":"sh/neloj2t8","slide":4,"text":"CSV 提取器：保守类型推断与前导零保护","textPreview":"CSV 提取器：保守类型推断与前导零保护","textChars":20,"textLines":1,"bbox":[100,208,476,30]}
+{"kind":"textbox","id":"sh/ytsvu9kn","slide":4,"text":"● 读取表头，截取前 N 行（默认 200 行）作为样本。\n● int/float/datetime 必须在样本中获得 100% 成功解析。\n● 导入前导零检测 (_has_leading_zero)：如 '0123' 的纯数字字段强制推断为 string，避免邮编/电话丢失首字符。\n● 类型冲突时保守回退到 string，防止产生误导性物理主张。","textPreview":"● 读取表头，截取前 N 行（默认 200 行）作为样本。 | ● int/float/datetime 必须在样本中获得 100% 成功解析。 | ● 导入前导零检测 (_has_leading_zero)：如 '0123' 的纯数字字段强制推断为 string，避免邮编...","textChars":175,"textLines":4,"bbox":[100,248,476,204]}
+{"kind":"shape","id":"sh/58z25kb6","slide":4,"bbox":[678,190,520,280]}
+{"kind":"textbox","id":"sh/gn29gr2p","slide":4,"text":"JSON 提取器：单文档/多行模式与扁平树遍历","textPreview":"JSON 提取器：单文档/多行模式与扁平树遍历","textChars":23,"textLines":1,"bbox":[700,208,476,30]}
+{"kind":"textbox","id":"sh/u54zidon","slide":4,"text":"● 限制读取大小（16MB）以获得内存级保护。\n● 声明模式：若含有 properties，递归遍历解析标准定义，生成 declared claims；若有 values 则校验兼容性。\n● 观察模式：对于动态文档，启动递归遍历 visit(val, path, index)，将嵌套路径展开为扁平结构（例如 $.a.b[].c）。\n● 统计多级路径的空值率，不对语义进行猜测。","textPreview":"● 限制读取大小（16MB）以获得内存级保护。 | ● 声明模式：若含有 properties，递归遍历解析标准定义，生成 declared claims；若有 values 则校验兼容性。 | ● 观察模式：对于动态文档，启动递归遍历 visit(val, path, i...","textChars":189,"textLines":4,"bbox":[700,248,476,204]}
+{"kind":"textbox","id":"sh/nqxs72x4","slide":4,"text":"物理属性是数据集的基础指纹，确定性提取器只抓取客观可见的字段类型与形状。","textPreview":"物理属性是数据集的基础指纹，确定性提取器只抓取客观可见的字段类型与形状。","textChars":36,"textLines":1,"bbox":[120,510,1040,36]}
+{"kind":"textbox","id":"sh/cbulwval","slide":4,"text":"从文件输入到模式输出 (File In -> Schema Out) · 4/9","textPreview":"从文件输入到模式输出 (File In -> Schema Out) · 4/9","textChars":40,"textLines":1,"bbox":[64,678,600,24]}
+{"kind":"notes","id":"nt/6xijcl","slide":4,"text":"Explain the high-fidelity schema extraction pipeline stages: Intake, Extractor, Profiler, Semantics, and Envelope."}
+{"kind":"slide","id":"sl/yuyoad","slide":5,"title":"第二阶段：确定性结构提取 - Zarr & 多维元数据","textShapes":8}
+{"kind":"shape","id":"sh/nyd0z610","slide":5,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/cj6tovah","slide":5,"text":"第二阶段：确定性结构提取 - Zarr & 多维元数据","textPreview":"第二阶段：确定性结构提取 - Zarr & 多维元数据","textChars":27,"textLines":1,"bbox":[64,44,900,62]}
+{"kind":"textbox","id":"sh/54zidony","slide":5,"text":"多维科学数据的目录级只读元数据（Metadata-Only）高速提取。","textPreview":"多维科学数据的目录级只读元数据（Metadata-Only）高速提取。","textChars":35,"textLines":1,"bbox":[66,104,900,36]}
+{"kind":"shape","id":"sh/upwb2hwf","slide":5,"bbox":[64,146,1120,2]}
+{"kind":"shape","id":"sh/nap4r65w","slide":5,"bbox":[78,190,520,280]}
+{"kind":"textbox","id":"sh/cvixczed","slide":5,"text":"Zarr 提取器：合并元数据检索与版本检测","textPreview":"Zarr 提取器：合并元数据检索与版本检测","textChars":21,"textLines":1,"bbox":[100,208,476,30]}
+{"kind":"textbox","id":"sh/5gbq1ory","slide":5,"text":"● 深度扫描存储目录，优先读取合并元数据文档 .zmetadata 提升 I/O 效率；若缺失则降级遍历 .zgroup/.zarray。\n● 检测到 zarr_format == 3（Zarr v3）时，由于只支持 v2，抛出结构化错误并直接以 abstained 状态弃权。\n● 仅解析元数据，不下载或读取任何分片 chunk 载荷，保持极其高效的零 I/O 损耗。","textPreview":"● 深度扫描存储目录，优先读取合并元数据文档 .zmetadata 提升 I/O 效率；若缺失则降级遍历 .zgroup/.zarray。 | ● 检测到 zarr_format == 3（Zarr v3）时，由于只支持 v2，抛出结构化错误并直接以 abstained 状...","textChars":185,"textLines":3,"bbox":[100,248,476,204]}
+{"kind":"shape","id":"sh/u18jqh0f","slide":5,"bbox":[678,190,520,280]}
+{"kind":"textbox","id":"sh/jm1cfa9w","slide":5,"text":"坐标与多维关系解析 (Xarray & CF 约定)","textPreview":"坐标与多维关系解析 (Xarray & CF 约定)","textChars":26,"textLines":1,"bbox":[700,208,476,30]}
+{"kind":"textbox","id":"sh/b6xkf6dc","slide":5,"text":"● 维度计算：解析 _ARRAY_DIMENSIONS 获取高维数组大小。\n● 坐标系判定：基于 CF 约定，检测 axis(X/Y/Z/T)、units(degrees_north) 和 standard_name，识别为坐标系角色。\n● 物理类型直接由 dtype (如 float64) 投影，值域范围/空值等直接置为 unknown 记录元数据只读边界。","textPreview":"● 维度计算：解析 _ARRAY_DIMENSIONS 获取高维数组大小。 | ● 坐标系判定：基于 CF 约定，检测 axis(X/Y/Z/T)、units(degrees_north) 和 standard_name，识别为坐标系角色。 | ● 物理类型直接由 dtyp...","textChars":181,"textLines":3,"bbox":[700,248,476,204]}
+{"kind":"textbox","id":"sh/il0rqd4v","slide":5,"text":"对于科学数据集（NetCDF/HDF5/Zarr），利用 CF 约定能极大地加速数据空间组织维度的发现。","textPreview":"对于科学数据集（NetCDF/HDF5/Zarr），利用 CF 约定能极大地加速数据空间组织维度的发现。","textChars":52,"textLines":1,"bbox":[120,510,1040,36]}
+{"kind":"textbox","id":"sh/tcj6tova","slide":5,"text":"从文件输入到模式输出 (File In -> Schema Out) · 5/9","textPreview":"从文件输入到模式输出 (File In -> Schema Out) · 5/9","textChars":40,"textLines":1,"bbox":[64,678,600,24]}
+{"kind":"notes","id":"nt/yuyoad","slide":5,"text":"Explain the high-fidelity schema extraction pipeline stages: Intake, Extractor, Profiler, Semantics, and Envelope."}
+{"kind":"slide","id":"sl/kwpsh5","slide":6,"title":"第三阶段：数据剖析与时间/单位标准化","textShapes":10}
+{"kind":"shape","id":"sh/ed8bat47","slide":6,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/l0rqd4vm","slide":6,"text":"第三阶段：数据剖析与时间/单位标准化","textPreview":"第三阶段：数据剖析与时间/单位标准化","textChars":18,"textLines":1,"bbox":[64,44,900,62]}
+{"kind":"textbox","id":"sh/wfyxobm5","slide":6,"text":"通过计算方法论补充数据的外生语义，提供跨域标准化检索物料。","textPreview":"通过计算方法论补充数据的外生语义，提供跨域标准化检索物料。","textChars":29,"textLines":1,"bbox":[66,104,900,36]}
+{"kind":"shape","id":"sh/36hcrmhk","slide":6,"bbox":[64,146,1120,2]}
+{"kind":"shape","id":"sh/eloj2t83","slide":6,"bbox":[78,190,342,260]}
+{"kind":"textbox","id":"sh/lc7u54zi","slide":6,"text":"时间轴分析 (analyze_temporal_semantics)","textPreview":"时间轴分析 (analyze_temporal_semantics)","textChars":34,"textLines":1,"bbox":[100,208,298,30]}
+{"kind":"textbox","id":"sh/wra5gbq1","slide":6,"text":"对所有 datetime 与 组合的 year-month-day 字段打分，最高分者设为数据集唯一 Time Axis，更新逻辑类型为 time_axis。若存在分差 <= 0.05 的双重候选，输出 Ambiguous Time Axis 警告。","textPreview":"对所有 datetime 与 组合的 year-month-day 字段打分，最高分者设为数据集唯一 Time Axis，更新逻辑类型为 time_axis。若存在分差 <= 0.05 的双重候选，输出 Ambiguous Time Axis 警告。","textChars":125,"textLines":1,"bbox":[100,248,298,184]}
+{"kind":"shape","id":"sh/7adsji5s","slide":6,"bbox":[470,190,342,260]}
+{"kind":"textbox","id":"sh/epkzupwb","slide":6,"text":"时间特性计算","textPreview":"时间特性计算","textChars":6,"textLines":1,"bbox":[492,208,298,30]}
+{"kind":"textbox","id":"sh/8jqh0fep","slide":6,"text":"● 时区提取：检查 Naive/Aware 混合冲突。\n● 频率 (Frequency)：统计间隔 delta 众数（如 60s -> 1 minute）。\n● 规律性 (Regularity)：主频占比 >=95% 则标记为 regular。\n● 缺失区间：估计理论步长差得出漏检数。","textPreview":"● 时区提取：检查 Naive/Aware 混合冲突。 | ● 频率 (Frequency)：统计间隔 delta 众数（如 60s -> 1 minute）。 | ● 规律性 (Regularity)：主频占比 >=95% 则标记为 regular。 | ● 缺失区间：估...","textChars":143,"textLines":4,"bbox":[492,248,298,184]}
+{"kind":"shape","id":"sh/x4nap4r6","slide":6,"bbox":[862,190,342,260]}
+{"kind":"textbox","id":"sh/qd4vmtwr","slide":6,"text":"物理单位归一化 (normalize_unit)","textPreview":"物理单位归一化 (normalize_unit)","textChars":24,"textLines":1,"bbox":[884,208,298,30]}
+{"kind":"textbox","id":"sh/fyxobm58","slide":6,"text":"● 提取表头后缀或元数据中的单位（如 Celsius, mm）。\n● 通过 UNIT_ALIASES 字典投影出标准的 canonical_unit 与符合国际规范的 UCUM 编码。\n● 标记证据基础（hdf5_attr -> explicit_metadata）。","textPreview":"● 提取表头后缀或元数据中的单位（如 Celsius, mm）。 | ● 通过 UNIT_ALIASES 字典投影出标准的 canonical_unit 与符合国际规范的 UCUM 编码。 | ● 标记证据基础（hdf5_attr -> explicit_metadata）。","textChars":134,"textLines":3,"bbox":[884,248,298,184]}
+{"kind":"textbox","id":"sh/8v6psfil","slide":6,"text":"此阶段在纯物理描述的基础上，建立起具备科学检索意义的“时间网格”与“归一化单位”。","textPreview":"此阶段在纯物理描述的基础上，建立起具备科学检索意义的“时间网格”与“归一化单位”。","textChars":41,"textLines":1,"bbox":[120,500,1040,36]}
+{"kind":"textbox","id":"sh/xczed8v6","slide":6,"text":"从文件输入到模式输出 (File In -> Schema Out) · 6/9","textPreview":"从文件输入到模式输出 (File In -> Schema Out) · 6/9","textChars":40,"textLines":1,"bbox":[64,678,600,24]}
+{"kind":"notes","id":"nt/kwpsh5","slide":6,"text":"Explain the high-fidelity schema extraction pipeline stages: Intake, Extractor, Profiler, Semantics, and Envelope."}
+{"kind":"slide","id":"sl/9ckkel","slide":7,"title":"第四阶段：语义增强与安全合并 (Semantic Layer)","textShapes":8}
+{"kind":"shape","id":"sh/re1w7mp0","slide":7,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/kzupwb2h","slide":7,"text":"第四阶段：语义增强与安全合并 (Semantic Layer)","textPreview":"第四阶段：语义增强与安全合并 (Semantic Layer)","textChars":31,"textLines":1,"bbox":[64,44,900,62]}
+{"kind":"textbox","id":"sh/9knih4by","slide":7,"text":"如何安全引入 LLM 对无结构 README 进行解读并合入确定性 Schema。","textPreview":"如何安全引入 LLM 对无结构 README 进行解读并合入确定性 Schema。","textChars":41,"textLines":1,"bbox":[66,104,900,36]}
+{"kind":"shape","id":"sh/25kb6xkf","slide":7,"bbox":[64,146,1120,2]}
+{"kind":"shape","id":"sh/rqd4vmtw","slide":7,"bbox":[78,190,520,280]}
+{"kind":"textbox","id":"sh/kb6xkf6d","slide":7,"text":"1. 受限任务包构建与系统规则约束","textPreview":"1. 受限任务包构建与系统规则约束","textChars":17,"textLines":1,"bbox":[100,208,476,30]}
+{"kind":"textbox","id":"sh/9w3m94fu","slide":7,"text":"● 将物理 Schema 与外部 README 片段（GroundingSnippet）一起打包成 Context。\n● 注入 SYSTEM_RULES：严禁编造物理字段，推断必须附带 README 原文作为 supporting_evidence，无把握必须填 unknown。\n● 模型只能提议 semantic_type, logical_type, unit 以及 文本描述 description。","textPreview":"● 将物理 Schema 与外部 README 片段（GroundingSnippet）一起打包成 Context。 | ● 注入 SYSTEM_RULES：严禁编造物理字段，推断必须附带 README 原文作为 supporting_evidence，无把握必须填 unk...","textChars":204,"textLines":3,"bbox":[100,248,476,204]}
+{"kind":"shape","id":"sh/2hwfyxob","slide":7,"bbox":[678,190,520,280]}
+{"kind":"textbox","id":"sh/r2p8nqxs","slide":7,"text":"2. 强校验与安全合并规则 (Validator & Merger)","textPreview":"2. 强校验与安全合并规则 (Validator & Merger)","textChars":34,"textLines":1,"bbox":[700,208,476,30]}
+{"kind":"textbox","id":"sh/7ed8bat4","slide":7,"text":"● 无证据拒绝：提议修改但 supporting_evidence 为空，触发 unsupported_annotation 冲突并抛弃。\n● 兼容性拦截：校验逻辑与语义分类兼容性（如 latitude 不允许设为 measurement）。\n● 确定性保护：若物理引擎已获取明确信息，直接冲突者一律予以拒绝，仅在完全兼容且 LLM 置信度 >= 0.85 时，允许精细化覆写。","textPreview":"● 无证据拒绝：提议修改但 supporting_evidence 为空，触发 unsupported_annotation 冲突并抛弃。 | ● 兼容性拦截：校验逻辑与语义分类兼容性（如 latitude 不允许设为 measurement）。 | ● 确定性保护：若物理...","textChars":189,"textLines":3,"bbox":[700,248,476,204]}
+{"kind":"textbox","id":"sh/itgfmlkj","slide":7,"text":"安全规则核心：宁可由于缺乏证据选择 unknown，也绝不无端猜测 (Prefer unknown over unsupported guessing)。","textPreview":"安全规则核心：宁可由于缺乏证据选择 unknown，也绝不无端猜测 (Prefer unknown over unsupported guessing)。","textChars":77,"textLines":1,"bbox":[120,510,1040,36]}
+{"kind":"textbox","id":"sh/pkzupwb2","slide":7,"text":"从文件输入到模式输出 (File In -> Schema Out) · 7/9","textPreview":"从文件输入到模式输出 (File In -> Schema Out) · 7/9","textChars":40,"textLines":1,"bbox":[64,678,600,24]}
+{"kind":"notes","id":"nt/9ckkel","slide":7,"text":"Explain the high-fidelity schema extraction pipeline stages: Intake, Extractor, Profiler, Semantics, and Envelope."}
+{"kind":"slide","id":"sl/mh7g4c","slide":8,"title":"第五阶段：统一信封投影 - 证据与主张图谱","textShapes":8}
+{"kind":"shape","id":"sh/gfmlkjm1","slide":8,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/rytsvu9k","slide":8,"text":"第五阶段：统一信封投影 - 证据与主张图谱","textPreview":"第五阶段：统一信封投影 - 证据与主张图谱","textChars":21,"textLines":1,"bbox":[64,44,900,62]}
+{"kind":"textbox","id":"sh/yd0z6103","slide":8,"text":"将处理结果投影为全局唯一、主张与证据分离的 Schema Envelope。","textPreview":"将处理结果投影为全局唯一、主张与证据分离的 Schema Envelope。","textChars":38,"textLines":1,"bbox":[66,104,900,36]}
+{"kind":"shape","id":"sh/9s36hcrm","slide":8,"bbox":[64,146,1120,2]}
+{"kind":"shape","id":"sh/g7adsji5","slide":8,"bbox":[78,190,520,280]}
+{"kind":"textbox","id":"sh/rmhk3q5o","slide":8,"text":"全局去重证据库 (evidence)","textPreview":"全局去重证据库 (evidence)","textChars":18,"textLines":1,"bbox":[100,208,476,30]}
+{"kind":"textbox","id":"sh/y1kre1w7","slide":8,"text":"信封顶层包含全局 evidence 列表。每一个证据均分配有唯一的 ID（如 e0001, e0002），记录它的获取层级（tier: structural/statistical/explicit_metadata）、来源文件路径、详情细节以及记录时的置信度度量。","textPreview":"信封顶层包含全局 evidence 列表。每一个证据均分配有唯一的 ID（如 e0001, e0002），记录它的获取层级（tier: structural/statistical/explicit_metadata）、来源文件路径、详情细节以及记录时的置信度度量。","textChars":133,"textLines":1,"bbox":[100,248,476,204]}
+{"kind":"shape","id":"sh/5o7qpg3e","slide":8,"bbox":[678,190,520,280]}
+{"kind":"textbox","id":"sh/g3ex0nux","slide":8,"text":"模式主张列表 (claims)","textPreview":"模式主张列表 (claims)","textChars":15,"textLines":1,"bbox":[700,208,476,30]}
+{"kind":"textbox","id":"sh/m94fu18j","slide":8,"text":"信封将物理、逻辑、语义和单位都抽象为原子主张。每个主张包含 claim_id，规定它的主体（field_path）、属性类别、推断值，并最关键地通过 evidence_refs 指向对应的 evidence_id（可复数），完成完整证据图谱绑定。","textPreview":"信封将物理、逻辑、语义和单位都抽象为原子主张。每个主张包含 claim_id，规定它的主体（field_path）、属性类别、推断值，并最关键地通过 evidence_refs 指向对应的 evidence_id（可复数），完成完整证据图谱绑定。","textChars":123,"textLines":1,"bbox":[700,248,476,204]}
+{"kind":"textbox","id":"sh/fu18jqh0","slide":8,"text":"投影模型使得最终输出不再是一个无解释的属性列表，而是一个“每一项推断均可向下溯源至具体事实”的证据图谱。","textPreview":"投影模型使得最终输出不再是一个无解释的属性列表，而是一个“每一项推断均可向下溯源至具体事实”的证据图谱。","textChars":52,"textLines":1,"bbox":[120,500,1040,60]}
+{"kind":"textbox","id":"sh/4fu18jqh","slide":8,"text":"从文件输入到模式输出 (File In -> Schema Out) · 8/9","textPreview":"从文件输入到模式输出 (File In -> Schema Out) · 8/9","textChars":40,"textLines":1,"bbox":[64,678,600,24]}
+{"kind":"notes","id":"nt/mh7g4c","slide":8,"text":"Explain the high-fidelity schema extraction pipeline stages: Intake, Extractor, Profiler, Semantics, and Envelope."}
+{"kind":"slide","id":"sl/hd3lto","slide":9,"title":"全流程实例串联：Buoy Sensor Data Ingestion","textShapes":19}
+{"kind":"shape","id":"sh/8bat47y1","slide":9,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/jqh0fepk","slide":9,"text":"全流程实例串联：Buoy Sensor Data Ingestion","textPreview":"全流程实例串联：Buoy Sensor Data Ingestion","textChars":34,"textLines":1,"bbox":[64,44,900,62]}
+{"kind":"textbox","id":"sh/q5o7qpg3","slide":9,"text":"展示一份浮标 CSV 数据是如何变成规范化模式信封的。","textPreview":"展示一份浮标 CSV 数据是如何变成规范化模式信封的。","textChars":27,"textLines":1,"bbox":[66,104,900,36]}
+{"kind":"shape","id":"sh/18jqh0fe","slide":9,"bbox":[64,146,1120,2]}
+{"kind":"textbox","id":"sh/8nqxs72x","slide":9,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[100,183,44,44]}
+{"kind":"textbox","id":"sh/j2t83itg","slide":9,"text":"探测与路由","textPreview":"探测与路由","textChars":5,"textLines":1,"bbox":[172,178,420,26]}
+{"kind":"textbox","id":"sh/qh0fepkz","slide":9,"text":"Buoy CSV 文件被送入，魔数无，后缀匹配，Sniffer 解析判定为 csv 格式。","textPreview":"Buoy CSV 文件被送入，魔数无，后缀匹配，Sniffer 解析判定为 csv 格式。","textChars":45,"textLines":1,"bbox":[172,206,920,24]}
+{"kind":"textbox","id":"sh/1cfa9w3m","slide":9,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[100,275,44,44]}
+{"kind":"textbox","id":"sh/crmhk3q5","slide":9,"text":"确定性物理推断","textPreview":"确定性物理推断","textChars":7,"textLines":1,"bbox":[172,270,420,26]}
+{"kind":"textbox","id":"sh/2t83itgf","slide":9,"text":"ts_utc 为 datetime，water_temp_c 为 float，buoy_id (带 0 开头) 强制判定为 string 防止丢失 ID 精度。","textPreview":"ts_utc 为 datetime，water_temp_c 为 float，buoy_id (带 0 开头) 强制判定为 string 防止丢失 ID 精度。","textChars":80,"textLines":1,"bbox":[172,298,920,24]}
+{"kind":"textbox","id":"sh/re1w7mp0","slide":9,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[100,367,44,44]}
+{"kind":"textbox","id":"sh/kzupwb2h","slide":9,"text":"概要特征分析","textPreview":"概要特征分析","textChars":6,"textLines":1,"bbox":[172,362,420,26]}
+{"kind":"textbox","id":"sh/9knih4by","slide":9,"text":"ts_utc 设为 time_axis；判定间隔为 60s/regular；表头 water_temp_c 转换并归一化为 Celsius。","textPreview":"ts_utc 设为 time_axis；判定间隔为 60s/regular；表头 water_temp_c 转换并归一化为 Celsius。","textChars":70,"textLines":1,"bbox":[172,390,920,24]}
+{"kind":"textbox","id":"sh/25kb6xkf","slide":9,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[100,459,44,44]}
+{"kind":"textbox","id":"sh/rqd4vmtw","slide":9,"text":"LLM 语义注入与合并","textPreview":"LLM 语义注入与合并","textChars":11,"textLines":1,"bbox":[172,454,420,26]}
+{"kind":"textbox","id":"sh/kb6xkf6d","slide":9,"text":"根据 README 提示，LLM 提议将 flag 字段的语义设为 quality_flag。提供证据，检查兼容性后安全合入。","textPreview":"根据 README 提示，LLM 提议将 flag 字段的语义设为 quality_flag。提供证据，检查兼容性后安全合入。","textChars":63,"textLines":1,"bbox":[172,482,920,24]}
+{"kind":"textbox","id":"sh/9w3m94fu","slide":9,"text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[100,551,44,44]}
+{"kind":"textbox","id":"sh/2hwfyxob","slide":9,"text":"模式信封统一生成","textPreview":"模式信封统一生成","textChars":8,"textLines":1,"bbox":[172,546,420,26]}
+{"kind":"textbox","id":"sh/r2p8nqxs","slide":9,"text":"输出统一 Envelope。生成 claims，关联对应的 e0001 (表头名) 和 e0002 (README 引用)。","textPreview":"输出统一 Envelope。生成 claims，关联对应的 e0001 (表头名) 和 e0002 (README 引用)。","textChars":62,"textLines":1,"bbox":[172,574,920,24]}
+{"kind":"textbox","id":"sh/j2t83itg","slide":9,"text":"结论：通过确定性打底与受约束的 LLM 语义充实，实现了安全、可溯源的高保真元数据检索基础。","textPreview":"结论：通过确定性打底与受约束的 LLM 语义充实，实现了安全、可溯源的高保真元数据检索基础。","textChars":46,"textLines":1,"bbox":[166,618,940,36]}
+{"kind":"textbox","id":"sh/qh0fepkz","slide":9,"text":"从文件输入到模式输出 (File In -> Schema Out) · 9/9","textPreview":"从文件输入到模式输出 (File In -> Schema Out) · 9/9","textChars":40,"textLines":1,"bbox":[64,678,600,24]}
+{"kind":"notes","id":"nt/hd3lto","slide":9,"text":"Explain the high-fidelity schema extraction pipeline stages: Intake, Extractor, Profiler, Semantics, and Envelope."}

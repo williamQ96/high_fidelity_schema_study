@@ -1,0 +1,386 @@
+{"kind":"deck","id":"pr/m7ml71","name":"Deck"}
+{"kind":"layout","layoutId":"513f375e-2e24-4351-a78b-97f78b6844bc","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"29b1f125-faf5-4a84-bd98-22e2e082e0f7","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/qp9spj","slide":1,"title":"From Raw Data to Trusted Schema Output","textShapes":13}
+{"kind":"shape","id":"sh/ra5gbq1o","slide":1,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/gvy90je9","slide":1,"text":"From Raw Data to Trusted Schema Output","textPreview":"From Raw Data to Trusted Schema Output","textChars":38,"textLines":1,"bbox":[70,78,910,72]}
+{"kind":"textbox","id":"sh/9gr2p8nq","slide":1,"text":"Current repository pipeline, grounded in inspected code","textPreview":"Current repository pipeline, grounded in inspected code","textChars":55,"textLines":1,"bbox":[74,154,760,34]}
+{"kind":"shape","id":"sh/2hwfyxob","slide":1,"bbox":[78,252,680,92]}
+{"kind":"shape","id":"sh/r2p8nqxs","slide":1,"bbox":[78,252,8,92]}
+{"kind":"textbox","id":"sh/kjm1cfa9","slide":1,"text":"Canonical stance: deterministic-first extraction, evidence-backed claims, explicit unknown/conflict/abstention states.","textPreview":"Canonical stance: deterministic-first extraction, evidence-backed claims, explicit unknown/conflict/abstention states.","textChars":118,"textLines":1,"bbox":[100,266,642,70]}
+{"kind":"shape","id":"sh/94fu18jq","slide":1,"bbox":[820,84,330,112]}
+{"kind":"textbox","id":"sh/25kb6xkf","slide":1,"text":"Primary API","textPreview":"Primary API","textChars":11,"textLines":1,"bbox":[838,98,294,26]}
+{"kind":"textbox","id":"sh/rqd4vmtw","slide":1,"text":"extractors/registry.py::extract_path(ExtractionRequest)","textPreview":"extractors/registry.py::extract_path(ExtractionRequest)","textChars":55,"textLines":1,"bbox":[838,132,294,50]}
+{"kind":"shape","id":"sh/jm1cfa9w","slide":1,"bbox":[820,224,330,112]}
+{"kind":"textbox","id":"sh/u18jqh0f","slide":1,"text":"Output Forms","textPreview":"Output Forms","textChars":12,"textLines":1,"bbox":[838,238,294,26]}
+{"kind":"textbox","id":"sh/1orytsvu","slide":1,"text":"ExtractionOutcome.to_dict() and unified_schema.py::build_unified_schema_envelope()","textPreview":"ExtractionOutcome.to_dict() and unified_schema.py::build_unified_schema_envelope()","textChars":82,"textLines":1,"bbox":[838,272,294,50]}
+{"kind":"shape","id":"sh/c7u54zid","slide":1,"bbox":[820,364,330,112]}
+{"kind":"textbox","id":"sh/judg7ads","slide":1,"text":"Optional Semantic Layer","textPreview":"Optional Semantic Layer","textChars":23,"textLines":1,"bbox":[838,378,294,26]}
+{"kind":"textbox","id":"sh/u9knih4b","slide":1,"text":"semantic_annotate.py and merge_semantic_annotations.py; downstream, evidence-constrained","textPreview":"semantic_annotate.py and merge_semantic_annotations.py; downstream, evidence-constrained","textChars":88,"textLines":1,"bbox":[838,412,294,50]}
+{"kind":"textbox","id":"sh/1032lszq","slide":1,"text":"No LLM-first schema guessing","textPreview":"No LLM-first schema guessing","textChars":28,"textLines":1,"bbox":[78,396,242,32]}
+{"kind":"textbox","id":"sh/cfa9w3m9","slide":1,"text":"Registered extractors only","textPreview":"Registered extractors only","textChars":26,"textLines":1,"bbox":[338,396,218,32]}
+{"kind":"textbox","id":"sh/nyd0z610","slide":1,"text":"Traceable claims","textPreview":"Traceable claims","textChars":16,"textLines":1,"bbox":[574,396,168,32]}
+{"kind":"textbox","id":"sh/udg7adsj","slide":1,"text":"Inspected code: CLI, registry, extractors, dataclasses, validators, semantic annotation, merge policy, provenance builder, GUI path, tests, docs.","textPreview":"Inspected code: CLI, registry, extractors, dataclasses, validators, semantic annotation, merge policy, provenance builder, GUI path, test...","textChars":145,"textLines":1,"bbox":[80,604,1040,36]}
+{"kind":"notes","id":"nt/qp9spj","slide":1,"text":"Open by emphasizing that this is not an invented architecture. The deck is grounded in the actual repository: cli.py, extractors/registry.py, each extractor module, semantic_layer.py, unified_schema.py, provenance/test files, and README/docs."}
+{"kind":"slide","id":"sl/bswb5t","slide":2,"title":"What Problem Schema Extraction Solves","textShapes":10}
+{"kind":"shape","id":"sh/neloj2t8","slide":2,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/czed8v6p","slide":2,"text":"What Problem Schema Extraction Solves","textPreview":"What Problem Schema Extraction Solves","textChars":37,"textLines":1,"bbox":[58,42,900,52]}
+{"kind":"textbox","id":"sh/5kb6xkf6","slide":2,"text":"Turn heterogeneous scientific files into auditable structure without unsupported invention.","textPreview":"Turn heterogeneous scientific files into auditable structure without unsupported invention.","textChars":91,"textLines":1,"bbox":[60,94,1000,34]}
+{"kind":"shape","id":"sh/u54zidon","slide":2,"bbox":[58,136,1116,2]}
+{"kind":"textbox","id":"sh/nqxs72x4","slide":2,"text":"Current schema extraction pipeline | 2/16","textPreview":"Current schema extraction pipeline | 2/16","textChars":41,"textLines":1,"bbox":[58,682,380,20]}
+{"kind":"shape","id":"sh/cbulwval","slide":2,"bbox":[78,190,342,210]}
+{"kind":"textbox","id":"sh/5sneloj2","slide":2,"text":"Input Reality","textPreview":"Input Reality","textChars":13,"textLines":1,"bbox":[96,204,306,26]}
+{"kind":"textbox","id":"sh/y90je9cv","slide":2,"text":"CSV tables, HDF5 hierarchies, NetCDF/CF variables, Zarr directory stores, Parquet footers, JSON/XML structures, and opaque files all expose schema differently.","textPreview":"CSV tables, HDF5 hierarchies, NetCDF/CF variables, Zarr directory stores, Parquet footers, JSON/XML structures, and opaque files all expo...","textChars":159,"textLines":1,"bbox":[96,238,306,148]}
+{"kind":"shape","id":"sh/nuxc3ylc","slide":2,"bbox":[470,190,342,210]}
+{"kind":"textbox","id":"sh/36hcrmhk","slide":2,"text":"Needed Output","textPreview":"Needed Output","textChars":13,"textLines":1,"bbox":[488,204,306,26]}
+{"kind":"textbox","id":"sh/eloj2t83","slide":2,"text":"A structured schema with fields, paths, dtypes, shapes, units, logical roles, temporal properties, claim states, evidence, issues, and provenance.","textPreview":"A structured schema with fields, paths, dtypes, shapes, units, logical roles, temporal properties, claim states, evidence, issues, and pr...","textChars":146,"textLines":1,"bbox":[488,238,306,148]}
+{"kind":"shape","id":"sh/lc7u54zi","slide":2,"bbox":[862,190,342,210]}
+{"kind":"textbox","id":"sh/wra5gbq1","slide":2,"text":"Trust Requirement","textPreview":"Trust Requirement","textChars":17,"textLines":1,"bbox":[880,204,306,26]}
+{"kind":"textbox","id":"sh/7u54zido","slide":2,"text":"The code prefers unknown, conflicted, partial, failed, or abstained states over hallucinated fields or silent promotion of weak evidence.","textPreview":"The code prefers unknown, conflicted, partial, failed, or abstained states over hallucinated fields or silent promotion of weak evidence.","textChars":137,"textLines":1,"bbox":[880,238,306,148]}
+{"kind":"shape","id":"sh/ed8bat47","slide":2,"bbox":[112,468,1010,78]}
+{"kind":"shape","id":"sh/l0rqd4vm","slide":2,"bbox":[112,468,8,78]}
+{"kind":"textbox","id":"sh/wfyxobm5","slide":2,"text":"README.md states the canonical job narrowly: establish the strongest schema supported by file structure, explicit metadata, deterministic validators, and recorded evidence.","textPreview":"README.md states the canonical job narrowly: establish the strongest schema supported by file structure, explicit metadata, deterministic...","textChars":172,"textLines":1,"bbox":[134,482,972,56]}
+{"kind":"notes","id":"nt/bswb5t","slide":2,"text":"The repository frames schema extraction as a controlled substrate for later use by retrieval or agents. The goal is not broad autonomous interpretation; it is a strong, defensible schema surface."}
+{"kind":"slide","id":"sl/nwz9hn","slide":3,"title":"Real Entry Points and Output Contracts","textShapes":15}
+{"kind":"shape","id":"sh/i5sneloj","slide":3,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/pwb2hwfy","slide":3,"text":"Real Entry Points and Output Contracts","textPreview":"Real Entry Points and Output Contracts","textChars":38,"textLines":1,"bbox":[58,42,900,52]}
+{"kind":"textbox","id":"sh/0bi9s36h","slide":3,"text":"The current code exposes both legacy format-specific commands and the registry-backed generic path.","textPreview":"The current code exposes both legacy format-specific commands and the registry-backed generic path.","textChars":99,"textLines":1,"bbox":[60,94,1000,34]}
+{"kind":"shape","id":"sh/7y1kre1w","slide":3,"bbox":[58,136,1116,2]}
+{"kind":"textbox","id":"sh/ed8v6psf","slide":3,"text":"Current schema extraction pipeline | 3/16","textPreview":"Current schema extraction pipeline | 3/16","textChars":41,"textLines":1,"bbox":[58,682,380,20]}
+{"kind":"shape","id":"sh/p4r65wju","slide":3,"bbox":[78,178,360,160]}
+{"kind":"textbox","id":"sh/wjudg7ad","slide":3,"text":"CLI","textPreview":"CLI","textChars":3,"textLines":1,"bbox":[96,192,324,26]}
+{"kind":"textbox","id":"sh/72x4nap4","slide":3,"text":"cli.py::main()\n\nCommands: extract, extract-csv, extract-hdf5, evaluate, agent-export.\n\nGeneric extract supports --output-shape legacy|envelope|both.","textPreview":"cli.py::main() |  | Commands: extract, extract-csv, extract-hdf5, evaluate, agent-export. |  | Generic extract supports --output-shape le...","textChars":148,"textLines":5,"bbox":[96,226,324,98]}
+{"kind":"shape","id":"sh/ih4byhgn","slide":3,"bbox":[460,178,360,160]}
+{"kind":"textbox","id":"sh/032lszqt","slide":3,"text":"Programmatic API","textPreview":"Programmatic API","textChars":16,"textLines":1,"bbox":[478,192,324,26]}
+{"kind":"textbox","id":"sh/tovahoza","slide":3,"text":"extractors/registry.py::extract_path(request)\n\nInput: ExtractionRequest(path, format_hint, sample_limit, resource_kind).\n\nOutput: ExtractionOutcome(status, format_decision, extractor, schema, issues).","textPreview":"extractors/registry.py::extract_path(request) |  | Input: ExtractionRequest(path, format_hint, sample_limit, resource_kind). |  | Output:...","textChars":200,"textLines":5,"bbox":[478,226,324,98]}
+{"kind":"shape","id":"sh/ixczed8v","slide":3,"bbox":[842,178,360,160]}
+{"kind":"textbox","id":"sh/bi9s36hc","slide":3,"text":"GUI/API Upload","textPreview":"GUI/API Upload","textChars":14,"textLines":1,"bbox":[860,192,324,26]}
+{"kind":"textbox","id":"sh/0fepkzup","slide":3,"text":"gui_demo/server.py::extract_uploaded_schema()\n\nRoutes uploads through extract_path, preserves legacy schema, adds extraction_outcome and unified_schema_envelope.","textPreview":"gui_demo/server.py::extract_uploaded_schema() |  | Routes uploads through extract_path, preserves legacy schema, adds extraction_outcome ...","textChars":161,"textLines":3,"bbox":[860,226,324,98]}
+{"kind":"shape","id":"sh/p0bi9s36","slide":3,"bbox":[78,398,360,130]}
+{"kind":"textbox","id":"sh/i9s36hcr","slide":3,"text":"Legacy Schema","textPreview":"Legacy Schema","textChars":13,"textLines":1,"bbox":[96,412,324,26]}
+{"kind":"textbox","id":"sh/bulwval8","slide":3,"text":"models.py::DatasetSchema and FieldSchema hold physical/logical/semantic fields plus EvidenceRecord lists.","textPreview":"models.py::DatasetSchema and FieldSchema hold physical/logical/semantic fields plus EvidenceRecord lists.","textChars":105,"textLines":1,"bbox":[96,446,324,68]}
+{"kind":"shape","id":"sh/0je9cvix","slide":3,"bbox":[460,398,360,130]}
+{"kind":"textbox","id":"sh/t47y1kre","slide":3,"text":"Unified Envelope","textPreview":"Unified Envelope","textChars":16,"textLines":1,"bbox":[478,412,324,26]}
+{"kind":"textbox","id":"sh/xobm58z2","slide":3,"text":"unified_schema.py::build_unified_schema_envelope() normalizes claims, evidence, conflicts, abstentions, provenance, and evaluation metadata.","textPreview":"unified_schema.py::build_unified_schema_envelope() normalizes claims, evidence, conflicts, abstentions, provenance, and evaluation metadata.","textChars":140,"textLines":1,"bbox":[478,446,324,68]}
+{"kind":"shape","id":"sh/83itgfml","slide":3,"bbox":[842,398,360,130]}
+{"kind":"textbox","id":"sh/fil0rqd4","slide":3,"text":"Agent Export","textPreview":"Agent Export","textChars":12,"textLines":1,"bbox":[860,412,324,26]}
+{"kind":"textbox","id":"sh/qxs72x4n","slide":3,"text":"agent_exports.py::export_agent_bundle() creates read-only bundles with canonical_mutation_allowed=false.","textPreview":"agent_exports.py::export_agent_bundle() creates read-only bundles with canonical_mutation_allowed=false.","textChars":104,"textLines":1,"bbox":[860,446,324,68]}
+{"kind":"notes","id":"nt/nwz9hn","slide":3,"text":"This slide names the real hooks. For most technical audiences, the important point is that the generic path is extract_path, while older CSV/HDF5 commands remain for backward compatibility."}
+{"kind":"slide","id":"sl/wr96jf","slide":4,"title":"Input Data: Sources, Formats, Assumptions","textShapes":28}
+{"kind":"shape","id":"sh/0nuxc3yl","slide":4,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/72x4nap4","slide":4,"text":"Input Data: Sources, Formats, Assumptions","textPreview":"Input Data: Sources, Formats, Assumptions","textChars":41,"textLines":1,"bbox":[58,42,900,52]}
+{"kind":"textbox","id":"sh/ih4byhgn","slide":4,"text":"Accepted input forms are registered explicitly in EXTRACTOR_CAPABILITIES.","textPreview":"Accepted input forms are registered explicitly in EXTRACTOR_CAPABILITIES.","textChars":73,"textLines":1,"bbox":[60,94,1000,34]}
+{"kind":"shape","id":"sh/pkzupwb2","slide":4,"bbox":[58,136,1116,2]}
+{"kind":"textbox","id":"sh/0z61032l","slide":4,"text":"Current schema extraction pipeline | 4/16","textPreview":"Current schema extraction pipeline | 4/16","textChars":41,"textLines":1,"bbox":[58,682,380,20]}
+{"kind":"shape","id":"sh/7ed8bat4","slide":4,"bbox":[78,178,1124,46]}
+{"kind":"textbox","id":"sh/itgfmlkj","slide":4,"text":"CSV/TSV","textPreview":"CSV/TSV","textChars":7,"textLines":1,"bbox":[96,190,150,22]}
+{"kind":"textbox","id":"sh/pwb2hwfy","slide":4,"text":"file","textPreview":"file","textChars":4,"textLines":1,"bbox":[270,190,160,22]}
+{"kind":"textbox","id":"sh/0bi9s36h","slide":4,"text":"headers + sampled rows; sample_limit default 200","textPreview":"headers + sampled rows; sample_limit default 200","textChars":48,"textLines":1,"bbox":[470,190,700,22]}
+{"kind":"shape","id":"sh/u18jqh0f","slide":4,"bbox":[78,226,1124,46]}
+{"kind":"textbox","id":"sh/jm1cfa9w","slide":4,"text":"HDF5","textPreview":"HDF5","textChars":4,"textLines":1,"bbox":[96,238,150,22]}
+{"kind":"textbox","id":"sh/c7u54zid","slide":4,"text":"file","textPreview":"file","textChars":4,"textLines":1,"bbox":[270,238,160,22]}
+{"kind":"textbox","id":"sh/1orytsvu","slide":4,"text":"groups/datasets/attrs via h5py","textPreview":"groups/datasets/attrs via h5py","textChars":30,"textLines":1,"bbox":[470,238,700,22]}
+{"kind":"shape","id":"sh/u9knih4b","slide":4,"bbox":[78,274,1124,46]}
+{"kind":"textbox","id":"sh/judg7ads","slide":4,"text":"NetCDF/CF","textPreview":"NetCDF/CF","textChars":9,"textLines":1,"bbox":[96,286,150,22]}
+{"kind":"textbox","id":"sh/cfa9w3m9","slide":4,"text":"file","textPreview":"file","textChars":4,"textLines":1,"bbox":[270,286,160,22]}
+{"kind":"textbox","id":"sh/1032lszq","slide":4,"text":"classic magic or HDF5-backed .nc with NetCDF4 markers","textPreview":"classic magic or HDF5-backed .nc with NetCDF4 markers","textChars":53,"textLines":1,"bbox":[470,286,700,22]}
+{"kind":"shape","id":"sh/udg7adsj","slide":4,"bbox":[78,322,1124,46]}
+{"kind":"textbox","id":"sh/nyd0z610","slide":4,"text":"Zarr v2","textPreview":"Zarr v2","textChars":7,"textLines":1,"bbox":[96,334,150,22]}
+{"kind":"textbox","id":"sh/fu18jqh0","slide":4,"text":"directory_store","textPreview":"directory_store","textChars":15,"textLines":1,"bbox":[270,334,160,22]}
+{"kind":"textbox","id":"sh/m94fu18j","slide":4,"text":"local metadata docs only; no chunk payload reads","textPreview":"local metadata docs only; no chunk payload reads","textChars":48,"textLines":1,"bbox":[470,334,700,22]}
+{"kind":"shape","id":"sh/x0nuxc3y","slide":4,"bbox":[78,370,1124,46]}
+{"kind":"textbox","id":"sh/4fu18jqh","slide":4,"text":"Parquet","textPreview":"Parquet","textChars":7,"textLines":1,"bbox":[96,382,150,22]}
+{"kind":"textbox","id":"sh/fil0rqd4","slide":4,"text":"file","textPreview":"file","textChars":4,"textLines":1,"bbox":[270,382,160,22]}
+{"kind":"textbox","id":"sh/qxs72x4n","slide":4,"text":"footer and Arrow schema via pyarrow; no row reads","textPreview":"footer and Arrow schema via pyarrow; no row reads","textChars":49,"textLines":1,"bbox":[470,382,700,22]}
+{"kind":"shape","id":"sh/xobm58z2","slide":4,"bbox":[78,418,1124,46]}
+{"kind":"textbox","id":"sh/83itgfml","slide":4,"text":"JSON/JSONL","textPreview":"JSON/JSONL","textChars":10,"textLines":1,"bbox":[96,430,150,22]}
+{"kind":"textbox","id":"sh/fepkzupw","slide":4,"text":"file","textPreview":"file","textChars":4,"textLines":1,"bbox":[270,430,160,22]}
+{"kind":"textbox","id":"sh/mtwra5gb","slide":4,"text":"bounded observed paths or declared JSON Schema","textPreview":"bounded observed paths or declared JSON Schema","textChars":46,"textLines":1,"bbox":[470,430,700,22]}
+{"kind":"shape","id":"sh/0nuxc3yl","slide":4,"bbox":[78,466,1124,46]}
+{"kind":"textbox","id":"sh/p8nqxs72","slide":4,"text":"XML/XSD","textPreview":"XML/XSD","textChars":7,"textLines":1,"bbox":[96,478,150,22]}
+{"kind":"textbox","id":"sh/ih4byhgn","slide":4,"text":"file","textPreview":"file","textChars":4,"textLines":1,"bbox":[270,478,160,22]}
+{"kind":"textbox","id":"sh/72x4nap4","slide":4,"text":"bounded instance paths or lightweight XSD declarations","textPreview":"bounded instance paths or lightweight XSD declarations","textChars":54,"textLines":1,"bbox":[470,478,700,22]}
+{"kind":"shape","id":"sh/0z61032l","slide":4,"bbox":[78,514,1124,46]}
+{"kind":"textbox","id":"sh/pkzupwb2","slide":4,"text":"Raw/unknown","textPreview":"Raw/unknown","textChars":11,"textLines":1,"bbox":[96,526,150,22]}
+{"kind":"textbox","id":"sh/itgfmlkj","slide":4,"text":"file or directory","textPreview":"file or directory","textChars":17,"textLines":1,"bbox":[270,526,160,22]}
+{"kind":"textbox","id":"sh/7ed8bat4","slide":4,"text":"structured abstention; file-level evidence only","textPreview":"structured abstention; file-level evidence only","textChars":47,"textLines":1,"bbox":[470,526,700,22]}
+{"kind":"shape","id":"sh/0bi9s36h","slide":4,"bbox":[124,592,1030,62]}
+{"kind":"shape","id":"sh/pwb2hwfy","slide":4,"bbox":[124,592,8,62]}
+{"kind":"textbox","id":"sh/lwval87e","slide":4,"text":"Unsupported or unregistered formats are not coerced into schemas; registry.py returns abstained with an issue code and raw_binary schema shell.","textPreview":"Unsupported or unregistered formats are not coerced into schemas; registry.py returns abstained with an issue code and raw_binary schema ...","textChars":143,"textLines":1,"bbox":[146,606,992,40]}
+{"kind":"notes","id":"nt/wr96jf","slide":4,"text":"This is the concrete accepted-format list from registry.py. The deck should make clear that Zarr is a directory store, while most formats are single files."}
+{"kind":"slide","id":"sl/v21o78","slide":5,"title":"High-Level Pipeline Overview","textShapes":13}
+{"kind":"shape","id":"sh/b2hwfyxo","slide":5,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/4nap4r65","slide":5,"text":"High-Level Pipeline Overview","textPreview":"High-Level Pipeline Overview","textChars":28,"textLines":1,"bbox":[58,42,900,52]}
+{"kind":"textbox","id":"sh/t83itgfm","slide":5,"text":"The core path is parser-led; semantic annotation is downstream and optional.","textPreview":"The core path is parser-led; semantic annotation is downstream and optional.","textChars":76,"textLines":1,"bbox":[60,94,1000,34]}
+{"kind":"shape","id":"sh/m58z25kb","slide":5,"bbox":[58,136,1116,2]}
+{"kind":"textbox","id":"sh/bq1oryts","slide":5,"text":"Current schema extraction pipeline | 5/16","textPreview":"Current schema extraction pipeline | 5/16","textChars":41,"textLines":1,"bbox":[58,682,380,20]}
+{"kind":"textbox","id":"sh/4byhgn29","slide":5,"text":"Raw input\nfile/store","textPreview":"Raw input | file/store","textChars":20,"textLines":2,"bbox":[70,214,170,70]}
+{"kind":"textbox","id":"sh/twra5gbq","slide":5,"text":"detect_format\nsignals","textPreview":"detect_format | signals","textChars":21,"textLines":2,"bbox":[252,214,182,70]}
+{"kind":"textbox","id":"sh/m1cfa9w3","slide":5,"text":"capability\nregistry","textPreview":"capability | registry","textChars":19,"textLines":2,"bbox":[446,214,184,70]}
+{"kind":"textbox","id":"sh/bm58z25k","slide":5,"text":"format-specific\nextractor","textPreview":"format-specific | extractor","textChars":25,"textLines":2,"bbox":[642,214,190,70]}
+{"kind":"textbox","id":"sh/val87ed8","slide":5,"text":"validators +\nnormalizers","textPreview":"validators + | normalizers","textChars":24,"textLines":2,"bbox":[844,214,182,70]}
+{"kind":"textbox","id":"sh/6psfil0r","slide":5,"text":"schema\noutput","textPreview":"schema | output","textChars":13,"textLines":2,"bbox":[1038,214,172,70]}
+{"kind":"shape","id":"sh/dcbulwva","slide":5,"bbox":[165,352,950,98]}
+{"kind":"textbox","id":"sh/kre1w7mp","slide":5,"text":"Canonical output path","textPreview":"Canonical output path","textChars":21,"textLines":1,"bbox":[194,368,260,24]}
+{"kind":"textbox","id":"sh/vixczed8","slide":5,"text":"ExtractionOutcome -> DatasetSchema/FieldSchema/EvidenceRecord -> Unified Schema Envelope claims/evidence/provenance","textPreview":"ExtractionOutcome -> DatasetSchema/FieldSchema/EvidenceRecord -> Unified Schema Envelope claims/evidence/provenance","textChars":115,"textLines":1,"bbox":[194,402,850,28]}
+{"kind":"shape","id":"sh/2x4nap4r","slide":5,"bbox":[310,500,660,78]}
+{"kind":"textbox","id":"sh/donyd0z6","slide":5,"text":"Optional downstream semantic augmentation","textPreview":"Optional downstream semantic augmentation","textChars":41,"textLines":1,"bbox":[330,514,600,24]}
+{"kind":"textbox","id":"sh/k3q5o7qp","slide":5,"text":"Grounding task -> LLM JSON result -> validation -> merge policy -> semantic_merged artifacts","textPreview":"Grounding task -> LLM JSON result -> validation -> merge policy -> semantic_merged artifacts","textChars":92,"textLines":1,"bbox":[330,546,600,20]}
+{"kind":"notes","id":"nt/v21o78","slide":5,"text":"Use this slide as the broad map. The key clarification is that the LLM path is not in the canonical extraction spine; it is optional augmentation over deterministic artifacts."}
+{"kind":"slide","id":"sl/ajhfc7","slide":6,"title":"Intake, Detection, and Trust Boundary","textShapes":11}
+{"kind":"shape","id":"sh/bi9s36hc","slide":6,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/032lszqt","slide":6,"text":"Intake, Detection, and Trust Boundary","textPreview":"Intake, Detection, and Trust Boundary","textChars":37,"textLines":1,"bbox":[58,42,900,52]}
+{"kind":"textbox","id":"sh/tovahoza","slide":6,"text":"Format decisions use multiple signals and explicitly abstain on conflicts.","textPreview":"Format decisions use multiple signals and explicitly abstain on conflicts.","textChars":74,"textLines":1,"bbox":[60,94,1000,34]}
+{"kind":"shape","id":"sh/i9s36hcr","slide":6,"bbox":[58,136,1116,2]}
+{"kind":"textbox","id":"sh/bulwval8","slide":6,"text":"Current schema extraction pipeline | 6/16","textPreview":"Current schema extraction pipeline | 6/16","textChars":41,"textLines":1,"bbox":[58,682,380,20]}
+{"kind":"shape","id":"sh/0fepkzup","slide":6,"bbox":[78,178,350,180]}
+{"kind":"textbox","id":"sh/p0bi9s36","slide":6,"text":"Validation","textPreview":"Validation","textChars":10,"textLines":1,"bbox":[96,192,314,26]}
+{"kind":"textbox","id":"sh/idonyd0z","slide":6,"text":"extract_path() checks path existence and resource kind: auto, file, or directory_store. Bad paths and mismatches return failed outcomes.","textPreview":"extract_path() checks path existence and resource kind: auto, file, or directory_store. Bad paths and mismatches return failed outcomes.","textChars":136,"textLines":1,"bbox":[96,226,314,118]}
+{"kind":"shape","id":"sh/byhgn29g","slide":6,"bbox":[465,178,350,180]}
+{"kind":"textbox","id":"sh/ra5gbq1o","slide":6,"text":"Signals","textPreview":"Signals","textChars":7,"textLines":1,"bbox":[483,192,314,26]}
+{"kind":"textbox","id":"sh/2p8nqxs7","slide":6,"text":"detect_format() collects magic bytes, directory markers, explicit hints, suffixes, and delimited text probes.","textPreview":"detect_format() collects magic bytes, directory markers, explicit hints, suffixes, and delimited text probes.","textChars":109,"textLines":1,"bbox":[483,226,314,118]}
+{"kind":"shape","id":"sh/9gr2p8nq","slide":6,"bbox":[852,178,350,180]}
+{"kind":"textbox","id":"sh/gvy90je9","slide":6,"text":"Selection","textPreview":"Selection","textChars":9,"textLines":1,"bbox":[870,192,314,26]}
+{"kind":"textbox","id":"sh/r2p8nqxs","slide":6,"text":"Priority: strong magic/directory signal, then hint, suffix, text probe. HDF5 .nc can upgrade to NetCDF when markers are present.","textPreview":"Priority: strong magic/directory signal, then hint, suffix, text probe. HDF5 .nc can upgrade to NetCDF when markers are present.","textChars":128,"textLines":1,"bbox":[870,226,314,118]}
+{"kind":"shape","id":"sh/2hwfyxob","slide":6,"bbox":[118,438,1040,92]}
+{"kind":"textbox","id":"sh/94fu18jq","slide":6,"text":"Trust boundary","textPreview":"Trust boundary","textChars":14,"textLines":1,"bbox":[146,456,190,24]}
+{"kind":"textbox","id":"sh/kjm1cfa9","slide":6,"text":"If strong signals conflict, no parser is selected. _abstention_issue() emits codes such as unknown_conflicting_format_signals, unknown_no_signature, or unknown_no_spec_backed_extractor.","textPreview":"If strong signals conflict, no parser is selected. _abstention_issue() emits codes such as unknown_conflicting_format_signals, unknown_no...","textChars":185,"textLines":1,"bbox":[146,492,970,28]}
+{"kind":"notes","id":"nt/ajhfc7","slide":6,"text":"Mention tests/test_extractor_registry.py: conflicting HDF5 magic and CSV hint abstains; unknown binary returns a raw_binary schema with field_claim_policy set to abstain."}
+{"kind":"slide","id":"sl/d7v9b2","slide":7,"title":"Loading and Parsing by Extractor","textShapes":20}
+{"kind":"shape","id":"sh/m58z25kb","slide":7,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/twra5gbq","slide":7,"text":"Loading and Parsing by Extractor","textPreview":"Loading and Parsing by Extractor","textChars":32,"textLines":1,"bbox":[58,42,900,52]}
+{"kind":"textbox","id":"sh/4byhgn29","slide":7,"text":"Each registered runner produces DatasetSchema fields with source evidence.","textPreview":"Each registered runner produces DatasetSchema fields with source evidence.","textChars":74,"textLines":1,"bbox":[60,94,1000,34]}
+{"kind":"shape","id":"sh/b2hwfyxo","slide":7,"bbox":[58,136,1116,2]}
+{"kind":"textbox","id":"sh/mhk3q5o7","slide":7,"text":"Current schema extraction pipeline | 7/16","textPreview":"Current schema extraction pipeline | 7/16","textChars":41,"textLines":1,"bbox":[58,682,380,20]}
+{"kind":"shape","id":"sh/t83itgfm","slide":7,"bbox":[58,176,280,134]}
+{"kind":"textbox","id":"sh/4nap4r65","slide":7,"text":"CSV","textPreview":"CSV","textChars":3,"textLines":1,"bbox":[76,190,244,26]}
+{"kind":"textbox","id":"sh/bat47y1k","slide":7,"text":"csv_extractor.py::extract_csv_schema()\nHeaders, sample rows, conservative type inference, leading-zero protection, units from suffixes.","textPreview":"csv_extractor.py::extract_csv_schema() | Headers, sample rows, conservative type inference, leading-zero protection, units from suffixes.","textChars":135,"textLines":2,"bbox":[76,224,244,72]}
+{"kind":"shape","id":"sh/mp0bi9s3","slide":7,"bbox":[358,176,280,134]}
+{"kind":"textbox","id":"sh/4byhgn29","slide":7,"text":"HDF5","textPreview":"HDF5","textChars":4,"textLines":1,"bbox":[376,190,244,26]}
+{"kind":"textbox","id":"sh/twra5gbq","slide":7,"text":"hdf5_extractor.py::extract_hdf5_schema()\nTraverses groups/datasets, reads dtype, shape, attrs, and records recoverable extraction_errors.","textPreview":"hdf5_extractor.py::extract_hdf5_schema() | Traverses groups/datasets, reads dtype, shape, attrs, and records recoverable extraction_errors.","textChars":137,"textLines":2,"bbox":[376,224,244,72]}
+{"kind":"shape","id":"sh/m58z25kb","slide":7,"bbox":[658,176,280,134]}
+{"kind":"textbox","id":"sh/bq1oryts","slide":7,"text":"NetCDF/CF","textPreview":"NetCDF/CF","textChars":9,"textLines":1,"bbox":[676,190,244,26]}
+{"kind":"textbox","id":"sh/4nap4r65","slide":7,"text":"netcdf_extractor.py::extract_netcdf_schema()\nClassic scipy path or HDF5-backed path; dimensions, variables, attributes, CF coordinates.","textPreview":"netcdf_extractor.py::extract_netcdf_schema() | Classic scipy path or HDF5-backed path; dimensions, variables, attributes, CF coordinates.","textChars":135,"textLines":2,"bbox":[676,224,244,72]}
+{"kind":"shape","id":"sh/t83itgfm","slide":7,"bbox":[958,176,280,134]}
+{"kind":"textbox","id":"sh/mhk3q5o7","slide":7,"text":"Zarr","textPreview":"Zarr","textChars":4,"textLines":1,"bbox":[976,190,244,26]}
+{"kind":"textbox","id":"sh/b2hwfyxo","slide":7,"text":"zarr_extractor.py::extract_zarr_schema()\nLocal v2 metadata only; validates .zarray docs, dimensions, CF/Xarray attributes; v3 abstains.","textPreview":"zarr_extractor.py::extract_zarr_schema() | Local v2 metadata only; validates .zarray docs, dimensions, CF/Xarray attributes; v3 abstains.","textChars":135,"textLines":2,"bbox":[976,224,244,72]}
+{"kind":"shape","id":"sh/4vmtwra5","slide":7,"bbox":[58,362,280,134]}
+{"kind":"textbox","id":"sh/tgfmlkjm","slide":7,"text":"Parquet","textPreview":"Parquet","textChars":7,"textLines":1,"bbox":[76,376,244,26]}
+{"kind":"textbox","id":"sh/xc3ylc7u","slide":7,"text":"parquet_extractor.py::extract_parquet_schema()\nParquet footer + Arrow schema, row groups, encodings, statistics; row_values_not_read.","textPreview":"parquet_extractor.py::extract_parquet_schema() | Parquet footer + Arrow schema, row groups, encodings, statistics; row_values_not_read.","textChars":133,"textLines":2,"bbox":[76,410,244,72]}
+{"kind":"shape","id":"sh/4r65wjud","slide":7,"bbox":[358,362,280,134]}
+{"kind":"textbox","id":"sh/f6dcbulw","slide":7,"text":"JSON","textPreview":"JSON","textChars":4,"textLines":1,"bbox":[376,376,244,26]}
+{"kind":"textbox","id":"sh/mlkjm1cf","slide":7,"text":"json_extractor.py::extract_json_schema()\n16 MB limit; JSON Schema declarations or bounded observed paths, type sets, missing/null.","textPreview":"json_extractor.py::extract_json_schema() | 16 MB limit; JSON Schema declarations or bounded observed paths, type sets, missing/null.","textChars":130,"textLines":2,"bbox":[376,410,244,72]}
+{"kind":"shape","id":"sh/xkf6dcbu","slide":7,"bbox":[658,362,280,134]}
+{"kind":"textbox","id":"sh/4zidonyd","slide":7,"text":"XML/XSD","textPreview":"XML/XSD","textChars":7,"textLines":1,"bbox":[676,376,244,26]}
+{"kind":"textbox","id":"sh/fepkzupw","slide":7,"text":"xml_extractor.py::extract_xml_schema()\n16 MB limit; bounded XML path observation or XSD element/attribute declarations.","textPreview":"xml_extractor.py::extract_xml_schema() | 16 MB limit; bounded XML path observation or XSD element/attribute declarations.","textChars":119,"textLines":2,"bbox":[676,410,244,72]}
+{"kind":"shape","id":"sh/mtwra5gb","slide":7,"bbox":[958,362,280,134]}
+{"kind":"textbox","id":"sh/xobm58z2","slide":7,"text":"Raw","textPreview":"Raw","textChars":3,"textLines":1,"bbox":[976,376,244,26]}
+{"kind":"textbox","id":"sh/83itgfml","slide":7,"text":"registry.py::build_raw_binary_schema()\nNo field claims; preserves byte size/prefix or directory entry count with abstention policy.","textPreview":"registry.py::build_raw_binary_schema() | No field claims; preserves byte size/prefix or directory entry count with abstention policy.","textChars":131,"textLines":2,"bbox":[976,410,244,72]}
+{"kind":"textbox","id":"sh/i5sneloj","slide":7,"text":"All parsers converge on models.py::DatasetSchema, FieldSchema, and EvidenceRecord.","textPreview":"All parsers converge on models.py::DatasetSchema, FieldSchema, and EvidenceRecord.","textChars":82,"textLines":1,"bbox":[180,578,920,28]}
+{"kind":"notes","id":"nt/d7v9b2","slide":7,"text":"This slide is meant to be a compact catalog. The audience does not need code details for every parser, but the function names and boundaries are concrete."}
+{"kind":"slide","id":"sl/n3111t","slide":8,"title":"Preprocessing and Normalization","textShapes":10}
+{"kind":"shape","id":"sh/61032lsz","slide":8,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/dsji5sne","slide":8,"text":"Preprocessing and Normalization","textPreview":"Preprocessing and Normalization","textChars":31,"textLines":1,"bbox":[58,42,900,52]}
+{"kind":"textbox","id":"sh/o7qpg3ex","slide":8,"text":"The pipeline enriches parser outputs without erasing uncertainty.","textPreview":"The pipeline enriches parser outputs without erasing uncertainty.","textChars":65,"textLines":1,"bbox":[60,94,1000,34]}
+{"kind":"shape","id":"sh/vy90je9c","slide":8,"bbox":[58,136,1116,2]}
+{"kind":"textbox","id":"sh/6dcbulwv","slide":8,"text":"Current schema extraction pipeline | 8/16","textPreview":"Current schema extraction pipeline | 8/16","textChars":41,"textLines":1,"bbox":[58,682,380,20]}
+{"kind":"shape","id":"sh/d4vmtwra","slide":8,"bbox":[78,178,344,220]}
+{"kind":"textbox","id":"sh/oj2t83it","slide":8,"text":"Temporal Semantics","textPreview":"Temporal Semantics","textChars":18,"textLines":1,"bbox":[96,192,308,26]}
+{"kind":"textbox","id":"sh/z25kb6xk","slide":8,"text":"temporal_semantics.py::analyze_temporal_semantics()\n\nScores candidates by datetime type, strong names, semantic/logical hints. Selects only when support is strong; ties produce ambiguous_time_axis_candidates.","textPreview":"temporal_semantics.py::analyze_temporal_semantics() |  | Scores candidates by datetime type, strong names, semantic/logical hints. Select...","textChars":208,"textLines":3,"bbox":[96,226,308,158]}
+{"kind":"shape","id":"sh/6hcrmhk3","slide":8,"bbox":[468,178,344,220]}
+{"kind":"textbox","id":"sh/gr2p8nqx","slide":8,"text":"Unit Normalization","textPreview":"Unit Normalization","textChars":18,"textLines":1,"bbox":[486,192,308,26]}
+{"kind":"textbox","id":"sh/9cvixcze","slide":8,"text":"unit_normalization.py::normalize_unit_claim()\n\nMaps known aliases to canonical units and UCUM codes; records evidence_basis such as explicit_metadata, name_pattern, or not_evidence_backed.","textPreview":"unit_normalization.py::normalize_unit_claim() |  | Maps known aliases to canonical units and UCUM codes; records evidence_basis such as e...","textChars":188,"textLines":3,"bbox":[486,226,308,158]}
+{"kind":"shape","id":"sh/ylc7u54z","slide":8,"bbox":[858,178,344,220]}
+{"kind":"textbox","id":"sh/r65wjudg","slide":8,"text":"Dataset Profile","textPreview":"Dataset Profile","textChars":15,"textLines":1,"bbox":[876,192,308,26]}
+{"kind":"textbox","id":"sh/g3ex0nux","slide":8,"text":"deterministic_profile.py::attach_dataset_profile()\n\nAdds missingness and identifier quality. Multi-file relationships are deterministic candidates, not asserted joins.","textPreview":"deterministic_profile.py::attach_dataset_profile() |  | Adds missingness and identifier quality. Multi-file relationships are determinist...","textChars":167,"textLines":3,"bbox":[876,226,308,158]}
+{"kind":"shape","id":"sh/5o7qpg3e","slide":8,"bbox":[126,480,1028,78]}
+{"kind":"shape","id":"sh/yxobm58z","slide":8,"bbox":[126,480,8,78]}
+{"kind":"textbox","id":"sh/nih4byhg","slide":8,"text":"Normalization adds claim state and reason codes such as supported, derived, unknown, conflicted, sampling_insufficient, and conservative fallback to string.","textPreview":"Normalization adds claim state and reason codes such as supported, derived, unknown, conflicted, sampling_insufficient, and conservative ...","textChars":156,"textLines":1,"bbox":[148,494,990,56]}
+{"kind":"notes","id":"nt/n3111t","slide":8,"text":"Describe this as controlled enrichment: the code calculates time grids, unit mappings, missingness, and identifier quality, but it records uncertainty where support is weak."}
+{"kind":"slide","id":"sl/jdutvk","slide":9,"title":"Extraction Core: How Schema Candidates Are Produced","textShapes":10}
+{"kind":"shape","id":"sh/61032lsz","slide":9,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/dsji5sne","slide":9,"text":"Extraction Core: How Schema Candidates Are Produced","textPreview":"Extraction Core: How Schema Candidates Are Produced","textChars":51,"textLines":1,"bbox":[58,42,900,52]}
+{"kind":"textbox","id":"sh/o7qpg3ex","slide":9,"text":"The concrete model is layered but stored in explicit dataclasses.","textPreview":"The concrete model is layered but stored in explicit dataclasses.","textChars":65,"textLines":1,"bbox":[60,94,1000,34]}
+{"kind":"shape","id":"sh/vy90je9c","slide":9,"bbox":[58,136,1116,2]}
+{"kind":"textbox","id":"sh/6dcbulwv","slide":9,"text":"Current schema extraction pipeline | 9/16","textPreview":"Current schema extraction pipeline | 9/16","textChars":41,"textLines":1,"bbox":[58,682,380,20]}
+{"kind":"shape","id":"sh/d4vmtwra","slide":9,"bbox":[84,184,322,318]}
+{"kind":"textbox","id":"sh/oj2t83it","slide":9,"text":"Raw/untrusted input","textPreview":"Raw/untrusted input","textChars":19,"textLines":1,"bbox":[112,206,260,24]}
+{"kind":"textbox","id":"sh/z25kb6xk","slide":9,"text":"Bytes, text rows, XML/JSON trees, HDF5/NetCDF containers, Parquet footers, Zarr metadata directories.\n\nNot trusted to imply semantics by itself.","textPreview":"Bytes, text rows, XML/JSON trees, HDF5/NetCDF containers, Parquet footers, Zarr metadata directories. |  | Not trusted to imply semantics...","textChars":144,"textLines":3,"bbox":[112,248,250,138]}
+{"kind":"shape","id":"sh/6hcrmhk3","slide":9,"bbox":[474,184,322,318]}
+{"kind":"textbox","id":"sh/gr2p8nqx","slide":9,"text":"Intermediate representation","textPreview":"Intermediate representation","textChars":27,"textLines":1,"bbox":[502,206,260,24]}
+{"kind":"textbox","id":"sh/9cvixcze","slide":9,"text":"models.py::FieldSchema\nfield_name, field_path, physical_type, shape, nullable, examples, source_evidence, confidence, uncertainty_reason.\n\nmodels.py::DatasetSchema groups fields + metadata.","textPreview":"models.py::FieldSchema | field_name, field_path, physical_type, shape, nullable, examples, source_evidence, confidence, uncertainty_reaso...","textChars":189,"textLines":4,"bbox":[502,248,250,168]}
+{"kind":"shape","id":"sh/ylc7u54z","slide":9,"bbox":[864,184,322,318]}
+{"kind":"textbox","id":"sh/r65wjudg","slide":9,"text":"Controlled schema","textPreview":"Controlled schema","textChars":17,"textLines":1,"bbox":[892,206,260,24]}
+{"kind":"textbox","id":"sh/g3ex0nux","slide":9,"text":"Logical roles, semantic hints, units, temporal analysis, format-specific analysis, claim states, evidence records.\n\nOnly promoted when the extractor or validator supports the claim.","textPreview":"Logical roles, semantic hints, units, temporal analysis, format-specific analysis, claim states, evidence records. |  | Only promoted whe...","textChars":181,"textLines":3,"bbox":[892,248,250,154]}
+{"kind":"shape","id":"sh/5o7qpg3e","slide":9,"bbox":[406,306,62,56]}
+{"kind":"shape","id":"sh/yxobm58z","slide":9,"bbox":[796,306,62,56]}
+{"kind":"shape","id":"sh/nih4byhg","slide":9,"bbox":[194,568,900,62]}
+{"kind":"shape","id":"sh/g7adsji5","slide":9,"bbox":[194,568,8,62]}
+{"kind":"textbox","id":"sh/9s36hcrm","slide":9,"text":"Final trustworthy output is either the legacy ExtractionOutcome or the versioned unified envelope with claims/evidence/provenance.","textPreview":"Final trustworthy output is either the legacy ExtractionOutcome or the versioned unified envelope with claims/evidence/provenance.","textChars":130,"textLines":1,"bbox":[216,582,862,40]}
+{"kind":"notes","id":"nt/jdutvk","slide":9,"text":"This fulfills the requested distinction: raw input, intermediate structured representation, controlled schema, and validated output."}
+{"kind":"slide","id":"sl/mwb781","slide":10,"title":"Prompt, Model, and Rule Logic","textShapes":10}
+{"kind":"shape","id":"sh/qtcj6tov","slide":10,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/1gvy90je","slide":10,"text":"Prompt, Model, and Rule Logic","textPreview":"Prompt, Model, and Rule Logic","textChars":29,"textLines":1,"bbox":[58,42,900,52]}
+{"kind":"textbox","id":"sh/8z25kb6x","slide":10,"text":"Canonical extraction is rule/parser based; LLM use is downstream semantic augmentation.","textPreview":"Canonical extraction is rule/parser based; LLM use is downstream semantic augmentation.","textChars":87,"textLines":1,"bbox":[60,94,1000,34]}
+{"kind":"shape","id":"sh/fmlkjm1c","slide":10,"bbox":[58,136,1116,2]}
+{"kind":"textbox","id":"sh/q1orytsv","slide":10,"text":"Current schema extraction pipeline | 10/16","textPreview":"Current schema extraction pipeline | 10/16","textChars":42,"textLines":1,"bbox":[58,682,380,20]}
+{"kind":"shape","id":"sh/xs72x4na","slide":10,"bbox":[78,180,346,236]}
+{"kind":"textbox","id":"sh/87ed8bat","slide":10,"text":"Canonical Path","textPreview":"Canonical Path","textChars":14,"textLines":1,"bbox":[96,194,310,26]}
+{"kind":"textbox","id":"sh/fyxobm58","slide":10,"text":"No prompt is used by extract_path(). Registered extractors use deterministic parsing, bounded sampling, metadata inspection, explicit aliases, and validators.","textPreview":"No prompt is used by extract_path(). Registered extractors use deterministic parsing, bounded sampling, metadata inspection, explicit ali...","textChars":158,"textLines":1,"bbox":[96,228,310,174]}
+{"kind":"shape","id":"sh/qd4vmtwr","slide":10,"bbox":[468,180,346,236]}
+{"kind":"textbox","id":"sh/sfil0rqd","slide":10,"text":"Prompt Construction","textPreview":"Prompt Construction","textChars":19,"textLines":1,"bbox":[486,194,310,26]}
+{"kind":"textbox","id":"sh/h0fepkzu","slide":10,"text":"build_semantic_grounding.py writes task bundles.\nsemantic_layer.py::build_prompt_payload() includes SYSTEM_RULES, deterministic_schema, grounding snippets, and expected output schema.","textPreview":"build_semantic_grounding.py writes task bundles. | semantic_layer.py::build_prompt_payload() includes SYSTEM_RULES, deterministic_schema,...","textChars":183,"textLines":2,"bbox":[486,228,310,174]}
+{"kind":"shape","id":"sh/a9w3m94f","slide":10,"bbox":[858,180,346,236]}
+{"kind":"textbox","id":"sh/zupwb2hw","slide":10,"text":"LLM Runner","textPreview":"LLM Runner","textChars":10,"textLines":1,"bbox":[876,194,310,26]}
+{"kind":"textbox","id":"sh/orytsvu9","slide":10,"text":"semantic_annotate.py sends compact tasks to chat/completions with strict JSON instructions. It may annotate only listed targets and must cite available evidence IDs.","textPreview":"semantic_annotate.py sends compact tasks to chat/completions with strict JSON instructions. It may annotate only listed targets and must ...","textChars":165,"textLines":1,"bbox":[876,228,310,174]}
+{"kind":"shape","id":"sh/hcrmhk3q","slide":10,"bbox":[112,492,1058,88]}
+{"kind":"shape","id":"sh/al87ed8b","slide":10,"bbox":[112,492,8,88]}
+{"kind":"textbox","id":"sh/z61032ls","slide":10,"text":"If the mechanism is missing: there is no cryptographic proof, formal proof system, or fully validating XML/XSD/JSON engine. The trust controls are deterministic routing, bounded parsers, validators, tests, issue states, and evidence/provenance records.","textPreview":"If the mechanism is missing: there is no cryptographic proof, formal proof system, or fully validating XML/XSD/JSON engine. The trust con...","textChars":252,"textLines":1,"bbox":[134,506,1020,66]}
+{"kind":"notes","id":"nt/mwb781","slide":10,"text":"Be precise: do not imply the LLM is part of the canonical extraction flow. It is a downstream enrichment path guarded by validation and merge rules."}
+{"kind":"slide","id":"sl/60xa8g","slide":11,"title":"Controlled Vocabulary and Schema Constraints","textShapes":15}
+{"kind":"shape","id":"sh/mhk3q5o7","slide":11,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/t83itgfm","slide":11,"text":"Controlled Vocabulary and Schema Constraints","textPreview":"Controlled Vocabulary and Schema Constraints","textChars":44,"textLines":1,"bbox":[58,42,900,52]}
+{"kind":"textbox","id":"sh/4nap4r65","slide":11,"text":"The code constrains both outputs and how uncertainty is represented.","textPreview":"The code constrains both outputs and how uncertainty is represented.","textChars":68,"textLines":1,"bbox":[60,94,1000,34]}
+{"kind":"shape","id":"sh/bq1oryts","slide":11,"bbox":[58,136,1116,2]}
+{"kind":"textbox","id":"sh/m58z25kb","slide":11,"text":"Current schema extraction pipeline | 11/16","textPreview":"Current schema extraction pipeline | 11/16","textChars":42,"textLines":1,"bbox":[58,682,380,20]}
+{"kind":"shape","id":"sh/twra5gbq","slide":11,"bbox":[78,176,340,178]}
+{"kind":"textbox","id":"sh/4byhgn29","slide":11,"text":"Allowed Logical Types","textPreview":"Allowed Logical Types","textChars":21,"textLines":1,"bbox":[96,190,304,26]}
+{"kind":"textbox","id":"sh/bm58z25k","slide":11,"text":"semantic_layer.py::ALLOWED_LOGICAL_TYPES:\nidentifier, time_axis, measurement, coordinate, label, attribute, relationship, unknown.","textPreview":"semantic_layer.py::ALLOWED_LOGICAL_TYPES: | identifier, time_axis, measurement, coordinate, label, attribute, relationship, unknown.","textChars":130,"textLines":2,"bbox":[96,224,304,116]}
+{"kind":"shape","id":"sh/m1cfa9w3","slide":11,"bbox":[470,176,340,178]}
+{"kind":"textbox","id":"sh/cfa9w3m9","slide":11,"text":"Claim States","textPreview":"Claim States","textChars":12,"textLines":1,"bbox":[488,190,304,26]}
+{"kind":"textbox","id":"sh/1032lszq","slide":11,"text":"unified_schema.py::CLAIM_STATES:\nobserved, declared, derived, supported, conflicted, unknown, unsupported, abstained.","textPreview":"unified_schema.py::CLAIM_STATES: | observed, declared, derived, supported, conflicted, unknown, unsupported, abstained.","textChars":117,"textLines":2,"bbox":[488,224,304,116]}
+{"kind":"shape","id":"sh/u9knih4b","slide":11,"bbox":[862,176,340,178]}
+{"kind":"textbox","id":"sh/judg7ads","slide":11,"text":"Extractor Capabilities","textPreview":"Extractor Capabilities","textChars":22,"textLines":1,"bbox":[880,190,304,26]}
+{"kind":"textbox","id":"sh/c7u54zid","slide":11,"text":"registry.py::EXTRACTOR_CAPABILITIES declares extractor_id, version, formats, suffixes, operations, determinism_class, evidence_types, resource_kinds.","textPreview":"registry.py::EXTRACTOR_CAPABILITIES declares extractor_id, version, formats, suffixes, operations, determinism_class, evidence_types, res...","textChars":149,"textLines":1,"bbox":[880,224,304,116]}
+{"kind":"shape","id":"sh/1orytsvu","slide":11,"bbox":[78,410,340,138]}
+{"kind":"textbox","id":"sh/u18jqh0f","slide":11,"text":"Units","textPreview":"Units","textChars":5,"textLines":1,"bbox":[96,424,304,26]}
+{"kind":"textbox","id":"sh/jm1cfa9w","slide":11,"text":"UNIT_ALIASES maps supported units to canonical names and UCUM-like codes; unmapped units stay explicit rather than normalized falsely.","textPreview":"UNIT_ALIASES maps supported units to canonical names and UCUM-like codes; unmapped units stay explicit rather than normalized falsely.","textChars":134,"textLines":1,"bbox":[96,458,304,76]}
+{"kind":"shape","id":"sh/cvixczed","slide":11,"bbox":[470,410,340,138]}
+{"kind":"textbox","id":"sh/5gbq1ory","slide":11,"text":"Evidence Tiers","textPreview":"Evidence Tiers","textChars":14,"textLines":1,"bbox":[488,424,304,26]}
+{"kind":"textbox","id":"sh/90je9cvi","slide":11,"text":"docs/target_schema.md: explicit_metadata > structural > statistical > llm_inference. Lower-tier evidence may not silently overwrite stronger evidence.","textPreview":"docs/target_schema.md: explicit_metadata > structural > statistical > llm_inference. Lower-tier evidence may not silently overwrite stron...","textChars":150,"textLines":1,"bbox":[488,458,304,76]}
+{"kind":"shape","id":"sh/gfmlkjm1","slide":11,"bbox":[862,410,340,138]}
+{"kind":"textbox","id":"sh/rytsvu9k","slide":11,"text":"Merge Policy","textPreview":"Merge Policy","textChars":12,"textLines":1,"bbox":[880,424,304,26]}
+{"kind":"textbox","id":"sh/yd0z6103","slide":11,"text":"merge_annotation_result() rejects unsupported annotations and records logical/semantic/unit conflicts rather than hiding them.","textPreview":"merge_annotation_result() rejects unsupported annotations and records logical/semantic/unit conflicts rather than hiding them.","textChars":126,"textLines":1,"bbox":[880,458,304,76]}
+{"kind":"notes","id":"nt/60xa8g","slide":11,"text":"This slide gathers the major control surfaces: dataclass fields, allowed logical types, claim-state vocabulary, declared extractor capabilities, unit aliases, and merge policy."}
+{"kind":"slide","id":"sl/gf5793","slide":12,"title":"Validation and Consistency Loop","textShapes":17}
+{"kind":"shape","id":"sh/xczed8v6","slide":12,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/qpg3ex0n","slide":12,"text":"Validation and Consistency Loop","textPreview":"Validation and Consistency Loop","textChars":31,"textLines":1,"bbox":[58,42,900,52]}
+{"kind":"textbox","id":"sh/fa9w3m94","slide":12,"text":"Validation happens during intake, extraction, normalization, envelope projection, and regression tests.","textPreview":"Validation happens during intake, extraction, normalization, envelope projection, and regression tests.","textChars":103,"textLines":1,"bbox":[60,94,1000,34]}
+{"kind":"shape","id":"sh/8jqh0fep","slide":12,"bbox":[58,136,1116,2]}
+{"kind":"textbox","id":"sh/x4nap4r6","slide":12,"text":"Current schema extraction pipeline | 12/16","textPreview":"Current schema extraction pipeline | 12/16","textChars":42,"textLines":1,"bbox":[58,682,380,20]}
+{"kind":"textbox","id":"sh/qd4vmtwr","slide":12,"text":"Input\nvalidation","textPreview":"Input | validation","textChars":16,"textLines":2,"bbox":[116,190,190,66]}
+{"kind":"textbox","id":"sh/fyxobm58","slide":12,"text":"Extractor\nvalidation","textPreview":"Extractor | validation","textChars":20,"textLines":2,"bbox":[328,190,190,66]}
+{"kind":"textbox","id":"sh/87ed8bat","slide":12,"text":"Normalizer\nclaims","textPreview":"Normalizer | claims","textChars":17,"textLines":2,"bbox":[540,190,190,66]}
+{"kind":"textbox","id":"sh/xs72x4na","slide":12,"text":"Envelope\naudit","textPreview":"Envelope | audit","textChars":14,"textLines":2,"bbox":[752,190,190,66]}
+{"kind":"textbox","id":"sh/xkf6dcbu","slide":12,"text":"Tests +\nreports","textPreview":"Tests + | reports","textChars":15,"textLines":2,"bbox":[964,190,190,66]}
+{"kind":"shape","id":"sh/4zidonyd","slide":12,"bbox":[178,330,920,142]}
+{"kind":"textbox","id":"sh/fepkzupw","slide":12,"text":"Loop behavior","textPreview":"Loop behavior","textChars":13,"textLines":1,"bbox":[210,350,180,24]}
+{"kind":"textbox","id":"sh/mtwra5gb","slide":12,"text":"Any stage can return success, partial, abstained, or failed. Issues are carried forward instead of being collapsed into a single opaque score.","textPreview":"Any stage can return success, partial, abstained, or failed. Issues are carried forward instead of being collapsed into a single opaque s...","textChars":142,"textLines":1,"bbox":[210,386,860,28]}
+{"kind":"textbox","id":"sh/xc3ylc7u","slide":12,"text":"Examples: dependency_unavailable, parser_error, partial_extraction, sampling_insufficient, declared_observed_type_conflict, unsupported_zarr_version.","textPreview":"Examples: dependency_unavailable, parser_error, partial_extraction, sampling_insufficient, declared_observed_type_conflict, unsupported_z...","textChars":149,"textLines":1,"bbox":[210,430,860,28]}
+{"kind":"shape","id":"sh/4r65wjud","slide":12,"bbox":[126,538,310,78]}
+{"kind":"textbox","id":"sh/f6dcbulw","slide":12,"text":"Registry Tests","textPreview":"Registry Tests","textChars":14,"textLines":1,"bbox":[144,552,274,26]}
+{"kind":"textbox","id":"sh/mlkjm1cf","slide":12,"text":"tests/test_extractor_registry.py","textPreview":"tests/test_extractor_registry.py","textChars":32,"textLines":1,"bbox":[144,586,274,16]}
+{"kind":"shape","id":"sh/x0nuxc3y","slide":12,"bbox":[486,538,310,78]}
+{"kind":"textbox","id":"sh/4fu18jqh","slide":12,"text":"Envelope Tests","textPreview":"Envelope Tests","textChars":14,"textLines":1,"bbox":[504,552,274,26]}
+{"kind":"textbox","id":"sh/4nap4r65","slide":12,"text":"tests/test_unified_schema.py","textPreview":"tests/test_unified_schema.py","textChars":28,"textLines":1,"bbox":[504,586,274,16]}
+{"kind":"shape","id":"sh/t83itgfm","slide":12,"bbox":[846,538,310,78]}
+{"kind":"textbox","id":"sh/mhk3q5o7","slide":12,"text":"Semantic/PROV Tests","textPreview":"Semantic/PROV Tests","textChars":19,"textLines":1,"bbox":[864,552,274,26]}
+{"kind":"textbox","id":"sh/b2hwfyxo","slide":12,"text":"test_semantic_annotate_payload.py; test_provenance_manifest.py","textPreview":"test_semantic_annotate_payload.py; test_provenance_manifest.py","textChars":62,"textLines":1,"bbox":[864,586,274,16]}
+{"kind":"notes","id":"nt/gf5793","slide":12,"text":"Use this as the validation loop diagram. Emphasize that failure modes are first-class statuses and issue codes, not exceptions hidden from users."}
+{"kind":"slide","id":"sl/1i3jja","slide":13,"title":"Provenance, Traceability, and Auditability","textShapes":10}
+{"kind":"shape","id":"sh/0fepkzup","slide":13,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/bulwval8","slide":13,"text":"Provenance, Traceability, and Auditability","textPreview":"Provenance, Traceability, and Auditability","textChars":42,"textLines":1,"bbox":[58,42,900,52]}
+{"kind":"textbox","id":"sh/i9s36hcr","slide":13,"text":"Every supported claim is expected to point back to concrete evidence.","textPreview":"Every supported claim is expected to point back to concrete evidence.","textChars":69,"textLines":1,"bbox":[60,94,1000,34]}
+{"kind":"shape","id":"sh/tovahoza","slide":13,"bbox":[58,136,1116,2]}
+{"kind":"textbox","id":"sh/032lszqt","slide":13,"text":"Current schema extraction pipeline | 13/16","textPreview":"Current schema extraction pipeline | 13/16","textChars":42,"textLines":1,"bbox":[58,682,380,20]}
+{"kind":"shape","id":"sh/bi9s36hc","slide":13,"bbox":[78,178,344,238]}
+{"kind":"textbox","id":"sh/ixczed8v","slide":13,"text":"Field-Level Evidence","textPreview":"Field-Level Evidence","textChars":20,"textLines":1,"bbox":[96,192,308,26]}
+{"kind":"textbox","id":"sh/tcj6tova","slide":13,"text":"Each FieldSchema has source_evidence: EvidenceRecord(tier, evidence_type, source, detail, confidence).\n\nExamples: csv_header, sample_rows, hdf5_attribute, netcdf_variable, zarr_array_metadata.","textPreview":"Each FieldSchema has source_evidence: EvidenceRecord(tier, evidence_type, source, detail, confidence). |  | Examples: csv_header, sample_...","textChars":192,"textLines":3,"bbox":[96,226,308,176]}
+{"kind":"shape","id":"sh/0rqd4vmt","slide":13,"bbox":[468,178,344,238]}
+{"kind":"textbox","id":"sh/i9s36hcr","slide":13,"text":"Unified Claim Graph","textPreview":"Unified Claim Graph","textChars":19,"textLines":1,"bbox":[486,192,308,26]}
+{"kind":"textbox","id":"sh/bulwval8","slide":13,"text":"build_unified_schema_envelope() deduplicates evidence into e0001... and emits c0001... claims with evidence_refs.\n\nConflicts and abstentions are projected separately.","textPreview":"build_unified_schema_envelope() deduplicates evidence into e0001... and emits c0001... claims with evidence_refs. |  | Conflicts and abst...","textChars":166,"textLines":3,"bbox":[486,226,308,176]}
+{"kind":"shape","id":"sh/0fepkzup","slide":13,"bbox":[858,178,344,238]}
+{"kind":"textbox","id":"sh/p0bi9s36","slide":13,"text":"PROV-Like Manifest","textPreview":"PROV-Like Manifest","textChars":18,"textLines":1,"bbox":[876,192,308,26]}
+{"kind":"textbox","id":"sh/ixczed8v","slide":13,"text":"build_provenance_manifest.py creates lightweight_prov_v1 over source files, derived schemas, fields, evidence, semantic annotations, merges, reports, agents, activities, relations.","textPreview":"build_provenance_manifest.py creates lightweight_prov_v1 over source files, derived schemas, fields, evidence, semantic annotations, merg...","textChars":180,"textLines":1,"bbox":[876,226,308,176]}
+{"kind":"shape","id":"sh/bi9s36hc","slide":13,"bbox":[136,508,1008,74]}
+{"kind":"shape","id":"sh/032lszqt","slide":13,"bbox":[136,508,8,74]}
+{"kind":"textbox","id":"sh/tovahoza","slide":13,"text":"Content trust comes from traceability and bounded claim policy, not from a single confidence number. Confidence fields exist, but issue states and evidence links are the stronger control mechanism.","textPreview":"Content trust comes from traceability and bounded claim policy, not from a single confidence number. Confidence fields exist, but issue s...","textChars":197,"textLines":1,"bbox":[158,522,970,52]}
+{"kind":"notes","id":"nt/1i3jja","slide":13,"text":"Mention tests/test_unified_schema.py checks that all supported claims have evidence_refs and that evidence IDs resolve."}
+{"kind":"slide","id":"sl/zamh1t","slide":14,"title":"Final Schema Output Format","textShapes":11}
+{"kind":"shape","id":"sh/dsji5sne","slide":14,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/61032lsz","slide":14,"text":"Final Schema Output Format","textPreview":"Final Schema Output Format","textChars":26,"textLines":1,"bbox":[58,42,900,52]}
+{"kind":"textbox","id":"sh/vmtwra5g","slide":14,"text":"The final output can be consumed as legacy JSON, envelope JSON, or both.","textPreview":"The final output can be consumed as legacy JSON, envelope JSON, or both.","textChars":72,"textLines":1,"bbox":[60,94,1000,34]}
+{"kind":"shape","id":"sh/oj2t83it","slide":14,"bbox":[58,136,1116,2]}
+{"kind":"textbox","id":"sh/d4vmtwra","slide":14,"text":"Current schema extraction pipeline | 14/16","textPreview":"Current schema extraction pipeline | 14/16","textChars":42,"textLines":1,"bbox":[58,682,380,20]}
+{"kind":"shape","id":"sh/6dcbulwv","slide":14,"bbox":[70,176,360,266]}
+{"kind":"textbox","id":"sh/vy90je9c","slide":14,"text":"Legacy ExtractionOutcome","textPreview":"Legacy ExtractionOutcome","textChars":24,"textLines":1,"bbox":[88,190,324,26]}
+{"kind":"textbox","id":"sh/onyd0z61","slide":14,"text":"status\nformat_decision\nextractor\nschema\nissues\n\nschema contains DatasetSchema fields, groups, metadata, notes.","textPreview":"status | format_decision | extractor | schema | issues |  | schema contains DatasetSchema fields, groups, metadata, notes.","textChars":110,"textLines":7,"bbox":[88,224,324,204]}
+{"kind":"shape","id":"sh/d8v6psfi","slide":14,"bbox":[460,176,360,266]}
+{"kind":"textbox","id":"sh/twra5gbq","slide":14,"text":"Unified Envelope v1.0.0","textPreview":"Unified Envelope v1.0.0","textChars":23,"textLines":1,"bbox":[478,190,324,26]}
+{"kind":"textbox","id":"sh/4byhgn29","slide":14,"text":"identity\nformat_detection\nextractor_capability\noutcome\nphysical_structure\nlogical_roles\nsemantic_hints\nunits\ntemporal_semantics\nclaims/evidence/provenance","textPreview":"identity | format_detection | extractor_capability | outcome | physical_structure | logical_roles | semantic_hints | units | temporal_sem...","textChars":154,"textLines":10,"bbox":[478,224,324,204]}
+{"kind":"shape","id":"sh/bq1oryts","slide":14,"bbox":[850,176,360,266]}
+{"kind":"textbox","id":"sh/m58z25kb","slide":14,"text":"Agent Bundle","textPreview":"Agent Bundle","textChars":12,"textLines":1,"bbox":[868,190,324,26]}
+{"kind":"textbox","id":"sh/t83itgfm","slide":14,"text":"agent_export_version\npolicy\nschema_summary\nclaim_records\nevidence_records\nprovenance_graph\nretrieval_context\nrequestable_actions","textPreview":"agent_export_version | policy | schema_summary | claim_records | evidence_records | provenance_graph | retrieval_context | requestable_ac...","textChars":128,"textLines":8,"bbox":[868,224,324,204]}
+{"kind":"textbox","id":"sh/4nap4r65","slide":14,"text":"CLI examples","textPreview":"CLI examples","textChars":12,"textLines":1,"bbox":[106,506,160,24]}
+{"kind":"shape","id":"sh/b2hwfyxo","slide":14,"bbox":[106,538,1028,58]}
+{"kind":"textbox","id":"sh/mhk3q5o7","slide":14,"text":"python -m high_fidelity_schema_study.cli extract --input path/to/file --output-shape both","textPreview":"python -m high_fidelity_schema_study.cli extract --input path/to/file --output-shape both","textChars":89,"textLines":1,"bbox":[130,555,980,22]}
+{"kind":"notes","id":"nt/zamh1t","slide":14,"text":"The legacy schema is still authoritative and unchanged. The envelope is additive, which the tests assert."}
+{"kind":"slide","id":"sl/w1szm1","slide":15,"title":"Error Handling, Failure Cases, and Limitations","textShapes":19}
+{"kind":"shape","id":"sh/3ylc7u54","slide":15,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/sji5snel","slide":15,"text":"Error Handling, Failure Cases, and Limitations","textPreview":"Error Handling, Failure Cases, and Limitations","textChars":46,"textLines":1,"bbox":[58,42,900,52]}
+{"kind":"textbox","id":"sh/h4byhgn2","slide":15,"text":"The code surfaces limits instead of pretending they are solved.","textPreview":"The code surfaces limits instead of pretending they are solved.","textChars":63,"textLines":1,"bbox":[60,94,1000,34]}
+{"kind":"shape","id":"sh/a5gbq1or","slide":15,"bbox":[58,136,1116,2]}
+{"kind":"textbox","id":"sh/3m94fu18","slide":15,"text":"Current schema extraction pipeline | 15/16","textPreview":"Current schema extraction pipeline | 15/16","textChars":42,"textLines":1,"bbox":[58,682,380,20]}
+{"kind":"shape","id":"sh/s72x4nap","slide":15,"bbox":[58,172,280,170]}
+{"kind":"textbox","id":"sh/lszqtcj6","slide":15,"text":"Abstentions","textPreview":"Abstentions","textChars":11,"textLines":1,"bbox":[76,186,244,26]}
+{"kind":"textbox","id":"sh/a1gvy90j","slide":15,"text":"Unknown binary, conflicted strong signals, unregistered formats, Zarr v3, missing Zarr metadata, over-limit JSON/XML can abstain.","textPreview":"Unknown binary, conflicted strong signals, unregistered formats, Zarr v3, missing Zarr metadata, over-limit JSON/XML can abstain.","textChars":129,"textLines":1,"bbox":[76,220,244,108]}
+{"kind":"shape","id":"sh/zidonyd0","slide":15,"bbox":[358,172,280,170]}
+{"kind":"textbox","id":"sh/re1w7mp0","slide":15,"text":"Partial / Failed","textPreview":"Partial / Failed","textChars":16,"textLines":1,"bbox":[376,186,244,26]}
+{"kind":"textbox","id":"sh/2t83itgf","slide":15,"text":"Recoverable extraction_errors become partial outcomes. Parser errors and missing dependencies become structured failed outcomes.","textPreview":"Recoverable extraction_errors become partial outcomes. Parser errors and missing dependencies become structured failed outcomes.","textChars":128,"textLines":1,"bbox":[376,220,244,108]}
+{"kind":"shape","id":"sh/9knih4by","slide":15,"bbox":[658,172,280,170]}
+{"kind":"textbox","id":"sh/kzupwb2h","slide":15,"text":"Bounded Samples","textPreview":"Bounded Samples","textChars":15,"textLines":1,"bbox":[676,186,244,26]}
+{"kind":"textbox","id":"sh/rqd4vmtw","slide":15,"text":"CSV/JSON/XML profiles are bounded by sample_limit; sample-derived properties are not universal proofs.","textPreview":"CSV/JSON/XML profiles are bounded by sample_limit; sample-derived properties are not universal proofs.","textChars":102,"textLines":1,"bbox":[676,220,244,108]}
+{"kind":"shape","id":"sh/25kb6xkf","slide":15,"bbox":[958,172,280,170]}
+{"kind":"textbox","id":"sh/9w3m94fu","slide":15,"text":"Metadata Only","textPreview":"Metadata Only","textChars":13,"textLines":1,"bbox":[976,186,244,26]}
+{"kind":"textbox","id":"sh/kb6xkf6d","slide":15,"text":"Parquet rows and Zarr chunks are not read; footer stats and metadata are not independently validated against payload values.","textPreview":"Parquet rows and Zarr chunks are not read; footer stats and metadata are not independently validated against payload values.","textChars":124,"textLines":1,"bbox":[976,220,244,108]}
+{"kind":"shape","id":"sh/r2p8nqxs","slide":15,"bbox":[58,398,280,146]}
+{"kind":"textbox","id":"sh/2hwfyxob","slide":15,"text":"Format Scope","textPreview":"Format Scope","textChars":12,"textLines":1,"bbox":[76,412,244,26]}
+{"kind":"textbox","id":"sh/q1orytsv","slide":15,"text":"NetCDF4 path is conservative; XML/XSD is lightweight; JSON Schema handling is not a full validator.","textPreview":"NetCDF4 path is conservative; XML/XSD is lightweight; JSON Schema handling is not a full validator.","textChars":99,"textLines":1,"bbox":[76,446,244,84]}
+{"kind":"shape","id":"sh/fmlkjm1c","slide":15,"bbox":[358,398,280,146]}
+{"kind":"textbox","id":"sh/87ed8bat","slide":15,"text":"LLM Scope","textPreview":"LLM Scope","textChars":9,"textLines":1,"bbox":[376,412,244,26]}
+{"kind":"textbox","id":"sh/xs72x4na","slide":15,"text":"LLM annotations are downstream and may fail, conflict, or remain unknown. They do not create physical fields.","textPreview":"LLM annotations are downstream and may fail, conflict, or remain unknown. They do not create physical fields.","textChars":109,"textLines":1,"bbox":[376,446,244,84]}
+{"kind":"shape","id":"sh/qtcj6tov","slide":15,"bbox":[658,398,280,146]}
+{"kind":"textbox","id":"sh/je9cvixc","slide":15,"text":"Evaluation Scope","textPreview":"Evaluation Scope","textChars":16,"textLines":1,"bbox":[676,412,244,26]}
+{"kind":"textbox","id":"sh/8z25kb6x","slide":15,"text":"Challenge packs show declared-case behavior, not broad ecosystem robustness.","textPreview":"Challenge packs show declared-case behavior, not broad ecosystem robustness.","textChars":76,"textLines":1,"bbox":[676,446,244,84]}
+{"kind":"shape","id":"sh/1gvy90je","slide":15,"bbox":[958,398,280,146]}
+{"kind":"textbox","id":"sh/qpg3ex0n","slide":15,"text":"Missing Controls","textPreview":"Missing Controls","textChars":16,"textLines":1,"bbox":[976,412,244,26]}
+{"kind":"textbox","id":"sh/fa9w3m94","slide":15,"text":"No cryptographic signing, no formal proof checker, no full external schema/entity loading, no automatic broad compatibility guarantee.","textPreview":"No cryptographic signing, no formal proof checker, no full external schema/entity loading, no automatic broad compatibility guarantee.","textChars":134,"textLines":1,"bbox":[976,446,244,84]}
+{"kind":"notes","id":"nt/w1szm1","slide":15,"text":"This is the limitation slide. Say explicitly that missing controls are missing; this is part of the trust model."}
+{"kind":"slide","id":"sl/vf05tr","slide":16,"title":"Recommended Next Improvements","textShapes":16}
+{"kind":"shape","id":"sh/h0fepkzu","slide":16,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/a9w3m94f","slide":16,"text":"Recommended Next Improvements","textPreview":"Recommended Next Improvements","textChars":29,"textLines":1,"bbox":[58,42,900,52]}
+{"kind":"textbox","id":"sh/zupwb2hw","slide":16,"text":"Strengthen coverage and trust without weakening the deterministic-first contract.","textPreview":"Strengthen coverage and trust without weakening the deterministic-first contract.","textChars":81,"textLines":1,"bbox":[60,94,1000,34]}
+{"kind":"shape","id":"sh/orytsvu9","slide":16,"bbox":[58,136,1116,2]}
+{"kind":"textbox","id":"sh/hcrmhk3q","slide":16,"text":"Current schema extraction pipeline | 16/16","textPreview":"Current schema extraction pipeline | 16/16","textChars":42,"textLines":1,"bbox":[58,682,380,20]}
+{"kind":"shape","id":"sh/al87ed8b","slide":16,"bbox":[78,176,344,178]}
+{"kind":"textbox","id":"sh/z61032ls","slide":16,"text":"Broader Compatibility","textPreview":"Broader Compatibility","textChars":21,"textLines":1,"bbox":[96,190,308,26]}
+{"kind":"textbox","id":"sh/oza1gvy9","slide":16,"text":"Expand external/multi-producer validation for Parquet, JSON, XML, NetCDF/CF, and Zarr, with each corpus kept separate from frozen benchmark claims.","textPreview":"Expand external/multi-producer validation for Parquet, JSON, XML, NetCDF/CF, and Zarr, with each corpus kept separate from frozen benchma...","textChars":147,"textLines":1,"bbox":[96,224,308,116]}
+{"kind":"shape","id":"sh/hk3q5o7q","slide":16,"bbox":[468,176,344,178]}
+{"kind":"textbox","id":"sh/hgn29gr2","slide":16,"text":"Stronger Validators","textPreview":"Stronger Validators","textChars":19,"textLines":1,"bbox":[486,190,308,26]}
+{"kind":"textbox","id":"sh/svu9knih","slide":16,"text":"Add fuller JSON Schema and XML/XSD validation modes behind explicit capability flags; keep observed vs declared claims separate.","textPreview":"Add fuller JSON Schema and XML/XSD validation modes behind explicit capability flags; keep observed vs declared claims separate.","textChars":128,"textLines":1,"bbox":[486,224,308,116]}
+{"kind":"shape","id":"sh/za1gvy90","slide":16,"bbox":[858,176,344,178]}
+{"kind":"textbox","id":"sh/ap4r65wj","slide":16,"text":"Payload Verification","textPreview":"Payload Verification","textChars":20,"textLines":1,"bbox":[876,190,308,26]}
+{"kind":"textbox","id":"sh/hoza1gvy","slide":16,"text":"Optionally validate Parquet footer statistics and Zarr chunk-derived properties with bounded payload reads and explicit cost controls.","textPreview":"Optionally validate Parquet footer statistics and Zarr chunk-derived properties with bounded payload reads and explicit cost controls.","textChars":134,"textLines":1,"bbox":[876,224,308,116]}
+{"kind":"shape","id":"sh/s36hcrmh","slide":16,"bbox":[78,410,344,138]}
+{"kind":"textbox","id":"sh/zidonyd0","slide":16,"text":"Provenance Hardening","textPreview":"Provenance Hardening","textChars":20,"textLines":1,"bbox":[96,424,308,26]}
+{"kind":"textbox","id":"sh/a1gvy90j","slide":16,"text":"Add artifact hashes, run manifests, version pins, and optional signing for generated schemas and envelopes.","textPreview":"Add artifact hashes, run manifests, version pins, and optional signing for generated schemas and envelopes.","textChars":107,"textLines":1,"bbox":[96,458,308,76]}
+{"kind":"shape","id":"sh/lszqtcj6","slide":16,"bbox":[468,410,344,138]}
+{"kind":"textbox","id":"sh/s72x4nap","slide":16,"text":"LLM Governance","textPreview":"LLM Governance","textChars":14,"textLines":1,"bbox":[486,424,308,26]}
+{"kind":"textbox","id":"sh/8z25kb6x","slide":16,"text":"Keep LLM augmentation noncanonical by default; improve evidence IDs, prompt regression tests, and conflict dashboards.","textPreview":"Keep LLM augmentation noncanonical by default; improve evidence IDs, prompt regression tests, and conflict dashboards.","textChars":118,"textLines":1,"bbox":[486,458,308,76]}
+{"kind":"shape","id":"sh/1gvy90je","slide":16,"bbox":[858,410,344,138]}
+{"kind":"textbox","id":"sh/qtcj6tov","slide":16,"text":"User-Facing QA","textPreview":"User-Facing QA","textChars":14,"textLines":1,"bbox":[876,424,308,26]}
+{"kind":"textbox","id":"sh/je9cvixc","slide":16,"text":"Expose issue codes, sample limits, abstention reasons, and evidence drill-down more clearly in CLI and GUI outputs.","textPreview":"Expose issue codes, sample limits, abstention reasons, and evidence drill-down more clearly in CLI and GUI outputs.","textChars":115,"textLines":1,"bbox":[876,458,308,76]}
+{"kind":"shape","id":"sh/87ed8bat","slide":16,"bbox":[180,602,920,50]}
+{"kind":"shape","id":"sh/xs72x4na","slide":16,"bbox":[180,602,8,50]}
+{"kind":"textbox","id":"sh/q1orytsv","slide":16,"text":"Do not relax the central rule: unsupported evidence should remain unknown, conflicted, partial, failed, or abstained.","textPreview":"Do not relax the central rule: unsupported evidence should remain unknown, conflicted, partial, failed, or abstained.","textChars":117,"textLines":1,"bbox":[202,616,882,28]}
+{"kind":"notes","id":"nt/vf05tr","slide":16,"text":"End by reinforcing the research posture: the pipeline is already controlled and auditable, and next work should improve coverage and verification rather than convert it into an LLM-first guesser."}

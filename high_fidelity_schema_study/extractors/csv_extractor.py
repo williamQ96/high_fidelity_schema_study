@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import re
 from pathlib import Path
 from typing import Dict, List, Optional
 
@@ -8,6 +9,80 @@ from ..models import DatasetSchema, EvidenceRecord, FieldSchema
 from ..deterministic_profile import attach_dataset_profile
 from ..temporal_semantics import analyze_temporal_semantics, parse_datetime
 from ..unit_normalization import normalize_unit_claim
+
+
+ML_GPU_TRAINING_SEMANTIC_MAPPING = {
+    "name": "training_run_name",
+    "samples": "sample_count",
+    "input_dim_w": "input_width",
+    "input_dim_h": "input_height",
+    "input_dim_c": "input_channel_count",
+    "output_dim": "output_dimension",
+    "optimizer": "optimizer",
+    "epochs": "epoch_count",
+    "batch": "batch_size",
+    "learn_rate": "learning_rate",
+    "tf_version": "tensorflow_version",
+    "cuda_version": "cuda_version",
+    "batch_time": "batch_duration",
+    "epoch_time": "epoch_duration",
+    "fit_time": "fit_duration",
+    "npz_path": "model_artifact_path",
+    "gpu_make": "gpu_vendor",
+    "gpu_name": "gpu_model",
+    "gpu_arch": "gpu_architecture",
+    "gpu_cc": "gpu_compute_capability",
+    "gpu_core_count": "gpu_core_count",
+    "gpu_sm_count": "gpu_sm_count",
+    "gpu_memory_size": "gpu_memory_size",
+    "gpu_memory_type": "gpu_memory_type",
+    "gpu_memory_bw": "gpu_memory_bandwidth",
+    "gpu_tensor_core_count": "gpu_tensor_core_count",
+    "max_memory_util": "gpu_memory_utilization",
+    "avg_memory_util": "gpu_memory_utilization",
+    "max_gpu_util": "gpu_utilization",
+    "avg_gpu_util": "gpu_utilization",
+    "max_gpu_temp": "gpu_temperature",
+    "avg_gpu_temp": "gpu_temperature",
+}
+
+TEMPERATURE_UNIT_SUFFIXES = {
+    "_c": "Celsius",
+    "_f": "Fahrenheit",
+    "_k": "Kelvin",
+}
+
+
+def _name_tokens(name: str) -> set[str]:
+    return {token for token in re.split(r"[^a-z0-9]+", name.lower()) if token}
+
+
+def _has_temperature_name_token(column_name: str) -> bool:
+    return bool(_name_tokens(column_name) & {"temp", "temperature"})
+
+
+def _has_environmental_temperature_context(column_name: str, fieldnames: List[str]) -> bool:
+    lowered = column_name.lower()
+    tokens = _name_tokens(column_name)
+    fieldname_set = {name.lower() for name in fieldnames}
+    context_tokens = set().union(*(_name_tokens(name) for name in fieldnames)) if fieldnames else set()
+    return (
+        bool(tokens & {"air", "ambient", "weather", "surface"})
+        or "air_temp" in lowered
+        or "temperature_air" in lowered
+        or bool(context_tokens & {"weather", "meteorology", "meteo", "humidity", "precip", "rain", "wind"})
+        or bool(fieldname_set & {"station_id", "station_name"})
+    )
+
+
+def _is_gpu_temperature_name(column_name: str) -> bool:
+    tokens = _name_tokens(column_name)
+    return "gpu" in tokens and bool(tokens & {"temp", "temperature"})
+
+
+def _has_ml_gpu_training_context(fieldnames: List[str]) -> bool:
+    fieldname_set = {name.lower() for name in fieldnames}
+    return {"optimizer", "learn_rate", "gpu_name", "cuda_version"} <= fieldname_set
 
 
 def _looks_like_int(value: str) -> bool:
@@ -67,6 +142,8 @@ def _semantic_type_from_name(column_name: str, fieldnames: List[str]) -> str:
         "device": "device_identifier",
         "salinity_psu": "salinity",
     }
+    if _has_ml_gpu_training_context(fieldnames) and lowered in ML_GPU_TRAINING_SEMANTIC_MAPPING:
+        return ML_GPU_TRAINING_SEMANTIC_MAPPING[lowered]
     if lowered in exact_mapping:
         return exact_mapping[lowered]
     if lowered.endswith("_id") or lowered == "id" or "identifier" in lowered:
@@ -89,20 +166,28 @@ def _semantic_type_from_name(column_name: str, fieldnames: List[str]) -> str:
         return "surface_pressure"
     if "wind_speed" in lowered:
         return "wind_speed"
-    if "temp" in lowered or lowered == "temperature":
+    if _is_gpu_temperature_name(column_name):
+        return "gpu_temperature"
+    if _has_temperature_name_token(column_name):
         aquatic_context = any(token in fieldname_set for token in {"salinity_psu", "buoy_id"}) or "water" in lowered
-        return "water_temperature" if aquatic_context else "air_temperature"
+        if aquatic_context:
+            return "water_temperature"
+        if _has_environmental_temperature_context(column_name, fieldnames):
+            return "air_temperature"
+        return "unknown"
     if any(token in lowered for token in ("value", "val")):
         return "unknown"
     return "unknown"
 
 
-def _unit_from_name(column_name: str) -> Optional[str]:
+def _unit_from_name(column_name: str, semantic_type: str = "unknown") -> Optional[str]:
     lowered = column_name.lower()
+    for suffix, unit in TEMPERATURE_UNIT_SUFFIXES.items():
+        if lowered.endswith(suffix):
+            if semantic_type in {"air_temperature", "water_temperature", "gpu_temperature"} or _has_temperature_name_token(column_name):
+                return unit
+            return None
     suffix_mapping = {
-        "_c": "Celsius",
-        "_f": "Fahrenheit",
-        "_k": "Kelvin",
         "_mm": "millimeter",
         "_m": "meter",
         "_kg": "kilogram",
@@ -134,17 +219,54 @@ def _logical_type_from_field(fieldname: str, physical_type: str, semantic_type: 
         "wind_speed",
         "air_temperature",
         "water_temperature",
+        "gpu_temperature",
         "power",
         "voltage",
         "acidity_ph",
         "dissolved_oxygen",
         "turbidity",
         "salinity",
+        "batch_duration",
+        "epoch_duration",
+        "fit_duration",
+        "gpu_memory_size",
+        "gpu_memory_bandwidth",
+        "gpu_memory_utilization",
+        "gpu_utilization",
     }:
         return "measurement"
-    if semantic_type in {"station_name", "operational_status", "quality_flag", "free_text_note"}:
+    if semantic_type in {
+        "station_name",
+        "operational_status",
+        "quality_flag",
+        "free_text_note",
+        "training_run_name",
+        "optimizer",
+        "tensorflow_version",
+        "cuda_version",
+        "model_artifact_path",
+        "gpu_vendor",
+        "gpu_model",
+        "gpu_architecture",
+        "gpu_memory_type",
+    }:
         return "label"
-    if semantic_type in {"collection_date", "observation_time"}:
+    if semantic_type in {
+        "collection_date",
+        "observation_time",
+        "sample_count",
+        "input_width",
+        "input_height",
+        "input_channel_count",
+        "output_dimension",
+        "epoch_count",
+        "batch_size",
+        "learning_rate",
+        "gpu_compute_capability",
+        "gpu_core_count",
+        "gpu_sm_count",
+        "gpu_tensor_core_count",
+    }:
         return "attribute"
     if "flag" in lowered or "status" in lowered or "note" in lowered or lowered.endswith("_name"):
         return "label"
@@ -199,7 +321,7 @@ def extract_csv_schema(path: str, sample_limit: int = 200) -> DatasetSchema:
         physical_type = _conservative_physical_type(samples)
         semantic_type = _semantic_type_from_name(fieldname, fieldnames)
         logical_type = _logical_type_from_field(fieldname, physical_type, semantic_type)
-        unit = _unit_from_name(fieldname)
+        unit = _unit_from_name(fieldname, semantic_type)
         nullable = any(not value.strip() for value in samples)
         non_empty = [value for value in samples if value.strip()]
         unique_ratio = round(len(set(non_empty)) / len(non_empty), 4) if non_empty else None
