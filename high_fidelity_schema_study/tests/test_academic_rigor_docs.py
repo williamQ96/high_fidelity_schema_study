@@ -41,7 +41,8 @@ def test_artifact_handoff_preserves_known_limits_and_commands():
     assert "python -m pytest high_fidelity_schema_study\\tests" in text
     assert "External retrieval qrels are planted single-positive judgments." in text
     assert "Evidence adequacy and provenance establish auditability, not semantic truth." in text
-    assert "98%" in text
+    assert "release-ready within its bounded claims" in text
+    assert "Phases 12-20 are companion engineering evidence" in text
 
 
 def test_gui_visual_qa_records_smoke_result():

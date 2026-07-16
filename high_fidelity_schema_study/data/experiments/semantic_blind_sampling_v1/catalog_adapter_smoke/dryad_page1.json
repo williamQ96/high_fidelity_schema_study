@@ -1,0 +1,882 @@
+{
+  "adapter_id": "zenodo_dryad_catalog_snapshot/v1",
+  "dataset_expansions": [
+    {
+      "files_request_url": "https://datadryad.org/api/v2/versions/453014/files",
+      "files_response": {
+        "_embedded": {
+          "stash:files": [
+            {
+              "_links": {
+                "curies": [
+                  {
+                    "href": "https://github.com/datadryad/dryad-app/blob/main/documentation/apis/link_relations.md#{rel}",
+                    "name": "stash",
+                    "templated": "true"
+                  }
+                ],
+                "self": {
+                  "href": "/api/v2/files/4864420"
+                },
+                "stash:dataset": {
+                  "href": "/api/v2/datasets/doi%3A10.5061%2Fdryad.8w9ghx41z"
+                },
+                "stash:download": {
+                  "href": "/api/v2/files/4864420/download"
+                },
+                "stash:files": {
+                  "href": "/api/v2/versions/453014/files"
+                },
+                "stash:version": {
+                  "href": "/api/v2/versions/453014"
+                }
+              },
+              "digest": "03dbbc2ab7ad005ce83a999017f31cab5304b04f9d46c8afbb7d6e7d12159c3e",
+              "digestType": "sha-256",
+              "mimeType": "text/markdown",
+              "path": "README.md",
+              "size": 2898,
+              "status": "created"
+            },
+            {
+              "_links": {
+                "curies": [
+                  {
+                    "href": "https://github.com/datadryad/dryad-app/blob/main/documentation/apis/link_relations.md#{rel}",
+                    "name": "stash",
+                    "templated": "true"
+                  }
+                ],
+                "self": {
+                  "href": "/api/v2/files/4864395"
+                },
+                "stash:dataset": {
+                  "href": "/api/v2/datasets/doi%3A10.5061%2Fdryad.8w9ghx41z"
+                },
+                "stash:download": {
+                  "href": "/api/v2/files/4864395/download"
+                },
+                "stash:files": {
+                  "href": "/api/v2/versions/453014/files"
+                },
+                "stash:version": {
+                  "href": "/api/v2/versions/453014"
+                }
+              },
+              "digest": "581c81707113b002daf6f58583dfcb0ffa97fe92003634abcbccc3340aa6330c",
+              "digestType": "sha-256",
+              "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+              "path": "Supplementary_data_Moss_Reveals_Local_Lead_Pollution_from_Leaded_Aviation.xlsx",
+              "size": 123886,
+              "status": "copied"
+            }
+          ]
+        },
+        "_links": {
+          "first": {
+            "href": "/api/v2/versions/453014/files"
+          },
+          "last": {
+            "href": "/api/v2/versions/453014/files?page=1"
+          },
+          "self": {
+            "href": "/api/v2/versions/453014/files"
+          }
+        },
+        "count": 2,
+        "total": 2
+      },
+      "identifier": "doi:10.5061/dryad.8w9ghx41z",
+      "version_request_url": "https://datadryad.org/api/v2/versions/453014",
+      "version_response": {
+        "_links": {
+          "curies": [
+            {
+              "href": "https://github.com/datadryad/dryad-app/blob/main/documentation/apis/link_relations.md#{rel}",
+              "name": "stash",
+              "templated": "true"
+            }
+          ],
+          "self": {
+            "href": "/api/v2/versions/453014"
+          },
+          "stash:dataset": {
+            "href": "/api/v2/datasets/doi%3A10.5061%2Fdryad.8w9ghx41z"
+          },
+          "stash:download": {
+            "href": "/api/v2/versions/453014/download"
+          },
+          "stash:files": {
+            "href": "/api/v2/versions/453014/files"
+          }
+        },
+        "abstract": "<p>Lead emissions from piston-engine aircraft using leaded aviation gasoline (avgas) remain a significant source of environmental contamination near regional airports, posing potential health risks to nearby communities. Passive biomonitoring using the epiphytic moss <em>Orthotrichum lyellii</em> was combined with lead isotope fingerprinting to quantify lead concentrations and distinguish between legacy leaded gasoline and current avgas emissions near Hillsboro and Troutdale airports in Oregon. Our results reveal elevated lead levels up to 50 times the rural background near airports, with isotopic signatures confirming avgas as a dominant local source. These findings indicate that avgas use contributes substantially to environmental lead burdens in adjacent residential neighborhoods. Moss biomonitoring offers a cost-effective approach for detecting and mapping lead pollution from airport emissions, supporting efforts to evaluate exposure risks and inform regulatory actions aimed at reducing lead exposure from aviation sources.</p>\n",
+        "authors": [
+          {
+            "affiliation": "Portland State University",
+            "affiliationROR": "https://ror.org/00yn2fy02",
+            "affiliations": [
+              {
+                "name": "Portland State University",
+                "ror_id": "https://ror.org/00yn2fy02"
+              }
+            ],
+            "email": "oea@pdx.edu",
+            "firstName": "Oluwaseyi",
+            "lastName": "Aderinboye",
+            "orcid": "0009-0009-4022-8003",
+            "order": null
+          },
+          {
+            "affiliation": "Oregon State University",
+            "affiliationROR": "https://ror.org/00ysfqy60",
+            "affiliations": [
+              {
+                "name": "Oregon State University",
+                "ror_id": "https://ror.org/00ysfqy60"
+              }
+            ],
+            "email": "alyssa.shiel@oregonstate.edu",
+            "firstName": "Alyssa",
+            "lastName": "Shiel-Higgins",
+            "orcid": "0000-0003-3254-3328",
+            "order": 1
+          },
+          {
+            "affiliation": "Oregon State University",
+            "affiliationROR": "https://ror.org/00ysfqy60",
+            "affiliations": [
+              {
+                "name": "Oregon State University",
+                "ror_id": "https://ror.org/00ysfqy60"
+              }
+            ],
+            "email": "",
+            "firstName": "Lauren",
+            "lastName": "Stalford",
+            "orcid": null,
+            "order": 2
+          },
+          {
+            "affiliation": "Oregon State University",
+            "affiliationROR": "https://ror.org/00ysfqy60",
+            "affiliations": [
+              {
+                "name": "Oregon State University",
+                "ror_id": "https://ror.org/00ysfqy60"
+              }
+            ],
+            "email": "",
+            "firstName": "Christina",
+            "lastName": "Murphy",
+            "orcid": null,
+            "order": 3
+          },
+          {
+            "affiliation": "Portland State University",
+            "affiliationROR": "https://ror.org/00yn2fy02",
+            "affiliations": [
+              {
+                "name": "Portland State University",
+                "ror_id": "https://ror.org/00yn2fy02"
+              }
+            ],
+            "email": "atkinsdb@pdx.edu",
+            "firstName": "Dean",
+            "lastName": "Atkinson",
+            "orcid": null,
+            "order": 4
+          }
+        ],
+        "changedFields": [
+          "journal",
+          "data_files"
+        ],
+        "curationStatus": "Published",
+        "fieldOfScience": "Chemical sciences",
+        "keywords": [
+          "lead",
+          "Pollution",
+          "Airports",
+          "moss biomonitoring"
+        ],
+        "lastModificationDate": "2026-07-16",
+        "publicationDate": "2026-07-16",
+        "sharingLink": "http://datadryad.org/dataset/doi:10.5061/dryad.8w9ghx41z",
+        "title": "Moss reveals local lead pollution from leaded aviation fuel near Oregon airports",
+        "versionChanges": "files_changed",
+        "versionNumber": 6,
+        "versionStatus": "submitted",
+        "visibility": "public"
+      }
+    },
+    {
+      "files_request_url": "https://datadryad.org/api/v2/versions/452893/files",
+      "files_response": {
+        "_embedded": {
+          "stash:files": [
+            {
+              "_links": {
+                "curies": [
+                  {
+                    "href": "https://github.com/datadryad/dryad-app/blob/main/documentation/apis/link_relations.md#{rel}",
+                    "name": "stash",
+                    "templated": "true"
+                  }
+                ],
+                "self": {
+                  "href": "/api/v2/files/4862955"
+                },
+                "stash:dataset": {
+                  "href": "/api/v2/datasets/doi%3A10.5061%2Fdryad.6wwpzgn7f"
+                },
+                "stash:download": {
+                  "href": "/api/v2/files/4862955/download"
+                },
+                "stash:files": {
+                  "href": "/api/v2/versions/452893/files"
+                },
+                "stash:version": {
+                  "href": "/api/v2/versions/452893"
+                }
+              },
+              "digest": "50abaed1e58278037b60d2022982486641e5785ae943b1a2e61357c26b80550c",
+              "digestType": "sha-256",
+              "mimeType": "text/csv",
+              "path": "KnappUrbanACWO_2021-2024.csv",
+              "size": 20519,
+              "status": "copied"
+            },
+            {
+              "_links": {
+                "curies": [
+                  {
+                    "href": "https://github.com/datadryad/dryad-app/blob/main/documentation/apis/link_relations.md#{rel}",
+                    "name": "stash",
+                    "templated": "true"
+                  }
+                ],
+                "self": {
+                  "href": "/api/v2/files/4862961"
+                },
+                "stash:dataset": {
+                  "href": "/api/v2/datasets/doi%3A10.5061%2Fdryad.6wwpzgn7f"
+                },
+                "stash:download": {
+                  "href": "/api/v2/files/4862961/download"
+                },
+                "stash:files": {
+                  "href": "/api/v2/versions/452893/files"
+                },
+                "stash:version": {
+                  "href": "/api/v2/versions/452893"
+                }
+              },
+              "digest": "9dc19b57dd00bf80fdfcead750de6fee279465d0c47c7deab523674278725f90",
+              "digestType": "sha-256",
+              "mimeType": "text/markdown",
+              "path": "README.md",
+              "size": 4917,
+              "status": "created"
+            }
+          ]
+        },
+        "_links": {
+          "first": {
+            "href": "/api/v2/versions/452893/files"
+          },
+          "last": {
+            "href": "/api/v2/versions/452893/files?page=1"
+          },
+          "self": {
+            "href": "/api/v2/versions/452893/files"
+          }
+        },
+        "count": 2,
+        "total": 2
+      },
+      "identifier": "doi:10.5061/dryad.6wwpzgn7f",
+      "version_request_url": "https://datadryad.org/api/v2/versions/452893",
+      "version_response": {
+        "_links": {
+          "curies": [
+            {
+              "href": "https://github.com/datadryad/dryad-app/blob/main/documentation/apis/link_relations.md#{rel}",
+              "name": "stash",
+              "templated": "true"
+            }
+          ],
+          "self": {
+            "href": "/api/v2/versions/452893"
+          },
+          "stash:dataset": {
+            "href": "/api/v2/datasets/doi%3A10.5061%2Fdryad.6wwpzgn7f"
+          },
+          "stash:download": {
+            "href": "/api/v2/versions/452893/download"
+          },
+          "stash:files": {
+            "href": "/api/v2/versions/452893/files"
+          }
+        },
+        "abstract": "<p>Access to suitable resources shapes the evolution and maintenance of avian cooperative breeding by influencing whether an individual will have a greater chance of survival and reproduction by dispersing or remaining on a natal territory. Cooperatively-breeding species exhibit altered dispersal according to food availability and habitat quality, but the relationship between resource use, group size, and reproduction in human-altered landscapes remains to be studied. We examined how urbanization, key resource availability, and resource use relate to differences in group size and number of offspring in an urban population of facultative cooperatively-breeding acorn woodpeckers. Acorn woodpeckers shifted to increased use of ornamental trees, palms, and anthropogenic structures for granaries in more urbanized areas where oak trees, a key historic food and granary resource, are in lower abundance and proximity. Pair-breeding was more prevalent in urbanized areas and seemed to be primarily associated with use of utility poles for granaries.  In general, territories with utility poles as granaries and higher urbanization levels hosted smaller group sizes.  In contrast, while the number of fledglings present was higher in larger groups, it did not vary with urban resources when controlling for group size. Our findings suggest that land conversion levels and the relative availability of historic and novel resources shape habitat quality, resulting in differing patterns of group living and subsequent productivity across the urban landscape. This indicates that while novel resources may enable wildlife to occupy urban areas, they may also influence the social behavior of facultative cooperative breeders.</p>\n",
+        "authors": [
+          {
+            "affiliation": "Westmont College",
+            "affiliationROR": "https://ror.org/00xhcz327",
+            "affiliations": [
+              {
+                "name": "Westmont College",
+                "ror_id": "https://ror.org/00xhcz327"
+              }
+            ],
+            "email": "oknapp@westmont.edu",
+            "firstName": "Olivia",
+            "lastName": "Knapp",
+            "orcid": "0009-0002-1008-9734",
+            "order": null
+          },
+          {
+            "affiliation": "Westmont College",
+            "affiliationROR": "https://ror.org/00xhcz327",
+            "affiliations": [
+              {
+                "name": "Westmont College",
+                "ror_id": "https://ror.org/00xhcz327"
+              }
+            ],
+            "email": "",
+            "firstName": "Kendra",
+            "lastName": "Forster",
+            "orcid": null,
+            "order": 1
+          },
+          {
+            "affiliation": "Westmont College",
+            "affiliationROR": "https://ror.org/00xhcz327",
+            "affiliations": [
+              {
+                "name": "Westmont College",
+                "ror_id": "https://ror.org/00xhcz327"
+              }
+            ],
+            "email": "",
+            "firstName": "Eric",
+            "lastName": "Reyes",
+            "orcid": null,
+            "order": 2
+          },
+          {
+            "affiliation": "Westmont College",
+            "affiliationROR": "https://ror.org/00xhcz327",
+            "affiliations": [
+              {
+                "name": "Westmont College",
+                "ror_id": "https://ror.org/00xhcz327"
+              }
+            ],
+            "email": "",
+            "firstName": "Peter",
+            "lastName": "Schramm",
+            "orcid": null,
+            "order": 3
+          },
+          {
+            "affiliation": "Westmont College",
+            "affiliationROR": "https://ror.org/00xhcz327",
+            "affiliations": [
+              {
+                "name": "Westmont College",
+                "ror_id": "https://ror.org/00xhcz327"
+              }
+            ],
+            "email": "",
+            "firstName": "Alexander",
+            "lastName": "Rurik",
+            "orcid": null,
+            "order": 4
+          },
+          {
+            "affiliation": "Westmont College",
+            "affiliationROR": "https://ror.org/00xhcz327",
+            "affiliations": [
+              {
+                "name": "Westmont College",
+                "ror_id": "https://ror.org/00xhcz327"
+              }
+            ],
+            "email": "",
+            "firstName": "Seth",
+            "lastName": "Wilmoth",
+            "orcid": null,
+            "order": 5
+          },
+          {
+            "affiliation": "Westmont College",
+            "affiliationROR": "https://ror.org/00xhcz327",
+            "affiliations": [
+              {
+                "name": "Westmont College",
+                "ror_id": "https://ror.org/00xhcz327"
+              }
+            ],
+            "email": "",
+            "firstName": "Sophia",
+            "lastName": "McRae",
+            "orcid": null,
+            "order": 6
+          },
+          {
+            "affiliation": "Westmont College",
+            "affiliationROR": "https://ror.org/00xhcz327",
+            "affiliations": [
+              {
+                "name": "Westmont College",
+                "ror_id": "https://ror.org/00xhcz327"
+              }
+            ],
+            "email": "",
+            "firstName": "Caleb",
+            "lastName": "Courson",
+            "orcid": null,
+            "order": 7
+          },
+          {
+            "affiliation": "Westmont College",
+            "affiliationROR": "https://ror.org/00xhcz327",
+            "affiliations": [
+              {
+                "name": "Westmont College",
+                "ror_id": "https://ror.org/00xhcz327"
+              }
+            ],
+            "email": "",
+            "firstName": "Theodore",
+            "lastName": "Patterson",
+            "orcid": null,
+            "order": 8
+          },
+          {
+            "affiliation": "Westmont College",
+            "affiliationROR": "https://ror.org/00xhcz327",
+            "affiliations": [
+              {
+                "name": "Westmont College",
+                "ror_id": "https://ror.org/00xhcz327"
+              }
+            ],
+            "email": "sparkman@westmont.edu",
+            "firstName": "Amanda",
+            "lastName": "Sparkman",
+            "orcid": "0000-0002-3504-6426",
+            "order": 9
+          }
+        ],
+        "changedFields": [
+          "methods",
+          "data_files"
+        ],
+        "curationStatus": "Published",
+        "fieldOfScience": "Biological sciences",
+        "funders": [
+          {
+            "awardDescription": "",
+            "awardNumber": "",
+            "awardTitle": null,
+            "awardURI": null,
+            "identifier": "https://ror.org/00xhcz327",
+            "identifierType": "ror",
+            "order": 0,
+            "organization": "Westmont College"
+          }
+        ],
+        "keywords": [
+          "Melanerpes formicivorus",
+          "cooperative-breeding",
+          "Observational studies",
+          "Urbanization",
+          "novel resources",
+          "acorn woodpeckers"
+        ],
+        "lastModificationDate": "2026-07-15",
+        "methods": "<p>Data was collected from observations of acorn woodpecker social groups and territory sites in the field across four years.  Behavioral data for each social group/territory site was obtained from at least three thirty-minute observational periods per year occurring every two weeks during the spring reproductive season.  Urban imperviousness  data was obtained from Dewitz and U.S. Geological Survey 2021 (<a href=\"https://doi.org/10.5066/P9KZCM54\">https://doi.org/10.5066/P9KZCM54)</a>.  Anthropogenic light was obtained from Elvidge et al. 2017 (<a href=\"http://dx.doi.org/10.1080/01431161.2017.1342050\">http://dx.doi.org/10.1080/01431161.2017.1342050</a>).</p>\n",
+        "publicationDate": "2026-07-15",
+        "relatedWorks": [
+          {
+            "identifier": "https://doi.org/10.1007/s11252-026-01914-8",
+            "identifierType": "DOI",
+            "relationship": "primary_article"
+          }
+        ],
+        "sharingLink": "http://datadryad.org/dataset/doi:10.5061/dryad.6wwpzgn7f",
+        "title": "Data for: Acorn woodpeckers alter resource use, group size, and spring productivity across an urban landscape",
+        "versionChanges": "files_changed",
+        "versionNumber": 6,
+        "versionStatus": "submitted",
+        "visibility": "public"
+      }
+    }
+  ],
+  "page_ordinal": 1,
+  "raw_catalog_response": {
+    "_embedded": {
+      "stash:datasets": [
+        {
+          "_links": {
+            "curies": [
+              {
+                "href": "https://github.com/datadryad/dryad-app/blob/main/documentation/apis/link_relations.md#{rel}",
+                "name": "stash",
+                "templated": "true"
+              }
+            ],
+            "self": {
+              "href": "/api/v2/datasets/doi%3A10.5061%2Fdryad.8w9ghx41z"
+            },
+            "stash:download": {
+              "href": "/api/v2/datasets/doi%3A10.5061%2Fdryad.8w9ghx41z/download"
+            },
+            "stash:version": {
+              "href": "/api/v2/versions/453014"
+            },
+            "stash:versions": {
+              "href": "/api/v2/datasets/doi%3A10.5061%2Fdryad.8w9ghx41z/versions"
+            }
+          },
+          "abstract": "<p>Lead emissions from piston-engine aircraft using leaded aviation gasoline (avgas) remain a significant source of environmental contamination near regional airports, posing potential health risks to nearby communities. Passive biomonitoring using the epiphytic moss <em>Orthotrichum lyellii</em> was combined with lead isotope fingerprinting to quantify lead concentrations and distinguish between legacy leaded gasoline and current avgas emissions near Hillsboro and Troutdale airports in Oregon. Our results reveal elevated lead levels up to 50 times the rural background near airports, with isotopic signatures confirming avgas as a dominant local source. These findings indicate that avgas use contributes substantially to environmental lead burdens in adjacent residential neighborhoods. Moss biomonitoring offers a cost-effective approach for detecting and mapping lead pollution from airport emissions, supporting efforts to evaluate exposure risks and inform regulatory actions aimed at reducing lead exposure from aviation sources.</p>\n",
+          "authors": [
+            {
+              "affiliation": "Portland State University",
+              "affiliationROR": "https://ror.org/00yn2fy02",
+              "affiliations": [
+                {
+                  "name": "Portland State University",
+                  "ror_id": "https://ror.org/00yn2fy02"
+                }
+              ],
+              "email": "oea@pdx.edu",
+              "firstName": "Oluwaseyi",
+              "lastName": "Aderinboye",
+              "orcid": "0009-0009-4022-8003"
+            },
+            {
+              "affiliation": "Oregon State University",
+              "affiliationROR": "https://ror.org/00ysfqy60",
+              "affiliations": [
+                {
+                  "name": "Oregon State University",
+                  "ror_id": "https://ror.org/00ysfqy60"
+                }
+              ],
+              "email": "alyssa.shiel@oregonstate.edu",
+              "firstName": "Alyssa",
+              "lastName": "Shiel-Higgins",
+              "orcid": "0000-0003-3254-3328",
+              "order": 1
+            },
+            {
+              "affiliation": "Oregon State University",
+              "affiliationROR": "https://ror.org/00ysfqy60",
+              "affiliations": [
+                {
+                  "name": "Oregon State University",
+                  "ror_id": "https://ror.org/00ysfqy60"
+                }
+              ],
+              "email": "",
+              "firstName": "Lauren",
+              "lastName": "Stalford",
+              "order": 2
+            },
+            {
+              "affiliation": "Oregon State University",
+              "affiliationROR": "https://ror.org/00ysfqy60",
+              "affiliations": [
+                {
+                  "name": "Oregon State University",
+                  "ror_id": "https://ror.org/00ysfqy60"
+                }
+              ],
+              "email": "",
+              "firstName": "Christina",
+              "lastName": "Murphy",
+              "order": 3
+            },
+            {
+              "affiliation": "Portland State University",
+              "affiliationROR": "https://ror.org/00yn2fy02",
+              "affiliations": [
+                {
+                  "name": "Portland State University",
+                  "ror_id": "https://ror.org/00yn2fy02"
+                }
+              ],
+              "email": "atkinsdb@pdx.edu",
+              "firstName": "Dean",
+              "lastName": "Atkinson",
+              "order": 4
+            }
+          ],
+          "curationStatus": "Published",
+          "fieldOfScience": "Chemical sciences",
+          "id": 176274,
+          "identifier": "doi:10.5061/dryad.8w9ghx41z",
+          "keywords": [
+            "lead",
+            "Pollution",
+            "Airports",
+            "moss biomonitoring"
+          ],
+          "lastModificationDate": "2026-07-16",
+          "license": "https://spdx.org/licenses/CC0-1.0.html",
+          "metrics": {
+            "citations": 0,
+            "downloads": 0,
+            "views": 0
+          },
+          "publicationDate": "2026-07-16",
+          "sharingLink": "http://datadryad.org/dataset/doi:10.5061/dryad.8w9ghx41z",
+          "storageSize": 126784,
+          "title": "Moss reveals local lead pollution from leaded aviation fuel near Oregon airports",
+          "versionChanges": "files_changed",
+          "versionNumber": 6,
+          "versionStatus": "submitted",
+          "visibility": "public"
+        },
+        {
+          "_links": {
+            "curies": [
+              {
+                "href": "https://github.com/datadryad/dryad-app/blob/main/documentation/apis/link_relations.md#{rel}",
+                "name": "stash",
+                "templated": "true"
+              }
+            ],
+            "self": {
+              "href": "/api/v2/datasets/doi%3A10.5061%2Fdryad.6wwpzgn7f"
+            },
+            "stash:download": {
+              "href": "/api/v2/datasets/doi%3A10.5061%2Fdryad.6wwpzgn7f/download"
+            },
+            "stash:version": {
+              "href": "/api/v2/versions/452893"
+            },
+            "stash:versions": {
+              "href": "/api/v2/datasets/doi%3A10.5061%2Fdryad.6wwpzgn7f/versions"
+            }
+          },
+          "abstract": "<p>Access to suitable resources shapes the evolution and maintenance of avian cooperative breeding by influencing whether an individual will have a greater chance of survival and reproduction by dispersing or remaining on a natal territory. Cooperatively-breeding species exhibit altered dispersal according to food availability and habitat quality, but the relationship between resource use, group size, and reproduction in human-altered landscapes remains to be studied. We examined how urbanization, key resource availability, and resource use relate to differences in group size and number of offspring in an urban population of facultative cooperatively-breeding acorn woodpeckers. Acorn woodpeckers shifted to increased use of ornamental trees, palms, and anthropogenic structures for granaries in more urbanized areas where oak trees, a key historic food and granary resource, are in lower abundance and proximity. Pair-breeding was more prevalent in urbanized areas and seemed to be primarily associated with use of utility poles for granaries.  In general, territories with utility poles as granaries and higher urbanization levels hosted smaller group sizes.  In contrast, while the number of fledglings present was higher in larger groups, it did not vary with urban resources when controlling for group size. Our findings suggest that land conversion levels and the relative availability of historic and novel resources shape habitat quality, resulting in differing patterns of group living and subsequent productivity across the urban landscape. This indicates that while novel resources may enable wildlife to occupy urban areas, they may also influence the social behavior of facultative cooperative breeders.</p>\n",
+          "authors": [
+            {
+              "affiliation": "Westmont College",
+              "affiliationROR": "https://ror.org/00xhcz327",
+              "affiliations": [
+                {
+                  "name": "Westmont College",
+                  "ror_id": "https://ror.org/00xhcz327"
+                }
+              ],
+              "email": "oknapp@westmont.edu",
+              "firstName": "Olivia",
+              "lastName": "Knapp",
+              "orcid": "0009-0002-1008-9734"
+            },
+            {
+              "affiliation": "Westmont College",
+              "affiliationROR": "https://ror.org/00xhcz327",
+              "affiliations": [
+                {
+                  "name": "Westmont College",
+                  "ror_id": "https://ror.org/00xhcz327"
+                }
+              ],
+              "email": "",
+              "firstName": "Kendra",
+              "lastName": "Forster",
+              "order": 1
+            },
+            {
+              "affiliation": "Westmont College",
+              "affiliationROR": "https://ror.org/00xhcz327",
+              "affiliations": [
+                {
+                  "name": "Westmont College",
+                  "ror_id": "https://ror.org/00xhcz327"
+                }
+              ],
+              "email": "",
+              "firstName": "Eric",
+              "lastName": "Reyes",
+              "order": 2
+            },
+            {
+              "affiliation": "Westmont College",
+              "affiliationROR": "https://ror.org/00xhcz327",
+              "affiliations": [
+                {
+                  "name": "Westmont College",
+                  "ror_id": "https://ror.org/00xhcz327"
+                }
+              ],
+              "email": "",
+              "firstName": "Peter",
+              "lastName": "Schramm",
+              "order": 3
+            },
+            {
+              "affiliation": "Westmont College",
+              "affiliationROR": "https://ror.org/00xhcz327",
+              "affiliations": [
+                {
+                  "name": "Westmont College",
+                  "ror_id": "https://ror.org/00xhcz327"
+                }
+              ],
+              "email": "",
+              "firstName": "Alexander",
+              "lastName": "Rurik",
+              "order": 4
+            },
+            {
+              "affiliation": "Westmont College",
+              "affiliationROR": "https://ror.org/00xhcz327",
+              "affiliations": [
+                {
+                  "name": "Westmont College",
+                  "ror_id": "https://ror.org/00xhcz327"
+                }
+              ],
+              "email": "",
+              "firstName": "Seth",
+              "lastName": "Wilmoth",
+              "order": 5
+            },
+            {
+              "affiliation": "Westmont College",
+              "affiliationROR": "https://ror.org/00xhcz327",
+              "affiliations": [
+                {
+                  "name": "Westmont College",
+                  "ror_id": "https://ror.org/00xhcz327"
+                }
+              ],
+              "email": "",
+              "firstName": "Sophia",
+              "lastName": "McRae",
+              "order": 6
+            },
+            {
+              "affiliation": "Westmont College",
+              "affiliationROR": "https://ror.org/00xhcz327",
+              "affiliations": [
+                {
+                  "name": "Westmont College",
+                  "ror_id": "https://ror.org/00xhcz327"
+                }
+              ],
+              "email": "",
+              "firstName": "Caleb",
+              "lastName": "Courson",
+              "order": 7
+            },
+            {
+              "affiliation": "Westmont College",
+              "affiliationROR": "https://ror.org/00xhcz327",
+              "affiliations": [
+                {
+                  "name": "Westmont College",
+                  "ror_id": "https://ror.org/00xhcz327"
+                }
+              ],
+              "email": "",
+              "firstName": "Theodore",
+              "lastName": "Patterson",
+              "order": 8
+            },
+            {
+              "affiliation": "Westmont College",
+              "affiliationROR": "https://ror.org/00xhcz327",
+              "affiliations": [
+                {
+                  "name": "Westmont College",
+                  "ror_id": "https://ror.org/00xhcz327"
+                }
+              ],
+              "email": "sparkman@westmont.edu",
+              "firstName": "Amanda",
+              "lastName": "Sparkman",
+              "orcid": "0000-0002-3504-6426",
+              "order": 9
+            }
+          ],
+          "curationStatus": "Published",
+          "fieldOfScience": "Biological sciences",
+          "funders": [
+            {
+              "awardDescription": "",
+              "awardNumber": "",
+              "identifier": "https://ror.org/00xhcz327",
+              "identifierType": "ror",
+              "order": 0,
+              "organization": "Westmont College"
+            }
+          ],
+          "id": 140527,
+          "identifier": "doi:10.5061/dryad.6wwpzgn7f",
+          "keywords": [
+            "Melanerpes formicivorus",
+            "cooperative-breeding",
+            "Observational studies",
+            "Urbanization",
+            "novel resources",
+            "acorn woodpeckers"
+          ],
+          "lastModificationDate": "2026-07-15",
+          "license": "https://spdx.org/licenses/CC0-1.0.html",
+          "methods": "<p>Data was collected from observations of acorn woodpecker social groups and territory sites in the field across four years.  Behavioral data for each social group/territory site was obtained from at least three thirty-minute observational periods per year occurring every two weeks during the spring reproductive season.  Urban imperviousness  data was obtained from Dewitz and U.S. Geological Survey 2021 (<a href=\"https://doi.org/10.5066/P9KZCM54\">https://doi.org/10.5066/P9KZCM54)</a>.  Anthropogenic light was obtained from Elvidge et al. 2017 (<a href=\"http://dx.doi.org/10.1080/01431161.2017.1342050\">http://dx.doi.org/10.1080/01431161.2017.1342050</a>).</p>\n",
+          "metrics": {
+            "citations": 0,
+            "downloads": 0,
+            "views": 0
+          },
+          "publicationDate": "2026-07-15",
+          "relatedPublicationISSN": "1083-8155",
+          "relatedWorks": [
+            {
+              "identifier": "https://doi.org/10.1007/s11252-026-01914-8",
+              "identifierType": "DOI",
+              "relationship": "primary_article"
+            }
+          ],
+          "sharingLink": "http://datadryad.org/dataset/doi:10.5061/dryad.6wwpzgn7f",
+          "storageSize": 25436,
+          "title": "Data for: Acorn woodpeckers alter resource use, group size, and spring productivity across an urban landscape",
+          "versionChanges": "files_changed",
+          "versionNumber": 6,
+          "versionStatus": "submitted",
+          "visibility": "public"
+        }
+      ]
+    },
+    "_links": {
+      "first": {
+        "href": "/api/v2/search?per_page=2"
+      },
+      "last": {
+        "href": "/api/v2/search?page=35726&per_page=2"
+      },
+      "next": {
+        "href": "/api/v2/search?page=2&per_page=2"
+      },
+      "self": {
+        "href": "/api/v2/search?per_page=2"
+      }
+    },
+    "count": 2,
+    "total": 71452
+  },
+  "request_url": "https://datadryad.org/api/v2/search?per_page=2",
+  "retrieved_at": "2026-07-16T04:49:02.977829Z",
+  "schema_version": "semantic-catalog-snapshot/v1",
+  "source_repository": "dryad"
+}

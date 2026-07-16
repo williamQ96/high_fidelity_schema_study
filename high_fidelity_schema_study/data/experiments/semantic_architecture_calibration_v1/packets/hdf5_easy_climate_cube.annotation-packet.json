@@ -1,0 +1,168 @@
+{
+  "annotation_properties": [
+    "physical_type",
+    "logical_type",
+    "semantic_type",
+    "unit"
+  ],
+  "annotator_instructions": [
+    "Annotate independently using the frozen handbook.",
+    "Do not inspect existing gold, semantic model output, or another annotator artifact before submission.",
+    "Assign applicability before assigning each value.",
+    "Cite exact packet evidence or independently frozen raw-source evidence for every known value."
+  ],
+  "approved_evidence": [
+    {
+      "detail": "local pilot dataset README",
+      "evidence_id": "S1",
+      "source_name": "raw/hdf5/hdf5_easy_climate_cube/README.md",
+      "source_type": "dataset_readme",
+      "text": "# hdf5_easy_climate_cube\n\nTwo-dimensional climate data cube with explicit coordinate datasets and field-level attributes.\n\n- `/coords/time` defines time offsets\n- `/coords/station_id` identifies stations\n- `/observations/temperature` is air temperature in Celsius\n- `/observations/humidity` is relative humidity in percent"
+    }
+  ],
+  "case_id": "hdf5_easy_climate_cube",
+  "data_modality": "hierarchical",
+  "dataset_id": "hdf5_easy_climate_cube",
+  "evidence_policy": {
+    "allowed_evidence_types": [
+      "csv_header",
+      "hdf5_attribute",
+      "hdf5_dataset_path",
+      "sample_rows"
+    ],
+    "derived_semantic_hints_removed": true,
+    "mode": "allowlisted_raw_observations_only"
+  },
+  "field_inventory": [
+    {
+      "example_values": [],
+      "extraction_method": "h5py_structure_traversal",
+      "field_name": "station_id",
+      "field_path": "/coords/station_id",
+      "missing_count": 0,
+      "nullable": true,
+      "physical_type": "string",
+      "shape": [
+        2
+      ],
+      "source_evidence": [
+        {
+          "detail": "/coords/station_id",
+          "evidence_id": "/coords/station_id::F1",
+          "evidence_type": "hdf5_dataset_path",
+          "source_label": "climate_cube.h5",
+          "tier": "explicit_metadata"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "h5py_structure_traversal",
+      "field_name": "time",
+      "field_path": "/coords/time",
+      "missing_count": 0,
+      "nullable": true,
+      "physical_type": "int32",
+      "shape": [
+        4
+      ],
+      "source_evidence": [
+        {
+          "detail": "/coords/time",
+          "evidence_id": "/coords/time::F1",
+          "evidence_type": "hdf5_dataset_path",
+          "source_label": "climate_cube.h5",
+          "tier": "explicit_metadata"
+        },
+        {
+          "detail": "unit=hours since 2026-01-01 00:00:00 UTC",
+          "evidence_id": "/coords/time::F2",
+          "evidence_type": "hdf5_attribute",
+          "source_label": "time",
+          "tier": "explicit_metadata"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "h5py_structure_traversal",
+      "field_name": "humidity",
+      "field_path": "/observations/humidity",
+      "missing_count": 0,
+      "nullable": true,
+      "physical_type": "float32",
+      "shape": [
+        4,
+        2
+      ],
+      "source_evidence": [
+        {
+          "detail": "/observations/humidity",
+          "evidence_id": "/observations/humidity::F1",
+          "evidence_type": "hdf5_dataset_path",
+          "source_label": "climate_cube.h5",
+          "tier": "explicit_metadata"
+        },
+        {
+          "detail": "unit=%",
+          "evidence_id": "/observations/humidity::F2",
+          "evidence_type": "hdf5_attribute",
+          "source_label": "humidity",
+          "tier": "explicit_metadata"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "h5py_structure_traversal",
+      "field_name": "temperature",
+      "field_path": "/observations/temperature",
+      "missing_count": 0,
+      "nullable": true,
+      "physical_type": "float32",
+      "shape": [
+        4,
+        2
+      ],
+      "source_evidence": [
+        {
+          "detail": "/observations/temperature",
+          "evidence_id": "/observations/temperature::F1",
+          "evidence_type": "hdf5_dataset_path",
+          "source_label": "climate_cube.h5",
+          "tier": "explicit_metadata"
+        },
+        {
+          "detail": "unit=C",
+          "evidence_id": "/observations/temperature::F2",
+          "evidence_type": "hdf5_attribute",
+          "source_label": "temperature",
+          "tier": "explicit_metadata"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    }
+  ],
+  "file_format": "hdf5",
+  "prediction_fields_removed": [
+    "logical_type",
+    "semantic_type",
+    "unit",
+    "confidence",
+    "uncertainty_reason",
+    "semantic_logical_hint",
+    "description"
+  ],
+  "purpose": "annotator_calibration",
+  "research_evidence_status": "non_blind_not_for_effect_estimation",
+  "schema_version": "semantic-annotation-packet/v1",
+  "source_task_sha256": "cdbbf6f9af78b82f2c84b823a7240cb7d74267f17c7e6066cecd2781c8dbd691",
+  "task_id": "internal::hdf5_easy_climate_cube"
+}

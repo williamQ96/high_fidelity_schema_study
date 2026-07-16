@@ -1,0 +1,23 @@
+{
+  "schema_version": "semantic-blind-analysis-plan-config/v1",
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "status": "frozen",
+  "backend_registry_file": "replace-with-frozen-backend-registry.json",
+  "backend_registry_sha256": "replace-with-64-hex-sha256",
+  "power_analysis_file": "replace-with-frozen-power-analysis.json",
+  "power_analysis_sha256": "replace-with-64-hex-sha256",
+  "primary_contrasts": [
+    "A_vs_B",
+    "B_vs_C"
+  ],
+  "secondary_contrasts": [
+    "C_vs_D"
+  ],
+  "familywise_alpha": 0.05,
+  "confidence_level": 0.95,
+  "sign_flip_exact_max_n": 20,
+  "sign_flip_monte_carlo_repetitions": 100000,
+  "sign_flip_seed": 20260715,
+  "bootstrap_repetitions": 100000,
+  "bootstrap_seed": 20260716
+}

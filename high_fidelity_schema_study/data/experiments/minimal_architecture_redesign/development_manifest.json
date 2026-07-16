@@ -1,0 +1,55 @@
+{
+  "schema_version": "minimal-architecture-manifest/v1",
+  "benchmark_role": "synthetic_development",
+  "claim_boundary": "Regression and mechanism testing only; not evidence of external generalization.",
+  "cases": [
+    {
+      "case_id": "csv_easy_weather_stations",
+      "task_file": "data/semantic_grounding/internal/csv_easy_weather_stations.task.json",
+      "gold_file": "data/gold/csv/csv_easy_weather_stations.gold.json",
+      "legacy_result_file": "data/semantic_annotations/internal/csv_easy_weather_stations.result.json"
+    },
+    {
+      "case_id": "csv_hard_field_campaign",
+      "task_file": "data/semantic_grounding/internal/csv_hard_field_campaign.task.json",
+      "gold_file": "data/gold/csv/csv_hard_field_campaign.gold.json",
+      "legacy_result_file": "data/semantic_annotations/internal/csv_hard_field_campaign.result.json"
+    },
+    {
+      "case_id": "csv_medium_water_quality",
+      "task_file": "data/semantic_grounding/internal/csv_medium_water_quality.task.json",
+      "gold_file": "data/gold/csv/csv_medium_water_quality.gold.json"
+    },
+    {
+      "case_id": "hdf5_easy_climate_cube",
+      "task_file": "data/semantic_grounding/internal/hdf5_easy_climate_cube.task.json",
+      "gold_file": "data/gold/hdf5/hdf5_easy_climate_cube.gold.json"
+    },
+    {
+      "case_id": "hdf5_hard_ocean_profile",
+      "task_file": "data/semantic_grounding/internal/hdf5_hard_ocean_profile.task.json",
+      "gold_file": "data/gold/hdf5/hdf5_hard_ocean_profile.gold.json",
+      "legacy_result_file": "data/semantic_annotations/internal/hdf5_hard_ocean_profile.result.json"
+    },
+    {
+      "case_id": "hdf5_medium_station_hierarchy",
+      "task_file": "data/semantic_grounding/internal/hdf5_medium_station_hierarchy.task.json",
+      "gold_file": "data/gold/hdf5/hdf5_medium_station_hierarchy.gold.json"
+    },
+    {
+      "case_id": "ts_easy_hourly_weather",
+      "task_file": "data/semantic_grounding/internal/ts_easy_hourly_weather.task.json",
+      "gold_file": "data/gold/time_series/ts_easy_hourly_weather.gold.json"
+    },
+    {
+      "case_id": "ts_hard_irregular_buoy",
+      "task_file": "data/semantic_grounding/internal/ts_hard_irregular_buoy.task.json",
+      "gold_file": "data/gold/time_series/ts_hard_irregular_buoy.gold.json"
+    },
+    {
+      "case_id": "ts_medium_power_meter",
+      "task_file": "data/semantic_grounding/internal/ts_medium_power_meter.task.json",
+      "gold_file": "data/gold/time_series/ts_medium_power_meter.gold.json"
+    }
+  ]
+}

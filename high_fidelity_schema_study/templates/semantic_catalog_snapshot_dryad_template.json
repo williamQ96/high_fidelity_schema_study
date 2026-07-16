@@ -1,0 +1,22 @@
+{
+  "schema_version": "semantic-catalog-snapshot/v1",
+  "adapter_id": "zenodo_dryad_catalog_snapshot/v1",
+  "source_repository": "dryad",
+  "page_ordinal": 1,
+  "request_url": "https://datadryad.org/api/v2/search?replace-with-frozen-query",
+  "retrieved_at": "YYYY-MM-DDTHH:MM:SSZ",
+  "raw_catalog_response": {
+    "replace_with_exact_decoded_dryad_search_response": true
+  },
+  "dataset_expansions": [
+    {
+      "identifier": "replace-with-dataset-identifier",
+      "version_response": {
+        "replace_with_exact_decoded_version_response": true
+      },
+      "files_response": {
+        "replace_with_exact_decoded_files_response": true
+      }
+    }
+  ]
+}

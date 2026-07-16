@@ -1,0 +1,216 @@
+{
+  "annotation_properties": [
+    "physical_type",
+    "logical_type",
+    "semantic_type",
+    "unit"
+  ],
+  "annotator_instructions": [
+    "Annotate independently using the frozen handbook.",
+    "Do not inspect existing gold, semantic model output, or another annotator artifact before submission.",
+    "Assign applicability before assigning each value.",
+    "Cite exact packet evidence or independently frozen raw-source evidence for every known value."
+  ],
+  "approved_evidence": [
+    {
+      "detail": "local pilot dataset README",
+      "evidence_id": "S1",
+      "source_name": "raw/time_series/ts_hard_irregular_buoy/README.md",
+      "source_type": "dataset_readme",
+      "text": "# ts_hard_irregular_buoy\n\nIrregular buoy telemetry excerpt.\n\n- `event_time` is emitted by the onboard controller and is not expected to be evenly spaced\n- `temp_C` is water temperature in Celsius\n- `salinity_psu` is practical salinity\n- `qc_flag` is a quality-control code"
+    }
+  ],
+  "case_id": "ts_hard_irregular_buoy",
+  "data_modality": "time_series",
+  "dataset_id": "ts_hard_irregular_buoy",
+  "evidence_policy": {
+    "allowed_evidence_types": [
+      "csv_header",
+      "hdf5_attribute",
+      "hdf5_dataset_path",
+      "sample_rows"
+    ],
+    "derived_semantic_hints_removed": true,
+    "mode": "allowlisted_raw_observations_only"
+  },
+  "field_inventory": [
+    {
+      "example_values": [
+        "B-17"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "buoy_id",
+      "field_path": "buoy_id",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='buoy_id'",
+          "evidence_id": "buoy_id::F1",
+          "evidence_type": "csv_header",
+          "source_label": "buoy_irregular.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=5",
+          "evidence_id": "buoy_id::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "buoy_irregular.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.2,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "2026-08-01T00:07:00",
+        "2026-08-01T00:26:00",
+        "2026-08-01T01:12:00"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "event_time",
+      "field_path": "event_time",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "datetime",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='event_time'",
+          "evidence_id": "event_time::F1",
+          "evidence_type": "csv_header",
+          "source_label": "buoy_irregular.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=5",
+          "evidence_id": "event_time::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "buoy_irregular.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "17.4",
+        "17.2",
+        "16.8"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "temp_C",
+      "field_path": "temp_C",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='temp_C'",
+          "evidence_id": "temp_C::F1",
+          "evidence_type": "csv_header",
+          "source_label": "buoy_irregular.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=5",
+          "evidence_id": "temp_C::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "buoy_irregular.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        16.0,
+        17.4
+      ]
+    },
+    {
+      "example_values": [
+        "33.2",
+        "33.3",
+        "33.5"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "salinity_psu",
+      "field_path": "salinity_psu",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='salinity_psu'",
+          "evidence_id": "salinity_psu::F1",
+          "evidence_type": "csv_header",
+          "source_label": "buoy_irregular.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=5",
+          "evidence_id": "salinity_psu::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "buoy_irregular.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.8,
+      "value_range": [
+        33.2,
+        33.9
+      ]
+    },
+    {
+      "example_values": [
+        "A",
+        "B"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "qc_flag",
+      "field_path": "qc_flag",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='qc_flag'",
+          "evidence_id": "qc_flag::F1",
+          "evidence_type": "csv_header",
+          "source_label": "buoy_irregular.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=5",
+          "evidence_id": "qc_flag::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "buoy_irregular.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.4,
+      "value_range": null
+    }
+  ],
+  "file_format": "csv",
+  "prediction_fields_removed": [
+    "logical_type",
+    "semantic_type",
+    "unit",
+    "confidence",
+    "uncertainty_reason",
+    "semantic_logical_hint",
+    "description"
+  ],
+  "purpose": "annotator_calibration",
+  "research_evidence_status": "non_blind_not_for_effect_estimation",
+  "schema_version": "semantic-annotation-packet/v1",
+  "source_task_sha256": "920c2fca5ad44e0cb9a7ddf9fe1e3214b92555a76bf24ba558815f18994508ef",
+  "task_id": "internal::ts_hard_irregular_buoy"
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "semantic-catalog-adapter-smoke/v1",
+  "status": "passed",
+  "research_evidence_status": "infrastructure_only_not_candidate_frame_not_architecture_outcome",
+  "adapter": {
+    "adapter_id": "zenodo_dryad_catalog_snapshot/v1",
+    "file": "../../../../semantic_catalog_acquisition.py",
+    "sha256": "5a5845a45e6bddff5009374ca319d898ca966d8564b8ea006673a990363b213a"
+  },
+  "snapshots": [
+    {
+      "source_repository": "zenodo",
+      "file": "zenodo_page1.json",
+      "sha256": "24a094a68eb04addeab5db2723e4587a59d315a9c05d338701bcd5dd44b7410e",
+      "retrieved_at": "2026-07-16T04:48:55.261629Z",
+      "returned_dataset_record_count": 2,
+      "enumerated_resource_count": 3,
+      "supported_resource_count": 0
+    },
+    {
+      "source_repository": "dryad",
+      "file": "dryad_page1.json",
+      "sha256": "d93770fcebdbda7ce2820bc22a4875810a4f4f4da0f3d100df0a69a08ea28497",
+      "retrieved_at": "2026-07-16T04:49:02.977829Z",
+      "returned_dataset_record_count": 2,
+      "enumerated_resource_count": 4,
+      "supported_resource_count": 1
+    }
+  ],
+  "assertions": {
+    "zenodo_raw_response_replayed": true,
+    "dryad_search_version_and_file_responses_replayed": true,
+    "source_identities_unique_within_snapshot": true,
+    "no_model_calls": true,
+    "not_a_sampling_frame": true,
+    "not_a_registration_receipt": true
+  }
+}

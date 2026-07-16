@@ -19,7 +19,7 @@ This log records high-level architectural decisions and post-freeze milestones. 
 - Fixed clean-checkout portability by pinning LF endings for hashed text demo
   fixtures and tracking placeholder files for intentionally metadata-empty
   Zarr directory cases.
-- Verified the pinned full environment with `181 passed`.
+- Verified the pinned full environment with `183 passed` after the Phase 20 final convergence pass.
 
 ## 2026-06-10: Deep Research Recommendation
 
@@ -290,7 +290,7 @@ Release evidence:
 - 11 categorized evaluation tracks;
 - 8 agent bundles and 7 registered capabilities;
 - release-readiness audit: `ready=true`;
-- full regression suite: `179 passed`;
+- full regression suite: `183 passed` as of the later Phase 20 final convergence pass;
 
 ## 2026-06-12: Final Release Workbench Pass
 
@@ -303,3 +303,12 @@ Release evidence:
 - frozen Artifact Paper paths remain unchanged.
 
 The framework is publishable/demo-ready within its stated bounded claims. Recommended next work is broader external compatibility validation, not additional canonical autonomy.
+
+## 2026-06-28: Phase 20 Final Convergence And CSV Semantic Guardrails
+
+- Added a companion engineering appendix for post-freeze Phases 12-20.
+- Reconciled public-facing documentation around the frozen Artifact Paper boundary, release-readiness status, and current regression suite.
+- Added CSV semantic guardrails for ML/GPU training logs so explicit GPU temperature fields are not promoted to `air_temperature` and channel-count suffixes such as `input_dim_c` do not become Celsius unit claims.
+- Added a synthetic ML/GPU training-log fixture and regression coverage.
+- Verified release readiness remains `ready=true`.
+- Full regression suite: `183 passed`.

@@ -1,0 +1,29 @@
+{
+  "schema_version": "semantic-blind-sampling-design/v1",
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "status": "frozen_before_selection",
+  "design_id": "replace-with-sampling-design-id",
+  "candidate_frame": {
+    "file": "replace-with-frozen-candidate-frame.json",
+    "sha256": "replace-with-64-hex-sha256"
+  },
+  "power_analysis": {
+    "file": "replace-with-frozen-power-analysis.json",
+    "sha256": "replace-with-64-hex-sha256"
+  },
+  "selection_algorithm": "stratum_ordered_sha256_priority_with_frozen_caps/v1",
+  "selection_seed": "replace-with-preregistered-random-seed",
+  "seed_provenance": {
+    "method": "replace-with-registered-literal-or-public-randomness-source",
+    "source": "replace-with-auditable-seed-source",
+    "committed_before_selection": true
+  },
+  "required_dataset_count": 1,
+  "required_semantic_opportunity_case_count": 1,
+  "stratum_quotas": {
+    "replace-with-frozen-stratum": 1
+  },
+  "minimum_scientific_family_count": 1,
+  "maximum_cases_per_dataset_group": 1,
+  "maximum_cases_per_source_repository": 1
+}

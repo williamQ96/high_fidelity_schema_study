@@ -1,0 +1,57 @@
+{
+  "schema_version": "semantic-backend-run-invalidation/v1",
+  "source_report_file": "qwen36_27b_q4_k_m_candidate_qualification_2026-07-15.json",
+  "source_report_sha256": "d0a5fb9a82d41bda557669fd384820485c5265f187679f2e954ad347eec25cde",
+  "status": "invalidated_diagnostic_run",
+  "eligible": null,
+  "gold_accessed": false,
+  "may_be_used_for_backend_eligibility": false,
+  "may_be_used_for_architecture_effect_estimation": false,
+  "invalidation_reasons": [
+    {
+      "code": "replay_failure_provenance_incomplete",
+      "classification": "replay_integrity_defect",
+      "detail": "Contract-invalid B responses were physically cached for C, but the failure cache did not preserve raw response identity in the C record. The reported replay_identity_rate therefore did not measure the intended invariant for malformed responses."
+    },
+    {
+      "code": "target_scope_not_evaluable_but_counted_valid",
+      "classification": "evaluator_correctness_defect",
+      "detail": "Unparseable dataset responses were incorrectly counted as target-scope valid because dataset_reasoner_failed was not treated as non-evaluable."
+    },
+    {
+      "code": "legacy_partial_provenance_dropped",
+      "classification": "measurement_defect",
+      "detail": "When a later D field group failed, successful earlier group records and failed fallback-attempt records were not retained in the VariantRun, undercounting per-call token/context provenance."
+    }
+  ],
+  "backend_environment_failures": [
+    {
+      "code": "runtime_context_too_small",
+      "detail": "The HDF5 dataset-level request contained 10044 prompt tokens and was rejected before generation because the loaded context was 8192."
+    },
+    {
+      "code": "reasoning_disable_not_honored",
+      "detail": "Most responses spent the generation budget on reasoning. A one-call diagnostic that supplied both reasoning=off and enable_thinking=false still reported 2995 reasoning tokens."
+    }
+  ],
+  "descriptive_source_observations_not_eligibility_results": {
+    "dataset_attempts": 16,
+    "dataset_contract_valid_attempts": 2,
+    "dataset_http_context_rejections": 2,
+    "dataset_length_terminated_attempts": 12,
+    "dataset_physical_model_calls": 16,
+    "dataset_exact_repeatability_cases": 7,
+    "dataset_repeatability_cases": 8,
+    "c_semantic_generation_calls_observed": 0,
+    "legacy_attempts": 8,
+    "legacy_contract_valid_attempts": 1,
+    "legacy_physical_model_calls": 23,
+    "diagnostic_reasoning_tokens": 2995
+  },
+  "required_before_rerun": [
+    "Use an LM Studio runtime in which Qwen3.6 reasoning-off is demonstrably honored; LM Studio 0.4.18 or newer is the minimum version implicated by the upstream fix record.",
+    "Reload the exact model with at least a 16384-token runtime context and record the exact loaded configuration.",
+    "Record the LM Studio runtime version and checkpoint-file SHA-256.",
+    "Rerun the unchanged eight-case manifest after the replay, scope-evaluability, context-accounting, and partial-D provenance fixes pass tests."
+  ]
+}

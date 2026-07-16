@@ -1,0 +1,9 @@
+{
+  "schema_version": "semantic-sampling-registration-receipt/v1",
+  "design_sha256": "replace-with-exact-sampling-design-sha256",
+  "registered_at": "YYYY-MM-DDTHH:MM:SSZ",
+  "registry": "replace-with-external-or-append-only-registry",
+  "registration_identifier": "replace-with-registration-id-or-url",
+  "frozen_before_selection": true,
+  "selection_not_executed_at_registration": true
+}

@@ -1,0 +1,143 @@
+{
+  "annotation_packet_file": "ts_hard_irregular_buoy.annotation-packet.json",
+  "annotation_packet_sha256": "a71add2d6701598b11b320d3520ca77675cf699597e9eb410d8d958e55d3c97a",
+  "dataset_id": "ts_hard_irregular_buoy",
+  "evidence_catalog": [
+    {
+      "applicable_field_paths": [
+        "buoy_id"
+      ],
+      "catalog_evidence_id": "buoy_id::F1",
+      "selector": "field_inventory:buoy_id:buoy_id::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "a71add2d6701598b11b320d3520ca77675cf699597e9eb410d8d958e55d3c97a",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "buoy_id"
+      ],
+      "catalog_evidence_id": "buoy_id::F2",
+      "selector": "field_inventory:buoy_id:buoy_id::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "a71add2d6701598b11b320d3520ca77675cf699597e9eb410d8d958e55d3c97a",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "event_time"
+      ],
+      "catalog_evidence_id": "event_time::F1",
+      "selector": "field_inventory:event_time:event_time::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "a71add2d6701598b11b320d3520ca77675cf699597e9eb410d8d958e55d3c97a",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "event_time"
+      ],
+      "catalog_evidence_id": "event_time::F2",
+      "selector": "field_inventory:event_time:event_time::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "a71add2d6701598b11b320d3520ca77675cf699597e9eb410d8d958e55d3c97a",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "temp_C"
+      ],
+      "catalog_evidence_id": "temp_C::F1",
+      "selector": "field_inventory:temp_C:temp_C::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "a71add2d6701598b11b320d3520ca77675cf699597e9eb410d8d958e55d3c97a",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "temp_C"
+      ],
+      "catalog_evidence_id": "temp_C::F2",
+      "selector": "field_inventory:temp_C:temp_C::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "a71add2d6701598b11b320d3520ca77675cf699597e9eb410d8d958e55d3c97a",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "salinity_psu"
+      ],
+      "catalog_evidence_id": "salinity_psu::F1",
+      "selector": "field_inventory:salinity_psu:salinity_psu::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "a71add2d6701598b11b320d3520ca77675cf699597e9eb410d8d958e55d3c97a",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "salinity_psu"
+      ],
+      "catalog_evidence_id": "salinity_psu::F2",
+      "selector": "field_inventory:salinity_psu:salinity_psu::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "a71add2d6701598b11b320d3520ca77675cf699597e9eb410d8d958e55d3c97a",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "qc_flag"
+      ],
+      "catalog_evidence_id": "qc_flag::F1",
+      "selector": "field_inventory:qc_flag:qc_flag::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "a71add2d6701598b11b320d3520ca77675cf699597e9eb410d8d958e55d3c97a",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "qc_flag"
+      ],
+      "catalog_evidence_id": "qc_flag::F2",
+      "selector": "field_inventory:qc_flag:qc_flag::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "a71add2d6701598b11b320d3520ca77675cf699597e9eb410d8d958e55d3c97a",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "event_time",
+        "qc_flag",
+        "salinity_psu",
+        "temp_C"
+      ],
+      "catalog_evidence_id": "S1",
+      "selector": "approved_evidence:S1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "a71add2d6701598b11b320d3520ca77675cf699597e9eb410d8d958e55d3c97a",
+      "source_type": "dataset_readme",
+      "strength": "documentation"
+    }
+  ],
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "schema_version": "semantic-source-bundle/v1",
+  "sources": [
+    {
+      "source_file": "ts_hard_irregular_buoy.annotation-packet.json",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "a71add2d6701598b11b320d3520ca77675cf699597e9eb410d8d958e55d3c97a",
+      "source_type": "frozen_neutral_annotation_packet"
+    }
+  ],
+  "vocabulary_file": "vocabulary.json",
+  "vocabulary_sha256": "874548a10f8871449be9b749c99e95e72e8852d261324abc8fa3c492246ed888"
+}

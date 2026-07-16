@@ -1,0 +1,622 @@
+{
+  "adapter_id": "zenodo_dryad_catalog_snapshot/v1",
+  "page_ordinal": 1,
+  "raw_catalog_response": {
+    "aggregations": {
+      "access_status": {
+        "buckets": [
+          {
+            "doc_count": 620852,
+            "is_selected": false,
+            "key": "open",
+            "label": "Open"
+          },
+          {
+            "doc_count": 32507,
+            "is_selected": false,
+            "key": "restricted",
+            "label": "Restricted"
+          },
+          {
+            "doc_count": 3562,
+            "is_selected": false,
+            "key": "embargoed",
+            "label": "Embargoed"
+          }
+        ],
+        "label": "Access status"
+      },
+      "file_type": {
+        "buckets": [
+          {
+            "doc_count": 156494,
+            "is_selected": false,
+            "key": "zip",
+            "label": "ZIP"
+          },
+          {
+            "doc_count": 93930,
+            "is_selected": false,
+            "key": "pdf",
+            "label": "PDF"
+          },
+          {
+            "doc_count": 84599,
+            "is_selected": false,
+            "key": "xlsx",
+            "label": "XLSX"
+          },
+          {
+            "doc_count": 81968,
+            "is_selected": false,
+            "key": "csv",
+            "label": "CSV"
+          },
+          {
+            "doc_count": 78464,
+            "is_selected": false,
+            "key": "glb",
+            "label": "GLB"
+          },
+          {
+            "doc_count": 62116,
+            "is_selected": false,
+            "key": "jpg",
+            "label": "JPG"
+          },
+          {
+            "doc_count": 57581,
+            "is_selected": false,
+            "key": "txt",
+            "label": "TXT"
+          },
+          {
+            "doc_count": 49488,
+            "is_selected": false,
+            "key": "json",
+            "label": "JSON"
+          },
+          {
+            "doc_count": 35476,
+            "is_selected": false,
+            "key": "gz",
+            "label": "GZ"
+          },
+          {
+            "doc_count": 30364,
+            "is_selected": false,
+            "key": "png",
+            "label": "PNG"
+          }
+        ],
+        "label": "File type"
+      },
+      "publication_date": {
+        "buckets": [
+          {
+            "doc_count": 81,
+            "is_selected": false,
+            "key": "2000",
+            "label": "2000"
+          },
+          {
+            "doc_count": 66,
+            "is_selected": false,
+            "key": "2001",
+            "label": "2001"
+          },
+          {
+            "doc_count": 91,
+            "is_selected": false,
+            "key": "2002",
+            "label": "2002"
+          },
+          {
+            "doc_count": 57,
+            "is_selected": false,
+            "key": "2003",
+            "label": "2003"
+          },
+          {
+            "doc_count": 58,
+            "is_selected": false,
+            "key": "2004",
+            "label": "2004"
+          },
+          {
+            "doc_count": 116,
+            "is_selected": false,
+            "key": "2005",
+            "label": "2005"
+          },
+          {
+            "doc_count": 98,
+            "is_selected": false,
+            "key": "2006",
+            "label": "2006"
+          },
+          {
+            "doc_count": 141,
+            "is_selected": false,
+            "key": "2007",
+            "label": "2007"
+          },
+          {
+            "doc_count": 209,
+            "is_selected": false,
+            "key": "2008",
+            "label": "2008"
+          },
+          {
+            "doc_count": 340,
+            "is_selected": false,
+            "key": "2009",
+            "label": "2009"
+          },
+          {
+            "doc_count": 764,
+            "is_selected": false,
+            "key": "2010",
+            "label": "2010"
+          },
+          {
+            "doc_count": 1257,
+            "is_selected": false,
+            "key": "2011",
+            "label": "2011"
+          },
+          {
+            "doc_count": 1776,
+            "is_selected": false,
+            "key": "2012",
+            "label": "2012"
+          },
+          {
+            "doc_count": 2518,
+            "is_selected": false,
+            "key": "2013",
+            "label": "2013"
+          },
+          {
+            "doc_count": 3369,
+            "is_selected": false,
+            "key": "2014",
+            "label": "2014"
+          },
+          {
+            "doc_count": 7736,
+            "is_selected": false,
+            "key": "2015",
+            "label": "2015"
+          },
+          {
+            "doc_count": 9836,
+            "is_selected": false,
+            "key": "2016",
+            "label": "2016"
+          },
+          {
+            "doc_count": 26448,
+            "is_selected": false,
+            "key": "2017",
+            "label": "2017"
+          },
+          {
+            "doc_count": 22205,
+            "is_selected": false,
+            "key": "2018",
+            "label": "2018"
+          },
+          {
+            "doc_count": 28096,
+            "is_selected": false,
+            "key": "2019",
+            "label": "2019"
+          },
+          {
+            "doc_count": 37437,
+            "is_selected": false,
+            "key": "2020",
+            "label": "2020"
+          },
+          {
+            "doc_count": 46994,
+            "is_selected": false,
+            "key": "2021",
+            "label": "2021"
+          },
+          {
+            "doc_count": 51030,
+            "is_selected": false,
+            "key": "2022",
+            "label": "2022"
+          },
+          {
+            "doc_count": 52527,
+            "is_selected": false,
+            "key": "2023",
+            "label": "2023"
+          },
+          {
+            "doc_count": 102393,
+            "is_selected": false,
+            "key": "2024",
+            "label": "2024"
+          },
+          {
+            "doc_count": 113600,
+            "is_selected": false,
+            "key": "2025",
+            "label": "2025"
+          },
+          {
+            "doc_count": 147852,
+            "is_selected": false,
+            "key": "2026",
+            "label": "2026"
+          }
+        ],
+        "label": "Publication date"
+      },
+      "resource_type": {
+        "buckets": [
+          {
+            "doc_count": 656921,
+            "inner": {
+              "buckets": []
+            },
+            "is_selected": false,
+            "key": "dataset",
+            "label": "Dataset"
+          }
+        ],
+        "label": "Resource types"
+      },
+      "subject": {
+        "buckets": [
+          {
+            "doc_count": 15482,
+            "is_selected": false,
+            "key": "taxonomy",
+            "label": "taxonomy"
+          },
+          {
+            "doc_count": 15440,
+            "is_selected": false,
+            "key": "Biodiversity",
+            "label": "Biodiversity"
+          },
+          {
+            "doc_count": 14982,
+            "is_selected": false,
+            "key": "Taxonomy",
+            "label": "Taxonomy"
+          },
+          {
+            "doc_count": 13218,
+            "is_selected": false,
+            "key": "natural history",
+            "label": "natural history"
+          },
+          {
+            "doc_count": 13217,
+            "is_selected": false,
+            "key": "specimen",
+            "label": "specimen"
+          },
+          {
+            "doc_count": 9040,
+            "is_selected": false,
+            "key": "Organology",
+            "label": "Organology"
+          },
+          {
+            "doc_count": 9008,
+            "is_selected": false,
+            "key": "Digital Organology",
+            "label": "Digital Organology"
+          },
+          {
+            "doc_count": 9008,
+            "is_selected": false,
+            "key": "Leipzig University",
+            "label": "Leipzig University"
+          },
+          {
+            "doc_count": 9008,
+            "is_selected": false,
+            "key": "Musical Instruments",
+            "label": "Musical Instruments"
+          },
+          {
+            "doc_count": 9008,
+            "is_selected": false,
+            "key": "musiXplora",
+            "label": "musiXplora"
+          }
+        ],
+        "label": "Subjects"
+      }
+    },
+    "hits": {
+      "hits": [
+        {
+          "conceptdoi": "10.5281/zenodo.21387831",
+          "conceptrecid": "21387831",
+          "created": "2026-07-16T04:44:45.731896+00:00",
+          "doi": "10.5281/zenodo.21387832",
+          "doi_url": "https://doi.org/10.5281/zenodo.21387832",
+          "files": [
+            {
+              "checksum": "md5:8178e22dc2018eafb7c70a3f2c124852",
+              "id": "6a645ddc-cd85-4e3b-a54b-a28dcc9cbe08",
+              "key": "Readme.pdf",
+              "links": {
+                "self": "https://zenodo.org/api/records/21387832/files/Readme.pdf/content"
+              },
+              "size": 63710
+            },
+            {
+              "checksum": "md5:3b4b727b43b71a486ed8215af01a7b6b",
+              "id": "0cf44989-c658-4207-82d1-f9010d9dd0ed",
+              "key": "Dataset_Relaunched_Mobile_Banking_Indonesia.xlsx",
+              "links": {
+                "self": "https://zenodo.org/api/records/21387832/files/Dataset_Relaunched_Mobile_Banking_Indonesia.xlsx/content"
+              },
+              "size": 67002
+            }
+          ],
+          "id": 21387832,
+          "links": {
+            "access": "https://zenodo.org/api/records/21387832/access",
+            "access_grants": "https://zenodo.org/api/records/21387832/access/grants",
+            "access_links": "https://zenodo.org/api/records/21387832/access/links",
+            "access_request": "https://zenodo.org/api/records/21387832/access/request",
+            "access_users": "https://zenodo.org/api/records/21387832/access/users",
+            "archive": "https://zenodo.org/api/records/21387832/files-archive",
+            "archive_media": "https://zenodo.org/api/records/21387832/media-files-archive",
+            "communities": "https://zenodo.org/api/records/21387832/communities",
+            "communities-suggestions": "https://zenodo.org/api/records/21387832/communities-suggestions",
+            "doi": "https://doi.org/10.5281/zenodo.21387832",
+            "draft": "https://zenodo.org/api/records/21387832/draft",
+            "file_modification": "https://zenodo.org/api/records/21387832/file-modification",
+            "files": "https://zenodo.org/api/records/21387832/files",
+            "latest": "https://zenodo.org/api/records/21387832/versions/latest",
+            "latest_html": "https://zenodo.org/records/21387832/latest",
+            "media_files": "https://zenodo.org/api/records/21387832/media-files",
+            "parent": "https://zenodo.org/api/records/21387831",
+            "parent_doi": "https://doi.org/10.5281/zenodo.21387831",
+            "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.21387831",
+            "parent_html": "https://zenodo.org/records/21387831",
+            "preview_html": "https://zenodo.org/records/21387832?preview=1",
+            "quota_increase": "https://zenodo.org/api/records/21387832/quota-increase",
+            "request_deletion": "https://zenodo.org/api/records/21387832/request-deletion",
+            "requests": "https://zenodo.org/api/records/21387832/requests",
+            "reserve_doi": "https://zenodo.org/api/records/21387832/draft/pids/doi",
+            "self": "https://zenodo.org/api/records/21387832",
+            "self_doi": "https://doi.org/10.5281/zenodo.21387832",
+            "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.21387832",
+            "self_html": "https://zenodo.org/records/21387832",
+            "self_iiif_manifest": "https://zenodo.org/api/iiif/record:21387832/manifest",
+            "self_iiif_sequence": "https://zenodo.org/api/iiif/record:21387832/sequence/default",
+            "thumbnails": {
+              "10": "https://zenodo.org/api/iiif/record:21387832:Readme.pdf/full/%5E10,/0/default.jpg",
+              "100": "https://zenodo.org/api/iiif/record:21387832:Readme.pdf/full/%5E100,/0/default.jpg",
+              "1200": "https://zenodo.org/api/iiif/record:21387832:Readme.pdf/full/%5E1200,/0/default.jpg",
+              "250": "https://zenodo.org/api/iiif/record:21387832:Readme.pdf/full/%5E250,/0/default.jpg",
+              "50": "https://zenodo.org/api/iiif/record:21387832:Readme.pdf/full/%5E50,/0/default.jpg",
+              "750": "https://zenodo.org/api/iiif/record:21387832:Readme.pdf/full/%5E750,/0/default.jpg"
+            },
+            "versions": "https://zenodo.org/api/records/21387832/versions"
+          },
+          "metadata": {
+            "access_right": "open",
+            "creators": [
+              {
+                "affiliation": "Department of Accounting, School of Accounting - Master of Accounting, Bina Nusantara University, Jakarta 11480, Indonesia",
+                "name": "Prasetyo, Dimas",
+                "orcid": "0009-0000-0920-3427"
+              }
+            ],
+            "description": "<p>This dataset contains anonymized survey responses collected from 329 users of relaunched mobile banking applications in Indonesia. The data were used to examine the relationships among System Quality, Information Quality, Service Quality, Technology Readiness, Satisfaction, Word of Mouth, and Continuance Intention using Partial Least Squares Structural Equation Modeling (PLS-SEM). All personally identifiable information has been removed before publication.</p>",
+            "doi": "10.5281/zenodo.21387832",
+            "keywords": [
+              "Mobile Banking",
+              "Technology Readiness",
+              "Customer Satisfaction",
+              "Word of Mouth",
+              "Indonesia"
+            ],
+            "language": "eng",
+            "license": {
+              "id": "cc-by-4.0"
+            },
+            "publication_date": "2026-07-16",
+            "relations": {
+              "version": [
+                {
+                  "index": 0,
+                  "is_last": true,
+                  "parent": {
+                    "pid_type": "recid",
+                    "pid_value": "21387831"
+                  }
+                }
+              ]
+            },
+            "resource_type": {
+              "title": "Dataset",
+              "type": "dataset"
+            },
+            "title": "Dataset for: What Drives Post-Adoption Behavior in Relaunched Mobile Banking Apps? The Central Role of Satisfaction and the Conditional Effect of Technology Readiness"
+          },
+          "modified": "2026-07-16T04:44:46.021035+00:00",
+          "owners": [
+            {
+              "id": "1744945"
+            }
+          ],
+          "recid": "21387832",
+          "revision": 4,
+          "state": "done",
+          "stats": {
+            "downloads": 0,
+            "unique_downloads": 0,
+            "unique_views": 0,
+            "version_downloads": 0,
+            "version_unique_downloads": 0,
+            "version_unique_views": 0,
+            "version_views": 0,
+            "views": 0
+          },
+          "status": "published",
+          "submitted": true,
+          "swh": null,
+          "title": "Dataset for: What Drives Post-Adoption Behavior in Relaunched Mobile Banking Apps? The Central Role of Satisfaction and the Conditional Effect of Technology Readiness",
+          "updated": "2026-07-16T04:44:46.021035+00:00"
+        },
+        {
+          "conceptdoi": "10.5281/zenodo.21387941",
+          "conceptrecid": "21387941",
+          "created": "2026-07-16T04:44:12.909856+00:00",
+          "doi": "10.5281/zenodo.21387942",
+          "doi_url": "https://doi.org/10.5281/zenodo.21387942",
+          "files": [
+            {
+              "checksum": "md5:b094bba8796339886c3d565d3e374381",
+              "id": "dde0dd3a-9046-46cd-9483-2bff77aa64d6",
+              "key": "317-319.pdf",
+              "links": {
+                "self": "https://zenodo.org/api/records/21387942/files/317-319.pdf/content"
+              },
+              "size": 199558
+            }
+          ],
+          "id": 21387942,
+          "links": {
+            "access": "https://zenodo.org/api/records/21387942/access",
+            "access_grants": "https://zenodo.org/api/records/21387942/access/grants",
+            "access_links": "https://zenodo.org/api/records/21387942/access/links",
+            "access_request": "https://zenodo.org/api/records/21387942/access/request",
+            "access_users": "https://zenodo.org/api/records/21387942/access/users",
+            "archive": "https://zenodo.org/api/records/21387942/files-archive",
+            "archive_media": "https://zenodo.org/api/records/21387942/media-files-archive",
+            "communities": "https://zenodo.org/api/records/21387942/communities",
+            "communities-suggestions": "https://zenodo.org/api/records/21387942/communities-suggestions",
+            "doi": "https://doi.org/10.5281/zenodo.21387942",
+            "draft": "https://zenodo.org/api/records/21387942/draft",
+            "file_modification": "https://zenodo.org/api/records/21387942/file-modification",
+            "files": "https://zenodo.org/api/records/21387942/files",
+            "latest": "https://zenodo.org/api/records/21387942/versions/latest",
+            "latest_html": "https://zenodo.org/records/21387942/latest",
+            "media_files": "https://zenodo.org/api/records/21387942/media-files",
+            "parent": "https://zenodo.org/api/records/21387941",
+            "parent_doi": "https://doi.org/10.5281/zenodo.21387941",
+            "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.21387941",
+            "parent_html": "https://zenodo.org/records/21387941",
+            "preview_html": "https://zenodo.org/records/21387942?preview=1",
+            "quota_increase": "https://zenodo.org/api/records/21387942/quota-increase",
+            "request_deletion": "https://zenodo.org/api/records/21387942/request-deletion",
+            "requests": "https://zenodo.org/api/records/21387942/requests",
+            "reserve_doi": "https://zenodo.org/api/records/21387942/draft/pids/doi",
+            "self": "https://zenodo.org/api/records/21387942",
+            "self_doi": "https://doi.org/10.5281/zenodo.21387942",
+            "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.21387942",
+            "self_html": "https://zenodo.org/records/21387942",
+            "self_iiif_manifest": "https://zenodo.org/api/iiif/record:21387942/manifest",
+            "self_iiif_sequence": "https://zenodo.org/api/iiif/record:21387942/sequence/default",
+            "thumbnails": {
+              "10": "https://zenodo.org/api/iiif/record:21387942:317-319.pdf/full/%5E10,/0/default.jpg",
+              "100": "https://zenodo.org/api/iiif/record:21387942:317-319.pdf/full/%5E100,/0/default.jpg",
+              "1200": "https://zenodo.org/api/iiif/record:21387942:317-319.pdf/full/%5E1200,/0/default.jpg",
+              "250": "https://zenodo.org/api/iiif/record:21387942:317-319.pdf/full/%5E250,/0/default.jpg",
+              "50": "https://zenodo.org/api/iiif/record:21387942:317-319.pdf/full/%5E50,/0/default.jpg",
+              "750": "https://zenodo.org/api/iiif/record:21387942:317-319.pdf/full/%5E750,/0/default.jpg"
+            },
+            "versions": "https://zenodo.org/api/records/21387942/versions"
+          },
+          "metadata": {
+            "access_right": "open",
+            "creators": [
+              {
+                "affiliation": null,
+                "name": "Muxsinov Bekzod Toxirovich"
+              },
+              {
+                "affiliation": null,
+                "name": "Negmatillayeva Zarina Baxodirovna"
+              }
+            ],
+            "description": "<p class=\"MsoNormal\"><strong>Annotatsiya. </strong>Mazkur maqolada aholi turmush farovonligini samarali boshqarishning kambag&lsquo;allikni qisqartirishdagi o&lsquo;rni va ahamiyati tahlil qilingan. Aholining daromadlari, bandligi, ijtimoiy himoyasi hamda inson kapitalini rivojlantirish farovonlikni oshirishning asosiy omillari sifatida ko&lsquo;rib chiqilgan. Shuningdek, kambag&lsquo;allikni qisqartirish bo&lsquo;yicha amalga oshirilayotgan davlat siyosati, O&lsquo;zbekistonda so&lsquo;nggi yillarda joriy etilgan islohotlar va ularning ijtimoiy-iqtisodiy natijalari yoritilgan.</p>",
+            "doi": "10.5281/zenodo.21387942",
+            "language": "uzb",
+            "license": {
+              "id": "cc-by-4.0"
+            },
+            "meeting": {
+              "title": "ILM-FAN YANGILIKLARI KONFERENSIYASI"
+            },
+            "publication_date": "2026-07-16",
+            "references": [
+              "1.Abdurahmonov Q.X. Mehnat iqtisodiyoti. – Toshkent: Innovatsion rivojlanish nashriyoti, 2020. – 384 b.",
+              "2.Rasulov A.A. O'zbekistonda kambag'allikni qisqartirishning iqtisodiy mexanizmlarini takomillashtirish // Iqtisodiyot va innovatsion texnologiyalar. – 2022. – № 5. – B. 45–56.",
+              "3.Shodmonov Sh.Sh., G'afurov U.V. Iqtisodiyot nazariyasi. – Toshkent: Iqtisod-Moliya, 2020. – 624 b.",
+              "4.Tursunov B.O. Aholi daromadlari va turmush farovonligini oshirishning iqtisodiy omillari // Biznes-Ekspert. – 2021. – № 4. – B. 25–33.",
+              "5.Vahobov A.V., Jo'rayev A.S., Burxanov U.A. Davlat budjeti. – Toshkent: Iqtisod-Moliya, 2019. – 520 b."
+            ],
+            "relations": {
+              "version": [
+                {
+                  "index": 0,
+                  "is_last": true,
+                  "parent": {
+                    "pid_type": "recid",
+                    "pid_value": "21387941"
+                  }
+                }
+              ]
+            },
+            "resource_type": {
+              "title": "Dataset",
+              "type": "dataset"
+            },
+            "title": "AHOLI TURMUSH FAROVONLIGINI SAMARALI BOSHQARISHNING KAMBAG'ALLIKNI QISQARTIRISHDAGI AHAMIYATI"
+          },
+          "modified": "2026-07-16T04:44:13.302867+00:00",
+          "owners": [
+            {
+              "id": "488486"
+            }
+          ],
+          "recid": "21387942",
+          "revision": 4,
+          "state": "done",
+          "stats": {
+            "downloads": 0,
+            "unique_downloads": 0,
+            "unique_views": 0,
+            "version_downloads": 0,
+            "version_unique_downloads": 0,
+            "version_unique_views": 0,
+            "version_views": 0,
+            "views": 0
+          },
+          "status": "published",
+          "submitted": true,
+          "swh": null,
+          "title": "AHOLI TURMUSH FAROVONLIGINI SAMARALI BOSHQARISHNING KAMBAG'ALLIKNI QISQARTIRISHDAGI AHAMIYATI",
+          "updated": "2026-07-16T04:44:13.302867+00:00"
+        }
+      ],
+      "total": 656921
+    },
+    "links": {
+      "next": "https://zenodo.org/api/records?page=2&q=resource_type.type:dataset&size=2&sort=mostrecent",
+      "self": "https://zenodo.org/api/records?page=1&q=resource_type.type:dataset&size=2&sort=mostrecent"
+    }
+  },
+  "request_url": "https://zenodo.org/api/records?q=resource_type.type%3Adataset&sort=mostrecent&size=2",
+  "retrieved_at": "2026-07-16T04:48:55.261629Z",
+  "schema_version": "semantic-catalog-snapshot/v1",
+  "source_repository": "zenodo"
+}

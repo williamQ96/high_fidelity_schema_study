@@ -1,0 +1,526 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=2.35cm]{geometry}
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}[Scale=0.84]
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{seqsplit}
+\usepackage{url}
+\usepackage[hidelinks,unicode]{hyperref}
+
+\input{results_macros.tex}
+
+\definecolor{DeepBlue}{HTML}{174A7E}
+\definecolor{SoftBlue}{HTML}{EAF2F8}
+\definecolor{FreezeRed}{HTML}{9E2A2B}
+\definecolor{FreezeBg}{HTML}{FFF3F3}
+\definecolor{GrayText}{HTML}{555555}
+
+\newcommand{\artifacthash}[1]{{\scriptsize\ttfamily\expandafter\seqsplit\expandafter{#1}}}
+\newcommand{\status}[1]{\textsf{\MakeUppercase{#1}}}
+\newcommand{\NA}{\textsf{N/A}}
+\newcommand{\placeholder}{\texttt{<TO BE BOUND BEFORE GOLD UNSEALING>}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}p{1.75cm}}
+\setlength{\emergencystretch}{1.5em}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Evidence-Constrained Semantic Schema Architecture}
+\fancyhead[R]{Pre-blind technical report}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+
+\title{\textbf{How Much Semantic Architecture Is Necessary?}\\
+\large A Causally Controlled A/B/C/D Protocol for Evidence-Constrained Dataset Schema Induction}
+\author{Anonymous pre-blind technical report\\
+\small Authors and affiliations to be bound at protocol freeze}
+\date{\PaperDate}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This work studies the semantic component of a system whose product interface is
+\emph{dataset in, deterministic schema out}. The physical schema remains parser-owned;
+language models may only propose property-level semantic additions over existing
+fields and cited evidence. We replace a historically fragmented semantic pipeline
+with a controlled four-condition experiment: A is deterministic only; B adds at
+most one dataset-level semantic call; C reuses the exact B response and applies
+deterministic evidence-identity, field-relevance, and conflict checks; D preserves
+the legacy per-field/manual-group schedule and non-empty-evidence merge behavior.
+
+The contribution at the present stage is an auditable protocol and validated
+measurement harness, not a claim that any architecture wins. On nine synthetic
+development cases, only two exposed dataset-level semantic opportunities and one
+opportunity was absent from gold. All pairwise architecture comparisons were
+therefore correctly declared non-comparable. A smaller Qwen3.5 9B backend added no
+accepted, scorable claim in this set, making the observed B--C difference
+uninformative rather than a null effect. Adversarial tests established the intended
+call, replay, evidence, abstention, applicability, unsupported-claim, and AURC
+invariants.
+
+Backend qualification subsequently exposed a runtime and measurement failure: an
+8,192-token Qwen3.6-27B run with thinking effectively enabled was invalidated. After
+repairing replay and telemetry provenance, disabling thinking, and loading a
+16,384-token context, the same Q4\_K\_M model passed every predeclared operational
+criterion over eight non-blind calibration datasets and 74 semantic targets. This
+qualification establishes execution compatibility only. The causal contribution
+of dataset-level reasoning and deterministic verification remains reserved for an
+independently annotated, frozen blind evaluation. Explicit provenance placeholders
+are included for that freeze.
+\end{abstract}
+
+\noindent\textbf{Keywords:} semantic schema induction; selective prediction;
+evidence grounding; deterministic verification; replay identity; model capability
+debt; dataset metadata.
+
+\section{Introduction}
+
+Dataset schema induction contains two different epistemic problems. Physical facts
+such as field names, stored types, shapes, groups, and declared attributes are
+properties of bytes and format standards. Contextual meaning---whether a column is
+an identifier, a measurement, a time axis, or a domain quantity---often requires
+document-level semantic integration. Treating both problems as free-form language
+generation makes plausible metadata difficult to distinguish from schema truth.
+Treating both as deterministic parsing leaves genuinely contextual information
+unused.
+
+The system studied here therefore retains a strict authority boundary. Deterministic
+extractors own canonical physical structure. A semantic component may propose
+claims only for existing fields, cite evidence identifiers from the input record,
+and abstain when support is insufficient. This design is aligned with provenance
+models that make derivation auditable \cite{prov2013}, evidence-backed model revision
+\cite{gao2023rarr}, and selective prediction, where lower coverage can be exchanged
+for lower risk \cite{geifman2017selective}.
+
+The historical implementation used per-field calls, manual grouping, retries, and
+multiple merge rules. Some of this complexity may have been useful when smaller
+models struggled to integrate repository- or dataset-level context. We call
+complexity that remains after its compensating model limitation has weakened
+\emph{Model Capability Debt}. The scientific question is not whether a newer model
+can be inserted everywhere. It is whether the minimum architecture that preserves
+the trust boundary can be identified empirically.
+
+We ask three causal questions:
+\begin{enumerate}[label=\textbf{RQ\arabic*:},leftmargin=2.2cm]
+  \item What does one dataset-level semantic reasoning call add beyond deterministic extraction?
+  \item Holding the semantic response exactly constant, what does deterministic verification change?
+  \item Does the minimal verified hybrid preserve trustworthiness relative to the legacy per-field system while using fewer semantic calls?
+\end{enumerate}
+
+At this pre-blind stage, none of these questions has a valid effect estimate. The
+completed work establishes that the future estimates can be causally interpreted,
+and identifies precisely what evidence is still missing.
+
+\section{Problem Formulation and Product Boundary}
+
+The product-level mapping is
+\[
+  \texttt{dataset file(s)} \longrightarrow
+  \texttt{deterministic canonical schema} \oplus
+  \texttt{optional semantic claim ledger}.
+\]
+The deterministic schema is a complete standalone output. Semantic augmentation is
+an optional overlay and may never invent fields, silently overwrite stronger
+deterministic claims, or convert missing support into confidence.
+
+For field path $f$, property $p$, and proposed value $v$, a semantic claim is
+represented as
+\[
+  c=(f,p,v,E,s,d),
+\]
+where $E$ is a set of evidence identifiers, $s$ is a confidence value used for
+risk--coverage ordering, and $d$ is the final decision. Correctness and confidence
+are deliberately separate: a claim may be confident but unsupported, or supported
+but uncertain. Decisions include accepted, rejected, and abstained; verification
+states distinguish verified agreement, evidence-grounded support, contradiction,
+conflict, and unsupported status.
+
+Gold applicability is likewise explicit. Each field--property slot is one of:
+(i) applicable with a value, (ii) applicable but legitimately unknown, (iii) not
+applicable, or (iv) outside an open-world gold scope. This prevents an abstention
+from being silently scored as an incorrect accepted value and prevents missing gold
+coverage from being misread as \NA.
+
+\section{First-Principles Architecture Audit}
+
+The audit separated essential from accidental complexity. Parser authority,
+structured abstention, property-level provenance, and visible conflict states are
+essential because they encode trust boundaries. Per-field prompt fragmentation,
+manual grouping, repeated free-JSON/schema attempts, and redundant transformations
+are historical until their value is demonstrated. Rigid output contracts remain
+useful where they make failures observable; they are not justified merely as a way
+to force a preferred answer.
+
+The audit produced one conservative redesign rule: delete semantic orchestration
+only after a replay-controlled experiment shows that a simpler approach is equal or
+better. This avoids replacing old Model Capability Debt with new model dependence.
+
+\section{The Four Fixed Architecture Variants}
+
+\begin{table}[H]
+\centering
+\caption{Frozen semantic architecture variants. No additional variant is permitted in the study.}
+\label{tab:variants}
+\begin{tabularx}{\textwidth}{@{}p{0.8cm}p{3.0cm}Yp{2.3cm}@{}}
+\toprule
+ID & Name & Semantics & Semantic generation calls \\
+\midrule
+A & Deterministic only & Emits parser-owned schema and deterministic claims; no semantic model. & 0 \\
+B & Dataset reasoner & Deterministic extraction plus at most one dataset-level semantic response for all unresolved targets. & $\leq 1$ per dataset \\
+C & Replayed reasoner + verifier & Consumes the exact B response; checks evidence identity, field relevance, deterministic contradiction, and cross-claim conflict. & 0 new calls \\
+D & Legacy semantic pipeline & Preserves per-field/manual-group scheduling, temperature 0.2, free-JSON then schema fallback, and the historical non-empty-evidence merge rule. & Variable, historically many \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The B--C contrast is the cleanest intervention. A memoizing backend keys the full
+request and provides C with the exact raw response and SHA-256 identity produced for
+B. C is invalid if it generates a response, lacks a replay, or consumes a different
+hash. Verification is deterministic and does not claim semantic entailment: an
+existing, field-relevant citation establishes traceable support, not factual truth.
+
+\section{Evaluation Methodology}
+
+Let $V$ be applicable-value slots, $P$ accepted predictions on those slots, and
+$K\subseteq P$ correct accepted predictions. We report
+\begin{align}
+  \text{end-to-end accuracy} &= \frac{\lvert K\rvert}{\lvert V\rvert},\\
+  \text{coverage} &= \frac{\lvert P\rvert}{\lvert V\rvert},\\
+  \text{selective risk} &= 1-\frac{\lvert K\rvert}{\lvert P\rvert}.
+\end{align}
+When $P$ is empty, selective accuracy/risk is undefined rather than forced to zero.
+Abstentions lower end-to-end accuracy and coverage but do not enter the conditional
+selective-risk denominator. Confidence is used only to order whole tie groups for a
+right-continuous risk--coverage curve. AURC is integrated only over achieved
+coverage; per-property curves are preferred when confidence scales differ.
+
+Unsupported-claim rates are computed over model-proposed or model-accepted claims,
+never diluted by deterministic claims. Cost accounting separates generated calls,
+reused upstream calls, and effective architecture cost. A pairwise comparison is
+non-comparable if either run is partial, replay identity fails, required gold is
+missing, or a semantic target lies outside the scoring design.
+
+\subsection{Adversarial evaluator validation}
+
+The focused suites now contain \FocusedTests{} tests across the variant and backend
+qualification modules, within \FullTests{} passing project tests. They cover
+nonexistent, irrelevant, wrong-span, contradictory, and empty evidence; confidence
+0 and 1; malformed and partial output; duplicates and conflicting claims; applicable
+unknown and \NA; missing or mismatched replay; hidden retries; timeout; zero/all
+accepted predictions; and confidence ties. Additional regressions protect failure
+replay identity, per-call context accounting, legacy fallback telemetry, and partial
+D provenance.
+
+\begin{table}[H]
+\centering
+\caption{Core causal invariants enforced by code and tests.}
+\begin{tabularx}{\textwidth}{@{}p{4.2cm}Y@{}}
+\toprule
+Invariant & Enforced behavior \\
+\midrule
+A call boundary & Always zero model calls. \\
+B call boundary & At most one dataset-level generation call; hidden retries make the run partial. \\
+C replay boundary & Zero generation calls and exact B raw-response hash, including malformed-response replay. \\
+Evidence boundary & Missing, empty, cross-field, or wrong-span evidence cannot verify a claim. \\
+Confidence boundary & Confidence never implies verification. \\
+Applicability boundary & \NA, applicable unknown, applicable value, and outside-scope are distinct. \\
+Comparability boundary & Partial execution, missing gold coverage, or replay failure suppresses causal deltas. \\
+Legacy fidelity & Historical scheduling and merge behavior remain unchanged; all attempts are measured. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Synthetic Development Experiment}
+
+The development manifest contains \DevCases{} authored regression cases spanning
+CSV, HDF5, and time-series structures. It is not a random sample and provides no
+external-validity evidence. Only \DevSemanticCases{}/\DevCases{} cases contain any
+dataset-level semantic target. One of those cases targets
+\texttt{/campaign/meta/platform}, which is absent from gold; consequently every
+formal A--B, B--C, and C--D comparison is non-comparable.
+
+The local development backend was Qwen3.5 9B. The two actual B responses were
+replayed byte-for-byte into C; the other seven cases correctly made no B/C call.
+Table~\ref{tab:devresults} reports pooled descriptive diagnostics, not architecture
+effects.
+
+\begin{table}[H]
+\centering
+\caption{Nine-case synthetic development diagnostics. All B/C/D causal comparisons are non-comparable.}
+\label{tab:devresults}
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}lCCCCCC@{}}
+\toprule
+Variant & Comparable & End-to-end acc. & Coverage & Sel. risk & AURC & Calls \\
+\midrule
+A & yes & \AccA & \CovA & \RiskA & \AurcA & 0 \\
+B & no  & \AccB & \CovB & \RiskB & \AurcB & \DevBCalls \\
+C & no  & \AccC & \CovC & \RiskC & \AurcC & 0 new / \DevBCalls{} effective \\
+D & no  & \AccD & \CovD & \RiskD & \AurcD & \DevDCalls \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+B proposed one model claim, accepted none, and added no scorable coverage. Its
+effective cost was \DevBInput{} input tokens, \DevBOutput{} output tokens, and
+\DevBLatency{} ms of model latency. C had the same effective upstream cost and zero
+new generation. D proposed and accepted four claims, used \DevDCalls{} calls,
+\DevDInput{}/\DevDOutput{} input/output tokens, and \DevDLatency{} ms. D recovered
+two gold-covered logical values in one hard CSV case, but another change was
+unscored. These facts do not establish superiority because the design is
+non-comparable.
+
+The Qwen3.5 backend abstained on a postal-code target even though its notes
+recognized the semantics, and violated target scope on the unscored HDF5 case. A
+stronger model might resolve either failure without architecture changes; this is a
+hypothesis, not a result. The development run therefore yields no estimate of the
+increment from A to B and no verification trade-off from B to C. The all-zero
+observed B--C decision delta is uninformative, not evidence of no verifier effect.
+
+\section{Backend Qualification}
+
+Qualification asks whether a backend can execute the frozen contracts, not whether
+its claims are correct. The fixed non-blind calibration manifest contains
+\QualificationCases{} external datasets and \QualificationTargets{} semantic
+targets. It is excluded from the future blind benchmark. B is run twice per dataset
+at temperature 0 and seed 0; C immediately replays each response; D runs once with
+its preserved policy.
+
+\subsection{Invalidated 8K/thinking-on execution}
+
+The first Qwen3.6-27B Q4\_K\_M execution used an 8,192-token loaded context while
+thinking remained effectively enabled. Only 2/16 B attempts and 1/8 D dataset runs
+were contract-valid; 12 B attempts terminated at the generation boundary, and a
+10,044-token HDF5 prompt was rejected before generation. The run also exposed three
+measurement defects: malformed B failures did not carry raw identity into C,
+unparseable output could be counted target-scope valid, and partial D failures
+dropped earlier-group/fallback provenance. The immutable artifact was invalidated;
+none of its rates is used for backend selection.
+
+The failure was informative as infrastructure diagnosis. LM Studio 0.4.18 documents
+a fix for reasoning on/off being ignored by some custom configurations
+\cite{lmstudio_0418}. We repaired only provenance and measurement, not prompts,
+architectures, targets, or call budgets.
+
+\subsection{Corrected 16K/thinking-off execution}
+
+A one-call gate first established a contract-valid response with zero reasoning
+tokens. The same Qwen3.6-27B Q4\_K\_M model \cite{lmstudio_qwen36} was then run with
+thinking disabled and a \LoadedContext-token context. It passed every frozen
+criterion (Table~\ref{tab:qualification}).
+
+\begin{table}[H]
+\centering
+\caption{Corrected Qwen3.6-27B operational qualification.}
+\label{tab:qualification}
+\begin{tabularx}{\textwidth}{@{}Yrrc@{}}
+\toprule
+Criterion & Observed & Required & Result \\
+\midrule
+Semantic-opportunity datasets & 8 & $\geq 8$ & pass \\
+B contract-valid rate & 1.0 & $\geq 0.95$ & pass \\
+B target-scope-valid rate & 1.0 & 1.0 & pass \\
+B/C replay identity & 1.0 & 1.0 & pass \\
+B exact repeatability & 1.0 & 1.0 & pass \\
+B timeout / truncation rates & 0.0 / 0.0 & 0.0 / 0.0 & pass \\
+B context fit / observed telemetry & 1.0 / 1.0 & 1.0 / 1.0 & pass \\
+D contract-valid rate & 1.0 & $\geq 0.95$ & pass \\
+D timeout / truncation rates & 0.0 / 0.0 & 0.0 / 0.0 & pass \\
+D context fit / observed telemetry & 1.0 / 1.0 & 1.0 / 1.0 & pass \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+All 16 B attempts ended with JSON and \texttt{finish\_reason=stop}; repeats were
+byte-identical for all eight datasets. Every C input hash matched B and every C
+semantic generation count was zero. The maximum observed B context was
+\QualMaxObservedContext{} tokens; the maximum requested
+\texttt{input+max\_tokens} budget was \QualMaxBudgetContext{}, below the loaded
+limit.
+
+\begin{table}[H]
+\centering
+\caption{Descriptive operational cost in the corrected qualification.}
+\small
+\begin{tabularx}{\textwidth}{@{}lRRRY@{}}
+\toprule
+Condition & Calls & Input tokens & Output tokens & Mean latency \\
+\midrule
+B (two repeats) & \QualBCalls & \QualBInput & \QualBOutput & \QualBMeanLatency{} s per attempt \\
+C generation & 0 & 0 new & 0 new & deterministic replay/verification \\
+D (one run) & \QualDCalls & \QualDInput & \QualDOutput & \QualDMeanLatency{} s per dataset \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+D's 59 calls are an observed consequence of historical scheduling: the HDF5 case
+alone required 22 field calls. One \texttt{functional\_traits.csv} free-JSON shape
+attempt failed and the preserved schema fallback succeeded. The cost gap is real;
+an accuracy--cost trade-off has not yet been estimated.
+
+\section{What the Current Results Do and Do Not Establish}
+
+\paragraph{Established facts.}
+The harness enforces the four fixed architectures, exact B/C replay, zero C
+generation, fail-closed contracts, explicit applicability, and per-call telemetry.
+The Qwen3.6-27B Q4\_K\_M condition is operationally eligible under the corrected
+runtime. The legacy architecture has a substantially larger call surface on the
+calibration tasks.
+
+\paragraph{Not established.}
+The study has no blind effect estimate. The nine-case development set is too sparse
+and incompletely gold-covered to estimate A--B, B--C, or C--D effects. Backend
+qualification contains no gold. It cannot show that dataset-level reasoning helps,
+that verification lowers risk, that D is more accurate, or that Qwen generalizes.
+
+\paragraph{Model selection.}
+There is no operational reason to replace Qwen3.6-27B with GLM, Llama, or a smaller
+Qwen. Alternative families may be predeclared sensitivity conditions, but adding
+them post hoc to rescue an unfavorable architecture result would confound backend
+and architecture selection. Model cards and exact runtime identity should be
+reported as first-class artifacts \cite{mitchell2019modelcards}.
+
+\section{Blind External Evaluation Protocol}
+
+Two annotators who did not develop the system will independently label the blind
+gold. They will distinguish applicable value, applicable unknown, \NA, and
+outside-scope slots, then adjudicate disagreements without observing architecture
+outputs. Dataset-level paired effects, not pooled slots alone, will be the primary
+analysis unit. The development set will not be used as evidence of generalization.
+Dataset documentation follows the broader principle that collection, intended use,
+and limitations should be explicit \cite{gebru2021datasheets}.
+
+The primary contrasts are predeclared:
+\begin{itemize}
+  \item A--B: added correct/incorrect claims, coverage, selective risk, unsupported claims, calls, tokens, and latency;
+  \item B--C: B-accepted claims rejected or abstained by C, incorrect claims removed, correct claims lost, unsupported claims removed, and the risk--coverage trade-off;
+  \item C--D: quality, selective metrics, unsupported claims, calls, tokens, latency, and failure surface, only when D is comparable.
+\end{itemize}
+
+\subsection{Blind-freeze provenance placeholders}
+
+\begin{center}
+\fcolorbox{FreezeRed}{FreezeBg}{%
+\begin{minipage}{0.93\linewidth}
+\textbf{STOP: the fields below are intentionally unresolved.}\par
+They must be content-addressed and countersigned before blind gold is unsealed.
+Leaving a field blank blocks interpretation; it must never be silently replaced by
+the development or qualification artifact.\medskip
+
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{5.2cm}Y@{}}
+Blind sampling registration receipt & \placeholder \\
+Blind candidate-frame SHA-256 & \placeholder \\
+Blind manifest SHA-256 & \placeholder \\
+Independent annotation package SHA-256 & \placeholder \\
+Adjudicated gold package SHA-256 & \placeholder \\
+Annotation vocabulary/handbook SHA-256 & \placeholder \\
+Annotator pseudonyms and independence attestations & \placeholder \\
+Calibration-gate result and agreement statistics & \placeholder \\
+Frozen backend-registry SHA-256 & \placeholder \\
+Exact Qwen GGUF checkpoint SHA-256 & \placeholder \\
+LM Studio 0.4.18 runtime/version receipt SHA-256 & \placeholder \\
+Frozen source commit/tree SHA-256 & \placeholder \\
+Frozen analysis-plan SHA-256 & \placeholder \\
+Prompt/schema bundle SHA-256 & \placeholder \\
+Gold unsealing timestamp and countersignatures & \placeholder \\
+\end{tabularx}
+\end{minipage}}
+\end{center}
+
+The known pre-freeze contract hashes are reported in
+Appendix~\ref{app:artifacts}; they do not substitute for the final registry,
+checkpoint, source-tree, or gold receipts.
+
+\section{Threats to Validity}
+
+\textbf{Construct validity.} Evidence identity and field relevance do not prove
+semantic entailment. C should be interpreted as deterministic trust-boundary
+verification, not an oracle. Confidence values may be incomparable across
+properties; per-property selective curves are therefore necessary.
+
+\textbf{Internal validity.} B/C replay is tightly controlled, but D intentionally
+retains temperature 0.2 and historical fallback behavior. Backend state, runtime
+version, context, checkpoint, and prompt hashes must remain frozen. Any partial
+response or missing replay suppresses the corresponding comparison.
+
+\textbf{External validity.} The nine development cases are synthetic and the eight
+qualification cases are a fixed operational calibration set already exposed to
+development. Neither is a population sample. Only the future independently
+annotated corpus can support generalization claims.
+
+\textbf{Statistical conclusion validity.} The blind analysis must use paired
+dataset-level effects and confidence intervals. A clean null result is acceptable.
+The current manuscript reports descriptive pooled metrics only to document harness
+behavior.
+
+\textbf{Reproducibility.} The exact checkpoint-file hash and machine-observed LM
+Studio version are still missing. The version is operator-reported. These are
+explicit freeze blockers rather than hidden caveats.
+
+\section{Conclusion}
+
+The durable system objective remains dataset input to deterministic schema output,
+with optional evidence-constrained semantic enrichment. The present work reduces
+the semantic architecture question to four auditable variants and validates the
+measurement boundaries needed for causal interpretation. Development data do not
+rank the variants. Corrected backend qualification shows that one dataset-level
+Qwen3.6-27B response can be generated repeatably and replayed into deterministic
+verification, while the legacy condition exposes a much larger call surface.
+
+The central research answer is intentionally deferred: whether semantic reasoning
+adds useful claims, and whether deterministic verification removes more errors than
+correct claims, can only be learned after the blind provenance block is completed
+and independent gold is unsealed. Until then, the scientifically correct result is
+a validated protocol, an operationally eligible backend, and no architecture winner.
+
+\appendix
+\section{Content-Addressed Current Artifacts}
+\label{app:artifacts}
+
+\begin{longtable}{@{}p{5.2cm}p{10.0cm}@{}}
+\toprule
+Artifact & SHA-256 \\
+\midrule
+\endhead
+Development manifest & \artifacthash{\DevManifestHash} \\
+Development report & \artifacthash{\DevReportHash} \\
+Qualification manifest & \artifacthash{\QualManifestHash} \\
+Controlled vocabulary & \artifacthash{\VocabularyHash} \\
+Invalidated 8K qualification & \artifacthash{\InvalidQualHash} \\
+Corrected qualification & \artifacthash{\ValidQualHash} \\
+Qualification assessment & \artifacthash{\QualAssessmentHash} \\
+Dataset reasoner prompt & \artifacthash{\DatasetPromptHash} \\
+Dataset response schema & \artifacthash{\DatasetSchemaHash} \\
+Legacy prompt & \artifacthash{\LegacyPromptHash} \\
+Legacy response schema & \artifacthash{\LegacySchemaHash} \\
+\bottomrule
+\end{longtable}
+
+\section{Current Reproduction Status}
+
+At manuscript generation, \FullTests{} project tests passed. The relevant Ruff
+checks passed, all 316 JSON artifacts parsed successfully, and
+\texttt{git diff --check} passed. Seven pre-existing full-tree lint findings in
+unrelated legacy files remain documented and were not modified. The two PDFs were
+rendered from these TeX sources using Tectonic 0.16.9 \cite{tectonic0169}.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,215 @@
+{
+  "annotation_properties": [
+    "physical_type",
+    "logical_type",
+    "semantic_type",
+    "unit"
+  ],
+  "annotator_instructions": [
+    "Annotate independently using the frozen handbook.",
+    "Do not inspect existing gold, semantic model output, or another annotator artifact before submission.",
+    "Assign applicability before assigning each value.",
+    "Cite exact packet evidence or independently frozen raw-source evidence for every known value."
+  ],
+  "approved_evidence": [
+    {
+      "detail": "local pilot dataset README",
+      "evidence_id": "S1",
+      "source_name": "raw/time_series/ts_medium_power_meter/README.md",
+      "source_type": "dataset_readme",
+      "text": "# ts_medium_power_meter\n\nPower-meter telemetry sampled every 15 minutes, with one missing observation in the excerpt.\n\n- `ts_utc` is UTC time\n- `power_kw` is real power in kilowatts\n- `voltage_v` is line voltage in volts\n- `status` records operational state changes"
+    }
+  ],
+  "case_id": "ts_medium_power_meter",
+  "data_modality": "time_series",
+  "dataset_id": "ts_medium_power_meter",
+  "evidence_policy": {
+    "allowed_evidence_types": [
+      "csv_header",
+      "hdf5_attribute",
+      "hdf5_dataset_path",
+      "sample_rows"
+    ],
+    "derived_semantic_hints_removed": true,
+    "mode": "allowlisted_raw_observations_only"
+  },
+  "field_inventory": [
+    {
+      "example_values": [
+        "MTR-9"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "sensor_id",
+      "field_path": "sensor_id",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='sensor_id'",
+          "evidence_id": "sensor_id::F1",
+          "evidence_type": "csv_header",
+          "source_label": "power_meter.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=6",
+          "evidence_id": "sensor_id::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "power_meter.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.1667,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "2026-05-02T00:00:00Z",
+        "2026-05-02T00:15:00Z",
+        "2026-05-02T00:30:00Z"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "ts_utc",
+      "field_path": "ts_utc",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "datetime",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='ts_utc'",
+          "evidence_id": "ts_utc::F1",
+          "evidence_type": "csv_header",
+          "source_label": "power_meter.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=6",
+          "evidence_id": "ts_utc::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "power_meter.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "4.2",
+        "4.1",
+        "4.0"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "power_kw",
+      "field_path": "power_kw",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='power_kw'",
+          "evidence_id": "power_kw::F1",
+          "evidence_type": "csv_header",
+          "source_label": "power_meter.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=6",
+          "evidence_id": "power_kw::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "power_meter.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.8333,
+      "value_range": [
+        4.0,
+        4.4
+      ]
+    },
+    {
+      "example_values": [
+        "231.0",
+        "230.8",
+        "230.6"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "voltage_v",
+      "field_path": "voltage_v",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='voltage_v'",
+          "evidence_id": "voltage_v::F1",
+          "evidence_type": "csv_header",
+          "source_label": "power_meter.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=6",
+          "evidence_id": "voltage_v::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "power_meter.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        230.6,
+        231.2
+      ]
+    },
+    {
+      "example_values": [
+        "ok"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "status",
+      "field_path": "status",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='status'",
+          "evidence_id": "status::F1",
+          "evidence_type": "csv_header",
+          "source_label": "power_meter.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=6",
+          "evidence_id": "status::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "power_meter.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.3333,
+      "value_range": null
+    }
+  ],
+  "file_format": "csv",
+  "prediction_fields_removed": [
+    "logical_type",
+    "semantic_type",
+    "unit",
+    "confidence",
+    "uncertainty_reason",
+    "semantic_logical_hint",
+    "description"
+  ],
+  "purpose": "annotator_calibration",
+  "research_evidence_status": "non_blind_not_for_effect_estimation",
+  "schema_version": "semantic-annotation-packet/v1",
+  "source_task_sha256": "6971c12deff0af76332d49a58905f186a7e2cbb606530f5761729bfddc93893f",
+  "task_id": "internal::ts_medium_power_meter"
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "semantic-power-analysis/v2",
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "status": "generated_from_frozen_config",
+  "primary_statistical_unit": "dataset",
+  "primary_outcome": "correct_accepted_applicable_claim_rate_gain_per_dataset",
+  "primary_contrasts": [
+    "A_vs_B",
+    "B_vs_C"
+  ],
+  "multiplicity_policy": "holm_fwer_with_bonferroni_worst_case_power_planning",
+  "note": "Do not fill this artifact manually. Generate it with python -m high_fidelity_schema_study.semantic_power_analysis build. The generated artifact contains the exact inputs, noncentral-t calculation, binomial opportunity assurance, sensitivity scenarios, runtime versions, and implementation hash."
+}

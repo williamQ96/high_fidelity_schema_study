@@ -1,0 +1,18 @@
+{
+  "schema_version": "semantic-backend-calibration-manifest/v1",
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "benchmark_role": "calibration",
+  "research_evidence_status": "non_blind_infrastructure_smoke_only",
+  "selection_frozen_before_backend_runs": true,
+  "claim_boundary": "One-case endpoint and artifact smoke test only; never an eligibility or effect estimate.",
+  "cases": [
+    {
+      "case_id": "unique_tracks_90.csv",
+      "task_file": "data/semantic_grounding/external/external_unique_tracks_90_2dd0c99ecb.task.json",
+      "task_sha256": "be805ffb94cd3c665f96f3df46db45f5220e8f117878e6a7989de2436aa39f85",
+      "semantic_target_count": 1,
+      "file_format": "csv",
+      "data_modality": "time_series"
+    }
+  ]
+}

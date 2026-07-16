@@ -1,0 +1,188 @@
+{
+  "annotation_packet_file": "csv_medium_water_quality.annotation-packet.json",
+  "annotation_packet_sha256": "f4ef0c7eef12442844768c92cb8c602c855cf37feae474622eb0373774144332",
+  "dataset_id": "csv_medium_water_quality",
+  "evidence_catalog": [
+    {
+      "applicable_field_paths": [
+        "sample_id"
+      ],
+      "catalog_evidence_id": "sample_id::F1",
+      "selector": "field_inventory:sample_id:sample_id::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f4ef0c7eef12442844768c92cb8c602c855cf37feae474622eb0373774144332",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "sample_id"
+      ],
+      "catalog_evidence_id": "sample_id::F2",
+      "selector": "field_inventory:sample_id:sample_id::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f4ef0c7eef12442844768c92cb8c602c855cf37feae474622eb0373774144332",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "site_code"
+      ],
+      "catalog_evidence_id": "site_code::F1",
+      "selector": "field_inventory:site_code:site_code::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f4ef0c7eef12442844768c92cb8c602c855cf37feae474622eb0373774144332",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "site_code"
+      ],
+      "catalog_evidence_id": "site_code::F2",
+      "selector": "field_inventory:site_code:site_code::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f4ef0c7eef12442844768c92cb8c602c855cf37feae474622eb0373774144332",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "collection_date"
+      ],
+      "catalog_evidence_id": "collection_date::F1",
+      "selector": "field_inventory:collection_date:collection_date::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f4ef0c7eef12442844768c92cb8c602c855cf37feae474622eb0373774144332",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "collection_date"
+      ],
+      "catalog_evidence_id": "collection_date::F2",
+      "selector": "field_inventory:collection_date:collection_date::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f4ef0c7eef12442844768c92cb8c602c855cf37feae474622eb0373774144332",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "ph"
+      ],
+      "catalog_evidence_id": "ph::F1",
+      "selector": "field_inventory:ph:ph::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f4ef0c7eef12442844768c92cb8c602c855cf37feae474622eb0373774144332",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "ph"
+      ],
+      "catalog_evidence_id": "ph::F2",
+      "selector": "field_inventory:ph:ph::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f4ef0c7eef12442844768c92cb8c602c855cf37feae474622eb0373774144332",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "do_mg_l"
+      ],
+      "catalog_evidence_id": "do_mg_l::F1",
+      "selector": "field_inventory:do_mg_l:do_mg_l::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f4ef0c7eef12442844768c92cb8c602c855cf37feae474622eb0373774144332",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "do_mg_l"
+      ],
+      "catalog_evidence_id": "do_mg_l::F2",
+      "selector": "field_inventory:do_mg_l:do_mg_l::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f4ef0c7eef12442844768c92cb8c602c855cf37feae474622eb0373774144332",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "turbidity_ntu"
+      ],
+      "catalog_evidence_id": "turbidity_ntu::F1",
+      "selector": "field_inventory:turbidity_ntu:turbidity_ntu::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f4ef0c7eef12442844768c92cb8c602c855cf37feae474622eb0373774144332",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "turbidity_ntu"
+      ],
+      "catalog_evidence_id": "turbidity_ntu::F2",
+      "selector": "field_inventory:turbidity_ntu:turbidity_ntu::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f4ef0c7eef12442844768c92cb8c602c855cf37feae474622eb0373774144332",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "notes"
+      ],
+      "catalog_evidence_id": "notes::F1",
+      "selector": "field_inventory:notes:notes::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f4ef0c7eef12442844768c92cb8c602c855cf37feae474622eb0373774144332",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "notes"
+      ],
+      "catalog_evidence_id": "notes::F2",
+      "selector": "field_inventory:notes:notes::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f4ef0c7eef12442844768c92cb8c602c855cf37feae474622eb0373774144332",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "do_mg_l",
+        "notes",
+        "ph",
+        "sample_id",
+        "turbidity_ntu"
+      ],
+      "catalog_evidence_id": "S1",
+      "selector": "approved_evidence:S1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f4ef0c7eef12442844768c92cb8c602c855cf37feae474622eb0373774144332",
+      "source_type": "dataset_readme",
+      "strength": "documentation"
+    }
+  ],
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "schema_version": "semantic-source-bundle/v1",
+  "sources": [
+    {
+      "source_file": "csv_medium_water_quality.annotation-packet.json",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f4ef0c7eef12442844768c92cb8c602c855cf37feae474622eb0373774144332",
+      "source_type": "frozen_neutral_annotation_packet"
+    }
+  ],
+  "vocabulary_file": "vocabulary.json",
+  "vocabulary_sha256": "874548a10f8871449be9b749c99e95e72e8852d261324abc8fa3c492246ed888"
+}

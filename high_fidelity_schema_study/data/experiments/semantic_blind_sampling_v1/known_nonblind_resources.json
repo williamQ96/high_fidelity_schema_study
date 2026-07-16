@@ -1,0 +1,643 @@
+{
+  "construction_note": "Complete union of resources represented in the semantic-grounding manifest and therefore visible during system development. Missing external bytes are excluded by stable source identity, not an invented hash.",
+  "construction_sources": [
+    {
+      "file": "../../semantic_grounding/manifest.json",
+      "sha256": "bdc65a527023314008338df027da43f9d4578023e6778104dd846e273d2298b0"
+    }
+  ],
+  "coverage": {
+    "external_task_count": 16,
+    "internal_task_count": 9,
+    "resource_hash_available_count": 9,
+    "source_identity_count": 25,
+    "total_record_count": 25
+  },
+  "frozen_at": "2026-07-16T04:50:53Z",
+  "generator": {
+    "file": "../../../semantic_blind_sampling.py",
+    "sha256": "d880b7132d5a4dd93e1fbc56b02f9d8eca07f58b290cea309b9a75758bd8009f"
+  },
+  "records": [
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "distractor",
+      "grounding_task_id": "external::dryad::10.5061_dryad.2f2b3::Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year2.csv",
+      "resource": null,
+      "resource_absence_reason": "original external resource bytes are not present in the workspace",
+      "resource_available_at_freeze": false,
+      "source_file": "dryad/10.5061_dryad.2f2b3/Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year2.csv",
+      "source_identity": "0558ec53ff256f54ea92eb374574ea49bda40f931510650871ba78fd25240794",
+      "source_namespace": "external",
+      "source_record_id": "10.5061_dryad.2f2b3",
+      "source_repository": "dryad",
+      "source_resource_id": "Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year2.csv",
+      "task": {
+        "file": "../../semantic_grounding/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__866fd0ee32.task.json",
+        "sha256": "47872fb1f1a0da37f26086528a1c96e3e47a6c814f358a839ae3f6eccefb22b6"
+      }
+    },
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "development",
+      "grounding_task_id": "internal::hdf5_medium_station_hierarchy",
+      "resource": {
+        "file": "../../raw/hdf5/hdf5_medium_station_hierarchy/station_hierarchy.h5",
+        "sha256": "d26f3bba12e1cdd85f968865f4577c8158c2966756bc11d5c279c050878407a2"
+      },
+      "resource_absence_reason": null,
+      "resource_available_at_freeze": true,
+      "source_file": "raw/hdf5/hdf5_medium_station_hierarchy/station_hierarchy.h5",
+      "source_identity": "17c6aea18c2e772369f60a11b5c1c74952d1371dde49789f1a548d79eae049c5",
+      "source_namespace": "internal",
+      "source_record_id": "hdf5_medium_station_hierarchy",
+      "source_repository": "internal-study-corpus",
+      "source_resource_id": "raw/hdf5/hdf5_medium_station_hierarchy/station_hierarchy.h5",
+      "task": {
+        "file": "../../semantic_grounding/internal/hdf5_medium_station_hierarchy.task.json",
+        "sha256": "3205355af409dd46a2c9445b70a4222b4080edbbf102394ea42f6aad02a9d874"
+      }
+    },
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "development",
+      "grounding_task_id": "internal::ts_medium_power_meter",
+      "resource": {
+        "file": "../../raw/time_series/ts_medium_power_meter/power_meter.csv",
+        "sha256": "839dd2eb12d8e8a359689122f5a162822a2e10c1bcd174b21681baadc614ef24"
+      },
+      "resource_absence_reason": null,
+      "resource_available_at_freeze": true,
+      "source_file": "raw/time_series/ts_medium_power_meter/power_meter.csv",
+      "source_identity": "19ed957e8f7848fa14709f6b4c2247f52c4979efdd6b09fc404a4841280b29e4",
+      "source_namespace": "internal",
+      "source_record_id": "ts_medium_power_meter",
+      "source_repository": "internal-study-corpus",
+      "source_resource_id": "raw/time_series/ts_medium_power_meter/power_meter.csv",
+      "task": {
+        "file": "../../semantic_grounding/internal/ts_medium_power_meter.task.json",
+        "sha256": "6971c12deff0af76332d49a58905f186a7e2cbb606530f5761729bfddc93893f"
+      }
+    },
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "development",
+      "grounding_task_id": "internal::csv_easy_weather_stations",
+      "resource": {
+        "file": "../../raw/csv/csv_easy_weather_stations/stations_precip.csv",
+        "sha256": "876cbe7f68f7a13986cbf589e51bda454fd6f8df195fefbb6cec6a999ecd0ea5"
+      },
+      "resource_absence_reason": null,
+      "resource_available_at_freeze": true,
+      "source_file": "raw/csv/csv_easy_weather_stations/stations_precip.csv",
+      "source_identity": "1af893ada65a07deccbda944002c9730b83c4646f243e8a051faec2f837e6baf",
+      "source_namespace": "internal",
+      "source_record_id": "csv_easy_weather_stations",
+      "source_repository": "internal-study-corpus",
+      "source_resource_id": "raw/csv/csv_easy_weather_stations/stations_precip.csv",
+      "task": {
+        "file": "../../semantic_grounding/internal/csv_easy_weather_stations.task.json",
+        "sha256": "4717504bc505c9ed459813351b226430d67c038bd1168378b75fa071ba77b2d8"
+      }
+    },
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "distractor",
+      "grounding_task_id": "external::dryad::10.5061_dryad.zkh1893nh::above_500_PA_data.csv",
+      "resource": null,
+      "resource_absence_reason": "original external resource bytes are not present in the workspace",
+      "resource_available_at_freeze": false,
+      "source_file": "dryad/10.5061_dryad.zkh1893nh/above_500_PA_data.csv",
+      "source_identity": "1ff2057705412b295c18886237eb98322b061fd91b135d29a457baa0ad965cd4",
+      "source_namespace": "external",
+      "source_record_id": "10.5061_dryad.zkh1893nh",
+      "source_repository": "dryad",
+      "source_resource_id": "above_500_PA_data.csv",
+      "task": {
+        "file": "../../semantic_grounding/external/external_above_500_PA_data_a46ee8d8f8.task.json",
+        "sha256": "d270ef895e6f2948567c2ab243ad8c2c725db20c609bc48fec5ca1867810b4b2"
+      }
+    },
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "development",
+      "grounding_task_id": "internal::csv_hard_field_campaign",
+      "resource": {
+        "file": "../../raw/csv/csv_hard_field_campaign/field_campaign.csv",
+        "sha256": "965cdebeedc264f1a593e05c0b479fd34ea39c1bee8ef644bc9704939fca4889"
+      },
+      "resource_absence_reason": null,
+      "resource_available_at_freeze": true,
+      "source_file": "raw/csv/csv_hard_field_campaign/field_campaign.csv",
+      "source_identity": "390207f706814bf842afc0923a21791eb673733b84400219f05cf4135e28d288",
+      "source_namespace": "internal",
+      "source_record_id": "csv_hard_field_campaign",
+      "source_repository": "internal-study-corpus",
+      "source_resource_id": "raw/csv/csv_hard_field_campaign/field_campaign.csv",
+      "task": {
+        "file": "../../semantic_grounding/internal/csv_hard_field_campaign.task.json",
+        "sha256": "6777942332825b9de171bb92ad72b34bef44dede8d677f90e23cc0187423bd27"
+      }
+    },
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "distractor",
+      "grounding_task_id": "external::zenodo::record_3660832::Data 03 Mar 2019.h5",
+      "resource": null,
+      "resource_absence_reason": "original external resource bytes are not present in the workspace",
+      "resource_available_at_freeze": false,
+      "source_file": "zenodo/record_3660832/Data 03 Mar 2019.h5",
+      "source_identity": "3f5072fec7721b4f9f5c92a8b199c4cfbf6486fef1a5357f38c05822a10cd9eb",
+      "source_namespace": "external",
+      "source_record_id": "record_3660832",
+      "source_repository": "zenodo",
+      "source_resource_id": "Data 03 Mar 2019.h5",
+      "task": {
+        "file": "../../semantic_grounding/external/external_Data_03_Mar_2019_0af5c5a41a.task.json",
+        "sha256": "ed985a153aae96c739bb7cde7853117dba4bbb7b761e3d09bc7d2908ced7dfe6"
+      }
+    },
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "target",
+      "grounding_task_id": "external::zenodo::record_5935524::20211108_Sensit.csv",
+      "resource": null,
+      "resource_absence_reason": "original external resource bytes are not present in the workspace",
+      "resource_available_at_freeze": false,
+      "source_file": "zenodo/record_5935524/20211108_Sensit.csv",
+      "source_identity": "4e58af52cade1e21e97044e4a9ed113f63459ba01539f96333167e810e0de4a9",
+      "source_namespace": "external",
+      "source_record_id": "record_5935524",
+      "source_repository": "zenodo",
+      "source_resource_id": "20211108_Sensit.csv",
+      "task": {
+        "file": "../../semantic_grounding/external/external_20211108_Sensit_4ae577c9f2.task.json",
+        "sha256": "8817b863d538669260993e81dc75e26cfdb219dbda756e108bb59a78c5857bed"
+      }
+    },
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "target",
+      "grounding_task_id": "external::dryad::10.5061_dryad.zkh1893nh::functional_traits.csv",
+      "resource": null,
+      "resource_absence_reason": "original external resource bytes are not present in the workspace",
+      "resource_available_at_freeze": false,
+      "source_file": "dryad/10.5061_dryad.zkh1893nh/functional_traits.csv",
+      "source_identity": "4ee5e33d16486fdc86de6197829057923e70a822d540fcc90a83e60b8ed7f0ac",
+      "source_namespace": "external",
+      "source_record_id": "10.5061_dryad.zkh1893nh",
+      "source_repository": "dryad",
+      "source_resource_id": "functional_traits.csv",
+      "task": {
+        "file": "../../semantic_grounding/external/external_functional_traits_7e780659c0.task.json",
+        "sha256": "46dbf0ef4cd88a30664ea3101716d51bf73f9ecaa0cf53b4b85eb1180204bd1b"
+      }
+    },
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "target",
+      "grounding_task_id": "external::zenodo::record_5935524::20211108_ZXLidar_Winds.csv",
+      "resource": null,
+      "resource_absence_reason": "original external resource bytes are not present in the workspace",
+      "resource_available_at_freeze": false,
+      "source_file": "zenodo/record_5935524/20211108_ZXLidar_Winds.csv",
+      "source_identity": "6ce3e43146443758aa06a1fecfa3c9c21a8330800e2f99b485123a49b30c517f",
+      "source_namespace": "external",
+      "source_record_id": "record_5935524",
+      "source_repository": "zenodo",
+      "source_resource_id": "20211108_ZXLidar_Winds.csv",
+      "task": {
+        "file": "../../semantic_grounding/external/external_20211108_ZXLidar_Winds_498b5c8080.task.json",
+        "sha256": "de393bb6e7e34b8f7fa3d28694006d01d9e58c364679b0fd1b27bde2beb7966d"
+      }
+    },
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "target",
+      "grounding_task_id": "external::zenodo::record_15008662::unique_tracks_90.csv",
+      "resource": null,
+      "resource_absence_reason": "original external resource bytes are not present in the workspace",
+      "resource_available_at_freeze": false,
+      "source_file": "zenodo/record_15008662/unique_tracks_90.csv",
+      "source_identity": "800c36aca7a5b93aaa990cd8a70bd8863aa8ee18a215b62201920296e20a993e",
+      "source_namespace": "external",
+      "source_record_id": "record_15008662",
+      "source_repository": "zenodo",
+      "source_resource_id": "unique_tracks_90.csv",
+      "task": {
+        "file": "../../semantic_grounding/external/external_unique_tracks_90_2dd0c99ecb.task.json",
+        "sha256": "be805ffb94cd3c665f96f3df46db45f5220e8f117878e6a7989de2436aa39f85"
+      }
+    },
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "target",
+      "grounding_task_id": "external::zenodo::record_5935524::20211108_Tides.csv",
+      "resource": null,
+      "resource_absence_reason": "original external resource bytes are not present in the workspace",
+      "resource_available_at_freeze": false,
+      "source_file": "zenodo/record_5935524/20211108_Tides.csv",
+      "source_identity": "a85e8fabad0c09f8b42e9827b3864610bf47f0adc7001741e4ec9386e21e80b9",
+      "source_namespace": "external",
+      "source_record_id": "record_5935524",
+      "source_repository": "zenodo",
+      "source_resource_id": "20211108_Tides.csv",
+      "task": {
+        "file": "../../semantic_grounding/external/external_20211108_Tides_eec5e1e5dd.task.json",
+        "sha256": "5d019a29f2696996e22047c878af83953d89394d7223a7c09ac266a99169cd49"
+      }
+    },
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "development",
+      "grounding_task_id": "internal::csv_medium_water_quality",
+      "resource": {
+        "file": "../../raw/csv/csv_medium_water_quality/water_quality.csv",
+        "sha256": "8f7670c7c72bf800faf466b249b5eae2f7d3a651f4255f28e003968179d1ad02"
+      },
+      "resource_absence_reason": null,
+      "resource_available_at_freeze": true,
+      "source_file": "raw/csv/csv_medium_water_quality/water_quality.csv",
+      "source_identity": "beb77012e679d838688ab12013cf6f6d66b19f47f9ae3555a574e57ba700a20a",
+      "source_namespace": "internal",
+      "source_record_id": "csv_medium_water_quality",
+      "source_repository": "internal-study-corpus",
+      "source_resource_id": "raw/csv/csv_medium_water_quality/water_quality.csv",
+      "task": {
+        "file": "../../semantic_grounding/internal/csv_medium_water_quality.task.json",
+        "sha256": "743cf25015f8a29d027c40fc15020c550ddc231b5299766a613d9c993d4b2c63"
+      }
+    },
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "development",
+      "grounding_task_id": "internal::ts_easy_hourly_weather",
+      "resource": {
+        "file": "../../raw/time_series/ts_easy_hourly_weather/hourly_weather.csv",
+        "sha256": "95fecabbf101bbc08d7b220556f2d1c3222afc4d1478d2562030e8d9e4547768"
+      },
+      "resource_absence_reason": null,
+      "resource_available_at_freeze": true,
+      "source_file": "raw/time_series/ts_easy_hourly_weather/hourly_weather.csv",
+      "source_identity": "c776210ae75297194acadd5932e33d4c0cabb953f000ffdb4c83cefda7397184",
+      "source_namespace": "internal",
+      "source_record_id": "ts_easy_hourly_weather",
+      "source_repository": "internal-study-corpus",
+      "source_resource_id": "raw/time_series/ts_easy_hourly_weather/hourly_weather.csv",
+      "task": {
+        "file": "../../semantic_grounding/internal/ts_easy_hourly_weather.task.json",
+        "sha256": "012cb5ffdae740f3efa81881481c729982ea0710a7928e3f286b962cf4be0fbd"
+      }
+    },
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "target",
+      "grounding_task_id": "external::dryad::10.5061_dryad.zkh1893nh::African_Mammal_FoodWebs_Locations.csv",
+      "resource": null,
+      "resource_absence_reason": "original external resource bytes are not present in the workspace",
+      "resource_available_at_freeze": false,
+      "source_file": "dryad/10.5061_dryad.zkh1893nh/African_Mammal_FoodWebs_Locations.csv",
+      "source_identity": "d0d2647947fa5f0bf3debce0dcaf42ac8af06bfd77e509173199031096d8ec9a",
+      "source_namespace": "external",
+      "source_record_id": "10.5061_dryad.zkh1893nh",
+      "source_repository": "dryad",
+      "source_resource_id": "African_Mammal_FoodWebs_Locations.csv",
+      "task": {
+        "file": "../../semantic_grounding/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.task.json",
+        "sha256": "1e1b1a65fa247f22e82f54d6505c766de0683e658a5c05fc796387ec77338999"
+      }
+    },
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "target",
+      "grounding_task_id": "external::zenodo::record_3660832::Data 01 Jan 2019.h5",
+      "resource": null,
+      "resource_absence_reason": "original external resource bytes are not present in the workspace",
+      "resource_available_at_freeze": false,
+      "source_file": "zenodo/record_3660832/Data 01 Jan 2019.h5",
+      "source_identity": "d7609baefa9d66f734b630a9e7139464ca82a2330e8918d895a346c4f3a95b4b",
+      "source_namespace": "external",
+      "source_record_id": "record_3660832",
+      "source_repository": "zenodo",
+      "source_resource_id": "Data 01 Jan 2019.h5",
+      "task": {
+        "file": "../../semantic_grounding/external/external_Data_01_Jan_2019_3d1da77494.task.json",
+        "sha256": "01042fc880dd8c8bbc523b78d6891593a1b90583cbdca50df9e3513b588f3b6e"
+      }
+    },
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "distractor",
+      "grounding_task_id": "external::zenodo::record_3660832::Data 02 Feb 2019.h5",
+      "resource": null,
+      "resource_absence_reason": "original external resource bytes are not present in the workspace",
+      "resource_available_at_freeze": false,
+      "source_file": "zenodo/record_3660832/Data 02 Feb 2019.h5",
+      "source_identity": "e96a90a43438447882d0aff5bb5868217ebef46a472003b74f5f5cb4451b986d",
+      "source_namespace": "external",
+      "source_record_id": "record_3660832",
+      "source_repository": "zenodo",
+      "source_resource_id": "Data 02 Feb 2019.h5",
+      "task": {
+        "file": "../../semantic_grounding/external/external_Data_02_Feb_2019_9afeaa53e5.task.json",
+        "sha256": "4d3789f0cd901af1178a08dc4df76c109cbf4c28bf58f36ce96393f0a6a1e677"
+      }
+    },
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "development",
+      "grounding_task_id": "internal::ts_hard_irregular_buoy",
+      "resource": {
+        "file": "../../raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv",
+        "sha256": "65a6c1b7676b3b3bec9655e571c6532a4e52451f94dc9dfe83f3ea1bc9246c15"
+      },
+      "resource_absence_reason": null,
+      "resource_available_at_freeze": true,
+      "source_file": "raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv",
+      "source_identity": "e9b91914bf5510cb5e0275c9a1fc3127db555519172416cb7da84c57a8d3b31c",
+      "source_namespace": "internal",
+      "source_record_id": "ts_hard_irregular_buoy",
+      "source_repository": "internal-study-corpus",
+      "source_resource_id": "raw/time_series/ts_hard_irregular_buoy/buoy_irregular.csv",
+      "task": {
+        "file": "../../semantic_grounding/internal/ts_hard_irregular_buoy.task.json",
+        "sha256": "920c2fca5ad44e0cb9a7ddf9fe1e3214b92555a76bf24ba558815f18994508ef"
+      }
+    },
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "target",
+      "grounding_task_id": "external::dryad::10.5061_dryad.2f2b3::Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+      "resource": null,
+      "resource_absence_reason": "original external resource bytes are not present in the workspace",
+      "resource_available_at_freeze": false,
+      "source_file": "dryad/10.5061_dryad.2f2b3/Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+      "source_identity": "ebd4601eed582db87955710c0bb74369537a35b52c7b4cd6611f95266fd25db6",
+      "source_namespace": "external",
+      "source_record_id": "10.5061_dryad.2f2b3",
+      "source_repository": "dryad",
+      "source_resource_id": "Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+      "task": {
+        "file": "../../semantic_grounding/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.task.json",
+        "sha256": "e9f6ad821a9cace99e0d37d75ca29a286f97439de12f5a31a2b3f7bbf2c02ab8"
+      }
+    },
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "development",
+      "grounding_task_id": "internal::hdf5_hard_ocean_profile",
+      "resource": {
+        "file": "../../raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5",
+        "sha256": "d1bf39b1ca4a63beb0b434e95a74cafcbf8f8603bdfd06213221f3947a1e2375"
+      },
+      "resource_absence_reason": null,
+      "resource_available_at_freeze": true,
+      "source_file": "raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5",
+      "source_identity": "ee7c1d8699a8ec24dbb95b5924b0edb15b40222740236824dcdc3c843277ab32",
+      "source_namespace": "internal",
+      "source_record_id": "hdf5_hard_ocean_profile",
+      "source_repository": "internal-study-corpus",
+      "source_resource_id": "raw/hdf5/hdf5_hard_ocean_profile/ocean_profile_nested.h5",
+      "task": {
+        "file": "../../semantic_grounding/internal/hdf5_hard_ocean_profile.task.json",
+        "sha256": "2e56b48de5b800654acbdd1b9720bdc4f731750c8ddba4a4c4d4c518db5ee12b"
+      }
+    },
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "distractor",
+      "grounding_task_id": "external::zenodo::record_5935524::20181108_HoloParticles.csv",
+      "resource": null,
+      "resource_absence_reason": "original external resource bytes are not present in the workspace",
+      "resource_available_at_freeze": false,
+      "source_file": "zenodo/record_5935524/20181108_HoloParticles.csv",
+      "source_identity": "ef6469ba4cd93081a6449bfeea53c26244452567646b6ac95b0dc6f43ade2d0e",
+      "source_namespace": "external",
+      "source_record_id": "record_5935524",
+      "source_repository": "zenodo",
+      "source_resource_id": "20181108_HoloParticles.csv",
+      "task": {
+        "file": "../../semantic_grounding/external/external_20181108_HoloParticles_3eed8863f9.task.json",
+        "sha256": "3a8f048349387b28748f49252ead230b53165c02591455d9d64966134e497716"
+      }
+    },
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "distractor",
+      "grounding_task_id": "external::zenodo::record_18195710::ensensia_raw_20230728-20251202_school_6.csv",
+      "resource": null,
+      "resource_absence_reason": "original external resource bytes are not present in the workspace",
+      "resource_available_at_freeze": false,
+      "source_file": "zenodo/record_18195710/ensensia_raw_20230728-20251202_school_6.csv",
+      "source_identity": "efe556905f348f180925a0109bab4b3312e027e98c0e9486e9a53a42cc8553a5",
+      "source_namespace": "external",
+      "source_record_id": "record_18195710",
+      "source_repository": "zenodo",
+      "source_resource_id": "ensensia_raw_20230728-20251202_school_6.csv",
+      "task": {
+        "file": "../../semantic_grounding/external/external_ensensia_raw_20230728-20251202_school_6_4245c4da2d.task.json",
+        "sha256": "2f9dcd162103c0bd5ccaa2bd4ec649c0f1192ad7563b7ee9bf608b48ece1d979"
+      }
+    },
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "target",
+      "grounding_task_id": "external::zenodo::record_18195710::ensensia_raw_20230728-20251202_school_5.csv",
+      "resource": null,
+      "resource_absence_reason": "original external resource bytes are not present in the workspace",
+      "resource_available_at_freeze": false,
+      "source_file": "zenodo/record_18195710/ensensia_raw_20230728-20251202_school_5.csv",
+      "source_identity": "f05b263c3029bd57ea022fa605f88928ba184e826500d9c2a5f4c0a83d628500",
+      "source_namespace": "external",
+      "source_record_id": "record_18195710",
+      "source_repository": "zenodo",
+      "source_resource_id": "ensensia_raw_20230728-20251202_school_5.csv",
+      "task": {
+        "file": "../../semantic_grounding/external/external_ensensia_raw_20230728-20251202_school_5_3e551bf83c.task.json",
+        "sha256": "87dadcd393cc0630acaf2f8e970b08b6d39d9883f93d3ff78cfe304ad34b88c7"
+      }
+    },
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "target",
+      "grounding_task_id": "external::dryad::10.5061_dryad.dv41ns266::weatherMQ-FP-20261011.csv",
+      "resource": null,
+      "resource_absence_reason": "original external resource bytes are not present in the workspace",
+      "resource_available_at_freeze": false,
+      "source_file": "dryad/10.5061_dryad.dv41ns266/weatherMQ-FP-20261011.csv",
+      "source_identity": "f98ce38d8c33faab9f8e06ac9c825841a5fabdcb9e5a57342de6049dae646c67",
+      "source_namespace": "external",
+      "source_record_id": "10.5061_dryad.dv41ns266",
+      "source_repository": "dryad",
+      "source_resource_id": "weatherMQ-FP-20261011.csv",
+      "task": {
+        "file": "../../semantic_grounding/external/external_weatherMQ-FP-20261011_3f95de2293.task.json",
+        "sha256": "d758c8bfa0c520b1ee67453b7a25d2f37b05a00e75c46a2d12aafee4100c5ff1"
+      }
+    },
+    {
+      "exposure_roles": [
+        "semantic_grounding",
+        "system_visible_before_blind_sampling"
+      ],
+      "grounding_role": "development",
+      "grounding_task_id": "internal::hdf5_easy_climate_cube",
+      "resource": {
+        "file": "../../raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5",
+        "sha256": "99ad5c7e009ae5b286c8dad0ba44963a4dfdb13f3e54f1a21a8f8c9541acfb92"
+      },
+      "resource_absence_reason": null,
+      "resource_available_at_freeze": true,
+      "source_file": "raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5",
+      "source_identity": "fbd1b64a2adf6529ded2a55128673c51f3f200e6f2d0fef34d5fd30a27051a7c",
+      "source_namespace": "internal",
+      "source_record_id": "hdf5_easy_climate_cube",
+      "source_repository": "internal-study-corpus",
+      "source_resource_id": "raw/hdf5/hdf5_easy_climate_cube/climate_cube.h5",
+      "task": {
+        "file": "../../semantic_grounding/internal/hdf5_easy_climate_cube.task.json",
+        "sha256": "cdbbf6f9af78b82f2c84b823a7240cb7d74267f17c7e6066cecd2781c8dbd691"
+      }
+    }
+  ],
+  "resource_sha256s": [
+    "65a6c1b7676b3b3bec9655e571c6532a4e52451f94dc9dfe83f3ea1bc9246c15",
+    "839dd2eb12d8e8a359689122f5a162822a2e10c1bcd174b21681baadc614ef24",
+    "876cbe7f68f7a13986cbf589e51bda454fd6f8df195fefbb6cec6a999ecd0ea5",
+    "8f7670c7c72bf800faf466b249b5eae2f7d3a651f4255f28e003968179d1ad02",
+    "95fecabbf101bbc08d7b220556f2d1c3222afc4d1478d2562030e8d9e4547768",
+    "965cdebeedc264f1a593e05c0b479fd34ea39c1bee8ef644bc9704939fca4889",
+    "99ad5c7e009ae5b286c8dad0ba44963a4dfdb13f3e54f1a21a8f8c9541acfb92",
+    "d1bf39b1ca4a63beb0b434e95a74cafcbf8f8603bdfd06213221f3947a1e2375",
+    "d26f3bba12e1cdd85f968865f4577c8158c2966756bc11d5c279c050878407a2"
+  ],
+  "schema_version": "semantic-known-nonblind-resources/v1",
+  "source_identities": [
+    "0558ec53ff256f54ea92eb374574ea49bda40f931510650871ba78fd25240794",
+    "17c6aea18c2e772369f60a11b5c1c74952d1371dde49789f1a548d79eae049c5",
+    "19ed957e8f7848fa14709f6b4c2247f52c4979efdd6b09fc404a4841280b29e4",
+    "1af893ada65a07deccbda944002c9730b83c4646f243e8a051faec2f837e6baf",
+    "1ff2057705412b295c18886237eb98322b061fd91b135d29a457baa0ad965cd4",
+    "390207f706814bf842afc0923a21791eb673733b84400219f05cf4135e28d288",
+    "3f5072fec7721b4f9f5c92a8b199c4cfbf6486fef1a5357f38c05822a10cd9eb",
+    "4e58af52cade1e21e97044e4a9ed113f63459ba01539f96333167e810e0de4a9",
+    "4ee5e33d16486fdc86de6197829057923e70a822d540fcc90a83e60b8ed7f0ac",
+    "6ce3e43146443758aa06a1fecfa3c9c21a8330800e2f99b485123a49b30c517f",
+    "800c36aca7a5b93aaa990cd8a70bd8863aa8ee18a215b62201920296e20a993e",
+    "a85e8fabad0c09f8b42e9827b3864610bf47f0adc7001741e4ec9386e21e80b9",
+    "beb77012e679d838688ab12013cf6f6d66b19f47f9ae3555a574e57ba700a20a",
+    "c776210ae75297194acadd5932e33d4c0cabb953f000ffdb4c83cefda7397184",
+    "d0d2647947fa5f0bf3debce0dcaf42ac8af06bfd77e509173199031096d8ec9a",
+    "d7609baefa9d66f734b630a9e7139464ca82a2330e8918d895a346c4f3a95b4b",
+    "e96a90a43438447882d0aff5bb5868217ebef46a472003b74f5f5cb4451b986d",
+    "e9b91914bf5510cb5e0275c9a1fc3127db555519172416cb7da84c57a8d3b31c",
+    "ebd4601eed582db87955710c0bb74369537a35b52c7b4cd6611f95266fd25db6",
+    "ee7c1d8699a8ec24dbb95b5924b0edb15b40222740236824dcdc3c843277ab32",
+    "ef6469ba4cd93081a6449bfeea53c26244452567646b6ac95b0dc6f43ade2d0e",
+    "efe556905f348f180925a0109bab4b3312e027e98c0e9486e9a53a42cc8553a5",
+    "f05b263c3029bd57ea022fa605f88928ba184e826500d9c2a5f4c0a83d628500",
+    "f98ce38d8c33faab9f8e06ac9c825841a5fabdcb9e5a57342de6049dae646c67",
+    "fbd1b64a2adf6529ded2a55128673c51f3f200e6f2d0fef34d5fd30a27051a7c"
+  ],
+  "source_identity_algorithm": "canonical_source_tuple_sha256/v1",
+  "status": "frozen_before_candidate_frame",
+  "task_sha256s": [
+    "01042fc880dd8c8bbc523b78d6891593a1b90583cbdca50df9e3513b588f3b6e",
+    "012cb5ffdae740f3efa81881481c729982ea0710a7928e3f286b962cf4be0fbd",
+    "1e1b1a65fa247f22e82f54d6505c766de0683e658a5c05fc796387ec77338999",
+    "2e56b48de5b800654acbdd1b9720bdc4f731750c8ddba4a4c4d4c518db5ee12b",
+    "2f9dcd162103c0bd5ccaa2bd4ec649c0f1192ad7563b7ee9bf608b48ece1d979",
+    "3205355af409dd46a2c9445b70a4222b4080edbbf102394ea42f6aad02a9d874",
+    "3a8f048349387b28748f49252ead230b53165c02591455d9d64966134e497716",
+    "46dbf0ef4cd88a30664ea3101716d51bf73f9ecaa0cf53b4b85eb1180204bd1b",
+    "4717504bc505c9ed459813351b226430d67c038bd1168378b75fa071ba77b2d8",
+    "47872fb1f1a0da37f26086528a1c96e3e47a6c814f358a839ae3f6eccefb22b6",
+    "4d3789f0cd901af1178a08dc4df76c109cbf4c28bf58f36ce96393f0a6a1e677",
+    "5d019a29f2696996e22047c878af83953d89394d7223a7c09ac266a99169cd49",
+    "6777942332825b9de171bb92ad72b34bef44dede8d677f90e23cc0187423bd27",
+    "6971c12deff0af76332d49a58905f186a7e2cbb606530f5761729bfddc93893f",
+    "743cf25015f8a29d027c40fc15020c550ddc231b5299766a613d9c993d4b2c63",
+    "87dadcd393cc0630acaf2f8e970b08b6d39d9883f93d3ff78cfe304ad34b88c7",
+    "8817b863d538669260993e81dc75e26cfdb219dbda756e108bb59a78c5857bed",
+    "920c2fca5ad44e0cb9a7ddf9fe1e3214b92555a76bf24ba558815f18994508ef",
+    "be805ffb94cd3c665f96f3df46db45f5220e8f117878e6a7989de2436aa39f85",
+    "cdbbf6f9af78b82f2c84b823a7240cb7d74267f17c7e6066cecd2781c8dbd691",
+    "d270ef895e6f2948567c2ab243ad8c2c725db20c609bc48fec5ca1867810b4b2",
+    "d758c8bfa0c520b1ee67453b7a25d2f37b05a00e75c46a2d12aafee4100c5ff1",
+    "de393bb6e7e34b8f7fa3d28694006d01d9e58c364679b0fd1b27bde2beb7966d",
+    "e9f6ad821a9cace99e0d37d75ca29a286f97439de12f5a31a2b3f7bbf2c02ab8",
+    "ed985a153aae96c739bb7cde7853117dba4bbb7b761e3d09bc7d2908ced7dfe6"
+  ]
+}

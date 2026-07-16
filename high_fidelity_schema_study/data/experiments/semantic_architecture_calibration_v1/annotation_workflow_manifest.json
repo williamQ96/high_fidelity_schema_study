@@ -1,0 +1,115 @@
+{
+  "benchmark_role": "annotator_calibration",
+  "calibration_manifest_file": "manifest.json",
+  "calibration_manifest_sha256": "e8c37e7a115360e7293f9745fd4d280c5488116dc579616f8f38a7cbd88ba9ed",
+  "case_count": 9,
+  "cases": [
+    {
+      "case_id": "csv_easy_weather_stations",
+      "dataset_id": "csv_easy_weather_stations",
+      "field_count": 6,
+      "packet_file": "packets/csv_easy_weather_stations.annotation-packet.json",
+      "packet_sha256": "b330125daaf1b7d4b3f7169ec76264b82c121fdd994e9743b5b681309027a0d4",
+      "required_independent_submission_count": 2,
+      "source_bundle_file": "source_bundles/csv_easy_weather_stations.source-bundle.json",
+      "source_bundle_sha256": "eecac7b4201170a98f101fa0002149f6cab5b6929f2d4be69e2cdabeb1d4e861"
+    },
+    {
+      "case_id": "csv_hard_field_campaign",
+      "dataset_id": "csv_hard_field_campaign",
+      "field_count": 6,
+      "packet_file": "packets/csv_hard_field_campaign.annotation-packet.json",
+      "packet_sha256": "eb96d5b6289b2e6f991a52e8bdd981ea6e80e6c8787d96fde7ada61b32d6caba",
+      "required_independent_submission_count": 2,
+      "source_bundle_file": "source_bundles/csv_hard_field_campaign.source-bundle.json",
+      "source_bundle_sha256": "08d38ef519623638656d23661dac856fd842f14ff100a552b07535e2f316817b"
+    },
+    {
+      "case_id": "csv_medium_water_quality",
+      "dataset_id": "csv_medium_water_quality",
+      "field_count": 7,
+      "packet_file": "packets/csv_medium_water_quality.annotation-packet.json",
+      "packet_sha256": "f4ef0c7eef12442844768c92cb8c602c855cf37feae474622eb0373774144332",
+      "required_independent_submission_count": 2,
+      "source_bundle_file": "source_bundles/csv_medium_water_quality.source-bundle.json",
+      "source_bundle_sha256": "0d4ed5933de0e3f1c16f3a6c335a8e07cb7b5e728ecf5d1ae84c48d98459239e"
+    },
+    {
+      "case_id": "hdf5_easy_climate_cube",
+      "dataset_id": "hdf5_easy_climate_cube",
+      "field_count": 4,
+      "packet_file": "packets/hdf5_easy_climate_cube.annotation-packet.json",
+      "packet_sha256": "f7ed0a7e3917cb59c7c9091e8522a1c71b93cc2908b5daa74c131e386d946b04",
+      "required_independent_submission_count": 2,
+      "source_bundle_file": "source_bundles/hdf5_easy_climate_cube.source-bundle.json",
+      "source_bundle_sha256": "095e404408a2d3565eee0737ac172070092f90e39bd6a914db0c6873b8543c2d"
+    },
+    {
+      "case_id": "hdf5_hard_ocean_profile",
+      "dataset_id": "hdf5_hard_ocean_profile",
+      "field_count": 10,
+      "packet_file": "packets/hdf5_hard_ocean_profile.annotation-packet.json",
+      "packet_sha256": "dc52f7a212dc74f6360dfe13617f8edf0c45466981885fbb8c3c937511932de2",
+      "required_independent_submission_count": 2,
+      "source_bundle_file": "source_bundles/hdf5_hard_ocean_profile.source-bundle.json",
+      "source_bundle_sha256": "6577821fa74c67415d9e7f4a9da0e12a0b0549e199c7ccf8b4490688a6fe0826"
+    },
+    {
+      "case_id": "hdf5_medium_station_hierarchy",
+      "dataset_id": "hdf5_medium_station_hierarchy",
+      "field_count": 5,
+      "packet_file": "packets/hdf5_medium_station_hierarchy.annotation-packet.json",
+      "packet_sha256": "5db262653f42401cd255ffe9dff57a66257fce6cbefe1eb8b62ce9a58bb2a445",
+      "required_independent_submission_count": 2,
+      "source_bundle_file": "source_bundles/hdf5_medium_station_hierarchy.source-bundle.json",
+      "source_bundle_sha256": "14cbe0f000743750ca8c47c26dcc4e0f23e2c02ee13519190583dfe5b2e20de1"
+    },
+    {
+      "case_id": "ts_easy_hourly_weather",
+      "dataset_id": "ts_easy_hourly_weather",
+      "field_count": 5,
+      "packet_file": "packets/ts_easy_hourly_weather.annotation-packet.json",
+      "packet_sha256": "f634fd0cf782dbc3b6b30eda44b518f1514f0823ed24a1bc0a9d206db6c84dc1",
+      "required_independent_submission_count": 2,
+      "source_bundle_file": "source_bundles/ts_easy_hourly_weather.source-bundle.json",
+      "source_bundle_sha256": "d2d534794113dbfcc39539bca2515f262dbaa0a2b03b967e9d8b6ddb5317f485"
+    },
+    {
+      "case_id": "ts_hard_irregular_buoy",
+      "dataset_id": "ts_hard_irregular_buoy",
+      "field_count": 5,
+      "packet_file": "packets/ts_hard_irregular_buoy.annotation-packet.json",
+      "packet_sha256": "a71add2d6701598b11b320d3520ca77675cf699597e9eb410d8d958e55d3c97a",
+      "required_independent_submission_count": 2,
+      "source_bundle_file": "source_bundles/ts_hard_irregular_buoy.source-bundle.json",
+      "source_bundle_sha256": "11e04a1725c699ccbd0adf36764d7281609d225b14fb62b878e2df46301f935c"
+    },
+    {
+      "case_id": "ts_medium_power_meter",
+      "dataset_id": "ts_medium_power_meter",
+      "field_count": 5,
+      "packet_file": "packets/ts_medium_power_meter.annotation-packet.json",
+      "packet_sha256": "7bea745742921b9abe271ec4098c84f9549e0536b1450eb06eeca1daa82750ac",
+      "required_independent_submission_count": 2,
+      "source_bundle_file": "source_bundles/ts_medium_power_meter.source-bundle.json",
+      "source_bundle_sha256": "a81a1b7a52a953beeab9a2334481cdeed7990c8d0047bdf57d3706360490315d"
+    }
+  ],
+  "handbook_file": "../../../docs/semantic_gold_annotation_handbook_v1.md",
+  "handbook_sha256": "e2bba4d5bb40bd5f6659d06da4de2898ce9ecfbe1aa5ea5bcccff6160fdd53d4",
+  "independence_policy": {
+    "annotator_count": 2,
+    "comparison_only_after_both_validate": true,
+    "developer_participation": false,
+    "model_outputs_visible": false,
+    "other_annotation_visible_before_freeze": false
+  },
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "research_evidence_status": "non_blind_not_for_effect_estimation",
+  "schema_version": "semantic-annotation-workflow-manifest/v1",
+  "vocabulary_file": "vocabulary.json",
+  "vocabulary_sha256": "874548a10f8871449be9b749c99e95e72e8852d261324abc8fa3c492246ed888",
+  "workflow_implementation_file": "../../../semantic_gold_workflow.py",
+  "workflow_implementation_sha256": "1319dd8b52a3421ce4e34bbfc59e21391e2c8d161e1c01272aa33a7299fab864",
+  "workflow_status": "ready_for_independent_annotation"
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "semantic-annotator-calibration-design/v1",
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "status": "frozen_before_submissions",
+  "round_id": "semantic-architecture-calibration-v1-round1",
+  "round_index": 1,
+  "prior_round_summary": null,
+  "workflow_manifest": {
+    "file": "annotation_workflow_manifest.json",
+    "sha256": "d2476583dc28d6bc4d653f286745a7841282bb917963da3bc9ac7a3f6b45c318"
+  },
+  "threshold_policy": {
+    "minimum_case_count": 9,
+    "minimum_overall_exact_label_agreement": 0.8,
+    "minimum_applicability_agreement": 0.9,
+    "minimum_case_exact_label_agreement": 0.5,
+    "minimum_property_exact_label_agreement": {
+      "physical_type": 0.7,
+      "logical_type": 0.7,
+      "semantic_type": 0.7,
+      "unit": 0.7
+    },
+    "evidence_agreement_is_descriptive_only": true
+  }
+}

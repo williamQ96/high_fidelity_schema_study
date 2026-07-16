@@ -1,0 +1,8 @@
+{
+  "schema_version": "semantic-preregistration-receipt/v1",
+  "design_sha256": "replace-with-calibration-design-sha256",
+  "registered_at": "YYYY-MM-DDTHH:MM:SSZ",
+  "registry": "replace-with-external-or-auditable-registry",
+  "registration_identifier": "replace-with-registration-id",
+  "frozen_before_first_submission": true
+}

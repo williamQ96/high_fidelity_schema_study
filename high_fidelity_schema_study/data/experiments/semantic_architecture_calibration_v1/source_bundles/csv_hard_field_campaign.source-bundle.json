@@ -1,0 +1,166 @@
+{
+  "annotation_packet_file": "csv_hard_field_campaign.annotation-packet.json",
+  "annotation_packet_sha256": "eb96d5b6289b2e6f991a52e8bdd981ea6e80e6c8787d96fde7ada61b32d6caba",
+  "dataset_id": "csv_hard_field_campaign",
+  "evidence_catalog": [
+    {
+      "applicable_field_paths": [
+        "rec"
+      ],
+      "catalog_evidence_id": "rec::F1",
+      "selector": "field_inventory:rec:rec::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "eb96d5b6289b2e6f991a52e8bdd981ea6e80e6c8787d96fde7ada61b32d6caba",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "rec"
+      ],
+      "catalog_evidence_id": "rec::F2",
+      "selector": "field_inventory:rec:rec::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "eb96d5b6289b2e6f991a52e8bdd981ea6e80e6c8787d96fde7ada61b32d6caba",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "dt_obs"
+      ],
+      "catalog_evidence_id": "dt_obs::F1",
+      "selector": "field_inventory:dt_obs:dt_obs::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "eb96d5b6289b2e6f991a52e8bdd981ea6e80e6c8787d96fde7ada61b32d6caba",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "dt_obs"
+      ],
+      "catalog_evidence_id": "dt_obs::F2",
+      "selector": "field_inventory:dt_obs:dt_obs::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "eb96d5b6289b2e6f991a52e8bdd981ea6e80e6c8787d96fde7ada61b32d6caba",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "zc"
+      ],
+      "catalog_evidence_id": "zc::F1",
+      "selector": "field_inventory:zc:zc::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "eb96d5b6289b2e6f991a52e8bdd981ea6e80e6c8787d96fde7ada61b32d6caba",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "zc"
+      ],
+      "catalog_evidence_id": "zc::F2",
+      "selector": "field_inventory:zc:zc::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "eb96d5b6289b2e6f991a52e8bdd981ea6e80e6c8787d96fde7ada61b32d6caba",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "val"
+      ],
+      "catalog_evidence_id": "val::F1",
+      "selector": "field_inventory:val:val::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "eb96d5b6289b2e6f991a52e8bdd981ea6e80e6c8787d96fde7ada61b32d6caba",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "val"
+      ],
+      "catalog_evidence_id": "val::F2",
+      "selector": "field_inventory:val:val::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "eb96d5b6289b2e6f991a52e8bdd981ea6e80e6c8787d96fde7ada61b32d6caba",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "flag"
+      ],
+      "catalog_evidence_id": "flag::F1",
+      "selector": "field_inventory:flag:flag::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "eb96d5b6289b2e6f991a52e8bdd981ea6e80e6c8787d96fde7ada61b32d6caba",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "flag"
+      ],
+      "catalog_evidence_id": "flag::F2",
+      "selector": "field_inventory:flag:flag::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "eb96d5b6289b2e6f991a52e8bdd981ea6e80e6c8787d96fde7ada61b32d6caba",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "device"
+      ],
+      "catalog_evidence_id": "device::F1",
+      "selector": "field_inventory:device:device::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "eb96d5b6289b2e6f991a52e8bdd981ea6e80e6c8787d96fde7ada61b32d6caba",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "device"
+      ],
+      "catalog_evidence_id": "device::F2",
+      "selector": "field_inventory:device:device::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "eb96d5b6289b2e6f991a52e8bdd981ea6e80e6c8787d96fde7ada61b32d6caba",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "dt_obs",
+        "flag",
+        "rec",
+        "val",
+        "zc"
+      ],
+      "catalog_evidence_id": "S1",
+      "selector": "approved_evidence:S1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "eb96d5b6289b2e6f991a52e8bdd981ea6e80e6c8787d96fde7ada61b32d6caba",
+      "source_type": "dataset_readme",
+      "strength": "documentation"
+    }
+  ],
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "schema_version": "semantic-source-bundle/v1",
+  "sources": [
+    {
+      "source_file": "csv_hard_field_campaign.annotation-packet.json",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "eb96d5b6289b2e6f991a52e8bdd981ea6e80e6c8787d96fde7ada61b32d6caba",
+      "source_type": "frozen_neutral_annotation_packet"
+    }
+  ],
+  "vocabulary_file": "vocabulary.json",
+  "vocabulary_sha256": "874548a10f8871449be9b749c99e95e72e8852d261324abc8fa3c492246ed888"
+}

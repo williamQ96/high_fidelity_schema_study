@@ -1,0 +1,143 @@
+{
+  "annotation_packet_file": "ts_medium_power_meter.annotation-packet.json",
+  "annotation_packet_sha256": "7bea745742921b9abe271ec4098c84f9549e0536b1450eb06eeca1daa82750ac",
+  "dataset_id": "ts_medium_power_meter",
+  "evidence_catalog": [
+    {
+      "applicable_field_paths": [
+        "sensor_id"
+      ],
+      "catalog_evidence_id": "sensor_id::F1",
+      "selector": "field_inventory:sensor_id:sensor_id::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "7bea745742921b9abe271ec4098c84f9549e0536b1450eb06eeca1daa82750ac",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "sensor_id"
+      ],
+      "catalog_evidence_id": "sensor_id::F2",
+      "selector": "field_inventory:sensor_id:sensor_id::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "7bea745742921b9abe271ec4098c84f9549e0536b1450eb06eeca1daa82750ac",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "ts_utc"
+      ],
+      "catalog_evidence_id": "ts_utc::F1",
+      "selector": "field_inventory:ts_utc:ts_utc::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "7bea745742921b9abe271ec4098c84f9549e0536b1450eb06eeca1daa82750ac",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "ts_utc"
+      ],
+      "catalog_evidence_id": "ts_utc::F2",
+      "selector": "field_inventory:ts_utc:ts_utc::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "7bea745742921b9abe271ec4098c84f9549e0536b1450eb06eeca1daa82750ac",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "power_kw"
+      ],
+      "catalog_evidence_id": "power_kw::F1",
+      "selector": "field_inventory:power_kw:power_kw::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "7bea745742921b9abe271ec4098c84f9549e0536b1450eb06eeca1daa82750ac",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "power_kw"
+      ],
+      "catalog_evidence_id": "power_kw::F2",
+      "selector": "field_inventory:power_kw:power_kw::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "7bea745742921b9abe271ec4098c84f9549e0536b1450eb06eeca1daa82750ac",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "voltage_v"
+      ],
+      "catalog_evidence_id": "voltage_v::F1",
+      "selector": "field_inventory:voltage_v:voltage_v::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "7bea745742921b9abe271ec4098c84f9549e0536b1450eb06eeca1daa82750ac",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "voltage_v"
+      ],
+      "catalog_evidence_id": "voltage_v::F2",
+      "selector": "field_inventory:voltage_v:voltage_v::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "7bea745742921b9abe271ec4098c84f9549e0536b1450eb06eeca1daa82750ac",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "status"
+      ],
+      "catalog_evidence_id": "status::F1",
+      "selector": "field_inventory:status:status::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "7bea745742921b9abe271ec4098c84f9549e0536b1450eb06eeca1daa82750ac",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "status"
+      ],
+      "catalog_evidence_id": "status::F2",
+      "selector": "field_inventory:status:status::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "7bea745742921b9abe271ec4098c84f9549e0536b1450eb06eeca1daa82750ac",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "power_kw",
+        "status",
+        "ts_utc",
+        "voltage_v"
+      ],
+      "catalog_evidence_id": "S1",
+      "selector": "approved_evidence:S1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "7bea745742921b9abe271ec4098c84f9549e0536b1450eb06eeca1daa82750ac",
+      "source_type": "dataset_readme",
+      "strength": "documentation"
+    }
+  ],
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "schema_version": "semantic-source-bundle/v1",
+  "sources": [
+    {
+      "source_file": "ts_medium_power_meter.annotation-packet.json",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "7bea745742921b9abe271ec4098c84f9549e0536b1450eb06eeca1daa82750ac",
+      "source_type": "frozen_neutral_annotation_packet"
+    }
+  ],
+  "vocabulary_file": "vocabulary.json",
+  "vocabulary_sha256": "874548a10f8871449be9b749c99e95e72e8852d261324abc8fa3c492246ed888"
+}

@@ -5,7 +5,7 @@ import json
 import os
 from pathlib import Path, PurePosixPath
 import re
-from typing import Any, Dict, Iterable, List, Optional
+from typing import Any, Dict, List, Optional
 
 try:
     import numpy as np  # type: ignore

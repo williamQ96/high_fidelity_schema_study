@@ -1,0 +1,283 @@
+{
+  "annotation_properties": [
+    "physical_type",
+    "logical_type",
+    "semantic_type",
+    "unit"
+  ],
+  "annotator_instructions": [
+    "Annotate independently using the frozen handbook.",
+    "Do not inspect existing gold, semantic model output, or another annotator artifact before submission.",
+    "Assign applicability before assigning each value.",
+    "Cite exact packet evidence or independently frozen raw-source evidence for every known value."
+  ],
+  "approved_evidence": [
+    {
+      "detail": "local pilot dataset README",
+      "evidence_id": "S1",
+      "source_name": "raw/csv/csv_medium_water_quality/README.md",
+      "source_type": "dataset_readme",
+      "text": "# csv_medium_water_quality\n\nDiscrete water-quality samples collected at multiple sites.\n\n- `sample_id` preserves leading zeros\n- `do_mg_l` is dissolved oxygen in milligrams per liter\n- `turbidity_ntu` is turbidity in nephelometric turbidity units\n- notes may be empty"
+    }
+  ],
+  "case_id": "csv_medium_water_quality",
+  "data_modality": "tabular",
+  "dataset_id": "csv_medium_water_quality",
+  "evidence_policy": {
+    "allowed_evidence_types": [
+      "csv_header",
+      "hdf5_attribute",
+      "hdf5_dataset_path",
+      "sample_rows"
+    ],
+    "derived_semantic_hints_removed": true,
+    "mode": "allowlisted_raw_observations_only"
+  },
+  "field_inventory": [
+    {
+      "example_values": [
+        "00017",
+        "00018",
+        "00019"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "sample_id",
+      "field_path": "sample_id",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='sample_id'",
+          "evidence_id": "sample_id::F1",
+          "evidence_type": "csv_header",
+          "source_label": "water_quality.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=4",
+          "evidence_id": "sample_id::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "water_quality.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "UP_A",
+        "DN_B"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "site_code",
+      "field_path": "site_code",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='site_code'",
+          "evidence_id": "site_code::F1",
+          "evidence_type": "csv_header",
+          "source_label": "water_quality.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=4",
+          "evidence_id": "site_code::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "water_quality.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.5,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "2026-04-11",
+        "2026-04-12"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "collection_date",
+      "field_path": "collection_date",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "datetime",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='collection_date'",
+          "evidence_id": "collection_date::F1",
+          "evidence_type": "csv_header",
+          "source_label": "water_quality.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=4",
+          "evidence_id": "collection_date::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "water_quality.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.75,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "7.2",
+        "7.1",
+        "6.8"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "ph",
+      "field_path": "ph",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='ph'",
+          "evidence_id": "ph::F1",
+          "evidence_type": "csv_header",
+          "source_label": "water_quality.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=4",
+          "evidence_id": "ph::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "water_quality.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        6.8,
+        7.2
+      ]
+    },
+    {
+      "example_values": [
+        "8.9",
+        "8.7",
+        "7.6"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "do_mg_l",
+      "field_path": "do_mg_l",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='do_mg_l'",
+          "evidence_id": "do_mg_l::F1",
+          "evidence_type": "csv_header",
+          "source_label": "water_quality.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=4",
+          "evidence_id": "do_mg_l::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "water_quality.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        7.6,
+        8.9
+      ]
+    },
+    {
+      "example_values": [
+        "3.2",
+        "3.9",
+        "9.8"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "turbidity_ntu",
+      "field_path": "turbidity_ntu",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='turbidity_ntu'",
+          "evidence_id": "turbidity_ntu::F1",
+          "evidence_type": "csv_header",
+          "source_label": "water_quality.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=4",
+          "evidence_id": "turbidity_ntu::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "water_quality.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        3.2,
+        9.8
+      ]
+    },
+    {
+      "example_values": [
+        "duplicate bottle",
+        "rain event"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "notes",
+      "field_path": "notes",
+      "missing_count": 2,
+      "nullable": true,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='notes'",
+          "evidence_id": "notes::F1",
+          "evidence_type": "csv_header",
+          "source_label": "water_quality.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=4",
+          "evidence_id": "notes::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "water_quality.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": null
+    }
+  ],
+  "file_format": "csv",
+  "prediction_fields_removed": [
+    "logical_type",
+    "semantic_type",
+    "unit",
+    "confidence",
+    "uncertainty_reason",
+    "semantic_logical_hint",
+    "description"
+  ],
+  "purpose": "annotator_calibration",
+  "research_evidence_status": "non_blind_not_for_effect_estimation",
+  "schema_version": "semantic-annotation-packet/v1",
+  "source_task_sha256": "743cf25015f8a29d027c40fc15020c550ddc231b5299766a613d9c993d4b2c63",
+  "task_id": "internal::csv_medium_water_quality"
+}

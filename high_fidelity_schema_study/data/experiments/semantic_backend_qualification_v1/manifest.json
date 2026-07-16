@@ -1,0 +1,77 @@
+{
+  "schema_version": "semantic-backend-calibration-manifest/v1",
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "benchmark_role": "calibration",
+  "research_evidence_status": "non_blind_operational_qualification_only",
+  "selection_frozen_before_backend_runs": true,
+  "selection_rule": "Previously developed external tasks selected without model outcomes to span CSV/HDF5, tabular/time-series/hierarchical modalities, low/high target counts, and both generic and historical manual-group D scheduling.",
+  "claim_boundary": "No gold is loaded and no architecture accuracy or effect is estimated from these cases.",
+  "cases": [
+    {
+      "case_id": "unique_tracks_90.csv",
+      "task_file": "data/semantic_grounding/external/external_unique_tracks_90_2dd0c99ecb.task.json",
+      "task_sha256": "be805ffb94cd3c665f96f3df46db45f5220e8f117878e6a7989de2436aa39f85",
+      "semantic_target_count": 1,
+      "file_format": "csv",
+      "data_modality": "time_series"
+    },
+    {
+      "case_id": "20211108_Sensit.csv",
+      "task_file": "data/semantic_grounding/external/external_20211108_Sensit_4ae577c9f2.task.json",
+      "task_sha256": "8817b863d538669260993e81dc75e26cfdb219dbda756e108bb59a78c5857bed",
+      "semantic_target_count": 7,
+      "file_format": "csv",
+      "data_modality": "time_series"
+    },
+    {
+      "case_id": "20211108_Tides.csv",
+      "task_file": "data/semantic_grounding/external/external_20211108_Tides_eec5e1e5dd.task.json",
+      "task_sha256": "5d019a29f2696996e22047c878af83953d89394d7223a7c09ac266a99169cd49",
+      "semantic_target_count": 7,
+      "file_format": "csv",
+      "data_modality": "time_series"
+    },
+    {
+      "case_id": "Data 01 Jan 2019.h5",
+      "task_file": "data/semantic_grounding/external/external_Data_01_Jan_2019_3d1da77494.task.json",
+      "task_sha256": "01042fc880dd8c8bbc523b78d6891593a1b90583cbdca50df9e3513b588f3b6e",
+      "semantic_target_count": 22,
+      "file_format": "hdf5",
+      "data_modality": "hierarchical"
+    },
+    {
+      "case_id": "Season and site fidelity determine home range of dispersing and resident juvenile Greenland cod (Gadus ogac) in a Newfoundland fjord_year1.csv",
+      "task_file": "data/semantic_grounding/external/external_Season_and_site_fidelity_determine_home_range_of_dispersing__f2aa642218.task.json",
+      "task_sha256": "e9f6ad821a9cace99e0d37d75ca29a286f97439de12f5a31a2b3f7bbf2c02ab8",
+      "semantic_target_count": 10,
+      "file_format": "csv",
+      "data_modality": "tabular",
+      "legacy_scheduler_coverage": "historical_manual_group_strategy"
+    },
+    {
+      "case_id": "African_Mammal_FoodWebs_Locations.csv",
+      "task_file": "data/semantic_grounding/external/external_African_Mammal_FoodWebs_Locations_cd7d08ae87.task.json",
+      "task_sha256": "1e1b1a65fa247f22e82f54d6505c766de0683e658a5c05fc796387ec77338999",
+      "semantic_target_count": 6,
+      "file_format": "csv",
+      "data_modality": "tabular"
+    },
+    {
+      "case_id": "functional_traits.csv",
+      "task_file": "data/semantic_grounding/external/external_functional_traits_7e780659c0.task.json",
+      "task_sha256": "46dbf0ef4cd88a30664ea3101716d51bf73f9ecaa0cf53b4b85eb1180204bd1b",
+      "semantic_target_count": 15,
+      "file_format": "csv",
+      "data_modality": "tabular",
+      "legacy_scheduler_coverage": "historical_manual_group_strategy"
+    },
+    {
+      "case_id": "weatherMQ-FP-20261011.csv",
+      "task_file": "data/semantic_grounding/external/external_weatherMQ-FP-20261011_3f95de2293.task.json",
+      "task_sha256": "d758c8bfa0c520b1ee67453b7a25d2f37b05a00e75c46a2d12aafee4100c5ff1",
+      "semantic_target_count": 6,
+      "file_format": "csv",
+      "data_modality": "tabular"
+    }
+  ]
+}

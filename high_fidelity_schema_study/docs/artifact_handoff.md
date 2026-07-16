@@ -14,6 +14,7 @@ This is the concise handoff for the Artifact Paper package. The package is a pap
 - GUI visual QA: `docs/gui_visual_qa.md`
 - Frozen benchmark card: `docs/benchmark_card_2026-05-15.md`
 - Generated paper tables: `docs/paper_result_tables_2026-05-15.md`
+- Phase 20 companion engineering appendix: `docs/phase20_companion_engineering_appendix.md`
 
 ## Run The GUI Demo
 
@@ -52,6 +53,8 @@ python -m high_fidelity_schema_study.build_paper_figures
 python -m pytest high_fidelity_schema_study\tests
 ```
 
+Current expected full-suite result after the Phase 20 final convergence pass is `183 passed`.
+
 Static GUI JavaScript parse check:
 
 ```bash
@@ -72,7 +75,8 @@ Invoke-WebRequest -UseBasicParsing http://localhost:8765/docs/paper_result_table
 - External semantic merges are working annotations, not final gold references.
 - Time-axis accuracy remains a known non-final gap in the frozen slice.
 - Evidence adequacy and provenance establish auditability, not semantic truth.
+- Phases 12-20 are companion engineering evidence and do not rewrite the frozen Artifact Paper metrics.
 
 ## Current Convergence Assessment
 
-After the final convergence polish, the Artifact Paper package is approximately `98%` converged. Remaining work is venue-specific formatting and external human review.
+After the final convergence polish, the Artifact Paper package is release-ready within its bounded claims. Remaining work is venue-specific formatting, external human review, and any separately approved future validation round.

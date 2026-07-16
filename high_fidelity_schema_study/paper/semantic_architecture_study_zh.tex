@@ -1,0 +1,342 @@
+\documentclass[UTF8,fontset=fandol,11pt]{ctexart}
+
+\usepackage[a4paper,margin=2.35cm]{geometry}
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}[Scale=0.84]
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{seqsplit}
+\usepackage{url}
+\usepackage[hidelinks,unicode]{hyperref}
+
+\input{results_macros.tex}
+
+\definecolor{DeepBlue}{HTML}{174A7E}
+\definecolor{SoftBlue}{HTML}{EAF2F8}
+\definecolor{FreezeRed}{HTML}{9E2A2B}
+\definecolor{FreezeBg}{HTML}{FFF3F3}
+
+\newcommand{\artifacthash}[1]{{\scriptsize\ttfamily\expandafter\seqsplit\expandafter{#1}}}
+\newcommand{\NA}{\textsf{N/A}}
+\newcommand{\placeholder}{\texttt{<盲测 GOLD 解封前必须绑定>}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}p{1.75cm}}
+\setlength{\emergencystretch}{1.5em}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{证据约束的语义 Schema 架构}
+\fancyhead[R]{盲测前技术报告}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+
+\title{\textbf{语义架构究竟需要多复杂？}\\
+\large 面向证据约束数据集 Schema 归纳的因果可控 A/B/C/D 实验协议}
+\author{盲测前匿名技术报告\\
+\small 作者与机构信息将在协议冻结时绑定}
+\date{2026 年 7 月 16 日}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+本研究考察一个以“输入数据集，输出 deterministic-based schema”为产品边界的系统中的语义组件。物理 Schema 始终由确定性解析器拥有；语言模型只能针对已有字段、基于已给证据提出属性级语义补充。我们将历史上碎片化的语义流水线收敛为四个固定条件：A 为纯确定性系统；B 在确定性抽取后至多增加一次 dataset-level 语义调用；C 精确复用 B 的同一响应，再执行确定性的证据身份、字段相关性和冲突检查；D 保留历史 per-field/manual-group 调度与“非空证据字符串即可合并”的行为。
+
+当前阶段的贡献是可审计的实验协议和经过验证的 measurement harness，而不是某个架构获胜的结论。九个合成开发案例中，只有两个存在 dataset-level 语义机会，其中一个目标不在 gold 中，因此所有架构间比较都被正确标记为不可比较。较小的 Qwen3.5 9B 在该集合中没有增加可接受、可评分的语义 claim；观测到的 B--C 零差异是不充分信息，而非零效应。对抗测试验证了调用边界、replay、证据、弃权、适用性、unsupported claim 与 AURC 等不变量。
+
+随后进行的 backend qualification 首先暴露了 runtime 和测量缺陷：8,192 context 且 thinking 实际开启的 Qwen3.6-27B 运行被作废。在修复 replay/telemetry provenance、关闭 thinking 并加载 16,384 context 后，同一 Q4\_K\_M 模型在八个非盲校准数据集、74 个语义目标上通过全部预声明 operational criteria。该结果只证明执行兼容性。dataset-level 推理和 deterministic verification 的真实因果贡献仍必须由两名独立标注者完成 gold 后，在冻结盲测中估计。本文为 blind-freeze provenance 保留了显式占位区。
+\end{abstract}
+
+\noindent\textbf{关键词：}语义 Schema 归纳；选择性预测；证据约束；确定性验证；replay identity；模型能力债务；数据集元数据。
+
+\section{引言}
+
+数据集 Schema 归纳包含两类不同的认识论问题。字段名、存储类型、shape、group 和显式 attribute 是字节与格式标准的属性，应由 parser 判定；一个字段究竟是 identifier、measurement、time axis 还是某类领域量，则常常需要跨字段和文档的语义整合。若把两者都当作自由文本生成，便难以区分“听起来合理的元数据”和 schema truth；若全部交给确定性规则，则会丢失真正需要上下文推理的信息。
+
+本项目因此保留严格的 authority boundary：确定性 extractor 拥有 canonical physical structure；语义组件只能对已存在字段提出 claim，只能引用输入 evidence catalog 中的 ID，证据不足时必须 abstain。这与可审计派生关系的 provenance 模型 \cite{prov2013}、基于证据的模型修订 \cite{gao2023rarr}，以及以 coverage 换取低 risk 的 selective prediction \cite{geifman2017selective} 一致。
+
+历史实现包含 per-field 调用、manual grouping、重复 free-JSON/schema 尝试和多层 merge rule。这些复杂度中的一部分，可能只是早期小模型无法整合 dataset-level context 时的补偿。本文将“为旧模型能力限制引入、但在限制减弱后仍残留的复杂度”称为\textbf{模型能力债务（Model Capability Debt）}。研究目标并非最大化新模型使用，而是找出在不破坏 trust boundary 的前提下所需的最小架构。
+
+研究问题为：
+\begin{enumerate}[label=\textbf{RQ\arabic*:},leftmargin=2.2cm]
+  \item 相比纯确定性抽取，一次 dataset-level 语义推理调用增加了什么？
+  \item 在语义响应完全相同的条件下，deterministic verification 改变了什么？
+  \item 与历史 per-field 系统相比，最小 hybrid 是否能以更少语义调用维持或改善 trustworthiness？
+\end{enumerate}
+
+在 blind gold 尚未解封的当前阶段，三个问题都没有有效的 effect estimate。已完成工作的价值，是保证未来的估计具有可解释的因果含义，并明确尚缺哪些证据。
+
+\section{问题定义与产品边界}
+
+产品级映射为
+\[
+  \texttt{dataset file(s)} \longrightarrow
+  \texttt{deterministic canonical schema} \oplus
+  \texttt{optional semantic claim ledger}.
+\]
+确定性 Schema 本身是完整、可独立交付的输出。语义层只是可选 overlay，不得创造字段、静默覆盖更强的 deterministic claim，也不得把置信度当作证据。
+
+对字段路径 $f$、属性 $p$ 和候选值 $v$，语义 claim 表示为
+\[
+  c=(f,p,v,E,s,d),
+\]
+其中 $E$ 是 evidence ID 集合，$s$ 只用于 risk--coverage 排序，$d$ 是最终 decision。正确性与 confidence 分离：高置信 claim 仍可能 unsupported，低置信 claim 也可能有可追溯证据。decision 包括 accepted、rejected 与 abstained；verification state 区分 deterministic agreement、evidence-grounded support、contradiction、conflict 和 unsupported。
+
+Gold applicability 同样显式区分：（i）适用且存在值；（ii）适用但真实未知；（iii）不适用；（iv）位于 open-world gold scope 之外。这样既不会把 abstention 偷换成错误的 accepted prediction，也不会把 gold 缺失误判为 \NA。
+
+\section{第一性原理架构审计}
+
+审计将 essential complexity 与 accidental complexity 分开。Parser 对物理事实的权威、结构化 abstention、属性级 provenance 和显式 conflict state 是 essential，因为它们编码 trust boundary。per-field prompt fragmentation、manual grouping、重复 free-JSON/schema 尝试和冗余数据变换，在被实验证明有价值之前都属于历史复杂度。Rigid schema 在能让 failure observable 时仍然有用，但不能仅因它能迫使模型给出偏好答案而保留。
+
+审计给出的保守规则是：只有 replay-controlled experiment 证明简化方案不差于旧方案后，才删除旧语义 orchestration。这避免了把旧的模型能力债务替换成新的模型依赖。
+
+\section{四个固定架构 Variant}
+
+\begin{table}[H]
+\centering
+\caption{冻结的语义架构。研究中不允许加入第五个 variant。}
+\label{tab:variants-zh}
+\begin{tabularx}{\textwidth}{@{}p{0.8cm}p{3.0cm}Yp{2.3cm}@{}}
+\toprule
+ID & 名称 & 语义 & 语义生成调用 \\
+\midrule
+A & 纯确定性 & 输出 parser-owned schema 与 deterministic claims；不使用语义模型。 & 0 \\
+B & Dataset reasoner & 确定性抽取后，对所有未解决目标至多生成一个 dataset-level 语义响应。 & 每数据集 $\leq1$ \\
+C & Replay + verifier & 消费 B 的精确响应；检查 evidence identity、field relevance、deterministic contradiction 和 cross-claim conflict。 & 0 个新调用 \\
+D & Legacy pipeline & 保留 per-field/manual-group、温度 0.2、free-JSON 后 schema fallback，以及历史非空证据 merge rule。 & 可变，通常较多 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+B--C 是最干净的因果干预。Memoizing backend 对完整请求做 fingerprint，将 B 的 raw response 与 SHA-256 identity 原样提供给 C。若 C 新生成响应、缺失 replay 或消费不同 hash，则比较失效。C 的 verification 是确定性的，但不声称验证 semantic entailment：存在且 field-relevant 的 citation 只证明可追溯支持，不证明事实真值。
+
+\section{评测方法}
+
+令 $V$ 为 applicable-value slots，$P$ 为其中被接受的 predictions，$K\subseteq P$ 为正确的 accepted predictions，则
+\begin{align}
+  \text{end-to-end accuracy} &= \frac{\lvert K\rvert}{\lvert V\rvert},\\
+  \text{coverage} &= \frac{\lvert P\rvert}{\lvert V\rvert},\\
+  \text{selective risk} &= 1-\frac{\lvert K\rvert}{\lvert P\rvert}.
+\end{align}
+当 $P$ 为空时，selective accuracy/risk 记为未定义，而非强制记零。Abstention 会降低 end-to-end accuracy 与 coverage，但不进入 conditional selective-risk denominator。Confidence 仅用于按完整 tie group 排序，构造 right-continuous risk--coverage curve。AURC 只对 achieved coverage 积分；当不同属性的 confidence scale 不同时，优先报告 per-property curve。
+
+Unsupported claim rate 只在模型提出或接受的 claim 上计算，不能被大量 deterministic claim 稀释。资源统计区分 generated calls、reused upstream calls 与 effective architecture cost。当任一侧 partial、replay identity 失败、必要 gold 缺失或 semantic target 位于评分设计外时，pairwise comparison 必须标记 non-comparable。
+
+\subsection{Evaluator 的对抗验证}
+
+当前 variant 与 backend qualification 的 focused suites 共包含 \FocusedTests{} 个测试，整个项目共有 \FullTests{} 个通过的测试。覆盖 nonexistent/irrelevant/wrong-span/contradictory/empty evidence，confidence 0 与 1，malformed/partial output，duplicate 与 conflicting claims，applicable unknown 与 \NA，missing/mismatched replay，hidden retry，timeout，zero/all accepted，以及 confidence ties。额外 regression 保护 failure replay identity、per-call context accounting、legacy fallback telemetry 与 partial-D provenance。
+
+\begin{table}[H]
+\centering
+\caption{由代码和测试强制执行的核心因果不变量。}
+\begin{tabularx}{\textwidth}{@{}p{4.2cm}Y@{}}
+\toprule
+不变量 & 强制行为 \\
+\midrule
+A 调用边界 & 永远为零模型调用。 \\
+B 调用边界 & 每数据集至多一次 dataset-level generation；隐藏 retry 会令 run partial。 \\
+C replay 边界 & 零 generation，且必须与 B raw-response hash 完全一致，包括 malformed replay。 \\
+证据边界 & 缺失、空、跨字段或错误 span 的证据不能 verify claim。 \\
+Confidence 边界 & Confidence 永远不能推出 verification。 \\
+Applicability 边界 & \NA、applicable unknown、applicable value 与 outside-scope 分开。 \\
+Comparability 边界 & Partial execution、gold coverage 缺失或 replay failure 会抑制 causal delta。 \\
+Legacy fidelity & 历史调度和 merge 行为不变；所有 attempt 都被测量。 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{合成开发实验}
+
+Development manifest 包含 \DevCases{} 个由开发者构造的 regression cases，覆盖 CSV、HDF5 与 time-series。它不是随机样本，不能提供 external validity。仅有 \DevSemanticCases{}/\DevCases{} cases 存在 dataset-level semantic target；其中 \texttt{/campaign/meta/platform} 不在 gold 中。因此 A--B、B--C、C--D 的正式比较全部 non-comparable。
+
+开发 backend 为本地 Qwen3.5 9B。两个实际 B response 都被 byte-for-byte replay 到 C；其余七个案例没有 semantic target，因而正确地不调用 B/C。表~\ref{tab:devresults-zh} 是 pooled descriptive diagnostics，而非架构 effect。
+
+\begin{table}[H]
+\centering
+\caption{九案例合成开发诊断。B/C/D 的因果比较均不可比较。}
+\label{tab:devresults-zh}
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}lCCCCCC@{}}
+\toprule
+Variant & Comparable & 端到端准确率 & Coverage & Sel. risk & AURC & Calls \\
+\midrule
+A & 是 & \AccA & \CovA & \RiskA & \AurcA & 0 \\
+B & 否 & \AccB & \CovB & \RiskB & \AurcB & \DevBCalls \\
+C & 否 & \AccC & \CovC & \RiskC & \AurcC & 0 new / \DevBCalls{} effective \\
+D & 否 & \AccD & \CovD & \RiskD & \AurcD & \DevDCalls \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+B 提出一个 model claim，但未接受任何 model claim，也没有增加可评分 coverage；effective cost 为 \DevBInput{} input tokens、\DevBOutput{} output tokens 和 \DevBLatency{} ms model latency。C 的 effective upstream cost 相同，新 generation 为零。D 提出并接受四个 claims，使用 \DevDCalls{} calls、\DevDInput{}/\DevDOutput{} input/output tokens 与 \DevDLatency{} ms。D 在一个 hard CSV case 中恢复了两个 gold-covered logical values，但另一个改变不可评分。由于 design non-comparable，这些事实不能证明 D 更优。
+
+Qwen3.5 在 postal-code target 上虽在 notes 中识别出语义，却最终 abstain；在无 gold coverage 的 HDF5 case 上又违反 target scope。更强模型可能在不改变 B/C 架构的情况下修复这些失败，但这只是 hypothesis。开发运行没有给出 A--B 增量，也没有给出 B--C verification trade-off。观测到的 B--C decision delta 全为零，是 uninformative contrast，而不是 verifier 没有效果的证据。
+
+\section{Backend Qualification}
+
+Qualification 只回答 backend 是否能执行冻结 contract，不回答 claim 是否正确。固定的非盲 calibration manifest 包含 \QualificationCases{} 个 external datasets 与 \QualificationTargets{} 个 semantic targets，且不能进入未来 blind benchmark。B 在 temperature 0、seed 0 下每数据集运行两次；C 紧接每次 B 做 replay；D 按历史 policy 每数据集运行一次。
+
+\subsection{被作废的 8K/thinking-on 运行}
+
+首次 Qwen3.6-27B Q4\_K\_M 使用 8,192 context，而 thinking 实际仍开启。B 只有 2/16 contract-valid，D 只有 1/8 dataset runs contract-valid；12 次 B 在 generation/context boundary 截断，10,044-token 的 HDF5 prompt 在生成前被拒绝。该运行还暴露了三个 measurement defects：malformed B failure 没有把 raw identity 传到 C；unparseable output 可能被计为 target-scope valid；partial D failure 会丢失之前 group/fallback provenance。该 artifact 被不可变地标记 invalidated，任何 rate 都不用于 backend selection。
+
+该失败作为 infrastructure diagnosis 仍有价值。LM Studio 0.4.18 的 release note 记录了某些 custom reasoning setting 下 on/off 可能被忽略的修复 \cite{lmstudio_0418}。本项目只修复 provenance 与 measurement，没有改 prompt、architecture、target 或 call budget。
+
+\subsection{修正后的 16K/thinking-off 运行}
+
+一次被排除在 qualification metrics 之外的 gate 先确认 contract-valid 且 reasoning tokens 为零。随后，同一 Qwen3.6-27B Q4\_K\_M 模型 \cite{lmstudio_qwen36} 在 thinking disabled、\LoadedContext-token context 下通过全部冻结条件（表~\ref{tab:qualification-zh}）。
+
+\begin{table}[H]
+\centering
+\caption{修正后的 Qwen3.6-27B operational qualification。}
+\label{tab:qualification-zh}
+\begin{tabularx}{\textwidth}{@{}Yrrc@{}}
+\toprule
+条件 & 观测 & 要求 & 结果 \\
+\midrule
+Semantic-opportunity datasets & 8 & $\geq8$ & 通过 \\
+B contract-valid rate & 1.0 & $\geq0.95$ & 通过 \\
+B target-scope-valid rate & 1.0 & 1.0 & 通过 \\
+B/C replay identity & 1.0 & 1.0 & 通过 \\
+B exact repeatability & 1.0 & 1.0 & 通过 \\
+B timeout / truncation & 0.0 / 0.0 & 0.0 / 0.0 & 通过 \\
+B context fit / telemetry & 1.0 / 1.0 & 1.0 / 1.0 & 通过 \\
+D contract-valid rate & 1.0 & $\geq0.95$ & 通过 \\
+D timeout / truncation & 0.0 / 0.0 & 0.0 / 0.0 & 通过 \\
+D context fit / telemetry & 1.0 / 1.0 & 1.0 / 1.0 & 通过 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+16 次 B 均以 JSON 和 \texttt{finish\_reason=stop} 结束；八个数据集的两次 response 都 byte-identical。每个 C input hash 都与 B 相同，C semantic generation count 均为零。B 最大 observed context 为 \QualMaxObservedContext{} tokens，最大的 \texttt{input+max\_tokens} request budget 为 \QualMaxBudgetContext{}，低于 loaded limit。
+
+\begin{table}[H]
+\centering
+\caption{修正后 qualification 的描述性 operational cost。}
+\small
+\begin{tabularx}{\textwidth}{@{}lRRRY@{}}
+\toprule
+条件 & 物理调用 & Input tokens & Output tokens & 平均 latency \\
+\midrule
+B（两次 repeat） & \QualBCalls & \QualBInput & \QualBOutput & \QualBMeanLatency{} s/attempt \\
+C generation & 0 & 0 new & 0 new & deterministic replay/verification \\
+D（一次 run） & \QualDCalls & \QualDInput & \QualDOutput & \QualDMeanLatency{} s/dataset \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+D 的 59 次调用来自历史调度；HDF5 case 单独需要 22 个 field calls。\path{functional_traits.csv} 有一次 free-JSON shape failure，随后历史 schema fallback 成功。Cost gap 是事实，但 accuracy--cost trade-off 尚未被估计。
+
+\section{当前结果能够与不能证明什么}
+
+\paragraph{已证明的事实。}
+Harness 强制执行四个固定架构、精确 B/C replay、C 零 generation、fail-closed contract、显式 applicability 与 per-call telemetry。修正 runtime 后，Qwen3.6-27B Q4\_K\_M operationally eligible。Legacy 架构在 calibration tasks 上具有显著更大的 call surface。
+
+\paragraph{未证明的内容。}
+研究尚无 blind effect estimate。九案例开发集过于稀疏且 gold coverage 不完整，无法估计 A--B、B--C 或 C--D effect。Backend qualification 不读取 gold，不能证明 dataset-level reasoning 有益、verification 降低 risk、D 更准确或 Qwen 能 generalize。
+
+\paragraph{模型选择。}
+当前没有 operational reason 将 Qwen3.6-27B 替换为 GLM、Llama 或更小 Qwen。其他 family 可以预声明为 sensitivity condition，但不能在看到不利架构结果后作为 post-hoc rescue，否则会把 backend selection 与 architecture effect 混淆。Model card 与精确 runtime identity 应成为一等研究 artifact \cite{mitchell2019modelcards}。
+
+\section{Blind External Evaluation 协议}
+
+Blind gold 将由两名未参与系统开发的 annotators 独立完成。他们必须区分 applicable value、applicable unknown、\NA 与 outside-scope slot，并在看不到 architecture output 的条件下 adjudicate disagreement。Primary analysis unit 是 paired per-dataset effect，而不是只报告 pooled slots。Development set 不作为 generalization evidence。数据集的采集、用途和限制应被显式记录 \cite{gebru2021datasheets}。
+
+预声明 contrasts 为：
+\begin{itemize}
+  \item A--B：新增正确/错误 claims、coverage、selective risk、unsupported claims、calls、tokens 与 latency；
+  \item B--C：B 接受但被 C reject/abstain 的 claim、删除的错误 claim、损失的正确 claim、删除的 unsupported claim，以及 risk--coverage trade-off；
+  \item C--D：只有 D comparable 时，比较 quality、selective metrics、unsupported claims、calls、tokens、latency 与 failure surface。
+\end{itemize}
+
+\subsection{Blind-freeze provenance 占位区}
+
+\begin{center}
+\fcolorbox{FreezeRed}{FreezeBg}{%
+\begin{minipage}{0.93\linewidth}
+\textbf{停止线：下列字段被有意保留为空。}\par
+它们必须在 blind gold 解封前完成 content-addressing 与双人 countersign。任一字段为空都会阻止解释；不得用 development 或 qualification artifact 静默代替。\medskip
+
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{5.4cm}Y@{}}
+Blind sampling registration receipt & \placeholder \\
+Blind candidate-frame SHA-256 & \placeholder \\
+Blind manifest SHA-256 & \placeholder \\
+Independent annotation package SHA-256 & \placeholder \\
+Adjudicated gold package SHA-256 & \placeholder \\
+Annotation vocabulary/handbook SHA-256 & \placeholder \\
+Annotator pseudonyms 与 independence attestations & \placeholder \\
+Calibration gate 与 agreement statistics & \placeholder \\
+Frozen backend-registry SHA-256 & \placeholder \\
+精确 Qwen GGUF checkpoint SHA-256 & \placeholder \\
+LM Studio 0.4.18 runtime receipt SHA-256 & \placeholder \\
+Frozen source commit/tree SHA-256 & \placeholder \\
+Frozen analysis-plan SHA-256 & \placeholder \\
+Prompt/schema bundle SHA-256 & \placeholder \\
+Gold 解封时间与 countersignatures & \placeholder \\
+\end{tabularx}
+\end{minipage}}
+\end{center}
+
+已知的 pre-freeze contract hashes 列于附录~\ref{app:artifacts-zh}；它们不能替代最终 registry、checkpoint、source tree 或 gold receipt。
+
+\section{有效性威胁}
+
+\textbf{Construct validity。}Evidence identity 与 field relevance 不能证明 semantic entailment。C 是 deterministic trust-boundary verification，而不是 oracle。不同 property 的 confidence 可能不可比，因此需要 per-property selective curve。
+
+\textbf{Internal validity。}B/C replay 被严格控制，但 D 有意保留 temperature 0.2 与历史 fallback。Backend state、runtime version、context、checkpoint 和 prompt hash 必须冻结。任何 partial response 或 missing replay 都会使对应 comparison 失效。
+
+\textbf{External validity。}九个 development cases 是 synthetic；八个 qualification cases 是已暴露给开发过程的固定 operational calibration set。两者都不是 population sample。只有未来独立标注 corpus 能支持 generalization claim。
+
+\textbf{Statistical conclusion validity。}Blind analysis 必须报告 paired dataset-level effects 与 confidence intervals。Clean null result 完全可接受。当前 pooled metrics 只用于记录 harness behavior。
+
+\textbf{Reproducibility。}精确 checkpoint-file hash 和 machine-observed LM Studio version 仍缺失；0.4.18 当前是 operator-reported。这些是显式 freeze blockers，而不是隐藏 caveat。
+
+\section{结论}
+
+系统的持久目标仍是“输入数据集，输出 deterministic schema”，语义 enrichment 只作为 evidence-constrained optional layer。当前工作把语义架构问题收敛为四个可审计 variant，并验证了未来因果解释所需的 measurement boundary。Development data 不能为 variant 排名。修正后的 backend qualification 证明 Qwen3.6-27B 可以稳定生成一次 dataset-level response，并被 C 精确 replay 后做 deterministic verification；同时，legacy condition 暴露出远大的 call surface。
+
+核心研究答案被有意推迟：semantic reasoning 是否增加有用 claim，以及 deterministic verification 删除的错误 claim 是否多于损失的正确 claim，只能在 blind provenance block 完成、independent gold 解封后回答。在此之前，科学上正确的结论是：协议已验证、backend operationally eligible、尚无 architecture winner。
+
+\appendix
+\section{当前 Content-Addressed Artifacts}
+\label{app:artifacts-zh}
+
+\begin{longtable}{@{}p{5.2cm}p{10.0cm}@{}}
+\toprule
+Artifact & SHA-256 \\
+\midrule
+\endhead
+Development manifest & \artifacthash{\DevManifestHash} \\
+Development report & \artifacthash{\DevReportHash} \\
+Qualification manifest & \artifacthash{\QualManifestHash} \\
+Controlled vocabulary & \artifacthash{\VocabularyHash} \\
+Invalidated 8K qualification & \artifacthash{\InvalidQualHash} \\
+Corrected qualification & \artifacthash{\ValidQualHash} \\
+Qualification assessment & \artifacthash{\QualAssessmentHash} \\
+Dataset reasoner prompt & \artifacthash{\DatasetPromptHash} \\
+Dataset response schema & \artifacthash{\DatasetSchemaHash} \\
+Legacy prompt & \artifacthash{\LegacyPromptHash} \\
+Legacy response schema & \artifacthash{\LegacySchemaHash} \\
+\bottomrule
+\end{longtable}
+
+\section{当前复现状态}
+
+生成本文时，项目 \FullTests{} 个 tests 全部通过；相关 Ruff checks 通过；316 个 JSON artifacts 全部可解析；\texttt{git diff --check} 通过。全树仍存在 7 个与本研究无关、此前已记录的 legacy lint findings，本阶段未修改它们。两份 PDF 均由本 TeX source 通过 Tectonic 0.16.9 渲染 \cite{tectonic0169}。
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

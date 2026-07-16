@@ -1,0 +1,81 @@
+{
+  "schema_version": "semantic-blind-candidate-frame/v1",
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "status": "frozen_before_selection",
+  "frozen_at": "YYYY-MM-DDTHH:MM:SSZ",
+  "construction_boundary": {
+    "model_outputs_consulted": false,
+    "architecture_results_consulted": false,
+    "gold_labels_created": false,
+    "eligibility_decided_before_selection": true
+  },
+  "frame_definition": {
+    "source_identity_algorithm": "canonical_source_tuple_sha256/v1",
+    "scope_statement": "replace-with-the-population-to-which-selection-claims-are-limited",
+    "candidate_unit": "one independently downloadable local dataset resource",
+    "enumeration_method": "replace-with-reproducible-catalog-enumeration-method",
+    "retrieval_cutoff": "YYYY-MM-DDTHH:MM:SSZ",
+    "source_repositories": [
+      "replace-with-frozen-source-repository"
+    ],
+    "inclusion_criteria": [
+      {
+        "criterion_id": "replace-with-inclusion-criterion-id",
+        "description": "replace-with-objective-preselection-inclusion-rule",
+        "assessment_method": "replace-with-deterministic-or-blinded-manual-method"
+      }
+    ],
+    "exclusion_criteria": [
+      {
+        "criterion_id": "known_nonblind_overlap",
+        "description": "Resource SHA-256 or stable source identity occurs in the frozen known-nonblind registry.",
+        "assessment_method": "deterministic SHA-256 or source-identity membership"
+      }
+    ]
+  },
+  "known_nonblind_resources": {
+    "file": "replace-with-known-nonblind-resources.json",
+    "sha256": "replace-with-64-hex-sha256"
+  },
+  "acquisition_log": {
+    "file": "replace-with-blind-acquisition-log.json",
+    "sha256": "replace-with-64-hex-sha256"
+  },
+  "candidates": [
+    {
+      "candidate_id": "replace-with-stable-candidate-id",
+      "dataset_group_id": "replace-with-parent-dataset-or-study-id",
+      "source_identity": "replace-with-stable-file-level-source-identity",
+      "source_repository": "replace-with-repository-name",
+      "source_record_id": "replace-with-stable-source-record-id",
+      "source_resource_id": "replace-with-stable-source-file-id",
+      "source_url": "https://replace-with-stable-source-url",
+      "acquired_at": "YYYY-MM-DDTHH:MM:SSZ",
+      "scientific_family": "replace-with-predeclared-family",
+      "file_format": "replace-with-supported-format",
+      "selection_stratum": "replace-with-frozen-stratum",
+      "license": "replace-with-license",
+      "resource": {
+        "file": "replace-with-local-resource-file",
+        "sha256": "replace-with-64-hex-sha256"
+      },
+      "task": {
+        "file": "replace-with-neutral-task-file.json",
+        "sha256": "replace-with-64-hex-sha256"
+      },
+      "source_bundle": {
+        "file": "replace-with-approved-source-bundle.json",
+        "sha256": "replace-with-64-hex-sha256"
+      },
+      "semantic_opportunity_target_count": 0,
+      "eligibility": {
+        "eligible": true,
+        "reasons": [],
+        "criterion_results": {
+          "replace-with-inclusion-criterion-id": true,
+          "known_nonblind_overlap": false
+        }
+      }
+    }
+  ]
+}

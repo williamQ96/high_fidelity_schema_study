@@ -11,7 +11,9 @@ def test_convergence_docs_record_release_boundaries():
 
     assert "Phases 18-20: Evaluation, Agent Exports, And Convergence" in readme
     assert "aggregate score is `null`" in readme
-    assert "181 passed" in report
+    assert "183 passed" in report
+    assert "phase20_companion_engineering_appendix.md" in readme
+    assert "phase20_companion_engineering_appendix.md" in report
     assert "agents cannot silently promote canonical claims" in report
     assert "agent-export" in demo
     assert "evaluate --scope all" in demo

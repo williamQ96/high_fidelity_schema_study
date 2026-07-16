@@ -1,0 +1,243 @@
+{
+  "annotation_properties": [
+    "physical_type",
+    "logical_type",
+    "semantic_type",
+    "unit"
+  ],
+  "annotator_instructions": [
+    "Annotate independently using the frozen handbook.",
+    "Do not inspect existing gold, semantic model output, or another annotator artifact before submission.",
+    "Assign applicability before assigning each value.",
+    "Cite exact packet evidence or independently frozen raw-source evidence for every known value."
+  ],
+  "approved_evidence": [
+    {
+      "detail": "local pilot dataset README",
+      "evidence_id": "S1",
+      "source_name": "raw/csv/csv_hard_field_campaign/README.md",
+      "source_type": "dataset_readme",
+      "text": "# csv_hard_field_campaign\n\nMessy field campaign export with overloaded abbreviations.\n\n- `rec` is the row-level record identifier\n- `dt_obs` is the observation timestamp\n- `zc` is a postal zone code, not a numeric quantity\n- `val` mixes numeric observations with non-detect and error markers\n- `flag` is a quality-control code"
+    }
+  ],
+  "case_id": "csv_hard_field_campaign",
+  "data_modality": "tabular",
+  "dataset_id": "csv_hard_field_campaign",
+  "evidence_policy": {
+    "allowed_evidence_types": [
+      "csv_header",
+      "hdf5_attribute",
+      "hdf5_dataset_path",
+      "sample_rows"
+    ],
+    "derived_semantic_hints_removed": true,
+    "mode": "allowlisted_raw_observations_only"
+  },
+  "field_inventory": [
+    {
+      "example_values": [
+        "0001",
+        "0002",
+        "0003"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "rec",
+      "field_path": "rec",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='rec'",
+          "evidence_id": "rec::F1",
+          "evidence_type": "csv_header",
+          "source_label": "field_campaign.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=4",
+          "evidence_id": "rec::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "field_campaign.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "2026-03-01 12:00:00",
+        "2026-03-01 12:05:00",
+        "2026-03-01 12:10:00"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "dt_obs",
+      "field_path": "dt_obs",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "datetime",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='dt_obs'",
+          "evidence_id": "dt_obs::F1",
+          "evidence_type": "csv_header",
+          "source_label": "field_campaign.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=4",
+          "evidence_id": "dt_obs::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "field_campaign.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "94107",
+        "02139",
+        "10001"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "zc",
+      "field_path": "zc",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='zc'",
+          "evidence_id": "zc::F1",
+          "evidence_type": "csv_header",
+          "source_label": "field_campaign.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=4",
+          "evidence_id": "zc::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "field_campaign.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "17.2",
+        "ND",
+        "18.4"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "val",
+      "field_path": "val",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='val'",
+          "evidence_id": "val::F1",
+          "evidence_type": "csv_header",
+          "source_label": "field_campaign.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=4",
+          "evidence_id": "val::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "field_campaign.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "A",
+        "C"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "flag",
+      "field_path": "flag",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='flag'",
+          "evidence_id": "flag::F1",
+          "evidence_type": "csv_header",
+          "source_label": "field_campaign.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=4",
+          "evidence_id": "flag::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "field_campaign.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.75,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "SN-01",
+        "SN-02"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "device",
+      "field_path": "device",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='device'",
+          "evidence_id": "device::F1",
+          "evidence_type": "csv_header",
+          "source_label": "field_campaign.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=4",
+          "evidence_id": "device::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "field_campaign.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.5,
+      "value_range": null
+    }
+  ],
+  "file_format": "csv",
+  "prediction_fields_removed": [
+    "logical_type",
+    "semantic_type",
+    "unit",
+    "confidence",
+    "uncertainty_reason",
+    "semantic_logical_hint",
+    "description"
+  ],
+  "purpose": "annotator_calibration",
+  "research_evidence_status": "non_blind_not_for_effect_estimation",
+  "schema_version": "semantic-annotation-packet/v1",
+  "source_task_sha256": "6777942332825b9de171bb92ad72b34bef44dede8d677f90e23cc0187423bd27",
+  "task_id": "internal::csv_hard_field_campaign"
+}

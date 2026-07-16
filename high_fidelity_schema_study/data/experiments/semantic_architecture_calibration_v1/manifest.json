@@ -1,0 +1,81 @@
+{
+  "benchmark_role": "annotator_and_backend_calibration",
+  "case_count": 9,
+  "cases": [
+    {
+      "case_id": "csv_easy_weather_stations",
+      "field_count": 6,
+      "packet_file": "packets/csv_easy_weather_stations.annotation-packet.json",
+      "packet_sha256": "b330125daaf1b7d4b3f7169ec76264b82c121fdd994e9743b5b681309027a0d4",
+      "source_task_sha256": "4717504bc505c9ed459813351b226430d67c038bd1168378b75fa071ba77b2d8"
+    },
+    {
+      "case_id": "csv_hard_field_campaign",
+      "field_count": 6,
+      "packet_file": "packets/csv_hard_field_campaign.annotation-packet.json",
+      "packet_sha256": "eb96d5b6289b2e6f991a52e8bdd981ea6e80e6c8787d96fde7ada61b32d6caba",
+      "source_task_sha256": "6777942332825b9de171bb92ad72b34bef44dede8d677f90e23cc0187423bd27"
+    },
+    {
+      "case_id": "csv_medium_water_quality",
+      "field_count": 7,
+      "packet_file": "packets/csv_medium_water_quality.annotation-packet.json",
+      "packet_sha256": "f4ef0c7eef12442844768c92cb8c602c855cf37feae474622eb0373774144332",
+      "source_task_sha256": "743cf25015f8a29d027c40fc15020c550ddc231b5299766a613d9c993d4b2c63"
+    },
+    {
+      "case_id": "hdf5_easy_climate_cube",
+      "field_count": 4,
+      "packet_file": "packets/hdf5_easy_climate_cube.annotation-packet.json",
+      "packet_sha256": "f7ed0a7e3917cb59c7c9091e8522a1c71b93cc2908b5daa74c131e386d946b04",
+      "source_task_sha256": "cdbbf6f9af78b82f2c84b823a7240cb7d74267f17c7e6066cecd2781c8dbd691"
+    },
+    {
+      "case_id": "hdf5_hard_ocean_profile",
+      "field_count": 10,
+      "packet_file": "packets/hdf5_hard_ocean_profile.annotation-packet.json",
+      "packet_sha256": "dc52f7a212dc74f6360dfe13617f8edf0c45466981885fbb8c3c937511932de2",
+      "source_task_sha256": "2e56b48de5b800654acbdd1b9720bdc4f731750c8ddba4a4c4d4c518db5ee12b"
+    },
+    {
+      "case_id": "hdf5_medium_station_hierarchy",
+      "field_count": 5,
+      "packet_file": "packets/hdf5_medium_station_hierarchy.annotation-packet.json",
+      "packet_sha256": "5db262653f42401cd255ffe9dff57a66257fce6cbefe1eb8b62ce9a58bb2a445",
+      "source_task_sha256": "3205355af409dd46a2c9445b70a4222b4080edbbf102394ea42f6aad02a9d874"
+    },
+    {
+      "case_id": "ts_easy_hourly_weather",
+      "field_count": 5,
+      "packet_file": "packets/ts_easy_hourly_weather.annotation-packet.json",
+      "packet_sha256": "f634fd0cf782dbc3b6b30eda44b518f1514f0823ed24a1bc0a9d206db6c84dc1",
+      "source_task_sha256": "012cb5ffdae740f3efa81881481c729982ea0710a7928e3f286b962cf4be0fbd"
+    },
+    {
+      "case_id": "ts_hard_irregular_buoy",
+      "field_count": 5,
+      "packet_file": "packets/ts_hard_irregular_buoy.annotation-packet.json",
+      "packet_sha256": "a71add2d6701598b11b320d3520ca77675cf699597e9eb410d8d958e55d3c97a",
+      "source_task_sha256": "920c2fca5ad44e0cb9a7ddf9fe1e3214b92555a76bf24ba558815f18994508ef"
+    },
+    {
+      "case_id": "ts_medium_power_meter",
+      "field_count": 5,
+      "packet_file": "packets/ts_medium_power_meter.annotation-packet.json",
+      "packet_sha256": "7bea745742921b9abe271ec4098c84f9549e0536b1450eb06eeca1daa82750ac",
+      "source_task_sha256": "6971c12deff0af76332d49a58905f186a7e2cbb606530f5761729bfddc93893f"
+    }
+  ],
+  "prediction_fields_removed": [
+    "logical_type",
+    "semantic_type",
+    "unit",
+    "confidence",
+    "uncertainty_reason",
+    "semantic_logical_hint",
+    "description"
+  ],
+  "research_evidence_status": "non_blind_not_for_effect_estimation",
+  "schema_version": "semantic-calibration-pack/v1",
+  "source_manifest_sha256": "a1a199272b9019dd99dab873239f18ba1d8b656235c54ac40ad84fb5d1738797"
+}

@@ -1,0 +1,122 @@
+{
+  "annotation_packet_file": "hdf5_medium_station_hierarchy.annotation-packet.json",
+  "annotation_packet_sha256": "5db262653f42401cd255ffe9dff57a66257fce6cbefe1eb8b62ce9a58bb2a445",
+  "dataset_id": "hdf5_medium_station_hierarchy",
+  "evidence_catalog": [
+    {
+      "applicable_field_paths": [
+        "/weather/station_001/pressure"
+      ],
+      "catalog_evidence_id": "/weather/station_001/pressure::F1",
+      "selector": "field_inventory:/weather/station_001/pressure:/weather/station_001/pressure::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "5db262653f42401cd255ffe9dff57a66257fce6cbefe1eb8b62ce9a58bb2a445",
+      "source_type": "hdf5_dataset_path",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/weather/station_001/pressure"
+      ],
+      "catalog_evidence_id": "/weather/station_001/pressure::F2",
+      "selector": "field_inventory:/weather/station_001/pressure:/weather/station_001/pressure::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "5db262653f42401cd255ffe9dff57a66257fce6cbefe1eb8b62ce9a58bb2a445",
+      "source_type": "hdf5_attribute",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/weather/station_001/temp"
+      ],
+      "catalog_evidence_id": "/weather/station_001/temp::F1",
+      "selector": "field_inventory:/weather/station_001/temp:/weather/station_001/temp::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "5db262653f42401cd255ffe9dff57a66257fce6cbefe1eb8b62ce9a58bb2a445",
+      "source_type": "hdf5_dataset_path",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/weather/station_001/temp"
+      ],
+      "catalog_evidence_id": "/weather/station_001/temp::F2",
+      "selector": "field_inventory:/weather/station_001/temp:/weather/station_001/temp::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "5db262653f42401cd255ffe9dff57a66257fce6cbefe1eb8b62ce9a58bb2a445",
+      "source_type": "hdf5_attribute",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/weather/station_002/pressure"
+      ],
+      "catalog_evidence_id": "/weather/station_002/pressure::F1",
+      "selector": "field_inventory:/weather/station_002/pressure:/weather/station_002/pressure::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "5db262653f42401cd255ffe9dff57a66257fce6cbefe1eb8b62ce9a58bb2a445",
+      "source_type": "hdf5_dataset_path",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/weather/station_002/temp"
+      ],
+      "catalog_evidence_id": "/weather/station_002/temp::F1",
+      "selector": "field_inventory:/weather/station_002/temp:/weather/station_002/temp::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "5db262653f42401cd255ffe9dff57a66257fce6cbefe1eb8b62ce9a58bb2a445",
+      "source_type": "hdf5_dataset_path",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/weather/station_002/temp"
+      ],
+      "catalog_evidence_id": "/weather/station_002/temp::F2",
+      "selector": "field_inventory:/weather/station_002/temp:/weather/station_002/temp::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "5db262653f42401cd255ffe9dff57a66257fce6cbefe1eb8b62ce9a58bb2a445",
+      "source_type": "hdf5_attribute",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/weather/timestamp"
+      ],
+      "catalog_evidence_id": "/weather/timestamp::F1",
+      "selector": "field_inventory:/weather/timestamp:/weather/timestamp::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "5db262653f42401cd255ffe9dff57a66257fce6cbefe1eb8b62ce9a58bb2a445",
+      "source_type": "hdf5_dataset_path",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/weather/station_001/pressure",
+        "/weather/station_001/temp",
+        "/weather/station_002/pressure",
+        "/weather/station_002/temp",
+        "/weather/timestamp"
+      ],
+      "catalog_evidence_id": "S1",
+      "selector": "approved_evidence:S1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "5db262653f42401cd255ffe9dff57a66257fce6cbefe1eb8b62ce9a58bb2a445",
+      "source_type": "dataset_readme",
+      "strength": "documentation"
+    }
+  ],
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "schema_version": "semantic-source-bundle/v1",
+  "sources": [
+    {
+      "source_file": "hdf5_medium_station_hierarchy.annotation-packet.json",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "5db262653f42401cd255ffe9dff57a66257fce6cbefe1eb8b62ce9a58bb2a445",
+      "source_type": "frozen_neutral_annotation_packet"
+    }
+  ],
+  "vocabulary_file": "vocabulary.json",
+  "vocabulary_sha256": "874548a10f8871449be9b749c99e95e72e8852d261324abc8fa3c492246ed888"
+}

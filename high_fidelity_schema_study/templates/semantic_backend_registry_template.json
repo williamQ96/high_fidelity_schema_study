@@ -1,0 +1,94 @@
+{
+  "schema_version": "semantic-backend-registry/v1",
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "frozen_at": "YYYY-MM-DDTHH:MM:SSZ",
+  "primary_backend_id": "qwen-local-example",
+  "required_model_families": [
+    "GLM5.2",
+    "Qwen3.6",
+    "Llama 3.3"
+  ],
+  "qualification_policy": {
+    "calibration_manifest_sha256": "replace-with-64-hex-sha256",
+    "calibration_vocabulary_sha256": "replace-with-64-hex-sha256",
+    "minimum_semantic_opportunity_case_count": 8,
+    "minimum_contract_valid_rate": 0.95,
+    "minimum_target_scope_valid_rate": 1.0,
+    "minimum_replay_identity_rate": 1.0,
+    "minimum_exact_repeatability_rate": 1.0,
+    "maximum_timeout_rate": 0.0,
+    "maximum_truncation_rate": 0.0,
+    "minimum_context_fit_rate": 1.0,
+    "minimum_context_fit_observed_fraction": 1.0,
+    "minimum_legacy_contract_valid_rate": 0.95,
+    "maximum_legacy_timeout_rate": 0.0,
+    "maximum_legacy_truncation_rate": 0.0,
+    "minimum_legacy_context_fit_rate": 1.0,
+    "minimum_legacy_context_fit_observed_fraction": 1.0,
+    "repeat_count": 2,
+    "legacy_repeat_count": 1
+  },
+  "optional_ceiling_policy": "A ceiling backend is confirmatory only and must be registered before blind gold is unsealed.",
+  "backends": [
+    {
+      "backend_id": "qwen-local-example",
+      "role": "primary",
+      "model_family": "Qwen3.6",
+      "checkpoint": "replace-with-exact-checkpoint-name",
+      "checkpoint_sha256": "replace-with-64-hex-sha256",
+      "parameter_scale": "27B-70B",
+      "quantization": "replace-with-exact-format-and-level",
+      "runtime": "replace-with-runtime",
+      "runtime_version": "replace-with-version",
+      "endpoint": "http://127.0.0.1:1234/v1",
+      "model_identifier": "replace-with-served-model-id",
+      "hardware": {
+        "gpu": "NVIDIA RTX 5090",
+        "gpu_count": 1,
+        "offload_configuration": "replace-with-frozen-configuration",
+        "context_length": 0
+      },
+      "dataset_reasoner_decoding": {
+        "temperature": 0,
+        "seed": 0,
+        "max_tokens": 4096,
+        "thinking_enabled": false,
+        "prompt_sha256": "replace-with-64-hex-sha256",
+        "response_schema_sha256": "replace-with-64-hex-sha256"
+      },
+      "legacy_decoding": {
+        "temperature": 0.2,
+        "seed": null,
+        "max_tokens": 1000,
+        "thinking_enabled": false,
+        "prompt_sha256": "replace-with-64-hex-sha256",
+        "response_schema_sha256": "replace-with-64-hex-sha256"
+      },
+      "qualification": {
+        "qualification_report_file": "replace-with-report-path.json",
+        "qualification_report_sha256": "replace-with-64-hex-sha256",
+        "calibration_manifest_sha256": "replace-with-64-hex-sha256",
+        "qualification_vocabulary_sha256": "replace-with-64-hex-sha256",
+        "semantic_opportunity_case_count": null,
+        "repeat_count": null,
+        "attempt_count": null,
+        "contract_valid_rate": null,
+        "target_scope_valid_rate": null,
+        "replay_identity_rate": null,
+        "exact_repeatability_rate": null,
+        "timeout_rate": null,
+        "truncation_rate": null,
+        "context_fit_rate": null,
+        "context_fit_observed_fraction": null,
+        "legacy_repeat_count": null,
+        "legacy_attempt_count": null,
+        "legacy_contract_valid_rate": null,
+        "legacy_timeout_rate": null,
+        "legacy_truncation_rate": null,
+        "legacy_context_fit_rate": null,
+        "legacy_context_fit_observed_fraction": null,
+        "eligible": null
+      }
+    }
+  ]
+}

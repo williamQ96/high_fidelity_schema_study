@@ -1,0 +1,257 @@
+{
+  "annotation_properties": [
+    "physical_type",
+    "logical_type",
+    "semantic_type",
+    "unit"
+  ],
+  "annotator_instructions": [
+    "Annotate independently using the frozen handbook.",
+    "Do not inspect existing gold, semantic model output, or another annotator artifact before submission.",
+    "Assign applicability before assigning each value.",
+    "Cite exact packet evidence or independently frozen raw-source evidence for every known value."
+  ],
+  "approved_evidence": [
+    {
+      "detail": "local pilot dataset README",
+      "evidence_id": "S1",
+      "source_name": "raw/csv/csv_easy_weather_stations/README.md",
+      "source_type": "dataset_readme",
+      "text": "# csv_easy_weather_stations\n\nSmall station registry with explicit unit-bearing column names.\n\n- `latitude_deg` and `longitude_deg` are decimal degrees\n- `elevation_m` is meters above sea level\n- `precip_mm` is daily precipitation in millimeters"
+    }
+  ],
+  "case_id": "csv_easy_weather_stations",
+  "data_modality": "tabular",
+  "dataset_id": "csv_easy_weather_stations",
+  "evidence_policy": {
+    "allowed_evidence_types": [
+      "csv_header",
+      "hdf5_attribute",
+      "hdf5_dataset_path",
+      "sample_rows"
+    ],
+    "derived_semantic_hints_removed": true,
+    "mode": "allowlisted_raw_observations_only"
+  },
+  "field_inventory": [
+    {
+      "example_values": [
+        "USC0001",
+        "USC0002",
+        "USC0003"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "station_id",
+      "field_path": "station_id",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='station_id'",
+          "evidence_id": "station_id::F1",
+          "evidence_type": "csv_header",
+          "source_label": "stations_precip.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=3",
+          "evidence_id": "station_id::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "stations_precip.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "North Ridge",
+        "River Bend",
+        "Coastal Bay"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "station_name",
+      "field_path": "station_name",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='station_name'",
+          "evidence_id": "station_name::F1",
+          "evidence_type": "csv_header",
+          "source_label": "stations_precip.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=3",
+          "evidence_id": "station_name::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "stations_precip.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "34.2",
+        "34.145",
+        "33.912"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "latitude_deg",
+      "field_path": "latitude_deg",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='latitude_deg'",
+          "evidence_id": "latitude_deg::F1",
+          "evidence_type": "csv_header",
+          "source_label": "stations_precip.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=3",
+          "evidence_id": "latitude_deg::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "stations_precip.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        33.912,
+        34.2
+      ]
+    },
+    {
+      "example_values": [
+        "-118.52",
+        "-118.31",
+        "-118.442"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "longitude_deg",
+      "field_path": "longitude_deg",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='longitude_deg'",
+          "evidence_id": "longitude_deg::F1",
+          "evidence_type": "csv_header",
+          "source_label": "stations_precip.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=3",
+          "evidence_id": "longitude_deg::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "stations_precip.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        -118.52,
+        -118.31
+      ]
+    },
+    {
+      "example_values": [
+        "312",
+        "128",
+        "15"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "elevation_m",
+      "field_path": "elevation_m",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "int",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='elevation_m'",
+          "evidence_id": "elevation_m::F1",
+          "evidence_type": "csv_header",
+          "source_label": "stations_precip.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=3",
+          "evidence_id": "elevation_m::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "stations_precip.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        15.0,
+        312.0
+      ]
+    },
+    {
+      "example_values": [
+        "0.0",
+        "4.6",
+        "1.2"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "precip_mm",
+      "field_path": "precip_mm",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='precip_mm'",
+          "evidence_id": "precip_mm::F1",
+          "evidence_type": "csv_header",
+          "source_label": "stations_precip.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=3",
+          "evidence_id": "precip_mm::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "stations_precip.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        0.0,
+        4.6
+      ]
+    }
+  ],
+  "file_format": "csv",
+  "prediction_fields_removed": [
+    "logical_type",
+    "semantic_type",
+    "unit",
+    "confidence",
+    "uncertainty_reason",
+    "semantic_logical_hint",
+    "description"
+  ],
+  "purpose": "annotator_calibration",
+  "research_evidence_status": "non_blind_not_for_effect_estimation",
+  "schema_version": "semantic-annotation-packet/v1",
+  "source_task_sha256": "4717504bc505c9ed459813351b226430d67c038bd1168378b75fa071ba77b2d8",
+  "task_id": "internal::csv_easy_weather_stations"
+}

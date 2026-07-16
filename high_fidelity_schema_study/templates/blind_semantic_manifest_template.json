@@ -1,0 +1,79 @@
+{
+  "schema_version": "minimal-architecture-manifest/v2",
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "benchmark_role": "blind_external",
+  "frozen_at": "YYYY-MM-DDTHH:MM:SSZ",
+  "claim_boundary": "Independent blind semantic architecture evaluation; no development cases or model-authored gold.",
+  "annotation_policy": {
+    "independent_annotator_count": 2,
+    "developer_participation": false,
+    "model_outputs_visible": false,
+    "consensus_after_independent_freeze": true,
+    "handbook_file": "docs/semantic_gold_annotation_handbook_v1.md",
+    "handbook_sha256": "replace-with-64-hex-sha256",
+    "vocabulary_file": "replace-with-frozen-semantic-vocabulary.json",
+    "vocabulary_sha256": "replace-with-64-hex-sha256",
+    "annotator_calibration_summary_file": "replace-with-passed-calibration-summary.json",
+    "annotator_calibration_summary_sha256": "replace-with-64-hex-sha256",
+    "qualified_annotator_ids": [
+      "replace-with-qualified-annotator-1",
+      "replace-with-qualified-annotator-2"
+    ]
+  },
+  "design": {
+    "primary_statistical_unit": "dataset",
+    "required_dataset_count": 1,
+    "required_semantic_opportunity_case_count": 1,
+    "power_analysis_file": "replace-with-frozen-power-analysis.json",
+    "power_analysis_sha256": "replace-with-64-hex-sha256",
+    "analysis_plan_file": "replace-with-frozen-blind-analysis-plan.json",
+    "analysis_plan_sha256": "replace-with-64-hex-sha256",
+    "sampling_selection_file": "replace-with-frozen-blind-selection.json",
+    "sampling_selection_sha256": "replace-with-64-hex-sha256",
+    "evaluation_implementation": {
+      "architecture_evaluation": {
+        "file": "architecture_evaluation.py",
+        "sha256": "replace-with-64-hex-sha256"
+      },
+      "architecture_variants": {
+        "file": "architecture_variants.py",
+        "sha256": "replace-with-64-hex-sha256"
+      },
+      "unit_normalization": {
+        "file": "unit_normalization.py",
+        "sha256": "replace-with-64-hex-sha256"
+      }
+    }
+  },
+  "backend_registry_file": "replace-with-frozen-backend-registry.json",
+  "backend_registry_sha256": "replace-with-64-hex-sha256",
+  "cases": [
+    {
+      "case_id": "replace-with-case-id",
+      "dataset_family": "replace-with-scientific-family",
+      "file_format": "replace-with-format",
+      "difficulty": "replace-with-frozen-stratum",
+      "task_file": "replace-with-task-file.json",
+      "task_sha256": "replace-with-64-hex-sha256",
+      "annotation_packet_file": "replace-with-neutral-annotation-packet.json",
+      "annotation_packet_sha256": "replace-with-64-hex-sha256",
+      "source_bundle_file": "replace-with-approved-source-bundle.json",
+      "source_bundle_sha256": "replace-with-64-hex-sha256",
+      "independent_annotations": [
+        {
+          "artifact_file": "replace-with-annotator-1-submission.json",
+          "artifact_sha256": "replace-with-64-hex-sha256"
+        },
+        {
+          "artifact_file": "replace-with-annotator-2-submission.json",
+          "artifact_sha256": "replace-with-64-hex-sha256"
+        }
+      ],
+      "disagreement_report_file": "replace-with-disagreement-report.json",
+      "disagreement_report_sha256": "replace-with-64-hex-sha256",
+      "gold_file": "replace-with-consensus-gold-file.json",
+      "gold_sha256": "replace-with-64-hex-sha256",
+      "split": "blind_external"
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "annotation_packet_file": "hdf5_hard_ocean_profile.annotation-packet.json",
+  "annotation_packet_sha256": "dc52f7a212dc74f6360dfe13617f8edf0c45466981885fbb8c3c937511932de2",
+  "dataset_id": "hdf5_hard_ocean_profile",
+  "evidence_catalog": [
+    {
+      "applicable_field_paths": [
+        "/campaign/meta/platform"
+      ],
+      "catalog_evidence_id": "/campaign/meta/platform::F1",
+      "selector": "field_inventory:/campaign/meta/platform:/campaign/meta/platform::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "dc52f7a212dc74f6360dfe13617f8edf0c45466981885fbb8c3c937511932de2",
+      "source_type": "hdf5_dataset_path",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/campaign/meta/station_code"
+      ],
+      "catalog_evidence_id": "/campaign/meta/station_code::F1",
+      "selector": "field_inventory:/campaign/meta/station_code:/campaign/meta/station_code::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "dc52f7a212dc74f6360dfe13617f8edf0c45466981885fbb8c3c937511932de2",
+      "source_type": "hdf5_dataset_path",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/campaign/run_01/cast_0001/depth_m"
+      ],
+      "catalog_evidence_id": "/campaign/run_01/cast_0001/depth_m::F1",
+      "selector": "field_inventory:/campaign/run_01/cast_0001/depth_m:/campaign/run_01/cast_0001/depth_m::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "dc52f7a212dc74f6360dfe13617f8edf0c45466981885fbb8c3c937511932de2",
+      "source_type": "hdf5_dataset_path",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/campaign/run_01/cast_0001/depth_m"
+      ],
+      "catalog_evidence_id": "/campaign/run_01/cast_0001/depth_m::F2",
+      "selector": "field_inventory:/campaign/run_01/cast_0001/depth_m:/campaign/run_01/cast_0001/depth_m::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "dc52f7a212dc74f6360dfe13617f8edf0c45466981885fbb8c3c937511932de2",
+      "source_type": "hdf5_attribute",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/campaign/run_01/cast_0001/qc_flag"
+      ],
+      "catalog_evidence_id": "/campaign/run_01/cast_0001/qc_flag::F1",
+      "selector": "field_inventory:/campaign/run_01/cast_0001/qc_flag:/campaign/run_01/cast_0001/qc_flag::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "dc52f7a212dc74f6360dfe13617f8edf0c45466981885fbb8c3c937511932de2",
+      "source_type": "hdf5_dataset_path",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/campaign/run_01/cast_0001/salinity_psu"
+      ],
+      "catalog_evidence_id": "/campaign/run_01/cast_0001/salinity_psu::F1",
+      "selector": "field_inventory:/campaign/run_01/cast_0001/salinity_psu:/campaign/run_01/cast_0001/salinity_psu::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "dc52f7a212dc74f6360dfe13617f8edf0c45466981885fbb8c3c937511932de2",
+      "source_type": "hdf5_dataset_path",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/campaign/run_01/cast_0001/temp"
+      ],
+      "catalog_evidence_id": "/campaign/run_01/cast_0001/temp::F1",
+      "selector": "field_inventory:/campaign/run_01/cast_0001/temp:/campaign/run_01/cast_0001/temp::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "dc52f7a212dc74f6360dfe13617f8edf0c45466981885fbb8c3c937511932de2",
+      "source_type": "hdf5_dataset_path",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/campaign/run_01/cast_0002/depth_m"
+      ],
+      "catalog_evidence_id": "/campaign/run_01/cast_0002/depth_m::F1",
+      "selector": "field_inventory:/campaign/run_01/cast_0002/depth_m:/campaign/run_01/cast_0002/depth_m::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "dc52f7a212dc74f6360dfe13617f8edf0c45466981885fbb8c3c937511932de2",
+      "source_type": "hdf5_dataset_path",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/campaign/run_01/cast_0002/depth_m"
+      ],
+      "catalog_evidence_id": "/campaign/run_01/cast_0002/depth_m::F2",
+      "selector": "field_inventory:/campaign/run_01/cast_0002/depth_m:/campaign/run_01/cast_0002/depth_m::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "dc52f7a212dc74f6360dfe13617f8edf0c45466981885fbb8c3c937511932de2",
+      "source_type": "hdf5_attribute",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/campaign/run_01/cast_0002/qc_flag"
+      ],
+      "catalog_evidence_id": "/campaign/run_01/cast_0002/qc_flag::F1",
+      "selector": "field_inventory:/campaign/run_01/cast_0002/qc_flag:/campaign/run_01/cast_0002/qc_flag::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "dc52f7a212dc74f6360dfe13617f8edf0c45466981885fbb8c3c937511932de2",
+      "source_type": "hdf5_dataset_path",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/campaign/run_01/cast_0002/salinity_psu"
+      ],
+      "catalog_evidence_id": "/campaign/run_01/cast_0002/salinity_psu::F1",
+      "selector": "field_inventory:/campaign/run_01/cast_0002/salinity_psu:/campaign/run_01/cast_0002/salinity_psu::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "dc52f7a212dc74f6360dfe13617f8edf0c45466981885fbb8c3c937511932de2",
+      "source_type": "hdf5_dataset_path",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/campaign/run_01/cast_0002/temp"
+      ],
+      "catalog_evidence_id": "/campaign/run_01/cast_0002/temp::F1",
+      "selector": "field_inventory:/campaign/run_01/cast_0002/temp:/campaign/run_01/cast_0002/temp::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "dc52f7a212dc74f6360dfe13617f8edf0c45466981885fbb8c3c937511932de2",
+      "source_type": "hdf5_dataset_path",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/campaign/run_01/cast_0002/temp"
+      ],
+      "catalog_evidence_id": "/campaign/run_01/cast_0002/temp::F2",
+      "selector": "field_inventory:/campaign/run_01/cast_0002/temp:/campaign/run_01/cast_0002/temp::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "dc52f7a212dc74f6360dfe13617f8edf0c45466981885fbb8c3c937511932de2",
+      "source_type": "hdf5_attribute",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/campaign/run_01/cast_0001/depth_m",
+        "/campaign/run_01/cast_0001/temp",
+        "/campaign/run_01/cast_0002/depth_m",
+        "/campaign/run_01/cast_0002/temp"
+      ],
+      "catalog_evidence_id": "S1",
+      "selector": "approved_evidence:S1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "dc52f7a212dc74f6360dfe13617f8edf0c45466981885fbb8c3c937511932de2",
+      "source_type": "dataset_readme",
+      "strength": "documentation"
+    }
+  ],
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "schema_version": "semantic-source-bundle/v1",
+  "sources": [
+    {
+      "source_file": "hdf5_hard_ocean_profile.annotation-packet.json",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "dc52f7a212dc74f6360dfe13617f8edf0c45466981885fbb8c3c937511932de2",
+      "source_type": "frozen_neutral_annotation_packet"
+    }
+  ],
+  "vocabulary_file": "vocabulary.json",
+  "vocabulary_sha256": "874548a10f8871449be9b749c99e95e72e8852d261324abc8fa3c492246ed888"
+}

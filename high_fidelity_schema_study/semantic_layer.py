@@ -239,15 +239,15 @@ def merge_annotation_result(
     merge_conflicts: List[Dict[str, Any]] = list(result.get("conflicts", []))
     logical_type_overrides: List[Dict[str, Any]] = []
 
-    for field in merged.get("fields", []):
-        annotation = annotations.get(field["field_path"])
+    for field_item in merged.get("fields", []):
+        annotation = annotations.get(field_item["field_path"])
         if annotation is None:
             continue
         supporting_evidence = annotation.get("supporting_evidence", [])
         annotation_supported = bool(supporting_evidence)
         effective_semantic_type = annotation.get("semantic_type")
         if effective_semantic_type in {None, "", "unknown"}:
-            effective_semantic_type = field.get("semantic_type")
+            effective_semantic_type = field_item.get("semantic_type")
         compatible_logical = compatible_logical_types_from_semantic(effective_semantic_type)
 
         if not annotation_supported and (
@@ -257,7 +257,7 @@ def merge_annotation_result(
         ):
             merge_conflicts.append(
                 {
-                    "field_path": field["field_path"],
+                    "field_path": field_item["field_path"],
                     "conflict_type": "unsupported_annotation_no_evidence",
                     "detail": "annotation proposed changes without supporting_evidence",
                 }
@@ -267,7 +267,7 @@ def merge_annotation_result(
             if annotation["logical_type"] not in ALLOWED_LOGICAL_TYPES:
                 merge_conflicts.append(
                     {
-                        "field_path": field["field_path"],
+                        "field_path": field_item["field_path"],
                         "conflict_type": "invalid_logical_type",
                         "proposed": annotation["logical_type"],
                     }
@@ -275,71 +275,71 @@ def merge_annotation_result(
             elif compatible_logical and annotation["logical_type"] not in compatible_logical:
                 merge_conflicts.append(
                     {
-                        "field_path": field["field_path"],
+                        "field_path": field_item["field_path"],
                         "conflict_type": "semantic_logical_incompatibility",
                         "semantic_type": effective_semantic_type,
                         "proposed": annotation["logical_type"],
                         "expected": sorted(compatible_logical),
                     }
                 )
-            elif field.get("logical_type") in {None, "", "unknown"}:
-                field["logical_type"] = annotation["logical_type"]
-            elif field["logical_type"] != annotation["logical_type"]:
-                existing_is_compatible = not compatible_logical or field["logical_type"] in compatible_logical
+            elif field_item.get("logical_type") in {None, "", "unknown"}:
+                field_item["logical_type"] = annotation["logical_type"]
+            elif field_item["logical_type"] != annotation["logical_type"]:
+                existing_is_compatible = not compatible_logical or field_item["logical_type"] in compatible_logical
                 annotation_semantic = annotation.get("semantic_type")
-                semantic_agrees = annotation_semantic in {None, "", "unknown", field.get("semantic_type")}
+                semantic_agrees = annotation_semantic in {None, "", "unknown", field_item.get("semantic_type")}
                 if existing_is_compatible and semantic_agrees and float(annotation.get("confidence", 0.0)) >= 0.85:
                     logical_type_overrides.append(
                         {
-                            "field_path": field["field_path"],
-                            "existing": field["logical_type"],
+                            "field_path": field_item["field_path"],
+                            "existing": field_item["logical_type"],
                             "proposed": annotation["logical_type"],
                             "semantic_type": effective_semantic_type,
                             "reason": "evidence-backed compatible logical refinement",
                         }
                     )
-                    field["logical_type"] = annotation["logical_type"]
+                    field_item["logical_type"] = annotation["logical_type"]
                 else:
                     merge_conflicts.append(
                         {
-                            "field_path": field["field_path"],
+                            "field_path": field_item["field_path"],
                             "conflict_type": "logical_type_conflict",
-                            "existing": field["logical_type"],
+                            "existing": field_item["logical_type"],
                             "proposed": annotation["logical_type"],
                         }
                     )
 
         if annotation_supported and annotation.get("semantic_type"):
-            if field.get("semantic_type") in {None, "", "unknown"}:
-                field["semantic_type"] = annotation["semantic_type"]
-            elif field["semantic_type"] != annotation["semantic_type"]:
+            if field_item.get("semantic_type") in {None, "", "unknown"}:
+                field_item["semantic_type"] = annotation["semantic_type"]
+            elif field_item["semantic_type"] != annotation["semantic_type"]:
                 merge_conflicts.append(
                     {
-                        "field_path": field["field_path"],
+                        "field_path": field_item["field_path"],
                         "conflict_type": "semantic_type_conflict",
-                        "existing": field["semantic_type"],
+                        "existing": field_item["semantic_type"],
                         "proposed": annotation["semantic_type"],
                     }
                 )
 
         if annotation_supported and annotation.get("unit"):
-            if not field.get("unit"):
-                field["unit"] = annotation["unit"]
-            elif field["unit"] != annotation["unit"]:
-                conflict_type = "unit_conflict_explicit_metadata" if _has_explicit_unit(field) else "unit_conflict"
+            if not field_item.get("unit"):
+                field_item["unit"] = annotation["unit"]
+            elif field_item["unit"] != annotation["unit"]:
+                conflict_type = "unit_conflict_explicit_metadata" if _has_explicit_unit(field_item) else "unit_conflict"
                 merge_conflicts.append(
                     {
-                        "field_path": field["field_path"],
+                        "field_path": field_item["field_path"],
                         "conflict_type": conflict_type,
-                        "existing": field["unit"],
+                        "existing": field_item["unit"],
                         "proposed": annotation["unit"],
                     }
                 )
 
-        if annotation_supported and annotation.get("description") and not field.get("description"):
-            field["description"] = annotation["description"]
+        if annotation_supported and annotation.get("description") and not field_item.get("description"):
+            field_item["description"] = annotation["description"]
 
-        field["semantic_annotation"] = {
+        field_item["semantic_annotation"] = {
             "confidence": annotation.get("confidence"),
             "uncertainty_reason": annotation.get("uncertainty_reason"),
             "supporting_evidence": supporting_evidence,

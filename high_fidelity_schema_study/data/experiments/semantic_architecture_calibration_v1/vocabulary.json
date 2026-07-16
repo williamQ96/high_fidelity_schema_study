@@ -1,0 +1,85 @@
+{
+  "schema_version": "semantic-annotation-vocabulary/v1",
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "status": "frozen",
+  "research_evidence_status": "non_blind_annotator_calibration_only",
+  "vocabulary_version": "semantic-calibration-v1",
+  "construction_basis": "Terms cover the nine previously developed synthetic calibration datasets; this file is not the future blind-corpus vocabulary.",
+  "physical_types": [
+    "datetime",
+    "float",
+    "float32",
+    "int32",
+    "string"
+  ],
+  "logical_types": [
+    "attribute",
+    "coordinate",
+    "identifier",
+    "label",
+    "measurement",
+    "relationship",
+    "time_axis",
+    "unknown"
+  ],
+  "semantic_types": [
+    "acidity_ph",
+    "air_temperature",
+    "buoy_identifier",
+    "collection_date",
+    "depth",
+    "device_identifier",
+    "dissolved_oxygen",
+    "elevation",
+    "forecast_hour",
+    "free_text_note",
+    "latitude",
+    "longitude",
+    "observation_time",
+    "operational_status",
+    "postal_zone_code",
+    "power",
+    "precipitation",
+    "quality_flag",
+    "record_identifier",
+    "relative_humidity",
+    "salinity",
+    "sample_identifier",
+    "sensor_identifier",
+    "site_identifier",
+    "station_identifier",
+    "station_name",
+    "surface_pressure",
+    "turbidity",
+    "voltage",
+    "water_temperature",
+    "wind_speed"
+  ],
+  "units": [
+    "NTU",
+    "degree",
+    "Celsius",
+    "hPa",
+    "kilowatt",
+    "meter",
+    "meter_per_second",
+    "milligram_per_liter",
+    "millimeter",
+    "percent",
+    "PSU",
+    "volt"
+  ],
+  "unit_aliases": {
+    "%": "percent",
+    "C": "Celsius",
+    "m": "meter"
+  },
+  "unit_patterns": [
+    {
+      "pattern": "^(seconds|minutes|hours|days) since [0-9]{4}-[0-9]{2}-[0-9]{2}( [0-9]{2}:[0-9]{2}:[0-9]{2})?( UTC)?$",
+      "meaning": "CF-style reference-time unit; retain the normalized origin string exactly"
+    }
+  ],
+  "unknown_representation": null,
+  "extension_policy": "Calibration terms are frozen. Out-of-vocabulary known values are forbidden; unresolved labels use applicable null."
+}

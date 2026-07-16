@@ -1,0 +1,122 @@
+{
+  "schema_version": "semantic-backend-qualification-assessment/v1",
+  "source_report_file": "qwen36_27b_q4_k_m_candidate_qualification_rerun_2026-07-15.json",
+  "source_report_sha256": "c89145cf23943fd2991504a31cea5a10ceddccc90725e31932cc02770b1c0538",
+  "assessment": "operationally_eligible",
+  "eligible_under_frozen_thresholds": true,
+  "gold_accessed": false,
+  "architecture_effect_estimated": false,
+  "backend": {
+    "model_identifier": "qwen/qwen3.6-27b",
+    "selected_variant": "qwen/qwen3.6-27b@q4_k_m",
+    "quantization": "Q4_K_M",
+    "loaded_context_length": 16384,
+    "runtime": "LM Studio",
+    "runtime_version_user_reported": "0.4.18",
+    "runtime_version_machine_observed": null,
+    "checkpoint_file_sha256": null
+  },
+  "prequalification_gate": {
+    "case_id": "unique_tracks_90.csv",
+    "model_calls": 1,
+    "included_in_qualification_metrics": false,
+    "finish_reason": "stop",
+    "prompt_tokens": 2311,
+    "completion_tokens": 410,
+    "reasoning_tokens": 0,
+    "context_total_tokens": 2721,
+    "contract_valid": true,
+    "content_sha256": "fafe22bd05918e8efe4b5bd1933f2faf1c3343a0fa388a70530f1f50a3c01341"
+  },
+  "frozen_criteria": {
+    "semantic_opportunity_case_count": {
+      "observed": 8,
+      "threshold": 8,
+      "pass": true
+    },
+    "dataset_contract_valid_rate": {
+      "observed": 1.0,
+      "threshold": 0.95,
+      "pass": true
+    },
+    "dataset_target_scope_valid_rate": {
+      "observed": 1.0,
+      "threshold": 1.0,
+      "pass": true
+    },
+    "dataset_replay_identity_rate": {
+      "observed": 1.0,
+      "threshold": 1.0,
+      "pass": true
+    },
+    "dataset_exact_repeatability_rate": {
+      "observed": 1.0,
+      "threshold": 1.0,
+      "pass": true
+    },
+    "dataset_timeout_rate": {
+      "observed": 0.0,
+      "threshold": 0.0,
+      "pass": true
+    },
+    "dataset_truncation_rate": {
+      "observed": 0.0,
+      "threshold": 0.0,
+      "pass": true
+    },
+    "dataset_context_fit_rate": {
+      "observed": 1.0,
+      "threshold": 1.0,
+      "pass": true
+    },
+    "dataset_context_telemetry_observed_fraction": {
+      "observed": 1.0,
+      "threshold": 1.0,
+      "pass": true
+    },
+    "legacy_contract_valid_rate": {
+      "observed": 1.0,
+      "threshold": 0.95,
+      "pass": true
+    },
+    "legacy_timeout_rate": {
+      "observed": 0.0,
+      "threshold": 0.0,
+      "pass": true
+    },
+    "legacy_truncation_rate": {
+      "observed": 0.0,
+      "threshold": 0.0,
+      "pass": true
+    },
+    "legacy_context_fit_rate": {
+      "observed": 1.0,
+      "threshold": 1.0,
+      "pass": true
+    },
+    "legacy_context_telemetry_observed_fraction": {
+      "observed": 1.0,
+      "threshold": 1.0,
+      "pass": true
+    }
+  },
+  "descriptive_operational_cost": {
+    "dataset_attempts": 16,
+    "dataset_physical_model_calls": 16,
+    "dataset_input_tokens": 76976,
+    "dataset_output_tokens": 26436,
+    "dataset_mean_attempt_latency_ms": 27950.903875,
+    "legacy_dataset_attempts": 8,
+    "legacy_physical_model_calls": 59,
+    "legacy_input_tokens": 79571,
+    "legacy_output_tokens": 19547,
+    "legacy_mean_dataset_latency_ms": 44613.534625,
+    "legacy_failed_fallback_calls": 1
+  },
+  "identity_binding_complete_for_blind_freeze": false,
+  "remaining_identity_blockers": [
+    "Record the exact checkpoint-file SHA-256.",
+    "Bind the user-reported LM Studio 0.4.18 version through an auditable local runtime record or preregistration receipt."
+  ],
+  "interpretation_boundary": "Operational eligibility establishes contract and causal-boundary compatibility only. It does not establish semantic accuracy, generalization, or superiority of any architecture."
+}

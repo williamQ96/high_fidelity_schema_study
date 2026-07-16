@@ -1,0 +1,101 @@
+{
+  "schema_version": "semantic-blind-acquisition-log/v1",
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "status": "frozen_before_candidate_frame",
+  "frozen_at": "YYYY-MM-DDTHH:MM:SSZ",
+  "construction_boundary": {
+    "model_outputs_consulted": false,
+    "architecture_results_consulted": false,
+    "gold_labels_created": false
+  },
+  "enumeration": {
+    "adapter": {
+      "adapter_id": "zenodo_dryad_catalog_snapshot/v1",
+      "implementation": {
+        "file": "replace-with-enumeration-adapter.py",
+        "sha256": "replace-with-64-hex-sha256"
+      }
+    },
+    "retrieval_cutoff": "YYYY-MM-DDTHH:MM:SSZ",
+    "source_repositories": [
+      "replace-with-source-repository"
+    ],
+    "catalog_snapshots": [
+      {
+        "snapshot_id": "replace-with-snapshot-id",
+        "source_repository": "replace-with-source-repository",
+        "page_ordinal": 1,
+        "request_url": "https://replace-with-exact-request-url",
+        "retrieved_at": "YYYY-MM-DDTHH:MM:SSZ",
+        "returned_dataset_record_count": 1,
+        "enumerated_resource_count": 1,
+        "response": {
+          "file": "replace-with-semantic-catalog-snapshot.json",
+          "sha256": "replace-with-64-hex-sha256"
+        }
+      }
+    ],
+    "repository_boundaries": [
+      {
+        "source_repository": "replace-with-source-repository",
+        "last_page_ordinal": 1,
+        "termination_reason": "frozen_page_cap_reached"
+      }
+    ]
+  },
+  "acquisition_criteria": {
+    "inclusion": [
+      {
+        "criterion_id": "replace-with-inclusion-criterion-id",
+        "description": "replace-with-objective-acquisition-rule",
+        "assessment_method": "replace-with-deterministic-assessment"
+      }
+    ],
+    "exclusion": [
+      {
+        "criterion_id": "replace-with-exclusion-criterion-id",
+        "description": "replace-with-objective-exclusion-rule",
+        "assessment_method": "replace-with-deterministic-assessment"
+      }
+    ]
+  },
+  "counts": {
+    "enumerated_resource_count": 1,
+    "eligible_for_acquisition_count": 1,
+    "acquired_count": 1,
+    "download_failed_count": 0,
+    "excluded_before_download_count": 0
+  },
+  "records": [
+    {
+      "candidate_id": "replace-with-stable-candidate-id",
+      "dataset_group_id": "replace-with-parent-record-id",
+      "source_identity": "replace-with-canonical-source-identity",
+      "source_repository": "replace-with-source-repository",
+      "source_record_id": "replace-with-record-id",
+      "source_resource_id": "replace-with-file-id",
+      "source_url": "https://replace-with-file-url",
+      "source_size_bytes": 1,
+      "provider_checksum": "sha-256:replace-with-provider-checksum",
+      "discovered_at": "YYYY-MM-DDTHH:MM:SSZ",
+      "scientific_family": "replace-with-predeclared-family",
+      "file_format": "replace-with-supported-format",
+      "selection_stratum": "replace-with-frozen-stratum",
+      "license": "replace-with-license",
+      "catalog_snapshot_id": "replace-with-snapshot-id",
+      "criterion_results": {
+        "replace-with-inclusion-criterion-id": true,
+        "replace-with-exclusion-criterion-id": false
+      },
+      "eligible_for_acquisition": true,
+      "reasons": [],
+      "acquisition_status": "acquired",
+      "acquired_at": "YYYY-MM-DDTHH:MM:SSZ",
+      "resource": {
+        "file": "replace-with-downloaded-resource",
+        "sha256": "replace-with-64-hex-sha256"
+      },
+      "failure": null
+    }
+  ]
+}

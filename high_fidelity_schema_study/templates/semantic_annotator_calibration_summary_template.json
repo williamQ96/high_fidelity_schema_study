@@ -1,0 +1,6 @@
+{
+  "schema_version": "semantic-annotator-calibration-summary/v1",
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "status": "generated_only",
+  "note": "Generate with semantic_annotator_calibration.py. Do not fill or adjudicate this summary manually."
+}

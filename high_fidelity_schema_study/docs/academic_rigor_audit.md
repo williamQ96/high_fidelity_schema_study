@@ -20,6 +20,8 @@ This audit constrains the paper and demo to claims supported by frozen artifacts
 - The retrieval qrels are planted single-positive judgments, not a full user-centered search benchmark.
 - The internal pilot is intentionally small and method-focused.
 - LLM semantic annotation is constrained enrichment over deterministic fields, not a structural extractor.
+- Post-freeze Phases 12-20 are companion engineering evidence and do not revise the frozen benchmark, result tables, figures, or headline metrics.
+- Bounded challenge-pack scores must not be presented as broad ecosystem robustness.
 
 ## Current Rigor Status
 
@@ -27,4 +29,5 @@ This audit constrains the paper and demo to claims supported by frozen artifacts
 - References: verified artifact bibliography exists, with `verification_needed` isolated from core claims.
 - Time-axis gap: adjudicated as a limitation for this convergence round.
 - GUI: read-only artifact inspection surface; visual smoke screenshots should be stored outside tracked artifacts unless explicitly needed.
+- Companion appendix: `docs/phase20_companion_engineering_appendix.md` records post-freeze engineering readiness without changing frozen paper claims.
 

@@ -3,7 +3,7 @@ from __future__ import annotations
 from collections import defaultdict
 import json
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional
+from typing import Any, Dict, List, Optional
 
 from ..models import DatasetSchema, EvidenceRecord, FieldSchema
 from .base import StructuredExtractionError

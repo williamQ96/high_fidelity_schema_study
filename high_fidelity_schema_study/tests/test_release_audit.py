@@ -13,6 +13,7 @@ def test_release_readiness_checks_pass():
     assert all(report["checks"].values())
     assert "requirements.txt" in REQUIRED_PATHS
     assert "requirements-dev.txt" in REQUIRED_PATHS
+    assert "docs/phase20_companion_engineering_appendix.md" in REQUIRED_PATHS
     assert ".gitattributes" in REPOSITORY_REQUIRED_PATHS
     assert ".github/workflows/ci.yml" in REPOSITORY_REQUIRED_PATHS
     assert "data/experiments/phase20_release_readiness/report.json" not in REQUIRED_PATHS

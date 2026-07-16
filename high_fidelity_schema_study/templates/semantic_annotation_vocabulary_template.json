@@ -1,0 +1,36 @@
+{
+  "schema_version": "semantic-annotation-vocabulary/v1",
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "status": "draft",
+  "vocabulary_version": "replace-before-freeze",
+  "physical_types": [
+    "replace-with-frozen-physical-types"
+  ],
+  "logical_types": [
+    "attribute",
+    "coordinate",
+    "identifier",
+    "label",
+    "measurement",
+    "relationship",
+    "time_axis",
+    "unknown"
+  ],
+  "semantic_types": [
+    "replace-with-corpus-independent-frozen-semantic-types"
+  ],
+  "units": [
+    "replace-with-normalized-unit-vocabulary"
+  ],
+  "unit_aliases": {
+    "replace-source-alias": "replace-canonical-unit"
+  },
+  "unit_patterns": [
+    {
+      "pattern": "^(seconds|minutes|hours|days) since [0-9]{4}-[0-9]{2}-[0-9]{2}( [0-9]{2}:[0-9]{2}:[0-9]{2})?( UTC)?$",
+      "meaning": "CF-style reference-time unit; retain the normalized origin string exactly"
+    }
+  ],
+  "unknown_representation": null,
+  "extension_policy": "Terms may be added before blind annotation from corpus documentation without inspecting any A/B/C/D output; after freeze, out-of-vocabulary known values are forbidden and unresolved labels use applicable null."
+}

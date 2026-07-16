@@ -1,0 +1,11 @@
+{
+  "schema_version": "semantic-catalog-snapshot/v1",
+  "adapter_id": "zenodo_dryad_catalog_snapshot/v1",
+  "source_repository": "zenodo",
+  "page_ordinal": 1,
+  "request_url": "https://zenodo.org/api/records?replace-with-frozen-query",
+  "retrieved_at": "YYYY-MM-DDTHH:MM:SSZ",
+  "raw_catalog_response": {
+    "replace_with_exact_decoded_zenodo_response": true
+  }
+}

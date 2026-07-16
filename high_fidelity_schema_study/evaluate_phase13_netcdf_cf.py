@@ -315,8 +315,10 @@ def render_markdown(report: Dict[str, Any]) -> str:
             "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
         ]
     )
+    def all_true(values: Dict[str, bool]) -> bool:
+        return all(values.values()) if values else True
+
     for case in report["cases"]:
-        all_true = lambda values: all(values.values()) if values else True
         lines.append(
             f"| {case['case_id']} | {case['status']} | {'pass' if case['format_match'] else 'fail'} | "
             f"{'pass' if case['routing_match'] else 'fail'} | {'pass' if all_true(case['physical_matches']) else 'fail'} | "

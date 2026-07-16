@@ -1,0 +1,165 @@
+{
+  "annotation_packet_file": "csv_easy_weather_stations.annotation-packet.json",
+  "annotation_packet_sha256": "b330125daaf1b7d4b3f7169ec76264b82c121fdd994e9743b5b681309027a0d4",
+  "dataset_id": "csv_easy_weather_stations",
+  "evidence_catalog": [
+    {
+      "applicable_field_paths": [
+        "station_id"
+      ],
+      "catalog_evidence_id": "station_id::F1",
+      "selector": "field_inventory:station_id:station_id::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "b330125daaf1b7d4b3f7169ec76264b82c121fdd994e9743b5b681309027a0d4",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "station_id"
+      ],
+      "catalog_evidence_id": "station_id::F2",
+      "selector": "field_inventory:station_id:station_id::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "b330125daaf1b7d4b3f7169ec76264b82c121fdd994e9743b5b681309027a0d4",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "station_name"
+      ],
+      "catalog_evidence_id": "station_name::F1",
+      "selector": "field_inventory:station_name:station_name::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "b330125daaf1b7d4b3f7169ec76264b82c121fdd994e9743b5b681309027a0d4",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "station_name"
+      ],
+      "catalog_evidence_id": "station_name::F2",
+      "selector": "field_inventory:station_name:station_name::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "b330125daaf1b7d4b3f7169ec76264b82c121fdd994e9743b5b681309027a0d4",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "latitude_deg"
+      ],
+      "catalog_evidence_id": "latitude_deg::F1",
+      "selector": "field_inventory:latitude_deg:latitude_deg::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "b330125daaf1b7d4b3f7169ec76264b82c121fdd994e9743b5b681309027a0d4",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "latitude_deg"
+      ],
+      "catalog_evidence_id": "latitude_deg::F2",
+      "selector": "field_inventory:latitude_deg:latitude_deg::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "b330125daaf1b7d4b3f7169ec76264b82c121fdd994e9743b5b681309027a0d4",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "longitude_deg"
+      ],
+      "catalog_evidence_id": "longitude_deg::F1",
+      "selector": "field_inventory:longitude_deg:longitude_deg::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "b330125daaf1b7d4b3f7169ec76264b82c121fdd994e9743b5b681309027a0d4",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "longitude_deg"
+      ],
+      "catalog_evidence_id": "longitude_deg::F2",
+      "selector": "field_inventory:longitude_deg:longitude_deg::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "b330125daaf1b7d4b3f7169ec76264b82c121fdd994e9743b5b681309027a0d4",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "elevation_m"
+      ],
+      "catalog_evidence_id": "elevation_m::F1",
+      "selector": "field_inventory:elevation_m:elevation_m::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "b330125daaf1b7d4b3f7169ec76264b82c121fdd994e9743b5b681309027a0d4",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "elevation_m"
+      ],
+      "catalog_evidence_id": "elevation_m::F2",
+      "selector": "field_inventory:elevation_m:elevation_m::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "b330125daaf1b7d4b3f7169ec76264b82c121fdd994e9743b5b681309027a0d4",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "precip_mm"
+      ],
+      "catalog_evidence_id": "precip_mm::F1",
+      "selector": "field_inventory:precip_mm:precip_mm::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "b330125daaf1b7d4b3f7169ec76264b82c121fdd994e9743b5b681309027a0d4",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "precip_mm"
+      ],
+      "catalog_evidence_id": "precip_mm::F2",
+      "selector": "field_inventory:precip_mm:precip_mm::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "b330125daaf1b7d4b3f7169ec76264b82c121fdd994e9743b5b681309027a0d4",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "elevation_m",
+        "latitude_deg",
+        "longitude_deg",
+        "precip_mm"
+      ],
+      "catalog_evidence_id": "S1",
+      "selector": "approved_evidence:S1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "b330125daaf1b7d4b3f7169ec76264b82c121fdd994e9743b5b681309027a0d4",
+      "source_type": "dataset_readme",
+      "strength": "documentation"
+    }
+  ],
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "schema_version": "semantic-source-bundle/v1",
+  "sources": [
+    {
+      "source_file": "csv_easy_weather_stations.annotation-packet.json",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "b330125daaf1b7d4b3f7169ec76264b82c121fdd994e9743b5b681309027a0d4",
+      "source_type": "frozen_neutral_annotation_packet"
+    }
+  ],
+  "vocabulary_file": "vocabulary.json",
+  "vocabulary_sha256": "874548a10f8871449be9b749c99e95e72e8852d261324abc8fa3c492246ed888"
+}

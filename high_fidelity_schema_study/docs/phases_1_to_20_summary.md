@@ -170,3 +170,6 @@ This document provides a highly readable summary of the 20 engineering and resea
   Verify repository completeness, path hygiene, and demo scripts for final artifact release.
 * **Implementation Method**:
   * Added localized example files for all 8 formats, verified path portability (removing absolute local references), authored `gui_demo/DESIGN.md`, and passed the final release audit with `ready=true`.
+  * Added the Phase 20 companion engineering appendix for Phases 12-20, preserving frozen Artifact Paper metrics while documenting post-freeze engineering evidence.
+  * Reconciled public documentation around `183 passed`, release-readiness status, bounded challenge-pack claims, and frozen-artifact boundaries.
+  * Added CSV semantic guardrail coverage for ML/GPU training logs so GPU temperature fields do not become `air_temperature` and channel-count suffixes do not become Celsius unit claims.

@@ -1,0 +1,143 @@
+{
+  "annotation_packet_file": "ts_easy_hourly_weather.annotation-packet.json",
+  "annotation_packet_sha256": "f634fd0cf782dbc3b6b30eda44b518f1514f0823ed24a1bc0a9d206db6c84dc1",
+  "dataset_id": "ts_easy_hourly_weather",
+  "evidence_catalog": [
+    {
+      "applicable_field_paths": [
+        "station_id"
+      ],
+      "catalog_evidence_id": "station_id::F1",
+      "selector": "field_inventory:station_id:station_id::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f634fd0cf782dbc3b6b30eda44b518f1514f0823ed24a1bc0a9d206db6c84dc1",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "station_id"
+      ],
+      "catalog_evidence_id": "station_id::F2",
+      "selector": "field_inventory:station_id:station_id::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f634fd0cf782dbc3b6b30eda44b518f1514f0823ed24a1bc0a9d206db6c84dc1",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "timestamp"
+      ],
+      "catalog_evidence_id": "timestamp::F1",
+      "selector": "field_inventory:timestamp:timestamp::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f634fd0cf782dbc3b6b30eda44b518f1514f0823ed24a1bc0a9d206db6c84dc1",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "timestamp"
+      ],
+      "catalog_evidence_id": "timestamp::F2",
+      "selector": "field_inventory:timestamp:timestamp::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f634fd0cf782dbc3b6b30eda44b518f1514f0823ed24a1bc0a9d206db6c84dc1",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "temp_C"
+      ],
+      "catalog_evidence_id": "temp_C::F1",
+      "selector": "field_inventory:temp_C:temp_C::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f634fd0cf782dbc3b6b30eda44b518f1514f0823ed24a1bc0a9d206db6c84dc1",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "temp_C"
+      ],
+      "catalog_evidence_id": "temp_C::F2",
+      "selector": "field_inventory:temp_C:temp_C::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f634fd0cf782dbc3b6b30eda44b518f1514f0823ed24a1bc0a9d206db6c84dc1",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "humidity_pct"
+      ],
+      "catalog_evidence_id": "humidity_pct::F1",
+      "selector": "field_inventory:humidity_pct:humidity_pct::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f634fd0cf782dbc3b6b30eda44b518f1514f0823ed24a1bc0a9d206db6c84dc1",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "humidity_pct"
+      ],
+      "catalog_evidence_id": "humidity_pct::F2",
+      "selector": "field_inventory:humidity_pct:humidity_pct::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f634fd0cf782dbc3b6b30eda44b518f1514f0823ed24a1bc0a9d206db6c84dc1",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "wind_speed_m_s"
+      ],
+      "catalog_evidence_id": "wind_speed_m_s::F1",
+      "selector": "field_inventory:wind_speed_m_s:wind_speed_m_s::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f634fd0cf782dbc3b6b30eda44b518f1514f0823ed24a1bc0a9d206db6c84dc1",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "wind_speed_m_s"
+      ],
+      "catalog_evidence_id": "wind_speed_m_s::F2",
+      "selector": "field_inventory:wind_speed_m_s:wind_speed_m_s::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f634fd0cf782dbc3b6b30eda44b518f1514f0823ed24a1bc0a9d206db6c84dc1",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "humidity_pct",
+        "temp_C",
+        "timestamp",
+        "wind_speed_m_s"
+      ],
+      "catalog_evidence_id": "S1",
+      "selector": "approved_evidence:S1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f634fd0cf782dbc3b6b30eda44b518f1514f0823ed24a1bc0a9d206db6c84dc1",
+      "source_type": "dataset_readme",
+      "strength": "documentation"
+    }
+  ],
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "schema_version": "semantic-source-bundle/v1",
+  "sources": [
+    {
+      "source_file": "ts_easy_hourly_weather.annotation-packet.json",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f634fd0cf782dbc3b6b30eda44b518f1514f0823ed24a1bc0a9d206db6c84dc1",
+      "source_type": "frozen_neutral_annotation_packet"
+    }
+  ],
+  "vocabulary_file": "vocabulary.json",
+  "vocabulary_sha256": "874548a10f8871449be9b749c99e95e72e8852d261324abc8fa3c492246ed888"
+}

@@ -21,12 +21,104 @@ Core guarantees:
 
 See [docs/project_abstract.md](docs/project_abstract.md) for a concise current-state summary of the project scope, architecture, evidence model, supported formats, release status, and boundaries.
 
+## Final Deliverables
+
+The project now converges on two explicitly separate outputs:
+
+1. **Deterministic dataset-to-schema product.** `extract_path(ExtractionRequest(...))` and `python -m high_fidelity_schema_study.cli extract <path>` accept a supported dataset resource and return an evidence-grounded deterministic schema with structured uncertainty, abstention, partial, and failure states. This product makes no model call and remains useful regardless of the semantic-study result.
+2. **Semantic architecture research study.** The frozen A/B/C/D experiment measures the causal contribution of dataset-level semantic reasoning and deterministic verification over independently annotated blind datasets. It cannot create physical fields or replace the deterministic product boundary.
+
+The convergence contract is [docs/project_convergence_2026-07-15.md](docs/project_convergence_2026-07-15.md). The research protocol and blind-gold rules are [docs/semantic_architecture_research_protocol_v1.md](docs/semantic_architecture_research_protocol_v1.md) and [docs/semantic_gold_annotation_handbook_v1.md](docs/semantic_gold_annotation_handbook_v1.md).
+
+The executable two-annotator artifact chain is documented in [docs/semantic_gold_workflow_protocol_v1.md](docs/semantic_gold_workflow_protocol_v1.md). It validates frozen vocabulary, source/evidence identity, property-level rationales, independent submission hashes, disagreement arithmetic, and consensus provenance without any model or automatic adjudication.
+
+The corpus-level annotator readiness gate is documented in [docs/semantic_annotator_calibration_protocol_v1.md](docs/semantic_annotator_calibration_protocol_v1.md). It separates preregistered thresholds from later submission hashes, requires the same two annotators across nine cases, and forbids reusing revealed cases to confirm a revised handbook.
+
+The dataset-level sample-size and multiplicity design is documented in [docs/semantic_power_analysis_protocol_v1.md](docs/semantic_power_analysis_protocol_v1.md). Its output is recomputed during blind preflight rather than accepted as a hand-filled declaration:
+
+```bash
+python -m high_fidelity_schema_study.semantic_power_calibration \
+  --evaluation-report path/to/calibration-evaluation-report.json \
+  --calibration-manifest path/to/calibration-manifest.json \
+  --output path/to/calibration-statistics.json
+python -m high_fidelity_schema_study.semantic_power_analysis build \
+  --config path/to/power-config.json \
+  --output path/to/frozen-power-analysis.json
+python -m high_fidelity_schema_study.semantic_power_analysis validate \
+  --artifact path/to/frozen-power-analysis.json
+```
+
+The post-freeze statistical execution is separately specified in
+[docs/semantic_blind_inference_protocol_v1.md](docs/semantic_blind_inference_protocol_v1.md).
+Its pre-execution plan is content-hashed into the blind manifest; the post-run
+artifact accepts only blind-schema reports and deterministically rechecks dataset
+identity, backend identity, B/C replay, Holm adjustment, sign-flip sensitivity,
+and fixed-seed dataset bootstrap calculations.
+
+Blind-corpus construction is specified in
+[docs/semantic_blind_sampling_protocol_v1.md](docs/semantic_blind_sampling_protocol_v1.md).
+It freezes an explicitly bounded candidate frame, excludes resource hashes and
+stable file-level source identities from all known non-blind corpora, requires
+external registration of the powered stratified
+sampling design, and deterministically binds selected case order/tasks/source
+bundles into final preflight. It does not claim that the bounded frame represents
+all scientific data.
+
+The frame must bind `semantic-blind-acquisition-log/v1`. This log content-hashes
+the enumerator implementation and raw catalog pages, requires contiguous page
+coverage to a declared frozen boundary, retains exclusions and download failures,
+and prevents the frame from silently omitting any successfully acquired resource.
+The fixed Zenodo/Dryad adapter replays every catalog snapshot into file-level
+resources and verifies provider metadata and download checksums; a curator-written
+normalized list is not accepted as catalog evidence.
+
+The checked-in pre-frame exclusion registry is
+`data/experiments/semantic_blind_sampling_v1/known_nonblind_resources.json`.
+It is builder-generated from the complete semantic-grounding manifest: all nine
+internal resources have byte-level SHA-256 values, while the 16 historical
+external resources whose original bytes are absent remain excluded by exact
+source identity. No missing content hash is inferred or fabricated.
+
+Backend eligibility is specified separately in [docs/semantic_backend_qualification_protocol_v1.md](docs/semantic_backend_qualification_protocol_v1.md). It uses the fixed non-blind operational manifest and never loads gold or computes architecture accuracy:
+
+```bash
+python -m high_fidelity_schema_study.semantic_backend_qualification \
+  --manifest high_fidelity_schema_study/data/experiments/semantic_backend_qualification_v1/manifest.json \
+  --output path/to/qualification-report.json \
+  --api-base http://127.0.0.1:1234/v1 \
+  --model exact-served-model-id \
+  --vocabulary high_fidelity_schema_study/data/experiments/semantic_architecture_calibration_v1/vocabulary.json \
+  --context-length exact-runtime-context-limit \
+  --repeat-count 2 \
+  --legacy-repeat-count 1
+```
+
+Validate a candidate frozen blind manifest and its backend registry before execution:
+
+```bash
+python -m high_fidelity_schema_study.semantic_study_preflight --manifest path/to/blind_manifest.json
+```
+
+Print the exact current prompt/schema hashes required by the backend registry:
+
+```bash
+python -m high_fidelity_schema_study.semantic_study_preflight --print-contract-hashes
+```
+
+Templates live under `templates/blind_semantic_manifest_template.json`, `templates/blind_semantic_independent_annotation_template.json`, `templates/blind_semantic_gold_template.json`, `templates/semantic_source_bundle_template.json`, `templates/semantic_annotation_vocabulary_template.json`, `templates/semantic_backend_registry_template.json`, `templates/semantic_power_calibration_statistics_template.json`, `templates/semantic_power_analysis_config_template.json`, `templates/semantic_power_analysis_template.json`, `templates/semantic_blind_analysis_plan_config_template.json`, `templates/semantic_blind_analysis_run_template.json`, `templates/semantic_known_nonblind_resources_template.json`, `templates/semantic_blind_acquisition_log_template.json`, `templates/semantic_catalog_snapshot_zenodo_template.json`, `templates/semantic_catalog_snapshot_dryad_template.json`, `templates/semantic_blind_candidate_frame_template.json`, `templates/semantic_blind_sampling_design_template.json`, and `templates/semantic_sampling_registration_receipt_template.json`. Calibration statistics, power analysis, blind selection, and blind inference artifacts must be generated and recalculated by their executable builders; none is a hand-filled result declaration. Preflight failure blocks the affected research comparison; it never triggers a new architecture arm.
+
+## Phase 20 Companion Appendix
+
+See [docs/phase20_companion_engineering_appendix.md](docs/phase20_companion_engineering_appendix.md) for the current post-freeze engineering appendix. It summarizes Phases 12-20 as companion artifact evidence and explicitly keeps the frozen paper metrics, benchmark slice, tables, figures, and headline claims unchanged.
+
 ## Core Questions
 
-1. How much physical schema can we recover deterministically across CSV, HDF5, NetCDF/CF, and time-series organization?
-2. When deterministic extraction is separated from semantic augmentation, does field-level fidelity improve?
-3. Does evidence-grounded schema extraction improve retrieval over metadata-only baselines?
-4. Does the system expose uncertainty honestly instead of collapsing ambiguity into opaque scores?
+1. Can the product reliably transform a supported dataset into an evidence-grounded deterministic schema without model calls?
+2. On independently annotated blind datasets, what does one dataset-level semantic response add beyond deterministic extraction?
+3. Holding the semantic response identical, what correctness-versus-coverage tradeoff is caused by deterministic verification?
+4. Does the minimal verified hybrid preserve trustworthiness relative to the historical per-field/manual-group architecture with fewer semantic calls?
+
+Retrieval, ranking, multi-agent orchestration, and additional architecture variants are outside the active research scope.
 
 ## Terminology
 
@@ -329,13 +421,15 @@ These controlled results prove the declared challenge cases, not broad real-worl
 | Phase 18 unified evaluation | 11 categorized tracks; frozen references are not rerun; aggregate score is `null` | Common reporting entrypoint without collapsing evidence boundaries |
 | Phase 19 agent exports | 8 bundles; policy, fidelity, evidence, provenance, context, and bounded-action metrics `1.0000`; 7 capabilities | Agent-ready read-only context, not agent-controlled canonical extraction |
 | Phase 20 release readiness | Required paths, major documentation links, generated/documentation path hygiene, and frozen paths pass | Release-style repository readiness, not broader empirical validation |
-| Current regression suite | `181 passed` with pinned scientific backends and structured-failure regression coverage | Current repository regression status; it should be re-run after every later change |
+| Current regression suite | `183 passed` with pinned scientific backends, structured-failure regression coverage, and CSV semantic guardrail coverage | Current repository regression status; it should be re-run after every later change |
 
 ## Current Target
 
 Phases 15-20 are implemented and the repository is in a demo-ready convergence state. The next recommended work is broader external/multi-producer compatibility validation for Parquet, JSON, XML, and NetCDF/CF. Zarr v3, remote stores, chunk decoding, and LLM-first agents remain deferred until evidence identifies a concrete need.
 
 The paper and frozen Artifact Paper artifacts remain unchanged unless a separately approved freeze or reporting round explicitly replaces them.
+
+The Phase 20 companion appendix is the correct place to cite post-freeze engineering evidence. It should not be used to replace the frozen Artifact Paper metrics.
 
 ## Bounded Limitations
 

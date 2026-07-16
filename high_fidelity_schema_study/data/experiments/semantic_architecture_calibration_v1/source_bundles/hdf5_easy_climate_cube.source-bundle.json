@@ -1,0 +1,110 @@
+{
+  "annotation_packet_file": "hdf5_easy_climate_cube.annotation-packet.json",
+  "annotation_packet_sha256": "f7ed0a7e3917cb59c7c9091e8522a1c71b93cc2908b5daa74c131e386d946b04",
+  "dataset_id": "hdf5_easy_climate_cube",
+  "evidence_catalog": [
+    {
+      "applicable_field_paths": [
+        "/coords/station_id"
+      ],
+      "catalog_evidence_id": "/coords/station_id::F1",
+      "selector": "field_inventory:/coords/station_id:/coords/station_id::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f7ed0a7e3917cb59c7c9091e8522a1c71b93cc2908b5daa74c131e386d946b04",
+      "source_type": "hdf5_dataset_path",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/coords/time"
+      ],
+      "catalog_evidence_id": "/coords/time::F1",
+      "selector": "field_inventory:/coords/time:/coords/time::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f7ed0a7e3917cb59c7c9091e8522a1c71b93cc2908b5daa74c131e386d946b04",
+      "source_type": "hdf5_dataset_path",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/coords/time"
+      ],
+      "catalog_evidence_id": "/coords/time::F2",
+      "selector": "field_inventory:/coords/time:/coords/time::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f7ed0a7e3917cb59c7c9091e8522a1c71b93cc2908b5daa74c131e386d946b04",
+      "source_type": "hdf5_attribute",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/observations/humidity"
+      ],
+      "catalog_evidence_id": "/observations/humidity::F1",
+      "selector": "field_inventory:/observations/humidity:/observations/humidity::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f7ed0a7e3917cb59c7c9091e8522a1c71b93cc2908b5daa74c131e386d946b04",
+      "source_type": "hdf5_dataset_path",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/observations/humidity"
+      ],
+      "catalog_evidence_id": "/observations/humidity::F2",
+      "selector": "field_inventory:/observations/humidity:/observations/humidity::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f7ed0a7e3917cb59c7c9091e8522a1c71b93cc2908b5daa74c131e386d946b04",
+      "source_type": "hdf5_attribute",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/observations/temperature"
+      ],
+      "catalog_evidence_id": "/observations/temperature::F1",
+      "selector": "field_inventory:/observations/temperature:/observations/temperature::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f7ed0a7e3917cb59c7c9091e8522a1c71b93cc2908b5daa74c131e386d946b04",
+      "source_type": "hdf5_dataset_path",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/observations/temperature"
+      ],
+      "catalog_evidence_id": "/observations/temperature::F2",
+      "selector": "field_inventory:/observations/temperature:/observations/temperature::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f7ed0a7e3917cb59c7c9091e8522a1c71b93cc2908b5daa74c131e386d946b04",
+      "source_type": "hdf5_attribute",
+      "strength": "explicit_metadata"
+    },
+    {
+      "applicable_field_paths": [
+        "/coords/station_id",
+        "/coords/time",
+        "/observations/humidity",
+        "/observations/temperature"
+      ],
+      "catalog_evidence_id": "S1",
+      "selector": "approved_evidence:S1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f7ed0a7e3917cb59c7c9091e8522a1c71b93cc2908b5daa74c131e386d946b04",
+      "source_type": "dataset_readme",
+      "strength": "documentation"
+    }
+  ],
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "schema_version": "semantic-source-bundle/v1",
+  "sources": [
+    {
+      "source_file": "hdf5_easy_climate_cube.annotation-packet.json",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f7ed0a7e3917cb59c7c9091e8522a1c71b93cc2908b5daa74c131e386d946b04",
+      "source_type": "frozen_neutral_annotation_packet"
+    }
+  ],
+  "vocabulary_file": "vocabulary.json",
+  "vocabulary_sha256": "874548a10f8871449be9b749c99e95e72e8852d261324abc8fa3c492246ed888"
+}

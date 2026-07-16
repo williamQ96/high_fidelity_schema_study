@@ -1,0 +1,2848 @@
+{
+  "backend_identity": {
+    "api_base": "http://127.0.0.1:1234/v1",
+    "available_model_identifiers": [
+      "qwen/qwen3.5-35b-a3b",
+      "gemma-4-31b-it-claude-opus-distill",
+      "nanovel-27b-i1",
+      "qwen3.5-27b-webnovel-writer-zh",
+      "qwen3.5-27b-claude-4.6-opus-reasoning-distilled",
+      "qwen3.5-35b-a3b-uncensored-hauhaucs-aggressive",
+      "google_gemma-4-31b-it",
+      "google/gemma-4-26b-a4b",
+      "qwen/qwen3.5-9b",
+      "nomic-embed-text-v1.5"
+    ],
+    "context_length": 32768,
+    "dataset_reasoner_max_tokens": 4096,
+    "dataset_reasoner_seed": 0,
+    "models_endpoint": "http://127.0.0.1:1234/v1/models",
+    "models_response_sha256": "4ba62c456642ff7fa9f31f7e4908b5c9276b35b9dcb3870717b86379b1743b12",
+    "selected_model_identifier": "qwen/qwen3.5-35b-a3b",
+    "timeout_seconds": 180
+  },
+  "calibration_case_count": 1,
+  "calibration_cases": [
+    {
+      "case_id": "unique_tracks_90.csv",
+      "semantic_target_count": 1,
+      "task_sha256": "be805ffb94cd3c665f96f3df46db45f5220e8f117878e6a7989de2436aa39f85"
+    }
+  ],
+  "calibration_manifest_sha256": "737cb7b86b32f58768784242fa258dd007d3bbe7b7b47ad9d6af1b9573f47621",
+  "contract_hashes": {
+    "dataset_reasoner_prompt_sha256": "c7397c24cbcffb509018f9185aa1444151fc9662c6721306940dc63b74c83807",
+    "dataset_reasoner_schema_sha256": "e79212874554daf93c401578b97963f45934854b22b6786ee41ae60bf8dfd7ca",
+    "legacy_prompt_sha256": "3d4047f7bdc36e6ae832fe7e988bd06bff39be81f73bea101c6abdfe32b78a0f",
+    "legacy_schema_sha256": "83ee4fb51579af04a304c61eb4b610263b1d02fcae1a90a56cfdb131e445a91f"
+  },
+  "dataset_reasoner": {
+    "attempt_count": 2,
+    "attempts": [
+      {
+        "b_response_hash": "eafcb7c4f424960e9a6b66deeedd6cabe05c91dc2b9285a08b100032fe25561f",
+        "b_run": {
+          "architecture": {
+            "dataset_reasoner_max_calls": 1,
+            "deterministic": true,
+            "verifier": "none"
+          },
+          "case_id": "unique_tracks_90.csv",
+          "claims": [
+            {
+              "claim_id": "A:max_VIL:physical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "max_VIL::F1",
+                "max_VIL::F2"
+              ],
+              "field_path": "max_VIL",
+              "property": "physical_type",
+              "source": "deterministic_baseline",
+              "value": "float",
+              "verification_level": "deterministically_verified",
+              "verification_status": "verified"
+            },
+            {
+              "claim_id": "A:max_VIL:logical_type:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "max_VIL::F1",
+                "max_VIL::F2"
+              ],
+              "field_path": "max_VIL",
+              "property": "logical_type",
+              "source": "deterministic_baseline",
+              "value": "unknown",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:max_VIL:semantic_type:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "max_VIL::F1",
+                "max_VIL::F2"
+              ],
+              "field_path": "max_VIL",
+              "property": "semantic_type",
+              "source": "deterministic_baseline",
+              "value": "unknown",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:max_VIL:unit:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "max_VIL::F1",
+                "max_VIL::F2"
+              ],
+              "field_path": "max_VIL",
+              "property": "unit",
+              "source": "deterministic_baseline",
+              "value": null,
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lat:physical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lat::F1",
+                "Lat::F2"
+              ],
+              "field_path": "Lat",
+              "property": "physical_type",
+              "source": "deterministic_baseline",
+              "value": "float",
+              "verification_level": "deterministically_verified",
+              "verification_status": "verified"
+            },
+            {
+              "claim_id": "A:Lat:logical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lat::F1",
+                "Lat::F2"
+              ],
+              "field_path": "Lat",
+              "property": "logical_type",
+              "source": "deterministic_baseline",
+              "value": "coordinate",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lat:semantic_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lat::F1",
+                "Lat::F2"
+              ],
+              "field_path": "Lat",
+              "property": "semantic_type",
+              "source": "deterministic_baseline",
+              "value": "latitude",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lat:unit:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "Lat::F1",
+                "Lat::F2"
+              ],
+              "field_path": "Lat",
+              "property": "unit",
+              "source": "deterministic_baseline",
+              "value": null,
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lon:physical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lon::F1",
+                "Lon::F2"
+              ],
+              "field_path": "Lon",
+              "property": "physical_type",
+              "source": "deterministic_baseline",
+              "value": "float",
+              "verification_level": "deterministically_verified",
+              "verification_status": "verified"
+            },
+            {
+              "claim_id": "A:Lon:logical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lon::F1",
+                "Lon::F2"
+              ],
+              "field_path": "Lon",
+              "property": "logical_type",
+              "source": "deterministic_baseline",
+              "value": "coordinate",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lon:semantic_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lon::F1",
+                "Lon::F2"
+              ],
+              "field_path": "Lon",
+              "property": "semantic_type",
+              "source": "deterministic_baseline",
+              "value": "longitude",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lon:unit:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "Lon::F1",
+                "Lon::F2"
+              ],
+              "field_path": "Lon",
+              "property": "unit",
+              "source": "deterministic_baseline",
+              "value": null,
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Date_time:physical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Date_time::F1",
+                "Date_time::F2"
+              ],
+              "field_path": "Date_time",
+              "property": "physical_type",
+              "source": "deterministic_baseline",
+              "value": "datetime",
+              "verification_level": "deterministically_verified",
+              "verification_status": "verified"
+            },
+            {
+              "claim_id": "A:Date_time:logical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Date_time::F1",
+                "Date_time::F2"
+              ],
+              "field_path": "Date_time",
+              "property": "logical_type",
+              "source": "deterministic_baseline",
+              "value": "time_axis",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Date_time:semantic_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Date_time::F1",
+                "Date_time::F2"
+              ],
+              "field_path": "Date_time",
+              "property": "semantic_type",
+              "source": "deterministic_baseline",
+              "value": "observation_time",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Date_time:unit:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "Date_time::F1",
+                "Date_time::F2"
+              ],
+              "field_path": "Date_time",
+              "property": "unit",
+              "source": "deterministic_baseline",
+              "value": null,
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "dataset_reasoner:max_VIL:logical_type:1",
+              "confidence": 0.85,
+              "decision": "accepted",
+              "decision_reason": "reasoner candidate; no independent verification",
+              "evidence_refs": [
+                "S2"
+              ],
+              "field_path": "max_VIL",
+              "property": "logical_type",
+              "source": "dataset_reasoner",
+              "value": "measurement",
+              "verification_level": "unverified",
+              "verification_status": "not_checked"
+            },
+            {
+              "claim_id": "dataset_reasoner:max_VIL:semantic_type:2",
+              "confidence": 0.85,
+              "decision": "accepted",
+              "decision_reason": "reasoner candidate; no independent verification",
+              "evidence_refs": [
+                "S2"
+              ],
+              "field_path": "max_VIL",
+              "property": "semantic_type",
+              "source": "dataset_reasoner",
+              "value": "storm_intensity",
+              "verification_level": "unverified",
+              "verification_status": "not_checked"
+            }
+          ],
+          "evidence_catalog": [
+            {
+              "applicable_field_paths": [
+                "max_VIL"
+              ],
+              "detail": "header='max_VIL'",
+              "evidence_id": "max_VIL::F1",
+              "field_path": "max_VIL",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "csv_header",
+              "text": "header='max_VIL'"
+            },
+            {
+              "applicable_field_paths": [
+                "max_VIL"
+              ],
+              "detail": "sampled_rows=200",
+              "evidence_id": "max_VIL::F2",
+              "field_path": "max_VIL",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "sample_rows",
+              "text": "sampled_rows=200"
+            },
+            {
+              "applicable_field_paths": [
+                "Lat"
+              ],
+              "detail": "header='Lat'",
+              "evidence_id": "Lat::F1",
+              "field_path": "Lat",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "csv_header",
+              "text": "header='Lat'"
+            },
+            {
+              "applicable_field_paths": [
+                "Lat"
+              ],
+              "detail": "sampled_rows=200",
+              "evidence_id": "Lat::F2",
+              "field_path": "Lat",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "sample_rows",
+              "text": "sampled_rows=200"
+            },
+            {
+              "applicable_field_paths": [
+                "Lon"
+              ],
+              "detail": "header='Lon'",
+              "evidence_id": "Lon::F1",
+              "field_path": "Lon",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "csv_header",
+              "text": "header='Lon'"
+            },
+            {
+              "applicable_field_paths": [
+                "Lon"
+              ],
+              "detail": "sampled_rows=200",
+              "evidence_id": "Lon::F2",
+              "field_path": "Lon",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "sample_rows",
+              "text": "sampled_rows=200"
+            },
+            {
+              "applicable_field_paths": [
+                "Date_time"
+              ],
+              "detail": "header='Date_time'",
+              "evidence_id": "Date_time::F1",
+              "field_path": "Date_time",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "csv_header",
+              "text": "header='Date_time'"
+            },
+            {
+              "applicable_field_paths": [
+                "Date_time"
+              ],
+              "detail": "sampled_rows=200",
+              "evidence_id": "Date_time::F2",
+              "field_path": "Date_time",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "sample_rows",
+              "text": "sampled_rows=200"
+            },
+            {
+              "applicable_field_paths": [],
+              "detail": "record title",
+              "evidence_id": "S1",
+              "field_path": null,
+              "source_name": "external/zenodo/record_15008662/source_record.json",
+              "source_type": "record_title",
+              "text": "Tracked Hailstorm Events from Radar Data (unique_tracks_90.csv)"
+            },
+            {
+              "applicable_field_paths": [
+                "max_VIL"
+              ],
+              "detail": "record description",
+              "evidence_id": "S2",
+              "field_path": null,
+              "source_name": "external/zenodo/record_15008662/source_record.json",
+              "source_type": "record_description",
+              "text": "This dataset contains tracked hailstorm events based on radar-derived maximum vertically integrated liquid (max_VIL). The dataset provides key storm parameters such as latitude, longitude, timestamp , and storm intensity. The dataset was generated as part of the study \"Modulation of Severe Hailstorms in Alberta by Large-Scale Climate Teleconnections.\""
+            },
+            {
+              "applicable_field_paths": [
+                "max_VIL"
+              ],
+              "detail": "record keywords",
+              "evidence_id": "S3",
+              "field_path": null,
+              "source_name": "external/zenodo/record_15008662/source_record.json",
+              "source_type": "record_keywords",
+              "text": "Radar, Hailstorms, Max_VIL, Storm Tracks, Climate, CSV, Alberta"
+            }
+          ],
+          "issues": [],
+          "model_info": {
+            "decoding": {
+              "max_tokens": 4096,
+              "response_format": "json_schema",
+              "seed": 0,
+              "temperature": 0,
+              "thinking_enabled": false
+            },
+            "finish_reason": "stop",
+            "model": "qwen/qwen3.5-35b-a3b",
+            "provider": "openai_compatible",
+            "purpose": "dataset_reasoner:external::zenodo::record_15008662::unique_tracks_90.csv",
+            "response_id": "chatcmpl-32i97ggaf1ve5p1cmj6l3"
+          },
+          "model_responses": [
+            {
+              "model_info": {
+                "decoding": {
+                  "max_tokens": 4096,
+                  "response_format": "json_schema",
+                  "seed": 0,
+                  "temperature": 0,
+                  "thinking_enabled": false
+                },
+                "finish_reason": "stop",
+                "model": "qwen/qwen3.5-35b-a3b",
+                "provider": "openai_compatible",
+                "purpose": "dataset_reasoner:external::zenodo::record_15008662::unique_tracks_90.csv",
+                "response_id": "chatcmpl-32i97ggaf1ve5p1cmj6l3"
+              },
+              "parsed_response": {
+                "claims": [
+                  {
+                    "confidence": 0.85,
+                    "evidence_refs": [
+                      "S2"
+                    ],
+                    "field_path": "max_VIL",
+                    "property": "logical_type",
+                    "uncertainty_reason": "Derived from record description context",
+                    "value": "measurement"
+                  },
+                  {
+                    "confidence": 0.85,
+                    "evidence_refs": [
+                      "S2"
+                    ],
+                    "field_path": "max_VIL",
+                    "property": "semantic_type",
+                    "uncertainty_reason": "Derived from record description context",
+                    "value": "storm_intensity"
+                  }
+                ],
+                "notes": [
+                  "max_VIL is described as 'maximum vertically integrated liquid' in S2, indicating a measurement of storm intensity.",
+                  "No explicit unit provided in field metadata or evidence."
+                ],
+                "task_id": "external::zenodo::record_15008662::unique_tracks_90.csv"
+              },
+              "purpose": "dataset_reasoner:external::zenodo::record_15008662::unique_tracks_90.csv",
+              "raw_text": "{\n  \"task_id\": \"external::zenodo::record_15008662::unique_tracks_90.csv\",\n  \"claims\": [\n    {\n      \"field_path\": \"max_VIL\",\n      \"property\": \"logical_type\",\n      \"value\": \"measurement\",\n      \"evidence_refs\": [\"S2\"]\n    ,\n    \"confidence\": 0.85,\n    \"uncertainty_reason\": \"Derived from record description context\"\n    },\n    {\n      \"field_path\": \"max_VIL\",\n      \"property\": \"semantic_type\",\n      \"value\": \"storm_intensity\",\n      \"evidence_refs\": [\"S2\"],\n      \"confidence\": 0.85,\n      \"uncertainty_reason\": \"Derived from record description context\"\n    }\n  ]\n  ,\n  \"notes\": [\n    \"max_VIL is described as 'maximum vertically integrated liquid' in S2, indicating a measurement of storm intensity.\",\n    \"No explicit unit provided in field metadata or evidence.\"\n  ]\n}\n  ",
+              "request_hash": "701582edc2cc8985a451648a9bd08d8decede33dd36e3aa4176f1fc17cadd37c",
+              "response_hash": "eafcb7c4f424960e9a6b66deeedd6cabe05c91dc2b9285a08b100032fe25561f",
+              "telemetry": {
+                "cost_usd": 0.0,
+                "failed_calls": 0,
+                "input_tokens": 1973,
+                "latency_ms": 3495.561,
+                "model_calls": 1,
+                "output_tokens": 241
+              }
+            }
+          ],
+          "run_latency_ms": 0.0,
+          "status": "ok",
+          "task_id": "external::zenodo::record_15008662::unique_tracks_90.csv",
+          "telemetry": {
+            "cost_usd": 0.0,
+            "failed_calls": 0,
+            "input_tokens": 1973,
+            "latency_ms": 3495.561,
+            "model_calls": 1,
+            "output_tokens": 241
+          },
+          "variant_id": "B"
+        },
+        "c_response_hash": "eafcb7c4f424960e9a6b66deeedd6cabe05c91dc2b9285a08b100032fe25561f",
+        "c_run": {
+          "architecture": {
+            "dataset_reasoner_max_calls": 1,
+            "deterministic": true,
+            "reused_response_hash": "eafcb7c4f424960e9a6b66deeedd6cabe05c91dc2b9285a08b100032fe25561f",
+            "semantic_generation_calls": 0,
+            "verification_independence": "failure-mode independent from the model; no second-model truth claim",
+            "verifier": "deterministic_evidence_reference_and_conflict_checks"
+          },
+          "case_id": "unique_tracks_90.csv",
+          "claims": [
+            {
+              "claim_id": "A:max_VIL:physical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "max_VIL::F1",
+                "max_VIL::F2"
+              ],
+              "field_path": "max_VIL",
+              "property": "physical_type",
+              "source": "deterministic_baseline",
+              "value": "float",
+              "verification_level": "deterministically_verified",
+              "verification_status": "verified"
+            },
+            {
+              "claim_id": "A:max_VIL:logical_type:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "max_VIL::F1",
+                "max_VIL::F2"
+              ],
+              "field_path": "max_VIL",
+              "property": "logical_type",
+              "source": "deterministic_baseline",
+              "value": "unknown",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:max_VIL:semantic_type:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "max_VIL::F1",
+                "max_VIL::F2"
+              ],
+              "field_path": "max_VIL",
+              "property": "semantic_type",
+              "source": "deterministic_baseline",
+              "value": "unknown",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:max_VIL:unit:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "max_VIL::F1",
+                "max_VIL::F2"
+              ],
+              "field_path": "max_VIL",
+              "property": "unit",
+              "source": "deterministic_baseline",
+              "value": null,
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lat:physical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lat::F1",
+                "Lat::F2"
+              ],
+              "field_path": "Lat",
+              "property": "physical_type",
+              "source": "deterministic_baseline",
+              "value": "float",
+              "verification_level": "deterministically_verified",
+              "verification_status": "verified"
+            },
+            {
+              "claim_id": "A:Lat:logical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lat::F1",
+                "Lat::F2"
+              ],
+              "field_path": "Lat",
+              "property": "logical_type",
+              "source": "deterministic_baseline",
+              "value": "coordinate",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lat:semantic_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lat::F1",
+                "Lat::F2"
+              ],
+              "field_path": "Lat",
+              "property": "semantic_type",
+              "source": "deterministic_baseline",
+              "value": "latitude",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lat:unit:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "Lat::F1",
+                "Lat::F2"
+              ],
+              "field_path": "Lat",
+              "property": "unit",
+              "source": "deterministic_baseline",
+              "value": null,
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lon:physical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lon::F1",
+                "Lon::F2"
+              ],
+              "field_path": "Lon",
+              "property": "physical_type",
+              "source": "deterministic_baseline",
+              "value": "float",
+              "verification_level": "deterministically_verified",
+              "verification_status": "verified"
+            },
+            {
+              "claim_id": "A:Lon:logical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lon::F1",
+                "Lon::F2"
+              ],
+              "field_path": "Lon",
+              "property": "logical_type",
+              "source": "deterministic_baseline",
+              "value": "coordinate",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lon:semantic_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lon::F1",
+                "Lon::F2"
+              ],
+              "field_path": "Lon",
+              "property": "semantic_type",
+              "source": "deterministic_baseline",
+              "value": "longitude",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lon:unit:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "Lon::F1",
+                "Lon::F2"
+              ],
+              "field_path": "Lon",
+              "property": "unit",
+              "source": "deterministic_baseline",
+              "value": null,
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Date_time:physical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Date_time::F1",
+                "Date_time::F2"
+              ],
+              "field_path": "Date_time",
+              "property": "physical_type",
+              "source": "deterministic_baseline",
+              "value": "datetime",
+              "verification_level": "deterministically_verified",
+              "verification_status": "verified"
+            },
+            {
+              "claim_id": "A:Date_time:logical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Date_time::F1",
+                "Date_time::F2"
+              ],
+              "field_path": "Date_time",
+              "property": "logical_type",
+              "source": "deterministic_baseline",
+              "value": "time_axis",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Date_time:semantic_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Date_time::F1",
+                "Date_time::F2"
+              ],
+              "field_path": "Date_time",
+              "property": "semantic_type",
+              "source": "deterministic_baseline",
+              "value": "observation_time",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Date_time:unit:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "Date_time::F1",
+                "Date_time::F2"
+              ],
+              "field_path": "Date_time",
+              "property": "unit",
+              "source": "deterministic_baseline",
+              "value": null,
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "dataset_reasoner:max_VIL:logical_type:1",
+              "confidence": 0.85,
+              "decision": "accepted",
+              "decision_reason": "evidence references exist and are field-relevant; semantic entailment is not machine-verified",
+              "evidence_refs": [
+                "S2"
+              ],
+              "field_path": "max_VIL",
+              "property": "logical_type",
+              "source": "dataset_reasoner",
+              "value": "measurement",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "dataset_reasoner:max_VIL:semantic_type:2",
+              "confidence": 0.85,
+              "decision": "accepted",
+              "decision_reason": "evidence references exist and are field-relevant; semantic entailment is not machine-verified",
+              "evidence_refs": [
+                "S2"
+              ],
+              "field_path": "max_VIL",
+              "property": "semantic_type",
+              "source": "dataset_reasoner",
+              "value": "storm_intensity",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            }
+          ],
+          "evidence_catalog": [
+            {
+              "applicable_field_paths": [
+                "max_VIL"
+              ],
+              "detail": "header='max_VIL'",
+              "evidence_id": "max_VIL::F1",
+              "field_path": "max_VIL",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "csv_header",
+              "text": "header='max_VIL'"
+            },
+            {
+              "applicable_field_paths": [
+                "max_VIL"
+              ],
+              "detail": "sampled_rows=200",
+              "evidence_id": "max_VIL::F2",
+              "field_path": "max_VIL",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "sample_rows",
+              "text": "sampled_rows=200"
+            },
+            {
+              "applicable_field_paths": [
+                "Lat"
+              ],
+              "detail": "header='Lat'",
+              "evidence_id": "Lat::F1",
+              "field_path": "Lat",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "csv_header",
+              "text": "header='Lat'"
+            },
+            {
+              "applicable_field_paths": [
+                "Lat"
+              ],
+              "detail": "sampled_rows=200",
+              "evidence_id": "Lat::F2",
+              "field_path": "Lat",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "sample_rows",
+              "text": "sampled_rows=200"
+            },
+            {
+              "applicable_field_paths": [
+                "Lon"
+              ],
+              "detail": "header='Lon'",
+              "evidence_id": "Lon::F1",
+              "field_path": "Lon",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "csv_header",
+              "text": "header='Lon'"
+            },
+            {
+              "applicable_field_paths": [
+                "Lon"
+              ],
+              "detail": "sampled_rows=200",
+              "evidence_id": "Lon::F2",
+              "field_path": "Lon",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "sample_rows",
+              "text": "sampled_rows=200"
+            },
+            {
+              "applicable_field_paths": [
+                "Date_time"
+              ],
+              "detail": "header='Date_time'",
+              "evidence_id": "Date_time::F1",
+              "field_path": "Date_time",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "csv_header",
+              "text": "header='Date_time'"
+            },
+            {
+              "applicable_field_paths": [
+                "Date_time"
+              ],
+              "detail": "sampled_rows=200",
+              "evidence_id": "Date_time::F2",
+              "field_path": "Date_time",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "sample_rows",
+              "text": "sampled_rows=200"
+            },
+            {
+              "applicable_field_paths": [],
+              "detail": "record title",
+              "evidence_id": "S1",
+              "field_path": null,
+              "source_name": "external/zenodo/record_15008662/source_record.json",
+              "source_type": "record_title",
+              "text": "Tracked Hailstorm Events from Radar Data (unique_tracks_90.csv)"
+            },
+            {
+              "applicable_field_paths": [
+                "max_VIL"
+              ],
+              "detail": "record description",
+              "evidence_id": "S2",
+              "field_path": null,
+              "source_name": "external/zenodo/record_15008662/source_record.json",
+              "source_type": "record_description",
+              "text": "This dataset contains tracked hailstorm events based on radar-derived maximum vertically integrated liquid (max_VIL). The dataset provides key storm parameters such as latitude, longitude, timestamp , and storm intensity. The dataset was generated as part of the study \"Modulation of Severe Hailstorms in Alberta by Large-Scale Climate Teleconnections.\""
+            },
+            {
+              "applicable_field_paths": [
+                "max_VIL"
+              ],
+              "detail": "record keywords",
+              "evidence_id": "S3",
+              "field_path": null,
+              "source_name": "external/zenodo/record_15008662/source_record.json",
+              "source_type": "record_keywords",
+              "text": "Radar, Hailstorms, Max_VIL, Storm Tracks, Climate, CSV, Alberta"
+            }
+          ],
+          "issues": [],
+          "model_info": {
+            "decoding": {
+              "max_tokens": 4096,
+              "response_format": "json_schema",
+              "seed": 0,
+              "temperature": 0,
+              "thinking_enabled": false
+            },
+            "finish_reason": "stop",
+            "model": "qwen/qwen3.5-35b-a3b",
+            "provider": "openai_compatible",
+            "purpose": "dataset_reasoner:external::zenodo::record_15008662::unique_tracks_90.csv",
+            "replay_source_telemetry": {
+              "cost_usd": 0.0,
+              "failed_calls": 0,
+              "input_tokens": 1973,
+              "latency_ms": 3495.561,
+              "model_calls": 1,
+              "output_tokens": 241
+            },
+            "response_id": "chatcmpl-32i97ggaf1ve5p1cmj6l3",
+            "shared_reasoner_replay": true
+          },
+          "model_responses": [
+            {
+              "model_info": {
+                "decoding": {
+                  "max_tokens": 4096,
+                  "response_format": "json_schema",
+                  "seed": 0,
+                  "temperature": 0,
+                  "thinking_enabled": false
+                },
+                "finish_reason": "stop",
+                "model": "qwen/qwen3.5-35b-a3b",
+                "provider": "openai_compatible",
+                "purpose": "dataset_reasoner:external::zenodo::record_15008662::unique_tracks_90.csv",
+                "replay_source_telemetry": {
+                  "cost_usd": 0.0,
+                  "failed_calls": 0,
+                  "input_tokens": 1973,
+                  "latency_ms": 3495.561,
+                  "model_calls": 1,
+                  "output_tokens": 241
+                },
+                "response_id": "chatcmpl-32i97ggaf1ve5p1cmj6l3",
+                "shared_reasoner_replay": true
+              },
+              "parsed_response": {
+                "claims": [
+                  {
+                    "confidence": 0.85,
+                    "evidence_refs": [
+                      "S2"
+                    ],
+                    "field_path": "max_VIL",
+                    "property": "logical_type",
+                    "uncertainty_reason": "Derived from record description context",
+                    "value": "measurement"
+                  },
+                  {
+                    "confidence": 0.85,
+                    "evidence_refs": [
+                      "S2"
+                    ],
+                    "field_path": "max_VIL",
+                    "property": "semantic_type",
+                    "uncertainty_reason": "Derived from record description context",
+                    "value": "storm_intensity"
+                  }
+                ],
+                "notes": [
+                  "max_VIL is described as 'maximum vertically integrated liquid' in S2, indicating a measurement of storm intensity.",
+                  "No explicit unit provided in field metadata or evidence."
+                ],
+                "task_id": "external::zenodo::record_15008662::unique_tracks_90.csv"
+              },
+              "purpose": "dataset_reasoner:external::zenodo::record_15008662::unique_tracks_90.csv",
+              "raw_text": "{\n  \"task_id\": \"external::zenodo::record_15008662::unique_tracks_90.csv\",\n  \"claims\": [\n    {\n      \"field_path\": \"max_VIL\",\n      \"property\": \"logical_type\",\n      \"value\": \"measurement\",\n      \"evidence_refs\": [\"S2\"]\n    ,\n    \"confidence\": 0.85,\n    \"uncertainty_reason\": \"Derived from record description context\"\n    },\n    {\n      \"field_path\": \"max_VIL\",\n      \"property\": \"semantic_type\",\n      \"value\": \"storm_intensity\",\n      \"evidence_refs\": [\"S2\"],\n      \"confidence\": 0.85,\n      \"uncertainty_reason\": \"Derived from record description context\"\n    }\n  ]\n  ,\n  \"notes\": [\n    \"max_VIL is described as 'maximum vertically integrated liquid' in S2, indicating a measurement of storm intensity.\",\n    \"No explicit unit provided in field metadata or evidence.\"\n  ]\n}\n  ",
+              "request_hash": "701582edc2cc8985a451648a9bd08d8decede33dd36e3aa4176f1fc17cadd37c",
+              "response_hash": "eafcb7c4f424960e9a6b66deeedd6cabe05c91dc2b9285a08b100032fe25561f",
+              "telemetry": {
+                "cost_usd": 0.0,
+                "failed_calls": 0,
+                "input_tokens": 0,
+                "latency_ms": 0.0,
+                "model_calls": 0,
+                "output_tokens": 0
+              }
+            }
+          ],
+          "run_latency_ms": 0.0,
+          "status": "ok",
+          "task_id": "external::zenodo::record_15008662::unique_tracks_90.csv",
+          "telemetry": {
+            "cost_usd": 0.0,
+            "failed_calls": 0,
+            "input_tokens": 0,
+            "latency_ms": 0.0,
+            "model_calls": 0,
+            "output_tokens": 0
+          },
+          "variant_id": "C"
+        },
+        "case_id": "unique_tracks_90.csv",
+        "context_fit": true,
+        "contract_valid": true,
+        "max_call_input_tokens": 1973,
+        "physical_backend_invocations": 1,
+        "physical_model_calls": 1,
+        "repeat_index": 1,
+        "replay_identity_valid": true,
+        "semantic_target_count": 1,
+        "target_scope_evaluable": true,
+        "target_scope_valid": true,
+        "timeout": false,
+        "truncated": false
+      },
+      {
+        "b_response_hash": "eafcb7c4f424960e9a6b66deeedd6cabe05c91dc2b9285a08b100032fe25561f",
+        "b_run": {
+          "architecture": {
+            "dataset_reasoner_max_calls": 1,
+            "deterministic": true,
+            "verifier": "none"
+          },
+          "case_id": "unique_tracks_90.csv",
+          "claims": [
+            {
+              "claim_id": "A:max_VIL:physical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "max_VIL::F1",
+                "max_VIL::F2"
+              ],
+              "field_path": "max_VIL",
+              "property": "physical_type",
+              "source": "deterministic_baseline",
+              "value": "float",
+              "verification_level": "deterministically_verified",
+              "verification_status": "verified"
+            },
+            {
+              "claim_id": "A:max_VIL:logical_type:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "max_VIL::F1",
+                "max_VIL::F2"
+              ],
+              "field_path": "max_VIL",
+              "property": "logical_type",
+              "source": "deterministic_baseline",
+              "value": "unknown",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:max_VIL:semantic_type:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "max_VIL::F1",
+                "max_VIL::F2"
+              ],
+              "field_path": "max_VIL",
+              "property": "semantic_type",
+              "source": "deterministic_baseline",
+              "value": "unknown",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:max_VIL:unit:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "max_VIL::F1",
+                "max_VIL::F2"
+              ],
+              "field_path": "max_VIL",
+              "property": "unit",
+              "source": "deterministic_baseline",
+              "value": null,
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lat:physical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lat::F1",
+                "Lat::F2"
+              ],
+              "field_path": "Lat",
+              "property": "physical_type",
+              "source": "deterministic_baseline",
+              "value": "float",
+              "verification_level": "deterministically_verified",
+              "verification_status": "verified"
+            },
+            {
+              "claim_id": "A:Lat:logical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lat::F1",
+                "Lat::F2"
+              ],
+              "field_path": "Lat",
+              "property": "logical_type",
+              "source": "deterministic_baseline",
+              "value": "coordinate",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lat:semantic_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lat::F1",
+                "Lat::F2"
+              ],
+              "field_path": "Lat",
+              "property": "semantic_type",
+              "source": "deterministic_baseline",
+              "value": "latitude",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lat:unit:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "Lat::F1",
+                "Lat::F2"
+              ],
+              "field_path": "Lat",
+              "property": "unit",
+              "source": "deterministic_baseline",
+              "value": null,
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lon:physical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lon::F1",
+                "Lon::F2"
+              ],
+              "field_path": "Lon",
+              "property": "physical_type",
+              "source": "deterministic_baseline",
+              "value": "float",
+              "verification_level": "deterministically_verified",
+              "verification_status": "verified"
+            },
+            {
+              "claim_id": "A:Lon:logical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lon::F1",
+                "Lon::F2"
+              ],
+              "field_path": "Lon",
+              "property": "logical_type",
+              "source": "deterministic_baseline",
+              "value": "coordinate",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lon:semantic_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lon::F1",
+                "Lon::F2"
+              ],
+              "field_path": "Lon",
+              "property": "semantic_type",
+              "source": "deterministic_baseline",
+              "value": "longitude",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lon:unit:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "Lon::F1",
+                "Lon::F2"
+              ],
+              "field_path": "Lon",
+              "property": "unit",
+              "source": "deterministic_baseline",
+              "value": null,
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Date_time:physical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Date_time::F1",
+                "Date_time::F2"
+              ],
+              "field_path": "Date_time",
+              "property": "physical_type",
+              "source": "deterministic_baseline",
+              "value": "datetime",
+              "verification_level": "deterministically_verified",
+              "verification_status": "verified"
+            },
+            {
+              "claim_id": "A:Date_time:logical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Date_time::F1",
+                "Date_time::F2"
+              ],
+              "field_path": "Date_time",
+              "property": "logical_type",
+              "source": "deterministic_baseline",
+              "value": "time_axis",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Date_time:semantic_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Date_time::F1",
+                "Date_time::F2"
+              ],
+              "field_path": "Date_time",
+              "property": "semantic_type",
+              "source": "deterministic_baseline",
+              "value": "observation_time",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Date_time:unit:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "Date_time::F1",
+                "Date_time::F2"
+              ],
+              "field_path": "Date_time",
+              "property": "unit",
+              "source": "deterministic_baseline",
+              "value": null,
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "dataset_reasoner:max_VIL:logical_type:1",
+              "confidence": 0.85,
+              "decision": "accepted",
+              "decision_reason": "reasoner candidate; no independent verification",
+              "evidence_refs": [
+                "S2"
+              ],
+              "field_path": "max_VIL",
+              "property": "logical_type",
+              "source": "dataset_reasoner",
+              "value": "measurement",
+              "verification_level": "unverified",
+              "verification_status": "not_checked"
+            },
+            {
+              "claim_id": "dataset_reasoner:max_VIL:semantic_type:2",
+              "confidence": 0.85,
+              "decision": "accepted",
+              "decision_reason": "reasoner candidate; no independent verification",
+              "evidence_refs": [
+                "S2"
+              ],
+              "field_path": "max_VIL",
+              "property": "semantic_type",
+              "source": "dataset_reasoner",
+              "value": "storm_intensity",
+              "verification_level": "unverified",
+              "verification_status": "not_checked"
+            }
+          ],
+          "evidence_catalog": [
+            {
+              "applicable_field_paths": [
+                "max_VIL"
+              ],
+              "detail": "header='max_VIL'",
+              "evidence_id": "max_VIL::F1",
+              "field_path": "max_VIL",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "csv_header",
+              "text": "header='max_VIL'"
+            },
+            {
+              "applicable_field_paths": [
+                "max_VIL"
+              ],
+              "detail": "sampled_rows=200",
+              "evidence_id": "max_VIL::F2",
+              "field_path": "max_VIL",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "sample_rows",
+              "text": "sampled_rows=200"
+            },
+            {
+              "applicable_field_paths": [
+                "Lat"
+              ],
+              "detail": "header='Lat'",
+              "evidence_id": "Lat::F1",
+              "field_path": "Lat",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "csv_header",
+              "text": "header='Lat'"
+            },
+            {
+              "applicable_field_paths": [
+                "Lat"
+              ],
+              "detail": "sampled_rows=200",
+              "evidence_id": "Lat::F2",
+              "field_path": "Lat",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "sample_rows",
+              "text": "sampled_rows=200"
+            },
+            {
+              "applicable_field_paths": [
+                "Lon"
+              ],
+              "detail": "header='Lon'",
+              "evidence_id": "Lon::F1",
+              "field_path": "Lon",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "csv_header",
+              "text": "header='Lon'"
+            },
+            {
+              "applicable_field_paths": [
+                "Lon"
+              ],
+              "detail": "sampled_rows=200",
+              "evidence_id": "Lon::F2",
+              "field_path": "Lon",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "sample_rows",
+              "text": "sampled_rows=200"
+            },
+            {
+              "applicable_field_paths": [
+                "Date_time"
+              ],
+              "detail": "header='Date_time'",
+              "evidence_id": "Date_time::F1",
+              "field_path": "Date_time",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "csv_header",
+              "text": "header='Date_time'"
+            },
+            {
+              "applicable_field_paths": [
+                "Date_time"
+              ],
+              "detail": "sampled_rows=200",
+              "evidence_id": "Date_time::F2",
+              "field_path": "Date_time",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "sample_rows",
+              "text": "sampled_rows=200"
+            },
+            {
+              "applicable_field_paths": [],
+              "detail": "record title",
+              "evidence_id": "S1",
+              "field_path": null,
+              "source_name": "external/zenodo/record_15008662/source_record.json",
+              "source_type": "record_title",
+              "text": "Tracked Hailstorm Events from Radar Data (unique_tracks_90.csv)"
+            },
+            {
+              "applicable_field_paths": [
+                "max_VIL"
+              ],
+              "detail": "record description",
+              "evidence_id": "S2",
+              "field_path": null,
+              "source_name": "external/zenodo/record_15008662/source_record.json",
+              "source_type": "record_description",
+              "text": "This dataset contains tracked hailstorm events based on radar-derived maximum vertically integrated liquid (max_VIL). The dataset provides key storm parameters such as latitude, longitude, timestamp , and storm intensity. The dataset was generated as part of the study \"Modulation of Severe Hailstorms in Alberta by Large-Scale Climate Teleconnections.\""
+            },
+            {
+              "applicable_field_paths": [
+                "max_VIL"
+              ],
+              "detail": "record keywords",
+              "evidence_id": "S3",
+              "field_path": null,
+              "source_name": "external/zenodo/record_15008662/source_record.json",
+              "source_type": "record_keywords",
+              "text": "Radar, Hailstorms, Max_VIL, Storm Tracks, Climate, CSV, Alberta"
+            }
+          ],
+          "issues": [],
+          "model_info": {
+            "decoding": {
+              "max_tokens": 4096,
+              "response_format": "json_schema",
+              "seed": 0,
+              "temperature": 0,
+              "thinking_enabled": false
+            },
+            "finish_reason": "stop",
+            "model": "qwen/qwen3.5-35b-a3b",
+            "provider": "openai_compatible",
+            "purpose": "dataset_reasoner:external::zenodo::record_15008662::unique_tracks_90.csv",
+            "response_id": "chatcmpl-y8vzumodqqilxqoj89nwl"
+          },
+          "model_responses": [
+            {
+              "model_info": {
+                "decoding": {
+                  "max_tokens": 4096,
+                  "response_format": "json_schema",
+                  "seed": 0,
+                  "temperature": 0,
+                  "thinking_enabled": false
+                },
+                "finish_reason": "stop",
+                "model": "qwen/qwen3.5-35b-a3b",
+                "provider": "openai_compatible",
+                "purpose": "dataset_reasoner:external::zenodo::record_15008662::unique_tracks_90.csv",
+                "response_id": "chatcmpl-y8vzumodqqilxqoj89nwl"
+              },
+              "parsed_response": {
+                "claims": [
+                  {
+                    "confidence": 0.85,
+                    "evidence_refs": [
+                      "S2"
+                    ],
+                    "field_path": "max_VIL",
+                    "property": "logical_type",
+                    "uncertainty_reason": "Derived from record description context",
+                    "value": "measurement"
+                  },
+                  {
+                    "confidence": 0.85,
+                    "evidence_refs": [
+                      "S2"
+                    ],
+                    "field_path": "max_VIL",
+                    "property": "semantic_type",
+                    "uncertainty_reason": "Derived from record description context",
+                    "value": "storm_intensity"
+                  }
+                ],
+                "notes": [
+                  "max_VIL is described as 'maximum vertically integrated liquid' in S2, indicating a measurement of storm intensity.",
+                  "No explicit unit provided in field metadata or evidence."
+                ],
+                "task_id": "external::zenodo::record_15008662::unique_tracks_90.csv"
+              },
+              "purpose": "dataset_reasoner:external::zenodo::record_15008662::unique_tracks_90.csv",
+              "raw_text": "{\n  \"task_id\": \"external::zenodo::record_15008662::unique_tracks_90.csv\",\n  \"claims\": [\n    {\n      \"field_path\": \"max_VIL\",\n      \"property\": \"logical_type\",\n      \"value\": \"measurement\",\n      \"evidence_refs\": [\"S2\"]\n    ,\n    \"confidence\": 0.85,\n    \"uncertainty_reason\": \"Derived from record description context\"\n    },\n    {\n      \"field_path\": \"max_VIL\",\n      \"property\": \"semantic_type\",\n      \"value\": \"storm_intensity\",\n      \"evidence_refs\": [\"S2\"],\n      \"confidence\": 0.85,\n      \"uncertainty_reason\": \"Derived from record description context\"\n    }\n  ]\n  ,\n  \"notes\": [\n    \"max_VIL is described as 'maximum vertically integrated liquid' in S2, indicating a measurement of storm intensity.\",\n    \"No explicit unit provided in field metadata or evidence.\"\n  ]\n}\n  ",
+              "request_hash": "701582edc2cc8985a451648a9bd08d8decede33dd36e3aa4176f1fc17cadd37c",
+              "response_hash": "eafcb7c4f424960e9a6b66deeedd6cabe05c91dc2b9285a08b100032fe25561f",
+              "telemetry": {
+                "cost_usd": 0.0,
+                "failed_calls": 0,
+                "input_tokens": 1973,
+                "latency_ms": 2762.139,
+                "model_calls": 1,
+                "output_tokens": 241
+              }
+            }
+          ],
+          "run_latency_ms": 0.0,
+          "status": "ok",
+          "task_id": "external::zenodo::record_15008662::unique_tracks_90.csv",
+          "telemetry": {
+            "cost_usd": 0.0,
+            "failed_calls": 0,
+            "input_tokens": 1973,
+            "latency_ms": 2762.139,
+            "model_calls": 1,
+            "output_tokens": 241
+          },
+          "variant_id": "B"
+        },
+        "c_response_hash": "eafcb7c4f424960e9a6b66deeedd6cabe05c91dc2b9285a08b100032fe25561f",
+        "c_run": {
+          "architecture": {
+            "dataset_reasoner_max_calls": 1,
+            "deterministic": true,
+            "reused_response_hash": "eafcb7c4f424960e9a6b66deeedd6cabe05c91dc2b9285a08b100032fe25561f",
+            "semantic_generation_calls": 0,
+            "verification_independence": "failure-mode independent from the model; no second-model truth claim",
+            "verifier": "deterministic_evidence_reference_and_conflict_checks"
+          },
+          "case_id": "unique_tracks_90.csv",
+          "claims": [
+            {
+              "claim_id": "A:max_VIL:physical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "max_VIL::F1",
+                "max_VIL::F2"
+              ],
+              "field_path": "max_VIL",
+              "property": "physical_type",
+              "source": "deterministic_baseline",
+              "value": "float",
+              "verification_level": "deterministically_verified",
+              "verification_status": "verified"
+            },
+            {
+              "claim_id": "A:max_VIL:logical_type:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "max_VIL::F1",
+                "max_VIL::F2"
+              ],
+              "field_path": "max_VIL",
+              "property": "logical_type",
+              "source": "deterministic_baseline",
+              "value": "unknown",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:max_VIL:semantic_type:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "max_VIL::F1",
+                "max_VIL::F2"
+              ],
+              "field_path": "max_VIL",
+              "property": "semantic_type",
+              "source": "deterministic_baseline",
+              "value": "unknown",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:max_VIL:unit:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "max_VIL::F1",
+                "max_VIL::F2"
+              ],
+              "field_path": "max_VIL",
+              "property": "unit",
+              "source": "deterministic_baseline",
+              "value": null,
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lat:physical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lat::F1",
+                "Lat::F2"
+              ],
+              "field_path": "Lat",
+              "property": "physical_type",
+              "source": "deterministic_baseline",
+              "value": "float",
+              "verification_level": "deterministically_verified",
+              "verification_status": "verified"
+            },
+            {
+              "claim_id": "A:Lat:logical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lat::F1",
+                "Lat::F2"
+              ],
+              "field_path": "Lat",
+              "property": "logical_type",
+              "source": "deterministic_baseline",
+              "value": "coordinate",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lat:semantic_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lat::F1",
+                "Lat::F2"
+              ],
+              "field_path": "Lat",
+              "property": "semantic_type",
+              "source": "deterministic_baseline",
+              "value": "latitude",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lat:unit:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "Lat::F1",
+                "Lat::F2"
+              ],
+              "field_path": "Lat",
+              "property": "unit",
+              "source": "deterministic_baseline",
+              "value": null,
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lon:physical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lon::F1",
+                "Lon::F2"
+              ],
+              "field_path": "Lon",
+              "property": "physical_type",
+              "source": "deterministic_baseline",
+              "value": "float",
+              "verification_level": "deterministically_verified",
+              "verification_status": "verified"
+            },
+            {
+              "claim_id": "A:Lon:logical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lon::F1",
+                "Lon::F2"
+              ],
+              "field_path": "Lon",
+              "property": "logical_type",
+              "source": "deterministic_baseline",
+              "value": "coordinate",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lon:semantic_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lon::F1",
+                "Lon::F2"
+              ],
+              "field_path": "Lon",
+              "property": "semantic_type",
+              "source": "deterministic_baseline",
+              "value": "longitude",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lon:unit:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "Lon::F1",
+                "Lon::F2"
+              ],
+              "field_path": "Lon",
+              "property": "unit",
+              "source": "deterministic_baseline",
+              "value": null,
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Date_time:physical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Date_time::F1",
+                "Date_time::F2"
+              ],
+              "field_path": "Date_time",
+              "property": "physical_type",
+              "source": "deterministic_baseline",
+              "value": "datetime",
+              "verification_level": "deterministically_verified",
+              "verification_status": "verified"
+            },
+            {
+              "claim_id": "A:Date_time:logical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Date_time::F1",
+                "Date_time::F2"
+              ],
+              "field_path": "Date_time",
+              "property": "logical_type",
+              "source": "deterministic_baseline",
+              "value": "time_axis",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Date_time:semantic_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Date_time::F1",
+                "Date_time::F2"
+              ],
+              "field_path": "Date_time",
+              "property": "semantic_type",
+              "source": "deterministic_baseline",
+              "value": "observation_time",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Date_time:unit:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "Date_time::F1",
+                "Date_time::F2"
+              ],
+              "field_path": "Date_time",
+              "property": "unit",
+              "source": "deterministic_baseline",
+              "value": null,
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "dataset_reasoner:max_VIL:logical_type:1",
+              "confidence": 0.85,
+              "decision": "accepted",
+              "decision_reason": "evidence references exist and are field-relevant; semantic entailment is not machine-verified",
+              "evidence_refs": [
+                "S2"
+              ],
+              "field_path": "max_VIL",
+              "property": "logical_type",
+              "source": "dataset_reasoner",
+              "value": "measurement",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "dataset_reasoner:max_VIL:semantic_type:2",
+              "confidence": 0.85,
+              "decision": "accepted",
+              "decision_reason": "evidence references exist and are field-relevant; semantic entailment is not machine-verified",
+              "evidence_refs": [
+                "S2"
+              ],
+              "field_path": "max_VIL",
+              "property": "semantic_type",
+              "source": "dataset_reasoner",
+              "value": "storm_intensity",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            }
+          ],
+          "evidence_catalog": [
+            {
+              "applicable_field_paths": [
+                "max_VIL"
+              ],
+              "detail": "header='max_VIL'",
+              "evidence_id": "max_VIL::F1",
+              "field_path": "max_VIL",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "csv_header",
+              "text": "header='max_VIL'"
+            },
+            {
+              "applicable_field_paths": [
+                "max_VIL"
+              ],
+              "detail": "sampled_rows=200",
+              "evidence_id": "max_VIL::F2",
+              "field_path": "max_VIL",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "sample_rows",
+              "text": "sampled_rows=200"
+            },
+            {
+              "applicable_field_paths": [
+                "Lat"
+              ],
+              "detail": "header='Lat'",
+              "evidence_id": "Lat::F1",
+              "field_path": "Lat",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "csv_header",
+              "text": "header='Lat'"
+            },
+            {
+              "applicable_field_paths": [
+                "Lat"
+              ],
+              "detail": "sampled_rows=200",
+              "evidence_id": "Lat::F2",
+              "field_path": "Lat",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "sample_rows",
+              "text": "sampled_rows=200"
+            },
+            {
+              "applicable_field_paths": [
+                "Lon"
+              ],
+              "detail": "header='Lon'",
+              "evidence_id": "Lon::F1",
+              "field_path": "Lon",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "csv_header",
+              "text": "header='Lon'"
+            },
+            {
+              "applicable_field_paths": [
+                "Lon"
+              ],
+              "detail": "sampled_rows=200",
+              "evidence_id": "Lon::F2",
+              "field_path": "Lon",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "sample_rows",
+              "text": "sampled_rows=200"
+            },
+            {
+              "applicable_field_paths": [
+                "Date_time"
+              ],
+              "detail": "header='Date_time'",
+              "evidence_id": "Date_time::F1",
+              "field_path": "Date_time",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "csv_header",
+              "text": "header='Date_time'"
+            },
+            {
+              "applicable_field_paths": [
+                "Date_time"
+              ],
+              "detail": "sampled_rows=200",
+              "evidence_id": "Date_time::F2",
+              "field_path": "Date_time",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "sample_rows",
+              "text": "sampled_rows=200"
+            },
+            {
+              "applicable_field_paths": [],
+              "detail": "record title",
+              "evidence_id": "S1",
+              "field_path": null,
+              "source_name": "external/zenodo/record_15008662/source_record.json",
+              "source_type": "record_title",
+              "text": "Tracked Hailstorm Events from Radar Data (unique_tracks_90.csv)"
+            },
+            {
+              "applicable_field_paths": [
+                "max_VIL"
+              ],
+              "detail": "record description",
+              "evidence_id": "S2",
+              "field_path": null,
+              "source_name": "external/zenodo/record_15008662/source_record.json",
+              "source_type": "record_description",
+              "text": "This dataset contains tracked hailstorm events based on radar-derived maximum vertically integrated liquid (max_VIL). The dataset provides key storm parameters such as latitude, longitude, timestamp , and storm intensity. The dataset was generated as part of the study \"Modulation of Severe Hailstorms in Alberta by Large-Scale Climate Teleconnections.\""
+            },
+            {
+              "applicable_field_paths": [
+                "max_VIL"
+              ],
+              "detail": "record keywords",
+              "evidence_id": "S3",
+              "field_path": null,
+              "source_name": "external/zenodo/record_15008662/source_record.json",
+              "source_type": "record_keywords",
+              "text": "Radar, Hailstorms, Max_VIL, Storm Tracks, Climate, CSV, Alberta"
+            }
+          ],
+          "issues": [],
+          "model_info": {
+            "decoding": {
+              "max_tokens": 4096,
+              "response_format": "json_schema",
+              "seed": 0,
+              "temperature": 0,
+              "thinking_enabled": false
+            },
+            "finish_reason": "stop",
+            "model": "qwen/qwen3.5-35b-a3b",
+            "provider": "openai_compatible",
+            "purpose": "dataset_reasoner:external::zenodo::record_15008662::unique_tracks_90.csv",
+            "replay_source_telemetry": {
+              "cost_usd": 0.0,
+              "failed_calls": 0,
+              "input_tokens": 1973,
+              "latency_ms": 2762.139,
+              "model_calls": 1,
+              "output_tokens": 241
+            },
+            "response_id": "chatcmpl-y8vzumodqqilxqoj89nwl",
+            "shared_reasoner_replay": true
+          },
+          "model_responses": [
+            {
+              "model_info": {
+                "decoding": {
+                  "max_tokens": 4096,
+                  "response_format": "json_schema",
+                  "seed": 0,
+                  "temperature": 0,
+                  "thinking_enabled": false
+                },
+                "finish_reason": "stop",
+                "model": "qwen/qwen3.5-35b-a3b",
+                "provider": "openai_compatible",
+                "purpose": "dataset_reasoner:external::zenodo::record_15008662::unique_tracks_90.csv",
+                "replay_source_telemetry": {
+                  "cost_usd": 0.0,
+                  "failed_calls": 0,
+                  "input_tokens": 1973,
+                  "latency_ms": 2762.139,
+                  "model_calls": 1,
+                  "output_tokens": 241
+                },
+                "response_id": "chatcmpl-y8vzumodqqilxqoj89nwl",
+                "shared_reasoner_replay": true
+              },
+              "parsed_response": {
+                "claims": [
+                  {
+                    "confidence": 0.85,
+                    "evidence_refs": [
+                      "S2"
+                    ],
+                    "field_path": "max_VIL",
+                    "property": "logical_type",
+                    "uncertainty_reason": "Derived from record description context",
+                    "value": "measurement"
+                  },
+                  {
+                    "confidence": 0.85,
+                    "evidence_refs": [
+                      "S2"
+                    ],
+                    "field_path": "max_VIL",
+                    "property": "semantic_type",
+                    "uncertainty_reason": "Derived from record description context",
+                    "value": "storm_intensity"
+                  }
+                ],
+                "notes": [
+                  "max_VIL is described as 'maximum vertically integrated liquid' in S2, indicating a measurement of storm intensity.",
+                  "No explicit unit provided in field metadata or evidence."
+                ],
+                "task_id": "external::zenodo::record_15008662::unique_tracks_90.csv"
+              },
+              "purpose": "dataset_reasoner:external::zenodo::record_15008662::unique_tracks_90.csv",
+              "raw_text": "{\n  \"task_id\": \"external::zenodo::record_15008662::unique_tracks_90.csv\",\n  \"claims\": [\n    {\n      \"field_path\": \"max_VIL\",\n      \"property\": \"logical_type\",\n      \"value\": \"measurement\",\n      \"evidence_refs\": [\"S2\"]\n    ,\n    \"confidence\": 0.85,\n    \"uncertainty_reason\": \"Derived from record description context\"\n    },\n    {\n      \"field_path\": \"max_VIL\",\n      \"property\": \"semantic_type\",\n      \"value\": \"storm_intensity\",\n      \"evidence_refs\": [\"S2\"],\n      \"confidence\": 0.85,\n      \"uncertainty_reason\": \"Derived from record description context\"\n    }\n  ]\n  ,\n  \"notes\": [\n    \"max_VIL is described as 'maximum vertically integrated liquid' in S2, indicating a measurement of storm intensity.\",\n    \"No explicit unit provided in field metadata or evidence.\"\n  ]\n}\n  ",
+              "request_hash": "701582edc2cc8985a451648a9bd08d8decede33dd36e3aa4176f1fc17cadd37c",
+              "response_hash": "eafcb7c4f424960e9a6b66deeedd6cabe05c91dc2b9285a08b100032fe25561f",
+              "telemetry": {
+                "cost_usd": 0.0,
+                "failed_calls": 0,
+                "input_tokens": 0,
+                "latency_ms": 0.0,
+                "model_calls": 0,
+                "output_tokens": 0
+              }
+            }
+          ],
+          "run_latency_ms": 0.0,
+          "status": "ok",
+          "task_id": "external::zenodo::record_15008662::unique_tracks_90.csv",
+          "telemetry": {
+            "cost_usd": 0.0,
+            "failed_calls": 0,
+            "input_tokens": 0,
+            "latency_ms": 0.0,
+            "model_calls": 0,
+            "output_tokens": 0
+          },
+          "variant_id": "C"
+        },
+        "case_id": "unique_tracks_90.csv",
+        "context_fit": true,
+        "contract_valid": true,
+        "max_call_input_tokens": 1973,
+        "physical_backend_invocations": 1,
+        "physical_model_calls": 1,
+        "repeat_index": 2,
+        "replay_identity_valid": true,
+        "semantic_target_count": 1,
+        "target_scope_evaluable": true,
+        "target_scope_valid": true,
+        "timeout": false,
+        "truncated": false
+      }
+    ],
+    "context_fit_observed_fraction": 1.0,
+    "context_fit_rate": 1.0,
+    "contract_valid_rate": 1.0,
+    "exact_repeatability_rate": 1.0,
+    "input_tokens": 3946,
+    "mean_latency_ms": 3128.8500000000004,
+    "output_tokens": 482,
+    "physical_model_calls": 2,
+    "repeat_count": 2,
+    "repeatability_by_case": {
+      "unique_tracks_90.csv": true
+    },
+    "replay_identity_rate": 1.0,
+    "target_scope_valid_rate": 1.0,
+    "timeout_rate": 0.0,
+    "truncation_rate": 0.0
+  },
+  "generated_at": "2026-07-16T01:48:18.925170+00:00",
+  "gold_accessed": false,
+  "legacy": {
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "case_id": "unique_tracks_90.csv",
+        "context_fit": true,
+        "contract_valid": true,
+        "d_run": {
+          "architecture": {
+            "deterministic": true,
+            "known_boundary": "non-empty evidence strings are not referentially validated",
+            "reasoner": "legacy per-field/manual-group scheduler",
+            "verifier": "legacy shape validation and merge"
+          },
+          "case_id": "unique_tracks_90.csv",
+          "claims": [
+            {
+              "claim_id": "A:max_VIL:physical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "max_VIL::F1",
+                "max_VIL::F2"
+              ],
+              "field_path": "max_VIL",
+              "property": "physical_type",
+              "source": "deterministic_baseline",
+              "value": "float",
+              "verification_level": "deterministically_verified",
+              "verification_status": "verified"
+            },
+            {
+              "claim_id": "A:max_VIL:logical_type:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "max_VIL::F1",
+                "max_VIL::F2"
+              ],
+              "field_path": "max_VIL",
+              "property": "logical_type",
+              "source": "deterministic_baseline",
+              "value": "unknown",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:max_VIL:semantic_type:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "max_VIL::F1",
+                "max_VIL::F2"
+              ],
+              "field_path": "max_VIL",
+              "property": "semantic_type",
+              "source": "deterministic_baseline",
+              "value": "unknown",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:max_VIL:unit:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "max_VIL::F1",
+                "max_VIL::F2"
+              ],
+              "field_path": "max_VIL",
+              "property": "unit",
+              "source": "deterministic_baseline",
+              "value": null,
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lat:physical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lat::F1",
+                "Lat::F2"
+              ],
+              "field_path": "Lat",
+              "property": "physical_type",
+              "source": "deterministic_baseline",
+              "value": "float",
+              "verification_level": "deterministically_verified",
+              "verification_status": "verified"
+            },
+            {
+              "claim_id": "A:Lat:logical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lat::F1",
+                "Lat::F2"
+              ],
+              "field_path": "Lat",
+              "property": "logical_type",
+              "source": "deterministic_baseline",
+              "value": "coordinate",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lat:semantic_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lat::F1",
+                "Lat::F2"
+              ],
+              "field_path": "Lat",
+              "property": "semantic_type",
+              "source": "deterministic_baseline",
+              "value": "latitude",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lat:unit:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "Lat::F1",
+                "Lat::F2"
+              ],
+              "field_path": "Lat",
+              "property": "unit",
+              "source": "deterministic_baseline",
+              "value": null,
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lon:physical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lon::F1",
+                "Lon::F2"
+              ],
+              "field_path": "Lon",
+              "property": "physical_type",
+              "source": "deterministic_baseline",
+              "value": "float",
+              "verification_level": "deterministically_verified",
+              "verification_status": "verified"
+            },
+            {
+              "claim_id": "A:Lon:logical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lon::F1",
+                "Lon::F2"
+              ],
+              "field_path": "Lon",
+              "property": "logical_type",
+              "source": "deterministic_baseline",
+              "value": "coordinate",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lon:semantic_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Lon::F1",
+                "Lon::F2"
+              ],
+              "field_path": "Lon",
+              "property": "semantic_type",
+              "source": "deterministic_baseline",
+              "value": "longitude",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Lon:unit:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "Lon::F1",
+                "Lon::F2"
+              ],
+              "field_path": "Lon",
+              "property": "unit",
+              "source": "deterministic_baseline",
+              "value": null,
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Date_time:physical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Date_time::F1",
+                "Date_time::F2"
+              ],
+              "field_path": "Date_time",
+              "property": "physical_type",
+              "source": "deterministic_baseline",
+              "value": "datetime",
+              "verification_level": "deterministically_verified",
+              "verification_status": "verified"
+            },
+            {
+              "claim_id": "A:Date_time:logical_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Date_time::F1",
+                "Date_time::F2"
+              ],
+              "field_path": "Date_time",
+              "property": "logical_type",
+              "source": "deterministic_baseline",
+              "value": "time_axis",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Date_time:semantic_type:0",
+              "confidence": 1.0,
+              "decision": "accepted",
+              "decision_reason": "deterministic output",
+              "evidence_refs": [
+                "Date_time::F1",
+                "Date_time::F2"
+              ],
+              "field_path": "Date_time",
+              "property": "semantic_type",
+              "source": "deterministic_baseline",
+              "value": "observation_time",
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "A:Date_time:unit:0",
+              "confidence": 1.0,
+              "decision": "abstained",
+              "decision_reason": "deterministic output is unknown or not applicable",
+              "evidence_refs": [
+                "Date_time::F1",
+                "Date_time::F2"
+              ],
+              "field_path": "Date_time",
+              "property": "unit",
+              "source": "deterministic_baseline",
+              "value": null,
+              "verification_level": "evidence_grounded",
+              "verification_status": "supported"
+            },
+            {
+              "claim_id": "D:max_VIL:semantic_type:1",
+              "confidence": 0.85,
+              "decision": "accepted",
+              "decision_reason": "legacy merge accepted a non-empty evidence string",
+              "evidence_refs": [
+                "S2"
+              ],
+              "field_path": "max_VIL",
+              "property": "semantic_type",
+              "source": "legacy_per_field_reasoner",
+              "value": "storm_intensity",
+              "verification_level": "unverified",
+              "verification_status": "not_checked"
+            },
+            {
+              "claim_id": "D:max_VIL:logical_type:1",
+              "confidence": 0.85,
+              "decision": "accepted",
+              "decision_reason": "legacy merge accepted a non-empty evidence string",
+              "evidence_refs": [
+                "S2"
+              ],
+              "field_path": "max_VIL",
+              "property": "logical_type",
+              "source": "legacy_per_field_reasoner",
+              "value": "measurement",
+              "verification_level": "unverified",
+              "verification_status": "not_checked"
+            }
+          ],
+          "evidence_catalog": [
+            {
+              "applicable_field_paths": [
+                "max_VIL"
+              ],
+              "detail": "header='max_VIL'",
+              "evidence_id": "max_VIL::F1",
+              "field_path": "max_VIL",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "csv_header",
+              "text": "header='max_VIL'"
+            },
+            {
+              "applicable_field_paths": [
+                "max_VIL"
+              ],
+              "detail": "sampled_rows=200",
+              "evidence_id": "max_VIL::F2",
+              "field_path": "max_VIL",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "sample_rows",
+              "text": "sampled_rows=200"
+            },
+            {
+              "applicable_field_paths": [
+                "Lat"
+              ],
+              "detail": "header='Lat'",
+              "evidence_id": "Lat::F1",
+              "field_path": "Lat",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "csv_header",
+              "text": "header='Lat'"
+            },
+            {
+              "applicable_field_paths": [
+                "Lat"
+              ],
+              "detail": "sampled_rows=200",
+              "evidence_id": "Lat::F2",
+              "field_path": "Lat",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "sample_rows",
+              "text": "sampled_rows=200"
+            },
+            {
+              "applicable_field_paths": [
+                "Lon"
+              ],
+              "detail": "header='Lon'",
+              "evidence_id": "Lon::F1",
+              "field_path": "Lon",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "csv_header",
+              "text": "header='Lon'"
+            },
+            {
+              "applicable_field_paths": [
+                "Lon"
+              ],
+              "detail": "sampled_rows=200",
+              "evidence_id": "Lon::F2",
+              "field_path": "Lon",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "sample_rows",
+              "text": "sampled_rows=200"
+            },
+            {
+              "applicable_field_paths": [
+                "Date_time"
+              ],
+              "detail": "header='Date_time'",
+              "evidence_id": "Date_time::F1",
+              "field_path": "Date_time",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "csv_header",
+              "text": "header='Date_time'"
+            },
+            {
+              "applicable_field_paths": [
+                "Date_time"
+              ],
+              "detail": "sampled_rows=200",
+              "evidence_id": "Date_time::F2",
+              "field_path": "Date_time",
+              "source_name": "D:\\github\\searnxg\\llm-schema\\high_fidelity_schema_study\\data\\external\\zenodo\\record_15008662\\unique_tracks_90.csv",
+              "source_type": "sample_rows",
+              "text": "sampled_rows=200"
+            },
+            {
+              "applicable_field_paths": [],
+              "detail": "record title",
+              "evidence_id": "S1",
+              "field_path": null,
+              "source_name": "external/zenodo/record_15008662/source_record.json",
+              "source_type": "record_title",
+              "text": "Tracked Hailstorm Events from Radar Data (unique_tracks_90.csv)"
+            },
+            {
+              "applicable_field_paths": [
+                "max_VIL"
+              ],
+              "detail": "record description",
+              "evidence_id": "S2",
+              "field_path": null,
+              "source_name": "external/zenodo/record_15008662/source_record.json",
+              "source_type": "record_description",
+              "text": "This dataset contains tracked hailstorm events based on radar-derived maximum vertically integrated liquid (max_VIL). The dataset provides key storm parameters such as latitude, longitude, timestamp , and storm intensity. The dataset was generated as part of the study \"Modulation of Severe Hailstorms in Alberta by Large-Scale Climate Teleconnections.\""
+            },
+            {
+              "applicable_field_paths": [
+                "max_VIL"
+              ],
+              "detail": "record keywords",
+              "evidence_id": "S3",
+              "field_path": null,
+              "source_name": "external/zenodo/record_15008662/source_record.json",
+              "source_type": "record_keywords",
+              "text": "Radar, Hailstorms, Max_VIL, Storm Tracks, Climate, CSV, Alberta"
+            }
+          ],
+          "issues": [],
+          "model_info": {
+            "attempts": [
+              {
+                "error": "model response for legacy_per_field:external::zenodo::record_15008662::unique_tracks_90.csv:0:json_schema=false was not valid contract JSON: Expecting value: line 1 column 1 (char 0)",
+                "model_info": {
+                  "decoding": {
+                    "max_tokens": 1000,
+                    "response_format": null,
+                    "seed": null,
+                    "temperature": 0.2,
+                    "thinking_enabled": false
+                  },
+                  "finish_reason": "length",
+                  "model": "qwen/qwen3.5-35b-a3b",
+                  "provider": "openai_compatible",
+                  "purpose": "legacy_per_field:external::zenodo::record_15008662::unique_tracks_90.csv:0:json_schema=false",
+                  "response_id": "chatcmpl-a704wqt66cugdg6rc091tr"
+                },
+                "purpose": "legacy_per_field:external::zenodo::record_15008662::unique_tracks_90.csv:0:json_schema=false",
+                "raw_text": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   **Role:** Evidence-constrained semantic schema annotator.\n    *   **Output Format:** Strict JSON only (no markdown, no reasoning outside JSON).\n    *   **Top-level Keys:** `task_id`, `annotations`, `conflicts`, `notes`.\n    *   **Task ID:** Must use the provided `task_id` exactly (`external::zenodo::record_15008662::unique_tracks_90.csv`).\n    *   **Allowed Logical Types:** `identifier`, `time_axis`, `measurement`, `coordinate`, `label`, `attribute`, `relationship`, `unknown`.\n    *   **Annotation Targets:** Only annotate fields listed in `annotation_targets` (here: `max_VIL`).\n    *   **Constraints:**\n        *   If evidence supports a logical role but not precise semantic_type, set `logical_type` and keep `semantic_type` as `unknown`.\n        *   Use `semantic_logical_hint` if present and not contradicted.\n        *   For non-unknown `semantic_type`, `logical_type` override, or unit claim, include at least one supporting_evidence item (from `available_evidence`).\n        *   If evidence is insufficient, keep `semantic_type` as `unknown` and explain `uncertainty_reason`.\n    *   **Input Data:** A JSON object describing a task with metadata about the field `max_VIL`, including context fields (`Lat`, `Lon`, `Date_time`), grounding snippets (record title, description, keywords), and evidence items.\n\n2.  **Analyze the Target Field (`max_VIL`):**\n    *   **Field Name:** `max_VIL`\n    *   **Physical Type:** `float`\n    *   **Example Values:** `48.8037`, `35.0852` (numeric)\n    *   **Value Range:** `30.001` to `124.567` (numeric)\n    *   **Context/Description:** \"This dataset contains tracked hailstorm events based on radar-derived maximum vertically integrated liquid (max_VIL).\" (Grounding Snippet S2/S3 in input context, specifically record description).\n    *   **Evidence Available:**\n        *   F1: `csv_header: header='max_VIL'`\n        *   F2: `sample_rows: sampled_rows=200`\n        *   S1: \"This dataset contains tracked hailstorm events based on radar-derived maximum vertically integrated liquid (max_VIL). The dataset provides key storm parameters such as latitude, lo\"\n        *   S2: \"Radar, Hailstorms, Max_VIL, Storm Tracks, Climate, CSV, Alberta\"\n    *   **Logical Type Decision:** The field represents a quantitative value derived from radar data (\"maximum vertically integrated liquid\"). It is numeric (float). This fits `measurement`.\n    *   **Semantic Type Decision:** \"Vertically Integrated Liquid\" (VIL) is a specific meteorological quantity representing the total mass of precipitation in a column. However, without explicit unit metadata in the field definition (e.g., kg/m^2), inferring the exact physical semantic type might be risky but highly probable given the description. The instructions say: \"For any non-unknown semantic_type... include at least one supporting_evidence item.\"\n    *   **Evidence Support:** S1 explicitly states \"radar-derived maximum vertically integrated liquid (max_VIL)\". This supports `measurement` and suggests a specific physical quantity. However, standard schema annotation often requires unit confirmation for precise semantic types like `precipitation_amount`. Given the instruction \"Treat source-record descriptions and notes as weaker than explicit field metadata\", but also \"If evidence is insufficient, keep semantic_type as unknown\".\n    *   **Refinement:** The description S1 explicitly defines what `max_VIL` stands for (\"maximum vertically integrated liquid\"). This is strong evidence for a specific physical quantity. In meteorology, VIL is measured in kg/m^2 or similar mass per area units. However, the field metadata doesn't specify the unit.\n    *   **Decision:**\n        *   `logical_type`: `measurement` (Supported by S1 describing it as a parameter derived from radar, numeric values).\n        *   `semantic_type`: `precipitation_intensity` or `liquid_water_content`? VIL is specifically \"Vertically Integrated Liquid\". A safe semantic type might be `unknown` if strict unit evidence is missing, OR `measurement_quantity` if generic. However, S1 says \"maximum vertically integrated liquid\". This is a specific physical quantity. Let's look at the instruction:",
+                "request_hash": "b1704ed6be8fc05705649b70153c0c6ee1abda127189e07ff1cbacd7f290bd5c",
+                "telemetry": {
+                  "cost_usd": 0.0,
+                  "failed_calls": 1,
+                  "input_tokens": 1343,
+                  "latency_ms": 8555.012,
+                  "model_calls": 1,
+                  "output_tokens": 1000
+                }
+              },
+              {
+                "model_info": {
+                  "decoding": {
+                    "max_tokens": 1000,
+                    "response_format": "json_schema",
+                    "seed": null,
+                    "temperature": 0.2,
+                    "thinking_enabled": false
+                  },
+                  "finish_reason": "stop",
+                  "model": "qwen/qwen3.5-35b-a3b",
+                  "provider": "openai_compatible",
+                  "purpose": "legacy_per_field:external::zenodo::record_15008662::unique_tracks_90.csv:0:json_schema=true",
+                  "response_id": "chatcmpl-lm1at1u089sw8flg0yn6c"
+                },
+                "parsed_response": {
+                  "annotations": [
+                    {
+                      "confidence": 0.85,
+                      "description": "Maximum vertically integrated liquid from radar data",
+                      "field_path": "max_VIL",
+                      "logical_type": "measurement",
+                      "semantic_type": "storm_intensity",
+                      "supporting_evidence": [
+                        "S1"
+                      ],
+                      "uncertainty_reason": "Unit not explicitly provided in metadata; semantic_type inferred from context description.",
+                      "unit": null
+                    }
+                  ],
+                  "conflicts": [],
+                  "notes": [
+                    "Field name 'max_VIL' and dataset description indicate radar-derived maximum vertically integrated liquid. Physical type is float, supporting measurement logical_type.",
+                    "Context fields (Lat, Lon) confirm this is a storm tracking dataset where max_VIL represents intensity."
+                  ],
+                  "task_id": "external::zenodo::record_15008662::unique_tracks_90.csv"
+                },
+                "purpose": "legacy_per_field:external::zenodo::record_15008662::unique_tracks_90.csv:0:json_schema=true",
+                "raw_text": "{\n  \"task_id\": \"external::zenodo::record_15008662::unique_tracks_90.csv\",\n  \"annotations\": [\n    {\n      \"field_path\": \"max_VIL\",\n      \"semantic_type\": \"storm_intensity\",\n      \"logical_type\": \"measurement\",\n      \"unit\": null,\n      \"description\": \"Maximum vertically integrated liquid from radar data\",\n      \"supporting_evidence\": [\"S1\"],\n      \"confidence\": 0.85,\n      \"uncertainty_reason\": \"Unit not explicitly provided in metadata; semantic_type inferred from context description.\"\n    }\n  ],\n  \"conflicts\": [],\n  \"notes\": [\n    \"Field name 'max_VIL' and dataset description indicate radar-derived maximum vertically integrated liquid. Physical type is float, supporting measurement logical_type.\",\n    \"Context fields (Lat, Lon) confirm this is a storm tracking dataset where max_VIL represents intensity.\"\n  ]\n}\n",
+                "request_hash": "e5e929467c9bb2cdc24675f16b0e96d9703a18e0145763078d1dafcc600d21bd",
+                "response_hash": "1eb2ab867a1758999104d6f1e8b616a07466bd1169d6d3df5b9d9f78c5ebf67e",
+                "telemetry": {
+                  "cost_usd": 0.0,
+                  "failed_calls": 0,
+                  "input_tokens": 1343,
+                  "latency_ms": 1966.239,
+                  "model_calls": 1,
+                  "output_tokens": 217
+                }
+              }
+            ],
+            "decoding": {
+              "max_tokens": 1000,
+              "response_format": "json_schema",
+              "seed": null,
+              "temperature": 0.2,
+              "thinking_enabled": false
+            },
+            "finish_reason": "stop",
+            "legacy_request_policy": "free_json_then_json_schema",
+            "model": "qwen/qwen3.5-35b-a3b",
+            "provider": "openai_compatible",
+            "purpose": "legacy_per_field:external::zenodo::record_15008662::unique_tracks_90.csv:0:json_schema=true",
+            "response_id": "chatcmpl-lm1at1u089sw8flg0yn6c"
+          },
+          "model_responses": [
+            {
+              "model_info": {
+                "attempts": [
+                  {
+                    "error": "model response for legacy_per_field:external::zenodo::record_15008662::unique_tracks_90.csv:0:json_schema=false was not valid contract JSON: Expecting value: line 1 column 1 (char 0)",
+                    "model_info": {
+                      "decoding": {
+                        "max_tokens": 1000,
+                        "response_format": null,
+                        "seed": null,
+                        "temperature": 0.2,
+                        "thinking_enabled": false
+                      },
+                      "finish_reason": "length",
+                      "model": "qwen/qwen3.5-35b-a3b",
+                      "provider": "openai_compatible",
+                      "purpose": "legacy_per_field:external::zenodo::record_15008662::unique_tracks_90.csv:0:json_schema=false",
+                      "response_id": "chatcmpl-a704wqt66cugdg6rc091tr"
+                    },
+                    "purpose": "legacy_per_field:external::zenodo::record_15008662::unique_tracks_90.csv:0:json_schema=false",
+                    "raw_text": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   **Role:** Evidence-constrained semantic schema annotator.\n    *   **Output Format:** Strict JSON only (no markdown, no reasoning outside JSON).\n    *   **Top-level Keys:** `task_id`, `annotations`, `conflicts`, `notes`.\n    *   **Task ID:** Must use the provided `task_id` exactly (`external::zenodo::record_15008662::unique_tracks_90.csv`).\n    *   **Allowed Logical Types:** `identifier`, `time_axis`, `measurement`, `coordinate`, `label`, `attribute`, `relationship`, `unknown`.\n    *   **Annotation Targets:** Only annotate fields listed in `annotation_targets` (here: `max_VIL`).\n    *   **Constraints:**\n        *   If evidence supports a logical role but not precise semantic_type, set `logical_type` and keep `semantic_type` as `unknown`.\n        *   Use `semantic_logical_hint` if present and not contradicted.\n        *   For non-unknown `semantic_type`, `logical_type` override, or unit claim, include at least one supporting_evidence item (from `available_evidence`).\n        *   If evidence is insufficient, keep `semantic_type` as `unknown` and explain `uncertainty_reason`.\n    *   **Input Data:** A JSON object describing a task with metadata about the field `max_VIL`, including context fields (`Lat`, `Lon`, `Date_time`), grounding snippets (record title, description, keywords), and evidence items.\n\n2.  **Analyze the Target Field (`max_VIL`):**\n    *   **Field Name:** `max_VIL`\n    *   **Physical Type:** `float`\n    *   **Example Values:** `48.8037`, `35.0852` (numeric)\n    *   **Value Range:** `30.001` to `124.567` (numeric)\n    *   **Context/Description:** \"This dataset contains tracked hailstorm events based on radar-derived maximum vertically integrated liquid (max_VIL).\" (Grounding Snippet S2/S3 in input context, specifically record description).\n    *   **Evidence Available:**\n        *   F1: `csv_header: header='max_VIL'`\n        *   F2: `sample_rows: sampled_rows=200`\n        *   S1: \"This dataset contains tracked hailstorm events based on radar-derived maximum vertically integrated liquid (max_VIL). The dataset provides key storm parameters such as latitude, lo\"\n        *   S2: \"Radar, Hailstorms, Max_VIL, Storm Tracks, Climate, CSV, Alberta\"\n    *   **Logical Type Decision:** The field represents a quantitative value derived from radar data (\"maximum vertically integrated liquid\"). It is numeric (float). This fits `measurement`.\n    *   **Semantic Type Decision:** \"Vertically Integrated Liquid\" (VIL) is a specific meteorological quantity representing the total mass of precipitation in a column. However, without explicit unit metadata in the field definition (e.g., kg/m^2), inferring the exact physical semantic type might be risky but highly probable given the description. The instructions say: \"For any non-unknown semantic_type... include at least one supporting_evidence item.\"\n    *   **Evidence Support:** S1 explicitly states \"radar-derived maximum vertically integrated liquid (max_VIL)\". This supports `measurement` and suggests a specific physical quantity. However, standard schema annotation often requires unit confirmation for precise semantic types like `precipitation_amount`. Given the instruction \"Treat source-record descriptions and notes as weaker than explicit field metadata\", but also \"If evidence is insufficient, keep semantic_type as unknown\".\n    *   **Refinement:** The description S1 explicitly defines what `max_VIL` stands for (\"maximum vertically integrated liquid\"). This is strong evidence for a specific physical quantity. In meteorology, VIL is measured in kg/m^2 or similar mass per area units. However, the field metadata doesn't specify the unit.\n    *   **Decision:**\n        *   `logical_type`: `measurement` (Supported by S1 describing it as a parameter derived from radar, numeric values).\n        *   `semantic_type`: `precipitation_intensity` or `liquid_water_content`? VIL is specifically \"Vertically Integrated Liquid\". A safe semantic type might be `unknown` if strict unit evidence is missing, OR `measurement_quantity` if generic. However, S1 says \"maximum vertically integrated liquid\". This is a specific physical quantity. Let's look at the instruction:",
+                    "request_hash": "b1704ed6be8fc05705649b70153c0c6ee1abda127189e07ff1cbacd7f290bd5c",
+                    "telemetry": {
+                      "cost_usd": 0.0,
+                      "failed_calls": 1,
+                      "input_tokens": 1343,
+                      "latency_ms": 8555.012,
+                      "model_calls": 1,
+                      "output_tokens": 1000
+                    }
+                  },
+                  {
+                    "model_info": {
+                      "decoding": {
+                        "max_tokens": 1000,
+                        "response_format": "json_schema",
+                        "seed": null,
+                        "temperature": 0.2,
+                        "thinking_enabled": false
+                      },
+                      "finish_reason": "stop",
+                      "model": "qwen/qwen3.5-35b-a3b",
+                      "provider": "openai_compatible",
+                      "purpose": "legacy_per_field:external::zenodo::record_15008662::unique_tracks_90.csv:0:json_schema=true",
+                      "response_id": "chatcmpl-lm1at1u089sw8flg0yn6c"
+                    },
+                    "parsed_response": {
+                      "annotations": [
+                        {
+                          "confidence": 0.85,
+                          "description": "Maximum vertically integrated liquid from radar data",
+                          "field_path": "max_VIL",
+                          "logical_type": "measurement",
+                          "semantic_type": "storm_intensity",
+                          "supporting_evidence": [
+                            "S1"
+                          ],
+                          "uncertainty_reason": "Unit not explicitly provided in metadata; semantic_type inferred from context description.",
+                          "unit": null
+                        }
+                      ],
+                      "conflicts": [],
+                      "notes": [
+                        "Field name 'max_VIL' and dataset description indicate radar-derived maximum vertically integrated liquid. Physical type is float, supporting measurement logical_type.",
+                        "Context fields (Lat, Lon) confirm this is a storm tracking dataset where max_VIL represents intensity."
+                      ],
+                      "task_id": "external::zenodo::record_15008662::unique_tracks_90.csv"
+                    },
+                    "purpose": "legacy_per_field:external::zenodo::record_15008662::unique_tracks_90.csv:0:json_schema=true",
+                    "raw_text": "{\n  \"task_id\": \"external::zenodo::record_15008662::unique_tracks_90.csv\",\n  \"annotations\": [\n    {\n      \"field_path\": \"max_VIL\",\n      \"semantic_type\": \"storm_intensity\",\n      \"logical_type\": \"measurement\",\n      \"unit\": null,\n      \"description\": \"Maximum vertically integrated liquid from radar data\",\n      \"supporting_evidence\": [\"S1\"],\n      \"confidence\": 0.85,\n      \"uncertainty_reason\": \"Unit not explicitly provided in metadata; semantic_type inferred from context description.\"\n    }\n  ],\n  \"conflicts\": [],\n  \"notes\": [\n    \"Field name 'max_VIL' and dataset description indicate radar-derived maximum vertically integrated liquid. Physical type is float, supporting measurement logical_type.\",\n    \"Context fields (Lat, Lon) confirm this is a storm tracking dataset where max_VIL represents intensity.\"\n  ]\n}\n",
+                    "request_hash": "e5e929467c9bb2cdc24675f16b0e96d9703a18e0145763078d1dafcc600d21bd",
+                    "response_hash": "1eb2ab867a1758999104d6f1e8b616a07466bd1169d6d3df5b9d9f78c5ebf67e",
+                    "telemetry": {
+                      "cost_usd": 0.0,
+                      "failed_calls": 0,
+                      "input_tokens": 1343,
+                      "latency_ms": 1966.239,
+                      "model_calls": 1,
+                      "output_tokens": 217
+                    }
+                  }
+                ],
+                "decoding": {
+                  "max_tokens": 1000,
+                  "response_format": "json_schema",
+                  "seed": null,
+                  "temperature": 0.2,
+                  "thinking_enabled": false
+                },
+                "finish_reason": "stop",
+                "legacy_request_policy": "free_json_then_json_schema",
+                "model": "qwen/qwen3.5-35b-a3b",
+                "provider": "openai_compatible",
+                "purpose": "legacy_per_field:external::zenodo::record_15008662::unique_tracks_90.csv:0:json_schema=true",
+                "response_id": "chatcmpl-lm1at1u089sw8flg0yn6c"
+              },
+              "parsed_response": {
+                "annotations": [
+                  {
+                    "confidence": 0.85,
+                    "description": "Maximum vertically integrated liquid from radar data",
+                    "field_path": "max_VIL",
+                    "logical_type": "measurement",
+                    "semantic_type": "storm_intensity",
+                    "supporting_evidence": [
+                      "S1"
+                    ],
+                    "uncertainty_reason": "Unit not explicitly provided in metadata; semantic_type inferred from context description.",
+                    "unit": null
+                  }
+                ],
+                "conflicts": [],
+                "notes": [
+                  "Field name 'max_VIL' and dataset description indicate radar-derived maximum vertically integrated liquid. Physical type is float, supporting measurement logical_type.",
+                  "Context fields (Lat, Lon) confirm this is a storm tracking dataset where max_VIL represents intensity."
+                ],
+                "task_id": "external::zenodo::record_15008662::unique_tracks_90.csv"
+              },
+              "purpose": "legacy_per_field:external::zenodo::record_15008662::unique_tracks_90.csv:0",
+              "raw_text": "{\n  \"task_id\": \"external::zenodo::record_15008662::unique_tracks_90.csv\",\n  \"annotations\": [\n    {\n      \"field_path\": \"max_VIL\",\n      \"semantic_type\": \"storm_intensity\",\n      \"logical_type\": \"measurement\",\n      \"unit\": null,\n      \"description\": \"Maximum vertically integrated liquid from radar data\",\n      \"supporting_evidence\": [\"S1\"],\n      \"confidence\": 0.85,\n      \"uncertainty_reason\": \"Unit not explicitly provided in metadata; semantic_type inferred from context description.\"\n    }\n  ],\n  \"conflicts\": [],\n  \"notes\": [\n    \"Field name 'max_VIL' and dataset description indicate radar-derived maximum vertically integrated liquid. Physical type is float, supporting measurement logical_type.\",\n    \"Context fields (Lat, Lon) confirm this is a storm tracking dataset where max_VIL represents intensity.\"\n  ]\n}\n",
+              "request_hash": "e5e929467c9bb2cdc24675f16b0e96d9703a18e0145763078d1dafcc600d21bd",
+              "response_hash": "1eb2ab867a1758999104d6f1e8b616a07466bd1169d6d3df5b9d9f78c5ebf67e",
+              "telemetry": {
+                "cost_usd": 0.0,
+                "failed_calls": 1,
+                "input_tokens": 2686,
+                "latency_ms": 10521.252,
+                "model_calls": 2,
+                "output_tokens": 1217
+              }
+            }
+          ],
+          "run_latency_ms": 0.0,
+          "status": "ok",
+          "task_id": "external::zenodo::record_15008662::unique_tracks_90.csv",
+          "telemetry": {
+            "cost_usd": 0.0,
+            "failed_calls": 1,
+            "input_tokens": 2686,
+            "latency_ms": 10521.252,
+            "model_calls": 2,
+            "output_tokens": 1217
+          },
+          "variant_id": "D"
+        },
+        "max_call_input_tokens": 2686,
+        "normalized_claims_sha256": "631661982f84e38172f976d56cc270a8f63cc19df345676376191a0cda0f7ab4",
+        "physical_backend_invocations": 1,
+        "physical_model_calls": 2,
+        "repeat_index": 1,
+        "semantic_target_count": 1,
+        "timeout": false,
+        "truncated": false
+      }
+    ],
+    "context_fit_observed_fraction": 1.0,
+    "context_fit_rate": 1.0,
+    "contract_valid_rate": 1.0,
+    "exact_output_repeatability_rate": null,
+    "input_tokens": 2686,
+    "mean_latency_ms": 10521.252,
+    "output_tokens": 1217,
+    "physical_model_calls": 2,
+    "repeat_count": 1,
+    "repeatability_by_case": {
+      "unique_tracks_90.csv": null
+    },
+    "timeout_rate": 0.0,
+    "truncation_rate": 0.0
+  },
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "research_evidence_status": "non_blind_operational_qualification_only",
+  "schema_version": "semantic-backend-qualification/v1",
+  "semantic_opportunity_case_count": 1,
+  "semantic_opportunity_case_ids": [
+    "unique_tracks_90.csv"
+  ]
+}

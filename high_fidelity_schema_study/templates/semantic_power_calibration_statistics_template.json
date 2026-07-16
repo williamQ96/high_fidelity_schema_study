@@ -1,0 +1,6 @@
+{
+  "schema_version": "semantic-power-calibration-statistics/v1",
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "research_evidence_status": "non_blind_power_calibration_only",
+  "note": "Generated only by semantic_power_calibration.py from a non-blind v3 evaluator report and its frozen calibration manifest. Do not fill manually."
+}

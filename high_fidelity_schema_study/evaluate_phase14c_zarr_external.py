@@ -125,7 +125,6 @@ def _evidence_checks(schema: Dict[str, Any]) -> list[bool]:
 def _canonical_checks(case: Dict[str, Any], outcome: Dict[str, Any], portable: bool) -> Dict[str, bool]:
     schema = outcome.get("schema") or {}
     fields = _field_map(schema)
-    analyses = _analysis_map(schema)
     issue_codes = {item.get("code") for item in outcome.get("issues", [])}
     gap_codes = {
         item.get("code")

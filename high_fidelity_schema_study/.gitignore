@@ -11,6 +11,13 @@ __pycache__/
 # Local scratch / rendered previews.
 tmp/
 
+# LaTeX build intermediates. Rendered paper PDFs remain versioned.
+paper/build/*.aux
+paper/build/*.bbl
+paper/build/*.blg
+paper/build/*.log
+paper/build/*.out
+
 # Presentation build dependencies are reproducible from the runtime.
 docs/presentation/node_modules/
 

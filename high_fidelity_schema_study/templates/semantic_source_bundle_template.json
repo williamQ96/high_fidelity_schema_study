@@ -1,0 +1,30 @@
+{
+  "schema_version": "semantic-source-bundle/v1",
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "dataset_id": "replace-with-dataset-id",
+  "annotation_packet_file": "replace-with-neutral-packet-path.json",
+  "annotation_packet_sha256": "replace-with-64-hex-sha256",
+  "vocabulary_file": "replace-with-frozen-vocabulary-path.json",
+  "vocabulary_sha256": "replace-with-64-hex-sha256",
+  "sources": [
+    {
+      "source_id": "SRC1",
+      "source_type": "original_dataset_or_approved_documentation",
+      "source_file": "replace-with-approved-source-path",
+      "source_sha256": "replace-with-64-hex-sha256"
+    }
+  ],
+  "evidence_catalog": [
+    {
+      "catalog_evidence_id": "B1",
+      "source_id": "SRC1",
+      "source_type": "structural",
+      "source_sha256": "replace-with-64-hex-sha256",
+      "selector": "exact-locatable-selector",
+      "applicable_field_paths": [
+        "temperature"
+      ],
+      "strength": "structural"
+    }
+  ]
+}

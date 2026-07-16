@@ -1,0 +1,220 @@
+{
+  "annotation_properties": [
+    "physical_type",
+    "logical_type",
+    "semantic_type",
+    "unit"
+  ],
+  "annotator_instructions": [
+    "Annotate independently using the frozen handbook.",
+    "Do not inspect existing gold, semantic model output, or another annotator artifact before submission.",
+    "Assign applicability before assigning each value.",
+    "Cite exact packet evidence or independently frozen raw-source evidence for every known value."
+  ],
+  "approved_evidence": [
+    {
+      "detail": "local pilot dataset README",
+      "evidence_id": "S1",
+      "source_name": "raw/time_series/ts_easy_hourly_weather/README.md",
+      "source_type": "dataset_readme",
+      "text": "# ts_easy_hourly_weather\n\nRegular hourly weather observations from a single station.\n\n- `timestamp` is local standard time with no daylight-saving transitions in this excerpt\n- `temp_C` is air temperature in Celsius\n- `humidity_pct` is relative humidity in percent\n- `wind_speed_m_s` is wind speed in meters per second"
+    }
+  ],
+  "case_id": "ts_easy_hourly_weather",
+  "data_modality": "time_series",
+  "dataset_id": "ts_easy_hourly_weather",
+  "evidence_policy": {
+    "allowed_evidence_types": [
+      "csv_header",
+      "hdf5_attribute",
+      "hdf5_dataset_path",
+      "sample_rows"
+    ],
+    "derived_semantic_hints_removed": true,
+    "mode": "allowlisted_raw_observations_only"
+  },
+  "field_inventory": [
+    {
+      "example_values": [
+        "ST001"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "station_id",
+      "field_path": "station_id",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='station_id'",
+          "evidence_id": "station_id::F1",
+          "evidence_type": "csv_header",
+          "source_label": "hourly_weather.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=5",
+          "evidence_id": "station_id::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "hourly_weather.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.2,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "2026-01-01 00:00:00",
+        "2026-01-01 01:00:00",
+        "2026-01-01 02:00:00"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "timestamp",
+      "field_path": "timestamp",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "datetime",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='timestamp'",
+          "evidence_id": "timestamp::F1",
+          "evidence_type": "csv_header",
+          "source_label": "hourly_weather.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=5",
+          "evidence_id": "timestamp::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "hourly_weather.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "12.5",
+        "12.1",
+        "11.7"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "temp_C",
+      "field_path": "temp_C",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='temp_C'",
+          "evidence_id": "temp_C::F1",
+          "evidence_type": "csv_header",
+          "source_label": "hourly_weather.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=5",
+          "evidence_id": "temp_C::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "hourly_weather.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        10.9,
+        12.5
+      ]
+    },
+    {
+      "example_values": [
+        "61.0",
+        "64.0",
+        "66.0"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "humidity_pct",
+      "field_path": "humidity_pct",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='humidity_pct'",
+          "evidence_id": "humidity_pct::F1",
+          "evidence_type": "csv_header",
+          "source_label": "hourly_weather.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=5",
+          "evidence_id": "humidity_pct::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "hourly_weather.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        61.0,
+        70.0
+      ]
+    },
+    {
+      "example_values": [
+        "3.1",
+        "3.4",
+        "3.2"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "wind_speed_m_s",
+      "field_path": "wind_speed_m_s",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "header='wind_speed_m_s'",
+          "evidence_id": "wind_speed_m_s::F1",
+          "evidence_type": "csv_header",
+          "source_label": "hourly_weather.csv",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=5",
+          "evidence_id": "wind_speed_m_s::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "hourly_weather.csv",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        2.5,
+        3.4
+      ]
+    }
+  ],
+  "file_format": "csv",
+  "prediction_fields_removed": [
+    "logical_type",
+    "semantic_type",
+    "unit",
+    "confidence",
+    "uncertainty_reason",
+    "semantic_logical_hint",
+    "description"
+  ],
+  "purpose": "annotator_calibration",
+  "research_evidence_status": "non_blind_not_for_effect_estimation",
+  "schema_version": "semantic-annotation-packet/v1",
+  "source_task_sha256": "012cb5ffdae740f3efa81881481c729982ea0710a7928e3f286b962cf4be0fbd",
+  "task_id": "internal::ts_easy_hourly_weather"
+}
