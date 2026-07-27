@@ -1,0 +1,504 @@
+{
+  "annotation_properties": [
+    "physical_type",
+    "logical_type",
+    "semantic_type",
+    "unit"
+  ],
+  "annotator_instructions": [
+    "Annotate independently using the frozen handbook.",
+    "Do not inspect existing gold, semantic model output, or another annotator artifact before submission.",
+    "Assign applicability before assigning each value.",
+    "Cite exact packet evidence or independently frozen raw-source evidence for every known value."
+  ],
+  "approved_evidence": [
+    {
+      "applicable_field_paths": [
+        "lat",
+        " lon",
+        " rep_date",
+        " source",
+        " sensor",
+        " fwi",
+        " fuel",
+        " ros",
+        " sfc",
+        " tfc",
+        " bfc",
+        " hfi",
+        " estarea"
+      ],
+      "detail": "Frozen NDP catalog title; metadata evidence, not gold.",
+      "evidence_id": "S1",
+      "source_name": "NDP dataset title",
+      "source_type": "catalog_title",
+      "text": "CWFIS fire data"
+    }
+  ],
+  "case_id": "ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c",
+  "data_modality": "tabular",
+  "dataset_id": "ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c",
+  "evidence_policy": {
+    "allowed_evidence_types": [
+      "csv_header",
+      "hdf5_attribute",
+      "hdf5_dataset_path",
+      "json_sample_observation",
+      "json_schema_declaration",
+      "sample_rows"
+    ],
+    "derived_semantic_hints_removed": true,
+    "mode": "allowlisted_raw_observations_only"
+  },
+  "field_inventory": [
+    {
+      "example_values": [
+        "26.6788",
+        "25.8614",
+        "26.0623"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "lat",
+      "field_path": "lat",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=0; raw_header='lat'; field_path='lat'",
+          "evidence_id": "lat::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "lat::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.99,
+      "value_range": [
+        25.8614,
+        54.7246
+      ]
+    },
+    {
+      "example_values": [
+        "-108.301",
+        "-108.191",
+        "-109.335"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": " lon",
+      "field_path": " lon",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=1; raw_header=' lon'; field_path=' lon'",
+          "evidence_id": " lon::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": " lon::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.935,
+      "value_range": [
+        -115.465,
+        -80.6216
+      ]
+    },
+    {
+      "example_values": [
+        "2024-01-31 20:54:00",
+        "2024-01-31 19:34:00",
+        "2024-01-31 20:25:00"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": " rep_date",
+      "field_path": " rep_date",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "datetime",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=2; raw_header=' rep_date'; field_path=' rep_date'",
+          "evidence_id": " rep_date::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": " rep_date::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.125,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "NASAwusa",
+        "NASA6",
+        "NASA7"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": " source",
+      "field_path": " source",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=3; raw_header=' source'; field_path=' source'",
+          "evidence_id": " source::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": " source::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.03,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "MODIS",
+        "VIIRS-I"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": " sensor",
+      "field_path": " sensor",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=4; raw_header=' sensor'; field_path=' sensor'",
+          "evidence_id": " sensor::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": " sensor::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.01,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "14.6",
+        "40"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": " fwi",
+      "field_path": " fwi",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=5; raw_header=' fwi'; field_path=' fwi'",
+          "evidence_id": " fwi::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": " fwi::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.13,
+      "value_range": [
+        0.0,
+        42.0
+      ]
+    },
+    {
+      "example_values": [
+        "O1a",
+        "farm"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": " fuel",
+      "field_path": " fuel",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=6; raw_header=' fuel'; field_path=' fuel'",
+          "evidence_id": " fuel::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": " fuel::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.06,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "4.74764",
+        "30.2"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": " ros",
+      "field_path": " ros",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=7; raw_header=' ros'; field_path=' ros'",
+          "evidence_id": " ros::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": " ros::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.185,
+      "value_range": [
+        0.0,
+        30.2
+      ]
+    },
+    {
+      "example_values": [
+        "0.35"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": " sfc",
+      "field_path": " sfc",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=8; raw_header=' sfc'; field_path=' sfc'",
+          "evidence_id": " sfc::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": " sfc::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.585,
+      "value_range": [
+        0.0,
+        3.5
+      ]
+    },
+    {
+      "example_values": [
+        "0.35"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": " tfc",
+      "field_path": " tfc",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=9; raw_header=' tfc'; field_path=' tfc'",
+          "evidence_id": " tfc::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": " tfc::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.585,
+      "value_range": [
+        0.0,
+        3.5
+      ]
+    },
+    {
+      "example_values": [
+        "0.35"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": " bfc",
+      "field_path": " bfc",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=10; raw_header=' bfc'; field_path=' bfc'",
+          "evidence_id": " bfc::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": " bfc::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.14,
+      "value_range": [
+        0.1,
+        526.326
+      ]
+    },
+    {
+      "example_values": [
+        "499",
+        "3171"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": " hfi",
+      "field_path": " hfi",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "int",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=11; raw_header=' hfi'; field_path=' hfi'",
+          "evidence_id": " hfi::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": " hfi::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.34,
+      "value_range": [
+        0.0,
+        27230.0
+      ]
+    },
+    {
+      "example_values": [
+        "0"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": " estarea",
+      "field_path": " estarea",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=12; raw_header=' estarea'; field_path=' estarea'",
+          "evidence_id": " estarea::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": " estarea::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4\\50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.05,
+      "value_range": [
+        0.0,
+        20.9695
+      ]
+    }
+  ],
+  "file_format": "csv",
+  "prediction_fields_removed": [
+    "logical_type",
+    "semantic_type",
+    "unit",
+    "confidence",
+    "uncertainty_reason",
+    "semantic_logical_hint",
+    "description"
+  ],
+  "primary_analysis_cluster": "35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4",
+  "purpose": "ndp50_independent_semantic_gold",
+  "research_evidence_status": "pre_model_independent_gold_preparation",
+  "schema_version": "semantic-annotation-packet/v1",
+  "source_dataset_id": "35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4",
+  "source_resource_id": "50f44e8d-aad5-4e09-8b9b-43c73898b53c",
+  "source_task_sha256": "07bc05064a69ee1b5b0d681cd2b967ccb28344bbd7bbed69855a8da57dd516bd",
+  "split": "validation",
+  "task_id": "ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c"
+}

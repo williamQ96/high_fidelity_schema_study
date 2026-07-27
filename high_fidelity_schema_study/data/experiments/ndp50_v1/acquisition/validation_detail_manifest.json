@@ -1,0 +1,130 @@
+{
+  "captured_at": "2026-07-26T22:43:12.962325Z",
+  "captured_splits": [
+    "validation"
+  ],
+  "counts": {
+    "dataset_count": 10,
+    "format_conflict_resource_count": 0,
+    "resource_count": 5054,
+    "supported_resource_count": 11
+  },
+  "protocol_version": "ndp50-external-validation-protocol/v1",
+  "records": [
+    {
+      "access_category": "unspecified",
+      "dataset_id": "28580a91-43fe-42d1-a87a-01b4dd036667",
+      "format_conflict_resource_count": 0,
+      "primary_format_class": "supported_semistructured",
+      "resource_count": 1,
+      "snapshot_file": "28580a91-43fe-42d1-a87a-01b4dd036667.json.gz",
+      "snapshot_sha256": "def110c363947b4d682b9cd7bb04f055b8c6b7d50f7654df94412b3322df8fc9",
+      "split": "validation",
+      "supported_resource_count": 1
+    },
+    {
+      "access_category": "unspecified",
+      "dataset_id": "35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4",
+      "format_conflict_resource_count": 0,
+      "primary_format_class": "supported_tabular",
+      "resource_count": 1,
+      "snapshot_file": "35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4.json.gz",
+      "snapshot_sha256": "02d3ca8c656e2589dd174c588471b63f606862e715305b05ef6168ac8efb6aa7",
+      "split": "validation",
+      "supported_resource_count": 1
+    },
+    {
+      "access_category": "unspecified",
+      "dataset_id": "4809738b-d730-44d6-9963-4134831a3ac1",
+      "format_conflict_resource_count": 0,
+      "primary_format_class": "supported_hierarchical",
+      "resource_count": 1,
+      "snapshot_file": "4809738b-d730-44d6-9963-4134831a3ac1.json.gz",
+      "snapshot_sha256": "8d563ad6806524d21a508718faa577bbbd8eeb14652d1d01f627a78480f73074",
+      "split": "validation",
+      "supported_resource_count": 1
+    },
+    {
+      "access_category": "public",
+      "dataset_id": "4ee0e833-f187-403a-8f8f-07bb43a44909",
+      "format_conflict_resource_count": 0,
+      "primary_format_class": "geospatial_or_image",
+      "resource_count": 102,
+      "snapshot_file": "4ee0e833-f187-403a-8f8f-07bb43a44909.json.gz",
+      "snapshot_sha256": "e843fe6e888a2657d540c9d7498af0cf19cb1b3a5b76a50caa6d3cdcec53fd59",
+      "split": "validation",
+      "supported_resource_count": 0
+    },
+    {
+      "access_category": "unspecified",
+      "dataset_id": "7fb33bb1-15f0-44a1-8755-e28ff70abc51",
+      "format_conflict_resource_count": 0,
+      "primary_format_class": "geospatial_or_image",
+      "resource_count": 4933,
+      "snapshot_file": "7fb33bb1-15f0-44a1-8755-e28ff70abc51.json.gz",
+      "snapshot_sha256": "b79b30ee2cbee529db3e09ef44f55afefd967ecd7db1c860141e7b5f89bd000a",
+      "split": "validation",
+      "supported_resource_count": 0
+    },
+    {
+      "access_category": "unspecified",
+      "dataset_id": "9c01c9f6-c815-433d-b22a-3f9b37bfb570",
+      "format_conflict_resource_count": 0,
+      "primary_format_class": "supported_tabular",
+      "resource_count": 1,
+      "snapshot_file": "9c01c9f6-c815-433d-b22a-3f9b37bfb570.json.gz",
+      "snapshot_sha256": "a7af0ee7ad8cf6cd88b62acad362fc2433c134c5be6ec2693453b14a535ca6bc",
+      "split": "validation",
+      "supported_resource_count": 1
+    },
+    {
+      "access_category": "unspecified",
+      "dataset_id": "aa8d17c7-d2bf-46b3-ba90-938659bef006",
+      "format_conflict_resource_count": 0,
+      "primary_format_class": "other_or_unknown",
+      "resource_count": 6,
+      "snapshot_file": "aa8d17c7-d2bf-46b3-ba90-938659bef006.json.gz",
+      "snapshot_sha256": "d5789feea2dbd9a11c19ff5a3150de4ab24446b870cda8df6e32a7854b2082a4",
+      "split": "validation",
+      "supported_resource_count": 2
+    },
+    {
+      "access_category": "restricted",
+      "dataset_id": "b0ebb62d-5c60-47c9-a2a3-d3c0eb1ce643",
+      "format_conflict_resource_count": 0,
+      "primary_format_class": "supported_semistructured",
+      "resource_count": 1,
+      "snapshot_file": "b0ebb62d-5c60-47c9-a2a3-d3c0eb1ce643.json.gz",
+      "snapshot_sha256": "ca2086ae273167533f2ba8672638d7aea09c10a9f7215be8cd86b52ec13e76bd",
+      "split": "validation",
+      "supported_resource_count": 1
+    },
+    {
+      "access_category": "unspecified",
+      "dataset_id": "d7f05458-e03c-493a-8fd4-458f32a7aecb",
+      "format_conflict_resource_count": 0,
+      "primary_format_class": "supported_tabular",
+      "resource_count": 5,
+      "snapshot_file": "d7f05458-e03c-493a-8fd4-458f32a7aecb.json.gz",
+      "snapshot_sha256": "68ec91251756d833383c431ce0eccfd3b3b9f38e2abd0fe056a8e0fd48e93809",
+      "split": "validation",
+      "supported_resource_count": 3
+    },
+    {
+      "access_category": "unspecified",
+      "dataset_id": "fba90f85-a818-468a-9840-14b0ee741b8d",
+      "format_conflict_resource_count": 0,
+      "primary_format_class": "documentation_or_text",
+      "resource_count": 3,
+      "snapshot_file": "fba90f85-a818-468a-9840-14b0ee741b8d.json.gz",
+      "snapshot_sha256": "93a30ae2c9988ff7334dc5e7833ded2f06e6deb5dac3fba179d89ab53b6530dc",
+      "split": "validation",
+      "supported_resource_count": 1
+    }
+  ],
+  "schema_version": "ndp50-detail-capture-manifest/v1",
+  "selection": {
+    "file": "selection.json",
+    "sha256": "27d73de3b4aa8638616588fdac0d927d79321d7d230d2c55f96c952689bd471d"
+  }
+}

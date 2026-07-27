@@ -1,0 +1,67 @@
+{
+  "checks": [
+    {
+      "check_id": "freeze_schema",
+      "detail": "ndp50-structural-validation-freeze/v1",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_hash:candidate_frame",
+      "detail": "96dd37f89cbc34a5deb219acb636a8b643ba141bf07f62f70508fd090d91822f",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_hash:selection_design",
+      "detail": "f5f3f29c01ae6b601dab66b411d324225cb7dfccdf5741cc1fae882f4f2d34b8",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_hash:selection",
+      "detail": "27d73de3b4aa8638616588fdac0d927d79321d7d230d2c55f96c952689bd471d",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_hash:development_run",
+      "detail": "fb4c9c2946b8adfc9e0ce55bea29fd4141e29c742a2934995dbae5521d82104f",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_hash:negative_controls",
+      "detail": "d960f5270948503e3bd81ee90acb2c7b8cf2b72863c3d39757092d20ffb38969",
+      "passed": true
+    },
+    {
+      "check_id": "implementation_hash_manifest",
+      "detail": "19 source files",
+      "passed": true
+    },
+    {
+      "check_id": "development_identity",
+      "detail": "15 development IDs",
+      "passed": true
+    },
+    {
+      "check_id": "negative_controls",
+      "detail": "{\"control_count\": 11, \"failed_count\": 0, \"passed_count\": 11}",
+      "passed": true
+    },
+    {
+      "check_id": "held_out_splits_unopened",
+      "detail": "validation and test detail snapshots absent",
+      "passed": true
+    }
+  ],
+  "counts": {
+    "check_count": 10,
+    "failed_count": 0,
+    "passed_count": 10
+  },
+  "readiness": {
+    "semantic_validation_ready": false,
+    "structural_validation_ready": true,
+    "test_ready": false
+  },
+  "schema_version": "ndp50-preflight-report/v1",
+  "status": "passed",
+  "validated_at": "2026-07-26T22:43:02.097747Z"
+}

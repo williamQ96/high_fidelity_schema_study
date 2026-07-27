@@ -1,0 +1,72 @@
+{
+  "assigned_on": null,
+  "assignment_id": "data_governance_review",
+  "custody_contract": [
+    "The stewardship reviewer completes the evidence and policy fields first.",
+    "The accountable approver receives only that frozen review for countersignature.",
+    "The two signatories must use distinct stable pseudonymous IDs.",
+    "The validator, not either signatory, determines whether the review passes."
+  ],
+  "execution_mode": "sequential_review_then_countersignature",
+  "expected_submission_schema": "ndp50-data-governance-review/v1",
+  "handoff": {
+    "file": "semantic/human_handoff_v1.json",
+    "sha256": "7b3223d3f5971e35bf574cff3b43dc02d341e43b2a3a3c51e5ad419e4f9df6fd"
+  },
+  "model_outputs_visible": false,
+  "payload": {
+    "copied_from": {
+      "file": "governance/data_governance_review_neutral_v1.json",
+      "sha256": "f29629c8ea58a1fc28909f87409ef2bafc913d5a5f13d45dbb834f970adc2417"
+    },
+    "copy_integrity": "byte_identical",
+    "file": "semantic/human_assignments_v1/data_governance_review_payload.json",
+    "sha256": "f29629c8ea58a1fc28909f87409ef2bafc913d5a5f13d45dbb834f970adc2417"
+  },
+  "release_state": "ready_unassigned",
+  "released_inputs": {
+    "audit": {
+      "file": "reports/data_governance_v1.json",
+      "sha256": "51dd1934f1183b6300b816b2517802735699c55d8a66ec32156825ed6e7df05b"
+    },
+    "workflow": {
+      "file": "governance/data_governance_review_workflow_v1.json",
+      "sha256": "5aa9044518c5af5fe4d23b971cd60295b8df05d0e67d46985b96535b38795738"
+    }
+  },
+  "reviewer_id": null,
+  "schema_version": "ndp50-human-assignment/v1",
+  "signatory_slots": [
+    {
+      "allowed_roles": [
+        "institutional_data_steward",
+        "research_compliance_reviewer"
+      ],
+      "developer_participation_required": false,
+      "reviewer_id": null,
+      "sequence": 1,
+      "slot": "stewardship_review"
+    },
+    {
+      "allowed_roles": [
+        "principal_investigator",
+        "institutional_data_controller"
+      ],
+      "developer_participation_must_be_declared": true,
+      "must_differ_from": "stewardship_review",
+      "reviewer_id": null,
+      "sequence": 2,
+      "slot": "accountable_approval"
+    }
+  ],
+  "stage_id": "data_governance_review",
+  "test_data_access": "forbidden",
+  "validator": {
+    "command": "validate-review",
+    "implementation": {
+      "file": "ndp50_data_governance_review.py",
+      "sha256": "6b4a0a86bbae0f98f557d1638f2fcd9b1edce7019488bf78908f02eaa87bbcc1"
+    },
+    "module": "high_fidelity_schema_study.ndp50_data_governance_review"
+  }
+}

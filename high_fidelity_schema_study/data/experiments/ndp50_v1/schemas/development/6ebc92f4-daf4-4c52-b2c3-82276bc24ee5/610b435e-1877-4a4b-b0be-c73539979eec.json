@@ -1,0 +1,798 @@
+{
+  "elapsed_seconds": 0.04930130000047939,
+  "extractor": {
+    "determinism_class": "strict_with_sampled_profiles",
+    "evidence_types": [
+      "csv_header",
+      "sample_rows",
+      "column_name_unit_hint"
+    ],
+    "extractor_id": "csv_conservative_profiler",
+    "formats": [
+      "csv"
+    ],
+    "magic_prefixes": [],
+    "operations": [
+      "enumerate_fields",
+      "sample_values",
+      "infer_physical_types",
+      "profile_time_series"
+    ],
+    "resource_kinds": [
+      "file"
+    ],
+    "suffixes": [
+      ".csv",
+      ".tsv"
+    ],
+    "version": "1.0.0"
+  },
+  "format_decision": {
+    "basis": "text_probe",
+    "conflicted": false,
+    "selected_format": "csv",
+    "signals": [
+      {
+        "basis": "text_probe",
+        "detail": "consistent delimited UTF-8 text sample",
+        "format": "csv",
+        "support_score": 0.8
+      }
+    ],
+    "support_score": 0.8
+  },
+  "issues": [
+    {
+      "code": "sampling_insufficient",
+      "details": {
+        "sample_limit": 200
+      },
+      "message": "Profile statistics are based on the configured sample limit.",
+      "severity": "note",
+      "stage": "profiling"
+    }
+  ],
+  "schema": {
+    "data_modality": "tabular",
+    "dataset_id": "610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+    "fields": [
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "0",
+          "1",
+          "2"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "__unnamed_column_1",
+        "field_path": "__unnamed_column_1",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "int",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=0; raw_header=''; field_path='__unnamed_column_1'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\6ebc92f4-daf4-4c52-b2c3-82276bc24ee5\\610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\6ebc92f4-daf4-4c52-b2c3-82276bc24ee5\\610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 0.915,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          0.0,
+          229.0
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "202",
+          "122"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "SPCD",
+        "field_path": "SPCD",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "int",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=1; raw_header='SPCD'; field_path='SPCD'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\6ebc92f4-daf4-4c52-b2c3-82276bc24ee5\\610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\6ebc92f4-daf4-4c52-b2c3-82276bc24ee5\\610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 0.09,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          15.0,
+          839.0
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "18.034",
+          "21.59",
+          "51.815999999999995"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "DIA_cm",
+        "field_path": "DIA_cm",
+        "logical_type": "unknown",
+        "missing_count": 10,
+        "nullable": true,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=2; raw_header='DIA_cm'; field_path='DIA_cm'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\6ebc92f4-daf4-4c52-b2c3-82276bc24ee5\\610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\6ebc92f4-daf4-4c52-b2c3-82276bc24ee5\\610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 0.5579,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          12.7,
+          164.08399999999995
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "11.8872",
+          "12.4968",
+          "26.5176"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "HT_m",
+        "field_path": "HT_m",
+        "logical_type": "unknown",
+        "missing_count": 10,
+        "nullable": true,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=3; raw_header='HT_m'; field_path='HT_m'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\6ebc92f4-daf4-4c52-b2c3-82276bc24ee5\\610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\6ebc92f4-daf4-4c52-b2c3-82276bc24ee5\\610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+            "tier": "statistical"
+          },
+          {
+            "confidence": 0.82,
+            "detail": "inferred unit from column suffix: meter",
+            "evidence_type": "column_name_unit_hint",
+            "source": "HT_m",
+            "tier": "structural"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 0.4474,
+        "unit": "meter",
+        "unit_normalization": {
+          "canonical_unit": "meter",
+          "evidence_basis": "name_pattern",
+          "original_unit": "meter",
+          "status": "normalized_ucum",
+          "ucum_code": "m"
+        },
+        "value_range": [
+          5.1816,
+          58.8264
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "1",
+          "2"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "STATUSCD",
+        "field_path": "STATUSCD",
+        "logical_type": "label",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "int",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=4; raw_header='STATUSCD'; field_path='STATUSCD'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\6ebc92f4-daf4-4c52-b2c3-82276bc24ee5\\610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\6ebc92f4-daf4-4c52-b2c3-82276bc24ee5\\610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 0.015,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          0.0,
+          2.0
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "3.56616",
+          "1.2496799999999997",
+          "13.2588"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "CBH_m",
+        "field_path": "CBH_m",
+        "logical_type": "unknown",
+        "missing_count": 16,
+        "nullable": true,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=5; raw_header='CBH_m'; field_path='CBH_m'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\6ebc92f4-daf4-4c52-b2c3-82276bc24ee5\\610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\6ebc92f4-daf4-4c52-b2c3-82276bc24ee5\\610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+            "tier": "statistical"
+          },
+          {
+            "confidence": 0.82,
+            "detail": "inferred unit from column suffix: meter",
+            "evidence_type": "column_name_unit_hint",
+            "source": "CBH_m",
+            "tier": "structural"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 0.6848,
+        "unit": "meter",
+        "unit_normalization": {
+          "canonical_unit": "meter",
+          "evidence_basis": "name_pattern",
+          "original_unit": "meter",
+          "status": "normalized_ucum",
+          "ucum_code": "m"
+        },
+        "value_range": [
+          0.5334000000000003,
+          29.4132
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "1.4871420395414383",
+          "2.3269638380336506",
+          "2.7431687521534904"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "CROWN_RADIUS_m",
+        "field_path": "CROWN_RADIUS_m",
+        "logical_type": "unknown",
+        "missing_count": 16,
+        "nullable": true,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=6; raw_header='CROWN_RADIUS_m'; field_path='CROWN_RADIUS_m'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\6ebc92f4-daf4-4c52-b2c3-82276bc24ee5\\610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\6ebc92f4-daf4-4c52-b2c3-82276bc24ee5\\610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+            "tier": "statistical"
+          },
+          {
+            "confidence": 0.82,
+            "detail": "inferred unit from column suffix: meter",
+            "evidence_type": "column_name_unit_hint",
+            "source": "CROWN_RADIUS_m",
+            "tier": "structural"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 0.7065,
+        "unit": "meter",
+        "unit_normalization": {
+          "canonical_unit": "meter",
+          "evidence_basis": "name_pattern",
+          "original_unit": "meter",
+          "status": "normalized_ucum",
+          "ucum_code": "m"
+        },
+        "value_range": [
+          0.0983757069737803,
+          6.7112051015203384
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "-2049255.9574353",
+          "-2049248.2446842925",
+          "-2049263.484404931"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "X_m",
+        "field_path": "X_m",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=7; raw_header='X_m'; field_path='X_m'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\6ebc92f4-daf4-4c52-b2c3-82276bc24ee5\\610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\6ebc92f4-daf4-4c52-b2c3-82276bc24ee5\\610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+            "tier": "statistical"
+          },
+          {
+            "confidence": 0.82,
+            "detail": "inferred unit from column suffix: meter",
+            "evidence_type": "column_name_unit_hint",
+            "source": "X_m",
+            "tier": "structural"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 0.915,
+        "unit": "meter",
+        "unit_normalization": {
+          "canonical_unit": "meter",
+          "evidence_basis": "name_pattern",
+          "original_unit": "meter",
+          "status": "normalized_ucum",
+          "ucum_code": "m"
+        },
+        "value_range": [
+          -2162754.344531348,
+          -2048096.5292549203
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "2089363.5589751345",
+          "2089365.2674111857",
+          "2089358.238857394"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "Y_m",
+        "field_path": "Y_m",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=8; raw_header='Y_m'; field_path='Y_m'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\6ebc92f4-daf4-4c52-b2c3-82276bc24ee5\\610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\6ebc92f4-daf4-4c52-b2c3-82276bc24ee5\\610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+            "tier": "statistical"
+          },
+          {
+            "confidence": 0.82,
+            "detail": "inferred unit from column suffix: meter",
+            "evidence_type": "column_name_unit_hint",
+            "source": "Y_m",
+            "tier": "structural"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 0.915,
+        "unit": "meter",
+        "unit_normalization": {
+          "canonical_unit": "meter",
+          "evidence_basis": "name_pattern",
+          "original_unit": "meter",
+          "status": "normalized_ucum",
+          "ucum_code": "m"
+        },
+        "value_range": [
+          1567162.8480748092,
+          2089810.3434321887
+        ]
+      },
+      {
+        "confidence": 0.9,
+        "description": null,
+        "example_values": [
+          "CATNF_6053_20240817_1"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "plot_name",
+        "field_path": "plot_name",
+        "logical_type": "label",
+        "missing_count": 6,
+        "nullable": true,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=9; raw_header='plot_name'; field_path='plot_name'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\6ebc92f4-daf4-4c52-b2c3-82276bc24ee5\\610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\6ebc92f4-daf4-4c52-b2c3-82276bc24ee5\\610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+        "unique_ratio": 0.1237,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": null
+      },
+      {
+        "confidence": 0.9,
+        "description": null,
+        "example_values": [
+          "POINT (-2049255.9574353 2089363.558975135)",
+          "POINT (-2049248.244684292 2089365.267411186)",
+          "POINT (-2049263.484404931 2089358.238857394)"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "geometry",
+        "field_path": "geometry",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=10; raw_header='geometry'; field_path='geometry'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\6ebc92f4-daf4-4c52-b2c3-82276bc24ee5\\610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\6ebc92f4-daf4-4c52-b2c3-82276bc24ee5\\610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+        "unique_ratio": 0.915,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": null
+      }
+    ],
+    "file_format": "csv",
+    "file_id": "610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+    "groups": [],
+    "metadata": {
+      "column_count": 11,
+      "csv_header_mapping": [
+        {
+          "canonicalization_reason": "blank_header",
+          "column_index": 0,
+          "field_path": "__unnamed_column_1",
+          "raw_header": ""
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 1,
+          "field_path": "SPCD",
+          "raw_header": "SPCD"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 2,
+          "field_path": "DIA_cm",
+          "raw_header": "DIA_cm"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 3,
+          "field_path": "HT_m",
+          "raw_header": "HT_m"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 4,
+          "field_path": "STATUSCD",
+          "raw_header": "STATUSCD"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 5,
+          "field_path": "CBH_m",
+          "raw_header": "CBH_m"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 6,
+          "field_path": "CROWN_RADIUS_m",
+          "raw_header": "CROWN_RADIUS_m"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 7,
+          "field_path": "X_m",
+          "raw_header": "X_m"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 8,
+          "field_path": "Y_m",
+          "raw_header": "Y_m"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 9,
+          "field_path": "plot_name",
+          "raw_header": "plot_name"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 10,
+          "field_path": "geometry",
+          "raw_header": "geometry"
+        }
+      ],
+      "deterministic_profile": {
+        "identifier_quality": {
+          "best_identifier_fields": [],
+          "candidate_count": 0,
+          "fields": []
+        },
+        "missingness": {
+          "basis": "sampled_rows",
+          "field_count": 11,
+          "fields": [
+            {
+              "basis": "sampled_rows",
+              "field_path": "__unnamed_column_1",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "SPCD",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "DIA_cm",
+              "missing_count": 10,
+              "missing_ratio": 0.05,
+              "nullable": true
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "HT_m",
+              "missing_count": 10,
+              "missing_ratio": 0.05,
+              "nullable": true
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "STATUSCD",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "CBH_m",
+              "missing_count": 16,
+              "missing_ratio": 0.08,
+              "nullable": true
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "CROWN_RADIUS_m",
+              "missing_count": 16,
+              "missing_ratio": 0.08,
+              "nullable": true
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "X_m",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "Y_m",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "plot_name",
+              "missing_count": 6,
+              "missing_ratio": 0.03,
+              "nullable": true
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "geometry",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            }
+          ],
+          "fields_with_missing_count": 5,
+          "sampled_rows": 200,
+          "total_missing_cells": 58
+        }
+      },
+      "row_width_conflict_count": 0,
+      "sampled_rows": 200,
+      "temporal_analysis": {
+        "analysis_version": "phase12_temporal_v1",
+        "candidates": [],
+        "issues": [],
+        "property_claims": {},
+        "selected_candidate": null,
+        "validator_results": {
+          "candidate_count": 0,
+          "eligible_candidate_count": 0,
+          "measurement_count": 9,
+          "selection_abstained": true
+        }
+      }
+    },
+    "notes": []
+  },
+  "status": "success"
+}

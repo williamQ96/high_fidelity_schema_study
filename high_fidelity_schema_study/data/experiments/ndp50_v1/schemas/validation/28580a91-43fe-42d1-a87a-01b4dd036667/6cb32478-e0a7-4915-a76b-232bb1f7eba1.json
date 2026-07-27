@@ -1,0 +1,1262 @@
+{
+  "elapsed_seconds": 0.006993099999817787,
+  "extractor": {
+    "determinism_class": "strict_with_bounded_sample",
+    "evidence_types": [
+      "json_sample_observation",
+      "json_schema_declaration"
+    ],
+    "extractor_id": "json_bounded_structure_extractor",
+    "formats": [
+      "json"
+    ],
+    "magic_prefixes": [],
+    "operations": [
+      "observe_bounded_paths",
+      "observe_type_sets",
+      "observe_nullability",
+      "observe_missingness",
+      "observe_array_shapes",
+      "read_json_schema_declarations"
+    ],
+    "resource_kinds": [
+      "file"
+    ],
+    "suffixes": [
+      ".json",
+      ".jsonl",
+      ".ndjson"
+    ],
+    "version": "0.1.0"
+  },
+  "format_decision": {
+    "basis": "complete_json_probe",
+    "conflicted": false,
+    "selected_format": "json",
+    "signals": [
+      {
+        "basis": "suffix",
+        "detail": "filename suffix .json",
+        "format": "json",
+        "support_score": 0.72
+      },
+      {
+        "basis": "complete_json_probe",
+        "detail": "complete UTF-8 JSON document",
+        "format": "json",
+        "support_score": 0.9
+      }
+    ],
+    "support_score": 0.9
+  },
+  "issues": [],
+  "schema": {
+    "data_modality": "semi_structured",
+    "dataset_id": "6cb32478-e0a7-4915-a76b-232bb1f7eba1__spatial_extents_CA09_Meadow",
+    "fields": [
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "crs",
+        "field_path": "$.crs",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "object",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.crs",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "properties",
+        "field_path": "$.crs.properties",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "object",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.crs.properties",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "name",
+        "field_path": "$.crs.properties.name",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.crs.properties.name",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "type",
+        "field_path": "$.crs.type",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.crs.type",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "features",
+        "field_path": "$.features",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "array",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.features",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "features[]",
+        "field_path": "$.features[]",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "object",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.features[]",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "geometry",
+        "field_path": "$.features[].geometry",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "object",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.features[].geometry",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "coordinates",
+        "field_path": "$.features[].geometry.coordinates",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "array",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.features[].geometry.coordinates",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "coordinates[]",
+        "field_path": "$.features[].geometry.coordinates[]",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "array",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.features[].geometry.coordinates[]",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "coordinates[][]",
+        "field_path": "$.features[].geometry.coordinates[][]",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "array",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.features[].geometry.coordinates[][]",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "coordinates[][][]",
+        "field_path": "$.features[].geometry.coordinates[][][]",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "number",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.features[].geometry.coordinates[][][]",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "type",
+        "field_path": "$.features[].geometry.type",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.features[].geometry.type",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "properties",
+        "field_path": "$.features[].properties",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "object",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.features[].properties",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "URL",
+        "field_path": "$.features[].properties.URL",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.features[].properties.URL",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "file_name",
+        "field_path": "$.features[].properties.file_name",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.features[].properties.file_name",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "max_x",
+        "field_path": "$.features[].properties.max_x",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "number",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.features[].properties.max_x",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "max_y",
+        "field_path": "$.features[].properties.max_y",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "number",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.features[].properties.max_y",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "max_z",
+        "field_path": "$.features[].properties.max_z",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "number",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.features[].properties.max_z",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "min_x",
+        "field_path": "$.features[].properties.min_x",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "number",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.features[].properties.min_x",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "min_y",
+        "field_path": "$.features[].properties.min_y",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "number",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.features[].properties.min_y",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "min_z",
+        "field_path": "$.features[].properties.min_z",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "number",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.features[].properties.min_z",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "num_points",
+        "field_path": "$.features[].properties.num_points",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "integer",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.features[].properties.num_points",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "point_size",
+        "field_path": "$.features[].properties.point_size",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "integer",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.features[].properties.point_size",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "point_type",
+        "field_path": "$.features[].properties.point_type",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "integer",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.features[].properties.point_type",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "version",
+        "field_path": "$.features[].properties.version",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.features[].properties.version",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "type",
+        "field_path": "$.features[].type",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.features[].type",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "bounded_json_structure_observation",
+        "field_name": "type",
+        "field_path": "$.type",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "Observed JSON path and bounded type set",
+            "evidence_type": "json_sample_observation",
+            "source": "json_sample:$.type",
+            "tier": "sample_observation"
+          }
+        ],
+        "uncertainty_reason": "sample_bounded_observation",
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": null,
+        "value_range": null
+      }
+    ],
+    "file_format": "json",
+    "file_id": "6cb32478-e0a7-4915-a76b-232bb1f7eba1__spatial_extents_CA09_Meadow.json",
+    "groups": [],
+    "metadata": {
+      "extraction_errors": [],
+      "json_analysis": {
+        "conflicts": [],
+        "declared_fields": [],
+        "mode": "bounded_observed_structure",
+        "observed_fields": [
+          {
+            "evidence_refs": [
+              "json_sample:$.crs"
+            ],
+            "field_path": "$.crs",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "object"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "evidence_refs": [
+              "json_sample:$.crs.properties"
+            ],
+            "field_path": "$.crs.properties",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "object"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "evidence_refs": [
+              "json_sample:$.crs.properties.name"
+            ],
+            "field_path": "$.crs.properties.name",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "string"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "evidence_refs": [
+              "json_sample:$.crs.type"
+            ],
+            "field_path": "$.crs.type",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "string"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "array": {
+              "element_types": [
+                "object"
+              ],
+              "heterogeneous": false,
+              "observed_lengths": [
+                190
+              ]
+            },
+            "evidence_refs": [
+              "json_sample:$.features"
+            ],
+            "field_path": "$.features",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "array"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "evidence_refs": [
+              "json_sample:$.features[]"
+            ],
+            "field_path": "$.features[]",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "object"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "evidence_refs": [
+              "json_sample:$.features[].geometry"
+            ],
+            "field_path": "$.features[].geometry",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "object"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "array": {
+              "element_types": [
+                "array"
+              ],
+              "heterogeneous": false,
+              "observed_lengths": [
+                1
+              ]
+            },
+            "evidence_refs": [
+              "json_sample:$.features[].geometry.coordinates"
+            ],
+            "field_path": "$.features[].geometry.coordinates",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "array"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "array": {
+              "element_types": [
+                "array"
+              ],
+              "heterogeneous": false,
+              "observed_lengths": [
+                5
+              ]
+            },
+            "evidence_refs": [
+              "json_sample:$.features[].geometry.coordinates[]"
+            ],
+            "field_path": "$.features[].geometry.coordinates[]",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "array"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "array": {
+              "element_types": [
+                "number"
+              ],
+              "heterogeneous": false,
+              "observed_lengths": [
+                2
+              ]
+            },
+            "evidence_refs": [
+              "json_sample:$.features[].geometry.coordinates[][]"
+            ],
+            "field_path": "$.features[].geometry.coordinates[][]",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "array"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "evidence_refs": [
+              "json_sample:$.features[].geometry.coordinates[][][]"
+            ],
+            "field_path": "$.features[].geometry.coordinates[][][]",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "number"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "evidence_refs": [
+              "json_sample:$.features[].geometry.type"
+            ],
+            "field_path": "$.features[].geometry.type",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "string"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "evidence_refs": [
+              "json_sample:$.features[].properties"
+            ],
+            "field_path": "$.features[].properties",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "object"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "evidence_refs": [
+              "json_sample:$.features[].properties.URL"
+            ],
+            "field_path": "$.features[].properties.URL",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "string"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "evidence_refs": [
+              "json_sample:$.features[].properties.file_name"
+            ],
+            "field_path": "$.features[].properties.file_name",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "string"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "evidence_refs": [
+              "json_sample:$.features[].properties.max_x"
+            ],
+            "field_path": "$.features[].properties.max_x",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "number"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "evidence_refs": [
+              "json_sample:$.features[].properties.max_y"
+            ],
+            "field_path": "$.features[].properties.max_y",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "number"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "evidence_refs": [
+              "json_sample:$.features[].properties.max_z"
+            ],
+            "field_path": "$.features[].properties.max_z",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "number"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "evidence_refs": [
+              "json_sample:$.features[].properties.min_x"
+            ],
+            "field_path": "$.features[].properties.min_x",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "number"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "evidence_refs": [
+              "json_sample:$.features[].properties.min_y"
+            ],
+            "field_path": "$.features[].properties.min_y",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "number"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "evidence_refs": [
+              "json_sample:$.features[].properties.min_z"
+            ],
+            "field_path": "$.features[].properties.min_z",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "number"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "evidence_refs": [
+              "json_sample:$.features[].properties.num_points"
+            ],
+            "field_path": "$.features[].properties.num_points",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "integer"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "evidence_refs": [
+              "json_sample:$.features[].properties.point_size"
+            ],
+            "field_path": "$.features[].properties.point_size",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "integer"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "evidence_refs": [
+              "json_sample:$.features[].properties.point_type"
+            ],
+            "field_path": "$.features[].properties.point_type",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "integer"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "evidence_refs": [
+              "json_sample:$.features[].properties.version"
+            ],
+            "field_path": "$.features[].properties.version",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "string"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "evidence_refs": [
+              "json_sample:$.features[].type"
+            ],
+            "field_path": "$.features[].type",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "string"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          },
+          {
+            "evidence_refs": [
+              "json_sample:$.type"
+            ],
+            "field_path": "$.type",
+            "missing_count": 0,
+            "null_count": 0,
+            "observed_record_count": 1,
+            "observed_types": [
+              "string"
+            ],
+            "sample_record_count": 1,
+            "state": "observed"
+          }
+        ]
+      },
+      "resource_kind": "file",
+      "sampling": {
+        "claim_scope": "bounded_sample",
+        "known_total_record_count": 1,
+        "observed_record_count": 1,
+        "organization": "single_document",
+        "sample_limit": 200,
+        "sample_truncated": false,
+        "schema_example_count": 0
+      },
+      "value_observation": {
+        "reason_code": "bounded_json_structure_sample",
+        "state": "observed_bounded_sample"
+      }
+    },
+    "notes": [
+      "Observed JSON structure is sample-bounded and is not a universal schema claim.",
+      "JSON Schema properties are preserved as declarations and are not treated as observed data.",
+      "Semantic roles are not inferred from JSON field names."
+    ]
+  },
+  "status": "success"
+}

@@ -1,0 +1,503 @@
+{
+  "annotation_properties": [
+    "physical_type",
+    "logical_type",
+    "semantic_type",
+    "unit"
+  ],
+  "annotator_instructions": [
+    "Annotate independently using the frozen handbook.",
+    "Do not inspect existing gold, semantic model output, or another annotator artifact before submission.",
+    "Assign applicability before assigning each value.",
+    "Cite exact packet evidence or independently frozen raw-source evidence for every known value."
+  ],
+  "approved_evidence": [
+    {
+      "applicable_field_paths": [
+        "latitude",
+        "longitude",
+        "brightness",
+        "scan",
+        "track",
+        "acq_date",
+        "acq_time",
+        "satellite",
+        "confidence",
+        "version",
+        "bright_t31",
+        "frp",
+        "daynight"
+      ],
+      "detail": "Frozen NDP catalog title; metadata evidence, not gold.",
+      "evidence_id": "S1",
+      "source_name": "NDP dataset title",
+      "source_type": "catalog_title",
+      "text": "MODIS MCD14DL"
+    }
+  ],
+  "case_id": "ndp50-development-c2bbcf64-3737-42b9-aaf9-2d9971f31085",
+  "data_modality": "tabular",
+  "dataset_id": "ndp50-development-c2bbcf64-3737-42b9-aaf9-2d9971f31085",
+  "evidence_policy": {
+    "allowed_evidence_types": [
+      "csv_header",
+      "hdf5_attribute",
+      "hdf5_dataset_path",
+      "json_sample_observation",
+      "json_schema_declaration",
+      "sample_rows"
+    ],
+    "derived_semantic_hints_removed": true,
+    "mode": "allowlisted_raw_observations_only"
+  },
+  "field_inventory": [
+    {
+      "example_values": [
+        "20.33252",
+        "31.35387",
+        "31.35469"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "latitude",
+      "field_path": "latitude",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=0; raw_header='latitude'; field_path='latitude'",
+          "evidence_id": "latitude::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "latitude::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.995,
+      "value_range": [
+        17.75318,
+        49.91448
+      ]
+    },
+    {
+      "example_values": [
+        "-76.73786",
+        "-82.83101",
+        "-82.83651"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "longitude",
+      "field_path": "longitude",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=1; raw_header='longitude'; field_path='longitude'",
+          "evidence_id": "longitude::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "longitude::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        -155.2937,
+        -71.19943
+      ]
+    },
+    {
+      "example_values": [
+        "303.12",
+        "303.25",
+        "304.34"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "brightness",
+      "field_path": "brightness",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=2; raw_header='brightness'; field_path='brightness'",
+          "evidence_id": "brightness::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "brightness::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.97,
+      "value_range": [
+        300.11,
+        392.89
+      ]
+    },
+    {
+      "example_values": [
+        "1.4",
+        "2.2"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "scan",
+      "field_path": "scan",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=3; raw_header='scan'; field_path='scan'",
+          "evidence_id": "scan::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "scan::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.315,
+      "value_range": [
+        1.0,
+        4.68
+      ]
+    },
+    {
+      "example_values": [
+        "1.17",
+        "1.44"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "track",
+      "field_path": "track",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=4; raw_header='track'; field_path='track'",
+          "evidence_id": "track::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "track::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.215,
+      "value_range": [
+        1.0,
+        1.98
+      ]
+    },
+    {
+      "example_values": [
+        "2026-07-19"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "acq_date",
+      "field_path": "acq_date",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "datetime",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=5; raw_header='acq_date'; field_path='acq_date'",
+          "evidence_id": "acq_date::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "acq_date::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.005,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "0124",
+        "0128"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "acq_time",
+      "field_path": "acq_time",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=6; raw_header='acq_time'; field_path='acq_time'",
+          "evidence_id": "acq_time::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "acq_time::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.055,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "T"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "satellite",
+      "field_path": "satellite",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=7; raw_header='satellite'; field_path='satellite'",
+          "evidence_id": "satellite::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "satellite::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.01,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "53",
+        "54",
+        "59"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "confidence",
+      "field_path": "confidence",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "int",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=8; raw_header='confidence'; field_path='confidence'",
+          "evidence_id": "confidence::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "confidence::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.295,
+      "value_range": [
+        10.0,
+        100.0
+      ]
+    },
+    {
+      "example_values": [
+        "6.1NRT"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "version",
+      "field_path": "version",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=9; raw_header='version'; field_path='version'",
+          "evidence_id": "version::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "version::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.005,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "283.56",
+        "292.36",
+        "292.42"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "bright_t31",
+      "field_path": "bright_t31",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=10; raw_header='bright_t31'; field_path='bright_t31'",
+          "evidence_id": "bright_t31::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "bright_t31::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.885,
+      "value_range": [
+        281.75,
+        304.63
+      ]
+    },
+    {
+      "example_values": [
+        "8.41",
+        "11.22",
+        "13.4"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "frp",
+      "field_path": "frp",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=11; raw_header='frp'; field_path='frp'",
+          "evidence_id": "frp::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "frp::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        4.57,
+        637.03
+      ]
+    },
+    {
+      "example_values": [
+        "N"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "daynight",
+      "field_path": "daynight",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=12; raw_header='daynight'; field_path='daynight'",
+          "evidence_id": "daynight::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "daynight::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.01,
+      "value_range": null
+    }
+  ],
+  "file_format": "csv",
+  "prediction_fields_removed": [
+    "logical_type",
+    "semantic_type",
+    "unit",
+    "confidence",
+    "uncertainty_reason",
+    "semantic_logical_hint",
+    "description"
+  ],
+  "primary_analysis_cluster": "c7f29749-c6ab-4402-90ae-58fa5d23f830",
+  "purpose": "ndp50_independent_semantic_gold",
+  "research_evidence_status": "pre_model_independent_gold_preparation",
+  "schema_version": "semantic-annotation-packet/v1",
+  "source_dataset_id": "c7f29749-c6ab-4402-90ae-58fa5d23f830",
+  "source_resource_id": "c2bbcf64-3737-42b9-aaf9-2d9971f31085",
+  "source_task_sha256": "4950f27e190231d6d4f1e2a6638ad5d58c6379e0c42b27766dc6ead2d3107480",
+  "split": "development",
+  "task_id": "ndp50-development-c2bbcf64-3737-42b9-aaf9-2d9971f31085"
+}

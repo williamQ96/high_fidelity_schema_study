@@ -1,0 +1,66 @@
+{
+  "schema_version": "ndp50-selection-design/v1",
+  "protocol_version": "ndp50-external-validation-protocol/v1",
+  "status": "frozen_before_selection",
+  "candidate_frame_sha256": "96dd37f89cbc34a5deb219acb636a8b643ba141bf07f62f70508fd090d91822f",
+  "seed": "ndp50-external-validation-v1-2026-07-26",
+  "target_count": 50,
+  "max_per_organization": 5,
+  "split_counts": {
+    "development": 15,
+    "test": 25,
+    "validation": 10
+  },
+  "design_rationale": {
+    "sampling_unit": "NDP CKAN dataset identity record",
+    "primary_unit": "dataset",
+    "format_policy": "Deliberately oversample the 29 indexed tabular and four indexed hierarchical records while retaining archive, geospatial/image, documentation/text, semistructured, and unknown-format strata.",
+    "organization_policy": "Cap selected contribution at five records per organization because two organizations account for 4,280 of 5,823 catalog records.",
+    "split_policy": "Freeze 15 development, 10 validation, and 25 sealed test records before package_show expansion or resource outcomes are inspected.",
+    "claim_limit": "This is a stratified external capability pilot, not a prevalence-weighted estimate of the complete NDP catalog."
+  },
+  "strata": {
+    "archive": {
+      "development": 2,
+      "validation": 1,
+      "test": 3,
+      "reserve": 2
+    },
+    "documentation_or_text": {
+      "development": 1,
+      "validation": 1,
+      "test": 3,
+      "reserve": 2
+    },
+    "geospatial_or_image": {
+      "development": 2,
+      "validation": 2,
+      "test": 4,
+      "reserve": 3
+    },
+    "other_or_unknown": {
+      "development": 2,
+      "validation": 1,
+      "test": 2,
+      "reserve": 2
+    },
+    "supported_hierarchical": {
+      "development": 2,
+      "validation": 1,
+      "test": 1,
+      "reserve": 0
+    },
+    "supported_semistructured": {
+      "development": 3,
+      "validation": 2,
+      "test": 7,
+      "reserve": 5
+    },
+    "supported_tabular": {
+      "development": 3,
+      "validation": 2,
+      "test": 5,
+      "reserve": 3
+    }
+  }
+}

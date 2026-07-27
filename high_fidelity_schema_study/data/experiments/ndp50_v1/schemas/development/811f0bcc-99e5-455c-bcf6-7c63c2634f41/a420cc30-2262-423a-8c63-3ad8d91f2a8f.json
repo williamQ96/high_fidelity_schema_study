@@ -1,0 +1,1413 @@
+{
+  "elapsed_seconds": 0.05517340000005788,
+  "extractor": {
+    "determinism_class": "strict_with_sampled_profiles",
+    "evidence_types": [
+      "csv_header",
+      "sample_rows",
+      "column_name_unit_hint"
+    ],
+    "extractor_id": "csv_conservative_profiler",
+    "formats": [
+      "csv"
+    ],
+    "magic_prefixes": [],
+    "operations": [
+      "enumerate_fields",
+      "sample_values",
+      "infer_physical_types",
+      "profile_time_series"
+    ],
+    "resource_kinds": [
+      "file"
+    ],
+    "suffixes": [
+      ".csv",
+      ".tsv"
+    ],
+    "version": "1.0.0"
+  },
+  "format_decision": {
+    "basis": "suffix",
+    "conflicted": false,
+    "selected_format": "csv",
+    "signals": [
+      {
+        "basis": "suffix",
+        "detail": "filename suffix .csv",
+        "format": "csv",
+        "support_score": 0.72
+      }
+    ],
+    "support_score": 0.72
+  },
+  "issues": [
+    {
+      "code": "sampling_insufficient",
+      "details": {
+        "sample_limit": 200
+      },
+      "message": "Profile statistics are based on the configured sample limit.",
+      "severity": "note",
+      "stage": "profiling"
+    }
+  ],
+  "schema": {
+    "data_modality": "tabular",
+    "dataset_id": "a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data",
+    "fields": [
+      {
+        "confidence": 0.9,
+        "description": null,
+        "example_values": [
+          "7ODM",
+          "ACSB",
+          "ACSX"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "Site",
+        "field_path": "Site",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=0; raw_header='Site'; field_path='Site'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+        "unique_ratio": 1.0,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "34.11640827",
+          "33.27426630"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "Latitude",
+        "field_path": "Latitude",
+        "logical_type": "coordinate",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "latitude",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=1; raw_header='Latitude'; field_path='Latitude'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 0.995,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          32.82992079,
+          49.26989167
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "-117.09319697",
+          "-117.44489491"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "(deg)",
+        "field_path": "(deg)",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=2; raw_header='(deg)'; field_path='(deg)'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 0.995,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          -124.56334713,
+          -114.18945223
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "761.9060",
+          "-12.3274",
+          "-12.3275"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "Longitude",
+        "field_path": "Longitude",
+        "logical_type": "coordinate",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "longitude",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=3; raw_header='Longitude'; field_path='Longitude'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 1.0,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          -92.3998,
+          2471.0601
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "-2407751.18681",
+          "-2460183.83905",
+          "-2460183.83939"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "(deg)__duplicate_2",
+        "field_path": "(deg)__duplicate_2",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=4; raw_header='(deg)'; field_path='(deg)__duplicate_2'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 1.0,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          -2752136.24303,
+          -1926798.46457
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "-4706536.31548",
+          "-4737087.23672",
+          "-4737087.23633"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "EllipElev",
+        "field_path": "EllipElev",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=5; raw_header='EllipElev'; field_path='EllipElev'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 1.0,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          -4857246.42406,
+          -3496434.89067
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "3557571.42549",
+          "3479422.83141",
+          "3479422.83149"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "(m)",
+        "field_path": "(m)",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=6; raw_header='(m)'; field_path='(m)'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 1.0,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          3438643.15249,
+          4810221.88558
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "2022.7616"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "X",
+        "field_path": "X",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=7; raw_header='X'; field_path='X'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 0.01,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          2020.76,
+          2022.7616
+        ]
+      },
+      {
+        "confidence": 0.9,
+        "description": null,
+        "example_values": [
+          "SCGN",
+          "NOTA"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "(m)__duplicate_2",
+        "field_path": "(m)__duplicate_2",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=8; raw_header='(m)'; field_path='(m)__duplicate_2'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+        "unique_ratio": 0.055,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": null
+      },
+      {
+        "confidence": 0.9,
+        "description": null,
+        "example_values": [
+          "ACTIVE"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "Y",
+        "field_path": "Y",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=9; raw_header='Y'; field_path='Y'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+        "unique_ratio": 0.01,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "2023.345"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "(m)__duplicate_3",
+        "field_path": "(m)__duplicate_3",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=10; raw_header='(m)'; field_path='(m)__duplicate_3'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 0.155,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          0.0,
+          2023.345
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "0.0083"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "Z",
+        "field_path": "Z",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=11; raw_header='Z'; field_path='Z'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 0.125,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          0.0,
+          1.521
+        ]
+      },
+      {
+        "confidence": 0.9,
+        "description": null,
+        "example_values": [
+          "TRM57971.00",
+          "TRM59800.00"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "(m)__duplicate_4",
+        "field_path": "(m)__duplicate_4",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=12; raw_header='(m)'; field_path='(m)__duplicate_4'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+        "unique_ratio": 0.11,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": null
+      },
+      {
+        "confidence": 0.9,
+        "description": null,
+        "example_values": [
+          "SCIT"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "Epoch",
+        "field_path": "Epoch",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=13; raw_header='Epoch'; field_path='Epoch'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+        "unique_ratio": 0.04,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": null
+      },
+      {
+        "confidence": 0.9,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "(yr)",
+        "field_path": "(yr)",
+        "logical_type": "unknown",
+        "missing_count": 200,
+        "nullable": true,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=14; raw_header='(yr)'; field_path='(yr)'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": null
+      },
+      {
+        "confidence": 0.9,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "Net",
+        "field_path": "Net",
+        "logical_type": "unknown",
+        "missing_count": 200,
+        "nullable": true,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=15; raw_header='Net'; field_path='Net'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": null
+      },
+      {
+        "confidence": 0.9,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "Status",
+        "field_path": "Status",
+        "logical_type": "label",
+        "missing_count": 200,
+        "nullable": true,
+        "physical_type": "string",
+        "semantic_type": "operational_status",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=16; raw_header='Status'; field_path='Status'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": null
+      },
+      {
+        "confidence": 0.9,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "Last",
+        "field_path": "Last",
+        "logical_type": "unknown",
+        "missing_count": 200,
+        "nullable": true,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=17; raw_header='Last'; field_path='Last'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": null
+      },
+      {
+        "confidence": 0.9,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "yr.doy",
+        "field_path": "yr.doy",
+        "logical_type": "unknown",
+        "missing_count": 200,
+        "nullable": true,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=18; raw_header='yr.doy'; field_path='yr.doy'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": null
+      },
+      {
+        "confidence": 0.9,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "Ant",
+        "field_path": "Ant",
+        "logical_type": "unknown",
+        "missing_count": 200,
+        "nullable": true,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=19; raw_header='Ant'; field_path='Ant'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": null
+      },
+      {
+        "confidence": 0.9,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "Hght(m)",
+        "field_path": "Hght(m)",
+        "logical_type": "unknown",
+        "missing_count": 200,
+        "nullable": true,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=20; raw_header='Hght(m)'; field_path='Hght(m)'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": null
+      },
+      {
+        "confidence": 0.9,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "Type",
+        "field_path": "Type",
+        "logical_type": "unknown",
+        "missing_count": 200,
+        "nullable": true,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=21; raw_header='Type'; field_path='Type'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": null
+      },
+      {
+        "confidence": 0.9,
+        "description": null,
+        "example_values": [],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "Dome",
+        "field_path": "Dome",
+        "logical_type": "unknown",
+        "missing_count": 200,
+        "nullable": true,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=22; raw_header='Dome'; field_path='Dome'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\811f0bcc-99e5-455c-bcf6-7c63c2634f41\\a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": null,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": null
+      }
+    ],
+    "file_format": "csv",
+    "file_id": "a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+    "groups": [],
+    "metadata": {
+      "column_count": 23,
+      "csv_header_mapping": [
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 0,
+          "field_path": "Site",
+          "raw_header": "Site"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 1,
+          "field_path": "Latitude",
+          "raw_header": "Latitude"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 2,
+          "field_path": "(deg)",
+          "raw_header": "(deg)"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 3,
+          "field_path": "Longitude",
+          "raw_header": "Longitude"
+        },
+        {
+          "canonicalization_reason": "duplicate_header",
+          "column_index": 4,
+          "field_path": "(deg)__duplicate_2",
+          "raw_header": "(deg)"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 5,
+          "field_path": "EllipElev",
+          "raw_header": "EllipElev"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 6,
+          "field_path": "(m)",
+          "raw_header": "(m)"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 7,
+          "field_path": "X",
+          "raw_header": "X"
+        },
+        {
+          "canonicalization_reason": "duplicate_header",
+          "column_index": 8,
+          "field_path": "(m)__duplicate_2",
+          "raw_header": "(m)"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 9,
+          "field_path": "Y",
+          "raw_header": "Y"
+        },
+        {
+          "canonicalization_reason": "duplicate_header",
+          "column_index": 10,
+          "field_path": "(m)__duplicate_3",
+          "raw_header": "(m)"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 11,
+          "field_path": "Z",
+          "raw_header": "Z"
+        },
+        {
+          "canonicalization_reason": "duplicate_header",
+          "column_index": 12,
+          "field_path": "(m)__duplicate_4",
+          "raw_header": "(m)"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 13,
+          "field_path": "Epoch",
+          "raw_header": "Epoch"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 14,
+          "field_path": "(yr)",
+          "raw_header": "(yr)"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 15,
+          "field_path": "Net",
+          "raw_header": "Net"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 16,
+          "field_path": "Status",
+          "raw_header": "Status"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 17,
+          "field_path": "Last",
+          "raw_header": "Last"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 18,
+          "field_path": "yr.doy",
+          "raw_header": "yr.doy"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 19,
+          "field_path": "Ant",
+          "raw_header": "Ant"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 20,
+          "field_path": "Hght(m)",
+          "raw_header": "Hght(m)"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 21,
+          "field_path": "Type",
+          "raw_header": "Type"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 22,
+          "field_path": "Dome",
+          "raw_header": "Dome"
+        }
+      ],
+      "deterministic_profile": {
+        "identifier_quality": {
+          "best_identifier_fields": [],
+          "candidate_count": 0,
+          "fields": []
+        },
+        "missingness": {
+          "basis": "sampled_rows",
+          "field_count": 23,
+          "fields": [
+            {
+              "basis": "sampled_rows",
+              "field_path": "Site",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "Latitude",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "(deg)",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "Longitude",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "(deg)__duplicate_2",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "EllipElev",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "(m)",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "X",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "(m)__duplicate_2",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "Y",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "(m)__duplicate_3",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "Z",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "(m)__duplicate_4",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "Epoch",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "(yr)",
+              "missing_count": 200,
+              "missing_ratio": 1.0,
+              "nullable": true
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "Net",
+              "missing_count": 200,
+              "missing_ratio": 1.0,
+              "nullable": true
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "Status",
+              "missing_count": 200,
+              "missing_ratio": 1.0,
+              "nullable": true
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "Last",
+              "missing_count": 200,
+              "missing_ratio": 1.0,
+              "nullable": true
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "yr.doy",
+              "missing_count": 200,
+              "missing_ratio": 1.0,
+              "nullable": true
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "Ant",
+              "missing_count": 200,
+              "missing_ratio": 1.0,
+              "nullable": true
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "Hght(m)",
+              "missing_count": 200,
+              "missing_ratio": 1.0,
+              "nullable": true
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "Type",
+              "missing_count": 200,
+              "missing_ratio": 1.0,
+              "nullable": true
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "Dome",
+              "missing_count": 200,
+              "missing_ratio": 1.0,
+              "nullable": true
+            }
+          ],
+          "fields_with_missing_count": 9,
+          "sampled_rows": 200,
+          "total_missing_cells": 1800
+        }
+      },
+      "row_width_conflict_count": 200,
+      "sampled_rows": 200,
+      "temporal_analysis": {
+        "analysis_version": "phase12_temporal_v1",
+        "candidates": [],
+        "issues": [],
+        "property_claims": {},
+        "selected_candidate": null,
+        "validator_results": {
+          "candidate_count": 0,
+          "eligible_candidate_count": 0,
+          "measurement_count": 7,
+          "selection_abstained": true
+        }
+      }
+    },
+    "notes": []
+  },
+  "status": "success"
+}

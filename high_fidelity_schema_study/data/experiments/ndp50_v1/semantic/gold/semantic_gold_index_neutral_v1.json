@@ -1,0 +1,187 @@
+{
+  "annotator_registry": [
+    {
+      "annotator_id": null,
+      "conflict_of_interest_declared": null,
+      "developer_participation": false,
+      "institution": null,
+      "qualification_summary": null,
+      "reviewer_role": null,
+      "signed_on": null,
+      "slot": "annotation_a"
+    },
+    {
+      "annotator_id": null,
+      "conflict_of_interest_declared": null,
+      "developer_participation": false,
+      "institution": null,
+      "qualification_summary": null,
+      "reviewer_role": null,
+      "signed_on": null,
+      "slot": "annotation_b"
+    }
+  ],
+  "approved_source_manifest": null,
+  "cases": [
+    {
+      "annotation_a": null,
+      "annotation_b": null,
+      "case_id": "ndp50-development-610b435e-1877-4a4b-b0be-c73539979eec",
+      "consensus": null,
+      "disagreement_report": null,
+      "packet_sha256": "83196312debcf072bf2fa6f7242689c2c8173c88ef984bfbce9e83da945e47de",
+      "split": "development"
+    },
+    {
+      "annotation_a": null,
+      "annotation_b": null,
+      "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+      "consensus": null,
+      "disagreement_report": null,
+      "packet_sha256": "88fdee9c096dc047602e41bbb3e2b57650db82cb79fbe2112658510129b0dde8",
+      "split": "development"
+    },
+    {
+      "annotation_a": null,
+      "annotation_b": null,
+      "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+      "consensus": null,
+      "disagreement_report": null,
+      "packet_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "split": "development"
+    },
+    {
+      "annotation_a": null,
+      "annotation_b": null,
+      "case_id": "ndp50-development-b651063b-edb5-4d4f-ae50-7fbc5191ad11",
+      "consensus": null,
+      "disagreement_report": null,
+      "packet_sha256": "12b48bc1d22e9989db2a60feb4f0372c09d7d52b9c1d73499628d44f2f682a48",
+      "split": "development"
+    },
+    {
+      "annotation_a": null,
+      "annotation_b": null,
+      "case_id": "ndp50-development-c2bbcf64-3737-42b9-aaf9-2d9971f31085",
+      "consensus": null,
+      "disagreement_report": null,
+      "packet_sha256": "d1df77275b5c3c40cffd5c4cc46b3d3c1df35abb238b89b5d1cfa7d4b5e151f2",
+      "split": "development"
+    },
+    {
+      "annotation_a": null,
+      "annotation_b": null,
+      "case_id": "ndp50-development-c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d",
+      "consensus": null,
+      "disagreement_report": null,
+      "packet_sha256": "69ba363c01bdc0ff21a66f5fd2846c856b1b5647cd8217ca6974d095e2ef6a2b",
+      "split": "development"
+    },
+    {
+      "annotation_a": null,
+      "annotation_b": null,
+      "case_id": "ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+      "consensus": null,
+      "disagreement_report": null,
+      "packet_sha256": "f6d0708d96a3a33c23f0152dc229f1560fd6a0661f2671a4d8ff2b5fd558efd3",
+      "split": "development"
+    },
+    {
+      "annotation_a": null,
+      "annotation_b": null,
+      "case_id": "ndp50-development-d15771b1-b612-478c-80ef-91d3e2e1c333",
+      "consensus": null,
+      "disagreement_report": null,
+      "packet_sha256": "34bb6e35205d30d22274dbec842f8231acaa228ebb40780442c8b0c470a9532d",
+      "split": "development"
+    },
+    {
+      "annotation_a": null,
+      "annotation_b": null,
+      "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+      "consensus": null,
+      "disagreement_report": null,
+      "packet_sha256": "12c3da461509ddb44b22dd6cffce129a2dc27b2432980100bd5e989277c01f6e",
+      "split": "development"
+    },
+    {
+      "annotation_a": null,
+      "annotation_b": null,
+      "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+      "consensus": null,
+      "disagreement_report": null,
+      "packet_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "split": "development"
+    },
+    {
+      "annotation_a": null,
+      "annotation_b": null,
+      "case_id": "ndp50-validation-47f47360-a5e2-441c-9b43-6cadf6eab7b6",
+      "consensus": null,
+      "disagreement_report": null,
+      "packet_sha256": "d6497527a4fd133a2b16afc37bc8982b55cf119877e6d6abde64d332fe6144ec",
+      "split": "validation"
+    },
+    {
+      "annotation_a": null,
+      "annotation_b": null,
+      "case_id": "ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c",
+      "consensus": null,
+      "disagreement_report": null,
+      "packet_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "split": "validation"
+    },
+    {
+      "annotation_a": null,
+      "annotation_b": null,
+      "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+      "consensus": null,
+      "disagreement_report": null,
+      "packet_sha256": "b333de323ba5715ddb274f6501b9491b95128a5aec040d4b7415c9421f900622",
+      "split": "validation"
+    },
+    {
+      "annotation_a": null,
+      "annotation_b": null,
+      "case_id": "ndp50-validation-a47379a9-8051-42bf-9ddd-94f33b672ac6",
+      "consensus": null,
+      "disagreement_report": null,
+      "packet_sha256": "f769645ffb8db078c028789e9d03636908d305f9d0010ad0fa0e979390b03620",
+      "split": "validation"
+    },
+    {
+      "annotation_a": null,
+      "annotation_b": null,
+      "case_id": "ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+      "consensus": null,
+      "disagreement_report": null,
+      "packet_sha256": "4d3e30d0f5386d24b930fc099bae0c323d9ddcbd76e79faa3520366346c8a9f9",
+      "split": "validation"
+    },
+    {
+      "annotation_a": null,
+      "annotation_b": null,
+      "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+      "consensus": null,
+      "disagreement_report": null,
+      "packet_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "split": "validation"
+    }
+  ],
+  "completion_attestation": null,
+  "consensus_panel": {
+    "automatic_adjudication": false,
+    "joint_human_consensus_attested": null,
+    "member_ids": []
+  },
+  "frozen_vocabulary": null,
+  "human_decisions_present": false,
+  "model_outputs_visible_to_annotators": false,
+  "packet_manifest": {
+    "file": "semantic/annotation_pack_v1/manifest.json",
+    "sha256": "6d356997e8f3db91f39a9ac7a4759f420a0d880e7b76d3eac09d5625e2e26046"
+  },
+  "required_stable_annotator_count": 2,
+  "schema_version": "ndp50-semantic-gold-corpus-index/v1",
+  "status": "neutral_pending_gold_artifacts"
+}

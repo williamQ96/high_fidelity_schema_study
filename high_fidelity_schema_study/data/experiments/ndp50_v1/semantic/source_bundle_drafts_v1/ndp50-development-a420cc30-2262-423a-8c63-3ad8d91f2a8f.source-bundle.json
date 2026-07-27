@@ -1,0 +1,894 @@
+{
+  "annotation_packet_file": "../annotation_pack_v1/packets/ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f.annotation-packet.json",
+  "annotation_packet_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+  "dataset_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+  "evidence_catalog": [
+    {
+      "applicable_field_paths": [
+        "Site"
+      ],
+      "catalog_evidence_id": "Site::F1",
+      "selector": "field_inventory:Site:Site::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "Site"
+      ],
+      "catalog_evidence_id": "Site::F2",
+      "selector": "field_inventory:Site:Site::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "Latitude"
+      ],
+      "catalog_evidence_id": "Latitude::F1",
+      "selector": "field_inventory:Latitude:Latitude::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "Latitude"
+      ],
+      "catalog_evidence_id": "Latitude::F2",
+      "selector": "field_inventory:Latitude:Latitude::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "(deg)"
+      ],
+      "catalog_evidence_id": "(deg)::F1",
+      "selector": "field_inventory:(deg):(deg)::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "(deg)"
+      ],
+      "catalog_evidence_id": "(deg)::F2",
+      "selector": "field_inventory:(deg):(deg)::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "Longitude"
+      ],
+      "catalog_evidence_id": "Longitude::F1",
+      "selector": "field_inventory:Longitude:Longitude::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "Longitude"
+      ],
+      "catalog_evidence_id": "Longitude::F2",
+      "selector": "field_inventory:Longitude:Longitude::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "(deg)__duplicate_2"
+      ],
+      "catalog_evidence_id": "(deg)__duplicate_2::F1",
+      "selector": "field_inventory:(deg)__duplicate_2:(deg)__duplicate_2::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "(deg)__duplicate_2"
+      ],
+      "catalog_evidence_id": "(deg)__duplicate_2::F2",
+      "selector": "field_inventory:(deg)__duplicate_2:(deg)__duplicate_2::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "EllipElev"
+      ],
+      "catalog_evidence_id": "EllipElev::F1",
+      "selector": "field_inventory:EllipElev:EllipElev::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "EllipElev"
+      ],
+      "catalog_evidence_id": "EllipElev::F2",
+      "selector": "field_inventory:EllipElev:EllipElev::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "(m)"
+      ],
+      "catalog_evidence_id": "(m)::F1",
+      "selector": "field_inventory:(m):(m)::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "(m)"
+      ],
+      "catalog_evidence_id": "(m)::F2",
+      "selector": "field_inventory:(m):(m)::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "X"
+      ],
+      "catalog_evidence_id": "X::F1",
+      "selector": "field_inventory:X:X::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "X"
+      ],
+      "catalog_evidence_id": "X::F2",
+      "selector": "field_inventory:X:X::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "(m)__duplicate_2"
+      ],
+      "catalog_evidence_id": "(m)__duplicate_2::F1",
+      "selector": "field_inventory:(m)__duplicate_2:(m)__duplicate_2::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "(m)__duplicate_2"
+      ],
+      "catalog_evidence_id": "(m)__duplicate_2::F2",
+      "selector": "field_inventory:(m)__duplicate_2:(m)__duplicate_2::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "Y"
+      ],
+      "catalog_evidence_id": "Y::F1",
+      "selector": "field_inventory:Y:Y::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "Y"
+      ],
+      "catalog_evidence_id": "Y::F2",
+      "selector": "field_inventory:Y:Y::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "(m)__duplicate_3"
+      ],
+      "catalog_evidence_id": "(m)__duplicate_3::F1",
+      "selector": "field_inventory:(m)__duplicate_3:(m)__duplicate_3::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "(m)__duplicate_3"
+      ],
+      "catalog_evidence_id": "(m)__duplicate_3::F2",
+      "selector": "field_inventory:(m)__duplicate_3:(m)__duplicate_3::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "Z"
+      ],
+      "catalog_evidence_id": "Z::F1",
+      "selector": "field_inventory:Z:Z::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "Z"
+      ],
+      "catalog_evidence_id": "Z::F2",
+      "selector": "field_inventory:Z:Z::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "(m)__duplicate_4"
+      ],
+      "catalog_evidence_id": "(m)__duplicate_4::F1",
+      "selector": "field_inventory:(m)__duplicate_4:(m)__duplicate_4::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "(m)__duplicate_4"
+      ],
+      "catalog_evidence_id": "(m)__duplicate_4::F2",
+      "selector": "field_inventory:(m)__duplicate_4:(m)__duplicate_4::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "Epoch"
+      ],
+      "catalog_evidence_id": "Epoch::F1",
+      "selector": "field_inventory:Epoch:Epoch::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "Epoch"
+      ],
+      "catalog_evidence_id": "Epoch::F2",
+      "selector": "field_inventory:Epoch:Epoch::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "(yr)"
+      ],
+      "catalog_evidence_id": "(yr)::F1",
+      "selector": "field_inventory:(yr):(yr)::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "(yr)"
+      ],
+      "catalog_evidence_id": "(yr)::F2",
+      "selector": "field_inventory:(yr):(yr)::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "Net"
+      ],
+      "catalog_evidence_id": "Net::F1",
+      "selector": "field_inventory:Net:Net::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "Net"
+      ],
+      "catalog_evidence_id": "Net::F2",
+      "selector": "field_inventory:Net:Net::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "Status"
+      ],
+      "catalog_evidence_id": "Status::F1",
+      "selector": "field_inventory:Status:Status::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "Status"
+      ],
+      "catalog_evidence_id": "Status::F2",
+      "selector": "field_inventory:Status:Status::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "Last"
+      ],
+      "catalog_evidence_id": "Last::F1",
+      "selector": "field_inventory:Last:Last::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "Last"
+      ],
+      "catalog_evidence_id": "Last::F2",
+      "selector": "field_inventory:Last:Last::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "yr.doy"
+      ],
+      "catalog_evidence_id": "yr.doy::F1",
+      "selector": "field_inventory:yr.doy:yr.doy::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "yr.doy"
+      ],
+      "catalog_evidence_id": "yr.doy::F2",
+      "selector": "field_inventory:yr.doy:yr.doy::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "Ant"
+      ],
+      "catalog_evidence_id": "Ant::F1",
+      "selector": "field_inventory:Ant:Ant::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "Ant"
+      ],
+      "catalog_evidence_id": "Ant::F2",
+      "selector": "field_inventory:Ant:Ant::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "Hght(m)"
+      ],
+      "catalog_evidence_id": "Hght(m)::F1",
+      "selector": "field_inventory:Hght(m):Hght(m)::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "Hght(m)"
+      ],
+      "catalog_evidence_id": "Hght(m)::F2",
+      "selector": "field_inventory:Hght(m):Hght(m)::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "Type"
+      ],
+      "catalog_evidence_id": "Type::F1",
+      "selector": "field_inventory:Type:Type::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "Type"
+      ],
+      "catalog_evidence_id": "Type::F2",
+      "selector": "field_inventory:Type:Type::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "Dome"
+      ],
+      "catalog_evidence_id": "Dome::F1",
+      "selector": "field_inventory:Dome:Dome::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "Dome"
+      ],
+      "catalog_evidence_id": "Dome::F2",
+      "selector": "field_inventory:Dome:Dome::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        "(deg)",
+        "(deg)__duplicate_2",
+        "(m)",
+        "(m)__duplicate_2",
+        "(m)__duplicate_3",
+        "(m)__duplicate_4",
+        "(yr)",
+        "Ant",
+        "Dome",
+        "EllipElev",
+        "Epoch",
+        "Hght(m)",
+        "Last",
+        "Latitude",
+        "Longitude",
+        "Net",
+        "Site",
+        "Status",
+        "Type",
+        "X",
+        "Y",
+        "Z",
+        "yr.doy"
+      ],
+      "catalog_evidence_id": "S1",
+      "selector": "approved_evidence:S1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "catalog_title",
+      "strength": "documentation"
+    },
+    {
+      "applicable_field_paths": [
+        "Site"
+      ],
+      "catalog_evidence_id": "RAW-1",
+      "selector": "column:Site",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "Latitude"
+      ],
+      "catalog_evidence_id": "RAW-2",
+      "selector": "column:Latitude",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "(deg)"
+      ],
+      "catalog_evidence_id": "RAW-3",
+      "selector": "column:(deg)",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "Longitude"
+      ],
+      "catalog_evidence_id": "RAW-4",
+      "selector": "column:Longitude",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "(deg)__duplicate_2"
+      ],
+      "catalog_evidence_id": "RAW-5",
+      "selector": "column:(deg)__duplicate_2",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "EllipElev"
+      ],
+      "catalog_evidence_id": "RAW-6",
+      "selector": "column:EllipElev",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "(m)"
+      ],
+      "catalog_evidence_id": "RAW-7",
+      "selector": "column:(m)",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "X"
+      ],
+      "catalog_evidence_id": "RAW-8",
+      "selector": "column:X",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "(m)__duplicate_2"
+      ],
+      "catalog_evidence_id": "RAW-9",
+      "selector": "column:(m)__duplicate_2",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "Y"
+      ],
+      "catalog_evidence_id": "RAW-10",
+      "selector": "column:Y",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "(m)__duplicate_3"
+      ],
+      "catalog_evidence_id": "RAW-11",
+      "selector": "column:(m)__duplicate_3",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "Z"
+      ],
+      "catalog_evidence_id": "RAW-12",
+      "selector": "column:Z",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "(m)__duplicate_4"
+      ],
+      "catalog_evidence_id": "RAW-13",
+      "selector": "column:(m)__duplicate_4",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "Epoch"
+      ],
+      "catalog_evidence_id": "RAW-14",
+      "selector": "column:Epoch",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "(yr)"
+      ],
+      "catalog_evidence_id": "RAW-15",
+      "selector": "column:(yr)",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "Net"
+      ],
+      "catalog_evidence_id": "RAW-16",
+      "selector": "column:Net",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "Status"
+      ],
+      "catalog_evidence_id": "RAW-17",
+      "selector": "column:Status",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "Last"
+      ],
+      "catalog_evidence_id": "RAW-18",
+      "selector": "column:Last",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "yr.doy"
+      ],
+      "catalog_evidence_id": "RAW-19",
+      "selector": "column:yr.doy",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "Ant"
+      ],
+      "catalog_evidence_id": "RAW-20",
+      "selector": "column:Ant",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "Hght(m)"
+      ],
+      "catalog_evidence_id": "RAW-21",
+      "selector": "column:Hght(m)",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "Type"
+      ],
+      "catalog_evidence_id": "RAW-22",
+      "selector": "column:Type",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "Dome"
+      ],
+      "catalog_evidence_id": "RAW-23",
+      "selector": "column:Dome",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "Site",
+        "Latitude",
+        "(deg)",
+        "Longitude",
+        "(deg)__duplicate_2",
+        "EllipElev",
+        "(m)",
+        "X",
+        "(m)__duplicate_2",
+        "Y",
+        "(m)__duplicate_3",
+        "Z",
+        "(m)__duplicate_4",
+        "Epoch",
+        "(yr)",
+        "Net",
+        "Status",
+        "Last",
+        "yr.doy",
+        "Ant",
+        "Hght(m)",
+        "Type",
+        "Dome"
+      ],
+      "catalog_evidence_id": "NDP-TITLE",
+      "selector": "raw_catalog_response.result.title",
+      "source_id": "NDP_DETAIL_SNAPSHOT",
+      "source_sha256": "288ee15e23930da8947f505b7ed12231658c739a8c6ca820189d9df5675e82ba",
+      "source_type": "catalog_documentation",
+      "strength": "documentation"
+    },
+    {
+      "applicable_field_paths": [
+        "Site",
+        "Latitude",
+        "(deg)",
+        "Longitude",
+        "(deg)__duplicate_2",
+        "EllipElev",
+        "(m)",
+        "X",
+        "(m)__duplicate_2",
+        "Y",
+        "(m)__duplicate_3",
+        "Z",
+        "(m)__duplicate_4",
+        "Epoch",
+        "(yr)",
+        "Net",
+        "Status",
+        "Last",
+        "yr.doy",
+        "Ant",
+        "Hght(m)",
+        "Type",
+        "Dome"
+      ],
+      "catalog_evidence_id": "NDP-NOTES",
+      "selector": "raw_catalog_response.result.notes",
+      "source_id": "NDP_DETAIL_SNAPSHOT",
+      "source_sha256": "288ee15e23930da8947f505b7ed12231658c739a8c6ca820189d9df5675e82ba",
+      "source_type": "catalog_documentation",
+      "strength": "documentation"
+    }
+  ],
+  "primary_analysis_cluster": "811f0bcc-99e5-455c-bcf6-7c63c2634f41",
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "schema_version": "semantic-source-bundle/v1",
+  "source_dataset_id": "811f0bcc-99e5-455c-bcf6-7c63c2634f41",
+  "source_resource_id": "a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+  "sources": [
+    {
+      "source_file": "../annotation_pack_v1/packets/ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f.annotation-packet.json",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "source_type": "frozen_neutral_annotation_packet"
+    },
+    {
+      "source_file": "../../resources/development/811f0bcc-99e5-455c-bcf6-7c63c2634f41/a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+      "source_type": "original_acquired_dataset_resource"
+    },
+    {
+      "source_file": "../../acquisition/development_details/811f0bcc-99e5-455c-bcf6-7c63c2634f41.json.gz",
+      "source_id": "NDP_DETAIL_SNAPSHOT",
+      "source_sha256": "288ee15e23930da8947f505b7ed12231658c739a8c6ca820189d9df5675e82ba",
+      "source_type": "frozen_ndp_ckan_package_show_snapshot"
+    }
+  ],
+  "split": "development",
+  "status": "draft_blocked_on_frozen_vocabulary_and_human_approval",
+  "vocabulary_file": "../vocabulary_draft_v1.json",
+  "vocabulary_sha256": "abb13e004e0dd1b28eaa4df0a9f0841eb65032c46730310d42f5979d56e9b773"
+}

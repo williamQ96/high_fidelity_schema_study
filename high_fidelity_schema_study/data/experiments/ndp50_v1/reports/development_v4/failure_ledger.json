@@ -1,0 +1,284 @@
+{
+  "entries": [
+    {
+      "catalog_format": "document",
+      "dataset_id": "0316eb60-7b34-4385-85dd-186a3a454a8a",
+      "download_status": "skip_unsupported_format",
+      "extraction_status": "not_run",
+      "plan_decision": "skip_unsupported_format",
+      "reason": "no registered file extractor in the frozen development policy",
+      "reason_code": "skip_unsupported_format",
+      "resource_id": "0cb70ab1-c6ec-4483-a381-1ddc18922706"
+    },
+    {
+      "catalog_format": "arcgisgeoservicesrestapi",
+      "dataset_id": "0998867b-9aac-4bf9-a408-c67fbcab7176",
+      "download_status": "skip_unsupported_format",
+      "extraction_status": "not_run",
+      "plan_decision": "skip_unsupported_format",
+      "reason": "no registered file extractor in the frozen development policy",
+      "reason_code": "skip_unsupported_format",
+      "resource_id": "37f40c59-5faa-463d-aa48-f93b956d04ea"
+    },
+    {
+      "catalog_format": "document",
+      "dataset_id": "0998867b-9aac-4bf9-a408-c67fbcab7176",
+      "download_status": "skip_unsupported_format",
+      "extraction_status": "not_run",
+      "plan_decision": "skip_unsupported_format",
+      "reason": "no registered file extractor in the frozen development policy",
+      "reason_code": "skip_unsupported_format",
+      "resource_id": "4db8c6f0-22a9-4c8d-970e-6fdfc4e8729a"
+    },
+    {
+      "catalog_format": "kml",
+      "dataset_id": "0998867b-9aac-4bf9-a408-c67fbcab7176",
+      "download_status": "skip_unsupported_format",
+      "extraction_status": "not_run",
+      "plan_decision": "skip_unsupported_format",
+      "reason": "no registered file extractor in the frozen development policy",
+      "reason_code": "skip_unsupported_format",
+      "resource_id": "5b6be8bc-6485-451c-b1b3-ad2e9741948d"
+    },
+    {
+      "catalog_format": "csv",
+      "dataset_id": "0998867b-9aac-4bf9-a408-c67fbcab7176",
+      "download_status": "provider_export_pending",
+      "extraction_status": "not_run",
+      "plan_decision": "attempt",
+      "reason": "Provider returned an asynchronous export status document, not the dataset payload.",
+      "reason_code": "provider_control_response",
+      "resource_id": "81107e18-d5f8-4673-94ed-7a5eb88a4052"
+    },
+    {
+      "catalog_format": "json",
+      "dataset_id": "0998867b-9aac-4bf9-a408-c67fbcab7176",
+      "download_status": "skipped_too_large",
+      "extraction_status": "not_run",
+      "plan_decision": "attempt",
+      "reason": "Declared 877026083 bytes exceeds 26214400.",
+      "reason_code": "content_length_exceeds_frozen_limit",
+      "resource_id": "a5c597d7-3861-4c8e-8539-1c14fbddbafc"
+    },
+    {
+      "catalog_format": "archive",
+      "dataset_id": "0998867b-9aac-4bf9-a408-c67fbcab7176",
+      "download_status": "skip_unsupported_format",
+      "extraction_status": "not_run",
+      "plan_decision": "skip_unsupported_format",
+      "reason": "no registered file extractor in the frozen development policy",
+      "reason_code": "skip_unsupported_format",
+      "resource_id": "c0de9090-c661-4c4b-8114-4aa826ba351d"
+    },
+    {
+      "catalog_format": "zarr",
+      "dataset_id": "3bfd82a8-9676-4c8b-a791-d2a31cb84de7",
+      "download_status": "skip_remote_store_locator_incomplete",
+      "extraction_status": "not_run",
+      "plan_decision": "skip_remote_store_locator_incomplete",
+      "reason": "resource metadata does not uniquely locate a Zarr store with discoverable metadata markers",
+      "reason_code": "skip_remote_store_locator_incomplete",
+      "resource_id": "878b02fe-5a46-4588-a4c2-441ad3a2b38a"
+    },
+    {
+      "catalog_format": "csv",
+      "dataset_id": "6ebc92f4-daf4-4c52-b2c3-82276bc24ee5",
+      "download_status": "skipped_too_large",
+      "extraction_status": "not_run",
+      "plan_decision": "attempt",
+      "reason": "Declared 83856037 bytes exceeds 26214400.",
+      "reason_code": "content_length_exceeds_frozen_limit",
+      "resource_id": "63684066-66d5-4520-bd19-916844ce5d49"
+    },
+    {
+      "catalog_format": "csv",
+      "dataset_id": "6ebc92f4-daf4-4c52-b2c3-82276bc24ee5",
+      "download_status": "skip_dataset_resource_cap",
+      "extraction_status": "not_run",
+      "plan_decision": "skip_dataset_resource_cap",
+      "reason": "resource falls after the stable resource-ID order cap of 3",
+      "reason_code": "skip_dataset_resource_cap",
+      "resource_id": "fd40615f-030c-4f1c-9b70-ff87dae89fba"
+    },
+    {
+      "catalog_format": "unknown",
+      "dataset_id": "7686770a-de97-4067-86a6-66cbadd2faa1",
+      "download_status": "skip_unsupported_format",
+      "extraction_status": "not_run",
+      "plan_decision": "skip_unsupported_format",
+      "reason": "no registered file extractor in the frozen development policy",
+      "reason_code": "skip_unsupported_format",
+      "resource_id": "2bb8acd8-a879-4614-aa7c-ee8503959a0a"
+    },
+    {
+      "catalog_format": "geospatial_or_image",
+      "dataset_id": "7686770a-de97-4067-86a6-66cbadd2faa1",
+      "download_status": "skip_unsupported_format",
+      "extraction_status": "not_run",
+      "plan_decision": "skip_unsupported_format",
+      "reason": "no registered file extractor in the frozen development policy",
+      "reason_code": "skip_unsupported_format",
+      "resource_id": "3233f0e9-a8b4-4346-828e-dd04447eb752"
+    },
+    {
+      "catalog_format": "geospatial_or_image",
+      "dataset_id": "7686770a-de97-4067-86a6-66cbadd2faa1",
+      "download_status": "skip_unsupported_format",
+      "extraction_status": "not_run",
+      "plan_decision": "skip_unsupported_format",
+      "reason": "no registered file extractor in the frozen development policy",
+      "reason_code": "skip_unsupported_format",
+      "resource_id": "35fcfb61-72a2-48fd-8558-211414cc5c84"
+    },
+    {
+      "catalog_format": "unknown",
+      "dataset_id": "7686770a-de97-4067-86a6-66cbadd2faa1",
+      "download_status": "skip_unsupported_format",
+      "extraction_status": "not_run",
+      "plan_decision": "skip_unsupported_format",
+      "reason": "no registered file extractor in the frozen development policy",
+      "reason_code": "skip_unsupported_format",
+      "resource_id": "61c5ebb6-26a8-4525-9401-112e8ddbdf3d"
+    },
+    {
+      "catalog_format": "zarr",
+      "dataset_id": "872ba2a0-4e91-4a74-b2b4-21073a21ad7b",
+      "download_status": "skip_remote_store_locator_incomplete",
+      "extraction_status": "not_run",
+      "plan_decision": "skip_remote_store_locator_incomplete",
+      "reason": "resource metadata does not uniquely locate a Zarr store with discoverable metadata markers",
+      "reason_code": "skip_remote_store_locator_incomplete",
+      "resource_id": "bb5439a8-dd45-4046-97f9-496066ef2daf"
+    },
+    {
+      "catalog_format": "image",
+      "dataset_id": "8775a68d-885a-47f1-a13a-b6806c6c89be",
+      "download_status": "skip_unsupported_format",
+      "extraction_status": "not_run",
+      "plan_decision": "skip_unsupported_format",
+      "reason": "no registered file extractor in the frozen development policy",
+      "reason_code": "skip_unsupported_format",
+      "resource_id": "62784485-14ac-4e7d-8c76-f8b0fc83eeee"
+    },
+    {
+      "catalog_format": "geospatial_or_image",
+      "dataset_id": "8775a68d-885a-47f1-a13a-b6806c6c89be",
+      "download_status": "skip_unsupported_format",
+      "extraction_status": "not_run",
+      "plan_decision": "skip_unsupported_format",
+      "reason": "no registered file extractor in the frozen development policy",
+      "reason_code": "skip_unsupported_format",
+      "resource_id": "d28f4b9f-899f-4ac2-8fb1-8acfa77f9050"
+    },
+    {
+      "catalog_format": "document",
+      "dataset_id": "96c6e757-b46b-4f5a-a06a-2b8f3f16b914",
+      "download_status": "skip_unsupported_format",
+      "extraction_status": "not_run",
+      "plan_decision": "skip_unsupported_format",
+      "reason": "no registered file extractor in the frozen development policy",
+      "reason_code": "skip_unsupported_format",
+      "resource_id": "ee347672-dd6d-4214-a41a-1e614afba609"
+    },
+    {
+      "catalog_format": "applicationoctet-stream",
+      "dataset_id": "9be16b9b-086c-4436-875a-1804ea6f5e63",
+      "download_status": "skip_unsupported_format",
+      "extraction_status": "not_run",
+      "plan_decision": "skip_unsupported_format",
+      "reason": "no registered file extractor in the frozen development policy",
+      "reason_code": "skip_unsupported_format",
+      "resource_id": "2c043dab-ec5b-4c96-94b3-99d99fae864b"
+    },
+    {
+      "catalog_format": "archive",
+      "dataset_id": "aadd47f8-4381-4900-8c80-9949506bda95",
+      "download_status": "skip_unsupported_format",
+      "extraction_status": "not_run",
+      "plan_decision": "skip_unsupported_format",
+      "reason": "no registered file extractor in the frozen development policy",
+      "reason_code": "skip_unsupported_format",
+      "resource_id": "3a5fe88f-a7a8-46b6-a250-a1933b0c21a0"
+    },
+    {
+      "catalog_format": "text",
+      "dataset_id": "aadd47f8-4381-4900-8c80-9949506bda95",
+      "download_status": "skip_unsupported_format",
+      "extraction_status": "not_run",
+      "plan_decision": "skip_unsupported_format",
+      "reason": "no registered file extractor in the frozen development policy",
+      "reason_code": "skip_unsupported_format",
+      "resource_id": "abc9a06c-a6f2-4fd4-ae9b-5e1b21b62da3"
+    },
+    {
+      "catalog_format": "archive",
+      "dataset_id": "c7f29749-c6ab-4402-90ae-58fa5d23f830",
+      "download_status": "skip_unsupported_format",
+      "extraction_status": "not_run",
+      "plan_decision": "skip_unsupported_format",
+      "reason": "no registered file extractor in the frozen development policy",
+      "reason_code": "skip_unsupported_format",
+      "resource_id": "0981eeab-90de-44fc-818a-3d170e121147"
+    },
+    {
+      "catalog_format": "kml",
+      "dataset_id": "c7f29749-c6ab-4402-90ae-58fa5d23f830",
+      "download_status": "skip_unsupported_format",
+      "extraction_status": "not_run",
+      "plan_decision": "skip_unsupported_format",
+      "reason": "no registered file extractor in the frozen development policy",
+      "reason_code": "skip_unsupported_format",
+      "resource_id": "2053b13c-5a02-4ae6-9360-632dae89bf5f"
+    },
+    {
+      "catalog_format": "archive",
+      "dataset_id": "c7f29749-c6ab-4402-90ae-58fa5d23f830",
+      "download_status": "skip_unsupported_format",
+      "extraction_status": "not_run",
+      "plan_decision": "skip_unsupported_format",
+      "reason": "no registered file extractor in the frozen development policy",
+      "reason_code": "skip_unsupported_format",
+      "resource_id": "4040191c-bd8b-4578-b84e-084f408a0074"
+    },
+    {
+      "catalog_format": "kml",
+      "dataset_id": "c7f29749-c6ab-4402-90ae-58fa5d23f830",
+      "download_status": "skip_unsupported_format",
+      "extraction_status": "not_run",
+      "plan_decision": "skip_unsupported_format",
+      "reason": "no registered file extractor in the frozen development policy",
+      "reason_code": "skip_unsupported_format",
+      "resource_id": "660ddf07-3b5f-4c26-8e34-801d8523db43"
+    },
+    {
+      "catalog_format": "kml",
+      "dataset_id": "c7f29749-c6ab-4402-90ae-58fa5d23f830",
+      "download_status": "skip_unsupported_format",
+      "extraction_status": "not_run",
+      "plan_decision": "skip_unsupported_format",
+      "reason": "no registered file extractor in the frozen development policy",
+      "reason_code": "skip_unsupported_format",
+      "resource_id": "6622cbab-7c9f-47c0-8a93-b64fe2bccb36"
+    },
+    {
+      "catalog_format": "archive",
+      "dataset_id": "c7f29749-c6ab-4402-90ae-58fa5d23f830",
+      "download_status": "skip_unsupported_format",
+      "extraction_status": "not_run",
+      "plan_decision": "skip_unsupported_format",
+      "reason": "no registered file extractor in the frozen development policy",
+      "reason_code": "skip_unsupported_format",
+      "resource_id": "d505e539-c6b6-4469-b908-7d4b1a723dee"
+    }
+  ],
+  "entry_count": 27,
+  "reason_counts": {
+    "content_length_exceeds_frozen_limit": 2,
+    "provider_control_response": 1,
+    "skip_dataset_resource_cap": 1,
+    "skip_remote_store_locator_incomplete": 2,
+    "skip_unsupported_format": 21
+  },
+  "run_role": "development",
+  "schema_version": "ndp50-failure-ledger/v1"
+}

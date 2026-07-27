@@ -1,0 +1,105 @@
+{
+  "artifact_bindings": {
+    "cpa_design": {
+      "file": "cpa_design_draft_v1.json",
+      "sha256": "884cec768ecb08acb91e6f1b00a5dee88f163304af727fec8d67b132c900ecc3"
+    },
+    "opportunity_manifest": {
+      "file": "opportunity_manifest_v1.json",
+      "sha256": "01169ecd8b04eb9901cfb702da5cbae7826f0dc4dec12cc75f98620b726a6d17"
+    },
+    "selection": {
+      "file": "selection.json",
+      "sha256": "27d73de3b4aa8638616588fdac0d927d79321d7d230d2c55f96c952689bd471d"
+    }
+  },
+  "cpa_candidate_counts": {
+    "development": {
+      "dataset_cluster_count": 4,
+      "resource_case_count": 7
+    },
+    "validation": {
+      "dataset_cluster_count": 3,
+      "resource_case_count": 4
+    }
+  },
+  "gates": {
+    "feasibility_assessed": true,
+    "pilot_reporting_required": true,
+    "test_power_plan_frozen": false,
+    "validation_confirmatory_power_established": false
+  },
+  "implementation": {
+    "file": "ndp50_power_feasibility.py",
+    "sha256": "6afa4836e564a0a20f5d636d1d74270fceb046c42d22cd8ac00461f0eb8e65c4"
+  },
+  "implementation_dependencies": {
+    "semantic_power_analysis.py": "a5d68e5389e644c15bdcae599f06ba8c8757ba378e2edb4e59f4f1f2d1991c69"
+  },
+  "multiplicity": {
+    "familywise_alpha": 0.05,
+    "holm_worst_case_alpha_per_contrast": 0.025,
+    "primary_contrast_count": 2
+  },
+  "post_test_conditional_rules": [
+    "Do not inspect test semantic outcomes until all non-power readiness gates and a frozen non-blind power plan pass.",
+    "Use dataset clusters, never pooled resource or field rows, as the primary independent units.",
+    "Require the frozen comparable-opportunity count; the exact sign-flip resolution floor is necessary but not sufficient power.",
+    "If the frozen count is missed, label the result underpowered and do not interpret a null result as evidence of no effect.",
+    "Do not add selectively chosen datasets after observing test outcomes."
+  ],
+  "primary_statistical_unit": "dataset",
+  "schema_version": "ndp50-semantic-power-feasibility/v1",
+  "selected_dataset_counts": {
+    "development": 15,
+    "test": 25,
+    "validation": 10
+  },
+  "semantic_opportunity_counts": {
+    "development": {
+      "dataset_cluster_count": 7,
+      "resource_case_count": 10
+    },
+    "validation": {
+      "dataset_cluster_count": 5,
+      "resource_case_count": 6
+    }
+  },
+  "status": "feasibility_assessed_confirmatory_power_not_established",
+  "test_state": {
+    "confirmatory_inference_authorized": false,
+    "maximum_selected_test_dataset_count": 25,
+    "power_plan": null,
+    "power_plan_frozen": false,
+    "semantic_opportunity_count": null,
+    "test_detail_snapshot_count": 0,
+    "test_split_unopened": true
+  },
+  "validation_claim_scope": {
+    "confirmatory_no_effect_claim_allowed": false,
+    "confirmatory_superiority_claim_allowed": false,
+    "cpa": "descriptive_feasibility_pilot_only",
+    "general_semantic": "descriptive_feasibility_pilot_only",
+    "reason": "Even the best-case exact sign-flip p-value cannot reach the multiplicity-adjusted primary threshold with the available validation dataset clusters."
+  },
+  "validation_resolution": {
+    "cpa": {
+      "best_case_all_success_95pct_clopper_pearson_lower": 0.29240177382128674,
+      "best_case_two_sided_exact_sign_flip_p": 0.25,
+      "can_reach_holm_worst_case_threshold_in_best_case": false,
+      "holm_worst_case_alpha_per_primary_contrast": 0.025,
+      "interpretation": "Resolution diagnostic only. It assumes every available cluster has a nonzero paired difference in the same direction; actual power and precision can only be worse when ties, missingness, noncomparability, or heterogeneous effects occur.",
+      "maximum_nonzero_pair_count": 3,
+      "minimum_nonzero_pairs_for_exact_resolution": 7
+    },
+    "general_semantic": {
+      "best_case_all_success_95pct_clopper_pearson_lower": 0.47817624989501856,
+      "best_case_two_sided_exact_sign_flip_p": 0.0625,
+      "can_reach_holm_worst_case_threshold_in_best_case": false,
+      "holm_worst_case_alpha_per_primary_contrast": 0.025,
+      "interpretation": "Resolution diagnostic only. It assumes every available cluster has a nonzero paired difference in the same direction; actual power and precision can only be worse when ties, missingness, noncomparability, or heterogeneous effects occur.",
+      "maximum_nonzero_pair_count": 5,
+      "minimum_nonzero_pairs_for_exact_resolution": 7
+    }
+  }
+}

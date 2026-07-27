@@ -1,0 +1,55 @@
+{
+  "annotator_qualification_and_conflict_required": true,
+  "automatic_adjudication": false,
+  "case_count": 11,
+  "consensus_adjudicator_fresh_from_screens": true,
+  "consensus_adjudicator_qualification_and_conflict_required": true,
+  "dataset_cluster_count": 7,
+  "developer_participation": false,
+  "evidence_binding_complete": true,
+  "evidence_catalog_case_count": 11,
+  "human_decisions_present": false,
+  "implementation": {
+    "file": "ndp50_cpa_screen_workflow.py",
+    "sha256": "11e190f867482742ee63c7eeca00b48b4177fd823446f777802f0583652eb5d5"
+  },
+  "implementation_dependencies": {
+    "ndp50_source_approval.py": "6ba7772459167931a366a55ddfa74e6a591e41f6a47d40bedfc9f70b3bbc597d",
+    "semantic_gold_workflow.py": "1319dd8b52a3421ce4e34bbfc59e21391e2c8d161e1c01272aa33a7299fab864"
+  },
+  "model_outputs_visible_during_screening": false,
+  "neutral_screen": {
+    "schema_version": "ndp50-cpa-applicability-screen/v1",
+    "sha256": "d9fed1f3b302e040fa4eeafe89b38b6fdf6770120260b0337ddc16126af36aaf"
+  },
+  "opportunity_manifest": {
+    "file": "opportunity_manifest_v1.json",
+    "sha256": "01169ecd8b04eb9901cfb702da5cbae7826f0dc4dec12cc75f98620b726a6d17"
+  },
+  "required_consensus_adjudicators": 1,
+  "required_distinct_annotators": 2,
+  "required_independent_submissions": 2,
+  "required_role_coverage": [
+    "one_domain_or_scientific_metadata_curator",
+    "one_annotation_methodologist"
+  ],
+  "schema_version": "ndp50-cpa-screen-workflow/v1",
+  "screening_execution_authorized": false,
+  "sequence": [
+    "copy_and_complete_neutral_screen_independently",
+    "validate_and_content_hash_each_submission",
+    "reveal_deterministic_disagreement_worksheet_only_after_both_freeze",
+    "resolve_every_disagreement_by_human_review",
+    "validate_and_freeze_consensus"
+  ],
+  "source_bundle_manifest": {
+    "file": "manifest.json",
+    "sha256": "13b6eb7a866ad81bcefb4f75e1e6e2d6067d92a442a1d507e103ec096b8b3159",
+    "status": "draft_bundles_structurally_valid_not_annotation_ready"
+  },
+  "split_case_counts": {
+    "development": 7,
+    "validation": 4
+  },
+  "status": "workflow_validated_screening_blocked_on_source_approval"
+}

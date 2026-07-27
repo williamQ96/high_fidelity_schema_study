@@ -1,0 +1,666 @@
+{
+  "annotation_packet_file": "../annotation_pack_v1/packets/ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894.annotation-packet.json",
+  "annotation_packet_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+  "dataset_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+  "evidence_catalog": [
+    {
+      "applicable_field_paths": [
+        "$.features"
+      ],
+      "catalog_evidence_id": "$.features::F1",
+      "selector": "field_inventory:$.features:$.features::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[]"
+      ],
+      "catalog_evidence_id": "$.features[]::F1",
+      "selector": "field_inventory:$.features[]:$.features[]::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].geometry"
+      ],
+      "catalog_evidence_id": "$.features[].geometry::F1",
+      "selector": "field_inventory:$.features[].geometry:$.features[].geometry::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].geometry.coordinates"
+      ],
+      "catalog_evidence_id": "$.features[].geometry.coordinates::F1",
+      "selector": "field_inventory:$.features[].geometry.coordinates:$.features[].geometry.coordinates::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].geometry.coordinates[]"
+      ],
+      "catalog_evidence_id": "$.features[].geometry.coordinates[]::F1",
+      "selector": "field_inventory:$.features[].geometry.coordinates[]:$.features[].geometry.coordinates[]::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].geometry.coordinates[][]"
+      ],
+      "catalog_evidence_id": "$.features[].geometry.coordinates[][]::F1",
+      "selector": "field_inventory:$.features[].geometry.coordinates[][]:$.features[].geometry.coordinates[][]::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].geometry.coordinates[][][]"
+      ],
+      "catalog_evidence_id": "$.features[].geometry.coordinates[][][]::F1",
+      "selector": "field_inventory:$.features[].geometry.coordinates[][][]:$.features[].geometry.coordinates[][][]::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].geometry.type"
+      ],
+      "catalog_evidence_id": "$.features[].geometry.type::F1",
+      "selector": "field_inventory:$.features[].geometry.type:$.features[].geometry.type::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties"
+      ],
+      "catalog_evidence_id": "$.features[].properties::F1",
+      "selector": "field_inventory:$.features[].properties:$.features[].properties::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.crs"
+      ],
+      "catalog_evidence_id": "$.features[].properties.crs::F1",
+      "selector": "field_inventory:$.features[].properties.crs:$.features[].properties.crs::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.description_id"
+      ],
+      "catalog_evidence_id": "$.features[].properties.description_id::F1",
+      "selector": "field_inventory:$.features[].properties.description_id:$.features[].properties.description_id::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.extra_links"
+      ],
+      "catalog_evidence_id": "$.features[].properties.extra_links::F1",
+      "selector": "field_inventory:$.features[].properties.extra_links:$.features[].properties.extra_links::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.extra_links[]"
+      ],
+      "catalog_evidence_id": "$.features[].properties.extra_links[]::F1",
+      "selector": "field_inventory:$.features[].properties.extra_links[]:$.features[].properties.extra_links[]::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.extra_links[].metprof"
+      ],
+      "catalog_evidence_id": "$.features[].properties.extra_links[].metprof::F1",
+      "selector": "field_inventory:$.features[].properties.extra_links[].metprof:$.features[].properties.extra_links[].metprof::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.extra_links[].onlink"
+      ],
+      "catalog_evidence_id": "$.features[].properties.extra_links[].onlink::F1",
+      "selector": "field_inventory:$.features[].properties.extra_links[].onlink:$.features[].properties.extra_links[].onlink::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.name"
+      ],
+      "catalog_evidence_id": "$.features[].properties.name::F1",
+      "selector": "field_inventory:$.features[].properties.name:$.features[].properties.name::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.package_id"
+      ],
+      "catalog_evidence_id": "$.features[].properties.package_id::F1",
+      "selector": "field_inventory:$.features[].properties.package_id:$.features[].properties.package_id::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.supplinf"
+      ],
+      "catalog_evidence_id": "$.features[].properties.supplinf::F1",
+      "selector": "field_inventory:$.features[].properties.supplinf:$.features[].properties.supplinf::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.temporal"
+      ],
+      "catalog_evidence_id": "$.features[].properties.temporal::F1",
+      "selector": "field_inventory:$.features[].properties.temporal:$.features[].properties.temporal::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.temporal.endTime"
+      ],
+      "catalog_evidence_id": "$.features[].properties.temporal.endTime::F1",
+      "selector": "field_inventory:$.features[].properties.temporal.endTime:$.features[].properties.temporal.endTime::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.temporal.startTime"
+      ],
+      "catalog_evidence_id": "$.features[].properties.temporal.startTime::F1",
+      "selector": "field_inventory:$.features[].properties.temporal.startTime:$.features[].properties.temporal.startTime::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.url"
+      ],
+      "catalog_evidence_id": "$.features[].properties.url::F1",
+      "selector": "field_inventory:$.features[].properties.url:$.features[].properties.url::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].type"
+      ],
+      "catalog_evidence_id": "$.features[].type::F1",
+      "selector": "field_inventory:$.features[].type:$.features[].type::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.type"
+      ],
+      "catalog_evidence_id": "$.type::F1",
+      "selector": "field_inventory:$.type:$.type::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features",
+        "$.features[]",
+        "$.features[].geometry",
+        "$.features[].geometry.coordinates",
+        "$.features[].geometry.coordinates[]",
+        "$.features[].geometry.coordinates[][]",
+        "$.features[].geometry.coordinates[][][]",
+        "$.features[].geometry.type",
+        "$.features[].properties",
+        "$.features[].properties.crs",
+        "$.features[].properties.description_id",
+        "$.features[].properties.extra_links",
+        "$.features[].properties.extra_links[]",
+        "$.features[].properties.extra_links[].metprof",
+        "$.features[].properties.extra_links[].onlink",
+        "$.features[].properties.name",
+        "$.features[].properties.package_id",
+        "$.features[].properties.supplinf",
+        "$.features[].properties.temporal",
+        "$.features[].properties.temporal.endTime",
+        "$.features[].properties.temporal.startTime",
+        "$.features[].properties.url",
+        "$.features[].type",
+        "$.type"
+      ],
+      "catalog_evidence_id": "S1",
+      "selector": "approved_evidence:S1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "catalog_title",
+      "strength": "documentation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features"
+      ],
+      "catalog_evidence_id": "RAW-1",
+      "selector": "field_path:$.features",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[]"
+      ],
+      "catalog_evidence_id": "RAW-2",
+      "selector": "field_path:$.features[]",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].geometry"
+      ],
+      "catalog_evidence_id": "RAW-3",
+      "selector": "field_path:$.features[].geometry",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].geometry.coordinates"
+      ],
+      "catalog_evidence_id": "RAW-4",
+      "selector": "field_path:$.features[].geometry.coordinates",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].geometry.coordinates[]"
+      ],
+      "catalog_evidence_id": "RAW-5",
+      "selector": "field_path:$.features[].geometry.coordinates[]",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].geometry.coordinates[][]"
+      ],
+      "catalog_evidence_id": "RAW-6",
+      "selector": "field_path:$.features[].geometry.coordinates[][]",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].geometry.coordinates[][][]"
+      ],
+      "catalog_evidence_id": "RAW-7",
+      "selector": "field_path:$.features[].geometry.coordinates[][][]",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].geometry.type"
+      ],
+      "catalog_evidence_id": "RAW-8",
+      "selector": "field_path:$.features[].geometry.type",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties"
+      ],
+      "catalog_evidence_id": "RAW-9",
+      "selector": "field_path:$.features[].properties",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.crs"
+      ],
+      "catalog_evidence_id": "RAW-10",
+      "selector": "field_path:$.features[].properties.crs",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.description_id"
+      ],
+      "catalog_evidence_id": "RAW-11",
+      "selector": "field_path:$.features[].properties.description_id",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.extra_links"
+      ],
+      "catalog_evidence_id": "RAW-12",
+      "selector": "field_path:$.features[].properties.extra_links",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.extra_links[]"
+      ],
+      "catalog_evidence_id": "RAW-13",
+      "selector": "field_path:$.features[].properties.extra_links[]",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.extra_links[].metprof"
+      ],
+      "catalog_evidence_id": "RAW-14",
+      "selector": "field_path:$.features[].properties.extra_links[].metprof",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.extra_links[].onlink"
+      ],
+      "catalog_evidence_id": "RAW-15",
+      "selector": "field_path:$.features[].properties.extra_links[].onlink",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.name"
+      ],
+      "catalog_evidence_id": "RAW-16",
+      "selector": "field_path:$.features[].properties.name",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.package_id"
+      ],
+      "catalog_evidence_id": "RAW-17",
+      "selector": "field_path:$.features[].properties.package_id",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.supplinf"
+      ],
+      "catalog_evidence_id": "RAW-18",
+      "selector": "field_path:$.features[].properties.supplinf",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.temporal"
+      ],
+      "catalog_evidence_id": "RAW-19",
+      "selector": "field_path:$.features[].properties.temporal",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.temporal.endTime"
+      ],
+      "catalog_evidence_id": "RAW-20",
+      "selector": "field_path:$.features[].properties.temporal.endTime",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.temporal.startTime"
+      ],
+      "catalog_evidence_id": "RAW-21",
+      "selector": "field_path:$.features[].properties.temporal.startTime",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.url"
+      ],
+      "catalog_evidence_id": "RAW-22",
+      "selector": "field_path:$.features[].properties.url",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].type"
+      ],
+      "catalog_evidence_id": "RAW-23",
+      "selector": "field_path:$.features[].type",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.type"
+      ],
+      "catalog_evidence_id": "RAW-24",
+      "selector": "field_path:$.type",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features",
+        "$.features[]",
+        "$.features[].geometry",
+        "$.features[].geometry.coordinates",
+        "$.features[].geometry.coordinates[]",
+        "$.features[].geometry.coordinates[][]",
+        "$.features[].geometry.coordinates[][][]",
+        "$.features[].geometry.type",
+        "$.features[].properties",
+        "$.features[].properties.crs",
+        "$.features[].properties.description_id",
+        "$.features[].properties.extra_links",
+        "$.features[].properties.extra_links[]",
+        "$.features[].properties.extra_links[].metprof",
+        "$.features[].properties.extra_links[].onlink",
+        "$.features[].properties.name",
+        "$.features[].properties.package_id",
+        "$.features[].properties.supplinf",
+        "$.features[].properties.temporal",
+        "$.features[].properties.temporal.endTime",
+        "$.features[].properties.temporal.startTime",
+        "$.features[].properties.url",
+        "$.features[].type",
+        "$.type"
+      ],
+      "catalog_evidence_id": "NDP-TITLE",
+      "selector": "raw_catalog_response.result.title",
+      "source_id": "NDP_DETAIL_SNAPSHOT",
+      "source_sha256": "8443f76a4c3ae2622cc1594004d0cf175ff949af144e76b7b63061dc22b78eff",
+      "source_type": "catalog_documentation",
+      "strength": "documentation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features",
+        "$.features[]",
+        "$.features[].geometry",
+        "$.features[].geometry.coordinates",
+        "$.features[].geometry.coordinates[]",
+        "$.features[].geometry.coordinates[][]",
+        "$.features[].geometry.coordinates[][][]",
+        "$.features[].geometry.type",
+        "$.features[].properties",
+        "$.features[].properties.crs",
+        "$.features[].properties.description_id",
+        "$.features[].properties.extra_links",
+        "$.features[].properties.extra_links[]",
+        "$.features[].properties.extra_links[].metprof",
+        "$.features[].properties.extra_links[].onlink",
+        "$.features[].properties.name",
+        "$.features[].properties.package_id",
+        "$.features[].properties.supplinf",
+        "$.features[].properties.temporal",
+        "$.features[].properties.temporal.endTime",
+        "$.features[].properties.temporal.startTime",
+        "$.features[].properties.url",
+        "$.features[].type",
+        "$.type"
+      ],
+      "catalog_evidence_id": "NDP-NOTES",
+      "selector": "raw_catalog_response.result.notes",
+      "source_id": "NDP_DETAIL_SNAPSHOT",
+      "source_sha256": "8443f76a4c3ae2622cc1594004d0cf175ff949af144e76b7b63061dc22b78eff",
+      "source_type": "catalog_documentation",
+      "strength": "documentation"
+    }
+  ],
+  "primary_analysis_cluster": "ec326db2-4027-4694-99e3-4b9c3d7a29dc",
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "schema_version": "semantic-source-bundle/v1",
+  "source_dataset_id": "ec326db2-4027-4694-99e3-4b9c3d7a29dc",
+  "source_resource_id": "fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+  "sources": [
+    {
+      "source_file": "../annotation_pack_v1/packets/ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894.annotation-packet.json",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "source_type": "frozen_neutral_annotation_packet"
+    },
+    {
+      "source_file": "../../resources/development/ec326db2-4027-4694-99e3-4b9c3d7a29dc/fb5156fb-0f6c-49fc-b721-b6098a7bb894__spatial_extents_TX_East-UTM14_2017.json",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+      "source_type": "original_acquired_dataset_resource"
+    },
+    {
+      "source_file": "../../acquisition/development_details/ec326db2-4027-4694-99e3-4b9c3d7a29dc.json.gz",
+      "source_id": "NDP_DETAIL_SNAPSHOT",
+      "source_sha256": "8443f76a4c3ae2622cc1594004d0cf175ff949af144e76b7b63061dc22b78eff",
+      "source_type": "frozen_ndp_ckan_package_show_snapshot"
+    }
+  ],
+  "split": "development",
+  "status": "draft_blocked_on_frozen_vocabulary_and_human_approval",
+  "vocabulary_file": "../vocabulary_draft_v1.json",
+  "vocabulary_sha256": "abb13e004e0dd1b28eaa4df0a9f0841eb65032c46730310d42f5979d56e9b773"
+}

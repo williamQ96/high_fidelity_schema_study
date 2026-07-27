@@ -47,6 +47,32 @@ def test_conflicting_magic_and_hint_abstains(tmp_path):
     assert outcome.issues[0].code == "unknown_conflicting_format_signals"
 
 
+def test_complete_json_with_misleading_csv_suffix_abstains(tmp_path):
+    path = tmp_path / "payload.csv"
+    path.write_text('{"status": "ok", "values": [1, 2]}', encoding="utf-8")
+
+    outcome = extract_path(ExtractionRequest(str(path)))
+
+    assert outcome.status == "abstained"
+    assert outcome.format_decision.conflicted is True
+    assert outcome.format_decision.selected_format is None
+    assert {signal.format for signal in outcome.format_decision.signals} == {
+        "csv",
+        "json",
+    }
+
+
+def test_extensionless_complete_json_routes_to_json(tmp_path):
+    path = tmp_path / "payload"
+    path.write_text('{"values": [1, 2]}', encoding="utf-8")
+
+    outcome = extract_path(ExtractionRequest(str(path)))
+
+    assert outcome.status == "success"
+    assert outcome.format_decision.selected_format == "json"
+    assert outcome.format_decision.basis == "complete_json_probe"
+
+
 def test_malformed_parquet_routes_to_registered_extractor(tmp_path):
     path = tmp_path / "sample.parquet"
     path.write_bytes(b"PAR1unsupported")

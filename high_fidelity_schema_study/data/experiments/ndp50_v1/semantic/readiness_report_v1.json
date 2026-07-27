@@ -1,0 +1,203 @@
+{
+  "artifact_hashes": {
+    "completed_power_policy": null,
+    "cpa_consensus": null,
+    "cpa_design": "884cec768ecb08acb91e6f1b00a5dee88f163304af727fec8d67b132c900ecc3",
+    "cpa_disagreement_worksheet": null,
+    "cpa_screen": "d9fed1f3b302e040fa4eeafe89b38b6fdf6770120260b0337ddc16126af36aaf",
+    "cpa_submission_a": null,
+    "cpa_submission_b": null,
+    "cpa_workflow": "4bec54cdf7d9c187e315cc3debc34564ad2dfb3eb820f3e8307d747c9ecf6837",
+    "data_governance": "51dd1934f1183b6300b816b2517802735699c55d8a66ec32156825ed6e7df05b",
+    "data_governance_approval": null,
+    "data_governance_review_template": "f29629c8ea58a1fc28909f87409ef2bafc913d5a5f13d45dbb834f970adc2417",
+    "data_governance_review_workflow": "5aa9044518c5af5fe4d23b971cd60295b8df05d0e67d46985b96535b38795738",
+    "demonstration_pool_workflow_spec": "acc2ec4e0f092545d4db9296a386c84a8805b2292375aac80662274bb73e1953",
+    "development_calibration_report": null,
+    "execution_freeze": null,
+    "execution_freeze_config_template": "bd340b67580dd4a72611760ee78bba6e2e53146f8b98354340310d4012863aa0",
+    "execution_freeze_workflow": "32203d0ceaa6b242f7cadf4f222fecc973ee7dd72cdba351208a8a7ce64db33c",
+    "opportunity_manifest": "01169ecd8b04eb9901cfb702da5cbae7826f0dc4dec12cc75f98620b726a6d17",
+    "packet_manifest": "6d356997e8f3db91f39a9ac7a4759f420a0d880e7b76d3eac09d5625e2e26046",
+    "power_freeze": null,
+    "power_freeze_workflow": "c7fdc778474fa97ba942ed442080b1ec9e9f6420c4f7d4d1a242965e47d2880a",
+    "power_policy_template": "dba9cfb8815507aee9a4815b59937115849b64a5098e3619c46dad1735211fc2",
+    "selection": "27d73de3b4aa8638616588fdac0d927d79321d7d230d2c55f96c952689bd471d",
+    "semantic_gold_approval": null,
+    "semantic_gold_index_template": "c3cca0b6397fe67304b3d3bf013f8e0c22a3e27396a4560a9657d16cd45bc764",
+    "semantic_gold_workflow_spec": "67f86b592e4c1d9d2b1c7cd6f50e28b5b47ba22176f087759d6fa915b09d00c0",
+    "semantic_power_analysis": null,
+    "semantic_power_feasibility": "243e2386dfe5858a8c85806d3051a53966c4d6510917df944026ced9d7db1845",
+    "source_approval_workflow_spec": "19ede51349a7b614456fb0a2493e3f3243df1b3b0516ba6dcf2482c4dfe361d4",
+    "source_bundle_manifest": "13b6eb7a866ad81bcefb4f75e1e6e2d6067d92a442a1d507e103ec096b8b3159",
+    "test_execution_workflow": "d059e312b0c43ae0f437310ae17ae4b6f781d1147f61586a79b90f9df60361b0",
+    "validation_run": "5bf12d295cc9ce5be9003032f6c986bb5f1e8bf1f8052b1c8c66e67c21415b4b",
+    "validation_summary": "9048bee1fef4a327518b488ea668ea002e1cbd42d98d325334e902aebfd275af",
+    "vocabulary": "abb13e004e0dd1b28eaa4df0a9f0841eb65032c46730310d42f5979d56e9b773",
+    "vocabulary_candidate_catalog": null,
+    "vocabulary_consensus": null,
+    "vocabulary_decision_a": null,
+    "vocabulary_decision_b": null,
+    "vocabulary_disagreement_worksheet": null,
+    "vocabulary_draft": "abb13e004e0dd1b28eaa4df0a9f0841eb65032c46730310d42f5979d56e9b773",
+    "vocabulary_review_source_bundle_manifest": "13b6eb7a866ad81bcefb4f75e1e6e2d6067d92a442a1d507e103ec096b8b3159",
+    "vocabulary_review_template": "51006f01cdea680254cb1898a2444129d094a620750a6d6adbb0f3d57156d190",
+    "vocabulary_review_workflow": "4e063027a63521a37de5c62a884d43e8d8fa6e4e3dcc30689b661ebe846bd292"
+  },
+  "blockers": [
+    "corpus-specific vocabulary is not frozen",
+    "source relevance and bundle readiness lack human approval",
+    "two independent CPA applicability screens and consensus are absent",
+    "two-annotator independent gold and consensus are absent",
+    "prompt, serialization, demonstrations, and backend registry are not frozen",
+    "license, attribution, model data-transfer, and artifact redistribution governance are not frozen",
+    "frozen non-blind semantic power plan is absent"
+  ],
+  "checks": [
+    {
+      "check_id": "validation_identity",
+      "detail": "10 frozen validation dataset IDs",
+      "passed": true
+    },
+    {
+      "check_id": "test_split_unopened",
+      "detail": "0 test detail snapshots",
+      "passed": true
+    },
+    {
+      "check_id": "semantic_gold_workflow_binding",
+      "detail": "16 two-annotator gold cases",
+      "passed": true
+    },
+    {
+      "check_id": "demonstration_pool_workflow_binding",
+      "detail": "10 development-only candidate cases",
+      "passed": true
+    },
+    {
+      "check_id": "execution_freeze_workflow_binding",
+      "detail": "prompt, serialization, demonstrations, backend, and runner freeze",
+      "passed": true
+    },
+    {
+      "check_id": "packet_opportunity_binding",
+      "detail": "01169ecd8b04eb9901cfb702da5cbae7826f0dc4dec12cc75f98620b726a6d17",
+      "passed": true
+    },
+    {
+      "check_id": "vocabulary_packet_binding",
+      "detail": "6d356997e8f3db91f39a9ac7a4759f420a0d880e7b76d3eac09d5625e2e26046",
+      "passed": true
+    },
+    {
+      "check_id": "vocabulary_review_workflow_binding",
+      "detail": "16 discovery cases",
+      "passed": true
+    },
+    {
+      "check_id": "source_approval_workflow_implementation",
+      "detail": "item-level evidence-purpose approval",
+      "passed": true
+    },
+    {
+      "check_id": "semantic_power_feasibility",
+      "detail": "5 validation semantic clusters",
+      "passed": true
+    },
+    {
+      "check_id": "power_freeze_workflow_binding",
+      "detail": "pre-calibration policy and development-only power workflow",
+      "passed": true
+    },
+    {
+      "check_id": "test_execution_workflow_binding",
+      "detail": "immutable 25-dataset blind-run workflow; test identities omitted",
+      "passed": true
+    },
+    {
+      "check_id": "data_governance_provenance",
+      "detail": "25 development/validation datasets audited",
+      "passed": true
+    },
+    {
+      "check_id": "data_governance_review_workflow",
+      "detail": "two-signatory governance review workflow",
+      "passed": true
+    },
+    {
+      "check_id": "bundle_bindings",
+      "detail": "16 source bundles",
+      "passed": true
+    },
+    {
+      "check_id": "cpa_opportunity_bindings",
+      "detail": "11 CPA candidates",
+      "passed": true
+    },
+    {
+      "check_id": "cpa_screen_workflow_binding",
+      "detail": "11 blind-screen cases",
+      "passed": true
+    },
+    {
+      "check_id": "semantic_case_identity",
+      "detail": "16 packet cases",
+      "passed": true
+    }
+  ],
+  "created_at": "2026-07-27T02:23:02.766900Z",
+  "gates": {
+    "artifact_redistribution_policy_frozen": false,
+    "cpa_applicability_consensus_complete": false,
+    "cpa_independent_screening_authorized": false,
+    "cpa_screen_workflow_ready": true,
+    "data_governance_policy_frozen": false,
+    "data_governance_provenance_integrity": true,
+    "data_governance_review_workflow_ready": true,
+    "demonstration_pool_workflow_ready": true,
+    "execution_freeze_workflow_ready": true,
+    "external_model_data_transfer_policy_frozen": false,
+    "human_license_and_attribution_review_complete": false,
+    "independent_gold_complete": false,
+    "neutral_packets_ready": true,
+    "power_freeze_workflow_ready": true,
+    "prompt_and_backend_frozen": false,
+    "semantic_gold_workflow_ready": true,
+    "semantic_pilot_reporting_required": true,
+    "semantic_power_feasibility_assessed": true,
+    "semantic_preparation_integrity": true,
+    "source_approval_workflow_implementation_ready": true,
+    "source_bundles_annotation_ready": false,
+    "structural_validation_complete": true,
+    "test_design_meets_pretest_assurance": false,
+    "test_execution_workflow_ready": true,
+    "test_power_plan_frozen": false,
+    "test_split_unopened": true,
+    "validation_confirmatory_power_established": false,
+    "vocabulary_frozen": false,
+    "vocabulary_review_workflow_ready": true
+  },
+  "implementation": {
+    "file": "ndp50_readiness.py",
+    "sha256": "5faf6c72963e1798e12286e2fdd0f7e48f709b46084989832eadebcb07993d04"
+  },
+  "implementation_dependencies": {
+    "ndp50_cpa_screen_workflow.py": "11e190f867482742ee63c7eeca00b48b4177fd823446f777802f0583652eb5d5",
+    "ndp50_data_governance.py": "e79a1b58c5815b2031d4043523e75438723fc962ad4e5ffd572a2cf14154670e",
+    "ndp50_data_governance_review.py": "6b4a0a86bbae0f98f557d1638f2fcd9b1edce7019488bf78908f02eaa87bbcc1",
+    "ndp50_demonstration_pool.py": "6482a9d27bcf0494172b5def30a0e3c7289c149e91b3fdd62028ee02d35f3b9a",
+    "ndp50_execution_freeze.py": "c72fdb822fc98cc81d417ac93a033baaadde5ab6e56090295f35b0f95b92fa68",
+    "ndp50_power_feasibility.py": "6afa4836e564a0a20f5d636d1d74270fceb046c42d22cd8ac00461f0eb8e65c4",
+    "ndp50_power_freeze.py": "65970f34de68226fa095ee763d37543e1ebfd3dec2dfaf09e0dafbb351e8d308",
+    "ndp50_semantic_gold.py": "9d4e64214d201d05b8eba5d33c4f2c47c9ff477725c4154c70d360016a63c915",
+    "ndp50_test_execution.py": "403ad03d8fb0abd3aa5437e30e82a3db4165dabc73a9ffd02b927b7fa9f080a6",
+    "ndp50_test_inference.py": "a51dc634a228ef580457b91e0e8ae8eb1eb524818c15242f2af8babd9d7b508c",
+    "ndp50_vocabulary_workflow.py": "16ee620d2e4d761cf9a729fb71de6967d8ab82c1d5585b6ffdfee925f204dc80",
+    "semantic_gold_workflow.py": "1319dd8b52a3421ce4e34bbfc59e21391e2c8d161e1c01272aa33a7299fab864"
+  },
+  "integrity_status": "passed",
+  "readiness_status": "blocked_as_expected",
+  "schema_version": "ndp50-research-readiness/v1",
+  "semantic_execution_ready": false,
+  "test_ready": false
+}

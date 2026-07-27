@@ -1,0 +1,450 @@
+{
+  "annotation_properties": [
+    "physical_type",
+    "logical_type",
+    "semantic_type",
+    "unit"
+  ],
+  "annotator_instructions": [
+    "Annotate independently using the frozen handbook.",
+    "Do not inspect existing gold, semantic model output, or another annotator artifact before submission.",
+    "Assign applicability before assigning each value.",
+    "Cite exact packet evidence or independently frozen raw-source evidence for every known value."
+  ],
+  "approved_evidence": [
+    {
+      "applicable_field_paths": [
+        "timestamp",
+        "latitude",
+        "longitude",
+        "pm1_ugm3",
+        "pm2p5_ugm3",
+        "pm10_ugm3",
+        "co",
+        "no",
+        "no2",
+        "o3",
+        "so2"
+      ],
+      "detail": "Frozen NDP catalog title; metadata evidence, not gold.",
+      "evidence_id": "S1",
+      "source_name": "NDP dataset title",
+      "source_type": "catalog_title",
+      "text": "Aurora Predictions utah 20260224t002623"
+    }
+  ],
+  "case_id": "ndp50-validation-a47379a9-8051-42bf-9ddd-94f33b672ac6",
+  "data_modality": "time_series",
+  "dataset_id": "ndp50-validation-a47379a9-8051-42bf-9ddd-94f33b672ac6",
+  "evidence_policy": {
+    "allowed_evidence_types": [
+      "csv_header",
+      "hdf5_attribute",
+      "hdf5_dataset_path",
+      "json_sample_observation",
+      "json_schema_declaration",
+      "sample_rows"
+    ],
+    "derived_semantic_hints_removed": true,
+    "mode": "allowlisted_raw_observations_only"
+  },
+  "field_inventory": [
+    {
+      "example_values": [
+        "2025-01-30 01:00:00"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "timestamp",
+      "field_path": "timestamp",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "datetime",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=0; raw_header='timestamp'; field_path='timestamp'",
+          "evidence_id": "timestamp::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\9c01c9f6-c815-433d-b22a-3f9b37bfb570\\a47379a9-8051-42bf-9ddd-94f33b672ac6__prediction_csv_2025-01-30_0000-1200_12h_utah",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "timestamp::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\9c01c9f6-c815-433d-b22a-3f9b37bfb570\\a47379a9-8051-42bf-9ddd-94f33b672ac6__prediction_csv_2025-01-30_0000-1200_12h_utah",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.01,
+      "value_range": null
+    },
+    {
+      "example_values": [
+        "41.999999999999716"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "latitude",
+      "field_path": "latitude",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=1; raw_header='latitude'; field_path='latitude'",
+          "evidence_id": "latitude::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\9c01c9f6-c815-433d-b22a-3f9b37bfb570\\a47379a9-8051-42bf-9ddd-94f33b672ac6__prediction_csv_2025-01-30_0000-1200_12h_utah",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "latitude::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\9c01c9f6-c815-433d-b22a-3f9b37bfb570\\a47379a9-8051-42bf-9ddd-94f33b672ac6__prediction_csv_2025-01-30_0000-1200_12h_utah",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.06,
+      "value_range": [
+        37.59999999999973,
+        41.999999999999716
+      ]
+    },
+    {
+      "example_values": [
+        "246.00000000000242",
+        "246.40000000000242",
+        "246.80000000000243"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "longitude",
+      "field_path": "longitude",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=2; raw_header='longitude'; field_path='longitude'",
+          "evidence_id": "longitude::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\9c01c9f6-c815-433d-b22a-3f9b37bfb570\\a47379a9-8051-42bf-9ddd-94f33b672ac6__prediction_csv_2025-01-30_0000-1200_12h_utah",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "longitude::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\9c01c9f6-c815-433d-b22a-3f9b37bfb570\\a47379a9-8051-42bf-9ddd-94f33b672ac6__prediction_csv_2025-01-30_0000-1200_12h_utah",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.06,
+      "value_range": [
+        246.00000000000242,
+        250.40000000000248
+      ]
+    },
+    {
+      "example_values": [
+        "4.056169",
+        "4.062814",
+        "4.3572536"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "pm1_ugm3",
+      "field_path": "pm1_ugm3",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=3; raw_header='pm1_ugm3'; field_path='pm1_ugm3'",
+          "evidence_id": "pm1_ugm3::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\9c01c9f6-c815-433d-b22a-3f9b37bfb570\\a47379a9-8051-42bf-9ddd-94f33b672ac6__prediction_csv_2025-01-30_0000-1200_12h_utah",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "pm1_ugm3::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\9c01c9f6-c815-433d-b22a-3f9b37bfb570\\a47379a9-8051-42bf-9ddd-94f33b672ac6__prediction_csv_2025-01-30_0000-1200_12h_utah",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        2.5331721,
+        8.420457
+      ]
+    },
+    {
+      "example_values": [
+        "5.4207354",
+        "5.343558",
+        "5.5989122"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "pm2p5_ugm3",
+      "field_path": "pm2p5_ugm3",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=4; raw_header='pm2p5_ugm3'; field_path='pm2p5_ugm3'",
+          "evidence_id": "pm2p5_ugm3::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\9c01c9f6-c815-433d-b22a-3f9b37bfb570\\a47379a9-8051-42bf-9ddd-94f33b672ac6__prediction_csv_2025-01-30_0000-1200_12h_utah",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "pm2p5_ugm3::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\9c01c9f6-c815-433d-b22a-3f9b37bfb570\\a47379a9-8051-42bf-9ddd-94f33b672ac6__prediction_csv_2025-01-30_0000-1200_12h_utah",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        3.6820045,
+        12.166598
+      ]
+    },
+    {
+      "example_values": [
+        "8.823478",
+        "9.242905",
+        "9.878345"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "pm10_ugm3",
+      "field_path": "pm10_ugm3",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=5; raw_header='pm10_ugm3'; field_path='pm10_ugm3'",
+          "evidence_id": "pm10_ugm3::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\9c01c9f6-c815-433d-b22a-3f9b37bfb570\\a47379a9-8051-42bf-9ddd-94f33b672ac6__prediction_csv_2025-01-30_0000-1200_12h_utah",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "pm10_ugm3::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\9c01c9f6-c815-433d-b22a-3f9b37bfb570\\a47379a9-8051-42bf-9ddd-94f33b672ac6__prediction_csv_2025-01-30_0000-1200_12h_utah",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        5.630254,
+        18.119225
+      ]
+    },
+    {
+      "example_values": [
+        "0.00080582727",
+        "0.0007973207",
+        "0.00078473275"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "co",
+      "field_path": "co",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=6; raw_header='co'; field_path='co'",
+          "evidence_id": "co::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\9c01c9f6-c815-433d-b22a-3f9b37bfb570\\a47379a9-8051-42bf-9ddd-94f33b672ac6__prediction_csv_2025-01-30_0000-1200_12h_utah",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "co::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\9c01c9f6-c815-433d-b22a-3f9b37bfb570\\a47379a9-8051-42bf-9ddd-94f33b672ac6__prediction_csv_2025-01-30_0000-1200_12h_utah",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        0.0007307358,
+        0.0008621422
+      ]
+    },
+    {
+      "example_values": [
+        "1.6481345e-06",
+        "1.6571558e-06",
+        "1.6618266e-06"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "no",
+      "field_path": "no",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=7; raw_header='no'; field_path='no'",
+          "evidence_id": "no::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\9c01c9f6-c815-433d-b22a-3f9b37bfb570\\a47379a9-8051-42bf-9ddd-94f33b672ac6__prediction_csv_2025-01-30_0000-1200_12h_utah",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "no::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\9c01c9f6-c815-433d-b22a-3f9b37bfb570\\a47379a9-8051-42bf-9ddd-94f33b672ac6__prediction_csv_2025-01-30_0000-1200_12h_utah",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        5.7362297e-07,
+        1.8322871e-06
+      ]
+    },
+    {
+      "example_values": [
+        "2.3409318e-06",
+        "2.451524e-06",
+        "2.5166723e-06"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "no2",
+      "field_path": "no2",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=8; raw_header='no2'; field_path='no2'",
+          "evidence_id": "no2::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\9c01c9f6-c815-433d-b22a-3f9b37bfb570\\a47379a9-8051-42bf-9ddd-94f33b672ac6__prediction_csv_2025-01-30_0000-1200_12h_utah",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "no2::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\9c01c9f6-c815-433d-b22a-3f9b37bfb570\\a47379a9-8051-42bf-9ddd-94f33b672ac6__prediction_csv_2025-01-30_0000-1200_12h_utah",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        1.830418e-06,
+        4.7866406e-06
+      ]
+    },
+    {
+      "example_values": [
+        "0.007302221",
+        "0.007363335",
+        "0.0074086864"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "o3",
+      "field_path": "o3",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=9; raw_header='o3'; field_path='o3'",
+          "evidence_id": "o3::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\9c01c9f6-c815-433d-b22a-3f9b37bfb570\\a47379a9-8051-42bf-9ddd-94f33b672ac6__prediction_csv_2025-01-30_0000-1200_12h_utah",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "o3::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\9c01c9f6-c815-433d-b22a-3f9b37bfb570\\a47379a9-8051-42bf-9ddd-94f33b672ac6__prediction_csv_2025-01-30_0000-1200_12h_utah",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        0.006771966,
+        0.0075756
+      ]
+    },
+    {
+      "example_values": [
+        "6.8528357e-06",
+        "6.7741976e-06",
+        "6.6349726e-06"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "so2",
+      "field_path": "so2",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=10; raw_header='so2'; field_path='so2'",
+          "evidence_id": "so2::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\9c01c9f6-c815-433d-b22a-3f9b37bfb570\\a47379a9-8051-42bf-9ddd-94f33b672ac6__prediction_csv_2025-01-30_0000-1200_12h_utah",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "so2::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\9c01c9f6-c815-433d-b22a-3f9b37bfb570\\a47379a9-8051-42bf-9ddd-94f33b672ac6__prediction_csv_2025-01-30_0000-1200_12h_utah",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        5.147626e-06,
+        9.039667e-06
+      ]
+    }
+  ],
+  "file_format": "csv",
+  "prediction_fields_removed": [
+    "logical_type",
+    "semantic_type",
+    "unit",
+    "confidence",
+    "uncertainty_reason",
+    "semantic_logical_hint",
+    "description"
+  ],
+  "primary_analysis_cluster": "9c01c9f6-c815-433d-b22a-3f9b37bfb570",
+  "purpose": "ndp50_independent_semantic_gold",
+  "research_evidence_status": "pre_model_independent_gold_preparation",
+  "schema_version": "semantic-annotation-packet/v1",
+  "source_dataset_id": "9c01c9f6-c815-433d-b22a-3f9b37bfb570",
+  "source_resource_id": "a47379a9-8051-42bf-9ddd-94f33b672ac6",
+  "source_task_sha256": "520297e183aadbf712146a9cb0bfae87abbfc910f467f458b21ecc3f17b827c5",
+  "split": "validation",
+  "task_id": "ndp50-validation-a47379a9-8051-42bf-9ddd-94f33b672ac6"
+}

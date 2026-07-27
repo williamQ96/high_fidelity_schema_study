@@ -1,0 +1,1944 @@
+{
+  "base_vocabulary": {
+    "file": "vocabulary.json",
+    "sha256": "874548a10f8871449be9b749c99e95e72e8852d261324abc8fa3c492246ed888"
+  },
+  "construction_basis": "Starts from the pre-NDP frozen calibration vocabulary. Only deterministically observed physical types are added automatically. No logical, semantic, or unit label is inferred from field names.",
+  "created_at": "2026-07-26T23:02:03.202100Z",
+  "extension_policy": "Human curators may add corpus-supported terms before annotation using approved source documentation only. Every addition requires a rationale and source selector. After freeze, unresolved or OOV applicable values use null; no label is invented during scoring.",
+  "field_lexicon_for_human_review": {
+    "field_occurrence_count": 277,
+    "field_paths": [
+      {
+        "case_id": "ndp50-development-610b435e-1877-4a4b-b0be-c73539979eec",
+        "field_path": "CBH_m",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-610b435e-1877-4a4b-b0be-c73539979eec",
+        "field_path": "CROWN_RADIUS_m",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-610b435e-1877-4a4b-b0be-c73539979eec",
+        "field_path": "DIA_cm",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-610b435e-1877-4a4b-b0be-c73539979eec",
+        "field_path": "HT_m",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-610b435e-1877-4a4b-b0be-c73539979eec",
+        "field_path": "SPCD",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-610b435e-1877-4a4b-b0be-c73539979eec",
+        "field_path": "STATUSCD",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-610b435e-1877-4a4b-b0be-c73539979eec",
+        "field_path": "X_m",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-610b435e-1877-4a4b-b0be-c73539979eec",
+        "field_path": "Y_m",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-610b435e-1877-4a4b-b0be-c73539979eec",
+        "field_path": "__unnamed_column_1",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-610b435e-1877-4a4b-b0be-c73539979eec",
+        "field_path": "geometry",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-610b435e-1877-4a4b-b0be-c73539979eec",
+        "field_path": "plot_name",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+        "field_path": "$.features",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+        "field_path": "$.features[]",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+        "field_path": "$.features[].geometry",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+        "field_path": "$.features[].geometry.coordinates",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+        "field_path": "$.features[].geometry.coordinates[]",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+        "field_path": "$.features[].geometry.coordinates[][]",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+        "field_path": "$.features[].geometry.coordinates[][][]",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+        "field_path": "$.features[].geometry.type",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+        "field_path": "$.features[].properties",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+        "field_path": "$.features[].properties.crs",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+        "field_path": "$.features[].properties.description_id",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+        "field_path": "$.features[].properties.extra_links",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+        "field_path": "$.features[].properties.extra_links[]",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+        "field_path": "$.features[].properties.extra_links[].metprof",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+        "field_path": "$.features[].properties.extra_links[].onlink",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+        "field_path": "$.features[].properties.name",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+        "field_path": "$.features[].properties.package_id",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+        "field_path": "$.features[].properties.supplinf",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+        "field_path": "$.features[].properties.temporal",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+        "field_path": "$.features[].properties.temporal.endTime",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+        "field_path": "$.features[].properties.temporal.startTime",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+        "field_path": "$.features[].properties.url",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+        "field_path": "$.features[].type",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+        "field_path": "$.type",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+        "field_path": "(deg)",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+        "field_path": "(deg)__duplicate_2",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+        "field_path": "(m)",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+        "field_path": "(m)__duplicate_2",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+        "field_path": "(m)__duplicate_3",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+        "field_path": "(m)__duplicate_4",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+        "field_path": "(yr)",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+        "field_path": "Ant",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+        "field_path": "Dome",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+        "field_path": "EllipElev",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+        "field_path": "Epoch",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+        "field_path": "Hght(m)",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+        "field_path": "Last",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+        "field_path": "Latitude",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+        "field_path": "Longitude",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+        "field_path": "Net",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+        "field_path": "Site",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+        "field_path": "Status",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+        "field_path": "Type",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+        "field_path": "X",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+        "field_path": "Y",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+        "field_path": "Z",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+        "field_path": "yr.doy",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-b651063b-edb5-4d4f-ae50-7fbc5191ad11",
+        "field_path": "acq_date",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-b651063b-edb5-4d4f-ae50-7fbc5191ad11",
+        "field_path": "acq_time",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-b651063b-edb5-4d4f-ae50-7fbc5191ad11",
+        "field_path": "bright_t31",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-b651063b-edb5-4d4f-ae50-7fbc5191ad11",
+        "field_path": "brightness",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-b651063b-edb5-4d4f-ae50-7fbc5191ad11",
+        "field_path": "confidence",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-b651063b-edb5-4d4f-ae50-7fbc5191ad11",
+        "field_path": "daynight",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-b651063b-edb5-4d4f-ae50-7fbc5191ad11",
+        "field_path": "frp",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-b651063b-edb5-4d4f-ae50-7fbc5191ad11",
+        "field_path": "latitude",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-b651063b-edb5-4d4f-ae50-7fbc5191ad11",
+        "field_path": "longitude",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-b651063b-edb5-4d4f-ae50-7fbc5191ad11",
+        "field_path": "satellite",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-b651063b-edb5-4d4f-ae50-7fbc5191ad11",
+        "field_path": "scan",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-b651063b-edb5-4d4f-ae50-7fbc5191ad11",
+        "field_path": "track",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-b651063b-edb5-4d4f-ae50-7fbc5191ad11",
+        "field_path": "version",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c2bbcf64-3737-42b9-aaf9-2d9971f31085",
+        "field_path": "acq_date",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c2bbcf64-3737-42b9-aaf9-2d9971f31085",
+        "field_path": "acq_time",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c2bbcf64-3737-42b9-aaf9-2d9971f31085",
+        "field_path": "bright_t31",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c2bbcf64-3737-42b9-aaf9-2d9971f31085",
+        "field_path": "brightness",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c2bbcf64-3737-42b9-aaf9-2d9971f31085",
+        "field_path": "confidence",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c2bbcf64-3737-42b9-aaf9-2d9971f31085",
+        "field_path": "daynight",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c2bbcf64-3737-42b9-aaf9-2d9971f31085",
+        "field_path": "frp",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c2bbcf64-3737-42b9-aaf9-2d9971f31085",
+        "field_path": "latitude",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c2bbcf64-3737-42b9-aaf9-2d9971f31085",
+        "field_path": "longitude",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c2bbcf64-3737-42b9-aaf9-2d9971f31085",
+        "field_path": "satellite",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c2bbcf64-3737-42b9-aaf9-2d9971f31085",
+        "field_path": "scan",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c2bbcf64-3737-42b9-aaf9-2d9971f31085",
+        "field_path": "track",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c2bbcf64-3737-42b9-aaf9-2d9971f31085",
+        "field_path": "version",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d",
+        "field_path": "acq_date",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d",
+        "field_path": "acq_time",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d",
+        "field_path": "bright_t31",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d",
+        "field_path": "brightness",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d",
+        "field_path": "confidence",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d",
+        "field_path": "daynight",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d",
+        "field_path": "frp",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d",
+        "field_path": "latitude",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d",
+        "field_path": "longitude",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d",
+        "field_path": "satellite",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d",
+        "field_path": "scan",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d",
+        "field_path": "track",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d",
+        "field_path": "version",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+        "field_path": "__unnamed_column_1",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+        "field_path": "inventory_date",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+        "field_path": "inventory_hour",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+        "field_path": "inventory_id",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+        "field_path": "inventory_plot_diam",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+        "field_path": "inventory_pre_post_fire",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+        "field_path": "inventory_pre_post_fire_label",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+        "field_path": "plot_aspectdegre",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+        "field_path": "plot_blk",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+        "field_path": "plot_coord_srs",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+        "field_path": "plot_coord_x",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+        "field_path": "plot_coord_y",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+        "field_path": "plot_declination",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+        "field_path": "plot_num",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+        "field_path": "plot_slopeper",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+        "field_path": "site_name",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+        "field_path": "site_name_label",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+        "field_path": "site_project",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+        "field_path": "site_project_label",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d15771b1-b612-478c-80ef-91d3e2e1c333",
+        "field_path": "co",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d15771b1-b612-478c-80ef-91d3e2e1c333",
+        "field_path": "latitude",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d15771b1-b612-478c-80ef-91d3e2e1c333",
+        "field_path": "longitude",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d15771b1-b612-478c-80ef-91d3e2e1c333",
+        "field_path": "no",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d15771b1-b612-478c-80ef-91d3e2e1c333",
+        "field_path": "no2",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d15771b1-b612-478c-80ef-91d3e2e1c333",
+        "field_path": "o3",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d15771b1-b612-478c-80ef-91d3e2e1c333",
+        "field_path": "pm10_ugm3",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d15771b1-b612-478c-80ef-91d3e2e1c333",
+        "field_path": "pm1_ugm3",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d15771b1-b612-478c-80ef-91d3e2e1c333",
+        "field_path": "pm2p5_ugm3",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d15771b1-b612-478c-80ef-91d3e2e1c333",
+        "field_path": "so2",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-d15771b1-b612-478c-80ef-91d3e2e1c333",
+        "field_path": "timestamp",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+        "field_path": "$.features",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+        "field_path": "$.features[]",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+        "field_path": "$.features[].geometry",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+        "field_path": "$.features[].geometry.coordinates",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+        "field_path": "$.features[].geometry.coordinates[]",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+        "field_path": "$.features[].geometry.coordinates[][]",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+        "field_path": "$.features[].geometry.coordinates[][][]",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+        "field_path": "$.features[].geometry.type",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+        "field_path": "$.features[].properties",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+        "field_path": "$.features[].properties.crs",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+        "field_path": "$.features[].properties.description_id",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+        "field_path": "$.features[].properties.extra_links",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+        "field_path": "$.features[].properties.extra_links[]",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+        "field_path": "$.features[].properties.extra_links[].metprof",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+        "field_path": "$.features[].properties.extra_links[].onlink",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+        "field_path": "$.features[].properties.name",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+        "field_path": "$.features[].properties.package_id",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+        "field_path": "$.features[].properties.supplinf",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+        "field_path": "$.features[].properties.temporal",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+        "field_path": "$.features[].properties.temporal.endTime",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+        "field_path": "$.features[].properties.temporal.startTime",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+        "field_path": "$.features[].properties.url",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+        "field_path": "$.features[].type",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+        "field_path": "$.type",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+        "field_path": "$.features",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+        "field_path": "$.features[]",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+        "field_path": "$.features[].geometry",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+        "field_path": "$.features[].geometry.coordinates",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+        "field_path": "$.features[].geometry.coordinates[]",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+        "field_path": "$.features[].geometry.coordinates[][]",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+        "field_path": "$.features[].geometry.coordinates[][][]",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+        "field_path": "$.features[].geometry.type",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+        "field_path": "$.features[].properties",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+        "field_path": "$.features[].properties.crs",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+        "field_path": "$.features[].properties.description_id",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+        "field_path": "$.features[].properties.extra_links",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+        "field_path": "$.features[].properties.extra_links[]",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+        "field_path": "$.features[].properties.extra_links[].metprof",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+        "field_path": "$.features[].properties.extra_links[].onlink",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+        "field_path": "$.features[].properties.name",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+        "field_path": "$.features[].properties.package_id",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+        "field_path": "$.features[].properties.supplinf",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+        "field_path": "$.features[].properties.temporal",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+        "field_path": "$.features[].properties.temporal.endTime",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+        "field_path": "$.features[].properties.temporal.startTime",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+        "field_path": "$.features[].properties.url",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+        "field_path": "$.features[].type",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+        "field_path": "$.type",
+        "split": "development"
+      },
+      {
+        "case_id": "ndp50-validation-47f47360-a5e2-441c-9b43-6cadf6eab7b6",
+        "field_path": "BasalA",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-47f47360-a5e2-441c-9b43-6cadf6eab7b6",
+        "field_path": "DBH",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-47f47360-a5e2-441c-9b43-6cadf6eab7b6",
+        "field_path": "Error",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-47f47360-a5e2-441c-9b43-6cadf6eab7b6",
+        "field_path": "H",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-47f47360-a5e2-441c-9b43-6cadf6eab7b6",
+        "field_path": "Radius",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-47f47360-a5e2-441c-9b43-6cadf6eab7b6",
+        "field_path": "TreeID",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-47f47360-a5e2-441c-9b43-6cadf6eab7b6",
+        "field_path": "X",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-47f47360-a5e2-441c-9b43-6cadf6eab7b6",
+        "field_path": "Y",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-47f47360-a5e2-441c-9b43-6cadf6eab7b6",
+        "field_path": "__unnamed_column_1",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-47f47360-a5e2-441c-9b43-6cadf6eab7b6",
+        "field_path": "h_radius",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-47f47360-a5e2-441c-9b43-6cadf6eab7b6",
+        "field_path": "plot_blk",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c",
+        "field_path": " bfc",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c",
+        "field_path": " estarea",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c",
+        "field_path": " fuel",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c",
+        "field_path": " fwi",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c",
+        "field_path": " hfi",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c",
+        "field_path": " lon",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c",
+        "field_path": " rep_date",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c",
+        "field_path": " ros",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c",
+        "field_path": " sensor",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c",
+        "field_path": " sfc",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c",
+        "field_path": " source",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c",
+        "field_path": " tfc",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c",
+        "field_path": "lat",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.crs",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.crs.properties",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.crs.properties.name",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.crs.type",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.features",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.features[]",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.features[].geometry",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.features[].geometry.coordinates",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.features[].geometry.coordinates[]",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.features[].geometry.coordinates[][]",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.features[].geometry.coordinates[][][]",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.features[].geometry.type",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.features[].properties",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.features[].properties.URL",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.features[].properties.file_name",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.features[].properties.max_x",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.features[].properties.max_y",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.features[].properties.max_z",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.features[].properties.min_x",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.features[].properties.min_y",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.features[].properties.min_z",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.features[].properties.num_points",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.features[].properties.point_size",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.features[].properties.point_type",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.features[].properties.version",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.features[].type",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+        "field_path": "$.type",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a47379a9-8051-42bf-9ddd-94f33b672ac6",
+        "field_path": "co",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a47379a9-8051-42bf-9ddd-94f33b672ac6",
+        "field_path": "latitude",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a47379a9-8051-42bf-9ddd-94f33b672ac6",
+        "field_path": "longitude",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a47379a9-8051-42bf-9ddd-94f33b672ac6",
+        "field_path": "no",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a47379a9-8051-42bf-9ddd-94f33b672ac6",
+        "field_path": "no2",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a47379a9-8051-42bf-9ddd-94f33b672ac6",
+        "field_path": "o3",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a47379a9-8051-42bf-9ddd-94f33b672ac6",
+        "field_path": "pm10_ugm3",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a47379a9-8051-42bf-9ddd-94f33b672ac6",
+        "field_path": "pm1_ugm3",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a47379a9-8051-42bf-9ddd-94f33b672ac6",
+        "field_path": "pm2p5_ugm3",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a47379a9-8051-42bf-9ddd-94f33b672ac6",
+        "field_path": "so2",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a47379a9-8051-42bf-9ddd-94f33b672ac6",
+        "field_path": "timestamp",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+        "field_path": "__unnamed_column_1",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+        "field_path": "inventory_date",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+        "field_path": "inventory_hour",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+        "field_path": "inventory_id",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+        "field_path": "inventory_plot_diam",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+        "field_path": "inventory_pre_post_fire",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+        "field_path": "inventory_pre_post_fire_label",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+        "field_path": "plot_aspectdegre",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+        "field_path": "plot_blk",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+        "field_path": "plot_coord_srs",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+        "field_path": "plot_coord_x",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+        "field_path": "plot_coord_y",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+        "field_path": "plot_declination",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+        "field_path": "plot_num",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+        "field_path": "plot_slopeper",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+        "field_path": "site_name",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+        "field_path": "site_name_label",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+        "field_path": "site_project",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+        "field_path": "site_project_label",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+        "field_path": "$.crs",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+        "field_path": "$.crs.properties",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+        "field_path": "$.crs.properties.name",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+        "field_path": "$.crs.type",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+        "field_path": "$.features",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+        "field_path": "$.features[]",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+        "field_path": "$.features[].geometry",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+        "field_path": "$.features[].geometry.coordinates",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+        "field_path": "$.features[].geometry.coordinates[]",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+        "field_path": "$.features[].geometry.coordinates[][]",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+        "field_path": "$.features[].geometry.coordinates[][][]",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+        "field_path": "$.features[].geometry.type",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+        "field_path": "$.features[].properties",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+        "field_path": "$.features[].properties.highway",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+        "field_path": "$.features[].properties.name",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+        "field_path": "$.features[].properties.osm_id",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+        "field_path": "$.features[].properties.other_tags",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+        "field_path": "$.features[].properties.width",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+        "field_path": "$.features[].type",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+        "field_path": "$.name",
+        "split": "validation"
+      },
+      {
+        "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+        "field_path": "$.type",
+        "split": "validation"
+      }
+    ],
+    "token_counts": [
+      {
+        "count": 106,
+        "token": "features"
+      },
+      {
+        "count": 65,
+        "token": "properties"
+      },
+      {
+        "count": 31,
+        "token": "geometry"
+      },
+      {
+        "count": 20,
+        "token": "coordinates"
+      },
+      {
+        "count": 20,
+        "token": "plot"
+      },
+      {
+        "count": 19,
+        "token": "type"
+      },
+      {
+        "count": 13,
+        "token": "name"
+      },
+      {
+        "count": 12,
+        "token": "extra"
+      },
+      {
+        "count": 12,
+        "token": "inventory"
+      },
+      {
+        "count": 12,
+        "token": "links"
+      },
+      {
+        "count": 11,
+        "token": "crs"
+      },
+      {
+        "count": 9,
+        "token": "id"
+      },
+      {
+        "count": 9,
+        "token": "site"
+      },
+      {
+        "count": 9,
+        "token": "temporal"
+      },
+      {
+        "count": 6,
+        "token": "acq"
+      },
+      {
+        "count": 6,
+        "token": "coord"
+      },
+      {
+        "count": 6,
+        "token": "date"
+      },
+      {
+        "count": 6,
+        "token": "label"
+      },
+      {
+        "count": 6,
+        "token": "latitude"
+      },
+      {
+        "count": 6,
+        "token": "longitude"
+      },
+      {
+        "count": 6,
+        "token": "ugm3"
+      },
+      {
+        "count": 4,
+        "token": "column"
+      },
+      {
+        "count": 4,
+        "token": "duplicate"
+      },
+      {
+        "count": 4,
+        "token": "fire"
+      },
+      {
+        "count": 4,
+        "token": "post"
+      },
+      {
+        "count": 4,
+        "token": "pre"
+      },
+      {
+        "count": 4,
+        "token": "project"
+      },
+      {
+        "count": 4,
+        "token": "unnamed"
+      },
+      {
+        "count": 4,
+        "token": "url"
+      },
+      {
+        "count": 4,
+        "token": "version"
+      },
+      {
+        "count": 3,
+        "token": "blk"
+      },
+      {
+        "count": 3,
+        "token": "bright"
+      },
+      {
+        "count": 3,
+        "token": "brightness"
+      },
+      {
+        "count": 3,
+        "token": "confidence"
+      },
+      {
+        "count": 3,
+        "token": "daynight"
+      },
+      {
+        "count": 3,
+        "token": "description"
+      },
+      {
+        "count": 3,
+        "token": "endtime"
+      },
+      {
+        "count": 3,
+        "token": "frp"
+      },
+      {
+        "count": 3,
+        "token": "max"
+      },
+      {
+        "count": 3,
+        "token": "metprof"
+      },
+      {
+        "count": 3,
+        "token": "min"
+      },
+      {
+        "count": 3,
+        "token": "num"
+      },
+      {
+        "count": 3,
+        "token": "onlink"
+      },
+      {
+        "count": 3,
+        "token": "package"
+      },
+      {
+        "count": 3,
+        "token": "radius"
+      },
+      {
+        "count": 3,
+        "token": "satellite"
+      },
+      {
+        "count": 3,
+        "token": "scan"
+      },
+      {
+        "count": 3,
+        "token": "starttime"
+      },
+      {
+        "count": 3,
+        "token": "supplinf"
+      },
+      {
+        "count": 3,
+        "token": "t31"
+      },
+      {
+        "count": 3,
+        "token": "time"
+      },
+      {
+        "count": 3,
+        "token": "track"
+      },
+      {
+        "count": 2,
+        "token": "aspectdegre"
+      },
+      {
+        "count": 2,
+        "token": "co"
+      },
+      {
+        "count": 2,
+        "token": "declination"
+      },
+      {
+        "count": 2,
+        "token": "deg"
+      },
+      {
+        "count": 2,
+        "token": "diam"
+      },
+      {
+        "count": 2,
+        "token": "hour"
+      },
+      {
+        "count": 2,
+        "token": "no"
+      },
+      {
+        "count": 2,
+        "token": "no2"
+      },
+      {
+        "count": 2,
+        "token": "o3"
+      },
+      {
+        "count": 2,
+        "token": "pm1"
+      },
+      {
+        "count": 2,
+        "token": "pm10"
+      },
+      {
+        "count": 2,
+        "token": "pm2p5"
+      },
+      {
+        "count": 2,
+        "token": "point"
+      },
+      {
+        "count": 2,
+        "token": "slopeper"
+      },
+      {
+        "count": 2,
+        "token": "so2"
+      },
+      {
+        "count": 2,
+        "token": "srs"
+      },
+      {
+        "count": 2,
+        "token": "timestamp"
+      },
+      {
+        "count": 2,
+        "token": "yr"
+      },
+      {
+        "count": 1,
+        "token": "ant"
+      },
+      {
+        "count": 1,
+        "token": "basala"
+      },
+      {
+        "count": 1,
+        "token": "bfc"
+      },
+      {
+        "count": 1,
+        "token": "cbh"
+      },
+      {
+        "count": 1,
+        "token": "cm"
+      },
+      {
+        "count": 1,
+        "token": "crown"
+      },
+      {
+        "count": 1,
+        "token": "dbh"
+      },
+      {
+        "count": 1,
+        "token": "dia"
+      },
+      {
+        "count": 1,
+        "token": "dome"
+      },
+      {
+        "count": 1,
+        "token": "doy"
+      },
+      {
+        "count": 1,
+        "token": "ellipelev"
+      },
+      {
+        "count": 1,
+        "token": "epoch"
+      },
+      {
+        "count": 1,
+        "token": "error"
+      },
+      {
+        "count": 1,
+        "token": "estarea"
+      },
+      {
+        "count": 1,
+        "token": "file"
+      },
+      {
+        "count": 1,
+        "token": "fuel"
+      },
+      {
+        "count": 1,
+        "token": "fwi"
+      },
+      {
+        "count": 1,
+        "token": "hfi"
+      },
+      {
+        "count": 1,
+        "token": "hght"
+      },
+      {
+        "count": 1,
+        "token": "highway"
+      },
+      {
+        "count": 1,
+        "token": "ht"
+      },
+      {
+        "count": 1,
+        "token": "last"
+      },
+      {
+        "count": 1,
+        "token": "lat"
+      },
+      {
+        "count": 1,
+        "token": "lon"
+      },
+      {
+        "count": 1,
+        "token": "net"
+      },
+      {
+        "count": 1,
+        "token": "osm"
+      },
+      {
+        "count": 1,
+        "token": "other"
+      },
+      {
+        "count": 1,
+        "token": "points"
+      },
+      {
+        "count": 1,
+        "token": "rep"
+      },
+      {
+        "count": 1,
+        "token": "ros"
+      },
+      {
+        "count": 1,
+        "token": "sensor"
+      },
+      {
+        "count": 1,
+        "token": "sfc"
+      },
+      {
+        "count": 1,
+        "token": "size"
+      },
+      {
+        "count": 1,
+        "token": "source"
+      },
+      {
+        "count": 1,
+        "token": "spcd"
+      },
+      {
+        "count": 1,
+        "token": "status"
+      },
+      {
+        "count": 1,
+        "token": "statuscd"
+      },
+      {
+        "count": 1,
+        "token": "tags"
+      },
+      {
+        "count": 1,
+        "token": "tfc"
+      },
+      {
+        "count": 1,
+        "token": "treeid"
+      },
+      {
+        "count": 1,
+        "token": "width"
+      }
+    ],
+    "unique_field_path_count": 277,
+    "warning": "Tokens are discovery aids, not candidate semantic labels and must not be promoted without approved evidence."
+  },
+  "freeze_blockers": [
+    "domain curator review has not occurred",
+    "NDP documentation-backed additions and rationales are absent",
+    "out-of-vocabulary policy has not been independently approved",
+    "two independent annotators have not confirmed usability"
+  ],
+  "logical_types": [
+    "attribute",
+    "coordinate",
+    "identifier",
+    "label",
+    "measurement",
+    "relationship",
+    "time_axis",
+    "unknown"
+  ],
+  "packet_manifest": {
+    "file": "manifest.json",
+    "sha256": "6d356997e8f3db91f39a9ac7a4759f420a0d880e7b76d3eac09d5625e2e26046"
+  },
+  "physical_types": [
+    "array",
+    "datetime",
+    "float",
+    "float32",
+    "int",
+    "int32",
+    "integer",
+    "null | string",
+    "number",
+    "object",
+    "string"
+  ],
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "research_evidence_status": "ndp50_pre_model_human_curation_required",
+  "schema_version": "semantic-annotation-vocabulary/v1",
+  "semantic_types": [
+    "acidity_ph",
+    "air_temperature",
+    "buoy_identifier",
+    "collection_date",
+    "depth",
+    "device_identifier",
+    "dissolved_oxygen",
+    "elevation",
+    "forecast_hour",
+    "free_text_note",
+    "latitude",
+    "longitude",
+    "observation_time",
+    "operational_status",
+    "postal_zone_code",
+    "power",
+    "precipitation",
+    "quality_flag",
+    "record_identifier",
+    "relative_humidity",
+    "salinity",
+    "sample_identifier",
+    "sensor_identifier",
+    "site_identifier",
+    "station_identifier",
+    "station_name",
+    "surface_pressure",
+    "turbidity",
+    "voltage",
+    "water_temperature",
+    "wind_speed"
+  ],
+  "status": "draft",
+  "unit_aliases": {
+    "%": "percent",
+    "C": "Celsius",
+    "m": "meter"
+  },
+  "unit_patterns": [
+    {
+      "meaning": "CF-style reference-time unit; retain the normalized origin string exactly",
+      "pattern": "^(seconds|minutes|hours|days) since [0-9]{4}-[0-9]{2}-[0-9]{2}( [0-9]{2}:[0-9]{2}:[0-9]{2})?( UTC)?$"
+    }
+  ],
+  "units": [
+    "NTU",
+    "degree",
+    "Celsius",
+    "hPa",
+    "kilowatt",
+    "meter",
+    "meter_per_second",
+    "milligram_per_liter",
+    "millimeter",
+    "percent",
+    "PSU",
+    "volt"
+  ],
+  "unknown_representation": null,
+  "vocabulary_version": "ndp50-draft-v1"
+}

@@ -1,0 +1,180 @@
+{
+  "blockers": [
+    "corpus-specific vocabulary is not frozen",
+    "approved raw/documentation source bundles are not frozen",
+    "two independent non-developer annotators are not assigned"
+  ],
+  "case_count": 16,
+  "cases": [
+    {
+      "case_id": "ndp50-development-610b435e-1877-4a4b-b0be-c73539979eec",
+      "dataset_id": "6ebc92f4-daf4-4c52-b2c3-82276bc24ee5",
+      "field_count": 11,
+      "packet_file": "packets/ndp50-development-610b435e-1877-4a4b-b0be-c73539979eec.annotation-packet.json",
+      "packet_sha256": "83196312debcf072bf2fa6f7242689c2c8173c88ef984bfbce9e83da945e47de",
+      "resource_id": "610b435e-1877-4a4b-b0be-c73539979eec",
+      "source_bundle_status": "blocked_pending_frozen_vocabulary",
+      "split": "development"
+    },
+    {
+      "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+      "dataset_id": "0316eb60-7b34-4385-85dd-186a3a454a8a",
+      "field_count": 24,
+      "packet_file": "packets/ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8.annotation-packet.json",
+      "packet_sha256": "88fdee9c096dc047602e41bbb3e2b57650db82cb79fbe2112658510129b0dde8",
+      "resource_id": "869fe564-c4ba-4568-9764-9e32c6535ff8",
+      "source_bundle_status": "blocked_pending_frozen_vocabulary",
+      "split": "development"
+    },
+    {
+      "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+      "dataset_id": "811f0bcc-99e5-455c-bcf6-7c63c2634f41",
+      "field_count": 23,
+      "packet_file": "packets/ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f.annotation-packet.json",
+      "packet_sha256": "80b40e2b334bc02a5179619202d4c859f029e911ce0029df1ae90e313e537b75",
+      "resource_id": "a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+      "source_bundle_status": "blocked_pending_frozen_vocabulary",
+      "split": "development"
+    },
+    {
+      "case_id": "ndp50-development-b651063b-edb5-4d4f-ae50-7fbc5191ad11",
+      "dataset_id": "c7f29749-c6ab-4402-90ae-58fa5d23f830",
+      "field_count": 13,
+      "packet_file": "packets/ndp50-development-b651063b-edb5-4d4f-ae50-7fbc5191ad11.annotation-packet.json",
+      "packet_sha256": "12b48bc1d22e9989db2a60feb4f0372c09d7d52b9c1d73499628d44f2f682a48",
+      "resource_id": "b651063b-edb5-4d4f-ae50-7fbc5191ad11",
+      "source_bundle_status": "blocked_pending_frozen_vocabulary",
+      "split": "development"
+    },
+    {
+      "case_id": "ndp50-development-c2bbcf64-3737-42b9-aaf9-2d9971f31085",
+      "dataset_id": "c7f29749-c6ab-4402-90ae-58fa5d23f830",
+      "field_count": 13,
+      "packet_file": "packets/ndp50-development-c2bbcf64-3737-42b9-aaf9-2d9971f31085.annotation-packet.json",
+      "packet_sha256": "d1df77275b5c3c40cffd5c4cc46b3d3c1df35abb238b89b5d1cfa7d4b5e151f2",
+      "resource_id": "c2bbcf64-3737-42b9-aaf9-2d9971f31085",
+      "source_bundle_status": "blocked_pending_frozen_vocabulary",
+      "split": "development"
+    },
+    {
+      "case_id": "ndp50-development-c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d",
+      "dataset_id": "c7f29749-c6ab-4402-90ae-58fa5d23f830",
+      "field_count": 13,
+      "packet_file": "packets/ndp50-development-c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d.annotation-packet.json",
+      "packet_sha256": "69ba363c01bdc0ff21a66f5fd2846c856b1b5647cd8217ca6974d095e2ef6a2b",
+      "resource_id": "c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d",
+      "source_bundle_status": "blocked_pending_frozen_vocabulary",
+      "split": "development"
+    },
+    {
+      "case_id": "ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+      "dataset_id": "6ebc92f4-daf4-4c52-b2c3-82276bc24ee5",
+      "field_count": 19,
+      "packet_file": "packets/ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d.annotation-packet.json",
+      "packet_sha256": "f6d0708d96a3a33c23f0152dc229f1560fd6a0661f2671a4d8ff2b5fd558efd3",
+      "resource_id": "d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+      "source_bundle_status": "blocked_pending_frozen_vocabulary",
+      "split": "development"
+    },
+    {
+      "case_id": "ndp50-development-d15771b1-b612-478c-80ef-91d3e2e1c333",
+      "dataset_id": "8798da75-6631-4c44-b73d-e8e7e1788c27",
+      "field_count": 11,
+      "packet_file": "packets/ndp50-development-d15771b1-b612-478c-80ef-91d3e2e1c333.annotation-packet.json",
+      "packet_sha256": "34bb6e35205d30d22274dbec842f8231acaa228ebb40780442c8b0c470a9532d",
+      "resource_id": "d15771b1-b612-478c-80ef-91d3e2e1c333",
+      "source_bundle_status": "blocked_pending_frozen_vocabulary",
+      "split": "development"
+    },
+    {
+      "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+      "dataset_id": "9e4eb306-3029-4640-b279-1a7fd49253d6",
+      "field_count": 24,
+      "packet_file": "packets/ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587.annotation-packet.json",
+      "packet_sha256": "12c3da461509ddb44b22dd6cffce129a2dc27b2432980100bd5e989277c01f6e",
+      "resource_id": "ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+      "source_bundle_status": "blocked_pending_frozen_vocabulary",
+      "split": "development"
+    },
+    {
+      "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+      "dataset_id": "ec326db2-4027-4694-99e3-4b9c3d7a29dc",
+      "field_count": 24,
+      "packet_file": "packets/ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894.annotation-packet.json",
+      "packet_sha256": "d5f7c9302a60c9f68dd985d97470f37b2e995389ef2c96c3fac6ebb4383bda91",
+      "resource_id": "fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+      "source_bundle_status": "blocked_pending_frozen_vocabulary",
+      "split": "development"
+    },
+    {
+      "case_id": "ndp50-validation-47f47360-a5e2-441c-9b43-6cadf6eab7b6",
+      "dataset_id": "d7f05458-e03c-493a-8fd4-458f32a7aecb",
+      "field_count": 11,
+      "packet_file": "packets/ndp50-validation-47f47360-a5e2-441c-9b43-6cadf6eab7b6.annotation-packet.json",
+      "packet_sha256": "d6497527a4fd133a2b16afc37bc8982b55cf119877e6d6abde64d332fe6144ec",
+      "resource_id": "47f47360-a5e2-441c-9b43-6cadf6eab7b6",
+      "source_bundle_status": "blocked_pending_frozen_vocabulary",
+      "split": "validation"
+    },
+    {
+      "case_id": "ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c",
+      "dataset_id": "35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4",
+      "field_count": 13,
+      "packet_file": "packets/ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c.annotation-packet.json",
+      "packet_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "resource_id": "50f44e8d-aad5-4e09-8b9b-43c73898b53c",
+      "source_bundle_status": "blocked_pending_frozen_vocabulary",
+      "split": "validation"
+    },
+    {
+      "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+      "dataset_id": "28580a91-43fe-42d1-a87a-01b4dd036667",
+      "field_count": 27,
+      "packet_file": "packets/ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1.annotation-packet.json",
+      "packet_sha256": "b333de323ba5715ddb274f6501b9491b95128a5aec040d4b7415c9421f900622",
+      "resource_id": "6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+      "source_bundle_status": "blocked_pending_frozen_vocabulary",
+      "split": "validation"
+    },
+    {
+      "case_id": "ndp50-validation-a47379a9-8051-42bf-9ddd-94f33b672ac6",
+      "dataset_id": "9c01c9f6-c815-433d-b22a-3f9b37bfb570",
+      "field_count": 11,
+      "packet_file": "packets/ndp50-validation-a47379a9-8051-42bf-9ddd-94f33b672ac6.annotation-packet.json",
+      "packet_sha256": "f769645ffb8db078c028789e9d03636908d305f9d0010ad0fa0e979390b03620",
+      "resource_id": "a47379a9-8051-42bf-9ddd-94f33b672ac6",
+      "source_bundle_status": "blocked_pending_frozen_vocabulary",
+      "split": "validation"
+    },
+    {
+      "case_id": "ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+      "dataset_id": "d7f05458-e03c-493a-8fd4-458f32a7aecb",
+      "field_count": 19,
+      "packet_file": "packets/ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01.annotation-packet.json",
+      "packet_sha256": "4d3e30d0f5386d24b930fc099bae0c323d9ddcbd76e79faa3520366346c8a9f9",
+      "resource_id": "a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+      "source_bundle_status": "blocked_pending_frozen_vocabulary",
+      "split": "validation"
+    },
+    {
+      "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+      "dataset_id": "b0ebb62d-5c60-47c9-a2a3-d3c0eb1ce643",
+      "field_count": 21,
+      "packet_file": "packets/ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017.annotation-packet.json",
+      "packet_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "resource_id": "ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+      "source_bundle_status": "blocked_pending_frozen_vocabulary",
+      "split": "validation"
+    }
+  ],
+  "claim_boundary": "Packets contain structural observations and frozen catalog titles only; no logical/semantic/unit predictions, gold, model output, or test identities.",
+  "created_at": "2026-07-26T23:01:57.182858Z",
+  "field_count": 277,
+  "opportunity_manifest": {
+    "file": "opportunity_manifest_v1.json",
+    "sha256": "01169ecd8b04eb9901cfb702da5cbae7826f0dc4dec12cc75f98620b726a6d17"
+  },
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "schema_version": "ndp50-semantic-packet-pack/v1",
+  "status": "neutral_packets_ready_source_bundles_blocked"
+}

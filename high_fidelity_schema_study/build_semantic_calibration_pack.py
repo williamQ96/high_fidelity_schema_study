@@ -63,7 +63,12 @@ def _source_label(value: Any) -> str:
     return text
 
 
-def _neutral_evidence(field_path: str, source_evidence: Any) -> List[Dict[str, Any]]:
+def _neutral_evidence(
+    field_path: str,
+    source_evidence: Any,
+    *,
+    allowed_evidence_types: frozenset[str] = RAW_OBSERVATION_EVIDENCE_TYPES,
+) -> List[Dict[str, Any]]:
     if not isinstance(source_evidence, list):
         return []
     result: List[Dict[str, Any]] = []
@@ -71,7 +76,7 @@ def _neutral_evidence(field_path: str, source_evidence: Any) -> List[Dict[str, A
         if not isinstance(item, dict):
             continue
         evidence_type = item.get("evidence_type")
-        if evidence_type not in RAW_OBSERVATION_EVIDENCE_TYPES:
+        if evidence_type not in allowed_evidence_types:
             continue
         result.append(
             {
@@ -90,6 +95,9 @@ def build_neutral_annotation_packet(
     *,
     case_id: str,
     source_task_sha256: str,
+    purpose: str = "annotator_calibration",
+    research_evidence_status: str = "non_blind_not_for_effect_estimation",
+    allowed_evidence_types: frozenset[str] = RAW_OBSERVATION_EVIDENCE_TYPES,
 ) -> Dict[str, Any]:
     task = task_payload["task"]
     fields: List[Dict[str, Any]] = []
@@ -99,26 +107,30 @@ def build_neutral_annotation_packet(
         }
         field_path = str(raw_field["field_path"])
         field["source_evidence"] = _neutral_evidence(
-            field_path, raw_field.get("source_evidence", [])
+            field_path,
+            raw_field.get("source_evidence", []),
+            allowed_evidence_types=allowed_evidence_types,
         )
         fields.append(field)
 
     snippets: List[Dict[str, Any]] = []
     for index, raw_snippet in enumerate(task.get("grounding_snippets", []), start=1):
-        snippets.append(
-            {
-                "evidence_id": f"S{index}",
-                "source_type": raw_snippet.get("source_type"),
-                "source_name": raw_snippet.get("source_name"),
-                "detail": raw_snippet.get("detail"),
-                "text": raw_snippet.get("text"),
-            }
-        )
+        snippet = {
+            "evidence_id": f"S{index}",
+            "source_type": raw_snippet.get("source_type"),
+            "source_name": raw_snippet.get("source_name"),
+            "detail": raw_snippet.get("detail"),
+            "text": raw_snippet.get("text"),
+        }
+        applicable = raw_snippet.get("applicable_field_paths")
+        if isinstance(applicable, list):
+            snippet["applicable_field_paths"] = list(applicable)
+        snippets.append(snippet)
 
     return {
         "schema_version": "semantic-annotation-packet/v1",
-        "purpose": "annotator_calibration",
-        "research_evidence_status": "non_blind_not_for_effect_estimation",
+        "purpose": purpose,
+        "research_evidence_status": research_evidence_status,
         "case_id": case_id,
         "task_id": task["task_id"],
         "dataset_id": task["dataset_id"],
@@ -134,7 +146,7 @@ def build_neutral_annotation_packet(
         "prediction_fields_removed": list(REMOVED_PREDICTION_FIELDS),
         "evidence_policy": {
             "mode": "allowlisted_raw_observations_only",
-            "allowed_evidence_types": sorted(RAW_OBSERVATION_EVIDENCE_TYPES),
+            "allowed_evidence_types": sorted(allowed_evidence_types),
             "derived_semantic_hints_removed": True,
         },
         "field_inventory": fields,

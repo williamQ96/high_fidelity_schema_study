@@ -1,0 +1,67 @@
+{
+  "calibration_outcomes_observed_before_policy_signoff": false,
+  "completion_attestation": null,
+  "cpa_design": {
+    "file": "semantic/cpa_design_draft_v1.json",
+    "sha256": "884cec768ecb08acb91e6f1b00a5dee88f163304af727fec8d67b132c900ecc3"
+  },
+  "execution_freeze": null,
+  "familywise_alpha": 0.05,
+  "human_decisions_present": false,
+  "minimum_meaningful_effect": null,
+  "minimum_meaningful_effect_rationale": null,
+  "multiplicity_policy": "holm_fwer_with_bonferroni_worst_case_power_planning",
+  "opportunity_count_assurance": null,
+  "opportunity_manifest": {
+    "file": "semantic/opportunity_manifest_v1.json",
+    "sha256": "01169ecd8b04eb9901cfb702da5cbae7826f0dc4dec12cc75f98620b726a6d17"
+  },
+  "planning_method_scope": "sample_size_planning_approximation_not_primary_test_definition",
+  "planning_sd_inflation": null,
+  "primary_contrasts": [
+    {
+      "arm_a": "deterministic_only",
+      "arm_b": "zero_shot_dataset_level",
+      "contrast_id": "deterministic-vs-zero"
+    },
+    {
+      "arm_a": "zero_shot_dataset_level",
+      "arm_b": "zero_shot_byte_identical_response_plus_deterministic_verification",
+      "contrast_id": "zero-vs-verified"
+    }
+  ],
+  "primary_outcome": "correct_accepted_applicable_claim_rate_gain_per_dataset",
+  "primary_statistical_unit": "dataset",
+  "schema_version": "ndp50-power-policy/v1",
+  "sd_floor": null,
+  "selection": {
+    "file": "selection.json",
+    "sha256": "27d73de3b4aa8638616588fdac0d927d79321d7d230d2c55f96c952689bd471d"
+  },
+  "selective_risk_bound": null,
+  "sensitivity_sd_multipliers": [],
+  "signoffs": [
+    {
+      "conflict_of_interest_declared": null,
+      "developer_participation": null,
+      "institution": null,
+      "qualification_summary": null,
+      "role": null,
+      "signatory_id": null,
+      "signed_on": null,
+      "slot": "study_operator"
+    },
+    {
+      "conflict_of_interest_declared": null,
+      "developer_participation": false,
+      "institution": null,
+      "qualification_summary": null,
+      "role": null,
+      "signatory_id": null,
+      "signed_on": null,
+      "slot": "independent_methods_reviewer"
+    }
+  ],
+  "status": "neutral_pending_precalibration_policy",
+  "target_power": null
+}

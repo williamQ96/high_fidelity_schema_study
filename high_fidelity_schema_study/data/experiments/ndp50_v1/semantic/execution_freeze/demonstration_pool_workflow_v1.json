@@ -1,0 +1,28 @@
+{
+  "candidate_inclusion_policy": "all_approved_development_cases",
+  "development_case_count": 10,
+  "human_decisions_present": false,
+  "implementation": {
+    "file": "ndp50_demonstration_pool.py",
+    "sha256": "6482a9d27bcf0494172b5def30a0e3c7289c149e91b3fdd62028ee02d35f3b9a"
+  },
+  "implementation_dependencies": {
+    "semantic_gold_workflow.py": "1319dd8b52a3421ce4e34bbfc59e21391e2c8d161e1c01272aa33a7299fab864"
+  },
+  "minimum_candidate_count": 5,
+  "model_outputs_used_for_inclusion": false,
+  "output_schema_version": "ndp50-demonstration-pool/v2",
+  "packet_manifest": {
+    "file": "semantic/annotation_pack_v1/manifest.json",
+    "sha256": "6d356997e8f3db91f39a9ac7a4759f420a0d880e7b76d3eac09d5625e2e26046"
+  },
+  "schema_version": "ndp50-demonstration-pool-workflow/v1",
+  "semantic_projection_policy": {
+    "evidence_rationales_and_annotator_identities_excluded": true,
+    "input": "neutral_packet_structural_observations_only",
+    "output": "approved_consensus_property_applicability_and_value"
+  },
+  "source_split": "development",
+  "status": "implementation_ready_waiting_on_semantic_gold",
+  "validation_or_test_candidates_forbidden": true
+}

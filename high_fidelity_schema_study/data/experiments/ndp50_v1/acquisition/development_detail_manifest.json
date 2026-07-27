@@ -1,0 +1,185 @@
+{
+  "captured_at": "2026-07-26T22:22:13.816360Z",
+  "captured_splits": [
+    "development"
+  ],
+  "counts": {
+    "dataset_count": 15,
+    "format_conflict_resource_count": 3,
+    "resource_count": 37,
+    "supported_resource_count": 16
+  },
+  "protocol_version": "ndp50-external-validation-protocol/v1",
+  "records": [
+    {
+      "access_category": "unspecified",
+      "dataset_id": "0316eb60-7b34-4385-85dd-186a3a454a8a",
+      "format_conflict_resource_count": 0,
+      "primary_format_class": "documentation_or_text",
+      "resource_count": 2,
+      "snapshot_file": "0316eb60-7b34-4385-85dd-186a3a454a8a.json.gz",
+      "snapshot_sha256": "c1fd221fcdbd4ba73b988d740bbcd91069c5974c91b507cdebc42425e917501c",
+      "split": "development",
+      "supported_resource_count": 1
+    },
+    {
+      "access_category": "unspecified",
+      "dataset_id": "0998867b-9aac-4bf9-a408-c67fbcab7176",
+      "format_conflict_resource_count": 0,
+      "primary_format_class": "other_or_unknown",
+      "resource_count": 6,
+      "snapshot_file": "0998867b-9aac-4bf9-a408-c67fbcab7176.json.gz",
+      "snapshot_sha256": "adafabaf09d0bc6ed6758f77003fc52fc8e1c831d15b77cdbd5196a7b7e44e9b",
+      "split": "development",
+      "supported_resource_count": 2
+    },
+    {
+      "access_category": "unspecified",
+      "dataset_id": "3bfd82a8-9676-4c8b-a791-d2a31cb84de7",
+      "format_conflict_resource_count": 0,
+      "primary_format_class": "supported_hierarchical",
+      "resource_count": 1,
+      "snapshot_file": "3bfd82a8-9676-4c8b-a791-d2a31cb84de7.json.gz",
+      "snapshot_sha256": "cb784146ce8f37afec469c8d3d0c06b55d2a2c06c1090c8b22c33481b3ed4ed4",
+      "split": "development",
+      "supported_resource_count": 1
+    },
+    {
+      "access_category": "unspecified",
+      "dataset_id": "6ebc92f4-daf4-4c52-b2c3-82276bc24ee5",
+      "format_conflict_resource_count": 0,
+      "primary_format_class": "supported_tabular",
+      "resource_count": 4,
+      "snapshot_file": "6ebc92f4-daf4-4c52-b2c3-82276bc24ee5.json.gz",
+      "snapshot_sha256": "4ab1bcdb81f0802b3eca467efa57ab0c25861c0758cf103720f46e123363d654",
+      "split": "development",
+      "supported_resource_count": 4
+    },
+    {
+      "access_category": "unspecified",
+      "dataset_id": "7686770a-de97-4067-86a6-66cbadd2faa1",
+      "format_conflict_resource_count": 0,
+      "primary_format_class": "geospatial_or_image",
+      "resource_count": 4,
+      "snapshot_file": "7686770a-de97-4067-86a6-66cbadd2faa1.json.gz",
+      "snapshot_sha256": "7428ea0f5f4c56d8895ebc973f52e81f0f1165c6560ff5bd5da240abbb26a6b4",
+      "split": "development",
+      "supported_resource_count": 0
+    },
+    {
+      "access_category": "unspecified",
+      "dataset_id": "811f0bcc-99e5-455c-bcf6-7c63c2634f41",
+      "format_conflict_resource_count": 0,
+      "primary_format_class": "supported_tabular",
+      "resource_count": 1,
+      "snapshot_file": "811f0bcc-99e5-455c-bcf6-7c63c2634f41.json.gz",
+      "snapshot_sha256": "288ee15e23930da8947f505b7ed12231658c739a8c6ca820189d9df5675e82ba",
+      "split": "development",
+      "supported_resource_count": 1
+    },
+    {
+      "access_category": "unspecified",
+      "dataset_id": "872ba2a0-4e91-4a74-b2b4-21073a21ad7b",
+      "format_conflict_resource_count": 0,
+      "primary_format_class": "supported_hierarchical",
+      "resource_count": 1,
+      "snapshot_file": "872ba2a0-4e91-4a74-b2b4-21073a21ad7b.json.gz",
+      "snapshot_sha256": "e954ac51995602594379a2736001dfe965ad961d59848fb7c41e78f6f7edb78a",
+      "split": "development",
+      "supported_resource_count": 1
+    },
+    {
+      "access_category": "public",
+      "dataset_id": "8775a68d-885a-47f1-a13a-b6806c6c89be",
+      "format_conflict_resource_count": 0,
+      "primary_format_class": "geospatial_or_image",
+      "resource_count": 2,
+      "snapshot_file": "8775a68d-885a-47f1-a13a-b6806c6c89be.json.gz",
+      "snapshot_sha256": "a607af41301cc055fe23c18624c8ea69789af176b18d23f5d0894821717f7fc1",
+      "split": "development",
+      "supported_resource_count": 0
+    },
+    {
+      "access_category": "unspecified",
+      "dataset_id": "8798da75-6631-4c44-b73d-e8e7e1788c27",
+      "format_conflict_resource_count": 0,
+      "primary_format_class": "supported_tabular",
+      "resource_count": 1,
+      "snapshot_file": "8798da75-6631-4c44-b73d-e8e7e1788c27.json.gz",
+      "snapshot_sha256": "87bc09b26a6d264f76ddc613077e552f2e1491d6962ba9618448da8129c50b5c",
+      "split": "development",
+      "supported_resource_count": 1
+    },
+    {
+      "access_category": "unspecified",
+      "dataset_id": "96c6e757-b46b-4f5a-a06a-2b8f3f16b914",
+      "format_conflict_resource_count": 0,
+      "primary_format_class": "documentation_or_text",
+      "resource_count": 1,
+      "snapshot_file": "96c6e757-b46b-4f5a-a06a-2b8f3f16b914.json.gz",
+      "snapshot_sha256": "721de4c9c1c067e8fe017f809b71359d701e6637f8cdb12e189f9188eb26d054",
+      "split": "development",
+      "supported_resource_count": 0
+    },
+    {
+      "access_category": "public",
+      "dataset_id": "9be16b9b-086c-4436-875a-1804ea6f5e63",
+      "format_conflict_resource_count": 0,
+      "primary_format_class": "other_or_unknown",
+      "resource_count": 1,
+      "snapshot_file": "9be16b9b-086c-4436-875a-1804ea6f5e63.json.gz",
+      "snapshot_sha256": "e35ac71eee0804cc6c8c3a389880fef868e841d22538757052897e60cf0fe030",
+      "split": "development",
+      "supported_resource_count": 0
+    },
+    {
+      "access_category": "unspecified",
+      "dataset_id": "9e4eb306-3029-4640-b279-1a7fd49253d6",
+      "format_conflict_resource_count": 0,
+      "primary_format_class": "supported_semistructured",
+      "resource_count": 1,
+      "snapshot_file": "9e4eb306-3029-4640-b279-1a7fd49253d6.json.gz",
+      "snapshot_sha256": "5d98f4f75a12095e772f871324d3ace04692f480599d612226a7951993636380",
+      "split": "development",
+      "supported_resource_count": 1
+    },
+    {
+      "access_category": "unspecified",
+      "dataset_id": "aadd47f8-4381-4900-8c80-9949506bda95",
+      "format_conflict_resource_count": 0,
+      "primary_format_class": "archive",
+      "resource_count": 2,
+      "snapshot_file": "aadd47f8-4381-4900-8c80-9949506bda95.json.gz",
+      "snapshot_sha256": "a0ffd05eb640adfd6a6c1388eb8002e54c5d41ed5a7f480d4cdbd3a145667291",
+      "split": "development",
+      "supported_resource_count": 0
+    },
+    {
+      "access_category": "unspecified",
+      "dataset_id": "c7f29749-c6ab-4402-90ae-58fa5d23f830",
+      "format_conflict_resource_count": 3,
+      "primary_format_class": "archive",
+      "resource_count": 9,
+      "snapshot_file": "c7f29749-c6ab-4402-90ae-58fa5d23f830.json.gz",
+      "snapshot_sha256": "56637e2b1439f0683c8e84e51441ee5a2ce6e1c29d5db71899e32e6940059c8f",
+      "split": "development",
+      "supported_resource_count": 3
+    },
+    {
+      "access_category": "unspecified",
+      "dataset_id": "ec326db2-4027-4694-99e3-4b9c3d7a29dc",
+      "format_conflict_resource_count": 0,
+      "primary_format_class": "supported_semistructured",
+      "resource_count": 1,
+      "snapshot_file": "ec326db2-4027-4694-99e3-4b9c3d7a29dc.json.gz",
+      "snapshot_sha256": "8443f76a4c3ae2622cc1594004d0cf175ff949af144e76b7b63061dc22b78eff",
+      "split": "development",
+      "supported_resource_count": 1
+    }
+  ],
+  "schema_version": "ndp50-detail-capture-manifest/v1",
+  "selection": {
+    "file": "selection.json",
+    "sha256": "27d73de3b4aa8638616588fdac0d927d79321d7d230d2c55f96c952689bd471d"
+  }
+}

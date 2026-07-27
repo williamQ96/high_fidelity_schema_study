@@ -1,0 +1,41 @@
+{
+  "assignment_release": {
+    "file": "semantic/human_assignments_v1/assignment_release_v1.json",
+    "sha256": "47d6206c68f4ca79ac47e18d967f0ce12fac26af79b4ca5b84c0475845fd10fc"
+  },
+  "completion_attestation": null,
+  "dual_freeze_record": {
+    "both_receipts_passed_before_comparison": null,
+    "candidate_catalog_not_built_before_freeze": null,
+    "discovery_a_sha256": null,
+    "discovery_b_sha256": null,
+    "frozen_on": null,
+    "no_cross_review_visibility_before_freeze": null,
+    "operator_id": null
+  },
+  "release_id": "ndp50-initial-human-release-ef7b72ec1ec685ee3411",
+  "returns": {
+    "data_governance_review": {
+      "accountable_approver_id": null,
+      "stewardship_reviewer_id": null,
+      "submission": null,
+      "validation_receipt": null
+    },
+    "vocabulary_discovery_a": {
+      "reviewer_id": null,
+      "reviewer_role": null,
+      "submission": null,
+      "submission_id": null,
+      "validation_receipt": null
+    },
+    "vocabulary_discovery_b": {
+      "reviewer_id": null,
+      "reviewer_role": null,
+      "submission": null,
+      "submission_id": null,
+      "validation_receipt": null
+    }
+  },
+  "schema_version": "ndp50-human-assignment-return/v1",
+  "status": "pending_human_returns"
+}

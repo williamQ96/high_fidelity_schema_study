@@ -166,8 +166,14 @@ def _time_properties(parsed_values: List[datetime]) -> Dict[str, Any]:
 
         if frequency not in {"unknown", "mixed"}:
             target_delta = Counter(deltas).most_common(1)[0][0]
-            expected_steps = int((ordered[-1] - ordered[0]).total_seconds() / target_delta) + 1
-            missing_intervals = max(expected_steps - len(ordered), 0)
+            if target_delta > 0:
+                expected_steps = int((ordered[-1] - ordered[0]).total_seconds() / target_delta) + 1
+                missing_intervals = max(expected_steps - len(ordered), 0)
+            else:
+                # Repeated timestamps often represent several observations at
+                # one time. Without a grouping key, cadence is not defined.
+                frequency = "unknown"
+                regularity = "unknown"
 
     return {
         "frequency": frequency,

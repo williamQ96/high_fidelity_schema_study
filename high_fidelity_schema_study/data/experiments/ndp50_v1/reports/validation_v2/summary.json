@@ -1,0 +1,261 @@
+{
+  "claim_boundary": "Structural acquisition/extraction coverage only; semantic accuracy requires independently frozen gold.",
+  "coverage": {
+    "acquisition_rate_given_attempt": 0.7,
+    "dataset_end_to_end_rate": 0.5,
+    "datasets_with_successful_extraction": 5,
+    "extraction_success_rate_given_acquisition": 0.857143,
+    "macro_mean_dataset_resource_end_to_end_rate": 0.44,
+    "resource_end_to_end_rate": 0.001187,
+    "resources_with_successful_extraction": 6
+  },
+  "dataset_bootstrap_interval": {
+    "confidence_level": 0.95,
+    "lower": 0.2,
+    "method": "fixed_seed_nonparametric_dataset_bootstrap_percentile",
+    "repetitions": 10000,
+    "seed_text": "ndp50:validation:dataset-end-to-end:v1",
+    "upper": 0.8
+  },
+  "dataset_outcome_classes": {
+    "attempted_but_not_acquired": 2,
+    "no_policy_attempt": 3,
+    "schema_extracted": 5
+  },
+  "dataset_summaries": [
+    {
+      "abstention_count": 0,
+      "acquired_payload_count": 1,
+      "attempted_resource_count": 1,
+      "catalog_resource_count": 1,
+      "dataset_id": "28580a91-43fe-42d1-a87a-01b4dd036667",
+      "outcome_class": "schema_extracted",
+      "partial_extraction_count": 0,
+      "primary_format_class": "supported_semistructured",
+      "resource_end_to_end_rate": 1.0,
+      "successful_extraction_count": 1,
+      "title": "USFS Meadow Valley Lidar, CA 2009"
+    },
+    {
+      "abstention_count": 0,
+      "acquired_payload_count": 1,
+      "attempted_resource_count": 1,
+      "catalog_resource_count": 1,
+      "dataset_id": "35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4",
+      "outcome_class": "schema_extracted",
+      "partial_extraction_count": 0,
+      "primary_format_class": "supported_tabular",
+      "resource_end_to_end_rate": 1.0,
+      "successful_extraction_count": 1,
+      "title": "CWFIS fire data"
+    },
+    {
+      "abstention_count": 0,
+      "acquired_payload_count": 0,
+      "attempted_resource_count": 0,
+      "catalog_resource_count": 1,
+      "dataset_id": "4809738b-d730-44d6-9963-4134831a3ac1",
+      "outcome_class": "no_policy_attempt",
+      "partial_extraction_count": 0,
+      "primary_format_class": "supported_hierarchical",
+      "resource_end_to_end_rate": 0.0,
+      "successful_extraction_count": 0,
+      "title": "QF Idealized Grass Plots"
+    },
+    {
+      "abstention_count": 0,
+      "acquired_payload_count": 0,
+      "attempted_resource_count": 0,
+      "catalog_resource_count": 102,
+      "dataset_id": "4ee0e833-f187-403a-8f8f-07bb43a44909",
+      "outcome_class": "no_policy_attempt",
+      "partial_extraction_count": 0,
+      "primary_format_class": "geospatial_or_image",
+      "resource_end_to_end_rate": 0.0,
+      "successful_extraction_count": 0,
+      "title": "WI_AshlandIronFlorence_2019_D19"
+    },
+    {
+      "abstention_count": 0,
+      "acquired_payload_count": 0,
+      "attempted_resource_count": 0,
+      "catalog_resource_count": 4933,
+      "dataset_id": "7fb33bb1-15f0-44a1-8755-e28ff70abc51",
+      "outcome_class": "no_policy_attempt",
+      "partial_extraction_count": 0,
+      "primary_format_class": "geospatial_or_image",
+      "resource_end_to_end_rate": 0.0,
+      "successful_extraction_count": 0,
+      "title": "Topo-Bathymetric Data Set: Sacramento River, California 2023"
+    },
+    {
+      "abstention_count": 0,
+      "acquired_payload_count": 1,
+      "attempted_resource_count": 1,
+      "catalog_resource_count": 1,
+      "dataset_id": "9c01c9f6-c815-433d-b22a-3f9b37bfb570",
+      "outcome_class": "schema_extracted",
+      "partial_extraction_count": 0,
+      "primary_format_class": "supported_tabular",
+      "resource_end_to_end_rate": 1.0,
+      "successful_extraction_count": 1,
+      "title": "Aurora Predictions utah 20260224t002623"
+    },
+    {
+      "abstention_count": 0,
+      "acquired_payload_count": 0,
+      "attempted_resource_count": 2,
+      "catalog_resource_count": 6,
+      "dataset_id": "aa8d17c7-d2bf-46b3-ba90-938659bef006",
+      "outcome_class": "attempted_but_not_acquired",
+      "partial_extraction_count": 0,
+      "primary_format_class": "other_or_unknown",
+      "resource_end_to_end_rate": 0.0,
+      "successful_extraction_count": 0,
+      "title": "EventLine2022"
+    },
+    {
+      "abstention_count": 0,
+      "acquired_payload_count": 1,
+      "attempted_resource_count": 1,
+      "catalog_resource_count": 1,
+      "dataset_id": "b0ebb62d-5c60-47c9-a2a3-d3c0eb1ce643",
+      "outcome_class": "schema_extracted",
+      "partial_extraction_count": 0,
+      "primary_format_class": "supported_semistructured",
+      "resource_end_to_end_rate": 1.0,
+      "successful_extraction_count": 1,
+      "title": "Forest Roads"
+    },
+    {
+      "abstention_count": 1,
+      "acquired_payload_count": 3,
+      "attempted_resource_count": 3,
+      "catalog_resource_count": 5,
+      "dataset_id": "d7f05458-e03c-493a-8fd4-458f32a7aecb",
+      "outcome_class": "schema_extracted",
+      "partial_extraction_count": 0,
+      "primary_format_class": "archive",
+      "resource_end_to_end_rate": 0.4,
+      "successful_extraction_count": 2,
+      "title": "Terrestrial lidar scans (TLS) and derived tree lists for field sampled plots for UC Climate Action Seed Project: Scaling Science-Driven Vegetation Treatments for a Wildfire Resilient California"
+    },
+    {
+      "abstention_count": 0,
+      "acquired_payload_count": 0,
+      "attempted_resource_count": 1,
+      "catalog_resource_count": 3,
+      "dataset_id": "fba90f85-a818-468a-9840-14b0ee741b8d",
+      "outcome_class": "attempted_but_not_acquired",
+      "partial_extraction_count": 0,
+      "primary_format_class": "documentation_or_text",
+      "resource_end_to_end_rate": 0.0,
+      "successful_extraction_count": 0,
+      "title": "P494.PW.LY_.00"
+    }
+  ],
+  "denominators": {
+    "acquired_dataset_payloads": 7,
+    "catalog_resources": 5054,
+    "datasets": 10,
+    "policy_attempted_resources": 10
+  },
+  "download_statuses": {
+    "acquired": 7,
+    "skip_remote_store_locator_incomplete": 1,
+    "skip_unsupported_format": 5043,
+    "skipped_too_large": 3
+  },
+  "extraction_issue_codes": {
+    "sampling_insufficient": 3,
+    "unknown_no_signature": 1
+  },
+  "extraction_statuses": {
+    "abstained": 1,
+    "success": 6
+  },
+  "failure_reason_counts": {
+    "content_length_exceeds_frozen_limit": 3,
+    "skip_remote_store_locator_incomplete": 1,
+    "skip_unsupported_format": 5043,
+    "unknown_no_signature": 1
+  },
+  "plan_decisions": {
+    "attempt": 10,
+    "skip_remote_store_locator_incomplete": 1,
+    "skip_unsupported_format": 5043
+  },
+  "resource_count_skew": {
+    "maximum": 4933,
+    "maximum_dataset_id": "7fb33bb1-15f0-44a1-8755-e28ff70abc51",
+    "maximum_share_of_all_resources": 0.976059,
+    "median": 2.0,
+    "minimum": 1
+  },
+  "run_role": "validation",
+  "schema_version": "ndp50-execution-summary/v2",
+  "selection_integrity": {
+    "exact_id_match": true,
+    "expected_dataset_count": 10,
+    "observed_dataset_count": 10,
+    "split": "validation"
+  },
+  "stratum_summary": {
+    "archive": {
+      "catalog_resource_count": 5,
+      "dataset_count": 1,
+      "dataset_end_to_end_rate": 1.0,
+      "datasets_with_schema": 1,
+      "resource_end_to_end_rate": 0.4,
+      "resources_with_schema": 2
+    },
+    "documentation_or_text": {
+      "catalog_resource_count": 3,
+      "dataset_count": 1,
+      "dataset_end_to_end_rate": 0.0,
+      "datasets_with_schema": 0,
+      "resource_end_to_end_rate": 0.0,
+      "resources_with_schema": 0
+    },
+    "geospatial_or_image": {
+      "catalog_resource_count": 5035,
+      "dataset_count": 2,
+      "dataset_end_to_end_rate": 0.0,
+      "datasets_with_schema": 0,
+      "resource_end_to_end_rate": 0.0,
+      "resources_with_schema": 0
+    },
+    "other_or_unknown": {
+      "catalog_resource_count": 6,
+      "dataset_count": 1,
+      "dataset_end_to_end_rate": 0.0,
+      "datasets_with_schema": 0,
+      "resource_end_to_end_rate": 0.0,
+      "resources_with_schema": 0
+    },
+    "supported_hierarchical": {
+      "catalog_resource_count": 1,
+      "dataset_count": 1,
+      "dataset_end_to_end_rate": 0.0,
+      "datasets_with_schema": 0,
+      "resource_end_to_end_rate": 0.0,
+      "resources_with_schema": 0
+    },
+    "supported_semistructured": {
+      "catalog_resource_count": 2,
+      "dataset_count": 2,
+      "dataset_end_to_end_rate": 1.0,
+      "datasets_with_schema": 2,
+      "resource_end_to_end_rate": 1.0,
+      "resources_with_schema": 2
+    },
+    "supported_tabular": {
+      "catalog_resource_count": 2,
+      "dataset_count": 2,
+      "dataset_end_to_end_rate": 1.0,
+      "datasets_with_schema": 2,
+      "resource_end_to_end_rate": 1.0,
+      "resources_with_schema": 2
+    }
+  }
+}

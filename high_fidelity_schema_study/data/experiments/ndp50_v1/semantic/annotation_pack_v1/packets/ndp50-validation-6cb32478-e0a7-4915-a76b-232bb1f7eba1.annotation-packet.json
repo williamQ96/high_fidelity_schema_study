@@ -1,0 +1,655 @@
+{
+  "annotation_properties": [
+    "physical_type",
+    "logical_type",
+    "semantic_type",
+    "unit"
+  ],
+  "annotator_instructions": [
+    "Annotate independently using the frozen handbook.",
+    "Do not inspect existing gold, semantic model output, or another annotator artifact before submission.",
+    "Assign applicability before assigning each value.",
+    "Cite exact packet evidence or independently frozen raw-source evidence for every known value."
+  ],
+  "approved_evidence": [
+    {
+      "applicable_field_paths": [
+        "$.crs",
+        "$.crs.properties",
+        "$.crs.properties.name",
+        "$.crs.type",
+        "$.features",
+        "$.features[]",
+        "$.features[].geometry",
+        "$.features[].geometry.coordinates",
+        "$.features[].geometry.coordinates[]",
+        "$.features[].geometry.coordinates[][]",
+        "$.features[].geometry.coordinates[][][]",
+        "$.features[].geometry.type",
+        "$.features[].properties",
+        "$.features[].properties.URL",
+        "$.features[].properties.file_name",
+        "$.features[].properties.max_x",
+        "$.features[].properties.max_y",
+        "$.features[].properties.max_z",
+        "$.features[].properties.min_x",
+        "$.features[].properties.min_y",
+        "$.features[].properties.min_z",
+        "$.features[].properties.num_points",
+        "$.features[].properties.point_size",
+        "$.features[].properties.point_type",
+        "$.features[].properties.version",
+        "$.features[].type",
+        "$.type"
+      ],
+      "detail": "Frozen NDP catalog title; metadata evidence, not gold.",
+      "evidence_id": "S1",
+      "source_name": "NDP dataset title",
+      "source_type": "catalog_title",
+      "text": "USFS Meadow Valley Lidar, CA 2009"
+    }
+  ],
+  "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+  "data_modality": "semi_structured",
+  "dataset_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+  "evidence_policy": {
+    "allowed_evidence_types": [
+      "csv_header",
+      "hdf5_attribute",
+      "hdf5_dataset_path",
+      "json_sample_observation",
+      "json_schema_declaration",
+      "sample_rows"
+    ],
+    "derived_semantic_hints_removed": true,
+    "mode": "allowlisted_raw_observations_only"
+  },
+  "field_inventory": [
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "crs",
+      "field_path": "$.crs",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "object",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.crs::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.crs",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "properties",
+      "field_path": "$.crs.properties",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "object",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.crs.properties::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.crs.properties",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "name",
+      "field_path": "$.crs.properties.name",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.crs.properties.name::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.crs.properties.name",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "type",
+      "field_path": "$.crs.type",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.crs.type::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.crs.type",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "features",
+      "field_path": "$.features",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "array",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.features::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.features",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "features[]",
+      "field_path": "$.features[]",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "object",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.features[]::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.features[]",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "geometry",
+      "field_path": "$.features[].geometry",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "object",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.features[].geometry::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.features[].geometry",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "coordinates",
+      "field_path": "$.features[].geometry.coordinates",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "array",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.features[].geometry.coordinates::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.features[].geometry.coordinates",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "coordinates[]",
+      "field_path": "$.features[].geometry.coordinates[]",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "array",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.features[].geometry.coordinates[]::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.features[].geometry.coordinates[]",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "coordinates[][]",
+      "field_path": "$.features[].geometry.coordinates[][]",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "array",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.features[].geometry.coordinates[][]::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.features[].geometry.coordinates[][]",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "coordinates[][][]",
+      "field_path": "$.features[].geometry.coordinates[][][]",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "number",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.features[].geometry.coordinates[][][]::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.features[].geometry.coordinates[][][]",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "type",
+      "field_path": "$.features[].geometry.type",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.features[].geometry.type::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.features[].geometry.type",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "properties",
+      "field_path": "$.features[].properties",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "object",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.features[].properties::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.features[].properties",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "URL",
+      "field_path": "$.features[].properties.URL",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.features[].properties.URL::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.features[].properties.URL",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "file_name",
+      "field_path": "$.features[].properties.file_name",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.features[].properties.file_name::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.features[].properties.file_name",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "max_x",
+      "field_path": "$.features[].properties.max_x",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "number",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.features[].properties.max_x::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.features[].properties.max_x",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "max_y",
+      "field_path": "$.features[].properties.max_y",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "number",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.features[].properties.max_y::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.features[].properties.max_y",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "max_z",
+      "field_path": "$.features[].properties.max_z",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "number",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.features[].properties.max_z::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.features[].properties.max_z",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "min_x",
+      "field_path": "$.features[].properties.min_x",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "number",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.features[].properties.min_x::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.features[].properties.min_x",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "min_y",
+      "field_path": "$.features[].properties.min_y",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "number",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.features[].properties.min_y::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.features[].properties.min_y",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "min_z",
+      "field_path": "$.features[].properties.min_z",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "number",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.features[].properties.min_z::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.features[].properties.min_z",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "num_points",
+      "field_path": "$.features[].properties.num_points",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "integer",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.features[].properties.num_points::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.features[].properties.num_points",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "point_size",
+      "field_path": "$.features[].properties.point_size",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "integer",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.features[].properties.point_size::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.features[].properties.point_size",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "point_type",
+      "field_path": "$.features[].properties.point_type",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "integer",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.features[].properties.point_type::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.features[].properties.point_type",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "version",
+      "field_path": "$.features[].properties.version",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.features[].properties.version::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.features[].properties.version",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "type",
+      "field_path": "$.features[].type",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.features[].type::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.features[].type",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    },
+    {
+      "example_values": [],
+      "extraction_method": "bounded_json_structure_observation",
+      "field_name": "type",
+      "field_path": "$.type",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "Observed JSON path and bounded type set",
+          "evidence_id": "$.type::F1",
+          "evidence_type": "json_sample_observation",
+          "source_label": "json_sample:$.type",
+          "tier": "sample_observation"
+        }
+      ],
+      "unique_ratio": null,
+      "value_range": null
+    }
+  ],
+  "file_format": "json",
+  "prediction_fields_removed": [
+    "logical_type",
+    "semantic_type",
+    "unit",
+    "confidence",
+    "uncertainty_reason",
+    "semantic_logical_hint",
+    "description"
+  ],
+  "primary_analysis_cluster": "28580a91-43fe-42d1-a87a-01b4dd036667",
+  "purpose": "ndp50_independent_semantic_gold",
+  "research_evidence_status": "pre_model_independent_gold_preparation",
+  "schema_version": "semantic-annotation-packet/v1",
+  "source_dataset_id": "28580a91-43fe-42d1-a87a-01b4dd036667",
+  "source_resource_id": "6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+  "source_task_sha256": "e03ab8522440fc8a99eb23c56ea6d3c4c4f3d53f86a5e3418ed6f436daa08eb8",
+  "split": "validation",
+  "task_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1"
+}

@@ -1,0 +1,939 @@
+{
+  "artifact_bindings": {
+    "development_manifest": {
+      "file": "acquisition/development_detail_manifest.json",
+      "sha256": "a71056cc7731826aaf7248afcc80d27c91231402bbd6897e6fe70430b0a0d104"
+    },
+    "development_run": {
+      "file": "runs/development_run_v4.json",
+      "sha256": "153059006b7cf62a5111e5ef66f87a12b7d2ef5067e8b8f642f5ed7ab8c28981"
+    },
+    "selection": {
+      "file": "selection.json",
+      "sha256": "27d73de3b4aa8638616588fdac0d927d79321d7d230d2c55f96c952689bd471d"
+    },
+    "validation_manifest": {
+      "file": "acquisition/validation_detail_manifest.json",
+      "sha256": "ed82309b3af1a604ae9226d83c84975fd9e24302e5a8150c309d7b916b295058"
+    },
+    "validation_run": {
+      "file": "runs/validation_run_v3.json",
+      "sha256": "5bf12d295cc9ce5be9003032f6c986bb5f1e8bf1f8052b1c8c66e67c21415b4b"
+    }
+  },
+  "counts": {
+    "acquired_bytes": 19518089,
+    "acquired_https_final_urls": 17,
+    "acquired_payload_sha256": 17,
+    "acquired_resources": 17,
+    "author_or_maintainer_present": 3,
+    "catalog_resource_hashes_present": 0,
+    "catalog_resource_last_modified_present": 7,
+    "catalog_resources": 5091,
+    "catalog_resources_https": 5091,
+    "datasets": 25,
+    "license_category_counts": {
+      "explicitly_unspecified": 2,
+      "missing": 13,
+      "standard_or_public_domain_identifier": 8,
+      "vague_open_or_attribution": 2
+    },
+    "license_url_present": 0
+  },
+  "datasets": [
+    {
+      "acquisition": {
+        "acquired_bytes": 6979139,
+        "acquired_https_final_url_count": 1,
+        "acquired_payload_sha256_count": 1,
+        "acquired_resource_count": 1,
+        "attempted_resource_count": 1,
+        "run_resource_record_count": 2
+      },
+      "attribution": {
+        "author_present": false,
+        "dataset_url_present": false,
+        "maintainer_present": false
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 2,
+        "last_modified_present_count": 2,
+        "resource_count": 2
+      },
+      "catalog_response_body_sha256": "47da2a4a6de7f755cfa3431cfa59acb7ce172301fb351606bd04d298afd11dba",
+      "dataset_id": "0316eb60-7b34-4385-85dd-186a3a454a8a",
+      "detail_snapshot_sha256": "c1fd221fcdbd4ba73b988d740bbcd91069c5974c91b507cdebc42425e917501c",
+      "license": {
+        "category": "standard_or_public_domain_identifier",
+        "license_id": "other-pd",
+        "license_title": "Other (Public Domain)",
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:22:11.407781Z",
+      "split": "development"
+    },
+    {
+      "acquisition": {
+        "acquired_bytes": 0,
+        "acquired_https_final_url_count": 0,
+        "acquired_payload_sha256_count": 0,
+        "acquired_resource_count": 0,
+        "attempted_resource_count": 2,
+        "run_resource_record_count": 6
+      },
+      "attribution": {
+        "author_present": false,
+        "dataset_url_present": true,
+        "maintainer_present": false
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 6,
+        "last_modified_present_count": 0,
+        "resource_count": 6
+      },
+      "catalog_response_body_sha256": "3bff00465a20b34ce8c1200950959dc4288d7e0d4e186c9697b32424cf40b7bf",
+      "dataset_id": "0998867b-9aac-4bf9-a408-c67fbcab7176",
+      "detail_snapshot_sha256": "adafabaf09d0bc6ed6758f77003fc52fc8e1c831d15b77cdbd5196a7b7e44e9b",
+      "license": {
+        "category": "missing",
+        "license_id": null,
+        "license_title": null,
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:22:11.711872Z",
+      "split": "development"
+    },
+    {
+      "acquisition": {
+        "acquired_bytes": 0,
+        "acquired_https_final_url_count": 0,
+        "acquired_payload_sha256_count": 0,
+        "acquired_resource_count": 0,
+        "attempted_resource_count": 0,
+        "run_resource_record_count": 1
+      },
+      "attribution": {
+        "author_present": true,
+        "dataset_url_present": false,
+        "maintainer_present": false
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 1,
+        "last_modified_present_count": 0,
+        "resource_count": 1
+      },
+      "catalog_response_body_sha256": "2450d78f5f51076227a217fb8d388eb8e0e6608c4335d0855e9cddfe12c6c4ab",
+      "dataset_id": "3bfd82a8-9676-4c8b-a791-d2a31cb84de7",
+      "detail_snapshot_sha256": "cb784146ce8f37afec469c8d3d0c06b55d2a2c06c1090c8b22c33481b3ed4ed4",
+      "license": {
+        "category": "standard_or_public_domain_identifier",
+        "license_id": "CC-BY-SA-4.0",
+        "license_title": "CC-BY-SA-4.0",
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:22:11.879101Z",
+      "split": "development"
+    },
+    {
+      "acquisition": {
+        "acquired_bytes": 320803,
+        "acquired_https_final_url_count": 2,
+        "acquired_payload_sha256_count": 2,
+        "acquired_resource_count": 2,
+        "attempted_resource_count": 3,
+        "run_resource_record_count": 4
+      },
+      "attribution": {
+        "author_present": false,
+        "dataset_url_present": false,
+        "maintainer_present": true
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 4,
+        "last_modified_present_count": 0,
+        "resource_count": 4
+      },
+      "catalog_response_body_sha256": "ebd72efaa2326a3ba53f6c552c7da6b5b354408d8b945f3d7a8b17384487e1f7",
+      "dataset_id": "6ebc92f4-daf4-4c52-b2c3-82276bc24ee5",
+      "detail_snapshot_sha256": "4ab1bcdb81f0802b3eca467efa57ab0c25861c0758cf103720f46e123363d654",
+      "license": {
+        "category": "missing",
+        "license_id": null,
+        "license_title": null,
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:22:12.030023Z",
+      "split": "development"
+    },
+    {
+      "acquisition": {
+        "acquired_bytes": 0,
+        "acquired_https_final_url_count": 0,
+        "acquired_payload_sha256_count": 0,
+        "acquired_resource_count": 0,
+        "attempted_resource_count": 0,
+        "run_resource_record_count": 4
+      },
+      "attribution": {
+        "author_present": false,
+        "dataset_url_present": false,
+        "maintainer_present": false
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 4,
+        "last_modified_present_count": 0,
+        "resource_count": 4
+      },
+      "catalog_response_body_sha256": "3e97ecc1adaa382b4ea0250af0507b7ad0082fd848bb88ce3808bbcb63783a2a",
+      "dataset_id": "7686770a-de97-4067-86a6-66cbadd2faa1",
+      "detail_snapshot_sha256": "7428ea0f5f4c56d8895ebc973f52e81f0f1165c6560ff5bd5da240abbb26a6b4",
+      "license": {
+        "category": "standard_or_public_domain_identifier",
+        "license_id": "CC BY 4.0",
+        "license_title": "CC BY 4.0",
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:22:12.176058Z",
+      "split": "development"
+    },
+    {
+      "acquisition": {
+        "acquired_bytes": 153082,
+        "acquired_https_final_url_count": 1,
+        "acquired_payload_sha256_count": 1,
+        "acquired_resource_count": 1,
+        "attempted_resource_count": 1,
+        "run_resource_record_count": 1
+      },
+      "attribution": {
+        "author_present": false,
+        "dataset_url_present": false,
+        "maintainer_present": false
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 1,
+        "last_modified_present_count": 1,
+        "resource_count": 1
+      },
+      "catalog_response_body_sha256": "78bcc7076ce3ed8d211036886ec26862b0f5f967c4bdb4a8cf4d29f03c58b067",
+      "dataset_id": "811f0bcc-99e5-455c-bcf6-7c63c2634f41",
+      "detail_snapshot_sha256": "288ee15e23930da8947f505b7ed12231658c739a8c6ca820189d9df5675e82ba",
+      "license": {
+        "category": "missing",
+        "license_id": null,
+        "license_title": null,
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:22:12.330570Z",
+      "split": "development"
+    },
+    {
+      "acquisition": {
+        "acquired_bytes": 0,
+        "acquired_https_final_url_count": 0,
+        "acquired_payload_sha256_count": 0,
+        "acquired_resource_count": 0,
+        "attempted_resource_count": 0,
+        "run_resource_record_count": 1
+      },
+      "attribution": {
+        "author_present": false,
+        "dataset_url_present": false,
+        "maintainer_present": false
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 1,
+        "last_modified_present_count": 0,
+        "resource_count": 1
+      },
+      "catalog_response_body_sha256": "ac72898b6f0ccf6d13733a2421d230d10c00e1c495f7eb101cec2497a1df645f",
+      "dataset_id": "872ba2a0-4e91-4a74-b2b4-21073a21ad7b",
+      "detail_snapshot_sha256": "e954ac51995602594379a2736001dfe965ad961d59848fb7c41e78f6f7edb78a",
+      "license": {
+        "category": "standard_or_public_domain_identifier",
+        "license_id": "CC-BY-SA-4.0",
+        "license_title": "CC-BY-SA-4.0",
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:22:12.492735Z",
+      "split": "development"
+    },
+    {
+      "acquisition": {
+        "acquired_bytes": 0,
+        "acquired_https_final_url_count": 0,
+        "acquired_payload_sha256_count": 0,
+        "acquired_resource_count": 0,
+        "attempted_resource_count": 0,
+        "run_resource_record_count": 2
+      },
+      "attribution": {
+        "author_present": false,
+        "dataset_url_present": false,
+        "maintainer_present": false
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 2,
+        "last_modified_present_count": 0,
+        "resource_count": 2
+      },
+      "catalog_response_body_sha256": "093ea635685a8f8ca84e567723af8e7a5b9fb300ba9965e0c001a98444e4b5e2",
+      "dataset_id": "8775a68d-885a-47f1-a13a-b6806c6c89be",
+      "detail_snapshot_sha256": "a607af41301cc055fe23c18624c8ea69789af176b18d23f5d0894821717f7fc1",
+      "license": {
+        "category": "missing",
+        "license_id": null,
+        "license_title": null,
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:22:12.655807Z",
+      "split": "development"
+    },
+    {
+      "acquisition": {
+        "acquired_bytes": 527930,
+        "acquired_https_final_url_count": 1,
+        "acquired_payload_sha256_count": 1,
+        "acquired_resource_count": 1,
+        "attempted_resource_count": 1,
+        "run_resource_record_count": 1
+      },
+      "attribution": {
+        "author_present": false,
+        "dataset_url_present": false,
+        "maintainer_present": false
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 1,
+        "last_modified_present_count": 0,
+        "resource_count": 1
+      },
+      "catalog_response_body_sha256": "b9403fd0ea5e7fe761cf0cbce4e63e4774a08bfc18b6a938fc92bf28f03179a1",
+      "dataset_id": "8798da75-6631-4c44-b73d-e8e7e1788c27",
+      "detail_snapshot_sha256": "87bc09b26a6d264f76ddc613077e552f2e1491d6962ba9618448da8129c50b5c",
+      "license": {
+        "category": "missing",
+        "license_id": null,
+        "license_title": null,
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:22:12.827997Z",
+      "split": "development"
+    },
+    {
+      "acquisition": {
+        "acquired_bytes": 0,
+        "acquired_https_final_url_count": 0,
+        "acquired_payload_sha256_count": 0,
+        "acquired_resource_count": 0,
+        "attempted_resource_count": 0,
+        "run_resource_record_count": 1
+      },
+      "attribution": {
+        "author_present": false,
+        "dataset_url_present": false,
+        "maintainer_present": false
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 1,
+        "last_modified_present_count": 0,
+        "resource_count": 1
+      },
+      "catalog_response_body_sha256": "2c074f73a2188118891dfa1ad0b65a0a862b3d0e7cec4fe329a0fcf314eb04f9",
+      "dataset_id": "96c6e757-b46b-4f5a-a06a-2b8f3f16b914",
+      "detail_snapshot_sha256": "721de4c9c1c067e8fe017f809b71359d701e6637f8cdb12e189f9188eb26d054",
+      "license": {
+        "category": "missing",
+        "license_id": null,
+        "license_title": null,
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:22:12.975897Z",
+      "split": "development"
+    },
+    {
+      "acquisition": {
+        "acquired_bytes": 0,
+        "acquired_https_final_url_count": 0,
+        "acquired_payload_sha256_count": 0,
+        "acquired_resource_count": 0,
+        "attempted_resource_count": 0,
+        "run_resource_record_count": 1
+      },
+      "attribution": {
+        "author_present": false,
+        "dataset_url_present": false,
+        "maintainer_present": false
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 1,
+        "last_modified_present_count": 0,
+        "resource_count": 1
+      },
+      "catalog_response_body_sha256": "c6110714c95f6c026dba9ab9660c47ef6a987acbaeb4bf618669dc7a56a9a680",
+      "dataset_id": "9be16b9b-086c-4436-875a-1804ea6f5e63",
+      "detail_snapshot_sha256": "e35ac71eee0804cc6c8c3a389880fef868e841d22538757052897e60cf0fe030",
+      "license": {
+        "category": "missing",
+        "license_id": null,
+        "license_title": null,
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:22:13.158693Z",
+      "split": "development"
+    },
+    {
+      "acquisition": {
+        "acquired_bytes": 1155,
+        "acquired_https_final_url_count": 1,
+        "acquired_payload_sha256_count": 1,
+        "acquired_resource_count": 1,
+        "attempted_resource_count": 1,
+        "run_resource_record_count": 1
+      },
+      "attribution": {
+        "author_present": false,
+        "dataset_url_present": false,
+        "maintainer_present": false
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 1,
+        "last_modified_present_count": 1,
+        "resource_count": 1
+      },
+      "catalog_response_body_sha256": "240271634eb2e6ce772202a7e7b07563aefbaa2f4203d35aebb690c4a1ef1472",
+      "dataset_id": "9e4eb306-3029-4640-b279-1a7fd49253d6",
+      "detail_snapshot_sha256": "5d98f4f75a12095e772f871324d3ace04692f480599d612226a7951993636380",
+      "license": {
+        "category": "standard_or_public_domain_identifier",
+        "license_id": "other-pd",
+        "license_title": "Other (Public Domain)",
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:22:13.308662Z",
+      "split": "development"
+    },
+    {
+      "acquisition": {
+        "acquired_bytes": 0,
+        "acquired_https_final_url_count": 0,
+        "acquired_payload_sha256_count": 0,
+        "acquired_resource_count": 0,
+        "attempted_resource_count": 0,
+        "run_resource_record_count": 2
+      },
+      "attribution": {
+        "author_present": false,
+        "dataset_url_present": false,
+        "maintainer_present": false
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 2,
+        "last_modified_present_count": 0,
+        "resource_count": 2
+      },
+      "catalog_response_body_sha256": "f5fafdb6943a46bae9a781f839253329ec8160dd9ffe52f05c9ddbe4412ceb87",
+      "dataset_id": "aadd47f8-4381-4900-8c80-9949506bda95",
+      "detail_snapshot_sha256": "a0ffd05eb640adfd6a6c1388eb8002e54c5d41ed5a7f480d4cdbd3a145667291",
+      "license": {
+        "category": "vague_open_or_attribution",
+        "license_id": "other-open",
+        "license_title": "Other (Open)",
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:22:13.461387Z",
+      "split": "development"
+    },
+    {
+      "acquisition": {
+        "acquired_bytes": 9769662,
+        "acquired_https_final_url_count": 3,
+        "acquired_payload_sha256_count": 3,
+        "acquired_resource_count": 3,
+        "attempted_resource_count": 3,
+        "run_resource_record_count": 9
+      },
+      "attribution": {
+        "author_present": false,
+        "dataset_url_present": true,
+        "maintainer_present": false
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 9,
+        "last_modified_present_count": 0,
+        "resource_count": 9
+      },
+      "catalog_response_body_sha256": "fc8cae247565d27f8780fdf6cb4ae20455c3c56b434658c7672cf383a81caac6",
+      "dataset_id": "c7f29749-c6ab-4402-90ae-58fa5d23f830",
+      "detail_snapshot_sha256": "56637e2b1439f0683c8e84e51441ee5a2ce6e1c29d5db71899e32e6940059c8f",
+      "license": {
+        "category": "vague_open_or_attribution",
+        "license_id": "other-at",
+        "license_title": "Other (Attribution)",
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:22:13.619945Z",
+      "split": "development"
+    },
+    {
+      "acquisition": {
+        "acquired_bytes": 1174,
+        "acquired_https_final_url_count": 1,
+        "acquired_payload_sha256_count": 1,
+        "acquired_resource_count": 1,
+        "attempted_resource_count": 1,
+        "run_resource_record_count": 1
+      },
+      "attribution": {
+        "author_present": false,
+        "dataset_url_present": false,
+        "maintainer_present": false
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 1,
+        "last_modified_present_count": 1,
+        "resource_count": 1
+      },
+      "catalog_response_body_sha256": "1bcb46e9e19edd6b116190903fc3823d60b8acad9f7739ec8e89bb524ae110e7",
+      "dataset_id": "ec326db2-4027-4694-99e3-4b9c3d7a29dc",
+      "detail_snapshot_sha256": "8443f76a4c3ae2622cc1594004d0cf175ff949af144e76b7b63061dc22b78eff",
+      "license": {
+        "category": "standard_or_public_domain_identifier",
+        "license_id": "other-pd",
+        "license_title": "Other (Public Domain)",
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:22:13.802231Z",
+      "split": "development"
+    },
+    {
+      "acquisition": {
+        "acquired_bytes": 122023,
+        "acquired_https_final_url_count": 1,
+        "acquired_payload_sha256_count": 1,
+        "acquired_resource_count": 1,
+        "attempted_resource_count": 1,
+        "run_resource_record_count": 1
+      },
+      "attribution": {
+        "author_present": false,
+        "dataset_url_present": false,
+        "maintainer_present": false
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 1,
+        "last_modified_present_count": 1,
+        "resource_count": 1
+      },
+      "catalog_response_body_sha256": "923d9460132c6b60ad566e4013bdfe36695ff638e17f6174ce41ab90776d15c1",
+      "dataset_id": "28580a91-43fe-42d1-a87a-01b4dd036667",
+      "detail_snapshot_sha256": "def110c363947b4d682b9cd7bb04f055b8c6b7d50f7654df94412b3322df8fc9",
+      "license": {
+        "category": "standard_or_public_domain_identifier",
+        "license_id": "CC0-1.0",
+        "license_title": "CC0-1.0",
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:43:09.320072Z",
+      "split": "validation"
+    },
+    {
+      "acquisition": {
+        "acquired_bytes": 247537,
+        "acquired_https_final_url_count": 1,
+        "acquired_payload_sha256_count": 1,
+        "acquired_resource_count": 1,
+        "attempted_resource_count": 1,
+        "run_resource_record_count": 1
+      },
+      "attribution": {
+        "author_present": false,
+        "dataset_url_present": true,
+        "maintainer_present": false
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 1,
+        "last_modified_present_count": 0,
+        "resource_count": 1
+      },
+      "catalog_response_body_sha256": "784db2a9d69755bbed534b3b2d030014d6062b64ec86583868af9d3a514fea4e",
+      "dataset_id": "35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4",
+      "detail_snapshot_sha256": "02d3ca8c656e2589dd174c588471b63f606862e715305b05ef6168ac8efb6aa7",
+      "license": {
+        "category": "explicitly_unspecified",
+        "license_id": "notspecified",
+        "license_title": "License not specified",
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:43:09.494848Z",
+      "split": "validation"
+    },
+    {
+      "acquisition": {
+        "acquired_bytes": 0,
+        "acquired_https_final_url_count": 0,
+        "acquired_payload_sha256_count": 0,
+        "acquired_resource_count": 0,
+        "attempted_resource_count": 0,
+        "run_resource_record_count": 1
+      },
+      "attribution": {
+        "author_present": true,
+        "dataset_url_present": false,
+        "maintainer_present": false
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 1,
+        "last_modified_present_count": 0,
+        "resource_count": 1
+      },
+      "catalog_response_body_sha256": "93ce77e4ce2ee7e12e31df8e5803724a233b8bd35f40f50a0b4f9ec99fdd885a",
+      "dataset_id": "4809738b-d730-44d6-9963-4134831a3ac1",
+      "detail_snapshot_sha256": "8d563ad6806524d21a508718faa577bbbd8eeb14652d1d01f627a78480f73074",
+      "license": {
+        "category": "standard_or_public_domain_identifier",
+        "license_id": "CC-BY-SA-4.0",
+        "license_title": "CC-BY-SA-4.0",
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:43:09.656042Z",
+      "split": "validation"
+    },
+    {
+      "acquisition": {
+        "acquired_bytes": 0,
+        "acquired_https_final_url_count": 0,
+        "acquired_payload_sha256_count": 0,
+        "acquired_resource_count": 0,
+        "attempted_resource_count": 0,
+        "run_resource_record_count": 102
+      },
+      "attribution": {
+        "author_present": false,
+        "dataset_url_present": false,
+        "maintainer_present": false
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 102,
+        "last_modified_present_count": 0,
+        "resource_count": 102
+      },
+      "catalog_response_body_sha256": "fee92f355ad957015052a9905da4fcce1fe6dca36710d7155a6112cc8eae7c17",
+      "dataset_id": "4ee0e833-f187-403a-8f8f-07bb43a44909",
+      "detail_snapshot_sha256": "e843fe6e888a2657d540c9d7498af0cf19cb1b3a5b76a50caa6d3cdcec53fd59",
+      "license": {
+        "category": "missing",
+        "license_id": null,
+        "license_title": null,
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:43:10.084475Z",
+      "split": "validation"
+    },
+    {
+      "acquisition": {
+        "acquired_bytes": 0,
+        "acquired_https_final_url_count": 0,
+        "acquired_payload_sha256_count": 0,
+        "acquired_resource_count": 0,
+        "attempted_resource_count": 0,
+        "run_resource_record_count": 4933
+      },
+      "attribution": {
+        "author_present": false,
+        "dataset_url_present": false,
+        "maintainer_present": false
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 4933,
+        "last_modified_present_count": 0,
+        "resource_count": 4933
+      },
+      "catalog_response_body_sha256": "ec7513d65f1db6f2e185316c60d437345608a51a5b309609d56a820e63c4407f",
+      "dataset_id": "7fb33bb1-15f0-44a1-8755-e28ff70abc51",
+      "detail_snapshot_sha256": "b79b30ee2cbee529db3e09ef44f55afefd967ecd7db1c860141e7b5f89bd000a",
+      "license": {
+        "category": "explicitly_unspecified",
+        "license_id": "Not Provided",
+        "license_title": "Not Provided",
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:43:11.859032Z",
+      "split": "validation"
+    },
+    {
+      "acquisition": {
+        "acquired_bytes": 526216,
+        "acquired_https_final_url_count": 1,
+        "acquired_payload_sha256_count": 1,
+        "acquired_resource_count": 1,
+        "attempted_resource_count": 1,
+        "run_resource_record_count": 1
+      },
+      "attribution": {
+        "author_present": false,
+        "dataset_url_present": false,
+        "maintainer_present": false
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 1,
+        "last_modified_present_count": 0,
+        "resource_count": 1
+      },
+      "catalog_response_body_sha256": "6ad579bb3a5f5811d9ce63c11c6f25c3f0c9df3758c5b36ecddd31cd1e979d4f",
+      "dataset_id": "9c01c9f6-c815-433d-b22a-3f9b37bfb570",
+      "detail_snapshot_sha256": "a7af0ee7ad8cf6cd88b62acad362fc2433c134c5be6ec2693453b14a535ca6bc",
+      "license": {
+        "category": "missing",
+        "license_id": null,
+        "license_title": null,
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:43:12.300134Z",
+      "split": "validation"
+    },
+    {
+      "acquisition": {
+        "acquired_bytes": 0,
+        "acquired_https_final_url_count": 0,
+        "acquired_payload_sha256_count": 0,
+        "acquired_resource_count": 0,
+        "attempted_resource_count": 2,
+        "run_resource_record_count": 6
+      },
+      "attribution": {
+        "author_present": false,
+        "dataset_url_present": true,
+        "maintainer_present": false
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 6,
+        "last_modified_present_count": 0,
+        "resource_count": 6
+      },
+      "catalog_response_body_sha256": "b2fde91f6c97bd6e85064bcccb194f72bc81c192f9a227fa5fc304ec2c89e1fa",
+      "dataset_id": "aa8d17c7-d2bf-46b3-ba90-938659bef006",
+      "detail_snapshot_sha256": "d5789feea2dbd9a11c19ff5a3150de4ab24446b870cda8df6e32a7854b2082a4",
+      "license": {
+        "category": "missing",
+        "license_id": null,
+        "license_title": null,
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:43:12.479193Z",
+      "split": "validation"
+    },
+    {
+      "acquisition": {
+        "acquired_bytes": 646696,
+        "acquired_https_final_url_count": 1,
+        "acquired_payload_sha256_count": 1,
+        "acquired_resource_count": 1,
+        "attempted_resource_count": 1,
+        "run_resource_record_count": 1
+      },
+      "attribution": {
+        "author_present": false,
+        "dataset_url_present": false,
+        "maintainer_present": false
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 1,
+        "last_modified_present_count": 0,
+        "resource_count": 1
+      },
+      "catalog_response_body_sha256": "ef8cfdbfaad1b0fdfa6d2cd2526faa146a20359f4da6f73314106da80794b519",
+      "dataset_id": "b0ebb62d-5c60-47c9-a2a3-d3c0eb1ce643",
+      "detail_snapshot_sha256": "ca2086ae273167533f2ba8672638d7aea09c10a9f7215be8cd86b52ec13e76bd",
+      "license": {
+        "category": "missing",
+        "license_id": null,
+        "license_title": null,
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:43:12.634474Z",
+      "split": "validation"
+    },
+    {
+      "acquisition": {
+        "acquired_bytes": 222672,
+        "acquired_https_final_url_count": 3,
+        "acquired_payload_sha256_count": 3,
+        "acquired_resource_count": 3,
+        "attempted_resource_count": 3,
+        "run_resource_record_count": 5
+      },
+      "attribution": {
+        "author_present": false,
+        "dataset_url_present": false,
+        "maintainer_present": false
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 5,
+        "last_modified_present_count": 1,
+        "resource_count": 5
+      },
+      "catalog_response_body_sha256": "8c4dd8ba4e821c8634e4c051e2c0d80d62cf28d13a91d3927cbc9e0b6643de1a",
+      "dataset_id": "d7f05458-e03c-493a-8fd4-458f32a7aecb",
+      "detail_snapshot_sha256": "68ec91251756d833383c431ce0eccfd3b3b9f38e2abd0fe056a8e0fd48e93809",
+      "license": {
+        "category": "missing",
+        "license_id": null,
+        "license_title": null,
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:43:12.796764Z",
+      "split": "validation"
+    },
+    {
+      "acquisition": {
+        "acquired_bytes": 0,
+        "acquired_https_final_url_count": 0,
+        "acquired_payload_sha256_count": 0,
+        "acquired_resource_count": 0,
+        "attempted_resource_count": 1,
+        "run_resource_record_count": 3
+      },
+      "attribution": {
+        "author_present": false,
+        "dataset_url_present": false,
+        "maintainer_present": false
+      },
+      "catalog_resources": {
+        "catalog_hash_present_count": 0,
+        "https_url_count": 3,
+        "last_modified_present_count": 0,
+        "resource_count": 3
+      },
+      "catalog_response_body_sha256": "aa401a2b74fa8768775f4b085b4239d4c8d03319782923f860a1a5cd1f3d797c",
+      "dataset_id": "fba90f85-a818-468a-9840-14b0ee741b8d",
+      "detail_snapshot_sha256": "93a30ae2c9988ff7334dc5e7833ded2f06e6deb5dac3fba179d89ab53b6530dc",
+      "license": {
+        "category": "missing",
+        "license_id": null,
+        "license_title": null,
+        "license_url": null
+      },
+      "metadata_created_present": true,
+      "metadata_modified_present": true,
+      "retrieved_at": "2026-07-26T22:43:12.952811Z",
+      "split": "validation"
+    }
+  ],
+  "detail_directories": {
+    "development": "acquisition/development_details",
+    "validation": "acquisition/validation_details"
+  },
+  "gates": {
+    "acquired_payload_hashes_complete": true,
+    "acquired_transport_https_complete": true,
+    "artifact_redistribution_policy_frozen": false,
+    "catalog_resource_transport_https_complete": true,
+    "catalog_response_body_hash_recomputable_from_archive": false,
+    "dataset_identity_verified": true,
+    "detail_snapshot_hashes_verified": true,
+    "external_model_data_transfer_policy_frozen": false,
+    "human_license_and_attribution_review_complete": false,
+    "license_metadata_complete_and_resolvable": false,
+    "test_split_unopened": true
+  },
+  "implementation": {
+    "file": "ndp50_data_governance.py",
+    "sha256": "e79a1b58c5815b2031d4043523e75438723fc962ad4e5ffd572a2cf14154670e"
+  },
+  "limitations": [
+    "The original CKAN response bytes are not archived; the captured response-body SHA-256 cannot be independently recomputed from the parsed snapshot.",
+    "Catalog resource hashes are provider metadata and are absent for most or all resources; locally acquired payload hashes are reported separately.",
+    "License identifiers and titles are catalog assertions. Missing or vague metadata requires source-level human review."
+  ],
+  "required_actions": [
+    "Resolve and record authoritative license terms and attribution requirements for every analyzed dataset.",
+    "Freeze whether semantic processing is local-only or permits external model transfer, including retention and redaction.",
+    "Freeze which metadata, samples, schemas, and raw payloads may be redistributed with the research artifact.",
+    "Capture an immutable review record without treating this automated audit as legal approval."
+  ],
+  "schema_version": "ndp50-data-governance-audit/v1",
+  "scope": {
+    "claim_boundary": "This audit verifies archived provenance and reports catalog governance metadata. It is not legal advice and does not grant redistribution or external data-transfer permission.",
+    "dataset_count": 25,
+    "included_splits": [
+      "development",
+      "validation"
+    ],
+    "test_dataset_detail_count": 0,
+    "test_dataset_identities_included": false
+  },
+  "status": "provenance_integrity_passed_governance_review_required"
+}

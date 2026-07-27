@@ -1,0 +1,883 @@
+{
+  "elapsed_seconds": 0.006086899999900197,
+  "extractor": {
+    "determinism_class": "strict_with_sampled_profiles",
+    "evidence_types": [
+      "csv_header",
+      "sample_rows",
+      "column_name_unit_hint"
+    ],
+    "extractor_id": "csv_conservative_profiler",
+    "formats": [
+      "csv"
+    ],
+    "magic_prefixes": [],
+    "operations": [
+      "enumerate_fields",
+      "sample_values",
+      "infer_physical_types",
+      "profile_time_series"
+    ],
+    "resource_kinds": [
+      "file"
+    ],
+    "suffixes": [
+      ".csv",
+      ".tsv"
+    ],
+    "version": "1.0.0"
+  },
+  "format_decision": {
+    "basis": "text_probe",
+    "conflicted": false,
+    "selected_format": "csv",
+    "signals": [
+      {
+        "basis": "text_probe",
+        "detail": "consistent delimited UTF-8 text sample",
+        "format": "csv",
+        "support_score": 0.8
+      }
+    ],
+    "support_score": 0.8
+  },
+  "issues": [],
+  "schema": {
+    "data_modality": "tabular",
+    "dataset_id": "b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+    "fields": [
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "67.12396",
+          "68.1021",
+          "64.36963"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "latitude",
+        "field_path": "latitude",
+        "logical_type": "coordinate",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "latitude",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=0; raw_header='latitude'; field_path='latitude'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=12",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 1.0,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          60.90992,
+          68.8765
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "-143.85057",
+          "-145.18443",
+          "-145.39282"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "longitude",
+        "field_path": "longitude",
+        "logical_type": "coordinate",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "longitude",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=1; raw_header='longitude'; field_path='longitude'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=12",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 1.0,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          -148.0392,
+          -143.85057
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "302.98",
+          "302.17",
+          "363.2"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "brightness",
+        "field_path": "brightness",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=2; raw_header='brightness'; field_path='brightness'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=12",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 1.0,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          301.5,
+          363.2
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "1.72",
+          "2.51",
+          "1.01"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "scan",
+        "field_path": "scan",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=3; raw_header='scan'; field_path='scan'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=12",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 0.6667,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          1.01,
+          3.14
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "1.29",
+          "1.52",
+          "1.01"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "track",
+        "field_path": "track",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=4; raw_header='track'; field_path='track'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=12",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 0.5,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          1.01,
+          1.68
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "2026-07-20"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "acq_date",
+        "field_path": "acq_date",
+        "logical_type": "attribute",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "datetime",
+        "semantic_type": "observation_time",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=5; raw_header='acq_date'; field_path='acq_date'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=12",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 0.25,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "2034",
+          "2218",
+          "2356"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "acq_time",
+        "field_path": "acq_time",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "int",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=6; raw_header='acq_time'; field_path='acq_time'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=12",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 0.4167,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          2034.0,
+          2356.0
+        ]
+      },
+      {
+        "confidence": 0.9,
+        "description": null,
+        "example_values": [
+          "T",
+          "A"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "satellite",
+        "field_path": "satellite",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=7; raw_header='satellite'; field_path='satellite'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=12",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+        "unique_ratio": 0.1667,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "30",
+          "43",
+          "100"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "confidence",
+        "field_path": "confidence",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "int",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=8; raw_header='confidence'; field_path='confidence'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=12",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 0.6667,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          0.0,
+          100.0
+        ]
+      },
+      {
+        "confidence": 0.9,
+        "description": null,
+        "example_values": [
+          "6.1NRT"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "version",
+        "field_path": "version",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=9; raw_header='version'; field_path='version'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=12",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+        "unique_ratio": 0.0833,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": null
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "288.43",
+          "290.1",
+          "294.79"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "bright_t31",
+        "field_path": "bright_t31",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=10; raw_header='bright_t31'; field_path='bright_t31'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=12",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 0.9167,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          283.66,
+          298.48
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "4.62",
+          "8.85",
+          "92.58"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "frp",
+        "field_path": "frp",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=11; raw_header='frp'; field_path='frp'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=12",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 1.0,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          3.72,
+          92.58
+        ]
+      },
+      {
+        "confidence": 0.9,
+        "description": null,
+        "example_values": [
+          "D"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "daynight",
+        "field_path": "daynight",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=12; raw_header='daynight'; field_path='daynight'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=12",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\development\\c7f29749-c6ab-4402-90ae-58fa5d23f830\\b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+        "unique_ratio": 0.0833,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": null
+      }
+    ],
+    "file_format": "csv",
+    "file_id": "b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+    "groups": [],
+    "metadata": {
+      "column_count": 13,
+      "csv_header_mapping": [
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 0,
+          "field_path": "latitude",
+          "raw_header": "latitude"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 1,
+          "field_path": "longitude",
+          "raw_header": "longitude"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 2,
+          "field_path": "brightness",
+          "raw_header": "brightness"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 3,
+          "field_path": "scan",
+          "raw_header": "scan"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 4,
+          "field_path": "track",
+          "raw_header": "track"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 5,
+          "field_path": "acq_date",
+          "raw_header": "acq_date"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 6,
+          "field_path": "acq_time",
+          "raw_header": "acq_time"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 7,
+          "field_path": "satellite",
+          "raw_header": "satellite"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 8,
+          "field_path": "confidence",
+          "raw_header": "confidence"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 9,
+          "field_path": "version",
+          "raw_header": "version"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 10,
+          "field_path": "bright_t31",
+          "raw_header": "bright_t31"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 11,
+          "field_path": "frp",
+          "raw_header": "frp"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 12,
+          "field_path": "daynight",
+          "raw_header": "daynight"
+        }
+      ],
+      "deterministic_profile": {
+        "identifier_quality": {
+          "best_identifier_fields": [],
+          "candidate_count": 0,
+          "fields": []
+        },
+        "missingness": {
+          "basis": "sampled_rows",
+          "field_count": 13,
+          "fields": [
+            {
+              "basis": "sampled_rows",
+              "field_path": "latitude",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "longitude",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "brightness",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "scan",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "track",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "acq_date",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "acq_time",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "satellite",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "confidence",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "version",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "bright_t31",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "frp",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "daynight",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            }
+          ],
+          "fields_with_missing_count": 0,
+          "sampled_rows": 12,
+          "total_missing_cells": 0
+        }
+      },
+      "row_width_conflict_count": 0,
+      "sampled_rows": 12,
+      "temporal_analysis": {
+        "analysis_version": "phase12_temporal_v1",
+        "candidates": [
+          {
+            "field": "acq_date",
+            "field_path": "acq_date",
+            "parse_rate": 1.0,
+            "reasons": [
+              "physical_datetime",
+              "observation_time_semantic"
+            ],
+            "score": 0.55
+          }
+        ],
+        "issues": [
+          {
+            "code": "no_supported_time_axis_candidate",
+            "detail": "Temporal-looking fields exist, but none meet the deterministic selection threshold.",
+            "severity": "note"
+          }
+        ],
+        "property_claims": {},
+        "selected_candidate": null,
+        "validator_results": {
+          "candidate_count": 1,
+          "eligible_candidate_count": 0,
+          "measurement_count": 7,
+          "selection_abstained": true
+        }
+      }
+    },
+    "notes": []
+  },
+  "status": "success"
+}

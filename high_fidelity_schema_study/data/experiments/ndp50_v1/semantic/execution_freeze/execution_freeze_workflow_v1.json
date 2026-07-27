@@ -1,0 +1,74 @@
+{
+  "automatic_freeze": false,
+  "backend_operational_preflight_required": true,
+  "byte_identical_replay_required": true,
+  "cpa_design": {
+    "file": "semantic/cpa_design_draft_v1.json",
+    "sha256": "884cec768ecb08acb91e6f1b00a5dee88f163304af727fec8d67b132c900ecc3"
+  },
+  "human_decisions_present": false,
+  "implementation": {
+    "file": "ndp50_execution_freeze.py",
+    "sha256": "c72fdb822fc98cc81d417ac93a033baaadde5ab6e56090295f35b0f95b92fa68"
+  },
+  "implementation_dependencies": {
+    "ndp50_data_governance_review.py": "6b4a0a86bbae0f98f557d1638f2fcd9b1edce7019488bf78908f02eaa87bbcc1",
+    "ndp50_demonstration_pool.py": "6482a9d27bcf0494172b5def30a0e3c7289c149e91b3fdd62028ee02d35f3b9a",
+    "ndp50_execution_qualification.py": "e72dabc340e339ecdbdd372ddf23b98c4bc10ad4b12a0b7ae55aa2346608940f",
+    "ndp50_semantic_gold.py": "9d4e64214d201d05b8eba5d33c4f2c47c9ff477725c4154c70d360016a63c915",
+    "ndp50_source_approval.py": "6ba7772459167931a366a55ddfa74e6a591e41f6a47d40bedfc9f70b3bbc597d",
+    "semantic_gold_workflow.py": "1319dd8b52a3421ce4e34bbfc59e21391e2c8d161e1c01272aa33a7299fab864",
+    "semantic_study_preflight.py": "1201d58e9a70d5842f82a2ef840798cbbdc5363154936174f20d9ea731ff8d85"
+  },
+  "implementation_qualification_probe_suite": "ndp50-execution-synthetic-conformance/v3",
+  "implementation_qualification_required": true,
+  "implementation_qualification_synthetic_only": true,
+  "maximum_prompt_sensitivity_variants": 4,
+  "minimum_prompt_sensitivity_variants": 2,
+  "model_or_gold_outcomes_observed": false,
+  "neutral_config_template": {
+    "file": "semantic/execution_freeze/execution_freeze_config_neutral_v1.json",
+    "sha256": "bd340b67580dd4a72611760ee78bba6e2e53146f8b98354340310d4012863aa0"
+  },
+  "packet_manifest": {
+    "file": "semantic/annotation_pack_v1/manifest.json",
+    "sha256": "6d356997e8f3db91f39a9ac7a4759f420a0d880e7b76d3eac09d5625e2e26046"
+  },
+  "primary_prompt_sensitivity_anchor_required": true,
+  "primary_row_sampler_anchor_required": true,
+  "required_implementation_interfaces": {
+    "cost_accounting": "ndp50-execution-cost-accounting/v1",
+    "demonstration_ranker": "ndp50-execution-demonstration-ranker/v1",
+    "response_cache": "ndp50-execution-response-cache/v1",
+    "response_parser": "ndp50-execution-response-parser/v2",
+    "row_sampler": "ndp50-execution-row-sampler/v1",
+    "runner": "ndp50-execution-runner/v2",
+    "scorer": "ndp50-execution-scorer/v2",
+    "serializer": "ndp50-execution-serializer/v1"
+  },
+  "required_prompt_contract_arms": [
+    "five_shot_development_similarity_selected",
+    "one_shot_development_similarity_selected",
+    "zero_shot_dataset_level"
+  ],
+  "required_row_samplers": [
+    "head",
+    "fixed_seed_stratified",
+    "fixed_seed_adaptive"
+  ],
+  "schema_version": "ndp50-execution-freeze-workflow/v1",
+  "sensitivity_single_factor_at_a_time_required": true,
+  "sequence": [
+    "complete_all_upstream_human_gates",
+    "freeze_prompts_response_schema_and_serialization",
+    "freeze_development_only_demonstration_pool_and_ranking",
+    "freeze_all_row_samplers_and_seeds",
+    "freeze_operationally_qualified_backend_registry",
+    "freeze_runner_parser_scorer_and_execution_order",
+    "run_synthetic_execution_implementation_qualification",
+    "independent_methods_review",
+    "validator_generate_execution_freeze",
+    "rebuild_readiness_and_handoff"
+  ],
+  "status": "implementation_ready_waiting_on_upstream_human_gates"
+}

@@ -1,0 +1,591 @@
+{
+  "annotation_packet_file": "../annotation_pack_v1/packets/ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017.annotation-packet.json",
+  "annotation_packet_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+  "dataset_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+  "evidence_catalog": [
+    {
+      "applicable_field_paths": [
+        "$.crs"
+      ],
+      "catalog_evidence_id": "$.crs::F1",
+      "selector": "field_inventory:$.crs:$.crs::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.crs.properties"
+      ],
+      "catalog_evidence_id": "$.crs.properties::F1",
+      "selector": "field_inventory:$.crs.properties:$.crs.properties::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.crs.properties.name"
+      ],
+      "catalog_evidence_id": "$.crs.properties.name::F1",
+      "selector": "field_inventory:$.crs.properties.name:$.crs.properties.name::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.crs.type"
+      ],
+      "catalog_evidence_id": "$.crs.type::F1",
+      "selector": "field_inventory:$.crs.type:$.crs.type::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features"
+      ],
+      "catalog_evidence_id": "$.features::F1",
+      "selector": "field_inventory:$.features:$.features::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[]"
+      ],
+      "catalog_evidence_id": "$.features[]::F1",
+      "selector": "field_inventory:$.features[]:$.features[]::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].geometry"
+      ],
+      "catalog_evidence_id": "$.features[].geometry::F1",
+      "selector": "field_inventory:$.features[].geometry:$.features[].geometry::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].geometry.coordinates"
+      ],
+      "catalog_evidence_id": "$.features[].geometry.coordinates::F1",
+      "selector": "field_inventory:$.features[].geometry.coordinates:$.features[].geometry.coordinates::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].geometry.coordinates[]"
+      ],
+      "catalog_evidence_id": "$.features[].geometry.coordinates[]::F1",
+      "selector": "field_inventory:$.features[].geometry.coordinates[]:$.features[].geometry.coordinates[]::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].geometry.coordinates[][]"
+      ],
+      "catalog_evidence_id": "$.features[].geometry.coordinates[][]::F1",
+      "selector": "field_inventory:$.features[].geometry.coordinates[][]:$.features[].geometry.coordinates[][]::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].geometry.coordinates[][][]"
+      ],
+      "catalog_evidence_id": "$.features[].geometry.coordinates[][][]::F1",
+      "selector": "field_inventory:$.features[].geometry.coordinates[][][]:$.features[].geometry.coordinates[][][]::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].geometry.type"
+      ],
+      "catalog_evidence_id": "$.features[].geometry.type::F1",
+      "selector": "field_inventory:$.features[].geometry.type:$.features[].geometry.type::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties"
+      ],
+      "catalog_evidence_id": "$.features[].properties::F1",
+      "selector": "field_inventory:$.features[].properties:$.features[].properties::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.highway"
+      ],
+      "catalog_evidence_id": "$.features[].properties.highway::F1",
+      "selector": "field_inventory:$.features[].properties.highway:$.features[].properties.highway::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.name"
+      ],
+      "catalog_evidence_id": "$.features[].properties.name::F1",
+      "selector": "field_inventory:$.features[].properties.name:$.features[].properties.name::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.osm_id"
+      ],
+      "catalog_evidence_id": "$.features[].properties.osm_id::F1",
+      "selector": "field_inventory:$.features[].properties.osm_id:$.features[].properties.osm_id::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.other_tags"
+      ],
+      "catalog_evidence_id": "$.features[].properties.other_tags::F1",
+      "selector": "field_inventory:$.features[].properties.other_tags:$.features[].properties.other_tags::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.width"
+      ],
+      "catalog_evidence_id": "$.features[].properties.width::F1",
+      "selector": "field_inventory:$.features[].properties.width:$.features[].properties.width::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].type"
+      ],
+      "catalog_evidence_id": "$.features[].type::F1",
+      "selector": "field_inventory:$.features[].type:$.features[].type::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.name"
+      ],
+      "catalog_evidence_id": "$.name::F1",
+      "selector": "field_inventory:$.name:$.name::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.type"
+      ],
+      "catalog_evidence_id": "$.type::F1",
+      "selector": "field_inventory:$.type:$.type::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "source_type": "json_sample_observation",
+      "strength": "sample_observation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.crs",
+        "$.crs.properties",
+        "$.crs.properties.name",
+        "$.crs.type",
+        "$.features",
+        "$.features[]",
+        "$.features[].geometry",
+        "$.features[].geometry.coordinates",
+        "$.features[].geometry.coordinates[]",
+        "$.features[].geometry.coordinates[][]",
+        "$.features[].geometry.coordinates[][][]",
+        "$.features[].geometry.type",
+        "$.features[].properties",
+        "$.features[].properties.highway",
+        "$.features[].properties.name",
+        "$.features[].properties.osm_id",
+        "$.features[].properties.other_tags",
+        "$.features[].properties.width",
+        "$.features[].type",
+        "$.name",
+        "$.type"
+      ],
+      "catalog_evidence_id": "S1",
+      "selector": "approved_evidence:S1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "source_type": "catalog_title",
+      "strength": "documentation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.crs"
+      ],
+      "catalog_evidence_id": "RAW-1",
+      "selector": "field_path:$.crs",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "33b4bd67e3e0c040ba0e8f773e4b0470740c1c57c11429f84095f5b29dad48f8",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.crs.properties"
+      ],
+      "catalog_evidence_id": "RAW-2",
+      "selector": "field_path:$.crs.properties",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "33b4bd67e3e0c040ba0e8f773e4b0470740c1c57c11429f84095f5b29dad48f8",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.crs.properties.name"
+      ],
+      "catalog_evidence_id": "RAW-3",
+      "selector": "field_path:$.crs.properties.name",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "33b4bd67e3e0c040ba0e8f773e4b0470740c1c57c11429f84095f5b29dad48f8",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.crs.type"
+      ],
+      "catalog_evidence_id": "RAW-4",
+      "selector": "field_path:$.crs.type",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "33b4bd67e3e0c040ba0e8f773e4b0470740c1c57c11429f84095f5b29dad48f8",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features"
+      ],
+      "catalog_evidence_id": "RAW-5",
+      "selector": "field_path:$.features",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "33b4bd67e3e0c040ba0e8f773e4b0470740c1c57c11429f84095f5b29dad48f8",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[]"
+      ],
+      "catalog_evidence_id": "RAW-6",
+      "selector": "field_path:$.features[]",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "33b4bd67e3e0c040ba0e8f773e4b0470740c1c57c11429f84095f5b29dad48f8",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].geometry"
+      ],
+      "catalog_evidence_id": "RAW-7",
+      "selector": "field_path:$.features[].geometry",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "33b4bd67e3e0c040ba0e8f773e4b0470740c1c57c11429f84095f5b29dad48f8",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].geometry.coordinates"
+      ],
+      "catalog_evidence_id": "RAW-8",
+      "selector": "field_path:$.features[].geometry.coordinates",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "33b4bd67e3e0c040ba0e8f773e4b0470740c1c57c11429f84095f5b29dad48f8",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].geometry.coordinates[]"
+      ],
+      "catalog_evidence_id": "RAW-9",
+      "selector": "field_path:$.features[].geometry.coordinates[]",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "33b4bd67e3e0c040ba0e8f773e4b0470740c1c57c11429f84095f5b29dad48f8",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].geometry.coordinates[][]"
+      ],
+      "catalog_evidence_id": "RAW-10",
+      "selector": "field_path:$.features[].geometry.coordinates[][]",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "33b4bd67e3e0c040ba0e8f773e4b0470740c1c57c11429f84095f5b29dad48f8",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].geometry.coordinates[][][]"
+      ],
+      "catalog_evidence_id": "RAW-11",
+      "selector": "field_path:$.features[].geometry.coordinates[][][]",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "33b4bd67e3e0c040ba0e8f773e4b0470740c1c57c11429f84095f5b29dad48f8",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].geometry.type"
+      ],
+      "catalog_evidence_id": "RAW-12",
+      "selector": "field_path:$.features[].geometry.type",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "33b4bd67e3e0c040ba0e8f773e4b0470740c1c57c11429f84095f5b29dad48f8",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties"
+      ],
+      "catalog_evidence_id": "RAW-13",
+      "selector": "field_path:$.features[].properties",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "33b4bd67e3e0c040ba0e8f773e4b0470740c1c57c11429f84095f5b29dad48f8",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.highway"
+      ],
+      "catalog_evidence_id": "RAW-14",
+      "selector": "field_path:$.features[].properties.highway",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "33b4bd67e3e0c040ba0e8f773e4b0470740c1c57c11429f84095f5b29dad48f8",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.name"
+      ],
+      "catalog_evidence_id": "RAW-15",
+      "selector": "field_path:$.features[].properties.name",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "33b4bd67e3e0c040ba0e8f773e4b0470740c1c57c11429f84095f5b29dad48f8",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.osm_id"
+      ],
+      "catalog_evidence_id": "RAW-16",
+      "selector": "field_path:$.features[].properties.osm_id",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "33b4bd67e3e0c040ba0e8f773e4b0470740c1c57c11429f84095f5b29dad48f8",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.other_tags"
+      ],
+      "catalog_evidence_id": "RAW-17",
+      "selector": "field_path:$.features[].properties.other_tags",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "33b4bd67e3e0c040ba0e8f773e4b0470740c1c57c11429f84095f5b29dad48f8",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].properties.width"
+      ],
+      "catalog_evidence_id": "RAW-18",
+      "selector": "field_path:$.features[].properties.width",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "33b4bd67e3e0c040ba0e8f773e4b0470740c1c57c11429f84095f5b29dad48f8",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.features[].type"
+      ],
+      "catalog_evidence_id": "RAW-19",
+      "selector": "field_path:$.features[].type",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "33b4bd67e3e0c040ba0e8f773e4b0470740c1c57c11429f84095f5b29dad48f8",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.name"
+      ],
+      "catalog_evidence_id": "RAW-20",
+      "selector": "field_path:$.name",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "33b4bd67e3e0c040ba0e8f773e4b0470740c1c57c11429f84095f5b29dad48f8",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.type"
+      ],
+      "catalog_evidence_id": "RAW-21",
+      "selector": "field_path:$.type",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "33b4bd67e3e0c040ba0e8f773e4b0470740c1c57c11429f84095f5b29dad48f8",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "$.crs",
+        "$.crs.properties",
+        "$.crs.properties.name",
+        "$.crs.type",
+        "$.features",
+        "$.features[]",
+        "$.features[].geometry",
+        "$.features[].geometry.coordinates",
+        "$.features[].geometry.coordinates[]",
+        "$.features[].geometry.coordinates[][]",
+        "$.features[].geometry.coordinates[][][]",
+        "$.features[].geometry.type",
+        "$.features[].properties",
+        "$.features[].properties.highway",
+        "$.features[].properties.name",
+        "$.features[].properties.osm_id",
+        "$.features[].properties.other_tags",
+        "$.features[].properties.width",
+        "$.features[].type",
+        "$.name",
+        "$.type"
+      ],
+      "catalog_evidence_id": "NDP-TITLE",
+      "selector": "raw_catalog_response.result.title",
+      "source_id": "NDP_DETAIL_SNAPSHOT",
+      "source_sha256": "ca2086ae273167533f2ba8672638d7aea09c10a9f7215be8cd86b52ec13e76bd",
+      "source_type": "catalog_documentation",
+      "strength": "documentation"
+    },
+    {
+      "applicable_field_paths": [
+        "$.crs",
+        "$.crs.properties",
+        "$.crs.properties.name",
+        "$.crs.type",
+        "$.features",
+        "$.features[]",
+        "$.features[].geometry",
+        "$.features[].geometry.coordinates",
+        "$.features[].geometry.coordinates[]",
+        "$.features[].geometry.coordinates[][]",
+        "$.features[].geometry.coordinates[][][]",
+        "$.features[].geometry.type",
+        "$.features[].properties",
+        "$.features[].properties.highway",
+        "$.features[].properties.name",
+        "$.features[].properties.osm_id",
+        "$.features[].properties.other_tags",
+        "$.features[].properties.width",
+        "$.features[].type",
+        "$.name",
+        "$.type"
+      ],
+      "catalog_evidence_id": "NDP-NOTES",
+      "selector": "raw_catalog_response.result.notes",
+      "source_id": "NDP_DETAIL_SNAPSHOT",
+      "source_sha256": "ca2086ae273167533f2ba8672638d7aea09c10a9f7215be8cd86b52ec13e76bd",
+      "source_type": "catalog_documentation",
+      "strength": "documentation"
+    }
+  ],
+  "primary_analysis_cluster": "b0ebb62d-5c60-47c9-a2a3-d3c0eb1ce643",
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "schema_version": "semantic-source-bundle/v1",
+  "source_dataset_id": "b0ebb62d-5c60-47c9-a2a3-d3c0eb1ce643",
+  "source_resource_id": "ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+  "sources": [
+    {
+      "source_file": "../annotation_pack_v1/packets/ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017.annotation-packet.json",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "f5d4764600b9dd973516ebbaf5338cd54fc953ae7dfebe4e3fb22f3583b19a05",
+      "source_type": "frozen_neutral_annotation_packet"
+    },
+    {
+      "source_file": "../../resources/validation/b0ebb62d-5c60-47c9-a2a3-d3c0eb1ce643/ca3a45e8-d931-4a27-ab5c-45d65a37a017__Roads",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "33b4bd67e3e0c040ba0e8f773e4b0470740c1c57c11429f84095f5b29dad48f8",
+      "source_type": "original_acquired_dataset_resource"
+    },
+    {
+      "source_file": "../../acquisition/validation_details/b0ebb62d-5c60-47c9-a2a3-d3c0eb1ce643.json.gz",
+      "source_id": "NDP_DETAIL_SNAPSHOT",
+      "source_sha256": "ca2086ae273167533f2ba8672638d7aea09c10a9f7215be8cd86b52ec13e76bd",
+      "source_type": "frozen_ndp_ckan_package_show_snapshot"
+    }
+  ],
+  "split": "validation",
+  "status": "draft_blocked_on_frozen_vocabulary_and_human_approval",
+  "vocabulary_file": "../vocabulary_draft_v1.json",
+  "vocabulary_sha256": "abb13e004e0dd1b28eaa4df0a9f0841eb65032c46730310d42f5979d56e9b773"
+}

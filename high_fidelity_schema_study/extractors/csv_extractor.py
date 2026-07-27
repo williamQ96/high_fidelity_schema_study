@@ -53,6 +53,41 @@ TEMPERATURE_UNIT_SUFFIXES = {
 }
 
 
+def _canonicalize_csv_headers(raw_headers: List[str]) -> tuple[List[str], List[Dict[str, object]]]:
+    fieldnames: List[str] = []
+    mappings: List[Dict[str, object]] = []
+    occurrences: Dict[str, int] = {}
+    used = set()
+    for index, raw_header in enumerate(raw_headers):
+        if raw_header.strip():
+            base = raw_header
+            reason = "preserved"
+        else:
+            base = f"__unnamed_column_{index + 1}"
+            reason = "blank_header"
+        occurrence = occurrences.get(base, 0) + 1
+        occurrences[base] = occurrence
+        candidate = base if occurrence == 1 else f"{base}__duplicate_{occurrence}"
+        collision = occurrence
+        while candidate in used:
+            collision += 1
+            candidate = f"{base}__duplicate_{collision}"
+            reason = "duplicate_header"
+        if occurrence > 1:
+            reason = "duplicate_header"
+        used.add(candidate)
+        fieldnames.append(candidate)
+        mappings.append(
+            {
+                "column_index": index,
+                "raw_header": raw_header,
+                "field_path": candidate,
+                "canonicalization_reason": reason,
+            }
+        )
+    return fieldnames, mappings
+
+
 def _name_tokens(name: str) -> set[str]:
     return {token for token in re.split(r"[^a-z0-9]+", name.lower()) if token}
 
@@ -302,26 +337,36 @@ def _value_range(physical_type: str, values: List[str]) -> Optional[List[float]]
 def extract_csv_schema(path: str, sample_limit: int = 200) -> DatasetSchema:
     csv_path = Path(path)
     with csv_path.open("r", newline="", encoding="utf-8-sig") as handle:
-        reader = csv.DictReader(handle)
-        if reader.fieldnames is None:
+        reader = csv.reader(handle)
+        try:
+            raw_headers = next(reader)
+        except StopIteration:
             raise ValueError(f"CSV file has no header row: {csv_path}")
-        fieldnames = list(reader.fieldnames)
+        fieldnames, header_mapping = _canonicalize_csv_headers(raw_headers)
         column_samples: Dict[str, List[str]] = {fieldname: [] for fieldname in fieldnames}
         sampled_rows = 0
+        row_width_conflict_count = 0
         for row in reader:
             if sampled_rows >= sample_limit:
                 break
             sampled_rows += 1
-            for fieldname in fieldnames:
-                column_samples[fieldname].append((row.get(fieldname) or "").strip())
+            if len(row) != len(fieldnames):
+                row_width_conflict_count += 1
+            for index, fieldname in enumerate(fieldnames):
+                value = row[index] if index < len(row) else ""
+                column_samples[fieldname].append(value.strip())
 
     fields: List[FieldSchema] = []
-    for fieldname in fieldnames:
+    for fieldname, header in zip(fieldnames, header_mapping):
         samples = column_samples[fieldname]
         physical_type = _conservative_physical_type(samples)
-        semantic_type = _semantic_type_from_name(fieldname, fieldnames)
-        logical_type = _logical_type_from_field(fieldname, physical_type, semantic_type)
-        unit = _unit_from_name(fieldname, semantic_type)
+        raw_header = str(header["raw_header"])
+        semantic_input = raw_header if raw_header.strip() else fieldname
+        semantic_type = _semantic_type_from_name(semantic_input, fieldnames)
+        logical_type = _logical_type_from_field(
+            semantic_input, physical_type, semantic_type
+        )
+        unit = _unit_from_name(semantic_input, semantic_type)
         nullable = any(not value.strip() for value in samples)
         non_empty = [value for value in samples if value.strip()]
         unique_ratio = round(len(set(non_empty)) / len(non_empty), 4) if non_empty else None
@@ -330,7 +375,10 @@ def extract_csv_schema(path: str, sample_limit: int = 200) -> DatasetSchema:
                 tier="structural",
                 evidence_type="csv_header",
                 source=str(csv_path),
-                detail=f"header='{fieldname}'",
+                detail=(
+                    f"column_index={header['column_index']}; "
+                    f"raw_header={raw_header!r}; field_path={fieldname!r}"
+                ),
                 confidence=1.0,
             ),
             EvidenceRecord(
@@ -399,6 +447,8 @@ def extract_csv_schema(path: str, sample_limit: int = 200) -> DatasetSchema:
         metadata={
             "sampled_rows": sampled_rows,
             "column_count": len(fieldnames),
+            "csv_header_mapping": header_mapping,
+            "row_width_conflict_count": row_width_conflict_count,
         },
     )
 

@@ -1,0 +1,43 @@
+{
+  "automatic_adjudication": false,
+  "consensus_governance": {
+    "mode": "joint_consensus_by_same_qualified_annotator_pair",
+    "panel_member_ids_must_equal_annotator_registry": true,
+    "rationale": "Semantic gold consensus reconciles the same blind field-level judgments; both panel members are already role-qualified, conflict-cleared non-developers across the full corpus.",
+    "separate_adjudicator_required": false
+  },
+  "human_decisions_present": false,
+  "implementation": {
+    "file": "ndp50_semantic_gold.py",
+    "sha256": "9d4e64214d201d05b8eba5d33c4f2c47c9ff477725c4154c70d360016a63c915"
+  },
+  "implementation_dependencies": {
+    "ndp50_source_approval.py": "6ba7772459167931a366a55ddfa74e6a591e41f6a47d40bedfc9f70b3bbc597d",
+    "semantic_gold_workflow.py": "1319dd8b52a3421ce4e34bbfc59e21391e2c8d161e1c01272aa33a7299fab864"
+  },
+  "model_outputs_visible_during_annotation": false,
+  "neutral_index_template": {
+    "file": "semantic/gold/semantic_gold_index_neutral_v1.json",
+    "sha256": "c3cca0b6397fe67304b3d3bf013f8e0c22a3e27396a4560a9657d16cd45bc764"
+  },
+  "packet_manifest": {
+    "file": "semantic/annotation_pack_v1/manifest.json",
+    "sha256": "6d356997e8f3db91f39a9ac7a4759f420a0d880e7b76d3eac09d5625e2e26046"
+  },
+  "required_distinct_annotators": true,
+  "required_evidence_purpose": "general_semantic_annotation",
+  "required_stable_annotator_count": 2,
+  "schema_version": "ndp50-semantic-gold-workflow-spec/v1",
+  "sequence": [
+    "freeze_vocabulary",
+    "approve_source_evidence",
+    "prepare_two_independent_full_corpus_assignments",
+    "freeze_both_submission_hashes",
+    "generate_deterministic_disagreement_reports",
+    "human_consensus_without_model_outputs",
+    "validator_generate_gold_approval",
+    "rebuild_readiness_and_handoff"
+  ],
+  "status": "implementation_ready_waiting_on_frozen_vocabulary_and_approved_sources",
+  "unresolved_consensus_slots_allowed_for_completion": false
+}

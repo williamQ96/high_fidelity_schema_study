@@ -1,0 +1,139 @@
+{
+  "artifact_hashes": {
+    "candidate_frame": {
+      "file": "candidate_frame.json",
+      "sha256": "96dd37f89cbc34a5deb219acb636a8b643ba141bf07f62f70508fd090d91822f"
+    },
+    "development_run": {
+      "file": "development_run_v4.json",
+      "sha256": "153059006b7cf62a5111e5ef66f87a12b7d2ef5067e8b8f642f5ed7ab8c28981"
+    },
+    "negative_controls": {
+      "file": "negative_controls_v3.json",
+      "sha256": "cd00e62934e4b7f5b05b86f31a4740affa1ce18eb94a13daf36d3996c4b24381"
+    },
+    "selection": {
+      "file": "selection.json",
+      "sha256": "27d73de3b4aa8638616588fdac0d927d79321d7d230d2c55f96c952689bd471d"
+    },
+    "selection_design": {
+      "file": "selection_design.json",
+      "sha256": "f5f3f29c01ae6b601dab66b411d324225cb7dfccdf5741cc1fae882f4f2d34b8"
+    }
+  },
+  "catalog_dataset_count": 5823,
+  "claim_scope": "Structural acquisition/extraction validation only. Semantic accuracy and final test execution require separate frozen gold/backend artifacts.",
+  "frozen_at": "2026-07-26T22:54:26.199896Z",
+  "held_out_state": {
+    "deviation_record": {
+      "file": "ndp50_validation_deviation_001.md",
+      "sha256": "b73d25456b45d93f553b7d2b105a1a68e3203f9c53fb65163a9ac52b26890f85"
+    },
+    "test_details_opened_before_freeze": false,
+    "validation_details_opened_before_freeze": true
+  },
+  "implementation_hashes": {
+    "extractors/__init__.py": "e91fc8fb786dcac339b14219afd234ccce3fec033c76e91327f2c9637d2ce6f4",
+    "extractors/base.py": "bc5c37a361326980920f9be2de34e8f91a377f863ca03b007d52f8d3cf891375",
+    "extractors/csv_extractor.py": "ea37af085dec13af504291f13ea141518778f08bbcea468e87bc575925b882f8",
+    "extractors/hdf5_extractor.py": "02c886989d30b0b7cc487fe1d11752348569adfe9ede7bdcca95e87e911ca4a1",
+    "extractors/json_extractor.py": "8531852e4360df800ca097f84b9d66078377399fec1f7657e61f5ffdaf55e030",
+    "extractors/netcdf_extractor.py": "ac8182623bb7c757c3a64b175f32fe7efb70129042eac8f277878b41869ba2a1",
+    "extractors/parquet_extractor.py": "dc58812d4e5a8de310623293d5f8576b55c073909110dcaa98fa053321735f62",
+    "extractors/registry.py": "ddb291729265ce1da3109e32f15fef110a663c31bc547a0278d4e24a7b479141",
+    "extractors/timeseries_profiler.py": "a85049df65941836aa5d1eaf07292d1fbb9e8b21189f7eeaf09a32fc57f1cb9c",
+    "extractors/xml_extractor.py": "bdc23d07030631d95b5d7f0e255e0eaf1c80d374a35708af5399f2d2d21a99dc",
+    "extractors/zarr_extractor.py": "eea46236bce9517c2ba868dd9bc73954a4db31406e8dd46171c8252f10696536",
+    "models.py": "de246c91257e9b54135c847eda5692a761310226d27acba053831c178da42165",
+    "ndp50_execution.py": "1cfbdcd122a2c036336bc796f57eae670176d33349a159e64704b6a138613401",
+    "ndp50_negative_controls.py": "a8ca76132376f35d7b6fb04a89e82b37dc4e86d5759aa9331e7b9128d938ba37",
+    "ndp50_preflight.py": "88c546b0c78af6f5273d6bbefa1668e49abace0b710794f8766bb89201543c94",
+    "ndp50_report.py": "322a1f9fda7992741cdce9725dd4b308c2292766db9c9c1bb4497dbc5a6049c4",
+    "ndp50_study.py": "7b9c60005cb506bf8940092da8bdf595423e83432834b3eb99d77049f57aaf4b",
+    "temporal_semantics.py": "b2356f780958778b4efe34c910461fc7a067a23b8c5f908b2f03a752d833d9ea",
+    "unified_schema.py": "2e6802b8603f45ba35e6970be2529aad618a1e94723ff930d602a7b58494e291"
+  },
+  "readiness_boundaries": {
+    "semantic_blockers": [
+      "independent semantic opportunity manifest not frozen",
+      "semantic prompt and backend registry not frozen",
+      "two-annotator gold workflow has not produced NDP gold"
+    ],
+    "semantic_validation_authorized": false,
+    "structural_validation_authorized": true,
+    "test_authorized": false,
+    "test_blockers": [
+      "validation has not been completed",
+      "semantic study artifacts are not frozen"
+    ]
+  },
+  "resource_policy": {
+    "max_bytes_per_dataset": 52428800,
+    "max_bytes_per_resource": 26214400,
+    "max_download_attempts": 3,
+    "max_resources_per_dataset": 3,
+    "retry_delay_seconds": 10.0,
+    "sample_limit": 200,
+    "timeout_seconds": 90.0
+  },
+  "schema_version": "ndp50-structural-validation-freeze/v1",
+  "selected_dataset_ids": {
+    "development": [
+      "0316eb60-7b34-4385-85dd-186a3a454a8a",
+      "0998867b-9aac-4bf9-a408-c67fbcab7176",
+      "3bfd82a8-9676-4c8b-a791-d2a31cb84de7",
+      "6ebc92f4-daf4-4c52-b2c3-82276bc24ee5",
+      "7686770a-de97-4067-86a6-66cbadd2faa1",
+      "811f0bcc-99e5-455c-bcf6-7c63c2634f41",
+      "872ba2a0-4e91-4a74-b2b4-21073a21ad7b",
+      "8775a68d-885a-47f1-a13a-b6806c6c89be",
+      "8798da75-6631-4c44-b73d-e8e7e1788c27",
+      "96c6e757-b46b-4f5a-a06a-2b8f3f16b914",
+      "9be16b9b-086c-4436-875a-1804ea6f5e63",
+      "9e4eb306-3029-4640-b279-1a7fd49253d6",
+      "aadd47f8-4381-4900-8c80-9949506bda95",
+      "c7f29749-c6ab-4402-90ae-58fa5d23f830",
+      "ec326db2-4027-4694-99e3-4b9c3d7a29dc"
+    ],
+    "test": [
+      "06db15f9-f585-4a3e-a413-f0b13ad0f4bf",
+      "173f4a73-782e-4aba-a74b-576c3d9b5afb",
+      "19d618eb-d9d8-4bb4-bc87-1b9183d8fe15",
+      "1c3f9c60-c95b-4237-b1c1-67ebaba2f2a9",
+      "2c64f3ac-749f-401a-9066-5742b00687e5",
+      "304460a7-88ac-476a-b7ae-29a36d1413b1",
+      "3c7a9578-999f-4d38-a83e-abcb5fb2a1c1",
+      "3c8cea9e-3b3d-4b43-a3d9-b092f791fc58",
+      "472d7b66-a4c9-4c9d-9995-99f42246e29d",
+      "512a3a0b-a614-4d56-8264-724a3afe1526",
+      "51670040-8ff8-4e85-89b7-a01b102330f0",
+      "579296b4-3422-471b-8c61-70aee2a8bf60",
+      "6351c9ad-ac49-48ae-8c3b-8caffff03fc3",
+      "6a94c3dd-fd68-48a0-9b28-f5adf145d32d",
+      "7857cac5-fbd3-495c-a584-cb3f4edaecc6",
+      "7af7e33d-3bf2-4010-83e3-cfffe83f1fa5",
+      "87c467e9-e974-4b7d-989b-6c5761fdd7ea",
+      "9b23dc49-e3ec-454e-86c1-d696a6e2c0b0",
+      "abcae1bc-bd0b-4b8e-ac31-0e13324942bd",
+      "bae9e090-61d1-46e7-84f0-671e9f668c10",
+      "bf364f41-3168-4771-8278-5480720578d8",
+      "d07bde43-6f26-4c21-b62d-d7593ceb3f5b",
+      "d08c4f15-4dd9-42bd-9dd2-e2607af6cb85",
+      "dcdf8c70-b4a1-45b1-b5bc-fcb344e8b18b",
+      "f64d2fa2-38fd-45b8-a9f2-7038ef327c6a"
+    ],
+    "validation": [
+      "28580a91-43fe-42d1-a87a-01b4dd036667",
+      "35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4",
+      "4809738b-d730-44d6-9963-4134831a3ac1",
+      "4ee0e833-f187-403a-8f8f-07bb43a44909",
+      "7fb33bb1-15f0-44a1-8755-e28ff70abc51",
+      "9c01c9f6-c815-433d-b22a-3f9b37bfb570",
+      "aa8d17c7-d2bf-46b3-ba90-938659bef006",
+      "b0ebb62d-5c60-47c9-a2a3-d3c0eb1ce643",
+      "d7f05458-e03c-493a-8fd4-458f32a7aecb",
+      "fba90f85-a818-468a-9840-14b0ee741b8d"
+    ]
+  },
+  "status": "frozen_after_development_before_validation"
+}

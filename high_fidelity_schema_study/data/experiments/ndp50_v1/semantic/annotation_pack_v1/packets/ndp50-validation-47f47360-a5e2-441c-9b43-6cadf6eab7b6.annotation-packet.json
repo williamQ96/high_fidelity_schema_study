@@ -1,0 +1,450 @@
+{
+  "annotation_properties": [
+    "physical_type",
+    "logical_type",
+    "semantic_type",
+    "unit"
+  ],
+  "annotator_instructions": [
+    "Annotate independently using the frozen handbook.",
+    "Do not inspect existing gold, semantic model output, or another annotator artifact before submission.",
+    "Assign applicability before assigning each value.",
+    "Cite exact packet evidence or independently frozen raw-source evidence for every known value."
+  ],
+  "approved_evidence": [
+    {
+      "applicable_field_paths": [
+        "__unnamed_column_1",
+        "TreeID",
+        "X",
+        "Y",
+        "Radius",
+        "Error",
+        "H",
+        "h_radius",
+        "DBH",
+        "BasalA",
+        "plot_blk"
+      ],
+      "detail": "Frozen NDP catalog title; metadata evidence, not gold.",
+      "evidence_id": "S1",
+      "source_name": "NDP dataset title",
+      "source_type": "catalog_title",
+      "text": "Terrestrial lidar scans (TLS) and derived tree lists for field sampled plots for UC Climate Action Seed Project: Scaling Science-Driven Vegetation Treatments for a Wildfire Resilient California"
+    }
+  ],
+  "case_id": "ndp50-validation-47f47360-a5e2-441c-9b43-6cadf6eab7b6",
+  "data_modality": "tabular",
+  "dataset_id": "ndp50-validation-47f47360-a5e2-441c-9b43-6cadf6eab7b6",
+  "evidence_policy": {
+    "allowed_evidence_types": [
+      "csv_header",
+      "hdf5_attribute",
+      "hdf5_dataset_path",
+      "json_sample_observation",
+      "json_schema_declaration",
+      "sample_rows"
+    ],
+    "derived_semantic_hints_removed": true,
+    "mode": "allowlisted_raw_observations_only"
+  },
+  "field_inventory": [
+    {
+      "example_values": [
+        "0",
+        "3",
+        "4"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "__unnamed_column_1",
+      "field_path": "__unnamed_column_1",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "int",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=0; raw_header=''; field_path='__unnamed_column_1'",
+          "evidence_id": "__unnamed_column_1::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "__unnamed_column_1::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.245,
+      "value_range": [
+        0.0,
+        52.0
+      ]
+    },
+    {
+      "example_values": [
+        "1",
+        "6",
+        "8"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "TreeID",
+      "field_path": "TreeID",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "int",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=1; raw_header='TreeID'; field_path='TreeID'",
+          "evidence_id": "TreeID::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "TreeID::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.325,
+      "value_range": [
+        0.0,
+        125.0
+      ]
+    },
+    {
+      "example_values": [
+        "10.6733824241562",
+        "2.4294484335821",
+        "2.14943576037331"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "X",
+      "field_path": "X",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=2; raw_header='X'; field_path='X'",
+          "evidence_id": "X::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "X::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        -11.0306740606361,
+        10.6733824241562
+      ]
+    },
+    {
+      "example_values": [
+        "2.12703256030622",
+        "1.05552097162312",
+        "0.950024610651025"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "Y",
+      "field_path": "Y",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=3; raw_header='Y'; field_path='Y'",
+          "evidence_id": "Y::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "Y::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        -10.8497947432226,
+        11.0133749318502
+      ]
+    },
+    {
+      "example_values": [
+        "0.266540248414519",
+        "0.166443626724532",
+        "0.759980818985523"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "Radius",
+      "field_path": "Radius",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=4; raw_header='Radius'; field_path='Radius'",
+          "evidence_id": "Radius::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "Radius::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        0.0,
+        0.759980818985523
+      ]
+    },
+    {
+      "example_values": [
+        "0.0011991876716908",
+        "0.0007301750174717",
+        "0.0011505843942007"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "Error",
+      "field_path": "Error",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=5; raw_header='Error'; field_path='Error'",
+          "evidence_id": "Error::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "Error::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        0.0,
+        0.0070557794206079
+      ]
+    },
+    {
+      "example_values": [
+        "12.56",
+        "8.742",
+        "13.469"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "H",
+      "field_path": "H",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=6; raw_header='H'; field_path='H'",
+          "evidence_id": "H::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "H::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.98,
+      "value_range": [
+        0.0,
+        53.28
+      ]
+    },
+    {
+      "example_values": [
+        "1.3"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "h_radius",
+      "field_path": "h_radius",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=7; raw_header='h_radius'; field_path='h_radius'",
+          "evidence_id": "h_radius::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "h_radius::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.01,
+      "value_range": [
+        0.0,
+        1.3
+      ]
+    },
+    {
+      "example_values": [
+        "20.9873791601592",
+        "13.1057711682896",
+        "59.8408896869201"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "DBH",
+      "field_path": "DBH",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=8; raw_header='DBH'; field_path='DBH'",
+          "evidence_id": "DBH::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "DBH::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        0.0,
+        59.8408896869201
+      ]
+    },
+    {
+      "example_values": [
+        "2.40232383820301",
+        "0.936785791591526",
+        "19.5304035562598"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "BasalA",
+      "field_path": "BasalA",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "float",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=9; raw_header='BasalA'; field_path='BasalA'",
+          "evidence_id": "BasalA::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "BasalA::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 1.0,
+      "value_range": [
+        0.0,
+        19.5304035562598
+      ]
+    },
+    {
+      "example_values": [
+        "CAFKU_0101_20240802_1"
+      ],
+      "extraction_method": "csv_conservative_profiler",
+      "field_name": "plot_blk",
+      "field_path": "plot_blk",
+      "missing_count": 0,
+      "nullable": false,
+      "physical_type": "string",
+      "shape": null,
+      "source_evidence": [
+        {
+          "detail": "column_index=10; raw_header='plot_blk'; field_path='plot_blk'",
+          "evidence_id": "plot_blk::F1",
+          "evidence_type": "csv_header",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+          "tier": "structural"
+        },
+        {
+          "detail": "sampled_rows=200",
+          "evidence_id": "plot_blk::F2",
+          "evidence_type": "sample_rows",
+          "source_label": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+          "tier": "statistical"
+        }
+      ],
+      "unique_ratio": 0.105,
+      "value_range": null
+    }
+  ],
+  "file_format": "csv",
+  "prediction_fields_removed": [
+    "logical_type",
+    "semantic_type",
+    "unit",
+    "confidence",
+    "uncertainty_reason",
+    "semantic_logical_hint",
+    "description"
+  ],
+  "primary_analysis_cluster": "d7f05458-e03c-493a-8fd4-458f32a7aecb",
+  "purpose": "ndp50_independent_semantic_gold",
+  "research_evidence_status": "pre_model_independent_gold_preparation",
+  "schema_version": "semantic-annotation-packet/v1",
+  "source_dataset_id": "d7f05458-e03c-493a-8fd4-458f32a7aecb",
+  "source_resource_id": "47f47360-a5e2-441c-9b43-6cadf6eab7b6",
+  "source_task_sha256": "a07ae6e56b82dee8bff20c445ac9cc78ac748a01fadfb6baa1d65062841603e9",
+  "split": "validation",
+  "task_id": "ndp50-validation-47f47360-a5e2-441c-9b43-6cadf6eab7b6"
+}

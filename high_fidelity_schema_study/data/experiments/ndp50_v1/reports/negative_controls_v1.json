@@ -1,0 +1,96 @@
+{
+  "controls": [
+    {
+      "control_id": "provider_control_document_rejected",
+      "evidence": {
+        "observed_status": "provider_export_pending"
+      },
+      "passed": true
+    },
+    {
+      "control_id": "provider_error_document_rejected",
+      "evidence": {
+        "observed_status": "provider_error_payload"
+      },
+      "passed": true
+    },
+    {
+      "control_id": "misleading_suffix_fails_closed",
+      "evidence": {
+        "decision_basis": "conflicting_text_and_suffix_signals",
+        "status": "abstained"
+      },
+      "passed": true
+    },
+    {
+      "control_id": "empty_resource_fails",
+      "evidence": {
+        "status": "failed"
+      },
+      "passed": true
+    },
+    {
+      "control_id": "truncated_json_fails",
+      "evidence": {
+        "status": "failed"
+      },
+      "passed": true
+    },
+    {
+      "control_id": "archive_is_not_implicitly_expanded",
+      "evidence": {
+        "selected_format": "zip_container",
+        "status": "abstained"
+      },
+      "passed": true
+    },
+    {
+      "control_id": "duplicate_resource_identity_rejected",
+      "evidence": {
+        "rejected": true
+      },
+      "passed": true
+    },
+    {
+      "control_id": "unavailable_resource_fails",
+      "evidence": {
+        "status": "failed"
+      },
+      "passed": true
+    },
+    {
+      "control_id": "row_order_preserves_structural_schema",
+      "evidence": {
+        "stable": true
+      },
+      "passed": true
+    },
+    {
+      "control_id": "catalog_prompt_text_is_inert_for_deterministic_planning",
+      "evidence": {
+        "decision": "attempt"
+      },
+      "passed": true
+    },
+    {
+      "control_id": "contradicted_catalog_format_remains_conflict",
+      "evidence": {
+        "format_status": "conflict"
+      },
+      "passed": true
+    }
+  ],
+  "counts": {
+    "control_count": 11,
+    "failed_count": 0,
+    "passed_count": 11
+  },
+  "executed_at": "2026-07-26T22:42:49.606412Z",
+  "implementation_hashes": {
+    "extractors/registry.py": "ddb291729265ce1da3109e32f15fef110a663c31bc547a0278d4e24a7b479141",
+    "ndp50_execution.py": "12f06f26d7274038db663920c114f30fe52f06148c8220e97bfbc5f41a736513",
+    "ndp50_negative_controls.py": "a8ca76132376f35d7b6fb04a89e82b37dc4e86d5759aa9331e7b9128d938ba37"
+  },
+  "schema_version": "ndp50-negative-controls/v1",
+  "status": "passed"
+}

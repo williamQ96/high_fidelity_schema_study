@@ -1,0 +1,139 @@
+{
+  "cpa_design": {
+    "file": "semantic/cpa_design_draft_v1.json",
+    "sha256": "884cec768ecb08acb91e6f1b00a5dee88f163304af727fec8d67b132c900ecc3"
+  },
+  "dataset_disposition_policy": {
+    "allowed_dispositions": [
+      "acquisition_failure",
+      "included_with_cases",
+      "no_semantic_opportunity",
+      "predeclared_governance_exclusion"
+    ],
+    "every_selected_test_dataset_required_exactly_once": true,
+    "silent_dataset_deletion_forbidden": true
+  },
+  "descriptive_sensitivity_execution_policy": {
+    "analysis_role": "descriptive_sensitivity_only",
+    "anchor_arm": "zero_shot_dataset_level",
+    "confirmatory_p_values_or_claims_forbidden": true,
+    "every_frozen_case_x_every_derived_condition_required": true,
+    "maximum_derived_condition_count": 5,
+    "maximum_prompt_variant_count": 4,
+    "physical_call_budget": "frozen_case_count_x_derived_condition_count_x_maximum_attempts_per_call",
+    "post_outcome_condition_addition_or_deletion_forbidden": true,
+    "prompt_conditions": "every frozen non-primary prompt variant with the primary row sampler",
+    "registered_row_sampler_count": 3,
+    "row_sampler_conditions": "every frozen non-primary row sampler with the primary prompt variant",
+    "single_factor_at_a_time": true,
+    "unregistered_factorial_interactions_forbidden": true
+  },
+  "deviation_policy": {
+    "affected_record_ids_required": true,
+    "nonempty_entries_require_independent_review": true,
+    "protocol_or_analysis_change_after_outcome_forbidden": true,
+    "registry_required_even_when_empty": true
+  },
+  "execution_freeze_workflow": {
+    "file": "semantic/execution_freeze/execution_freeze_workflow_v1.json",
+    "sha256": "32203d0ceaa6b242f7cadf4f222fecc973ee7dd72cdba351208a8a7ce64db33c"
+  },
+  "execution_matrix_policy": {
+    "allowed_record_statuses": [
+      "completed",
+      "execution_failure",
+      "structured_abstention"
+    ],
+    "every_frozen_case_x_every_registered_arm_required": true,
+    "failure_and_abstention_retained_in_denominators": true,
+    "parsed_output_artifact_binding_required": true,
+    "qualified_parser_actual_response_replay_required": true,
+    "qualified_runner_schedule_replay_required": true,
+    "qualified_scorer_actual_case_replay_required": true,
+    "raw_response_artifact_binding_required_when_response_exists": true,
+    "record_artifact_hash_and_identity_replay_required": true,
+    "record_timestamps_must_follow_schedule_without_overlap": true,
+    "score_artifact_hash_identity_and_count_validation_required": true,
+    "unique_contiguous_execution_sequence_required": true,
+    "zero_shot_and_replay_must_share_an_ordered_execution_block": true
+  },
+  "human_decisions_present": false,
+  "implementation": {
+    "file": "ndp50_test_execution.py",
+    "sha256": "403ad03d8fb0abd3aa5437e30e82a3db4165dabc73a9ffd02b927b7fa9f080a6"
+  },
+  "implementation_dependencies": {
+    "ndp50_cpa_design.py": "d70c084733f7c955fee7e34c896ef020f25cf1a10e510b9bbbb3ac063c502ea5",
+    "ndp50_execution_freeze.py": "c72fdb822fc98cc81d417ac93a033baaadde5ab6e56090295f35b0f95b92fa68",
+    "ndp50_execution_qualification.py": "e72dabc340e339ecdbdd372ddf23b98c4bc10ad4b12a0b7ae55aa2346608940f",
+    "ndp50_power_freeze.py": "65970f34de68226fa095ee763d37543e1ebfd3dec2dfaf09e0dafbb351e8d308",
+    "ndp50_test_inference.py": "a51dc634a228ef580457b91e0e8ae8eb1eb524818c15242f2af8babd9d7b508c"
+  },
+  "power_freeze_workflow": {
+    "file": "semantic/power_freeze/power_freeze_workflow_v1.json",
+    "sha256": "c7fdc778474fa97ba942ed442080b1ec9e9f6420c4f7d4d1a242965e47d2880a"
+  },
+  "publication_reporting_contract": {
+    "case_arm_missingness_and_failure_codes_required": true,
+    "co_primary_effects_intervals_raw_and_holm_p_values_required": true,
+    "cost_latency_calls_and_tokens_required": true,
+    "dataset_flow_and_all_dispositions_required": true,
+    "deviations_and_protocol_version_required": true,
+    "metric_numerators_denominators_and_undefined_counts_required": true,
+    "prompt_sampler_and_few_shot_results_labeled_descriptive": true,
+    "registered_inference_replay_required": true,
+    "underpowered_or_nonalysable_status_cannot_be_reworded_as_no_effect": true,
+    "unexecuted_sensitivity_or_transfer_effects_must_be_reported_as_not_estimable": true
+  },
+  "required_artifact_schemas": {
+    "deviation_registry": "ndp50-test-deviation-registry/v1",
+    "missingness_report": "ndp50-test-missingness-report/v1",
+    "test_case_manifest": "ndp50-test-case-manifest/v1",
+    "test_gold": "ndp50-test-gold/v1",
+    "test_inference": "ndp50-test-inference/v1",
+    "test_inference_replay": "ndp50-test-inference-replay/v1",
+    "test_parsed_output": "ndp50-test-parsed-output/v1",
+    "test_release_authorization": "ndp50-test-release-authorization/v1",
+    "test_release_receipt": "ndp50-test-release-receipt/v1",
+    "test_run_manifest": "ndp50-test-run-manifest/v1",
+    "test_run_receipt": "ndp50-test-run-receipt/v1",
+    "test_run_record": "ndp50-test-run-record/v1",
+    "test_score": "ndp50-test-score/v1"
+  },
+  "required_upstream_gates": [
+    "readiness.integrity_status=passed",
+    "readiness.test_ready=true",
+    "execution_freeze.derived_gates.prompt_and_backend_frozen=true",
+    "power_freeze.derived_gates.test_power_plan_frozen=true"
+  ],
+  "response_reuse_policy": {
+    "consumer_arm": "zero_shot_byte_identical_response_plus_deterministic_verification",
+    "consumer_physical_model_calls": 0,
+    "response_sha256_must_match": true,
+    "source_arm": "zero_shot_dataset_level"
+  },
+  "schema_version": "ndp50-test-execution-workflow/v1",
+  "selection": {
+    "file": "selection.json",
+    "sha256": "27d73de3b4aa8638616588fdac0d927d79321d7d230d2c55f96c952689bd471d"
+  },
+  "sequence": [
+    "snapshot_passing_test_release_readiness",
+    "obtain_distinct_operator_and_independent_monitor_signatures",
+    "validator_generate_and_replay_test_release_receipt",
+    "authorize_and_log_test_opening",
+    "freeze_complete_test_case_manifest_and_dataset_dispositions",
+    "execute_exact_case_by_arm_matrix",
+    "execute_exact_case_by_derived_sensitivity_condition_matrix",
+    "write_content_addressed_record_for_every_matrix_cell",
+    "complete_deviation_registry_without_analysis_changes",
+    "validator_generate_test_run_receipt",
+    "validator_generate_missingness_report",
+    "execute_frozen_inference_and_publication_reporting",
+    "validator_replay_frozen_inference"
+  ],
+  "status": "implementation_ready_waiting_on_test_release",
+  "test_dataset_count": 25,
+  "test_dataset_identities_included": false,
+  "test_outcomes_observed": false
+}

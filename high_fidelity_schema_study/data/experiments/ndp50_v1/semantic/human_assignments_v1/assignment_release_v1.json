@@ -1,0 +1,71 @@
+{
+  "assignment_count": 3,
+  "assignments": {
+    "data_governance_review": {
+      "file": "semantic/human_assignments_v1/data_governance_review_assignment.json",
+      "sha256": "2e8a2acb98ce4b51edfc7fab140273ea178c669d8eb7dcd737cb00fefbb36cea"
+    },
+    "vocabulary_discovery_a": {
+      "file": "semantic/human_assignments_v1/vocabulary_discovery_a_assignment.json",
+      "sha256": "2abbdb82f44be4fd816e650cd8f77382907766f254433a8581826087c83830e6"
+    },
+    "vocabulary_discovery_b": {
+      "file": "semantic/human_assignments_v1/vocabulary_discovery_b_assignment.json",
+      "sha256": "5534bf0f26cdb28abce4558f5d3824f31410dbc42e0ea6fad75e740cd16ec7f2"
+    }
+  },
+  "handoff": {
+    "file": "semantic/human_handoff_v1.json",
+    "sha256": "7b3223d3f5971e35bf574cff3b43dc02d341e43b2a3a3c51e5ad419e4f9df6fd"
+  },
+  "implementation": {
+    "file": "ndp50_human_assignments.py",
+    "sha256": "e4802b753a0f0a1665c269e7d442e5559e57f07223cbbf14c80e20f78d6db70e"
+  },
+  "implementation_dependencies": {
+    "ndp50_cpa_screen_workflow.py": "11e190f867482742ee63c7eeca00b48b4177fd823446f777802f0583652eb5d5",
+    "ndp50_data_governance_review.py": "6b4a0a86bbae0f98f557d1638f2fcd9b1edce7019488bf78908f02eaa87bbcc1",
+    "ndp50_human_handoff.py": "ea3f89f41fabcde6c02e0d656e6237060a70ad082872a4c7332855a2e5e03a5f",
+    "ndp50_vocabulary_workflow.py": "16ee620d2e4d761cf9a729fb71de6967d8ab82c1d5585b6ffdfee925f204dc80"
+  },
+  "independence_controls": {
+    "cross_review_visibility_before_dual_freeze": false,
+    "human_decisions_present_at_release": false,
+    "reviewer_ids_present_at_release": false,
+    "test_data_access": "forbidden",
+    "vocabulary_assignment_wrappers_distinct": true,
+    "vocabulary_payloads_byte_identical": true
+  },
+  "phase_graph": {
+    "governance_sequence": [
+      "stewardship_review",
+      "accountable_approval",
+      "validator_review_validation",
+      "validator_approval_generation"
+    ],
+    "locked_until_valid_return_manifest": [
+      "vocabulary_candidate_decisions",
+      "vocabulary_disagreement_reveal",
+      "all_downstream_stages"
+    ],
+    "parallel_initial_work": [
+      "data_governance_review",
+      "vocabulary_discovery_a",
+      "vocabulary_discovery_b"
+    ],
+    "vocabulary_sequence": [
+      "two_isolated_discovery_submissions",
+      "two_validation_receipts",
+      "atomic_dual_hash_freeze",
+      "candidate_catalog_construction"
+    ]
+  },
+  "release_id": "ndp50-initial-human-release-ef7b72ec1ec685ee3411",
+  "released_stage_ids": [
+    "data_governance_review",
+    "vocabulary_governance"
+  ],
+  "return_manifest_schema": "ndp50-human-assignment-return/v1",
+  "schema_version": "ndp50-human-assignment-release/v1",
+  "status": "released_unassigned"
+}

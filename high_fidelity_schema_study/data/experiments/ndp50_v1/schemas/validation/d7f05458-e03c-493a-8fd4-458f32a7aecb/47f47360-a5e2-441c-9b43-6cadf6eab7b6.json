@@ -1,0 +1,766 @@
+{
+  "elapsed_seconds": 0.042054499999721884,
+  "extractor": {
+    "determinism_class": "strict_with_sampled_profiles",
+    "evidence_types": [
+      "csv_header",
+      "sample_rows",
+      "column_name_unit_hint"
+    ],
+    "extractor_id": "csv_conservative_profiler",
+    "formats": [
+      "csv"
+    ],
+    "magic_prefixes": [],
+    "operations": [
+      "enumerate_fields",
+      "sample_values",
+      "infer_physical_types",
+      "profile_time_series"
+    ],
+    "resource_kinds": [
+      "file"
+    ],
+    "suffixes": [
+      ".csv",
+      ".tsv"
+    ],
+    "version": "1.0.0"
+  },
+  "format_decision": {
+    "basis": "text_probe",
+    "conflicted": false,
+    "selected_format": "csv",
+    "signals": [
+      {
+        "basis": "text_probe",
+        "detail": "consistent delimited UTF-8 text sample",
+        "format": "csv",
+        "support_score": 0.8
+      }
+    ],
+    "support_score": 0.8
+  },
+  "issues": [
+    {
+      "code": "sampling_insufficient",
+      "details": {
+        "sample_limit": 200
+      },
+      "message": "Profile statistics are based on the configured sample limit.",
+      "severity": "note",
+      "stage": "profiling"
+    }
+  ],
+  "schema": {
+    "data_modality": "tabular",
+    "dataset_id": "47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+    "fields": [
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "0",
+          "3",
+          "4"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "__unnamed_column_1",
+        "field_path": "__unnamed_column_1",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "int",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=0; raw_header=''; field_path='__unnamed_column_1'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 0.245,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          0.0,
+          52.0
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "1",
+          "6",
+          "8"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "TreeID",
+        "field_path": "TreeID",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "int",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=1; raw_header='TreeID'; field_path='TreeID'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 0.325,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          0.0,
+          125.0
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "10.6733824241562",
+          "2.4294484335821",
+          "2.14943576037331"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "X",
+        "field_path": "X",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=2; raw_header='X'; field_path='X'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 1.0,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          -11.0306740606361,
+          10.6733824241562
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "2.12703256030622",
+          "1.05552097162312",
+          "0.950024610651025"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "Y",
+        "field_path": "Y",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=3; raw_header='Y'; field_path='Y'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 1.0,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          -10.8497947432226,
+          11.0133749318502
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "0.266540248414519",
+          "0.166443626724532",
+          "0.759980818985523"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "Radius",
+        "field_path": "Radius",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=4; raw_header='Radius'; field_path='Radius'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 1.0,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          0.0,
+          0.759980818985523
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "0.0011991876716908",
+          "0.0007301750174717",
+          "0.0011505843942007"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "Error",
+        "field_path": "Error",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=5; raw_header='Error'; field_path='Error'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 1.0,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          0.0,
+          0.0070557794206079
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "12.56",
+          "8.742",
+          "13.469"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "H",
+        "field_path": "H",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=6; raw_header='H'; field_path='H'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 0.98,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          0.0,
+          53.28
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "1.3"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "h_radius",
+        "field_path": "h_radius",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=7; raw_header='h_radius'; field_path='h_radius'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 0.01,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          0.0,
+          1.3
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "20.9873791601592",
+          "13.1057711682896",
+          "59.8408896869201"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "DBH",
+        "field_path": "DBH",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=8; raw_header='DBH'; field_path='DBH'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 1.0,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          0.0,
+          59.8408896869201
+        ]
+      },
+      {
+        "confidence": 1.0,
+        "description": null,
+        "example_values": [
+          "2.40232383820301",
+          "0.936785791591526",
+          "19.5304035562598"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "BasalA",
+        "field_path": "BasalA",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "float",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=9; raw_header='BasalA'; field_path='BasalA'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": null,
+        "unique_ratio": 1.0,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": [
+          0.0,
+          19.5304035562598
+        ]
+      },
+      {
+        "confidence": 0.9,
+        "description": null,
+        "example_values": [
+          "CAFKU_0101_20240802_1"
+        ],
+        "extraction_method": "csv_conservative_profiler",
+        "field_name": "plot_blk",
+        "field_path": "plot_blk",
+        "logical_type": "unknown",
+        "missing_count": 0,
+        "nullable": false,
+        "physical_type": "string",
+        "semantic_type": "unknown",
+        "shape": null,
+        "source_evidence": [
+          {
+            "confidence": 1.0,
+            "detail": "column_index=10; raw_header='plot_blk'; field_path='plot_blk'",
+            "evidence_type": "csv_header",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+            "tier": "structural"
+          },
+          {
+            "confidence": 0.9,
+            "detail": "sampled_rows=200",
+            "evidence_type": "sample_rows",
+            "source": "high_fidelity_schema_study\\data\\experiments\\ndp50_v1\\resources\\validation\\d7f05458-e03c-493a-8fd4-458f32a7aecb\\47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+            "tier": "statistical"
+          }
+        ],
+        "uncertainty_reason": "conservative fallback to string to avoid over-claiming",
+        "unique_ratio": 0.105,
+        "unit": null,
+        "unit_normalization": {
+          "canonical_unit": null,
+          "evidence_basis": "not_applicable",
+          "original_unit": null,
+          "status": "no_unit_claim",
+          "ucum_code": null
+        },
+        "value_range": null
+      }
+    ],
+    "file_format": "csv",
+    "file_id": "47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+    "groups": [],
+    "metadata": {
+      "column_count": 11,
+      "csv_header_mapping": [
+        {
+          "canonicalization_reason": "blank_header",
+          "column_index": 0,
+          "field_path": "__unnamed_column_1",
+          "raw_header": ""
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 1,
+          "field_path": "TreeID",
+          "raw_header": "TreeID"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 2,
+          "field_path": "X",
+          "raw_header": "X"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 3,
+          "field_path": "Y",
+          "raw_header": "Y"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 4,
+          "field_path": "Radius",
+          "raw_header": "Radius"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 5,
+          "field_path": "Error",
+          "raw_header": "Error"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 6,
+          "field_path": "H",
+          "raw_header": "H"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 7,
+          "field_path": "h_radius",
+          "raw_header": "h_radius"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 8,
+          "field_path": "DBH",
+          "raw_header": "DBH"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 9,
+          "field_path": "BasalA",
+          "raw_header": "BasalA"
+        },
+        {
+          "canonicalization_reason": "preserved",
+          "column_index": 10,
+          "field_path": "plot_blk",
+          "raw_header": "plot_blk"
+        }
+      ],
+      "deterministic_profile": {
+        "identifier_quality": {
+          "best_identifier_fields": [],
+          "candidate_count": 0,
+          "fields": []
+        },
+        "missingness": {
+          "basis": "sampled_rows",
+          "field_count": 11,
+          "fields": [
+            {
+              "basis": "sampled_rows",
+              "field_path": "__unnamed_column_1",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "TreeID",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "X",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "Y",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "Radius",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "Error",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "H",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "h_radius",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "DBH",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "BasalA",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            },
+            {
+              "basis": "sampled_rows",
+              "field_path": "plot_blk",
+              "missing_count": 0,
+              "missing_ratio": 0.0,
+              "nullable": false
+            }
+          ],
+          "fields_with_missing_count": 0,
+          "sampled_rows": 200,
+          "total_missing_cells": 0
+        }
+      },
+      "row_width_conflict_count": 0,
+      "sampled_rows": 200,
+      "temporal_analysis": {
+        "analysis_version": "phase12_temporal_v1",
+        "candidates": [],
+        "issues": [],
+        "property_claims": {},
+        "selected_candidate": null,
+        "validator_results": {
+          "candidate_count": 0,
+          "eligible_candidate_count": 0,
+          "measurement_count": 10,
+          "selection_abstained": true
+        }
+      }
+    },
+    "notes": []
+  },
+  "status": "success"
+}

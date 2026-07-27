@@ -1,0 +1,52 @@
+{
+  "claim_boundary": "Engineering feasibility and capability discovery only; this is not the frozen validation/test accuracy result.",
+  "coverage": {
+    "acquisition_rate_given_attempt": 0.769231,
+    "dataset_end_to_end_rate": 0.466667,
+    "datasets_with_successful_extraction": 7,
+    "extraction_success_rate_given_acquisition": 1.0,
+    "resource_end_to_end_rate": 0.27027,
+    "resources_with_successful_extraction": 10
+  },
+  "denominators": {
+    "acquired_dataset_payloads": 10,
+    "catalog_resources": 37,
+    "datasets": 15,
+    "policy_attempted_resources": 13
+  },
+  "download_statuses": {
+    "acquired": 10,
+    "provider_export_pending": 2,
+    "skip_dataset_resource_cap": 1,
+    "skip_remote_directory_store": 2,
+    "skip_unsupported_format": 21,
+    "skipped_too_large": 1
+  },
+  "extraction_issue_codes": {
+    "sampling_insufficient": 5
+  },
+  "extraction_statuses": {
+    "success": 10
+  },
+  "failure_reason_counts": {
+    "content_length_exceeds_frozen_limit": 1,
+    "provider_control_response": 2,
+    "skip_dataset_resource_cap": 1,
+    "skip_remote_directory_store": 2,
+    "skip_unsupported_format": 21
+  },
+  "plan_decisions": {
+    "attempt": 13,
+    "skip_dataset_resource_cap": 1,
+    "skip_remote_directory_store": 2,
+    "skip_unsupported_format": 21
+  },
+  "run_role": "development",
+  "schema_version": "ndp50-development-summary/v1",
+  "selection_integrity": {
+    "exact_id_match": true,
+    "expected_development_dataset_count": 15,
+    "observed_development_dataset_count": 15,
+    "validation_and_test_executed": false
+  }
+}

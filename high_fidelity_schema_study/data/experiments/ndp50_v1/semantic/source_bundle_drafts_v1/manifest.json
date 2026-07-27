@@ -1,0 +1,204 @@
+{
+  "blockers": [
+    "vocabulary status is draft, not frozen",
+    "human curators have not approved source relevance/entailment",
+    "additional domain documentation may be required",
+    "two independent non-developer annotators are not assigned"
+  ],
+  "case_count": 16,
+  "cases": [
+    {
+      "annotation_readiness": "blocked_on_frozen_vocabulary_and_human_approval",
+      "bundle_file": "ndp50-development-610b435e-1877-4a4b-b0be-c73539979eec.source-bundle.json",
+      "bundle_sha256": "f278599f3588b70292fa4fc890b8e4b17cab12f8f419015533584d4378091dfd",
+      "case_id": "ndp50-development-610b435e-1877-4a4b-b0be-c73539979eec",
+      "evidence_count": 36,
+      "file_identity_validation": "ready",
+      "source_count": 3,
+      "split": "development",
+      "structural_validation": "ready"
+    },
+    {
+      "annotation_readiness": "blocked_on_frozen_vocabulary_and_human_approval",
+      "bundle_file": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8.source-bundle.json",
+      "bundle_sha256": "0b073be1865c0e6f03b67a87860c9c4a5615387a398d4b59b12f178bec187b24",
+      "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+      "evidence_count": 51,
+      "file_identity_validation": "ready",
+      "source_count": 3,
+      "split": "development",
+      "structural_validation": "ready"
+    },
+    {
+      "annotation_readiness": "blocked_on_frozen_vocabulary_and_human_approval",
+      "bundle_file": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f.source-bundle.json",
+      "bundle_sha256": "b74636a9f79ccc2cbd51b694780ada6f0e7fc4f925c858444e1c5d87f4a81991",
+      "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+      "evidence_count": 72,
+      "file_identity_validation": "ready",
+      "source_count": 3,
+      "split": "development",
+      "structural_validation": "ready"
+    },
+    {
+      "annotation_readiness": "blocked_on_frozen_vocabulary_and_human_approval",
+      "bundle_file": "ndp50-development-b651063b-edb5-4d4f-ae50-7fbc5191ad11.source-bundle.json",
+      "bundle_sha256": "f5ecac3056ad8fb2c25f1f5256dcf6e7aa4c7e09b2d5790b8c0f6a5efac448a1",
+      "case_id": "ndp50-development-b651063b-edb5-4d4f-ae50-7fbc5191ad11",
+      "evidence_count": 42,
+      "file_identity_validation": "ready",
+      "source_count": 3,
+      "split": "development",
+      "structural_validation": "ready"
+    },
+    {
+      "annotation_readiness": "blocked_on_frozen_vocabulary_and_human_approval",
+      "bundle_file": "ndp50-development-c2bbcf64-3737-42b9-aaf9-2d9971f31085.source-bundle.json",
+      "bundle_sha256": "af3aa172ed050b98490cc82d443b41925a142262128d8236172b2802d7ca5b8d",
+      "case_id": "ndp50-development-c2bbcf64-3737-42b9-aaf9-2d9971f31085",
+      "evidence_count": 42,
+      "file_identity_validation": "ready",
+      "source_count": 3,
+      "split": "development",
+      "structural_validation": "ready"
+    },
+    {
+      "annotation_readiness": "blocked_on_frozen_vocabulary_and_human_approval",
+      "bundle_file": "ndp50-development-c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d.source-bundle.json",
+      "bundle_sha256": "6574e0c42450bb93de92e9dc986ee025073bc2c6f019b7665a437cf21a0ac791",
+      "case_id": "ndp50-development-c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d",
+      "evidence_count": 42,
+      "file_identity_validation": "ready",
+      "source_count": 3,
+      "split": "development",
+      "structural_validation": "ready"
+    },
+    {
+      "annotation_readiness": "blocked_on_frozen_vocabulary_and_human_approval",
+      "bundle_file": "ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d.source-bundle.json",
+      "bundle_sha256": "50284bad29d5e9b787d3788ab643901b8e2feeac62ee82aa5c56569d7bac0de2",
+      "case_id": "ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+      "evidence_count": 60,
+      "file_identity_validation": "ready",
+      "source_count": 3,
+      "split": "development",
+      "structural_validation": "ready"
+    },
+    {
+      "annotation_readiness": "blocked_on_frozen_vocabulary_and_human_approval",
+      "bundle_file": "ndp50-development-d15771b1-b612-478c-80ef-91d3e2e1c333.source-bundle.json",
+      "bundle_sha256": "395523595e9ac16c3e7e7266df5ee97f054571a29f49520d8af94debf7f9c3c3",
+      "case_id": "ndp50-development-d15771b1-b612-478c-80ef-91d3e2e1c333",
+      "evidence_count": 36,
+      "file_identity_validation": "ready",
+      "source_count": 3,
+      "split": "development",
+      "structural_validation": "ready"
+    },
+    {
+      "annotation_readiness": "blocked_on_frozen_vocabulary_and_human_approval",
+      "bundle_file": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587.source-bundle.json",
+      "bundle_sha256": "79b2dd0dbf898ce9c2eab914e195d5a25e9ee0f0238910d9084bbc9e8915b473",
+      "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+      "evidence_count": 51,
+      "file_identity_validation": "ready",
+      "source_count": 3,
+      "split": "development",
+      "structural_validation": "ready"
+    },
+    {
+      "annotation_readiness": "blocked_on_frozen_vocabulary_and_human_approval",
+      "bundle_file": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894.source-bundle.json",
+      "bundle_sha256": "1dd203b8d298377db8f062f5049667ff964be2e840669837c8ffd8a89b0bfedc",
+      "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+      "evidence_count": 51,
+      "file_identity_validation": "ready",
+      "source_count": 3,
+      "split": "development",
+      "structural_validation": "ready"
+    },
+    {
+      "annotation_readiness": "blocked_on_frozen_vocabulary_and_human_approval",
+      "bundle_file": "ndp50-validation-47f47360-a5e2-441c-9b43-6cadf6eab7b6.source-bundle.json",
+      "bundle_sha256": "5d5c5665a7197045493bdb14a68f68c2a01f9d8f7df26a7fbd216afe9c4df4fc",
+      "case_id": "ndp50-validation-47f47360-a5e2-441c-9b43-6cadf6eab7b6",
+      "evidence_count": 36,
+      "file_identity_validation": "ready",
+      "source_count": 3,
+      "split": "validation",
+      "structural_validation": "ready"
+    },
+    {
+      "annotation_readiness": "blocked_on_frozen_vocabulary_and_human_approval",
+      "bundle_file": "ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c.source-bundle.json",
+      "bundle_sha256": "3626fd3040b4a220b6b432aeb0e145623587ebdccdf606870749f34a09f39470",
+      "case_id": "ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c",
+      "evidence_count": 42,
+      "file_identity_validation": "ready",
+      "source_count": 3,
+      "split": "validation",
+      "structural_validation": "ready"
+    },
+    {
+      "annotation_readiness": "blocked_on_frozen_vocabulary_and_human_approval",
+      "bundle_file": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1.source-bundle.json",
+      "bundle_sha256": "0e5ac9a800f5f2a04698cb2536275edf8b39063368477fb45b1fc5f433703b62",
+      "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+      "evidence_count": 57,
+      "file_identity_validation": "ready",
+      "source_count": 3,
+      "split": "validation",
+      "structural_validation": "ready"
+    },
+    {
+      "annotation_readiness": "blocked_on_frozen_vocabulary_and_human_approval",
+      "bundle_file": "ndp50-validation-a47379a9-8051-42bf-9ddd-94f33b672ac6.source-bundle.json",
+      "bundle_sha256": "8e788e670542505c74772f9bdeb293e7fd0fc31c9cf9f8f224a7cc89247774e7",
+      "case_id": "ndp50-validation-a47379a9-8051-42bf-9ddd-94f33b672ac6",
+      "evidence_count": 36,
+      "file_identity_validation": "ready",
+      "source_count": 3,
+      "split": "validation",
+      "structural_validation": "ready"
+    },
+    {
+      "annotation_readiness": "blocked_on_frozen_vocabulary_and_human_approval",
+      "bundle_file": "ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01.source-bundle.json",
+      "bundle_sha256": "d366ca8750f0df539e5594aa62aff0314ccdb550fbb62dbb5c44331c6c6311b3",
+      "case_id": "ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+      "evidence_count": 60,
+      "file_identity_validation": "ready",
+      "source_count": 3,
+      "split": "validation",
+      "structural_validation": "ready"
+    },
+    {
+      "annotation_readiness": "blocked_on_frozen_vocabulary_and_human_approval",
+      "bundle_file": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017.source-bundle.json",
+      "bundle_sha256": "e2e0124776c3f9e0ade7749e3759de236d9882a560b567b93ecd956dbe0cd300",
+      "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+      "evidence_count": 45,
+      "file_identity_validation": "ready",
+      "source_count": 3,
+      "split": "validation",
+      "structural_validation": "ready"
+    }
+  ],
+  "created_at": "2026-07-26T23:02:11.260112Z",
+  "opportunity_manifest": {
+    "file": "opportunity_manifest_v1.json",
+    "sha256": "01169ecd8b04eb9901cfb702da5cbae7826f0dc4dec12cc75f98620b726a6d17"
+  },
+  "packet_manifest": {
+    "file": "manifest.json",
+    "sha256": "6d356997e8f3db91f39a9ac7a4759f420a0d880e7b76d3eac09d5625e2e26046"
+  },
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "schema_version": "ndp50-source-bundle-draft-manifest/v1",
+  "status": "draft_bundles_structurally_valid_not_annotation_ready",
+  "vocabulary": {
+    "file": "vocabulary_draft_v1.json",
+    "sha256": "abb13e004e0dd1b28eaa4df0a9f0841eb65032c46730310d42f5979d56e9b773",
+    "status": "draft"
+  }
+}

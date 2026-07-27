@@ -30,6 +30,114 @@ The project now converges on two explicitly separate outputs:
 
 The convergence contract is [docs/project_convergence_2026-07-15.md](docs/project_convergence_2026-07-15.md). The research protocol and blind-gold rules are [docs/semantic_architecture_research_protocol_v1.md](docs/semantic_architecture_research_protocol_v1.md) and [docs/semantic_gold_annotation_handbook_v1.md](docs/semantic_gold_annotation_handbook_v1.md).
 
+## NDP-50 External Validation Track
+
+The separate NDP-50 track uses a content-hashed complete lightweight catalog
+frame, deterministic stratified selection, development-only capability repair,
+and sealed validation/test splits. See
+[docs/ndp50_protocol_v1.md](docs/ndp50_protocol_v1.md) and
+[docs/ndp50_development_notes_v1.md](docs/ndp50_development_notes_v1.md).
+The current structural validation result and documented protocol deviation are
+[docs/ndp50_structural_validation_report_v1.md](docs/ndp50_structural_validation_report_v1.md)
+and [docs/ndp50_validation_deviation_001.md](docs/ndp50_validation_deviation_001.md).
+Semantic/CPA preparation and its remaining human/freeze gates are documented in
+[docs/ndp50_semantic_cpa_protocol_v1.md](docs/ndp50_semantic_cpa_protocol_v1.md).
+The machine-readable readiness report distinguishes completed blind-screening
+infrastructure from absent human decisions:
+`vocabulary_review_workflow_ready=true`, `vocabulary_frozen=false`,
+`source_approval_workflow_implementation_ready=true`,
+`semantic_power_feasibility_assessed=true`,
+`power_freeze_workflow_ready=true`,
+`data_governance_provenance_integrity=true`,
+`data_governance_review_workflow_ready=true`,
+`data_governance_policy_frozen=false`,
+`semantic_gold_workflow_ready=true`,
+`independent_gold_complete=false`,
+`demonstration_pool_workflow_ready=true`,
+`execution_freeze_workflow_ready=true`,
+`test_execution_workflow_ready=true`,
+`prompt_and_backend_frozen=false`,
+`validation_confirmatory_power_established=false`,
+`test_power_plan_frozen=false`,
+`test_design_meets_pretest_assurance=false`,
+`cpa_screen_workflow_ready=true`,
+`cpa_independent_screening_authorized=false`, and
+`cpa_applicability_consensus_complete=false`.
+The independently replayable human handoff is
+`data/experiments/ndp50_v1/semantic/human_handoff_v1.json`. It currently
+releases the two-signatory data-governance review and two-reviewer vocabulary
+governance in parallel, while keeping source approval, CPA/gold review,
+execution freeze, power freeze, independent test-release authorization, and
+test execution locked. A generated template is never counted as a completed
+human decision.
+The neutral test-execution contract is
+`data/experiments/ndp50_v1/semantic/test_execution/test_execution_workflow_v1.json`.
+It records the sealed count of 25 without test identities and precommits the
+complete dataset-disposition and case-by-arm matrix, response-replay,
+raw-response artifact binding, qualified-parser replay into the bound parsed
+output, qualified-scorer replay against bound gold, score-artifact
+reconciliation, a complete single-factor prompt/row-sampler sensitivity
+matrix with descriptive-only inference, qualified-runner replay of a
+hash-ranked and cyclically rotated schedule, chronology and physical-call
+budget checks, deviation, missingness, receipt, registered sign-flip/Holm
+inference replay, and publication-reporting requirements.
+Even after readiness passes, test opening requires distinct study-operator and
+non-developer-monitor signatures plus a validator-replayed release receipt.
+The corresponding content-addressed, unassigned work package is
+`data/experiments/ndp50_v1/semantic/human_assignments_v1/`. It contains one
+sequential governance review/countersignature assignment and two isolated,
+byte-identical vocabulary-discovery payloads with distinct wrappers. Its
+neutral return manifest contains no invented reviewer, signature, date, or
+decision; candidate construction remains locked until both vocabulary returns
+are independently validated and atomically hash-frozen.
+Once that receipt exists, the same workflow deterministically builds the
+candidate catalog and releases two byte-identical candidate-decision payloads
+to a fresh curator/methodologist pair. Reusing discovery reviewers or revealing
+either decision before the dual decision freeze is rejected.
+After the decision dual freeze, the disagreement worksheet is released only to
+a fresh qualified non-developer adjudicator with conflict and qualification
+attestations; agreed slots cannot be changed.
+The same fresh-adjudicator standard applies to source approval and CPA
+applicability. Semantic gold intentionally uses joint consensus by the same two
+corpus-wide qualified annotators, whose panel identities must exactly match the
+conflict-cleared annotator registry.
+The bound
+`data/experiments/ndp50_v1/reports/data_governance_v1.json` separately proves
+snapshot/acquisition integrity and records unresolved license, attribution,
+model-transfer, and redistribution policy rather than inferring permission
+from public catalog availability. The corresponding 25-dataset neutral,
+two-signatory review material is
+`data/experiments/ndp50_v1/governance/data_governance_review_neutral_v1.json`
+with its content-addressed workflow specification in the same directory.
+There is deliberately no generated approval artifact until qualified humans
+complete and sign the review.
+The NDP corpus-level gold wrapper is likewise executable at
+`data/experiments/ndp50_v1/semantic/gold/semantic_gold_workflow_spec_v1.json`;
+its neutral 16-case index contains no decisions. It requires the same two
+qualified non-developer annotators across the corpus, approved evidence for the
+general-semantic purpose, deterministic disagreement replay, human consensus,
+and zero unresolved slots before it can generate a gold approval.
+The neutral NDP execution-freeze contract is
+`data/experiments/ndp50_v1/semantic/execution_freeze/execution_freeze_workflow_v1.json`.
+It makes prompt wording, response schema, message order, serialization,
+row-sampling, development-only demonstrations, ranking, qualified backend,
+decoding, execution code, retries, and analysis contrasts explicit and
+content-addressed. It is workflow readiness only; no completed execution freeze
+currently exists.
+
+The current checkpoint freezes 5,823 NDP catalog records, selects 50 datasets
+(15/10/25 development/validation/test), completes structural development and
+validation, and keeps the 25-case test split unopened. Dataset-level,
+resource-level, macro, stratified, and fixed-seed bootstrap results remain
+separate. Rebuild a role-specific report from frozen artifacts with:
+
+```bash
+python -m high_fidelity_schema_study.ndp50_report \
+  --execution high_fidelity_schema_study/data/experiments/ndp50_v1/runs/development_run_v4.json \
+  --selection high_fidelity_schema_study/data/experiments/ndp50_v1/selection.json \
+  --output-dir high_fidelity_schema_study/data/experiments/ndp50_v1/reports/development_v4
+```
+
 The executable two-annotator artifact chain is documented in [docs/semantic_gold_workflow_protocol_v1.md](docs/semantic_gold_workflow_protocol_v1.md). It validates frozen vocabulary, source/evidence identity, property-level rationales, independent submission hashes, disagreement arithmetic, and consensus provenance without any model or automatic adjudication.
 
 The corpus-level annotator readiness gate is documented in [docs/semantic_annotator_calibration_protocol_v1.md](docs/semantic_annotator_calibration_protocol_v1.md). It separates preregistered thresholds from later submission hashes, requires the same two annotators across nine cases, and forbids reusing revealed cases to confirm a revised handbook.
@@ -421,7 +529,7 @@ These controlled results prove the declared challenge cases, not broad real-worl
 | Phase 18 unified evaluation | 11 categorized tracks; frozen references are not rerun; aggregate score is `null` | Common reporting entrypoint without collapsing evidence boundaries |
 | Phase 19 agent exports | 8 bundles; policy, fidelity, evidence, provenance, context, and bounded-action metrics `1.0000`; 7 capabilities | Agent-ready read-only context, not agent-controlled canonical extraction |
 | Phase 20 release readiness | Required paths, major documentation links, generated/documentation path hygiene, and frozen paths pass | Release-style repository readiness, not broader empirical validation |
-| Current regression suite | `183 passed` with pinned scientific backends, structured-failure regression coverage, and CSV semantic guardrail coverage | Current repository regression status; it should be re-run after every later change |
+| Current regression suite | `480 passed` with pinned scientific backends, NDP structural/semantic workflow coverage, three-stage human-assignment isolation/return controls, machine-frozen CPA estimand/missingness rules, synthetic qualification v3 plus actual runner/parser/scorer replay, independently signed test-release authorization, immutable NDP raw-response/parsed-output/score/receipt controls, registered OFAT prompt/row-sampler sensitivity execution, registered sign-flip/Holm inference replay, structured-failure regression coverage, and CSV semantic guardrails | Current repository regression status as of the latest NDP workflow audit; historical phase reports retain their contemporaneous counts |
 
 ## Current Target
 

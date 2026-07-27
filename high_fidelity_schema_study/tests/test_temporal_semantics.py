@@ -67,3 +67,22 @@ def test_equal_time_candidates_abstain_from_axis_selection():
     assert result["time_series"] == {}
     assert result["temporal_analysis"]["selected_candidate"] is None
     assert result["temporal_analysis"]["issues"][0]["code"] == "ambiguous_time_axis_candidates"
+
+
+def test_repeated_timestamps_do_not_create_zero_interval_cadence():
+    result = analyze_temporal_semantics(
+        {
+            "timestamp": [
+                "2026-01-01T00:00:00",
+                "2026-01-01T00:00:00",
+                "2026-01-01T00:00:00",
+            ],
+            "value": ["1", "2", "3"],
+        },
+        _fields("timestamp", "value"),
+    )
+
+    time_axis = result["time_series"]["time_axis"]
+    assert time_axis["frequency"] == "unknown"
+    assert time_axis["regularity"] == "unknown"
+    assert time_axis["missing_intervals"] is None

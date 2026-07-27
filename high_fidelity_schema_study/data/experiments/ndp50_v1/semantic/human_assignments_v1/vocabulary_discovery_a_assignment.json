@@ -1,0 +1,57 @@
+{
+  "assigned_on": null,
+  "assignment_id": "vocabulary_discovery_a",
+  "execution_mode": "independent_full_corpus_review",
+  "expected_submission_schema": "ndp50-vocabulary-discovery/v1",
+  "handoff": {
+    "file": "semantic/human_handoff_v1.json",
+    "sha256": "7b3223d3f5971e35bf574cff3b43dc02d341e43b2a3a3c51e5ad419e4f9df6fd"
+  },
+  "isolation_contract": {
+    "candidate_catalog_visible": false,
+    "communication_about_review_content_forbidden": true,
+    "disagreement_report_visible": false,
+    "full_corpus_completion_required": true,
+    "other_assignment_visible_before_both_freeze": false,
+    "other_submission_visible_before_both_freeze": false
+  },
+  "model_outputs_visible": false,
+  "must_differ_from_assignment": "vocabulary_discovery_b",
+  "payload": {
+    "copied_from": {
+      "file": "semantic/vocabulary_discovery_neutral_v1.json",
+      "sha256": "51006f01cdea680254cb1898a2444129d094a620750a6d6adbb0f3d57156d190"
+    },
+    "copy_integrity": "byte_identical",
+    "file": "semantic/human_assignments_v1/vocabulary_discovery_a_payload.json",
+    "sha256": "51006f01cdea680254cb1898a2444129d094a620750a6d6adbb0f3d57156d190"
+  },
+  "release_state": "ready_unassigned",
+  "released_inputs": {
+    "draft_vocabulary": {
+      "file": "semantic/vocabulary_draft_v1.json",
+      "sha256": "abb13e004e0dd1b28eaa4df0a9f0841eb65032c46730310d42f5979d56e9b773"
+    },
+    "source_bundle_manifest": {
+      "file": "semantic/source_bundle_drafts_v1/manifest.json",
+      "sha256": "13b6eb7a866ad81bcefb4f75e1e6e2d6067d92a442a1d507e103ec096b8b3159"
+    },
+    "workflow": {
+      "file": "semantic/vocabulary_review_workflow_v1.json",
+      "sha256": "4e063027a63521a37de5c62a884d43e8d8fa6e4e3dcc30689b661ebe846bd292"
+    }
+  },
+  "required_role": "scientific_metadata_curator",
+  "reviewer_id": null,
+  "schema_version": "ndp50-human-assignment/v1",
+  "stage_id": "vocabulary_governance",
+  "test_data_access": "forbidden",
+  "validator": {
+    "command": "validate-discovery",
+    "implementation": {
+      "file": "ndp50_vocabulary_workflow.py",
+      "sha256": "16ee620d2e4d761cf9a729fb71de6967d8ab82c1d5585b6ffdfee925f204dc80"
+    },
+    "module": "high_fidelity_schema_study.ndp50_vocabulary_workflow"
+  }
+}

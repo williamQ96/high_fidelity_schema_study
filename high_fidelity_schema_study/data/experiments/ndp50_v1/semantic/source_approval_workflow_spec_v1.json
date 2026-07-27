@@ -1,0 +1,37 @@
+{
+  "automatic_approval": false,
+  "consensus_adjudicator_fresh_from_reviews": true,
+  "consensus_adjudicator_non_developer_required": true,
+  "consensus_adjudicator_qualification_and_conflict_required": true,
+  "human_decisions_present": false,
+  "implementation": {
+    "file": "ndp50_source_approval.py",
+    "sha256": "6ba7772459167931a366a55ddfa74e6a591e41f6a47d40bedfc9f70b3bbc597d"
+  },
+  "implementation_dependencies": {
+    "semantic_gold_workflow.py": "1319dd8b52a3421ce4e34bbfc59e21391e2c8d161e1c01272aa33a7299fab864"
+  },
+  "purpose_taxonomy": [
+    "general_semantic_annotation",
+    "cpa_relational_table_assessment",
+    "cpa_subject_column_assessment",
+    "cpa_property_annotation_assessment"
+  ],
+  "required_consensus_adjudicators": 1,
+  "required_independent_reviewers": 2,
+  "required_role_coverage": [
+    "one_domain_or_scientific_metadata_curator",
+    "one_annotation_methodologist"
+  ],
+  "requires_frozen_vocabulary": true,
+  "requires_rebuilt_source_bundles": true,
+  "schema_version": "ndp50-source-approval-workflow-spec/v1",
+  "sequence": [
+    "prepare_exact_item_level_review_template",
+    "two_independent_qualified_reviews",
+    "reveal_deterministic_disagreements_after_both_freeze",
+    "human_consensus_without_changing_agreements",
+    "validator_generated_approved_manifest"
+  ],
+  "status": "implementation_ready_waiting_on_frozen_vocabulary_and_rebuilt_bundles"
+}

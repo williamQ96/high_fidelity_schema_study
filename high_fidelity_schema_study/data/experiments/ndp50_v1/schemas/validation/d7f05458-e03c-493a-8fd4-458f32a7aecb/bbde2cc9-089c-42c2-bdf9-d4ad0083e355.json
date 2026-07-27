@@ -1,0 +1,41 @@
+{
+  "elapsed_seconds": 0.0017822999998315936,
+  "extractor": null,
+  "format_decision": {
+    "basis": "no_supported_signal",
+    "conflicted": false,
+    "selected_format": null,
+    "signals": [],
+    "support_score": 0.0
+  },
+  "issues": [
+    {
+      "code": "unknown_no_signature",
+      "details": {},
+      "message": "No trustworthy format signature, hint, suffix, or text probe selected a parser.",
+      "severity": "warning",
+      "stage": "format_detection"
+    }
+  ],
+  "schema": {
+    "data_modality": "unknown",
+    "dataset_id": "bbde2cc9-089c-42c2-bdf9-d4ad0083e355__TLS_Treelist_Column_Description",
+    "fields": [],
+    "file_format": "raw_binary",
+    "file_id": "bbde2cc9-089c-42c2-bdf9-d4ad0083e355__TLS_Treelist_Column_Description",
+    "groups": [],
+    "metadata": {
+      "byte_size": 467,
+      "entry_count": null,
+      "extraction_errors": [],
+      "field_claim_policy": "abstain_without_spec_backed_extractor",
+      "magic_hex_prefix": "ef bb bf 54 72 65 65 49 44 2c 54 72 65 65 20 49",
+      "resource_kind": "file"
+    },
+    "notes": [
+      "The payload does not have a selected spec-backed deterministic extractor.",
+      "The high-fidelity policy records file-level evidence and abstains from unsupported field claims."
+    ]
+  },
+  "status": "abstained"
+}

@@ -1,0 +1,47 @@
+{
+  "all_development_opportunity_datasets_required": true,
+  "automatic_policy_decisions": false,
+  "cpa_design": {
+    "file": "semantic/cpa_design_draft_v1.json",
+    "sha256": "884cec768ecb08acb91e6f1b00a5dee88f163304af727fec8d67b132c900ecc3"
+  },
+  "familywise_alpha": 0.05,
+  "human_decisions_present": false,
+  "implementation": {
+    "file": "ndp50_power_freeze.py",
+    "sha256": "65970f34de68226fa095ee763d37543e1ebfd3dec2dfaf09e0dafbb351e8d308"
+  },
+  "implementation_dependencies": {
+    "semantic_power_analysis.py": "a5d68e5389e644c15bdcae599f06ba8c8757ba378e2edb4e59f4f1f2d1991c69"
+  },
+  "minimum_sensitivity_scenarios": 3,
+  "neutral_policy_template": {
+    "file": "semantic/power_freeze/power_policy_neutral_v1.json",
+    "sha256": "dba9cfb8815507aee9a4815b59937115849b64a5098e3619c46dad1735211fc2"
+  },
+  "opportunity_manifest": {
+    "file": "semantic/opportunity_manifest_v1.json",
+    "sha256": "01169ecd8b04eb9901cfb702da5cbae7826f0dc4dec12cc75f98620b726a6d17"
+  },
+  "primary_contrast_count": 2,
+  "primary_statistical_unit": "dataset",
+  "required_calibration_split": "development_only",
+  "schema_version": "ndp50-power-freeze-workflow/v1",
+  "selection": {
+    "file": "selection.json",
+    "sha256": "27d73de3b4aa8638616588fdac0d927d79321d7d230d2c55f96c952689bd471d"
+  },
+  "sequence": [
+    "complete_and_replay_execution_freeze",
+    "complete_power_policy_without_calibration_outcomes",
+    "freeze_policy_signatures_and_content_hash",
+    "execute_development_only_calibration",
+    "validate_equal_weight_dataset_level_effects",
+    "derive_inflated_sd_and_opportunity_assurance",
+    "validator_generate_power_freeze",
+    "rebuild_power_feasibility_readiness_and_handoff"
+  ],
+  "status": "implementation_ready_waiting_on_execution_freeze",
+  "test_outcomes_observed": false,
+  "validation_or_test_outcomes_forbidden": true
+}

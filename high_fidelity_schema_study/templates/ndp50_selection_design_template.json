@@ -1,0 +1,58 @@
+{
+  "schema_version": "ndp50-selection-design/v1",
+  "protocol_version": "ndp50-external-validation-protocol/v1",
+  "status": "frozen_before_selection",
+  "candidate_frame_sha256": "replace-with-candidate-frame-sha256",
+  "seed": "replace-with-registered-random-seed",
+  "target_count": 50,
+  "max_per_organization": 5,
+  "split_counts": {
+    "development": 15,
+    "test": 25,
+    "validation": 10
+  },
+  "strata": {
+    "archive": {
+      "development": 0,
+      "validation": 0,
+      "test": 0,
+      "reserve": 0
+    },
+    "documentation_or_text": {
+      "development": 0,
+      "validation": 0,
+      "test": 0,
+      "reserve": 0
+    },
+    "geospatial_or_image": {
+      "development": 0,
+      "validation": 0,
+      "test": 0,
+      "reserve": 0
+    },
+    "other_or_unknown": {
+      "development": 0,
+      "validation": 0,
+      "test": 0,
+      "reserve": 0
+    },
+    "supported_hierarchical": {
+      "development": 0,
+      "validation": 0,
+      "test": 0,
+      "reserve": 0
+    },
+    "supported_semistructured": {
+      "development": 0,
+      "validation": 0,
+      "test": 0,
+      "reserve": 0
+    },
+    "supported_tabular": {
+      "development": 0,
+      "validation": 0,
+      "test": 0,
+      "reserve": 0
+    }
+  }
+}

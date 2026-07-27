@@ -1,0 +1,32 @@
+{
+  "audit": {
+    "file": "data_governance_v1.json",
+    "sha256": "51dd1934f1183b6300b816b2517802735699c55d8a66ec32156825ed6e7df05b"
+  },
+  "human_decisions_present": false,
+  "implementation": {
+    "file": "ndp50_data_governance_review.py",
+    "sha256": "6b4a0a86bbae0f98f557d1638f2fcd9b1edce7019488bf78908f02eaa87bbcc1"
+  },
+  "implementation_dependencies": {
+    "ndp50_data_governance.py": "e79a1b58c5815b2031d4043523e75438723fc962ad4e5ffd572a2cf14154670e"
+  },
+  "legal_advice_claimed": false,
+  "neutral_template": {
+    "file": "data_governance_review_neutral_v1.json",
+    "sha256": "f29629c8ea58a1fc28909f87409ef2bafc913d5a5f13d45dbb834f970adc2417"
+  },
+  "required_distinct_signatories": 2,
+  "required_role_coverage": [
+    "one_institutional_data_steward_or_research_compliance_reviewer",
+    "one_principal_investigator_or_institutional_data_controller"
+  ],
+  "schema_version": "ndp50-data-governance-review-workflow/v1",
+  "sequence": [
+    "qualified_stewardship_review",
+    "accountable_approval",
+    "validator_generated_governance_approval",
+    "rebuild_readiness_and_handoff"
+  ],
+  "status": "ready_for_independent_governance_review_and_approval"
+}

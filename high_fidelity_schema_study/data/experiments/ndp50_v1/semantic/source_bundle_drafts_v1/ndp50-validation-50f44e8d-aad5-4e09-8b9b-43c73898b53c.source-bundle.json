@@ -1,0 +1,534 @@
+{
+  "annotation_packet_file": "../annotation_pack_v1/packets/ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c.annotation-packet.json",
+  "annotation_packet_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+  "dataset_id": "ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c",
+  "evidence_catalog": [
+    {
+      "applicable_field_paths": [
+        "lat"
+      ],
+      "catalog_evidence_id": "lat::F1",
+      "selector": "field_inventory:lat:lat::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        "lat"
+      ],
+      "catalog_evidence_id": "lat::F2",
+      "selector": "field_inventory:lat:lat::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        " lon"
+      ],
+      "catalog_evidence_id": " lon::F1",
+      "selector": "field_inventory: lon: lon::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        " lon"
+      ],
+      "catalog_evidence_id": " lon::F2",
+      "selector": "field_inventory: lon: lon::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        " rep_date"
+      ],
+      "catalog_evidence_id": " rep_date::F1",
+      "selector": "field_inventory: rep_date: rep_date::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        " rep_date"
+      ],
+      "catalog_evidence_id": " rep_date::F2",
+      "selector": "field_inventory: rep_date: rep_date::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        " source"
+      ],
+      "catalog_evidence_id": " source::F1",
+      "selector": "field_inventory: source: source::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        " source"
+      ],
+      "catalog_evidence_id": " source::F2",
+      "selector": "field_inventory: source: source::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        " sensor"
+      ],
+      "catalog_evidence_id": " sensor::F1",
+      "selector": "field_inventory: sensor: sensor::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        " sensor"
+      ],
+      "catalog_evidence_id": " sensor::F2",
+      "selector": "field_inventory: sensor: sensor::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        " fwi"
+      ],
+      "catalog_evidence_id": " fwi::F1",
+      "selector": "field_inventory: fwi: fwi::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        " fwi"
+      ],
+      "catalog_evidence_id": " fwi::F2",
+      "selector": "field_inventory: fwi: fwi::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        " fuel"
+      ],
+      "catalog_evidence_id": " fuel::F1",
+      "selector": "field_inventory: fuel: fuel::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        " fuel"
+      ],
+      "catalog_evidence_id": " fuel::F2",
+      "selector": "field_inventory: fuel: fuel::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        " ros"
+      ],
+      "catalog_evidence_id": " ros::F1",
+      "selector": "field_inventory: ros: ros::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        " ros"
+      ],
+      "catalog_evidence_id": " ros::F2",
+      "selector": "field_inventory: ros: ros::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        " sfc"
+      ],
+      "catalog_evidence_id": " sfc::F1",
+      "selector": "field_inventory: sfc: sfc::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        " sfc"
+      ],
+      "catalog_evidence_id": " sfc::F2",
+      "selector": "field_inventory: sfc: sfc::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        " tfc"
+      ],
+      "catalog_evidence_id": " tfc::F1",
+      "selector": "field_inventory: tfc: tfc::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        " tfc"
+      ],
+      "catalog_evidence_id": " tfc::F2",
+      "selector": "field_inventory: tfc: tfc::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        " bfc"
+      ],
+      "catalog_evidence_id": " bfc::F1",
+      "selector": "field_inventory: bfc: bfc::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        " bfc"
+      ],
+      "catalog_evidence_id": " bfc::F2",
+      "selector": "field_inventory: bfc: bfc::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        " hfi"
+      ],
+      "catalog_evidence_id": " hfi::F1",
+      "selector": "field_inventory: hfi: hfi::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        " hfi"
+      ],
+      "catalog_evidence_id": " hfi::F2",
+      "selector": "field_inventory: hfi: hfi::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        " estarea"
+      ],
+      "catalog_evidence_id": " estarea::F1",
+      "selector": "field_inventory: estarea: estarea::F1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "csv_header",
+      "strength": "structural"
+    },
+    {
+      "applicable_field_paths": [
+        " estarea"
+      ],
+      "catalog_evidence_id": " estarea::F2",
+      "selector": "field_inventory: estarea: estarea::F2",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "sample_rows",
+      "strength": "statistical"
+    },
+    {
+      "applicable_field_paths": [
+        " bfc",
+        " estarea",
+        " fuel",
+        " fwi",
+        " hfi",
+        " lon",
+        " rep_date",
+        " ros",
+        " sensor",
+        " sfc",
+        " source",
+        " tfc",
+        "lat"
+      ],
+      "catalog_evidence_id": "S1",
+      "selector": "approved_evidence:S1",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "catalog_title",
+      "strength": "documentation"
+    },
+    {
+      "applicable_field_paths": [
+        "lat"
+      ],
+      "catalog_evidence_id": "RAW-1",
+      "selector": "column:lat",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "6826ab561d8560a04cd4da4066c07d414b5fdedbb2c31d51ae27c8b3984a4b3c",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        " lon"
+      ],
+      "catalog_evidence_id": "RAW-2",
+      "selector": "column: lon",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "6826ab561d8560a04cd4da4066c07d414b5fdedbb2c31d51ae27c8b3984a4b3c",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        " rep_date"
+      ],
+      "catalog_evidence_id": "RAW-3",
+      "selector": "column: rep_date",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "6826ab561d8560a04cd4da4066c07d414b5fdedbb2c31d51ae27c8b3984a4b3c",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        " source"
+      ],
+      "catalog_evidence_id": "RAW-4",
+      "selector": "column: source",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "6826ab561d8560a04cd4da4066c07d414b5fdedbb2c31d51ae27c8b3984a4b3c",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        " sensor"
+      ],
+      "catalog_evidence_id": "RAW-5",
+      "selector": "column: sensor",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "6826ab561d8560a04cd4da4066c07d414b5fdedbb2c31d51ae27c8b3984a4b3c",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        " fwi"
+      ],
+      "catalog_evidence_id": "RAW-6",
+      "selector": "column: fwi",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "6826ab561d8560a04cd4da4066c07d414b5fdedbb2c31d51ae27c8b3984a4b3c",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        " fuel"
+      ],
+      "catalog_evidence_id": "RAW-7",
+      "selector": "column: fuel",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "6826ab561d8560a04cd4da4066c07d414b5fdedbb2c31d51ae27c8b3984a4b3c",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        " ros"
+      ],
+      "catalog_evidence_id": "RAW-8",
+      "selector": "column: ros",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "6826ab561d8560a04cd4da4066c07d414b5fdedbb2c31d51ae27c8b3984a4b3c",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        " sfc"
+      ],
+      "catalog_evidence_id": "RAW-9",
+      "selector": "column: sfc",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "6826ab561d8560a04cd4da4066c07d414b5fdedbb2c31d51ae27c8b3984a4b3c",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        " tfc"
+      ],
+      "catalog_evidence_id": "RAW-10",
+      "selector": "column: tfc",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "6826ab561d8560a04cd4da4066c07d414b5fdedbb2c31d51ae27c8b3984a4b3c",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        " bfc"
+      ],
+      "catalog_evidence_id": "RAW-11",
+      "selector": "column: bfc",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "6826ab561d8560a04cd4da4066c07d414b5fdedbb2c31d51ae27c8b3984a4b3c",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        " hfi"
+      ],
+      "catalog_evidence_id": "RAW-12",
+      "selector": "column: hfi",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "6826ab561d8560a04cd4da4066c07d414b5fdedbb2c31d51ae27c8b3984a4b3c",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        " estarea"
+      ],
+      "catalog_evidence_id": "RAW-13",
+      "selector": "column: estarea",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "6826ab561d8560a04cd4da4066c07d414b5fdedbb2c31d51ae27c8b3984a4b3c",
+      "source_type": "original_resource_observation",
+      "strength": "original_data"
+    },
+    {
+      "applicable_field_paths": [
+        "lat",
+        " lon",
+        " rep_date",
+        " source",
+        " sensor",
+        " fwi",
+        " fuel",
+        " ros",
+        " sfc",
+        " tfc",
+        " bfc",
+        " hfi",
+        " estarea"
+      ],
+      "catalog_evidence_id": "NDP-TITLE",
+      "selector": "raw_catalog_response.result.title",
+      "source_id": "NDP_DETAIL_SNAPSHOT",
+      "source_sha256": "02d3ca8c656e2589dd174c588471b63f606862e715305b05ef6168ac8efb6aa7",
+      "source_type": "catalog_documentation",
+      "strength": "documentation"
+    },
+    {
+      "applicable_field_paths": [
+        "lat",
+        " lon",
+        " rep_date",
+        " source",
+        " sensor",
+        " fwi",
+        " fuel",
+        " ros",
+        " sfc",
+        " tfc",
+        " bfc",
+        " hfi",
+        " estarea"
+      ],
+      "catalog_evidence_id": "NDP-NOTES",
+      "selector": "raw_catalog_response.result.notes",
+      "source_id": "NDP_DETAIL_SNAPSHOT",
+      "source_sha256": "02d3ca8c656e2589dd174c588471b63f606862e715305b05ef6168ac8efb6aa7",
+      "source_type": "catalog_documentation",
+      "strength": "documentation"
+    }
+  ],
+  "primary_analysis_cluster": "35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4",
+  "protocol_version": "semantic-architecture-protocol/v1",
+  "schema_version": "semantic-source-bundle/v1",
+  "source_dataset_id": "35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4",
+  "source_resource_id": "50f44e8d-aad5-4e09-8b9b-43c73898b53c",
+  "sources": [
+    {
+      "source_file": "../annotation_pack_v1/packets/ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c.annotation-packet.json",
+      "source_id": "ANNOTATION_PACKET",
+      "source_sha256": "10d01ebe935c3b1a4e4da31e49716c73309047cba85ced89b9d5f02616ebacaa",
+      "source_type": "frozen_neutral_annotation_packet"
+    },
+    {
+      "source_file": "../../resources/validation/35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4/50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+      "source_id": "RAW_RESOURCE",
+      "source_sha256": "6826ab561d8560a04cd4da4066c07d414b5fdedbb2c31d51ae27c8b3984a4b3c",
+      "source_type": "original_acquired_dataset_resource"
+    },
+    {
+      "source_file": "../../acquisition/validation_details/35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4.json.gz",
+      "source_id": "NDP_DETAIL_SNAPSHOT",
+      "source_sha256": "02d3ca8c656e2589dd174c588471b63f606862e715305b05ef6168ac8efb6aa7",
+      "source_type": "frozen_ndp_ckan_package_show_snapshot"
+    }
+  ],
+  "split": "validation",
+  "status": "draft_blocked_on_frozen_vocabulary_and_human_approval",
+  "vocabulary_file": "../vocabulary_draft_v1.json",
+  "vocabulary_sha256": "abb13e004e0dd1b28eaa4df0a9f0841eb65032c46730310d42f5979d56e9b773"
+}

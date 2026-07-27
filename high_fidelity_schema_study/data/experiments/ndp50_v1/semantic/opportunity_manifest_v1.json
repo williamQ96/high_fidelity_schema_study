@@ -1,0 +1,874 @@
+{
+  "cases": [
+    {
+      "annotation_unit": "one acquired dataset resource",
+      "case_id": "ndp50-development-610b435e-1877-4a4b-b0be-c73539979eec",
+      "cpa_applicability_status": "requires_manual_relation_and_subject_assessment",
+      "cpa_subject_column_status": "unassigned_requires_independent_annotation",
+      "data_modality": "tabular",
+      "dataset_id": "6ebc92f4-daf4-4c52-b2c3-82276bc24ee5",
+      "field_count": 11,
+      "field_paths": [
+        "__unnamed_column_1",
+        "SPCD",
+        "DIA_cm",
+        "HT_m",
+        "STATUSCD",
+        "CBH_m",
+        "CROWN_RADIUS_m",
+        "X_m",
+        "Y_m",
+        "plot_name",
+        "geometry"
+      ],
+      "file_format": "csv",
+      "primary_analysis_cluster": "6ebc92f4-daf4-4c52-b2c3-82276bc24ee5",
+      "resource_id": "610b435e-1877-4a4b-b0be-c73539979eec",
+      "schema_artifact": {
+        "file": "schemas/development/6ebc92f4-daf4-4c52-b2c3-82276bc24ee5/610b435e-1877-4a4b-b0be-c73539979eec.json",
+        "sha256": "c8afe8ceb77e1188fb935404e4a64f07cb8df0a34a6ab3c71f0eb499bfc809e1"
+      },
+      "selection_stratum": "supported_tabular",
+      "semantic_annotation_status": "eligible_requires_independent_gold",
+      "source_bundle_status": "not_built",
+      "source_detail_snapshot": {
+        "file": "6ebc92f4-daf4-4c52-b2c3-82276bc24ee5.json.gz",
+        "sha256": "4ab1bcdb81f0802b3eca467efa57ab0c25861c0758cf103720f46e123363d654"
+      },
+      "source_resource": {
+        "content_type": "text/csv",
+        "download_bytes": 297812,
+        "download_file": "610b435e-1877-4a4b-b0be-c73539979eec__FastFuels_Sampled_Treelist",
+        "download_sha256": "6e1fd9225496f4658fc682181d05b47522b3c39eab8cfc7c872a5bd10e46595f",
+        "url": "https://wifire-data.sdsc.edu/data/ndp/Data_challenge_2024/new_data/FF%20Tree%20List/fftl_plots.csv"
+      },
+      "split": "development",
+      "title": "FastFuels tree lists for field plots for UC Climate Action Seed Project: Scaling Science-Driven Vegetation Treatments for a Wildfire Resilient California"
+    },
+    {
+      "annotation_unit": "one acquired dataset resource",
+      "case_id": "ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8",
+      "cpa_applicability_status": "not_applicable_non_tabular_format",
+      "cpa_subject_column_status": "not_applicable",
+      "data_modality": "semi_structured",
+      "dataset_id": "0316eb60-7b34-4385-85dd-186a3a454a8a",
+      "field_count": 24,
+      "field_paths": [
+        "$.features",
+        "$.features[]",
+        "$.features[].geometry",
+        "$.features[].geometry.coordinates",
+        "$.features[].geometry.coordinates[]",
+        "$.features[].geometry.coordinates[][]",
+        "$.features[].geometry.coordinates[][][]",
+        "$.features[].geometry.type",
+        "$.features[].properties",
+        "$.features[].properties.crs",
+        "$.features[].properties.description_id",
+        "$.features[].properties.extra_links",
+        "$.features[].properties.extra_links[]",
+        "$.features[].properties.extra_links[].metprof",
+        "$.features[].properties.extra_links[].onlink",
+        "$.features[].properties.name",
+        "$.features[].properties.package_id",
+        "$.features[].properties.supplinf",
+        "$.features[].properties.temporal",
+        "$.features[].properties.temporal.endTime",
+        "$.features[].properties.temporal.startTime",
+        "$.features[].properties.url",
+        "$.features[].type",
+        "$.type"
+      ],
+      "file_format": "json",
+      "primary_analysis_cluster": "0316eb60-7b34-4385-85dd-186a3a454a8a",
+      "resource_id": "869fe564-c4ba-4568-9764-9e32c6535ff8",
+      "schema_artifact": {
+        "file": "schemas/development/0316eb60-7b34-4385-85dd-186a3a454a8a/869fe564-c4ba-4568-9764-9e32c6535ff8.json",
+        "sha256": "0d01f42bf939a61957c5eb522aa5cc90737128e14e5f14eccfc2dfaaae17dbdf"
+      },
+      "selection_stratum": "supported_semistructured",
+      "semantic_annotation_status": "eligible_requires_independent_gold",
+      "source_bundle_status": "not_built",
+      "source_detail_snapshot": {
+        "file": "0316eb60-7b34-4385-85dd-186a3a454a8a.json.gz",
+        "sha256": "c1fd221fcdbd4ba73b988d740bbcd91069c5974c91b507cdebc42425e917501c"
+      },
+      "source_resource": {
+        "content_type": "application/json",
+        "download_bytes": 6979139,
+        "download_file": "869fe564-c4ba-4568-9764-9e32c6535ff8__spatial_extents_AL_17Co_1_2020.json",
+        "download_sha256": "e6637b26368c9ad736ef33dd39cd4fc1bb44dff5ac0cd379391c8f9d0300103b",
+        "url": "https://wifire-data.sdsc.edu/dataset/0316eb60-7b34-4385-85dd-186a3a454a8a/resource/869fe564-c4ba-4568-9764-9e32c6535ff8/download/spatial_extents_al_17co_1_2020.json"
+      },
+      "split": "development",
+      "title": "AL_17Co_1_2020"
+    },
+    {
+      "annotation_unit": "one acquired dataset resource",
+      "case_id": "ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+      "cpa_applicability_status": "requires_manual_relation_and_subject_assessment",
+      "cpa_subject_column_status": "unassigned_requires_independent_annotation",
+      "data_modality": "tabular",
+      "dataset_id": "811f0bcc-99e5-455c-bcf6-7c63c2634f41",
+      "field_count": 23,
+      "field_paths": [
+        "Site",
+        "Latitude",
+        "(deg)",
+        "Longitude",
+        "(deg)__duplicate_2",
+        "EllipElev",
+        "(m)",
+        "X",
+        "(m)__duplicate_2",
+        "Y",
+        "(m)__duplicate_3",
+        "Z",
+        "(m)__duplicate_4",
+        "Epoch",
+        "(yr)",
+        "Net",
+        "Status",
+        "Last",
+        "yr.doy",
+        "Ant",
+        "Hght(m)",
+        "Type",
+        "Dome"
+      ],
+      "file_format": "csv",
+      "primary_analysis_cluster": "811f0bcc-99e5-455c-bcf6-7c63c2634f41",
+      "resource_id": "a420cc30-2262-423a-8c63-3ad8d91f2a8f",
+      "schema_artifact": {
+        "file": "schemas/development/811f0bcc-99e5-455c-bcf6-7c63c2634f41/a420cc30-2262-423a-8c63-3ad8d91f2a8f.json",
+        "sha256": "f57269711627e5df6fd070bb8148c1f275e21b4bc9fae3cdd467d1953932e9e4"
+      },
+      "selection_stratum": "supported_tabular",
+      "semantic_annotation_status": "eligible_requires_independent_gold",
+      "source_bundle_status": "not_built",
+      "source_detail_snapshot": {
+        "file": "811f0bcc-99e5-455c-bcf6-7c63c2634f41.json.gz",
+        "sha256": "288ee15e23930da8947f505b7ed12231658c739a8c6ca820189d9df5675e82ba"
+      },
+      "source_resource": {
+        "content_type": "text/csv",
+        "download_bytes": 153082,
+        "download_file": "a420cc30-2262-423a-8c63-3ad8d91f2a8f__earthscope_converted_data.csv",
+        "download_sha256": "200bbe9115b30af6715831bb219102f698d9315d41141d6e2c5313b95ee6a983",
+        "url": "https://nationaldataplatform.org/catalog/dataset/811f0bcc-99e5-455c-bcf6-7c63c2634f41/resource/a420cc30-2262-423a-8c63-3ad8d91f2a8f/download/earthscope_converted_data.csv"
+      },
+      "split": "development",
+      "title": "EarthScope Stations Dataset"
+    },
+    {
+      "annotation_unit": "one acquired dataset resource",
+      "case_id": "ndp50-development-b651063b-edb5-4d4f-ae50-7fbc5191ad11",
+      "cpa_applicability_status": "requires_manual_relation_and_subject_assessment",
+      "cpa_subject_column_status": "unassigned_requires_independent_annotation",
+      "data_modality": "tabular",
+      "dataset_id": "c7f29749-c6ab-4402-90ae-58fa5d23f830",
+      "field_count": 13,
+      "field_paths": [
+        "latitude",
+        "longitude",
+        "brightness",
+        "scan",
+        "track",
+        "acq_date",
+        "acq_time",
+        "satellite",
+        "confidence",
+        "version",
+        "bright_t31",
+        "frp",
+        "daynight"
+      ],
+      "file_format": "csv",
+      "primary_analysis_cluster": "c7f29749-c6ab-4402-90ae-58fa5d23f830",
+      "resource_id": "b651063b-edb5-4d4f-ae50-7fbc5191ad11",
+      "schema_artifact": {
+        "file": "schemas/development/c7f29749-c6ab-4402-90ae-58fa5d23f830/b651063b-edb5-4d4f-ae50-7fbc5191ad11.json",
+        "sha256": "8d000c3d75eb11f9fe26a29a32cb3da67d25a0555a589e4c4a892e94f3080fda"
+      },
+      "selection_stratum": "archive",
+      "semantic_annotation_status": "eligible_requires_independent_gold",
+      "source_bundle_status": "not_built",
+      "source_detail_snapshot": {
+        "file": "c7f29749-c6ab-4402-90ae-58fa5d23f830.json.gz",
+        "sha256": "56637e2b1439f0683c8e84e51441ee5a2ce6e1c29d5db71899e32e6940059c8f"
+      },
+      "source_resource": {
+        "content_type": "text/csv",
+        "download_bytes": 1057,
+        "download_file": "b651063b-edb5-4d4f-ae50-7fbc5191ad11__Text_Files_CSV_MODIS_1km_Alaska_7_day",
+        "download_sha256": "be1045a863fd60aa45d2de6c9e1b827afbc78dc6f25daf8a1e7641ce2a8b6f5d",
+        "url": "https://firms.modaps.eosdis.nasa.gov/data/active_fire/modis-c6.1/csv/MODIS_C6_1_Alaska_7d.csv"
+      },
+      "split": "development",
+      "title": "MODIS MCD14DL"
+    },
+    {
+      "annotation_unit": "one acquired dataset resource",
+      "case_id": "ndp50-development-c2bbcf64-3737-42b9-aaf9-2d9971f31085",
+      "cpa_applicability_status": "requires_manual_relation_and_subject_assessment",
+      "cpa_subject_column_status": "unassigned_requires_independent_annotation",
+      "data_modality": "tabular",
+      "dataset_id": "c7f29749-c6ab-4402-90ae-58fa5d23f830",
+      "field_count": 13,
+      "field_paths": [
+        "latitude",
+        "longitude",
+        "brightness",
+        "scan",
+        "track",
+        "acq_date",
+        "acq_time",
+        "satellite",
+        "confidence",
+        "version",
+        "bright_t31",
+        "frp",
+        "daynight"
+      ],
+      "file_format": "csv",
+      "primary_analysis_cluster": "c7f29749-c6ab-4402-90ae-58fa5d23f830",
+      "resource_id": "c2bbcf64-3737-42b9-aaf9-2d9971f31085",
+      "schema_artifact": {
+        "file": "schemas/development/c7f29749-c6ab-4402-90ae-58fa5d23f830/c2bbcf64-3737-42b9-aaf9-2d9971f31085.json",
+        "sha256": "4950f27e190231d6d4f1e2a6638ad5d58c6379e0c42b27766dc6ead2d3107480"
+      },
+      "selection_stratum": "archive",
+      "semantic_annotation_status": "eligible_requires_independent_gold",
+      "source_bundle_status": "not_built",
+      "source_detail_snapshot": {
+        "file": "c7f29749-c6ab-4402-90ae-58fa5d23f830.json.gz",
+        "sha256": "56637e2b1439f0683c8e84e51441ee5a2ce6e1c29d5db71899e32e6940059c8f"
+      },
+      "source_resource": {
+        "content_type": "text/csv",
+        "download_bytes": 660937,
+        "download_file": "c2bbcf64-3737-42b9-aaf9-2d9971f31085__Text_Files_CSV_MODIS_1km_USA_7_day",
+        "download_sha256": "db255fc41a146357ecdf316f81431bc212374df5f75ca380899ec376debe4594",
+        "url": "https://firms.modaps.eosdis.nasa.gov/data/active_fire/modis-c6.1/csv/MODIS_C6_1_USA_contiguous_and_Hawaii_7d.csv"
+      },
+      "split": "development",
+      "title": "MODIS MCD14DL"
+    },
+    {
+      "annotation_unit": "one acquired dataset resource",
+      "case_id": "ndp50-development-c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d",
+      "cpa_applicability_status": "requires_manual_relation_and_subject_assessment",
+      "cpa_subject_column_status": "unassigned_requires_independent_annotation",
+      "data_modality": "tabular",
+      "dataset_id": "c7f29749-c6ab-4402-90ae-58fa5d23f830",
+      "field_count": 13,
+      "field_paths": [
+        "latitude",
+        "longitude",
+        "brightness",
+        "scan",
+        "track",
+        "acq_date",
+        "acq_time",
+        "satellite",
+        "confidence",
+        "version",
+        "bright_t31",
+        "frp",
+        "daynight"
+      ],
+      "file_format": "csv",
+      "primary_analysis_cluster": "c7f29749-c6ab-4402-90ae-58fa5d23f830",
+      "resource_id": "c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d",
+      "schema_artifact": {
+        "file": "schemas/development/c7f29749-c6ab-4402-90ae-58fa5d23f830/c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d.json",
+        "sha256": "a62b866f4144f032a583b2a14c88da45e770fa2497a7efdc2c6129c532897c30"
+      },
+      "selection_stratum": "archive",
+      "semantic_annotation_status": "eligible_requires_independent_gold",
+      "source_bundle_status": "not_built",
+      "source_detail_snapshot": {
+        "file": "c7f29749-c6ab-4402-90ae-58fa5d23f830.json.gz",
+        "sha256": "56637e2b1439f0683c8e84e51441ee5a2ce6e1c29d5db71899e32e6940059c8f"
+      },
+      "source_resource": {
+        "content_type": "text/csv",
+        "download_bytes": 9107668,
+        "download_file": "c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d__Text_Files_CSV_MODIS_1km_World_7_day",
+        "download_sha256": "59c4bf7cfcab043a3a6b7467e2e0988004d8cf97201017466069185b7bb3b368",
+        "url": "https://firms.modaps.eosdis.nasa.gov/data/active_fire/modis-c6.1/csv/MODIS_C6_1_Global_7d.csv"
+      },
+      "split": "development",
+      "title": "MODIS MCD14DL"
+    },
+    {
+      "annotation_unit": "one acquired dataset resource",
+      "case_id": "ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+      "cpa_applicability_status": "requires_manual_relation_and_subject_assessment",
+      "cpa_subject_column_status": "unassigned_requires_independent_annotation",
+      "data_modality": "tabular",
+      "dataset_id": "6ebc92f4-daf4-4c52-b2c3-82276bc24ee5",
+      "field_count": 19,
+      "field_paths": [
+        "__unnamed_column_1",
+        "inventory_id",
+        "site_project",
+        "site_project_label",
+        "site_name",
+        "site_name_label",
+        "inventory_pre_post_fire",
+        "inventory_pre_post_fire_label",
+        "plot_num",
+        "plot_blk",
+        "inventory_date",
+        "inventory_hour",
+        "plot_coord_x",
+        "plot_coord_y",
+        "plot_coord_srs",
+        "plot_declination",
+        "inventory_plot_diam",
+        "plot_slopeper",
+        "plot_aspectdegre"
+      ],
+      "file_format": "csv",
+      "primary_analysis_cluster": "6ebc92f4-daf4-4c52-b2c3-82276bc24ee5",
+      "resource_id": "d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d",
+      "schema_artifact": {
+        "file": "schemas/development/6ebc92f4-daf4-4c52-b2c3-82276bc24ee5/d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d.json",
+        "sha256": "6a2777d124b5e49fdbfdf04b14758414c8e5db9919ac05ddd5af0c021540a75f"
+      },
+      "selection_stratum": "supported_tabular",
+      "semantic_annotation_status": "eligible_requires_independent_gold",
+      "source_bundle_status": "not_built",
+      "source_detail_snapshot": {
+        "file": "6ebc92f4-daf4-4c52-b2c3-82276bc24ee5.json.gz",
+        "sha256": "4ab1bcdb81f0802b3eca467efa57ab0c25861c0758cf103720f46e123363d654"
+      },
+      "source_resource": {
+        "content_type": "text/csv",
+        "download_bytes": 22991,
+        "download_file": "d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d__Plot_Identification",
+        "download_sha256": "ca8104f6865f7ffad3a99a2a653c9446cf6d6a9588d8a90ebc38df1642bbd24c",
+        "url": "https://wifire-data.sdsc.edu/data/ndp/Data_challenge_2024/new_data/blk_plot_identification.csv"
+      },
+      "split": "development",
+      "title": "FastFuels tree lists for field plots for UC Climate Action Seed Project: Scaling Science-Driven Vegetation Treatments for a Wildfire Resilient California"
+    },
+    {
+      "annotation_unit": "one acquired dataset resource",
+      "case_id": "ndp50-development-d15771b1-b612-478c-80ef-91d3e2e1c333",
+      "cpa_applicability_status": "requires_manual_relation_and_subject_assessment",
+      "cpa_subject_column_status": "unassigned_requires_independent_annotation",
+      "data_modality": "time_series",
+      "dataset_id": "8798da75-6631-4c44-b73d-e8e7e1788c27",
+      "field_count": 11,
+      "field_paths": [
+        "timestamp",
+        "latitude",
+        "longitude",
+        "pm1_ugm3",
+        "pm2p5_ugm3",
+        "pm10_ugm3",
+        "co",
+        "no",
+        "no2",
+        "o3",
+        "so2"
+      ],
+      "file_format": "csv",
+      "primary_analysis_cluster": "8798da75-6631-4c44-b73d-e8e7e1788c27",
+      "resource_id": "d15771b1-b612-478c-80ef-91d3e2e1c333",
+      "schema_artifact": {
+        "file": "schemas/development/8798da75-6631-4c44-b73d-e8e7e1788c27/d15771b1-b612-478c-80ef-91d3e2e1c333.json",
+        "sha256": "3e04c957fc8a52f4be2304daa69faf219edfb8fe2c2c427396d8c4dea4e15573"
+      },
+      "selection_stratum": "supported_tabular",
+      "semantic_annotation_status": "eligible_requires_independent_gold",
+      "source_bundle_status": "not_built",
+      "source_detail_snapshot": {
+        "file": "8798da75-6631-4c44-b73d-e8e7e1788c27.json.gz",
+        "sha256": "87bc09b26a6d264f76ddc613077e552f2e1491d6962ba9618448da8129c50b5c"
+      },
+      "source_resource": {
+        "content_type": "text/csv; charset=utf-8",
+        "download_bytes": 527930,
+        "download_file": "d15771b1-b612-478c-80ef-91d3e2e1c333__prediction_csv_2025-01-16_0000-1200_12h_utah",
+        "download_sha256": "9efccba484678cfb2eca8a6dbd041e622f574a89122b690af27f8512ffe8f3a1",
+        "url": "https://dev.air-quality.ndp.utah.edu/files?url=prediction%3A2025-01-16_0000-1200_12h_utah.csv"
+      },
+      "split": "development",
+      "title": "Aurora Predictions utah 20260323t015428"
+    },
+    {
+      "annotation_unit": "one acquired dataset resource",
+      "case_id": "ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+      "cpa_applicability_status": "not_applicable_non_tabular_format",
+      "cpa_subject_column_status": "not_applicable",
+      "data_modality": "semi_structured",
+      "dataset_id": "9e4eb306-3029-4640-b279-1a7fd49253d6",
+      "field_count": 24,
+      "field_paths": [
+        "$.features",
+        "$.features[]",
+        "$.features[].geometry",
+        "$.features[].geometry.coordinates",
+        "$.features[].geometry.coordinates[]",
+        "$.features[].geometry.coordinates[][]",
+        "$.features[].geometry.coordinates[][][]",
+        "$.features[].geometry.type",
+        "$.features[].properties",
+        "$.features[].properties.crs",
+        "$.features[].properties.description_id",
+        "$.features[].properties.extra_links",
+        "$.features[].properties.extra_links[]",
+        "$.features[].properties.extra_links[].metprof",
+        "$.features[].properties.extra_links[].onlink",
+        "$.features[].properties.name",
+        "$.features[].properties.package_id",
+        "$.features[].properties.supplinf",
+        "$.features[].properties.temporal",
+        "$.features[].properties.temporal.endTime",
+        "$.features[].properties.temporal.startTime",
+        "$.features[].properties.url",
+        "$.features[].type",
+        "$.type"
+      ],
+      "file_format": "json",
+      "primary_analysis_cluster": "9e4eb306-3029-4640-b279-1a7fd49253d6",
+      "resource_id": "ec9f2672-e152-4bf8-9ff2-f88a672b4587",
+      "schema_artifact": {
+        "file": "schemas/development/9e4eb306-3029-4640-b279-1a7fd49253d6/ec9f2672-e152-4bf8-9ff2-f88a672b4587.json",
+        "sha256": "4ec298aafe6af2987755b6188b96c0b811f7f40be0443fd5790703feaa23a593"
+      },
+      "selection_stratum": "supported_semistructured",
+      "semantic_annotation_status": "eligible_requires_independent_gold",
+      "source_bundle_status": "not_built",
+      "source_detail_snapshot": {
+        "file": "9e4eb306-3029-4640-b279-1a7fd49253d6.json.gz",
+        "sha256": "5d98f4f75a12095e772f871324d3ace04692f480599d612226a7951993636380"
+      },
+      "source_resource": {
+        "content_type": "application/json",
+        "download_bytes": 1155,
+        "download_file": "ec9f2672-e152-4bf8-9ff2-f88a672b4587__spatial_extents_NM_RioSanJose_2016.json",
+        "download_sha256": "bc79c45d152b6768e6dea079ef42eaf7d31a88e3bc744393dd0baab6757c23d1",
+        "url": "https://wifire-data.sdsc.edu/dataset/9e4eb306-3029-4640-b279-1a7fd49253d6/resource/ec9f2672-e152-4bf8-9ff2-f88a672b4587/download/spatial_extents_nm_riosanjose_2016.json"
+      },
+      "split": "development",
+      "title": "NM_RioSanJose_2016"
+    },
+    {
+      "annotation_unit": "one acquired dataset resource",
+      "case_id": "ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+      "cpa_applicability_status": "not_applicable_non_tabular_format",
+      "cpa_subject_column_status": "not_applicable",
+      "data_modality": "semi_structured",
+      "dataset_id": "ec326db2-4027-4694-99e3-4b9c3d7a29dc",
+      "field_count": 24,
+      "field_paths": [
+        "$.features",
+        "$.features[]",
+        "$.features[].geometry",
+        "$.features[].geometry.coordinates",
+        "$.features[].geometry.coordinates[]",
+        "$.features[].geometry.coordinates[][]",
+        "$.features[].geometry.coordinates[][][]",
+        "$.features[].geometry.type",
+        "$.features[].properties",
+        "$.features[].properties.crs",
+        "$.features[].properties.description_id",
+        "$.features[].properties.extra_links",
+        "$.features[].properties.extra_links[]",
+        "$.features[].properties.extra_links[].metprof",
+        "$.features[].properties.extra_links[].onlink",
+        "$.features[].properties.name",
+        "$.features[].properties.package_id",
+        "$.features[].properties.supplinf",
+        "$.features[].properties.temporal",
+        "$.features[].properties.temporal.endTime",
+        "$.features[].properties.temporal.startTime",
+        "$.features[].properties.url",
+        "$.features[].type",
+        "$.type"
+      ],
+      "file_format": "json",
+      "primary_analysis_cluster": "ec326db2-4027-4694-99e3-4b9c3d7a29dc",
+      "resource_id": "fb5156fb-0f6c-49fc-b721-b6098a7bb894",
+      "schema_artifact": {
+        "file": "schemas/development/ec326db2-4027-4694-99e3-4b9c3d7a29dc/fb5156fb-0f6c-49fc-b721-b6098a7bb894.json",
+        "sha256": "332b0055bc90dff2c884d54a1d8f1f2fccb4efa85747f9caa45894f343cbe855"
+      },
+      "selection_stratum": "supported_semistructured",
+      "semantic_annotation_status": "eligible_requires_independent_gold",
+      "source_bundle_status": "not_built",
+      "source_detail_snapshot": {
+        "file": "ec326db2-4027-4694-99e3-4b9c3d7a29dc.json.gz",
+        "sha256": "8443f76a4c3ae2622cc1594004d0cf175ff949af144e76b7b63061dc22b78eff"
+      },
+      "source_resource": {
+        "content_type": "application/json",
+        "download_bytes": 1174,
+        "download_file": "fb5156fb-0f6c-49fc-b721-b6098a7bb894__spatial_extents_TX_East-UTM14_2017.json",
+        "download_sha256": "0917e243b6e0d3091ea0d1d7718713e4469369d903b4806a4fb1b7460e9d35ad",
+        "url": "https://wifire-data.sdsc.edu/dataset/ec326db2-4027-4694-99e3-4b9c3d7a29dc/resource/fb5156fb-0f6c-49fc-b721-b6098a7bb894/download/spatial_extents_tx_east-utm14_2017.json"
+      },
+      "split": "development",
+      "title": "TX_East-UTM14_2017"
+    },
+    {
+      "annotation_unit": "one acquired dataset resource",
+      "case_id": "ndp50-validation-47f47360-a5e2-441c-9b43-6cadf6eab7b6",
+      "cpa_applicability_status": "requires_manual_relation_and_subject_assessment",
+      "cpa_subject_column_status": "unassigned_requires_independent_annotation",
+      "data_modality": "tabular",
+      "dataset_id": "d7f05458-e03c-493a-8fd4-458f32a7aecb",
+      "field_count": 11,
+      "field_paths": [
+        "__unnamed_column_1",
+        "TreeID",
+        "X",
+        "Y",
+        "Radius",
+        "Error",
+        "H",
+        "h_radius",
+        "DBH",
+        "BasalA",
+        "plot_blk"
+      ],
+      "file_format": "csv",
+      "primary_analysis_cluster": "d7f05458-e03c-493a-8fd4-458f32a7aecb",
+      "resource_id": "47f47360-a5e2-441c-9b43-6cadf6eab7b6",
+      "schema_artifact": {
+        "file": "schemas/validation/d7f05458-e03c-493a-8fd4-458f32a7aecb/47f47360-a5e2-441c-9b43-6cadf6eab7b6.json",
+        "sha256": "a07ae6e56b82dee8bff20c445ac9cc78ac748a01fadfb6baa1d65062841603e9"
+      },
+      "selection_stratum": "archive",
+      "semantic_annotation_status": "eligible_requires_independent_gold",
+      "source_bundle_status": "not_built",
+      "source_detail_snapshot": {
+        "file": "d7f05458-e03c-493a-8fd4-458f32a7aecb.json.gz",
+        "sha256": "68ec91251756d833383c431ce0eccfd3b3b9f38e2abd0fe056a8e0fd48e93809"
+      },
+      "source_resource": {
+        "content_type": "text/csv",
+        "download_bytes": 199214,
+        "download_file": "47f47360-a5e2-441c-9b43-6cadf6eab7b6__TLS_Treelist",
+        "download_sha256": "d4b0ffc3a03303eeda5e3772e8ead48d92a7a8e302b2bb9d756b359f1c67f168",
+        "url": "https://wifire-data.sdsc.edu/data/ndp/Data_challenge_2024/new_data/Derived%20TLS%20and%20Tree%20List/TLS_treelist.csv"
+      },
+      "split": "validation",
+      "title": "Terrestrial lidar scans (TLS) and derived tree lists for field sampled plots for UC Climate Action Seed Project: Scaling Science-Driven Vegetation Treatments for a Wildfire Resilient California"
+    },
+    {
+      "annotation_unit": "one acquired dataset resource",
+      "case_id": "ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c",
+      "cpa_applicability_status": "requires_manual_relation_and_subject_assessment",
+      "cpa_subject_column_status": "unassigned_requires_independent_annotation",
+      "data_modality": "tabular",
+      "dataset_id": "35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4",
+      "field_count": 13,
+      "field_paths": [
+        "lat",
+        " lon",
+        " rep_date",
+        " source",
+        " sensor",
+        " fwi",
+        " fuel",
+        " ros",
+        " sfc",
+        " tfc",
+        " bfc",
+        " hfi",
+        " estarea"
+      ],
+      "file_format": "csv",
+      "primary_analysis_cluster": "35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4",
+      "resource_id": "50f44e8d-aad5-4e09-8b9b-43c73898b53c",
+      "schema_artifact": {
+        "file": "schemas/validation/35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4/50f44e8d-aad5-4e09-8b9b-43c73898b53c.json",
+        "sha256": "07bc05064a69ee1b5b0d681cd2b967ccb28344bbd7bbed69855a8da57dd516bd"
+      },
+      "selection_stratum": "supported_tabular",
+      "semantic_annotation_status": "eligible_requires_independent_gold",
+      "source_bundle_status": "not_built",
+      "source_detail_snapshot": {
+        "file": "35bef1c6-f76a-4d2b-8134-f6aa5dce9ec4.json.gz",
+        "sha256": "02d3ca8c656e2589dd174c588471b63f606862e715305b05ef6168ac8efb6aa7"
+      },
+      "source_resource": {
+        "content_type": "application/octet-stream",
+        "download_bytes": 247537,
+        "download_file": "50f44e8d-aad5-4e09-8b9b-43c73898b53c__CWFIS_fire_data",
+        "download_sha256": "6826ab561d8560a04cd4da4066c07d414b5fdedbb2c31d51ae27c8b3984a4b3c",
+        "url": "https://firesmoke.ca/data/cwfis/hotspots/20240131.csv"
+      },
+      "split": "validation",
+      "title": "CWFIS fire data"
+    },
+    {
+      "annotation_unit": "one acquired dataset resource",
+      "case_id": "ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+      "cpa_applicability_status": "not_applicable_non_tabular_format",
+      "cpa_subject_column_status": "not_applicable",
+      "data_modality": "semi_structured",
+      "dataset_id": "28580a91-43fe-42d1-a87a-01b4dd036667",
+      "field_count": 27,
+      "field_paths": [
+        "$.crs",
+        "$.crs.properties",
+        "$.crs.properties.name",
+        "$.crs.type",
+        "$.features",
+        "$.features[]",
+        "$.features[].geometry",
+        "$.features[].geometry.coordinates",
+        "$.features[].geometry.coordinates[]",
+        "$.features[].geometry.coordinates[][]",
+        "$.features[].geometry.coordinates[][][]",
+        "$.features[].geometry.type",
+        "$.features[].properties",
+        "$.features[].properties.URL",
+        "$.features[].properties.file_name",
+        "$.features[].properties.max_x",
+        "$.features[].properties.max_y",
+        "$.features[].properties.max_z",
+        "$.features[].properties.min_x",
+        "$.features[].properties.min_y",
+        "$.features[].properties.min_z",
+        "$.features[].properties.num_points",
+        "$.features[].properties.point_size",
+        "$.features[].properties.point_type",
+        "$.features[].properties.version",
+        "$.features[].type",
+        "$.type"
+      ],
+      "file_format": "json",
+      "primary_analysis_cluster": "28580a91-43fe-42d1-a87a-01b4dd036667",
+      "resource_id": "6cb32478-e0a7-4915-a76b-232bb1f7eba1",
+      "schema_artifact": {
+        "file": "schemas/validation/28580a91-43fe-42d1-a87a-01b4dd036667/6cb32478-e0a7-4915-a76b-232bb1f7eba1.json",
+        "sha256": "e03ab8522440fc8a99eb23c56ea6d3c4c4f3d53f86a5e3418ed6f436daa08eb8"
+      },
+      "selection_stratum": "supported_semistructured",
+      "semantic_annotation_status": "eligible_requires_independent_gold",
+      "source_bundle_status": "not_built",
+      "source_detail_snapshot": {
+        "file": "28580a91-43fe-42d1-a87a-01b4dd036667.json.gz",
+        "sha256": "def110c363947b4d682b9cd7bb04f055b8c6b7d50f7654df94412b3322df8fc9"
+      },
+      "source_resource": {
+        "content_type": "application/json",
+        "download_bytes": 122023,
+        "download_file": "6cb32478-e0a7-4915-a76b-232bb1f7eba1__spatial_extents_CA09_Meadow.json",
+        "download_sha256": "fa0ded3d4bad9142584b7828ad219783efe122da7e24c4d84d65f0c02c36ef66",
+        "url": "https://wifire-data.sdsc.edu/dataset/28580a91-43fe-42d1-a87a-01b4dd036667/resource/6cb32478-e0a7-4915-a76b-232bb1f7eba1/download/ca09_meadow.json"
+      },
+      "split": "validation",
+      "title": "USFS Meadow Valley Lidar, CA 2009"
+    },
+    {
+      "annotation_unit": "one acquired dataset resource",
+      "case_id": "ndp50-validation-a47379a9-8051-42bf-9ddd-94f33b672ac6",
+      "cpa_applicability_status": "requires_manual_relation_and_subject_assessment",
+      "cpa_subject_column_status": "unassigned_requires_independent_annotation",
+      "data_modality": "time_series",
+      "dataset_id": "9c01c9f6-c815-433d-b22a-3f9b37bfb570",
+      "field_count": 11,
+      "field_paths": [
+        "timestamp",
+        "latitude",
+        "longitude",
+        "pm1_ugm3",
+        "pm2p5_ugm3",
+        "pm10_ugm3",
+        "co",
+        "no",
+        "no2",
+        "o3",
+        "so2"
+      ],
+      "file_format": "csv",
+      "primary_analysis_cluster": "9c01c9f6-c815-433d-b22a-3f9b37bfb570",
+      "resource_id": "a47379a9-8051-42bf-9ddd-94f33b672ac6",
+      "schema_artifact": {
+        "file": "schemas/validation/9c01c9f6-c815-433d-b22a-3f9b37bfb570/a47379a9-8051-42bf-9ddd-94f33b672ac6.json",
+        "sha256": "520297e183aadbf712146a9cb0bfae87abbfc910f467f458b21ecc3f17b827c5"
+      },
+      "selection_stratum": "supported_tabular",
+      "semantic_annotation_status": "eligible_requires_independent_gold",
+      "source_bundle_status": "not_built",
+      "source_detail_snapshot": {
+        "file": "9c01c9f6-c815-433d-b22a-3f9b37bfb570.json.gz",
+        "sha256": "a7af0ee7ad8cf6cd88b62acad362fc2433c134c5be6ec2693453b14a535ca6bc"
+      },
+      "source_resource": {
+        "content_type": "text/csv; charset=utf-8",
+        "download_bytes": 526216,
+        "download_file": "a47379a9-8051-42bf-9ddd-94f33b672ac6__prediction_csv_2025-01-30_0000-1200_12h_utah",
+        "download_sha256": "cfba18968b8690bafdee3f7f659e630987f34c9155f6a1ea48e2d541b9baf84d",
+        "url": "https://dev.air-quality.ndp.utah.edu/files?url=prediction%3A2025-01-30_0000-1200_12h_utah.csv"
+      },
+      "split": "validation",
+      "title": "Aurora Predictions utah 20260224t002623"
+    },
+    {
+      "annotation_unit": "one acquired dataset resource",
+      "case_id": "ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+      "cpa_applicability_status": "requires_manual_relation_and_subject_assessment",
+      "cpa_subject_column_status": "unassigned_requires_independent_annotation",
+      "data_modality": "tabular",
+      "dataset_id": "d7f05458-e03c-493a-8fd4-458f32a7aecb",
+      "field_count": 19,
+      "field_paths": [
+        "__unnamed_column_1",
+        "inventory_id",
+        "site_project",
+        "site_project_label",
+        "site_name",
+        "site_name_label",
+        "inventory_pre_post_fire",
+        "inventory_pre_post_fire_label",
+        "plot_num",
+        "plot_blk",
+        "inventory_date",
+        "inventory_hour",
+        "plot_coord_x",
+        "plot_coord_y",
+        "plot_coord_srs",
+        "plot_declination",
+        "inventory_plot_diam",
+        "plot_slopeper",
+        "plot_aspectdegre"
+      ],
+      "file_format": "csv",
+      "primary_analysis_cluster": "d7f05458-e03c-493a-8fd4-458f32a7aecb",
+      "resource_id": "a650acb8-dc9d-4ec1-b98a-f5d852552e01",
+      "schema_artifact": {
+        "file": "schemas/validation/d7f05458-e03c-493a-8fd4-458f32a7aecb/a650acb8-dc9d-4ec1-b98a-f5d852552e01.json",
+        "sha256": "740549975a72ecd65e1dbed03bf3a62d6ee0a95e747e174e9496ffee28af1995"
+      },
+      "selection_stratum": "archive",
+      "semantic_annotation_status": "eligible_requires_independent_gold",
+      "source_bundle_status": "not_built",
+      "source_detail_snapshot": {
+        "file": "d7f05458-e03c-493a-8fd4-458f32a7aecb.json.gz",
+        "sha256": "68ec91251756d833383c431ce0eccfd3b3b9f38e2abd0fe056a8e0fd48e93809"
+      },
+      "source_resource": {
+        "content_type": "text/csv",
+        "download_bytes": 22991,
+        "download_file": "a650acb8-dc9d-4ec1-b98a-f5d852552e01__Plot_Identification",
+        "download_sha256": "ca8104f6865f7ffad3a99a2a653c9446cf6d6a9588d8a90ebc38df1642bbd24c",
+        "url": "https://wifire-data.sdsc.edu/data/ndp/Data_challenge_2024/new_data/blk_plot_identification.csv"
+      },
+      "split": "validation",
+      "title": "Terrestrial lidar scans (TLS) and derived tree lists for field sampled plots for UC Climate Action Seed Project: Scaling Science-Driven Vegetation Treatments for a Wildfire Resilient California"
+    },
+    {
+      "annotation_unit": "one acquired dataset resource",
+      "case_id": "ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+      "cpa_applicability_status": "not_applicable_non_tabular_format",
+      "cpa_subject_column_status": "not_applicable",
+      "data_modality": "semi_structured",
+      "dataset_id": "b0ebb62d-5c60-47c9-a2a3-d3c0eb1ce643",
+      "field_count": 21,
+      "field_paths": [
+        "$.crs",
+        "$.crs.properties",
+        "$.crs.properties.name",
+        "$.crs.type",
+        "$.features",
+        "$.features[]",
+        "$.features[].geometry",
+        "$.features[].geometry.coordinates",
+        "$.features[].geometry.coordinates[]",
+        "$.features[].geometry.coordinates[][]",
+        "$.features[].geometry.coordinates[][][]",
+        "$.features[].geometry.type",
+        "$.features[].properties",
+        "$.features[].properties.highway",
+        "$.features[].properties.name",
+        "$.features[].properties.osm_id",
+        "$.features[].properties.other_tags",
+        "$.features[].properties.width",
+        "$.features[].type",
+        "$.name",
+        "$.type"
+      ],
+      "file_format": "json",
+      "primary_analysis_cluster": "b0ebb62d-5c60-47c9-a2a3-d3c0eb1ce643",
+      "resource_id": "ca3a45e8-d931-4a27-ab5c-45d65a37a017",
+      "schema_artifact": {
+        "file": "schemas/validation/b0ebb62d-5c60-47c9-a2a3-d3c0eb1ce643/ca3a45e8-d931-4a27-ab5c-45d65a37a017.json",
+        "sha256": "69a8e6ed02148810f404d3d1620239b9b34b1537713828788dc79f61d3033957"
+      },
+      "selection_stratum": "supported_semistructured",
+      "semantic_annotation_status": "eligible_requires_independent_gold",
+      "source_bundle_status": "not_built",
+      "source_detail_snapshot": {
+        "file": "b0ebb62d-5c60-47c9-a2a3-d3c0eb1ce643.json.gz",
+        "sha256": "ca2086ae273167533f2ba8672638d7aea09c10a9f7215be8cd86b52ec13e76bd"
+      },
+      "source_resource": {
+        "content_type": null,
+        "download_bytes": 646696,
+        "download_file": "ca3a45e8-d931-4a27-ab5c-45d65a37a017__Roads",
+        "download_sha256": "33b4bd67e3e0c040ba0e8f773e4b0470740c1c57c11429f84095f5b29dad48f8",
+        "url": "https://scil-data.sdsc.edu/data/ul-risk-modeling-2026/Forest/Forest_roads.geojson"
+      },
+      "split": "validation",
+      "title": "Forest Roads"
+    }
+  ],
+  "claim_boundary": "Development/validation opportunity inventory only. It contains no test identities, semantic labels, subject-column labels, or gold.",
+  "counts": {
+    "case_count": 16,
+    "cpa_applicability_statuses": {
+      "not_applicable_non_tabular_format": 5,
+      "requires_manual_relation_and_subject_assessment": 11
+    },
+    "dataset_cluster_count": 12,
+    "semantic_annotation_statuses": {
+      "eligible_requires_independent_gold": 16
+    },
+    "split_case_counts": {
+      "development": 10,
+      "validation": 6
+    }
+  },
+  "created_at": "2026-07-26T23:00:24.831361Z",
+  "failure_ledgers": [
+    {
+      "entry_count": 27,
+      "file": "failure_ledger.json",
+      "sha256": "bce92a614f3c2d5ee9945efd6bf42e622b84fff005d18c3e56679b3e10f7a8a9",
+      "split": "development"
+    },
+    {
+      "entry_count": 5048,
+      "file": "failure_ledger.json",
+      "sha256": "938cf2a6f6b6aa31c72d5e0805da7be85ecdfae0c21235c82e91ec5e5843ccdf",
+      "split": "validation"
+    }
+  ],
+  "input_runs": [
+    {
+      "file": "development_run_v4.json",
+      "sha256": "153059006b7cf62a5111e5ef66f87a12b7d2ef5067e8b8f642f5ed7ab8c28981",
+      "split": "development"
+    },
+    {
+      "file": "validation_run_v3.json",
+      "sha256": "5bf12d295cc9ce5be9003032f6c986bb5f1e8bf1f8052b1c8c66e67c21415b4b",
+      "split": "validation"
+    }
+  ],
+  "protocol_version": "ndp50-external-validation-protocol/v1",
+  "schema_version": "ndp50-semantic-opportunity-manifest/v1",
+  "selection": {
+    "file": "selection.json",
+    "sha256": "27d73de3b4aa8638616588fdac0d927d79321d7d230d2c55f96c952689bd471d"
+  }
+}

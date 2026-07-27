@@ -94,6 +94,32 @@ class CsvExtractorTests(unittest.TestCase):
         self.assertIsNone(fields["value_c"].unit)
         self.assertEqual(fields["value_c"].unit_normalization["status"], "no_unit_claim")
 
+    def test_blank_and_duplicate_headers_receive_stable_unique_paths(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            csv_path = Path(tmp_dir) / "headers.csv"
+            csv_path.write_text(
+                ",value,value\n1,2,3\n4,5,6\n",
+                encoding="utf-8",
+            )
+
+            schema = extract_csv_schema(str(csv_path))
+
+        self.assertEqual(
+            [field.field_path for field in schema.fields],
+            ["__unnamed_column_1", "value", "value__duplicate_2"],
+        )
+        self.assertEqual(
+            [
+                item["canonicalization_reason"]
+                for item in schema.metadata["csv_header_mapping"]
+            ],
+            ["blank_header", "preserved", "duplicate_header"],
+        )
+        self.assertEqual(
+            [field.example_values for field in schema.fields],
+            [["1", "4"], ["2", "5"], ["3", "6"]],
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

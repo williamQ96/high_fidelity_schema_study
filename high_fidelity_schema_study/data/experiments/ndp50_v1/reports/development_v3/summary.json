@@ -1,0 +1,328 @@
+{
+  "claim_boundary": "Structural acquisition/extraction coverage only; semantic accuracy requires independently frozen gold.",
+  "coverage": {
+    "acquisition_rate_given_attempt": 0.769231,
+    "dataset_end_to_end_rate": 0.466667,
+    "datasets_with_successful_extraction": 7,
+    "extraction_success_rate_given_acquisition": 1.0,
+    "macro_mean_dataset_resource_end_to_end_rate": 0.355556,
+    "resource_end_to_end_rate": 0.27027,
+    "resources_with_successful_extraction": 10
+  },
+  "dataset_bootstrap_interval": {
+    "confidence_level": 0.95,
+    "lower": 0.2,
+    "method": "fixed_seed_nonparametric_dataset_bootstrap_percentile",
+    "repetitions": 10000,
+    "seed_text": "ndp50:development:dataset-end-to-end:v1",
+    "upper": 0.733333
+  },
+  "dataset_outcome_classes": {
+    "attempted_but_not_acquired": 1,
+    "no_policy_attempt": 7,
+    "schema_extracted": 7
+  },
+  "dataset_summaries": [
+    {
+      "abstention_count": 0,
+      "acquired_payload_count": 1,
+      "attempted_resource_count": 1,
+      "catalog_resource_count": 2,
+      "dataset_id": "0316eb60-7b34-4385-85dd-186a3a454a8a",
+      "outcome_class": "schema_extracted",
+      "partial_extraction_count": 0,
+      "primary_format_class": "supported_semistructured",
+      "resource_end_to_end_rate": 0.5,
+      "successful_extraction_count": 1,
+      "title": "AL_17Co_1_2020"
+    },
+    {
+      "abstention_count": 0,
+      "acquired_payload_count": 0,
+      "attempted_resource_count": 2,
+      "catalog_resource_count": 6,
+      "dataset_id": "0998867b-9aac-4bf9-a408-c67fbcab7176",
+      "outcome_class": "attempted_but_not_acquired",
+      "partial_extraction_count": 0,
+      "primary_format_class": "other_or_unknown",
+      "resource_end_to_end_rate": 0.0,
+      "successful_extraction_count": 0,
+      "title": "WFIGS Interagency Fire Perimeters"
+    },
+    {
+      "abstention_count": 0,
+      "acquired_payload_count": 0,
+      "attempted_resource_count": 0,
+      "catalog_resource_count": 1,
+      "dataset_id": "3bfd82a8-9676-4c8b-a791-d2a31cb84de7",
+      "outcome_class": "no_policy_attempt",
+      "partial_extraction_count": 0,
+      "primary_format_class": "supported_hierarchical",
+      "resource_end_to_end_rate": 0.0,
+      "successful_extraction_count": 0,
+      "title": "Hitchiti (Piedmont) Prescribed Fire Ignition With Adjusted Moisture Scenarios"
+    },
+    {
+      "abstention_count": 0,
+      "acquired_payload_count": 2,
+      "attempted_resource_count": 3,
+      "catalog_resource_count": 4,
+      "dataset_id": "6ebc92f4-daf4-4c52-b2c3-82276bc24ee5",
+      "outcome_class": "schema_extracted",
+      "partial_extraction_count": 0,
+      "primary_format_class": "supported_tabular",
+      "resource_end_to_end_rate": 0.5,
+      "successful_extraction_count": 2,
+      "title": "FastFuels tree lists for field plots for UC Climate Action Seed Project: Scaling Science-Driven Vegetation Treatments for a Wildfire Resilient California"
+    },
+    {
+      "abstention_count": 0,
+      "acquired_payload_count": 0,
+      "attempted_resource_count": 0,
+      "catalog_resource_count": 4,
+      "dataset_id": "7686770a-de97-4067-86a6-66cbadd2faa1",
+      "outcome_class": "no_policy_attempt",
+      "partial_extraction_count": 0,
+      "primary_format_class": "geospatial_or_image",
+      "resource_end_to_end_rate": 0.0,
+      "successful_extraction_count": 0,
+      "title": "Lidar Survey of Sparta Earthquake Rupture, NC 2020"
+    },
+    {
+      "abstention_count": 0,
+      "acquired_payload_count": 1,
+      "attempted_resource_count": 1,
+      "catalog_resource_count": 1,
+      "dataset_id": "811f0bcc-99e5-455c-bcf6-7c63c2634f41",
+      "outcome_class": "schema_extracted",
+      "partial_extraction_count": 0,
+      "primary_format_class": "supported_tabular",
+      "resource_end_to_end_rate": 1.0,
+      "successful_extraction_count": 1,
+      "title": "EarthScope Stations Dataset"
+    },
+    {
+      "abstention_count": 0,
+      "acquired_payload_count": 0,
+      "attempted_resource_count": 0,
+      "catalog_resource_count": 1,
+      "dataset_id": "872ba2a0-4e91-4a74-b2b4-21073a21ad7b",
+      "outcome_class": "no_policy_attempt",
+      "partial_extraction_count": 0,
+      "primary_format_class": "supported_hierarchical",
+      "resource_end_to_end_rate": 0.0,
+      "successful_extraction_count": 0,
+      "title": "FastFuels"
+    },
+    {
+      "abstention_count": 0,
+      "acquired_payload_count": 0,
+      "attempted_resource_count": 0,
+      "catalog_resource_count": 2,
+      "dataset_id": "8775a68d-885a-47f1-a13a-b6806c6c89be",
+      "outcome_class": "no_policy_attempt",
+      "partial_extraction_count": 0,
+      "primary_format_class": "geospatial_or_image",
+      "resource_end_to_end_rate": 0.0,
+      "successful_extraction_count": 0,
+      "title": "VIIRS/JPSS1 Thermal Anomalies/Fire 6-Min L2 Swath 750m V002"
+    },
+    {
+      "abstention_count": 0,
+      "acquired_payload_count": 1,
+      "attempted_resource_count": 1,
+      "catalog_resource_count": 1,
+      "dataset_id": "8798da75-6631-4c44-b73d-e8e7e1788c27",
+      "outcome_class": "schema_extracted",
+      "partial_extraction_count": 0,
+      "primary_format_class": "supported_tabular",
+      "resource_end_to_end_rate": 1.0,
+      "successful_extraction_count": 1,
+      "title": "Aurora Predictions utah 20260323t015428"
+    },
+    {
+      "abstention_count": 0,
+      "acquired_payload_count": 0,
+      "attempted_resource_count": 0,
+      "catalog_resource_count": 1,
+      "dataset_id": "96c6e757-b46b-4f5a-a06a-2b8f3f16b914",
+      "outcome_class": "no_policy_attempt",
+      "partial_extraction_count": 0,
+      "primary_format_class": "documentation_or_text",
+      "resource_end_to_end_rate": 0.0,
+      "successful_extraction_count": 0,
+      "title": "Swedish Register Data (Swedish Administrative Registers)"
+    },
+    {
+      "abstention_count": 0,
+      "acquired_payload_count": 0,
+      "attempted_resource_count": 0,
+      "catalog_resource_count": 1,
+      "dataset_id": "9be16b9b-086c-4436-875a-1804ea6f5e63",
+      "outcome_class": "no_policy_attempt",
+      "partial_extraction_count": 0,
+      "primary_format_class": "other_or_unknown",
+      "resource_end_to_end_rate": 0.0,
+      "successful_extraction_count": 0,
+      "title": "Interagency Treatment Dashboard"
+    },
+    {
+      "abstention_count": 0,
+      "acquired_payload_count": 1,
+      "attempted_resource_count": 1,
+      "catalog_resource_count": 1,
+      "dataset_id": "9e4eb306-3029-4640-b279-1a7fd49253d6",
+      "outcome_class": "schema_extracted",
+      "partial_extraction_count": 0,
+      "primary_format_class": "supported_semistructured",
+      "resource_end_to_end_rate": 1.0,
+      "successful_extraction_count": 1,
+      "title": "NM_RioSanJose_2016"
+    },
+    {
+      "abstention_count": 0,
+      "acquired_payload_count": 0,
+      "attempted_resource_count": 0,
+      "catalog_resource_count": 2,
+      "dataset_id": "aadd47f8-4381-4900-8c80-9949506bda95",
+      "outcome_class": "no_policy_attempt",
+      "partial_extraction_count": 0,
+      "primary_format_class": "archive",
+      "resource_end_to_end_rate": 0.0,
+      "successful_extraction_count": 0,
+      "title": "Dataset for: Anatomical Variations of the Cardiac Conduction System in Healthy Neonatal Human Hearts"
+    },
+    {
+      "abstention_count": 0,
+      "acquired_payload_count": 3,
+      "attempted_resource_count": 3,
+      "catalog_resource_count": 9,
+      "dataset_id": "c7f29749-c6ab-4402-90ae-58fa5d23f830",
+      "outcome_class": "schema_extracted",
+      "partial_extraction_count": 0,
+      "primary_format_class": "archive",
+      "resource_end_to_end_rate": 0.333333,
+      "successful_extraction_count": 3,
+      "title": "MODIS MCD14DL"
+    },
+    {
+      "abstention_count": 0,
+      "acquired_payload_count": 1,
+      "attempted_resource_count": 1,
+      "catalog_resource_count": 1,
+      "dataset_id": "ec326db2-4027-4694-99e3-4b9c3d7a29dc",
+      "outcome_class": "schema_extracted",
+      "partial_extraction_count": 0,
+      "primary_format_class": "supported_semistructured",
+      "resource_end_to_end_rate": 1.0,
+      "successful_extraction_count": 1,
+      "title": "TX_East-UTM14_2017"
+    }
+  ],
+  "denominators": {
+    "acquired_dataset_payloads": 10,
+    "catalog_resources": 37,
+    "datasets": 15,
+    "policy_attempted_resources": 13
+  },
+  "download_statuses": {
+    "acquired": 10,
+    "provider_export_pending": 1,
+    "skip_dataset_resource_cap": 1,
+    "skip_remote_store_locator_incomplete": 2,
+    "skip_unsupported_format": 21,
+    "skipped_too_large": 2
+  },
+  "extraction_issue_codes": {
+    "sampling_insufficient": 5
+  },
+  "extraction_statuses": {
+    "success": 10
+  },
+  "failure_reason_counts": {
+    "content_length_exceeds_frozen_limit": 2,
+    "provider_control_response": 1,
+    "skip_dataset_resource_cap": 1,
+    "skip_remote_store_locator_incomplete": 2,
+    "skip_unsupported_format": 21
+  },
+  "plan_decisions": {
+    "attempt": 13,
+    "skip_dataset_resource_cap": 1,
+    "skip_remote_store_locator_incomplete": 2,
+    "skip_unsupported_format": 21
+  },
+  "resource_count_skew": {
+    "maximum": 9,
+    "maximum_dataset_id": "c7f29749-c6ab-4402-90ae-58fa5d23f830",
+    "maximum_share_of_all_resources": 0.243243,
+    "median": 1,
+    "minimum": 1
+  },
+  "run_role": "development",
+  "schema_version": "ndp50-execution-summary/v2",
+  "selection_integrity": {
+    "exact_id_match": true,
+    "expected_dataset_count": 15,
+    "observed_dataset_count": 15,
+    "split": "development"
+  },
+  "stratum_summary": {
+    "archive": {
+      "catalog_resource_count": 11,
+      "dataset_count": 2,
+      "dataset_end_to_end_rate": 0.5,
+      "datasets_with_schema": 1,
+      "resource_end_to_end_rate": 0.272727,
+      "resources_with_schema": 3
+    },
+    "documentation_or_text": {
+      "catalog_resource_count": 1,
+      "dataset_count": 1,
+      "dataset_end_to_end_rate": 0.0,
+      "datasets_with_schema": 0,
+      "resource_end_to_end_rate": 0.0,
+      "resources_with_schema": 0
+    },
+    "geospatial_or_image": {
+      "catalog_resource_count": 6,
+      "dataset_count": 2,
+      "dataset_end_to_end_rate": 0.0,
+      "datasets_with_schema": 0,
+      "resource_end_to_end_rate": 0.0,
+      "resources_with_schema": 0
+    },
+    "other_or_unknown": {
+      "catalog_resource_count": 7,
+      "dataset_count": 2,
+      "dataset_end_to_end_rate": 0.0,
+      "datasets_with_schema": 0,
+      "resource_end_to_end_rate": 0.0,
+      "resources_with_schema": 0
+    },
+    "supported_hierarchical": {
+      "catalog_resource_count": 2,
+      "dataset_count": 2,
+      "dataset_end_to_end_rate": 0.0,
+      "datasets_with_schema": 0,
+      "resource_end_to_end_rate": 0.0,
+      "resources_with_schema": 0
+    },
+    "supported_semistructured": {
+      "catalog_resource_count": 4,
+      "dataset_count": 3,
+      "dataset_end_to_end_rate": 1.0,
+      "datasets_with_schema": 3,
+      "resource_end_to_end_rate": 0.75,
+      "resources_with_schema": 3
+    },
+    "supported_tabular": {
+      "catalog_resource_count": 6,
+      "dataset_count": 3,
+      "dataset_end_to_end_rate": 1.0,
+      "datasets_with_schema": 3,
+      "resource_end_to_end_rate": 0.666667,
+      "resources_with_schema": 4
+    }
+  }
+}

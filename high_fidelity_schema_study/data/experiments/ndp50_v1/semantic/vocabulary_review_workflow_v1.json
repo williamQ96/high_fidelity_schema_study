@@ -1,0 +1,49 @@
+{
+  "candidate_decision_reviewers_fresh_from_discovery": true,
+  "case_count": 16,
+  "consensus_adjudicator_fresh_from_prior_stages": true,
+  "consensus_adjudicator_qualification_and_conflict_required": true,
+  "developer_participation": false,
+  "draft_vocabulary": {
+    "file": "vocabulary_draft_v1.json",
+    "sha256": "abb13e004e0dd1b28eaa4df0a9f0841eb65032c46730310d42f5979d56e9b773"
+  },
+  "human_decisions_present": false,
+  "implementation": {
+    "file": "ndp50_vocabulary_workflow.py",
+    "sha256": "16ee620d2e4d761cf9a729fb71de6967d8ab82c1d5585b6ffdfee925f204dc80"
+  },
+  "implementation_dependencies": {
+    "ndp50_cpa_screen_workflow.py": "11e190f867482742ee63c7eeca00b48b4177fd823446f777802f0583652eb5d5",
+    "semantic_gold_workflow.py": "1319dd8b52a3421ce4e34bbfc59e21391e2c8d161e1c01272aa33a7299fab864"
+  },
+  "model_outputs_visible": false,
+  "neutral_discovery_template": {
+    "file": "vocabulary_discovery_neutral_v1.json",
+    "sha256": "51006f01cdea680254cb1898a2444129d094a620750a6d6adbb0f3d57156d190"
+  },
+  "neutral_discovery_template_canonical_sha256": "67a70d999919a15b3a05e51a0584e568aaa46039a7931fab24417db5b74339c7",
+  "required_candidate_decision_reviewers": 2,
+  "required_consensus_adjudicators": 1,
+  "required_discovery_reviewers": 2,
+  "required_role_coverage": [
+    "one_domain_or_scientific_metadata_curator",
+    "one_annotation_methodologist"
+  ],
+  "schema_version": "ndp50-vocabulary-review-workflow/v1",
+  "sequence": [
+    "two_independent_full_corpus_discovery_reviews",
+    "deterministic_union_candidate_catalog",
+    "two_independent_candidate_and_policy_decisions",
+    "disagreement_reveal_after_both_decisions_freeze",
+    "human_consensus",
+    "validator_generated_frozen_vocabulary",
+    "rebuild_source_bundles_against_frozen_vocabulary"
+  ],
+  "source_bundle_manifest": {
+    "file": "manifest.json",
+    "sha256": "13b6eb7a866ad81bcefb4f75e1e6e2d6067d92a442a1d507e103ec096b8b3159",
+    "status": "draft_bundles_structurally_valid_not_annotation_ready"
+  },
+  "status": "ready_for_independent_vocabulary_discovery"
+}

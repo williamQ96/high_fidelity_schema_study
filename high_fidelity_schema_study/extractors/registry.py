@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import json
 from pathlib import Path
 from typing import Callable, Dict, Iterable, Optional
 
@@ -270,6 +271,28 @@ def _looks_like_delimited_text(path: Path) -> bool:
         return False
 
 
+def _structured_text_signal(path: Path) -> Optional[FormatSignal]:
+    try:
+        if path.stat().st_size > 1024 * 1024:
+            return None
+        text = path.read_text(encoding="utf-8-sig")
+    except (OSError, UnicodeDecodeError):
+        return None
+    stripped = text.lstrip()
+    if stripped.startswith(("{", "[")):
+        try:
+            json.loads(stripped)
+        except json.JSONDecodeError:
+            return None
+        return FormatSignal(
+            "json",
+            "complete_json_probe",
+            0.9,
+            "complete UTF-8 JSON document",
+        )
+    return None
+
+
 def _directory_signal(path: Path) -> Optional[FormatSignal]:
     if (path / "zarr.json").is_file():
         return FormatSignal("zarr", "zarr_v3_metadata", 1.0, "Zarr v3 metadata document zarr.json")
@@ -323,6 +346,12 @@ def detect_format(request: ExtractionRequest) -> FormatDecision:
     if suffix is not None:
         signals.append(suffix)
 
+    structured_text = (
+        _structured_text_signal(path) if path.is_file() else None
+    )
+    if structured_text is not None:
+        signals.append(structured_text)
+
     if path.is_file() and _looks_like_delimited_text(path):
         signals.append(FormatSignal("csv", "text_probe", 0.8, "consistent delimited UTF-8 text sample"))
 
@@ -338,6 +367,25 @@ def detect_format(request: ExtractionRequest) -> FormatDecision:
         return FormatDecision(strong_signal.format, strong_signal.basis, strong_signal.support_score, signals)
     if hint_signal is not None:
         return FormatDecision(hint_signal.format, hint_signal.basis, hint_signal.support_score, signals)
+    if (
+        structured_text is not None
+        and suffix is not None
+        and structured_text.format != suffix.format
+    ):
+        return FormatDecision(
+            selected_format=None,
+            basis="conflicting_text_and_suffix_signals",
+            support_score=0.0,
+            signals=signals,
+            conflicted=True,
+        )
+    if structured_text is not None:
+        return FormatDecision(
+            structured_text.format,
+            structured_text.basis,
+            structured_text.support_score,
+            signals,
+        )
     if suffix is not None:
         return FormatDecision(suffix.format, suffix.basis, suffix.support_score, signals)
 

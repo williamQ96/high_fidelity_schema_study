@@ -26,3 +26,11 @@ docs/presentation/node_modules/
 # derived schemas, retrieval artifacts, and semantic outputs in git.
 data/external/dryad/
 data/external/zenodo/
+
+# NDP raw resource payloads are mutable external data; manifests, hashes,
+# extracted schemas, and reports remain versioned.
+data/experiments/ndp50_v1/resources/
+
+# Local Chinese plan-comparison deliverables; the English versions are versioned.
+docs/ndp50_plan_update_vs_pdf_2026-07-26_CN.md
+docs/ndp50_plan_update_vs_pdf_2026-07-26_CN.docx
