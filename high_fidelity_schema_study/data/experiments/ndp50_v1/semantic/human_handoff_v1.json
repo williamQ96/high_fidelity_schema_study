@@ -2,7 +2,7 @@
   "artifact_bindings": {
     "cpa_design": {
       "file": "semantic/cpa_design_draft_v1.json",
-      "sha256": "884cec768ecb08acb91e6f1b00a5dee88f163304af727fec8d67b132c900ecc3"
+      "sha256": "0313d5fee93c03b693cf8962ad9406e77b3f86e004c7d916d810c0bf7a791840"
     },
     "cpa_screen": {
       "file": "semantic/cpa_applicability_screen_neutral_v1.json",
@@ -10,7 +10,7 @@
     },
     "cpa_workflow": {
       "file": "semantic/cpa_screen_workflow_v1.json",
-      "sha256": "4bec54cdf7d9c187e315cc3debc34564ad2dfb3eb820f3e8307d747c9ecf6837"
+      "sha256": "b53e739ec6fdc7592dea389d9fa9108ae07b1efb443712930a9241f485dba8d0"
     },
     "data_governance": {
       "file": "reports/data_governance_v1.json",
@@ -26,15 +26,19 @@
     },
     "demonstration_pool_workflow_spec": {
       "file": "semantic/execution_freeze/demonstration_pool_workflow_v1.json",
-      "sha256": "acc2ec4e0f092545d4db9296a386c84a8805b2292375aac80662274bb73e1953"
+      "sha256": "06f367e0859c00f4de17871506d267cb0c47aeecfa83b8b7ad5ffd7c9152c904"
     },
     "execution_freeze_config_template": {
       "file": "semantic/execution_freeze/execution_freeze_config_neutral_v1.json",
-      "sha256": "bd340b67580dd4a72611760ee78bba6e2e53146f8b98354340310d4012863aa0"
+      "sha256": "1f77caaea7f0b8024044c77c22d6aed90418b88b7a33e80c4cff890f0c8aa1ea"
     },
     "execution_freeze_workflow": {
       "file": "semantic/execution_freeze/execution_freeze_workflow_v1.json",
-      "sha256": "32203d0ceaa6b242f7cadf4f222fecc973ee7dd72cdba351208a8a7ce64db33c"
+      "sha256": "de026e7fba04161a86d5128b1a3abcc44cf0d5449a5ccad9073844dcb9da25e6"
+    },
+    "feedback_response_signoff_template": {
+      "file": "preregistration/feedback_response_signoff_neutral_v1.json",
+      "sha256": "145ccf3801173cffc5edad7ad18a346c6045d11174aa4966223381feadea4d5e"
     },
     "packet_manifest": {
       "file": "semantic/annotation_pack_v1/manifest.json",
@@ -42,15 +46,19 @@
     },
     "power_freeze_workflow": {
       "file": "semantic/power_freeze/power_freeze_workflow_v1.json",
-      "sha256": "c7fdc778474fa97ba942ed442080b1ec9e9f6420c4f7d4d1a242965e47d2880a"
+      "sha256": "ee3c1b98478b974db83d53f717adc10589c59f7af466188ceb2429f063cf5805"
     },
     "power_policy_template": {
       "file": "semantic/power_freeze/power_policy_neutral_v1.json",
-      "sha256": "dba9cfb8815507aee9a4815b59937115849b64a5098e3619c46dad1735211fc2"
+      "sha256": "94ff64d47fec9389676caa1e2dae55ce0a074711a4bb9e9497daf3073bdb9a78"
+    },
+    "publication_gate_workflow": {
+      "file": "preregistration/publication_gate_workflow_v1.json",
+      "sha256": "9e935c0c63836ca54986f3b8172de05c25fdff6b7d7b00e20ea1294814dd81d9"
     },
     "readiness": {
       "file": "semantic/readiness_report_v1.json",
-      "sha256": "5e99b8312dd5c43f47280be6b7eac1544e8fad34d3e3903bee781a39aa1557f4"
+      "sha256": "eac591879acd8aff3ce3d88ec0cf4ec9d384047eaaca5b68f05b22bf22239214"
     },
     "semantic_gold_index_template": {
       "file": "semantic/gold/semantic_gold_index_neutral_v1.json",
@@ -58,15 +66,15 @@
     },
     "semantic_gold_workflow_spec": {
       "file": "semantic/gold/semantic_gold_workflow_spec_v1.json",
-      "sha256": "67f86b592e4c1d9d2b1c7cd6f50e28b5b47ba22176f087759d6fa915b09d00c0"
+      "sha256": "792e49e4097d0523efd3aeb78b3af0940cd52812294bb59b81a4b4082a93f816"
     },
     "semantic_power_feasibility": {
       "file": "semantic/power_feasibility_v1.json",
-      "sha256": "243e2386dfe5858a8c85806d3051a53966c4d6510917df944026ced9d7db1845"
+      "sha256": "a857b0bba22c97a2019e6b91bee2ce05984f6c1c30393406a7c2fd20de47ceb0"
     },
     "source_approval_workflow_spec": {
       "file": "semantic/source_approval_workflow_spec_v1.json",
-      "sha256": "19ede51349a7b614456fb0a2493e3f3243df1b3b0516ba6dcf2482c4dfe361d4"
+      "sha256": "863f46a731ab700e8af778d830251dba48e6cff2efb89fcfe071d342b1ffd580"
     },
     "source_bundle_manifest": {
       "file": "semantic/source_bundle_drafts_v1/manifest.json",
@@ -74,7 +82,7 @@
     },
     "test_execution_workflow": {
       "file": "semantic/test_execution/test_execution_workflow_v1.json",
-      "sha256": "d059e312b0c43ae0f437310ae17ae4b6f781d1147f61586a79b90f9df60361b0"
+      "sha256": "e606c035f46d9f07317b3bc61f97ff94a34cc4548de3af03a790ba2487f9a2db"
     },
     "vocabulary": {
       "file": "semantic/vocabulary_draft_v1.json",
@@ -86,7 +94,7 @@
     },
     "vocabulary_review_workflow": {
       "file": "semantic/vocabulary_review_workflow_v1.json",
-      "sha256": "4e063027a63521a37de5c62a884d43e8d8fa6e4e3dcc30689b661ebe846bd292"
+      "sha256": "d3d0f24be786f4c89bb446ef1aceec55f5600e269f930c464a6c97c7bd37ac2d"
     }
   },
   "assignment_protocol": {
@@ -96,10 +104,11 @@
     "consensus_release_schema": "ndp50-vocabulary-consensus-assignment-release/v1",
     "consensus_return_schema": "ndp50-vocabulary-consensus-assignment-return/v1",
     "consensus_rule": "Only a passing decision dual-freeze replay may reveal the deterministic disagreement worksheet to a qualified non-developer adjudicator who is fresh from all discovery and decision reviews.",
+    "feedback_signoff_schema": "ndp50-feedback-response-signoff/v2",
     "implementation": "ndp50_human_assignments.py",
     "release_rule": "Generate byte-identical neutral payload copies with distinct slot wrappers only from current_release; reviewer identities remain null until real assignment.",
     "release_schema": "ndp50-human-assignment-release/v1",
-    "return_rule": "Accept only validator-replayed submissions and atomically freeze both vocabulary hashes before any cross-review reveal.",
+    "return_rule": "Accept only validator-replayed submissions and atomically freeze both vocabulary hashes before any cross-review reveal; the feedback return must separately replay as collaborator sign-off without an independence claim.",
     "return_schema": "ndp50-human-assignment-return/v1"
   },
   "current_release": {
@@ -132,10 +141,33 @@
       ],
       "submission_rule": "The stewardship reviewer completes the evidence-bound review; a distinct accountable approver signs it; the validator alone generates the approval artifact."
     },
+    "feedback_response_signoff_assignment": {
+      "released_inputs": {
+        "neutral_signoff_template": {
+          "file": "preregistration/feedback_response_signoff_neutral_v1.json",
+          "sha256": "145ccf3801173cffc5edad7ad18a346c6045d11174aa4966223381feadea4d5e"
+        },
+        "publication_gate_workflow": {
+          "file": "preregistration/publication_gate_workflow_v1.json",
+          "sha256": "9e935c0c63836ca54986f3b8172de05c25fdff6b7d7b00e20ea1294814dd81d9"
+        }
+      },
+      "reviewer_slots": [
+        {
+          "independent_reviewer": false,
+          "project_collaborator": true,
+          "required_role": "postdoctoral_research_collaborator",
+          "reviewer_id": null,
+          "slot": "feedback_collaborator"
+        }
+      ],
+      "submission_rule": "The collaborator reviews F01--F16, preserves the frozen optional-sensitivity decisions, discloses the collaboration role, and returns the completed bound template. The validator records collaborator approval, not independent validation."
+    },
     "instruction": "Only released stages may receive human work. Locked-stage inputs must not be distributed as executable assignments.",
     "released_stage_ids": [
       "data_governance_review",
-      "vocabulary_governance"
+      "vocabulary_governance",
+      "feedback_response_signoff"
     ],
     "vocabulary_assignment": {
       "released_inputs": {
@@ -169,25 +201,27 @@
   },
   "implementation": {
     "file": "ndp50_human_handoff.py",
-    "sha256": "ea3f89f41fabcde6c02e0d656e6237060a70ad082872a4c7332855a2e5e03a5f"
+    "sha256": "ce159192b65a08cd45cbc56b87ad72becf0f3aa3f3287701a0f47d1313cf5d9d"
   },
   "implementation_dependencies": {
     "ndp50_cpa_screen_workflow.py": "11e190f867482742ee63c7eeca00b48b4177fd823446f777802f0583652eb5d5",
     "ndp50_data_governance.py": "e79a1b58c5815b2031d4043523e75438723fc962ad4e5ffd572a2cf14154670e",
     "ndp50_data_governance_review.py": "6b4a0a86bbae0f98f557d1638f2fcd9b1edce7019488bf78908f02eaa87bbcc1",
-    "ndp50_demonstration_pool.py": "6482a9d27bcf0494172b5def30a0e3c7289c149e91b3fdd62028ee02d35f3b9a",
-    "ndp50_execution_freeze.py": "c72fdb822fc98cc81d417ac93a033baaadde5ab6e56090295f35b0f95b92fa68",
-    "ndp50_human_assignments.py": "e4802b753a0f0a1665c269e7d442e5559e57f07223cbbf14c80e20f78d6db70e",
+    "ndp50_demonstration_pool.py": "3a547209deb3e74f678211188e6caea8be20c798d18a18265b7e456d1eb82ba1",
+    "ndp50_execution_freeze.py": "9cd64c59f7677c1b40449ca3b5c8c148c0e5bae5b00f68ea1d8eddddcb9c5a99",
+    "ndp50_human_assignments.py": "6eeb2b3659784205648196a078e1f200615da602900ab2a4c65bcf1c17bb8973",
     "ndp50_power_freeze.py": "65970f34de68226fa095ee763d37543e1ebfd3dec2dfaf09e0dafbb351e8d308",
-    "ndp50_readiness.py": "5faf6c72963e1798e12286e2fdd0f7e48f709b46084989832eadebcb07993d04",
+    "ndp50_publication_gate.py": "526ec5f4a41e1d9f957ce40da26221e109b0534fd9326b46def9414386b46c42",
+    "ndp50_readiness.py": "8c95220aad951042c9fba4f96d4748a699d1f521cfe972ad2ae76cce51553d58",
     "ndp50_semantic_gold.py": "9d4e64214d201d05b8eba5d33c4f2c47c9ff477725c4154c70d360016a63c915",
-    "ndp50_source_approval.py": "6ba7772459167931a366a55ddfa74e6a591e41f6a47d40bedfc9f70b3bbc597d",
+    "ndp50_source_approval.py": "5460c32f54822f15771ee73fccd0f090ee96395340ac530967a6758091dea113",
     "ndp50_source_bundles.py": "399108be3a6aea518868f9c6e116c742614d1fcd69f48cf8979d94fb9f86dbd2",
-    "ndp50_test_execution.py": "403ad03d8fb0abd3aa5437e30e82a3db4165dabc73a9ffd02b927b7fa9f080a6",
-    "ndp50_test_inference.py": "a51dc634a228ef580457b91e0e8ae8eb1eb524818c15242f2af8babd9d7b508c",
-    "ndp50_vocabulary_workflow.py": "16ee620d2e4d761cf9a729fb71de6967d8ab82c1d5585b6ffdfee925f204dc80",
-    "semantic_gold_workflow.py": "1319dd8b52a3421ce4e34bbfc59e21391e2c8d161e1c01272aa33a7299fab864",
-    "semantic_power_analysis.py": "a5d68e5389e644c15bdcae599f06ba8c8757ba378e2edb4e59f4f1f2d1991c69",
+    "ndp50_test_execution.py": "4213986ef0432063aeb959737e17a4e65ca2db09a540e6c24eb7a85b52dff347",
+    "ndp50_test_inference.py": "3047e579c67b095d7507558bb91693c1c71d1a523c05d55727e758f66749cc1c",
+    "ndp50_vocabulary_workflow.py": "8e4c8eb25d4c0346ee5ef88d76f2e475737d6f001cd1e466e575fc886273fb15",
+    "semantic_annotator_calibration.py": "203a0dc3234f4d57f9d5fa547a324e636b2e3a0d1ae30ad5f49991181e4072fa",
+    "semantic_gold_workflow.py": "4be417efe6a2b4bb7b166e6fb0bba40a9545017908110077f7e7dc8618281a69",
+    "semantic_power_analysis.py": "9da204bc167095d5efd2a84bd6c89767db4eb534d8d3eba292ec4a02e8d13b50",
     "semantic_power_calibration.py": "a1208de3e3cf064da542e76b3cbd8891dd2bf506ed8bf59b25afcc7d3113ed73"
   },
   "readiness_status": "blocked_as_expected",
@@ -216,6 +250,9 @@
     "Assignment wrappers cannot embed reviewer identities or decisions.",
     "Candidate acceptance uses a fresh reviewer pair after discovery.",
     "Vocabulary consensus uses a fresh qualified non-developer adjudicator.",
+    "Blind semantic gold requires a replayed passing annotator-calibration summary bound to the final handbook and vocabulary.",
+    "Collaborator feedback sign-off is released independently of the later external-registration and test-release stages.",
+    "Test release requires collaborator feedback sign-off and an independently verified immutable external preregistration receipt.",
     "All downstream artifacts bind their exact upstream content hashes.",
     "Changing a bound artifact invalidates this handoff."
   ],
@@ -275,6 +312,28 @@
     {
       "ordinal": 3,
       "prohibitions": [
+        "Do not claim that collaborator review is independent validation.",
+        "Do not change F01--F16 decisions inside the returned artifact.",
+        "Do not inspect test identities, details, gold, or outcomes.",
+        "This sign-off does not authorize semantic or test execution."
+      ],
+      "required_outputs": [
+        "completed_feedback_response_signoff.json",
+        "feedback_response_signoff_validation.json"
+      ],
+      "stage_id": "feedback_response_signoff",
+      "status": "released",
+      "title": "Collaborator review and sign-off of feedback incorporation",
+      "unlock_evidence": [
+        "readiness.integrity_status=passed",
+        "readiness.gates.publication_gate_workflow_ready=true",
+        "bound neutral F01--F16 response-signoff template",
+        "collaborator review explicitly not independent validation"
+      ]
+    },
+    {
+      "ordinal": 4,
+      "prohibitions": [
         "Draft bundles cannot authorize annotation or CPA screening.",
         "Every evidence item must be approved for each claimed purpose.",
         "Do not alter agreed review slots during consensus."
@@ -283,10 +342,14 @@
         "source_bundle_frozen_v1/manifest.json",
         "source_review_template.json",
         "source_review_a.json",
+        "source_review_a_validation.json",
         "source_review_b.json",
+        "source_review_b_validation.json",
         "source_disagreement_worksheet.json",
         "source_consensus.json",
-        "source_bundle_approved_manifest.json"
+        "source_consensus_validation.json",
+        "source_bundle_approved_manifest.json",
+        "source_bundle_approved_manifest_validation.json"
       ],
       "stage_id": "source_approval",
       "status": "locked",
@@ -300,7 +363,37 @@
       ]
     },
     {
-      "ordinal": 4,
+      "ordinal": 5,
+      "prohibitions": [
+        "Do not show NDP-50 gold packets before this gate passes.",
+        "Do not reuse revealed cases after a failed calibration round.",
+        "Do not change handbook, vocabulary, or annotator identities after qualification.",
+        "No model output or automatic adjudicator may enter calibration."
+      ],
+      "required_outputs": [
+        "annotator_calibration_design.json",
+        "annotator_calibration_design_preflight.json",
+        "annotator_calibration_registration_receipt.json",
+        "annotator_calibration_submission_a.json",
+        "annotator_calibration_submission_b.json",
+        "annotator_calibration_disagreement_reports/",
+        "annotator_calibration_round_manifest.json",
+        "annotator_calibration_summary.json",
+        "annotator_calibration_summary_validation.json"
+      ],
+      "stage_id": "annotator_calibration",
+      "status": "locked",
+      "title": "Preregister and qualify the semantic-gold annotator pair",
+      "unlock_evidence": [
+        "readiness.gates.source_bundles_annotation_ready=true",
+        "final handbook and frozen NDP vocabulary hashes",
+        "at least nine non-NDP calibration cases",
+        "external receipt predating both independent submissions",
+        "validator-replayed passing calibration summary"
+      ]
+    },
+    {
+      "ordinal": 6,
       "prohibitions": [
         "Model outputs must remain hidden from applicability and gold reviewers.",
         "Annotators must be distinct and non-developers.",
@@ -308,25 +401,34 @@
       ],
       "required_outputs": [
         "cpa_screen_a.json",
+        "cpa_screen_a_validation.json",
         "cpa_screen_b.json",
+        "cpa_screen_b_validation.json",
         "cpa_disagreement_worksheet.json",
         "cpa_consensus.json",
+        "cpa_consensus_validation.json",
         "semantic_gold_a.json",
         "semantic_gold_b.json",
+        "semantic_gold_independent_validation_receipts/",
         "semantic_gold_disagreement_report.json",
-        "semantic_gold_consensus.json"
+        "semantic_gold_consensus.json",
+        "semantic_gold_consensus_validation_receipts/",
+        "semantic_gold_corpus_validation.json",
+        "semantic_gold_approval.json",
+        "semantic_gold_approval_validation.json"
       ],
       "stage_id": "cpa_screen_and_semantic_gold",
       "status": "locked",
       "title": "Parallel blind CPA applicability and semantic-gold review",
       "unlock_evidence": [
         "readiness.gates.source_bundles_annotation_ready=true",
+        "readiness.gates.annotator_calibration_passed=true",
         "two qualified independent CPA screens and a fresh adjudicator",
-        "two qualified semantic-gold annotators and joint consensus"
+        "the exact calibrated semantic-gold pair and joint consensus"
       ]
     },
     {
-      "ordinal": 5,
+      "ordinal": 7,
       "prohibitions": [
         "Validation or test cases cannot become demonstrations.",
         "Execution-component qualification cannot use development, validation, or test data.",
@@ -338,6 +440,7 @@
         "execution_freeze_config_validation.json",
         "execution_implementation_declaration.json",
         "execution_implementation_qualification.json",
+        "execution_implementation_qualification_validation.json",
         "execution_freeze.json",
         "execution_freeze_replay.json",
         "semantic_backend_registry.json",
@@ -350,6 +453,7 @@
       "unlock_evidence": [
         "readiness.gates.cpa_applicability_consensus_complete=true",
         "readiness.gates.independent_gold_complete=true",
+        "readiness.gates.annotator_calibration_passed=true",
         "readiness.gates.demonstration_pool_workflow_ready=true",
         "readiness.gates.execution_freeze_workflow_ready=true",
         "human license and attribution review complete",
@@ -361,7 +465,7 @@
       ]
     },
     {
-      "ordinal": 6,
+      "ordinal": 8,
       "prohibitions": [
         "Test semantic outcomes cannot inform power assumptions.",
         "The exact-sign-flip resolution floor is not sufficient power evidence.",
@@ -369,7 +473,9 @@
       ],
       "required_outputs": [
         "semantic_power_calibration_statistics.json",
+        "semantic_power_calibration_statistics_validation.json",
         "completed_power_policy.json",
+        "completed_power_policy_validation.json",
         "ndp50_power_freeze.json",
         "ndp50_power_freeze_replay.json",
         "power_feasibility_v1.json rebuilt with the frozen plan"
@@ -387,7 +493,33 @@
       ]
     },
     {
-      "ordinal": 7,
+      "ordinal": 9,
+      "prohibitions": [
+        "Do not register a package that differs from the frozen manifest.",
+        "Do not expose sealed test identities, details, gold, or outcomes.",
+        "The independent verifier cannot be a developer or project collaborator.",
+        "The external receipt does not itself authorize test opening."
+      ],
+      "required_outputs": [
+        "immutable OSF/Zenodo registration record",
+        "external registration receipt/export",
+        "completed external preregistration receipt artifact",
+        "independent registration-verification record",
+        "external preregistration receipt validation"
+      ],
+      "stage_id": "external_preregistration",
+      "status": "locked",
+      "title": "Register the frozen public package and independently verify the receipt",
+      "unlock_evidence": [
+        "readiness.gates.feedback_response_collaborator_signoff_complete=true",
+        "readiness.gates.prompt_and_backend_frozen=true",
+        "readiness.gates.test_power_plan_frozen=true",
+        "readiness.gates.test_design_meets_pretest_assurance=true",
+        "exact final public-package manifest and content digest"
+      ]
+    },
+    {
+      "ordinal": 10,
       "prohibitions": [
         "Do not inspect or acquire test details before the receipt passes.",
         "The release monitor must be a distinct qualified non-developer.",
@@ -404,12 +536,14 @@
       "unlock_evidence": [
         "readiness.test_ready=true",
         "readiness.gates.test_execution_workflow_ready=true",
+        "readiness.gates.feedback_response_collaborator_signoff_complete=true",
+        "readiness.gates.external_preregistration_verified=true",
         "all artifact hashes and non-human integrity checks pass",
         "all human consensus and freeze gates pass"
       ]
     },
     {
-      "ordinal": 8,
+      "ordinal": 11,
       "prohibitions": [
         "Do not inspect test details before the release receipt passes.",
         "Do not add datasets or alter analysis after observing outcomes.",
@@ -424,7 +558,8 @@
         "complete deviation registry, including an explicit empty registry",
         "validator-generated test run receipt and replay",
         "case-arm missingness and failure report",
-        "frozen inference result, replay, and publication tables"
+        "frozen inference result, replay, and publication tables",
+        "frozen inference replay validation"
       ],
       "stage_id": "test_execution",
       "status": "locked",

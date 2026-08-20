@@ -5,7 +5,7 @@
   "expected_submission_schema": "ndp50-vocabulary-discovery/v1",
   "handoff": {
     "file": "semantic/human_handoff_v1.json",
-    "sha256": "7b3223d3f5971e35bf574cff3b43dc02d341e43b2a3a3c51e5ad419e4f9df6fd"
+    "sha256": "7ca57a78407584b57ef84700f184498646676da87919be2f6cf4d88e11f8cfe9"
   },
   "isolation_contract": {
     "candidate_catalog_visible": false,
@@ -38,19 +38,53 @@
     },
     "workflow": {
       "file": "semantic/vocabulary_review_workflow_v1.json",
-      "sha256": "4e063027a63521a37de5c62a884d43e8d8fa6e4e3dcc30689b661ebe846bd292"
+      "sha256": "d3d0f24be786f4c89bb446ef1aceec55f5600e269f930c464a6c97c7bd37ac2d"
     }
   },
   "required_role": "scientific_metadata_curator",
   "reviewer_id": null,
   "schema_version": "ndp50-human-assignment/v1",
   "stage_id": "vocabulary_governance",
+  "submission_contract": {
+    "forbidden_actions": [
+      "Do not communicate about review content with the other vocabulary reviewer before dual freeze.",
+      "Do not edit case identities, evidence catalogs, or bound artifact hashes.",
+      "Do not use model outputs or inspect test identities, details, gold, or outcomes.",
+      "Do not build or view a candidate catalog or disagreement report before both passing receipts are frozen."
+    ],
+    "required_actions": [
+      "Work only from the byte-identical neutral payload and the bound source-bundle manifest.",
+      "Complete all 16 case reviews and all corpus-level policy decisions without viewing the other review.",
+      "Use the assigned reviewer role, a stable pseudonymous reviewer ID, a unique submission ID, a qualification summary, and a truthful conflict disclosure.",
+      "Cite only locatable evidence IDs from the released source bundles and give a rationale for every coverage judgment or proposal.",
+      "Keep model outputs, the other submission, candidate catalogs, and disagreement reports hidden until both submissions and receipts are frozen.",
+      "Set the completion attestation true only after personally completing the full-corpus review.",
+      "Run validate-discovery and return its exact generated receipt."
+    ],
+    "return_manifest_slot": "vocabulary_discovery_a",
+    "validation_receipt_filename": "vocabulary_discovery_a_validation.json",
+    "validator_command_template": [
+      "python",
+      "-m",
+      "high_fidelity_schema_study.ndp50_vocabulary_workflow",
+      "validate-discovery",
+      "--submission",
+      "<vocabulary_discovery_a.json>",
+      "--template",
+      "high_fidelity_schema_study/data/experiments/ndp50_v1/semantic/vocabulary_discovery_neutral_v1.json",
+      "--source-bundle-manifest",
+      "high_fidelity_schema_study/data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/manifest.json",
+      "--output",
+      "<vocabulary_discovery_a_validation.json>"
+    ],
+    "working_copy_filename": "vocabulary_discovery_a.json"
+  },
   "test_data_access": "forbidden",
   "validator": {
     "command": "validate-discovery",
     "implementation": {
       "file": "ndp50_vocabulary_workflow.py",
-      "sha256": "16ee620d2e4d761cf9a729fb71de6967d8ab82c1d5585b6ffdfee925f204dc80"
+      "sha256": "8e4c8eb25d4c0346ee5ef88d76f2e475737d6f001cd1e466e575fc886273fb15"
     },
     "module": "high_fidelity_schema_study.ndp50_vocabulary_workflow"
   }

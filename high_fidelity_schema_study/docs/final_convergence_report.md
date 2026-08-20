@@ -8,7 +8,10 @@ Target: Artifact Paper final polish, citation hygiene, demo polish, and release 
 
 - Paper draft advanced to `v0.5` with artifact-ready wording and no new experimental claims.
 - References were normalized into an ASCII-safe verified artifact bibliography.
-- Paper citation keys are constrained to verified core references; `Auctus` remains in `Use With Caution` and is not used for a core paper claim.
+- Paper citation keys are constrained to verified core references. A subsequent
+  2026-07-27 primary-source audit verified Auctus against its PVLDB paper and
+  DOI; it remains discovery background and is not used to support
+  schema-extraction correctness.
 - GUI mobile header status now wraps on narrow screens while preserving direct hash navigation for `#overview`, `#evidence`, `#fields`, `#semantic`, `#retrieval`, `#provenance`, and `#limits`.
 - Artifact handoff, README checklist, GUI QA notes, and project log were updated to reflect final convergence polish rather than new experimentation.
 

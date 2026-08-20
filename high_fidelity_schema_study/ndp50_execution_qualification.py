@@ -5,6 +5,7 @@ from copy import deepcopy
 import hashlib
 import importlib.util
 import json
+import math
 from pathlib import Path
 import re
 import sys
@@ -21,7 +22,7 @@ RECEIPT_SCHEMA_VERSION = (
 REPLAY_SCHEMA_VERSION = (
     "ndp50-execution-implementation-qualification-replay/v1"
 )
-PROBE_SUITE_VERSION = "ndp50-execution-synthetic-conformance/v3"
+PROBE_SUITE_VERSION = "ndp50-execution-synthetic-conformance/v4"
 IMPLEMENTATION_SLOTS = (
     "cost_accounting",
     "demonstration_ranker",
@@ -119,10 +120,8 @@ def interface_version(slot: str) -> str:
         raise NDPExecutionQualificationError(
             f"unsupported implementation slot: {slot}"
         )
-    version = (
-        "v2"
-        if slot in {"response_parser", "runner", "scorer"}
-        else "v1"
+    version = "v3" if slot == "scorer" else (
+        "v2" if slot in {"response_parser", "runner"} else "v1"
     )
     return f"ndp50-execution-{slot.replace('_', '-')}/{version}"
 
@@ -261,7 +260,8 @@ _PROBE_REQUESTS: Dict[str, list[Dict[str, Any]]] = {
                 "\"prediction_state\":\"accepted_known\","
                 "\"prediction_value\":\"x\",\"verified\":true,"
                 "\"support_valid\":true,"
-                "\"evidence_reference_valid\":true}]}"
+                "\"evidence_reference_valid\":true,"
+                "\"confidence_score\":0.8}]}"
             ),
         },
     ],
@@ -277,6 +277,7 @@ _PROBE_REQUESTS: Dict[str, list[Dict[str, Any]]] = {
                     "prediction_state": "accepted_known",
                     "prediction_value": "x",
                     "verified": True,
+                    "confidence_score": 0.9,
                 },
                 {
                     "slot_id": "s2",
@@ -285,6 +286,7 @@ _PROBE_REQUESTS: Dict[str, list[Dict[str, Any]]] = {
                     "prediction_state": "accepted_known",
                     "prediction_value": "z",
                     "verified": False,
+                    "confidence_score": 0.6,
                 },
                 {
                     "slot_id": "s3",
@@ -293,13 +295,14 @@ _PROBE_REQUESTS: Dict[str, list[Dict[str, Any]]] = {
                     "prediction_state": "explicit_oov_or_abstention",
                     "prediction_value": None,
                     "verified": False,
+                    "confidence_score": None,
                 },
             ],
         },
         {
             "probe_suite_version": PROBE_SUITE_VERSION,
             "probe_id": "scorer_actual_case_contract",
-            "interface_version": "ndp50-execution-scorer/v2",
+            "interface_version": "ndp50-execution-scorer/v3",
             "operation": "score_registered_case",
             "case_id": "synthetic-case",
             "dataset_id": "synthetic-dataset",
@@ -336,6 +339,7 @@ _PROBE_REQUESTS: Dict[str, list[Dict[str, Any]]] = {
                         "verified": True,
                         "support_valid": True,
                         "evidence_reference_valid": True,
+                        "confidence_score": 0.9,
                     },
                     {
                         "slot_id": "s2",
@@ -344,6 +348,7 @@ _PROBE_REQUESTS: Dict[str, list[Dict[str, Any]]] = {
                         "verified": False,
                         "support_valid": False,
                         "evidence_reference_valid": False,
+                        "confidence_score": None,
                     },
                     {
                         "slot_id": "s3",
@@ -352,6 +357,7 @@ _PROBE_REQUESTS: Dict[str, list[Dict[str, Any]]] = {
                         "verified": False,
                         "support_valid": False,
                         "evidence_reference_valid": False,
+                        "confidence_score": None,
                     },
                 ]
             },
@@ -597,6 +603,25 @@ def reference_registered_case_score(
                 item.get("prediction_state") != "accepted_known"
                 and item.get("prediction_value") is not None
             )
+            or (
+                item.get("prediction_state") == "accepted_known"
+                and (
+                    not isinstance(
+                        item.get("confidence_score"), (int, float)
+                    )
+                    or isinstance(item.get("confidence_score"), bool)
+                    or not math.isfinite(
+                        float(item.get("confidence_score"))
+                    )
+                    or not 0
+                    <= float(item.get("confidence_score"))
+                    <= 1
+                )
+            )
+            or (
+                item.get("prediction_state") != "accepted_known"
+                and item.get("confidence_score") is not None
+            )
         ):
             raise NDPExecutionQualificationError(
                 "prediction slot is invalid"
@@ -631,6 +656,7 @@ def reference_registered_case_score(
     unsupported = 0
     evidence_valid = 0
     verified_correct = 0
+    confidence_observations = []
     confusion: Dict[str, Dict[str, int]] = {}
     for gold_item in known:
         prediction_item = prediction_by_id[str(gold_item["slot_id"])]
@@ -652,6 +678,16 @@ def reference_registered_case_score(
             evidence_valid += int(
                 prediction_item["evidence_reference_valid"]
             )
+            confidence_observations.append(
+                {
+                    "slot_id": str(gold_item["slot_id"]),
+                    "label_id": label_id,
+                    "confidence_score": float(
+                        prediction_item["confidence_score"]
+                    ),
+                    "correct": is_correct,
+                }
+            )
         if is_correct:
             correct += 1
             counts["tp"] += 1
@@ -670,6 +706,7 @@ def reference_registered_case_score(
         "unsupported_accepted_claim_count": unsupported,
         "valid_evidence_reference_claim_count": evidence_valid,
         "verified_correct_accepted_claim_count": verified_correct,
+        "confidence_observations": confidence_observations,
         "label_confusion_counts": [
             {
                 "label_id": label_id,
@@ -1126,6 +1163,7 @@ def build_parser() -> argparse.ArgumentParser:
     verify.add_argument("--receipt", type=Path, required=True)
     verify.add_argument("--declaration", type=Path, required=True)
     verify.add_argument("--study-root", type=Path, required=True)
+    verify.add_argument("--output", type=Path)
     return parser
 
 
@@ -1156,6 +1194,8 @@ def main(argv: Iterable[str] | None = None) -> int:
         declaration_path=args.declaration,
         study_root=args.study_root,
     )
+    if args.output is not None:
+        _write_json(args.output, result)
     print(json.dumps(result, indent=2, sort_keys=True))
     return 0 if result["status"] == "passed" else 1
 

@@ -13,6 +13,9 @@ from .ndp50_semantic_gold import verify_approval as verify_gold_approval
 from .ndp50_execution_freeze import verify_freeze as verify_execution_freeze
 from .ndp50_power_freeze import verify_freeze as verify_power_freeze
 from .ndp50_test_execution import verify_test_release_receipt
+from .semantic_annotator_calibration import (
+    validate_annotator_calibration_summary,
+)
 
 
 SCHEMA_VERSION = "ndp50-human-handoff/v1"
@@ -196,10 +199,13 @@ def build_handoff(
     execution_freeze_config_template_path: Path,
     execution_freeze_workflow_path: Path,
     test_execution_workflow_path: Path,
+    publication_gate_workflow_path: Path,
+    feedback_response_signoff_template_path: Path,
     study_root: Path,
     cpa_consensus_path: Path | None = None,
     data_governance_approval_path: Path | None = None,
     semantic_gold_approval_path: Path | None = None,
+    annotator_calibration_summary_path: Path | None = None,
     execution_freeze_path: Path | None = None,
     completed_power_policy_path: Path | None = None,
     development_calibration_report_path: Path | None = None,
@@ -238,6 +244,10 @@ def build_handoff(
         ),
         "execution_freeze_workflow": execution_freeze_workflow_path,
         "test_execution_workflow": test_execution_workflow_path,
+        "publication_gate_workflow": publication_gate_workflow_path,
+        "feedback_response_signoff_template": (
+            feedback_response_signoff_template_path
+        ),
     }
     if cpa_consensus_path is not None:
         paths["cpa_consensus"] = cpa_consensus_path
@@ -245,6 +255,10 @@ def build_handoff(
         paths["data_governance_approval"] = data_governance_approval_path
     if semantic_gold_approval_path is not None:
         paths["semantic_gold_approval"] = semantic_gold_approval_path
+    if annotator_calibration_summary_path is not None:
+        paths["annotator_calibration_summary"] = (
+            annotator_calibration_summary_path
+        )
     if execution_freeze_path is not None:
         paths["execution_freeze"] = execution_freeze_path
     power_completion_paths = (
@@ -288,11 +302,9 @@ def build_handoff(
 
     readiness = _load_json(readiness_path)
     packet_manifest = _load_json(packet_manifest_path)
-    vocabulary = _load_json(vocabulary_path)
     vocabulary_workflow = _load_json(vocabulary_workflow_path)
     vocabulary_template = _load_json(vocabulary_template_path)
     source_approval_spec = _load_json(source_approval_spec_path)
-    source_bundle_manifest = _load_json(source_bundle_manifest_path)
     cpa_workflow = _load_json(cpa_workflow_path)
     cpa_screen = _load_json(cpa_screen_path)
     cpa_design = _load_json(cpa_design_path)
@@ -322,6 +334,12 @@ def build_handoff(
         execution_freeze_workflow_path
     )
     test_execution_workflow = _load_json(test_execution_workflow_path)
+    publication_gate_workflow = _load_json(
+        publication_gate_workflow_path
+    )
+    feedback_response_signoff_template = _load_json(
+        feedback_response_signoff_template_path
+    )
     governance_approval = (
         _load_json(data_governance_approval_path)
         if data_governance_approval_path is not None
@@ -332,6 +350,20 @@ def build_handoff(
         if semantic_gold_approval_path is not None
         else None
     )
+    annotator_calibration_validation = (
+        validate_annotator_calibration_summary(
+            annotator_calibration_summary_path
+        )
+        if annotator_calibration_summary_path is not None
+        else None
+    )
+    if (
+        annotator_calibration_validation is not None
+        and annotator_calibration_validation.get("status") != "ready"
+    ):
+        raise NDPHumanHandoffError(
+            "annotator calibration summary is not reproducible"
+        )
     execution_freeze = (
         _load_json(execution_freeze_path)
         if execution_freeze_path is not None
@@ -382,6 +414,7 @@ def build_handoff(
             "neutral_packets_ready",
             "vocabulary_frozen",
             "source_bundles_annotation_ready",
+            "annotator_calibration_passed",
             "cpa_applicability_consensus_complete",
             "independent_gold_complete",
             "data_governance_policy_frozen",
@@ -389,6 +422,8 @@ def build_handoff(
             "test_power_plan_frozen",
             "test_design_meets_pretest_assurance",
             "test_execution_workflow_ready",
+            "feedback_response_collaborator_signoff_complete",
+            "external_preregistration_verified",
         )
         if (
             readiness.get("readiness_status") != "ready"
@@ -398,6 +433,34 @@ def build_handoff(
                 gates.get(key) is not True
                 for key in required_test_release_gates
             )
+            or any(
+                not isinstance(
+                    (readiness.get("artifact_hashes") or {}).get(key),
+                    str,
+                )
+                or len(
+                    (readiness.get("artifact_hashes") or {}).get(key)
+                )
+                != 64
+                for key in (
+                    "publication_gate_workflow",
+                    "public_package_manifest",
+                    "feedback_response_matrix",
+                    "feedback_improvement_amendment",
+                    "feedback_response_signoff",
+                    "external_preregistration_receipt",
+                )
+            )
+            or (
+                readiness.get("publication_gate_validation", {})
+            ).get("feedback_response_signoff", {}
+            ).get("status")
+            != "passed"
+            or (
+                readiness.get("publication_gate_validation", {})
+            ).get("external_preregistration_receipt", {}
+            ).get("status")
+            != "passed"
         ):
             raise NDPHumanHandoffError(
                 "test-ready readiness has inconsistent release gates"
@@ -440,6 +503,11 @@ def build_handoff(
         ),
         ("execution_freeze_workflow", execution_freeze_workflow_path),
         ("test_execution_workflow", test_execution_workflow_path),
+        ("publication_gate_workflow", publication_gate_workflow_path),
+        (
+            "feedback_response_signoff_template",
+            feedback_response_signoff_template_path,
+        ),
     ):
         _require_readiness_binding(readiness, key=key, path=path)
     if data_governance_approval_path is not None:
@@ -465,6 +533,19 @@ def build_handoff(
     ) is not None:
         raise NDPHumanHandoffError(
             "readiness binds a semantic-gold approval that was not supplied"
+        )
+    if annotator_calibration_summary_path is not None:
+        _require_readiness_binding(
+            readiness,
+            key="annotator_calibration_summary",
+            path=annotator_calibration_summary_path,
+        )
+    elif readiness.get("artifact_hashes", {}).get(
+        "annotator_calibration_summary"
+    ) is not None:
+        raise NDPHumanHandoffError(
+            "readiness binds an annotator calibration summary that was not "
+            "supplied"
         )
     if cpa_consensus_path is not None:
         _require_readiness_binding(
@@ -567,12 +648,35 @@ def build_handoff(
             execution_freeze_workflow,
             "ndp50-execution-freeze-workflow/v1",
         ),
+        "publication gate workflow": (
+            publication_gate_workflow,
+            "ndp50-publication-gate-workflow/v1",
+        ),
+        "feedback response signoff template": (
+            feedback_response_signoff_template,
+            "ndp50-feedback-response-signoff/v2",
+        ),
     }
     for label, (payload, schema) in expected_schemas.items():
         if payload.get("schema_version") != schema:
             raise NDPHumanHandoffError(f"unexpected {label} schema")
 
     _require_neutral_vocabulary_template(vocabulary_template)
+    if (
+        feedback_response_signoff_template.get("status")
+        != "pending_human_collaborator_review"
+        or feedback_response_signoff_template.get(
+            "human_decisions_present"
+        )
+        is not False
+        or feedback_response_signoff_template.get(
+            "independence_claimed"
+        )
+        is not False
+    ):
+        raise NDPHumanHandoffError(
+            "feedback-response signoff template is not neutral"
+        )
     if vocabulary_workflow.get("human_decisions_present") is not False:
         raise NDPHumanHandoffError(
             "neutral vocabulary workflow must not claim human decisions"
@@ -837,12 +941,28 @@ def build_handoff(
 
     vocabulary_frozen = gates.get("vocabulary_frozen") is True
     sources_ready = gates.get("source_bundles_annotation_ready") is True
+    annotator_calibrated = (
+        gates.get("annotator_calibration_passed") is True
+    )
+    if annotator_calibrated != (
+        annotator_calibration_summary_path is not None
+    ):
+        raise NDPHumanHandoffError(
+            "readiness annotator-calibration gate and supplied summary "
+            "disagree"
+        )
     cpa_complete = (
         gates.get("cpa_applicability_consensus_complete") is True
     )
     gold_complete = gates.get("independent_gold_complete") is True
     execution_frozen = gates.get("prompt_and_backend_frozen") is True
     power_frozen = gates.get("test_power_plan_frozen") is True
+    feedback_signed = (
+        gates.get("feedback_response_collaborator_signoff_complete") is True
+    )
+    external_registered = (
+        gates.get("external_preregistration_verified") is True
+    )
     test_ready = readiness.get("test_ready") is True
     governance_policy_frozen = all(
         governance_approval_gates.get(key) is True
@@ -932,6 +1052,32 @@ def build_handoff(
         ),
         _stage(
             ordinal=3,
+            stage_id="feedback_response_signoff",
+            title="Collaborator review and sign-off of feedback incorporation",
+            completed=feedback_signed,
+            prerequisites_met=(
+                gates.get("publication_gate_workflow_ready") is True
+                and not feedback_signed
+            ),
+            unlock_evidence=[
+                "readiness.integrity_status=passed",
+                "readiness.gates.publication_gate_workflow_ready=true",
+                "bound neutral F01--F16 response-signoff template",
+                "collaborator review explicitly not independent validation",
+            ],
+            required_outputs=[
+                "completed_feedback_response_signoff.json",
+                "feedback_response_signoff_validation.json",
+            ],
+            prohibitions=[
+                "Do not claim that collaborator review is independent validation.",
+                "Do not change F01--F16 decisions inside the returned artifact.",
+                "Do not inspect test identities, details, gold, or outcomes.",
+                "This sign-off does not authorize semantic or test execution.",
+            ],
+        ),
+        _stage(
+            ordinal=4,
             stage_id="source_approval",
             title="Rebuild and independently approve evidence bundles",
             completed=sources_ready,
@@ -954,10 +1100,14 @@ def build_handoff(
                 "source_bundle_frozen_v1/manifest.json",
                 "source_review_template.json",
                 "source_review_a.json",
+                "source_review_a_validation.json",
                 "source_review_b.json",
+                "source_review_b_validation.json",
                 "source_disagreement_worksheet.json",
                 "source_consensus.json",
+                "source_consensus_validation.json",
                 "source_bundle_approved_manifest.json",
+                "source_bundle_approved_manifest_validation.json",
             ],
             prohibitions=[
                 "Draft bundles cannot authorize annotation or CPA screening.",
@@ -966,27 +1116,71 @@ def build_handoff(
             ],
         ),
         _stage(
-            ordinal=4,
+            ordinal=5,
+            stage_id="annotator_calibration",
+            title="Preregister and qualify the semantic-gold annotator pair",
+            completed=annotator_calibrated,
+            prerequisites_met=(
+                sources_ready and not annotator_calibrated
+            ),
+            unlock_evidence=[
+                "readiness.gates.source_bundles_annotation_ready=true",
+                "final handbook and frozen NDP vocabulary hashes",
+                "at least nine non-NDP calibration cases",
+                "external receipt predating both independent submissions",
+                "validator-replayed passing calibration summary",
+            ],
+            required_outputs=[
+                "annotator_calibration_design.json",
+                "annotator_calibration_design_preflight.json",
+                "annotator_calibration_registration_receipt.json",
+                "annotator_calibration_submission_a.json",
+                "annotator_calibration_submission_b.json",
+                "annotator_calibration_disagreement_reports/",
+                "annotator_calibration_round_manifest.json",
+                "annotator_calibration_summary.json",
+                "annotator_calibration_summary_validation.json",
+            ],
+            prohibitions=[
+                "Do not show NDP-50 gold packets before this gate passes.",
+                "Do not reuse revealed cases after a failed calibration round.",
+                "Do not change handbook, vocabulary, or annotator identities after qualification.",
+                "No model output or automatic adjudicator may enter calibration.",
+            ],
+        ),
+        _stage(
+            ordinal=6,
             stage_id="cpa_screen_and_semantic_gold",
             title="Parallel blind CPA applicability and semantic-gold review",
             completed=cpa_complete and gold_complete,
             prerequisites_met=(
-                sources_ready and not (cpa_complete and gold_complete)
+                sources_ready
+                and annotator_calibrated
+                and not (cpa_complete and gold_complete)
             ),
             unlock_evidence=[
                 "readiness.gates.source_bundles_annotation_ready=true",
+                "readiness.gates.annotator_calibration_passed=true",
                 "two qualified independent CPA screens and a fresh adjudicator",
-                "two qualified semantic-gold annotators and joint consensus",
+                "the exact calibrated semantic-gold pair and joint consensus",
             ],
             required_outputs=[
                 "cpa_screen_a.json",
+                "cpa_screen_a_validation.json",
                 "cpa_screen_b.json",
+                "cpa_screen_b_validation.json",
                 "cpa_disagreement_worksheet.json",
                 "cpa_consensus.json",
+                "cpa_consensus_validation.json",
                 "semantic_gold_a.json",
                 "semantic_gold_b.json",
+                "semantic_gold_independent_validation_receipts/",
                 "semantic_gold_disagreement_report.json",
                 "semantic_gold_consensus.json",
+                "semantic_gold_consensus_validation_receipts/",
+                "semantic_gold_corpus_validation.json",
+                "semantic_gold_approval.json",
+                "semantic_gold_approval_validation.json",
             ],
             prohibitions=[
                 "Model outputs must remain hidden from applicability and gold reviewers.",
@@ -995,13 +1189,14 @@ def build_handoff(
             ],
         ),
         _stage(
-            ordinal=5,
+            ordinal=7,
             stage_id="execution_freeze",
             title="Freeze prompts, serialization, demonstrations, and backends",
             completed=execution_frozen,
             prerequisites_met=(
                 cpa_complete
                 and gold_complete
+                and annotator_calibrated
                 and governance_policy_frozen
                 and gates.get("demonstration_pool_workflow_ready") is True
                 and gates.get("execution_freeze_workflow_ready") is True
@@ -1010,6 +1205,7 @@ def build_handoff(
             unlock_evidence=[
                 "readiness.gates.cpa_applicability_consensus_complete=true",
                 "readiness.gates.independent_gold_complete=true",
+                "readiness.gates.annotator_calibration_passed=true",
                 "readiness.gates.demonstration_pool_workflow_ready=true",
                 "readiness.gates.execution_freeze_workflow_ready=true",
                 "human license and attribution review complete",
@@ -1024,6 +1220,7 @@ def build_handoff(
                 "execution_freeze_config_validation.json",
                 "execution_implementation_declaration.json",
                 "execution_implementation_qualification.json",
+                "execution_implementation_qualification_validation.json",
                 "execution_freeze.json",
                 "execution_freeze_replay.json",
                 "semantic_backend_registry.json",
@@ -1038,7 +1235,7 @@ def build_handoff(
             ],
         ),
         _stage(
-            ordinal=6,
+            ordinal=8,
             stage_id="power_freeze",
             title="Build non-blind calibration statistics and freeze test power plan",
             completed=power_frozen,
@@ -1059,7 +1256,9 @@ def build_handoff(
             ],
             required_outputs=[
                 "semantic_power_calibration_statistics.json",
+                "semantic_power_calibration_statistics_validation.json",
                 "completed_power_policy.json",
+                "completed_power_policy_validation.json",
                 "ndp50_power_freeze.json",
                 "ndp50_power_freeze_replay.json",
                 "power_feasibility_v1.json rebuilt with the frozen plan",
@@ -1071,7 +1270,50 @@ def build_handoff(
             ],
         ),
         _stage(
-            ordinal=7,
+            ordinal=9,
+            stage_id="external_preregistration",
+            title=(
+                "Register the frozen public package and independently "
+                "verify the receipt"
+            ),
+            completed=external_registered,
+            prerequisites_met=(
+                feedback_signed
+                and execution_frozen
+                and power_frozen
+                and gates.get("test_design_meets_pretest_assurance") is True
+                and gates.get("publication_gate_workflow_ready") is True
+                and not external_registered
+            ),
+            unlock_evidence=[
+                (
+                    "readiness.gates."
+                    "feedback_response_collaborator_signoff_complete=true"
+                ),
+                "readiness.gates.prompt_and_backend_frozen=true",
+                "readiness.gates.test_power_plan_frozen=true",
+                "readiness.gates.test_design_meets_pretest_assurance=true",
+                "exact final public-package manifest and content digest",
+            ],
+            required_outputs=[
+                "immutable OSF/Zenodo registration record",
+                "external registration receipt/export",
+                "completed external preregistration receipt artifact",
+                "independent registration-verification record",
+                "external preregistration receipt validation",
+            ],
+            prohibitions=[
+                "Do not register a package that differs from the frozen manifest.",
+                "Do not expose sealed test identities, details, gold, or outcomes.",
+                (
+                    "The independent verifier cannot be a developer or "
+                    "project collaborator."
+                ),
+                "The external receipt does not itself authorize test opening.",
+            ],
+        ),
+        _stage(
+            ordinal=10,
             stage_id="test_release_authorization",
             title="Independently authorize the sealed test release",
             completed=test_release_authorized,
@@ -1081,6 +1323,11 @@ def build_handoff(
             unlock_evidence=[
                 "readiness.test_ready=true",
                 "readiness.gates.test_execution_workflow_ready=true",
+                (
+                    "readiness.gates."
+                    "feedback_response_collaborator_signoff_complete=true"
+                ),
+                "readiness.gates.external_preregistration_verified=true",
                 "all artifact hashes and non-human integrity checks pass",
                 "all human consensus and freeze gates pass",
             ],
@@ -1096,7 +1343,7 @@ def build_handoff(
             ],
         ),
         _stage(
-            ordinal=8,
+            ordinal=11,
             stage_id="test_execution",
             title="Execute the authorized frozen test protocol",
             completed=False,
@@ -1114,6 +1361,7 @@ def build_handoff(
                 "validator-generated test run receipt and replay",
                 "case-arm missingness and failure report",
                 "frozen inference result, replay, and publication tables",
+                "frozen inference replay validation",
             ],
             prohibitions=[
                 "Do not inspect test details before the release receipt passes.",
@@ -1208,6 +1456,32 @@ def build_handoff(
                 "then validate and freeze both content hashes before comparison."
             ),
         }
+    if "feedback_response_signoff" in released_stage_ids:
+        current_release["feedback_response_signoff_assignment"] = {
+            "released_inputs": {
+                "neutral_signoff_template": _binding(
+                    feedback_response_signoff_template_path, study_root
+                ),
+                "publication_gate_workflow": _binding(
+                    publication_gate_workflow_path, study_root
+                ),
+            },
+            "reviewer_slots": [
+                {
+                    "slot": "feedback_collaborator",
+                    "reviewer_id": None,
+                    "required_role": "postdoctoral_research_collaborator",
+                    "project_collaborator": True,
+                    "independent_reviewer": False,
+                }
+            ],
+            "submission_rule": (
+                "The collaborator reviews F01--F16, preserves the frozen "
+                "optional-sensitivity decisions, discloses the collaboration "
+                "role, and returns the completed bound template. The validator "
+                "records collaborator approval, not independent validation."
+            ),
+        }
 
     implementation = Path(__file__).resolve()
     return {
@@ -1229,6 +1503,7 @@ def build_handoff(
                 "ndp50_source_approval.py",
                 "ndp50_cpa_screen_workflow.py",
                 "semantic_gold_workflow.py",
+                "semantic_annotator_calibration.py",
                 "semantic_power_calibration.py",
                 "semantic_power_analysis.py",
                 "ndp50_data_governance.py",
@@ -1237,6 +1512,7 @@ def build_handoff(
                 "ndp50_semantic_gold.py",
                 "ndp50_execution_freeze.py",
                 "ndp50_power_freeze.py",
+                "ndp50_publication_gate.py",
                 "ndp50_test_execution.py",
                 "ndp50_test_inference.py",
                 "ndp50_readiness.py",
@@ -1247,6 +1523,9 @@ def build_handoff(
             "implementation": "ndp50_human_assignments.py",
             "release_schema": "ndp50-human-assignment-release/v1",
             "return_schema": "ndp50-human-assignment-return/v1",
+            "feedback_signoff_schema": (
+                "ndp50-feedback-response-signoff/v2"
+            ),
             "candidate_decision_release_schema": (
                 "ndp50-vocabulary-decision-assignment-release/v1"
             ),
@@ -1266,7 +1545,9 @@ def build_handoff(
             ),
             "return_rule": (
                 "Accept only validator-replayed submissions and atomically "
-                "freeze both vocabulary hashes before any cross-review reveal."
+                "freeze both vocabulary hashes before any cross-review reveal; "
+                "the feedback return must separately replay as collaborator "
+                "sign-off without an independence claim."
             ),
             "candidate_decision_rule": (
                 "Only a passing initial return replay may generate the "
@@ -1312,6 +1593,9 @@ def build_handoff(
             "Assignment wrappers cannot embed reviewer identities or decisions.",
             "Candidate acceptance uses a fresh reviewer pair after discovery.",
             "Vocabulary consensus uses a fresh qualified non-developer adjudicator.",
+            "Blind semantic gold requires a replayed passing annotator-calibration summary bound to the final handbook and vocabulary.",
+            "Collaborator feedback sign-off is released independently of the later external-registration and test-release stages.",
+            "Test release requires collaborator feedback sign-off and an independently verified immutable external preregistration receipt.",
             "All downstream artifacts bind their exact upstream content hashes.",
             "Changing a bound artifact invalidates this handoff.",
         ],
@@ -1345,10 +1629,13 @@ def validate_handoff(
     execution_freeze_config_template_path: Path,
     execution_freeze_workflow_path: Path,
     test_execution_workflow_path: Path,
+    publication_gate_workflow_path: Path,
+    feedback_response_signoff_template_path: Path,
     study_root: Path,
     cpa_consensus_path: Path | None = None,
     data_governance_approval_path: Path | None = None,
     semantic_gold_approval_path: Path | None = None,
+    annotator_calibration_summary_path: Path | None = None,
     execution_freeze_path: Path | None = None,
     completed_power_policy_path: Path | None = None,
     development_calibration_report_path: Path | None = None,
@@ -1389,10 +1676,17 @@ def validate_handoff(
         ),
         execution_freeze_workflow_path=execution_freeze_workflow_path,
         test_execution_workflow_path=test_execution_workflow_path,
+        publication_gate_workflow_path=publication_gate_workflow_path,
+        feedback_response_signoff_template_path=(
+            feedback_response_signoff_template_path
+        ),
         study_root=study_root,
         cpa_consensus_path=cpa_consensus_path,
         data_governance_approval_path=data_governance_approval_path,
         semantic_gold_approval_path=semantic_gold_approval_path,
+        annotator_calibration_summary_path=(
+            annotator_calibration_summary_path
+        ),
         execution_freeze_path=execution_freeze_path,
         completed_power_policy_path=completed_power_policy_path,
         development_calibration_report_path=(
@@ -1455,6 +1749,12 @@ def _add_inputs(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         "--test-execution-workflow", type=Path, required=True
     )
+    parser.add_argument(
+        "--publication-gate-workflow", type=Path, required=True
+    )
+    parser.add_argument(
+        "--feedback-response-signoff-template", type=Path, required=True
+    )
     parser.add_argument("--execution-freeze", type=Path)
     parser.add_argument("--completed-power-policy", type=Path)
     parser.add_argument("--development-calibration-report", type=Path)
@@ -1463,6 +1763,7 @@ def _add_inputs(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--test-release-receipt", type=Path)
     parser.add_argument("--cpa-consensus", type=Path)
     parser.add_argument("--semantic-gold-approval", type=Path)
+    parser.add_argument("--annotator-calibration-summary", type=Path)
     parser.add_argument("--data-governance-approval", type=Path)
     parser.add_argument("--study-root", type=Path, required=True)
 
@@ -1518,10 +1819,17 @@ def main(argv: Iterable[str] | None = None) -> int:
         ),
         "execution_freeze_workflow_path": args.execution_freeze_workflow,
         "test_execution_workflow_path": args.test_execution_workflow,
+        "publication_gate_workflow_path": args.publication_gate_workflow,
+        "feedback_response_signoff_template_path": (
+            args.feedback_response_signoff_template
+        ),
         "study_root": args.study_root,
         "cpa_consensus_path": args.cpa_consensus,
         "data_governance_approval_path": args.data_governance_approval,
         "semantic_gold_approval_path": args.semantic_gold_approval,
+        "annotator_calibration_summary_path": (
+            args.annotator_calibration_summary
+        ),
         "execution_freeze_path": args.execution_freeze,
         "completed_power_policy_path": args.completed_power_policy,
         "development_calibration_report_path": (

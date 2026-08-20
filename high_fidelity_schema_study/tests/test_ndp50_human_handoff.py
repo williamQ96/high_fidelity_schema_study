@@ -58,6 +58,12 @@ def _fixture(tmp_path: Path) -> dict[str, Path]:
     )
     execution_freeze_workflow = semantic / "execution_freeze_workflow.json"
     test_execution_workflow = semantic / "test_execution_workflow.json"
+    publication_gate_workflow = (
+        root / "preregistration" / "publication_gate_workflow.json"
+    )
+    feedback_response_signoff_template = (
+        root / "preregistration" / "feedback_signoff_template.json"
+    )
 
     _write(
         packet_manifest,
@@ -262,6 +268,28 @@ def _fixture(tmp_path: Path) -> dict[str, Path]:
             "test_dataset_count": 25,
         },
     )
+    _write(
+        publication_gate_workflow,
+        {
+            "schema_version": "ndp50-publication-gate-workflow/v1",
+            "status": (
+                "implementation_ready_waiting_on_collaborator_signoff_and_"
+                "external_registration"
+            ),
+            "human_decisions_present": False,
+            "test_outcomes_observed": False,
+            "test_release_authorized": False,
+        },
+    )
+    _write(
+        feedback_response_signoff_template,
+        {
+            "schema_version": "ndp50-feedback-response-signoff/v2",
+            "status": "pending_human_collaborator_review",
+            "human_decisions_present": False,
+            "independence_claimed": False,
+        },
+    )
     bindings = {
         "vocabulary_review_workflow": _sha256(vocabulary_workflow),
         "packet_manifest": _sha256(packet_manifest),
@@ -298,6 +326,12 @@ def _fixture(tmp_path: Path) -> dict[str, Path]:
         ),
         "execution_freeze_workflow": _sha256(execution_freeze_workflow),
         "test_execution_workflow": _sha256(test_execution_workflow),
+        "publication_gate_workflow": _sha256(
+            publication_gate_workflow
+        ),
+        "feedback_response_signoff_template": _sha256(
+            feedback_response_signoff_template
+        ),
         "execution_freeze": None,
         "cpa_consensus": None,
     }
@@ -338,6 +372,9 @@ def _fixture(tmp_path: Path) -> dict[str, Path]:
                 "demonstration_pool_workflow_ready": True,
                 "execution_freeze_workflow_ready": True,
                 "test_execution_workflow_ready": True,
+                "publication_gate_workflow_ready": True,
+                "feedback_response_collaborator_signoff_complete": False,
+                "external_preregistration_verified": False,
             },
         },
     )
@@ -375,10 +412,14 @@ def _fixture(tmp_path: Path) -> dict[str, Path]:
         ),
         "execution_freeze_workflow_path": execution_freeze_workflow,
         "test_execution_workflow_path": test_execution_workflow,
+        "publication_gate_workflow_path": publication_gate_workflow,
+        "feedback_response_signoff_template_path": (
+            feedback_response_signoff_template
+        ),
     }
 
 
-def test_parallel_governance_and_vocabulary_work_is_released_initially(
+def test_parallel_governance_vocabulary_and_feedback_work_is_released_initially(
     tmp_path: Path,
 ) -> None:
     inputs = _fixture(tmp_path)
@@ -387,11 +428,15 @@ def test_parallel_governance_and_vocabulary_work_is_released_initially(
     assert report["status"] == "human_work_released_downstream_locked"
     assert report["current_release"]["released_stage_ids"] == [
         "data_governance_review",
-        "vocabulary_governance"
+        "vocabulary_governance",
+        "feedback_response_signoff",
     ]
     assert [item["status"] for item in report["stages"]] == [
         "released",
         "released",
+        "released",
+        "locked",
+        "locked",
         "locked",
         "locked",
         "locked",
@@ -399,8 +444,13 @@ def test_parallel_governance_and_vocabulary_work_is_released_initially(
         "locked",
         "locked",
     ]
+    assert report["stages"][4]["stage_id"] == "annotator_calibration"
     assert "data_governance_assignment" in report["current_release"]
     assert "vocabulary_assignment" in report["current_release"]
+    assert (
+        "feedback_response_signoff_assignment"
+        in report["current_release"]
+    )
     serialized = json.dumps(report, sort_keys=True)
     assert str(tmp_path) not in serialized
     assert "test dataset identities" in serialized.lower()
@@ -411,7 +461,7 @@ def test_handoff_recalculates_and_detects_tampering(tmp_path: Path) -> None:
     report = build_handoff(**inputs)
     assert validate_handoff(report, **inputs)["status"] == "passed"
 
-    report["stages"][2]["status"] = "released"
+    report["stages"][3]["status"] = "released"
     validation = validate_handoff(report, **inputs)
 
     assert validation["status"] == "failed"
@@ -440,6 +490,22 @@ def test_manual_test_ready_flip_is_rejected(tmp_path: Path) -> None:
     with pytest.raises(
         NDPHumanHandoffError,
         match="inconsistent release gates",
+    ):
+        build_handoff(**inputs)
+
+
+def test_manual_annotator_calibration_gate_flip_is_rejected(
+    tmp_path: Path,
+) -> None:
+    inputs = _fixture(tmp_path)
+    path = inputs["readiness_path"]
+    readiness = json.loads(path.read_text(encoding="utf-8"))
+    readiness["gates"]["annotator_calibration_passed"] = True
+    _write(path, readiness)
+
+    with pytest.raises(
+        NDPHumanHandoffError,
+        match="annotator-calibration gate and supplied summary disagree",
     ):
         build_handoff(**inputs)
 
@@ -512,5 +578,7 @@ def test_governance_policy_blocks_execution_freeze_release(
 
     assert execution_stage["status"] == "locked"
     assert report["current_release"]["released_stage_ids"] == [
-        "data_governance_review"
+        "data_governance_review",
+        "feedback_response_signoff",
+        "annotator_calibration",
     ]

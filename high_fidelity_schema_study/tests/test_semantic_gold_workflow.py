@@ -7,9 +7,11 @@ import pytest
 
 from high_fidelity_schema_study.architecture_variants import ALLOWED_LOGICAL_TYPES
 from high_fidelity_schema_study.semantic_gold_workflow import (
+    _cohen_kappa,
     build_annotation_workflow_manifest,
     build_packet_source_bundle,
     compare_independent_artifacts,
+    main as gold_workflow_main,
     sha256_file,
     validate_annotation_artifact,
     validate_consensus_artifact,
@@ -362,6 +364,25 @@ def test_comparison_is_deterministic_and_never_auto_adjudicates(tmp_path: Path) 
     assert first["disagreements"][0]["resolution"]["status"] == (
         "pending_human_adjudication"
     )
+    semantic_agreement = first["agreement_by_property"]["semantic_type"]
+    assert semantic_agreement["cohen_kappa"] == 0.0
+    assert semantic_agreement["cohen_kappa_status"] == "defined"
+    assert semantic_agreement["label_state_support"]["annotator_a"] == {
+        'applicable_value:"air_temperature"': 1
+    }
+    physical_agreement = first["agreement_by_property"]["physical_type"]
+    assert physical_agreement["cohen_kappa"] is None
+    assert physical_agreement["cohen_kappa_status"] == (
+        "undefined_degenerate_marginals"
+    )
+
+
+def test_cohen_kappa_reports_defined_and_degenerate_cases() -> None:
+    assert _cohen_kappa(
+        ["a", "a", "b", "b"],
+        ["a", "b", "b", "b"],
+    ) == 0.5
+    assert _cohen_kappa(["a", "a"], ["a", "a"]) is None
 
 
 def test_comparison_requires_distinct_annotators(tmp_path: Path) -> None:
@@ -428,6 +449,71 @@ def test_valid_consensus_is_bound_to_both_frozen_originals(tmp_path: Path) -> No
     assert report["status"] == "ready"
     assert report["summary"]["disagreement_count"] == 1
     assert report["summary"]["unresolved_count"] == 0
+
+
+def test_cli_writes_independent_and_consensus_validation_receipts(
+    tmp_path: Path,
+) -> None:
+    inputs, artifact_a_path, artifact_b_path = write_independent_pair(tmp_path)
+    disagreement_path = tmp_path / "disagreement.json"
+    write_json(
+        disagreement_path,
+        compare_independent_artifacts(
+            artifact_a_path, artifact_b_path, **inputs
+        ),
+    )
+    consensus_path = tmp_path / "consensus.json"
+    write_json(
+        consensus_path,
+        build_consensus(
+            inputs,
+            artifact_a_path,
+            artifact_b_path,
+            disagreement_path,
+        ),
+    )
+    independent_receipt = tmp_path / "independent-validation.json"
+    consensus_receipt = tmp_path / "consensus-validation.json"
+
+    gold_workflow_main(
+        [
+            "validate-independent",
+            "--artifact",
+            str(artifact_a_path),
+            "--packet",
+            str(inputs["packet_path"]),
+            "--source-bundle",
+            str(inputs["source_bundle_path"]),
+            "--vocabulary",
+            str(inputs["vocabulary_path"]),
+            "--output",
+            str(independent_receipt),
+        ]
+    )
+    gold_workflow_main(
+        [
+            "validate-consensus",
+            "--artifact",
+            str(consensus_path),
+            "--artifact-a",
+            str(artifact_a_path),
+            "--artifact-b",
+            str(artifact_b_path),
+            "--disagreement-report",
+            str(disagreement_path),
+            "--packet",
+            str(inputs["packet_path"]),
+            "--source-bundle",
+            str(inputs["source_bundle_path"]),
+            "--vocabulary",
+            str(inputs["vocabulary_path"]),
+            "--output",
+            str(consensus_receipt),
+        ]
+    )
+
+    assert json.loads(independent_receipt.read_text())["status"] == "ready"
+    assert json.loads(consensus_receipt.read_text())["status"] == "ready"
 
 
 def test_consensus_cannot_silently_change_an_agreed_slot(tmp_path: Path) -> None:

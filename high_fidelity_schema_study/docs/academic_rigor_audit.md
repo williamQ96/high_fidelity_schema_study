@@ -26,7 +26,10 @@ This audit constrains the paper and demo to claims supported by frozen artifacts
 ## Current Rigor Status
 
 - Corpus and benchmark scope: artifact-ready for a pilot paper.
-- References: verified artifact bibliography exists, with `verification_needed` isolated from core claims.
+- References: the verified artifact bibliography separates bibliographic
+  identity from claim entailment; background-only entries remain isolated from
+  core claims. Auctus was promoted only after its PVLDB paper and DOI were
+  inspected.
 - Time-axis gap: adjudicated as a limitation for this convergence round.
 - GUI: read-only artifact inspection surface; visual smoke screenshots should be stored outside tracked artifacts unless explicitly needed.
 - Companion appendix: `docs/phase20_companion_engineering_appendix.md` records post-freeze engineering readiness without changing frozen paper claims.

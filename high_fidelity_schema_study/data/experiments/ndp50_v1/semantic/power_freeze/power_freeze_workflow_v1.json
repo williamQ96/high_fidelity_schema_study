@@ -3,7 +3,7 @@
   "automatic_policy_decisions": false,
   "cpa_design": {
     "file": "semantic/cpa_design_draft_v1.json",
-    "sha256": "884cec768ecb08acb91e6f1b00a5dee88f163304af727fec8d67b132c900ecc3"
+    "sha256": "0313d5fee93c03b693cf8962ad9406e77b3f86e004c7d916d810c0bf7a791840"
   },
   "familywise_alpha": 0.05,
   "human_decisions_present": false,
@@ -12,12 +12,12 @@
     "sha256": "65970f34de68226fa095ee763d37543e1ebfd3dec2dfaf09e0dafbb351e8d308"
   },
   "implementation_dependencies": {
-    "semantic_power_analysis.py": "a5d68e5389e644c15bdcae599f06ba8c8757ba378e2edb4e59f4f1f2d1991c69"
+    "semantic_power_analysis.py": "9da204bc167095d5efd2a84bd6c89767db4eb534d8d3eba292ec4a02e8d13b50"
   },
   "minimum_sensitivity_scenarios": 3,
   "neutral_policy_template": {
     "file": "semantic/power_freeze/power_policy_neutral_v1.json",
-    "sha256": "dba9cfb8815507aee9a4815b59937115849b64a5098e3619c46dad1735211fc2"
+    "sha256": "94ff64d47fec9389676caa1e2dae55ce0a074711a4bb9e9497daf3073bdb9a78"
   },
   "opportunity_manifest": {
     "file": "semantic/opportunity_manifest_v1.json",

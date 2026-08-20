@@ -611,11 +611,13 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers = parser.add_subparsers(dest="command", required=True)
     preflight = subparsers.add_parser("preflight-design")
     preflight.add_argument("--design", type=Path, required=True)
+    preflight.add_argument("--output", type=Path)
     build = subparsers.add_parser("build")
     build.add_argument("--round-manifest", type=Path, required=True)
     build.add_argument("--output", type=Path, required=True)
     validate = subparsers.add_parser("validate")
     validate.add_argument("--artifact", type=Path, required=True)
+    validate.add_argument("--output", type=Path)
     return parser
 
 
@@ -623,6 +625,8 @@ def main(argv: Iterable[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     if args.command == "preflight-design":
         report = preflight_annotator_calibration_design(args.design)
+        if args.output is not None:
+            write_json(args.output, report)
         print(json.dumps(report, indent=2, ensure_ascii=False, sort_keys=True))
         return 0 if report["status"] == "ready_for_external_registration" else 1
     if args.command == "build":
@@ -634,6 +638,8 @@ def main(argv: Iterable[str] | None = None) -> int:
         print(json.dumps({"status": payload["status"], "metrics": payload["metrics"]}))
         return 0 if payload["status"] == "passed" else 2
     report = validate_annotator_calibration_summary(args.artifact)
+    if args.output is not None:
+        write_json(args.output, report)
     print(json.dumps(report, indent=2, ensure_ascii=False, sort_keys=True))
     return 0 if report["status"] == "ready" else 1
 

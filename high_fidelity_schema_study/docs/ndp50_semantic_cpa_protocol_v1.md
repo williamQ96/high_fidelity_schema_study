@@ -188,6 +188,15 @@ zero-difference handling, the
 canonicalization, support counts, and failure accounting are all inherited
 unchanged by the execution freeze and power workflow.
 
+The test's null is sign exchangeability of the paired dataset-level
+differences about zero. It is not a distribution-free mean-null test under
+arbitrary asymmetry. The mean paired difference remains the effect estimand,
+so the complete paired-difference distribution and assumption diagnostics
+must accompany the p-value. The equal-weight estimand targets the
+protocol-defined, quota-weighted NDP-50 design rather than catalog prevalence.
+The complete interpretation and reporting contract is
+`docs/ndp50_statistical_analysis_plan_v1.md`.
+
 For two co-primary contrasts, conservative Holm planning uses the worst-case
 per-contrast threshold `0.05 / 2 = 0.025`. With five nonzero dataset-level
 paired differences, the smallest possible two-sided exact sign-flip p-value is
@@ -301,7 +310,7 @@ replayed qualification declaration. It reparses the bound raw response,
 demands exact equality with the bound parsed slots, and then recomputes the
 sufficient statistics from those slots and the bound gold. Thus the evidence
 chain is raw response -> qualified parser v2 -> parsed output -> qualified
-scorer v2 -> score -> registered inference. Internally self-consistent forged
+scorer v3 -> score -> registered inference. Internally self-consistent forged
 scores, raw-response substitutions, coordinated parsed-output/score
 substitutions, gold substitutions, stale parser or scorer code, and
 interface-version drift are rejected for primary and sensitivity records.
@@ -310,17 +319,49 @@ fixed-seed SHA-256 ranking, execution blocks use a seeded cyclic rotation
 across case positions, and zero-shot plus replay remain one ordered dependency
 block. Sequence numbers must match that schedule and timestamps cannot overlap
 or contradict it. Runner, parser, and scorer actual-use contracts are covered
-by synthetic conformance suite v3 before any study data are used. The
+by synthetic conformance suite v4 before any study data are used. The
 response-replay arm must bind and reuse the byte-identical zero-shot response
 artifact and make zero physical model calls. A deviation registry is mandatory
 even when empty, and post-outcome protocol, analysis, case-selection, or
 sensitivity-condition changes are rejected.
 
+Resource accounting is part of the execution freeze rather than a
+retrospective spreadsheet. Its `resource_accounting_contract` binds the
+currency, price basis, effective date and source, exact per-call and
+per-million-token rates, local-compute monetization boundary, inclusion of
+failed/retried/reused calls, cost-scope note, and the selected backend registry
+record as the hardware/runtime source. Backend preflight requires GPU identity,
+positive GPU count, offload configuration, and context length. Every
+`ndp50-test-score/v3` artifact has exact integer fields for physical and failed
+model calls, retries, and input/output tokens, plus exact numeric fields for
+model latency, end-to-end latency, and USD cost. The validator reconciles these
+values with attempt count, record status, model-call count, replay semantics,
+and `model_latency_seconds <= end_to_end_latency_seconds`. A
+`local_compute_not_monetized` freeze requires zero USD rates and cost while
+still reporting calls, tokens, latency, failures, retries, and hardware; it
+does not imply zero resource use.
+
+The same score-v3 evidence chain closes the NDP confidence gap. Every accepted
+applicable-known slot binds `slot_id`, `label_id`, a finite
+`confidence_score` in `[0,1]`, and exact-canonical correctness; every
+nonaccepted prediction must carry `null` confidence. The execution freeze
+records the source and interpretation of confidence for each arm, forbids
+pooling across arms or labels, fixes decile boundaries, requires at least 30
+accepted observations in an arm-by-label group before Brier score, ECE, or
+calibration wording is permitted, and fixes whole-tie-group right-continuous
+AURC over achieved coverage. Low-support groups still expose support,
+reliability bins, achieved coverage, and risk--coverage/AURC, but their
+calibration summaries remain `null` and cannot support a calibration claim.
+These are secondary descriptive diagnostics; confidence is not evidence or
+verification and cannot replace the primary endpoint.
+
 The validator produces a content-addressed run receipt, a zero-call replay
 comparison, and a missingness report. Publication reporting must include
 dataset flow, all dispositions, case-by-arm failure counts, metric numerators
-and denominators, undefined counts, calls/tokens/cost/latency, both
-co-primary effects with intervals and raw/Holm-adjusted p-values, and all
+and denominators, undefined counts, calls/tokens/cost, failed calls, retries,
+model latency, end-to-end latency, the frozen price schedule and
+hardware/runtime identity, both co-primary effects with intervals and
+raw/Holm-adjusted p-values, and all
 deviations. Underpowered or non-analysable results cannot be restated as
 evidence of no effect.
 
@@ -333,8 +374,9 @@ builds the fixed-seed 10,000-repetition dataset bootstrap interval, and applies
 Holm adjustment across exactly the two co-primary contrasts. It also reconciles
 the realized comparable count against each frozen power requirement and
 deterministically regenerates arm metrics, support counts, per-label F1,
-undefined denominators, resource usage, dataset flow, failures, and claim
-scope. It separately reports each registered OFAT sensitivity condition
+undefined denominators, arm-by-label confidence diagnostics, resource usage,
+dataset flow, failures, and claim scope. It separately reports each registered
+OFAT sensitivity condition
 against the primary zero-shot anchor using paired dataset-level descriptive
 differences and explicitly emits no sensitivity p-value. Its `verify` command
 must replay byte-for-byte before reporting.
@@ -397,6 +439,13 @@ Bundle status therefore remains
 ## Independent gold
 
 The per-case two-annotator workflow is reused without automatic adjudication.
+Before either annotator sees an NDP-50 blind gold packet, the exact pair must
+pass a preregistered non-NDP calibration round bound to the final handbook and
+frozen NDP vocabulary. The calibration summary must replay, bind the same two
+stable annotator IDs used across the NDP-50 corpus, and retain an external
+receipt proving that its design and thresholds preceded submissions. Detailed
+role, sequencing, agreement, and anchoring controls are in
+`docs/ndp50_annotation_and_independence_plan_v1.md`.
 The NDP corpus wrapper is executable rather than a permanently false readiness
 declaration:
 
@@ -723,7 +772,8 @@ python -m high_fidelity_schema_study.ndp50_execution_qualification prepare \
 python -m high_fidelity_schema_study.ndp50_execution_qualification verify \
   --receipt execution_implementation_qualification.json \
   --declaration execution_implementation_declaration.json \
-  --study-root high_fidelity_schema_study/data/experiments/ndp50_v1
+  --study-root high_fidelity_schema_study/data/experiments/ndp50_v1 \
+  --output execution_implementation_qualification_validation.json
 
 python -m high_fidelity_schema_study.ndp50_demonstration_pool prepare \
   --packet-manifest high_fidelity_schema_study/data/experiments/ndp50_v1/semantic/annotation_pack_v1/manifest.json \
@@ -740,7 +790,8 @@ python -m high_fidelity_schema_study.ndp50_demonstration_pool verify \
   --artifact development_demonstration_pool.json \
   --semantic-gold-approval semantic_gold_approval.json \
   --packet-manifest high_fidelity_schema_study/data/experiments/ndp50_v1/semantic/annotation_pack_v1/manifest.json \
-  --study-root high_fidelity_schema_study/data/experiments/ndp50_v1
+  --study-root high_fidelity_schema_study/data/experiments/ndp50_v1 \
+  --output development_demonstration_pool_replay.json
 
 python -m high_fidelity_schema_study.ndp50_execution_freeze prepare \
   --cpa-design high_fidelity_schema_study/data/experiments/ndp50_v1/semantic/cpa_design_draft_v1.json \
@@ -911,18 +962,24 @@ circular hash dependency. Its stages are:
 
 1. data-governance review and accountable approval;
 2. vocabulary governance;
-3. source-bundle rebuild and approval;
-4. parallel CPA applicability screening and semantic-gold review;
-5. prompt, serialization, demonstration, and backend freeze;
-6. non-blind calibration and power-plan freeze;
-7. distinct-operator/independent-monitor test-release authorization;
-8. authorized test execution.
+3. collaborator review and sign-off of F01--F16, explicitly non-independent;
+4. source-bundle rebuild and approval;
+5. preregistered non-NDP qualification of the semantic-gold annotator pair;
+6. parallel CPA applicability screening and semantic-gold review;
+7. prompt, serialization, demonstration, and backend freeze;
+8. non-blind calibration and power-plan freeze;
+9. immutable external preregistration and independent receipt verification;
+10. distinct-operator/independent-monitor test-release authorization;
+11. authorized test execution.
 
 Only stages marked `released` may be distributed as executable human
 assignments. `completed` requires the corresponding validated consensus or
 freeze artifact; generating a template never completes a stage. The current
-artifact releases `data_governance_review` and `vocabulary_governance` in
-parallel and locks every downstream stage.
+artifact releases `data_governance_review`, `vocabulary_governance`, and
+`feedback_response_signoff` in parallel and locks every downstream stage. The
+three publication events are separate stages so that collaborator sign-off
+and external registration can be completed before, rather than circularly
+depending on, `test_ready`.
 
 The current vocabulary assignment requires two distinct, pseudonymous,
 conflict-disclosed non-developer reviewers, covering a scientific metadata
@@ -957,6 +1014,8 @@ python -m high_fidelity_schema_study.ndp50_human_handoff build \
   --execution-freeze-config-template high_fidelity_schema_study/data/experiments/ndp50_v1/semantic/execution_freeze/execution_freeze_config_neutral_v1.json \
   --execution-freeze-workflow high_fidelity_schema_study/data/experiments/ndp50_v1/semantic/execution_freeze/execution_freeze_workflow_v1.json \
   --test-execution-workflow high_fidelity_schema_study/data/experiments/ndp50_v1/semantic/test_execution/test_execution_workflow_v1.json \
+  --publication-gate-workflow high_fidelity_schema_study/data/experiments/ndp50_v1/preregistration/publication_gate_workflow_v1.json \
+  --feedback-response-signoff-template high_fidelity_schema_study/data/experiments/ndp50_v1/preregistration/feedback_response_signoff_neutral_v1.json \
   --study-root high_fidelity_schema_study/data/experiments/ndp50_v1 \
   --output high_fidelity_schema_study/data/experiments/ndp50_v1/semantic/human_handoff_v1.json
 
@@ -984,17 +1043,26 @@ python -m high_fidelity_schema_study.ndp50_human_handoff validate \
   --execution-freeze-config-template high_fidelity_schema_study/data/experiments/ndp50_v1/semantic/execution_freeze/execution_freeze_config_neutral_v1.json \
   --execution-freeze-workflow high_fidelity_schema_study/data/experiments/ndp50_v1/semantic/execution_freeze/execution_freeze_workflow_v1.json \
   --test-execution-workflow high_fidelity_schema_study/data/experiments/ndp50_v1/semantic/test_execution/test_execution_workflow_v1.json \
+  --publication-gate-workflow high_fidelity_schema_study/data/experiments/ndp50_v1/preregistration/publication_gate_workflow_v1.json \
+  --feedback-response-signoff-template high_fidelity_schema_study/data/experiments/ndp50_v1/preregistration/feedback_response_signoff_neutral_v1.json \
   --study-root high_fidelity_schema_study/data/experiments/ndp50_v1
 ```
 
 The released work is materialized separately under
 `semantic/human_assignments_v1/`. The package contains one sequential
 data-governance review/countersignature assignment and two isolated vocabulary
-discovery assignments. The vocabulary payloads are byte-identical copies of
-the neutral template, while their wrappers are distinct and contain no
-reviewer identity or human decision. The accountable governance signatory
+discovery assignments, plus one bound collaborator feedback-signoff
+assignment. The vocabulary payloads are byte-identical copies of the neutral
+template, while their wrappers are distinct and contain no reviewer identity
+or human decision. The feedback wrapper fixes the F01--F16 scope, the
+project-collaborator role, the non-independence disclosure, and the prohibition
+on test access; it contains no completed decision or signature. The accountable
+governance signatory
 receives the stewardship review only after its evidence fields are frozen;
 this is a sequential countersignature, not a second independent form.
+The human-readable field and return instructions are frozen in
+`docs/ndp50_swathi_feedback_signoff_guide_v1.md`; the assignment wrapper also
+contains the exact validator command template and required receipt filename.
 
 ```bash
 python -m high_fidelity_schema_study.ndp50_human_assignments prepare \
@@ -1012,7 +1080,8 @@ python -m high_fidelity_schema_study.ndp50_human_assignments validate-release \
 The neutral return manifest must not be marked complete until the governance
 document has two distinct qualified signatories and an exact passing
 validation receipt, and both vocabulary submissions have exact passing
-receipts. A study operator must then atomically record both submission hashes
+receipts, and the collaborator sign-off has an exact passing publication-gate
+receipt. A study operator must then atomically record both submission hashes
 and attest that neither review, a candidate catalog, nor a disagreement report
 was visible before that dual freeze. Only a passing validator-generated return
 receipt authorizes construction of the vocabulary candidate catalog:
@@ -1108,6 +1177,8 @@ The following are required before semantic execution:
   policies;
 - prompt text, serialization, row samplers, demonstration ranking, model,
   decoding parameters, and backend registry;
+- a passing preregistered annotator-calibration summary bound to the final
+  handbook, vocabulary, and exact gold annotator pair;
 - two independent gold submissions and consensus;
 - a frozen non-blind power plan before any test semantic outcome is inspected.
 
@@ -1125,9 +1196,14 @@ The executable readiness artifact separately reports
 `data_governance_review_workflow_ready=true`,
 `data_governance_policy_frozen=false`,
 `semantic_gold_workflow_ready=true`,
+`annotator_calibration_passed=false`,
+`gold_annotator_identity_matches_calibration=false`,
 `independent_gold_complete=false`,
 `demonstration_pool_workflow_ready=true`,
 `execution_freeze_workflow_ready=true`,
+`publication_gate_workflow_ready=true`,
+`feedback_response_collaborator_signoff_complete=false`,
+`external_preregistration_verified=false`,
 `prompt_and_backend_frozen=false`,
 `validation_confirmatory_power_established=false`,
 `test_power_plan_frozen=false`,
@@ -1137,3 +1213,48 @@ The executable readiness artifact separately reports
 `semantic_execution_ready=false`, and `test_ready=false`. This separation
 prevents successful workflow engineering or hashing from being misreported as
 completed human screening or research readiness.
+
+## Feedback-improvement integration
+
+The publication and design response to Swathi's Phase 1 review is recorded in
+`docs/swathi_feedback_response_matrix_v1.md` and
+`docs/ndp50_feedback_improvement_amendment_v1.md`. The scoped literature basis
+is recorded in
+`docs/literature/semantic_architecture_literature_review_2026-07-27.md`.
+Claim-to-evidence controls and the public-registration draft are recorded in
+`docs/semantic_architecture_claim_ledger_v1.md` and
+`docs/preregistration/ndp50_osf_zenodo_preregistration_draft_v1.md`.
+The sorted public source allowlist and deterministic disclosure-control
+manifest are produced by
+`docs/preregistration/public_package_files_v1.txt` and
+`ndp50_preregistration_package.py`.
+`ndp50_publication_gate.py` then binds that exact manifest to a
+non-independent collaborator sign-off and a separately independent external
+registration verification. The live readiness and handoff artifacts remain
+outside the public package to avoid a receipt/readiness circular hash
+dependency.
+
+Immediate changes concern positioning, citations, claim language, reporting,
+role independence, and preregistration. Optional evidence-free, heuristic,
+learned CTA/CPA, second-model, Krippendorff-alpha, and AUGRC conditions are not
+active in `ndp50-cpa-design/v1`. Enabling any of them requires a new executable
+design or separately registered sensitivity protocol, requalification, and
+regenerated hash-bound downstream artifacts before affected outcomes are
+observed.
+
+The preregistration draft is not a receipt and adds no readiness credit. The
+test-release gate remains closed until its unresolved execution/power/role
+bindings are completed, Swathi's collaborator sign-off replays without an
+independence claim, a sealed-identity leakage review passes, and the external
+time-stamped registration is independently verified.
+The local builder's exact ID/title scan is necessary but does not rule out
+indirect re-identification or prove that the external uploaded attachment set
+matches the local manifest.
+
+The primary NDP endpoint remains the dataset-level exactly correct accepted
+claim rate. Selective-risk curves and any AURC/AUGRC summaries are secondary and
+must report achieved coverage, tie handling, and support. Human consensus
+remains the reference label process, not an upper bound. Active collaborators,
+including Swathi, may perform literature, protocol, claim, and interpretation
+review but may not occupy blind independent annotation, fresh adjudication,
+independent methods-review, or independent test-monitor roles.

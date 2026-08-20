@@ -12,8 +12,8 @@
     "sha256": "9d4e64214d201d05b8eba5d33c4f2c47c9ff477725c4154c70d360016a63c915"
   },
   "implementation_dependencies": {
-    "ndp50_source_approval.py": "6ba7772459167931a366a55ddfa74e6a591e41f6a47d40bedfc9f70b3bbc597d",
-    "semantic_gold_workflow.py": "1319dd8b52a3421ce4e34bbfc59e21391e2c8d161e1c01272aa33a7299fab864"
+    "ndp50_source_approval.py": "5460c32f54822f15771ee73fccd0f090ee96395340ac530967a6758091dea113",
+    "semantic_gold_workflow.py": "4be417efe6a2b4bb7b166e6fb0bba40a9545017908110077f7e7dc8618281a69"
   },
   "model_outputs_visible_during_annotation": false,
   "neutral_index_template": {

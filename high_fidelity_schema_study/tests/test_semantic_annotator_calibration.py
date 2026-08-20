@@ -9,6 +9,7 @@ from high_fidelity_schema_study.architecture_variants import ALLOWED_LOGICAL_TYP
 from high_fidelity_schema_study.semantic_annotator_calibration import (
     AnnotatorCalibrationError,
     build_annotator_calibration_summary,
+    main as calibration_main,
     preflight_annotator_calibration_design,
     sha256_file,
     validate_annotator_calibration_summary,
@@ -369,6 +370,48 @@ def test_design_can_be_preflighted_before_receipt_or_submissions(
     assert report["design"]["sha256"] == sha256_file(paths["design"])
     assert report["workflow"]["case_count"] == 9
     assert report["not_a_registration_receipt"] is True
+
+
+def test_cli_writes_preflight_and_summary_validation_receipts(
+    tmp_path: Path,
+) -> None:
+    paths = build_round(tmp_path)
+    summary = build_annotator_calibration_summary(
+        round_manifest_path=paths["round"], output_path=paths["summary"]
+    )
+    write_json(paths["summary"], summary)
+    preflight_receipt = tmp_path / "design-preflight.json"
+    validation_receipt = tmp_path / "summary-validation.json"
+
+    assert (
+        calibration_main(
+            [
+                "preflight-design",
+                "--design",
+                str(paths["design"]),
+                "--output",
+                str(preflight_receipt),
+            ]
+        )
+        == 0
+    )
+    assert (
+        calibration_main(
+            [
+                "validate",
+                "--artifact",
+                str(paths["summary"]),
+                "--output",
+                str(validation_receipt),
+            ]
+        )
+        == 0
+    )
+
+    assert json.loads(preflight_receipt.read_text())["status"] == (
+        "ready_for_external_registration"
+    )
+    assert json.loads(validation_receipt.read_text())["status"] == "ready"
 
 
 def test_invalid_design_is_blocked_before_human_work(tmp_path: Path) -> None:

@@ -46,7 +46,7 @@
 \setlength{\headheight}{14pt}
 
 \title{\textbf{How Much Semantic Architecture Is Necessary?}\\
-\large A Causally Controlled A/B/C/D Protocol for Evidence-Constrained Dataset Schema Induction}
+\large A Replay-Controlled Evaluation Protocol for Evidence-Constrained Dataset Schema Induction}
 \author{Anonymous pre-blind technical report\\
 \small Authors and affiliations to be bound at protocol freeze}
 \date{\PaperDate}
@@ -79,15 +79,16 @@ Backend qualification subsequently exposed a runtime and measurement failure: an
 repairing replay and telemetry provenance, disabling thinking, and loading a
 16,384-token context, the same Q4\_K\_M model passed every predeclared operational
 criterion over eight non-blind calibration datasets and 74 semantic targets. This
-qualification establishes execution compatibility only. The causal contribution
-of dataset-level reasoning and deterministic verification remains reserved for an
+qualification establishes execution compatibility only. The component
+contributions of dataset-level reasoning and deterministic verification remain
+reserved for an
 independently annotated, frozen blind evaluation. Explicit provenance placeholders
 are included for that freeze.
 \end{abstract}
 
 \noindent\textbf{Keywords:} semantic schema induction; selective prediction;
 evidence grounding; deterministic verification; replay identity; model capability
-debt; dataset metadata.
+debt; dataset metadata; controlled ablation.
 
 \section{Introduction}
 
@@ -105,8 +106,9 @@ extractors own canonical physical structure. A semantic component may propose
 claims only for existing fields, cite evidence identifiers from the input record,
 and abstain when support is insufficient. This design is aligned with provenance
 models that make derivation auditable \cite{prov2013}, evidence-backed model revision
-\cite{gao2023rarr}, and selective prediction, where lower coverage can be exchanged
-for lower risk \cite{geifman2017selective}.
+\cite{gao2023rarr}, attributed generation with explicit support and abstention
+\cite{menick2022verifiedquotes}, and selective prediction, where lower coverage can
+be exchanged for lower risk \cite{geifman2017selective}.
 
 The historical implementation used per-field calls, manual grouping, retries, and
 multiple merge rules. Some of this complexity may have been useful when smaller
@@ -114,9 +116,17 @@ models struggled to integrate repository- or dataset-level context. We call
 complexity that remains after its compensating model limitation has weakened
 \emph{Model Capability Debt}. The scientific question is not whether a newer model
 can be inserted everywhere. It is whether the minimum architecture that preserves
-the trust boundary can be identified empirically.
+the trust boundary can be identified empirically. This is a project-specific
+operational construct derived from the broader technical-debt framing for ML
+systems \cite{sculley2015debt}; it is not asserted as an established universal
+theory. Khan's single-benchmark prompting study provides a motivating example in
+which restrictive prompting helped one model generation but hurt a more capable
+one \cite{khan2025promptinginversion}. That preprint does not validate our construct
+or establish the pattern for schema extraction. A component counts as capability
+debt only after a controlled deletion or substitution demonstrates that its
+compensating value is no longer needed.
 
-We ask three causal questions:
+We ask three component-attribution questions:
 \begin{enumerate}[label=\textbf{RQ\arabic*:},leftmargin=2.2cm]
   \item What does one dataset-level semantic reasoning call add beyond deterministic extraction?
   \item Holding the semantic response exactly constant, what does deterministic verification change?
@@ -124,8 +134,48 @@ We ask three causal questions:
 \end{enumerate}
 
 At this pre-blind stage, none of these questions has a valid effect estimate. The
-completed work establishes that the future estimates can be causally interpreted,
-and identifies precisely what evidence is still missing.
+completed work establishes conditions under which future within-system differences
+can be attributed to predeclared component substitutions, and identifies precisely
+what evidence is still missing. This does not identify population-wide or
+mechanistic causal effects.
+
+\section{Related Work and Evaluation Position}
+
+\paragraph{Table annotation and dataset metadata.}
+Doduo jointly learns column types and inter-column relations from whole-table
+context \cite{suhara2022doduo}. ArcheType decomposes LLM-based column type
+annotation into context sampling, prompt serialization, model querying, and label
+remapping, showing why these choices must be frozen and ablated separately
+\cite{feuer2024archetype}. Korini and Bizer study prompt variants,
+similarity-selected demonstrations, fine-tuning, model choice, and vocabulary
+transfer for column property annotation \cite{korini2025cpa}. These systems are
+important comparators for applicable relational tables, but CTA and CPA do not
+cover parser-owned physical structure, hierarchical files, arrays, or file-level
+claims. AutoDDG combines profiled table summaries with LLM enrichment for dataset
+description and retrieval \cite{zhang2026autoddg}; description quality is adjacent
+to, but not equivalent to, schema-claim correctness.
+
+\paragraph{Attribution, abstention, and selective evaluation.}
+Evidence-attributed generation motivates cited support and explicit abstention
+\cite{menick2022verifiedquotes,gao2023rarr}. A citation is not itself proof of
+truth, so our verifier checks identity, allowed purpose, field relevance, and
+contradiction without claiming semantic entailment. Selective-classification work
+motivates risk--coverage reporting \cite{geifman2017selective}, while Traub et al.
+show that common multi-threshold metrics can change system rankings and propose
+AUGRC as an alternative \cite{traub2024selective}. We therefore keep exact accepted
+claim rate as the primary endpoint, report AURC only with achieved coverage and
+tie rules, and reserve AUGRC as a predeclared descriptive sensitivity.
+
+\paragraph{Validity, annotation, and resource cost.}
+Benchmark contamination can inflate apparent LLM performance even when exposure
+is difficult to measure \cite{sainz2023contamination}; a sealed split prevents
+project-side tuning but does not prove absence from model pretraining. Annotation
+anchoring can alter agreement \cite{berzak2016anchoring}, motivating independent
+prediction-blind submissions that are frozen before disagreement reveal.
+Cost-aware LLM routing demonstrates that quality must be interpreted jointly with
+resource use \cite{chen2023frugalgpt}. We report calls, retries, tokens, latency,
+configured cost, and effective architecture cost, but do not treat a learned model
+cascade as a direct baseline for this study.
 
 \section{Problem Formulation and Product Boundary}
 
@@ -208,7 +258,15 @@ When $P$ is empty, selective accuracy/risk is undefined rather than forced to ze
 Abstentions lower end-to-end accuracy and coverage but do not enter the conditional
 selective-risk denominator. Confidence is used only to order whole tie groups for a
 right-continuous risk--coverage curve. AURC is integrated only over achieved
-coverage; per-property curves are preferred when confidence scales differ.
+coverage. In the NDP-50 path, score-v3 binds every accepted applicable-known
+slot to its arm-specific confidence and exact-canonical correctness. Fixed-decile
+reliability bins are reported separately by arm and property; Brier score, fixed-bin
+ECE, and calibration wording are permitted only at 30 or more accepted observations
+in that group. Cross-arm and cross-property pooling is forbidden. Low-support
+groups retain their support, bins, achieved coverage, curve, and descriptive AURC
+but cannot support a calibration claim. Confidence remains an ordering or
+probability claim according to its frozen source declaration, never evidence or
+verification.
 
 Unsupported-claim rates are computed over model-proposed or model-accepted claims,
 never diluted by deterministic claims. Cost accounting separates generated calls,
@@ -229,7 +287,7 @@ D provenance.
 
 \begin{table}[H]
 \centering
-\caption{Core causal invariants enforced by code and tests.}
+\caption{Core component-attribution invariants enforced by code and tests.}
 \begin{tabularx}{\textwidth}{@{}p{4.2cm}Y@{}}
 \toprule
 Invariant & Enforced behavior \\
@@ -240,7 +298,7 @@ C replay boundary & Zero generation calls and exact B raw-response hash, includi
 Evidence boundary & Missing, empty, cross-field, or wrong-span evidence cannot verify a claim. \\
 Confidence boundary & Confidence never implies verification. \\
 Applicability boundary & \NA, applicable unknown, applicable value, and outside-scope are distinct. \\
-Comparability boundary & Partial execution, missing gold coverage, or replay failure suppresses causal deltas. \\
+Comparability boundary & Partial execution, missing gold coverage, or replay failure suppresses component-attribution deltas. \\
 Legacy fidelity & Historical scheduling and merge behavior remain unchanged; all attempts are measured. \\
 \bottomrule
 \end{tabularx}
@@ -262,7 +320,7 @@ effects.
 
 \begin{table}[H]
 \centering
-\caption{Nine-case synthetic development diagnostics. All B/C/D causal comparisons are non-comparable.}
+\caption{Nine-case synthetic development diagnostics. All B/C/D component comparisons are non-comparable.}
 \label{tab:devresults}
 \scriptsize
 \begin{tabularx}{\textwidth}{@{}lCCCCCC@{}}
@@ -398,50 +456,113 @@ reported as first-class artifacts \cite{mitchell2019modelcards}.
 
 \section{Blind External Evaluation Protocol}
 
-Two annotators who did not develop the system will independently label the blind
-gold. They will distinguish applicable value, applicable unknown, \NA, and
-outside-scope slots, then adjudicate disagreements without observing architecture
-outputs. Dataset-level paired effects, not pooled slots alone, will be the primary
-analysis unit. The development set will not be used as evidence of generalization.
-Dataset documentation follows the broader principle that collection, intended use,
-and limitations should be explicit \cite{gebru2021datasheets}.
+Two qualified annotators who did not develop or actively review the system will
+independently label the blind gold. They will distinguish applicable value,
+applicable unknown, \NA, and outside-scope slots. Both submissions are
+content-hashed before a deterministic disagreement report is revealed; consensus
+then resolves every disagreement without access to architecture outputs.
+Pre-consensus reporting includes exact agreement and support by decision slot,
+disagreement counts, and Cohen's kappa with marginal tables
+\cite{cohen1960kappa}. Degenerate kappa is reported as undefined, not zero.
+Krippendorff's alpha \cite{krippendorff2018content} may be added descriptively
+only after its unitization, distance function, and missing-data policy are frozen;
+no agreement coefficient replaces reconciliation.
+
+Dataset-level paired effects, not pooled slots alone, will be the primary analysis
+unit. The development set will not be used as evidence of generalization. Dataset
+documentation follows the broader principle that collection, intended use, and
+limitations should be explicit \cite{gebru2021datasheets}.
 
 The primary contrasts are predeclared:
 \begin{itemize}
-  \item A--B: added correct/incorrect claims, coverage, selective risk, unsupported claims, calls, tokens, and latency;
+  \item A--B: added correct/incorrect claims, coverage, selective risk, unsupported claims, successful/failed calls, retries, tokens, model latency, end-to-end latency, and cost;
   \item B--C: B-accepted claims rejected or abstained by C, incorrect claims removed, correct claims lost, unsupported claims removed, and the risk--coverage trade-off;
-  \item C--D: quality, selective metrics, unsupported claims, calls, tokens, latency, and failure surface, only when D is comparable.
+  \item C--D: quality, selective metrics, unsupported claims, successful/failed calls, retries, tokens, both latency measures, cost, and failure surface, only when D is comparable.
 \end{itemize}
 
-\subsection{Blind-freeze provenance placeholders}
+The deterministic condition is the primary non-LLM baseline. Human consensus is
+the reference standard, not a human upper bound. Doduo and ArcheType are scoped
+literature comparators for applicable table-annotation cases, not drop-in
+baselines for heterogeneous file extraction. An evidence-free model call, a
+name/value heuristic, or a second model family may be useful as a secondary
+sensitivity, but none may be added after outcomes or used to rescue the primary
+result. Each requires a versioned design, fixed information boundary, complete
+paired execution, and updated multiplicity/power review before activation.
+
+\subsection{NDP-50 operationalization}
+
+The external protocol is instantiated on a content-addressed National Data
+Platform candidate frame of 5,823 catalog records from 75 organizations. The
+frozen sample contains 50 datasets: 15 development, 10 validation, and 25 sealed
+test. Selection uses format strata, an organization cap, and SHA-256 priorities.
+The dataset is the statistical unit; multiple resources remain clustered within
+their source dataset. At this manuscript revision, structural validation is
+complete within its declared scope, while semantic execution and test opening are
+not authorized.
+
+The NDP-50 protocol retains two co-primary contrasts: deterministic-only versus
+dataset-level zero-shot augmentation, and zero-shot versus deterministic
+verification of its byte-identical response. Few-shot prompts, row samplers, and
+transfer analyses remain descriptive. A public OSF or Zenodo registration receipt
+must bind the final public protocol, analysis plan, and artifact hashes before test
+release, without exposing sealed test identities.
+
+The local registration-source builder hashes a sorted text allowlist and rejects
+path escape, known test-detail locations, and exact matches to sealed dataset IDs
+or titles. This is a disclosure-control check, not an independent timestamp and
+not proof against indirect re-identification; the uploaded attachment set still
+requires human review and an immutable external receipt.
+
+The registered NDP-50 primary p-values use paired two-sided sign-flip tests on
+dataset-level differences with Holm control across the two contrasts. This tests
+sign exchangeability about zero; it is not distribution-free for a mean-null under
+arbitrary asymmetry. We therefore precommit to reporting the full paired-effect
+distribution, the mean effect and dataset-bootstrap interval, ties,
+noncomparability, and assumption diagnostics. The equal-weight estimand targets
+the quota-weighted NDP-50 design, not prevalence in the complete catalog. A
+failure to reject will not be described as evidence of no effect.
+
+Resource comparisons are also preregistered rather than reconstructed
+post hoc. The execution freeze binds the pricing basis, effective date and
+source, exact call/token rates, treatment of failed, retried, and replayed
+calls, and the selected backend's hardware/runtime identity. Score records
+separate model latency from end-to-end latency. When local compute is frozen as
+not monetized, USD cost is reported as zero with that explicit boundary while
+calls, tokens, failures, retries, latency, and hardware remain visible; this is
+not interpreted as zero resource use.
+
+The two semantic-gold annotators must pass a preregistered non-NDP calibration
+round bound to the final handbook and NDP vocabulary before seeing blind NDP-50
+packets. Their passing summary, external pre-submission receipt, identities, and
+independence attestations are release-gate artifacts; agreement coefficients
+remain process evidence rather than accuracy.
+
+\subsection{Blind-freeze provenance gate}
 
 \begin{center}
 \fcolorbox{FreezeRed}{FreezeBg}{%
 \begin{minipage}{0.93\linewidth}
-\textbf{STOP: the fields below are intentionally unresolved.}\par
-They must be content-addressed and countersigned before blind gold is unsealed.
-Leaving a field blank blocks interpretation; it must never be silently replaced by
-the development or qualification artifact.\medskip
-
-\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{5.2cm}Y@{}}
-Blind sampling registration receipt & \placeholder \\
-Blind candidate-frame SHA-256 & \placeholder \\
-Blind manifest SHA-256 & \placeholder \\
-Independent annotation package SHA-256 & \placeholder \\
-Adjudicated gold package SHA-256 & \placeholder \\
-Annotation vocabulary/handbook SHA-256 & \placeholder \\
-Annotator pseudonyms and independence attestations & \placeholder \\
-Calibration-gate result and agreement statistics & \placeholder \\
-Frozen backend-registry SHA-256 & \placeholder \\
-Exact Qwen GGUF checkpoint SHA-256 & \placeholder \\
-LM Studio 0.4.18 runtime/version receipt SHA-256 & \placeholder \\
-Frozen source commit/tree SHA-256 & \placeholder \\
-Frozen analysis-plan SHA-256 & \placeholder \\
-Prompt/schema bundle SHA-256 & \placeholder \\
-Gold unsealing timestamp and countersignatures & \placeholder \\
-\end{tabularx}
+\small
+\textbf{STOP: blind gold and test release remain blocked.}\par
+External preregistration, calibrated independent annotation, adjudicated gold,
+backend/checkpoint identity, source/analysis freezes, and independent
+countersignatures are unresolved. Every item in the full binding ledger
+(Appendix~\ref{app:blind-ledger}) must be content-addressed and verified; no
+development or qualification artifact may silently substitute for it.
 \end{minipage}}
 \end{center}
+
+The external-registration requirement is machine-enforced rather than
+prose-only. The readiness and test-release validators require both a
+non-independent collaborator sign-off covering all 16 feedback decisions and
+an immutable OSF/Zenodo receipt for the exact public-package digest, separately
+checked by a non-developer who is not a project collaborator. Neither artifact
+alone authorizes test opening, and both are currently absent. The
+content-bound collaborator assignment is released for review, but its neutral
+payload contains no signature or human decision. Collaborator sign-off,
+external registration, and test authorization are separate ordered stages so
+that no required pretest artifact is circularly locked behind
+\texttt{test\_ready}.
 
 The known pre-freeze contract hashes are reported in
 Appendix~\ref{app:artifacts}; they do not substitute for the final registry,
@@ -452,7 +573,10 @@ checkpoint, source-tree, or gold receipts.
 \textbf{Construct validity.} Evidence identity and field relevance do not prove
 semantic entailment. C should be interpreted as deterministic trust-boundary
 verification, not an oracle. Confidence values may be incomparable across
-properties; per-property selective curves are therefore necessary.
+properties or arms; the NDP contract therefore prohibits pooling and suppresses
+Brier/ECE calibration claims below the frozen 30-observation arm-by-property
+threshold. AURC is secondary, is integrated only over achieved coverage, and
+may rank systems differently from AUGRC or the primary endpoint.
 
 \textbf{Internal validity.} B/C replay is tightly controlled, but D intentionally
 retains temperature 0.2 and historical fallback behavior. Backend state, runtime
@@ -462,7 +586,16 @@ response or missing replay suppresses the corresponding comparison.
 \textbf{External validity.} The nine development cases are synthetic and the eight
 qualification cases are a fixed operational calibration set already exposed to
 development. Neither is a population sample. Only the future independently
-annotated corpus can support generalization claims.
+annotated corpus can support bounded generalization claims. Test sealing prevents
+project-side adaptation but cannot establish that a pretrained model never
+encountered related public data.
+
+\textbf{Annotation validity.} Independent, prediction-blind submissions reduce
+anchoring and collaboration conflicts but do not guarantee correct labels.
+Agreement, disagreement, evidence identity, reconciliation rate, and unresolved
+scope must all be reported. Active collaborators and developers cannot be counted
+as independent annotators, fresh adjudicators, independent methods reviewers, or
+test-release monitors.
 
 \textbf{Statistical conclusion validity.} The blind analysis must use paired
 dataset-level effects and confidence intervals. A clean null result is acceptable.
@@ -478,8 +611,8 @@ explicit freeze blockers rather than hidden caveats.
 The durable system objective remains dataset input to deterministic schema output,
 with optional evidence-constrained semantic enrichment. The present work reduces
 the semantic architecture question to four auditable variants and validates the
-measurement boundaries needed for causal interpretation. Development data do not
-rank the variants. Corrected backend qualification shows that one dataset-level
+measurement boundaries needed for controlled component attribution. Development
+data do not rank the variants. Corrected backend qualification shows that one dataset-level
 Qwen3.6-27B response can be generated repeatably and replayed into deterministic
 verification, while the legacy condition exposes a much larger call surface.
 
@@ -493,7 +626,7 @@ a validated protocol, an operationally eligible backend, and no architecture win
 \section{Content-Addressed Current Artifacts}
 \label{app:artifacts}
 
-\begin{longtable}{@{}p{5.2cm}p{10.0cm}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{5.2cm}>{\raggedright\arraybackslash}p{10.0cm}@{}}
 \toprule
 Artifact & SHA-256 \\
 \midrule
@@ -512,6 +645,33 @@ Legacy response schema & \artifacthash{\LegacySchemaHash} \\
 \bottomrule
 \end{longtable}
 
+\section{Full Blind-Freeze Binding Ledger}
+\label{app:blind-ledger}
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{5.2cm}>{\raggedright\arraybackslash}p{10.0cm}@{}}
+\toprule
+Required binding & Current value \\
+\midrule
+\endhead
+Blind sampling registration receipt & \placeholder \\
+External preregistration DOI/receipt and timestamp & \placeholder \\
+Blind candidate-frame SHA-256 & \placeholder \\
+Blind manifest SHA-256 & \placeholder \\
+Independent annotation package SHA-256 & \placeholder \\
+Adjudicated gold package SHA-256 & \placeholder \\
+Annotation vocabulary/handbook SHA-256 & \placeholder \\
+Annotator pseudonyms and independence attestations & \placeholder \\
+Calibration-gate result and agreement statistics & \placeholder \\
+Frozen backend-registry SHA-256 & \placeholder \\
+Exact Qwen GGUF checkpoint SHA-256 & \placeholder \\
+LM Studio 0.4.18 runtime/version receipt SHA-256 & \placeholder \\
+Frozen source commit/tree SHA-256 & \placeholder \\
+Frozen analysis-plan SHA-256 & \placeholder \\
+Prompt/schema bundle SHA-256 & \placeholder \\
+Gold unsealing timestamp and countersignatures & \placeholder \\
+\bottomrule
+\end{longtable}
+
 \section{Current Reproduction Status}
 
 At manuscript generation, \FullTests{} project tests passed. The relevant Ruff
@@ -519,6 +679,11 @@ checks passed, all 316 JSON artifacts parsed successfully, and
 \texttt{git diff --check} passed. Seven pre-existing full-tree lint findings in
 unrelated legacy files remain documented and were not modified. The two PDFs were
 rendered from these TeX sources using Tectonic 0.16.9 \cite{tectonic0169}.
+
+The feedback response matrix, claim ledger, and OSF/Zenodo preregistration draft
+are publication-control artifacts. The registration document remains explicitly
+unsubmitted: a local draft or placeholder is not evidence of preregistration and
+adds no test-release authority.
 
 \bibliographystyle{plain}
 \bibliography{references}

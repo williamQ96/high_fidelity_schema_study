@@ -3,7 +3,7 @@
   "completion_attestation": null,
   "cpa_design": {
     "file": "semantic/cpa_design_draft_v1.json",
-    "sha256": "884cec768ecb08acb91e6f1b00a5dee88f163304af727fec8d67b132c900ecc3"
+    "sha256": "0313d5fee93c03b693cf8962ad9406e77b3f86e004c7d916d810c0bf7a791840"
   },
   "execution_freeze": null,
   "familywise_alpha": 0.05,

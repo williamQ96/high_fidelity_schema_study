@@ -7,6 +7,7 @@ import pytest
 from high_fidelity_schema_study.extractors.registry import EXTRACTOR_RUNNERS
 from high_fidelity_schema_study.gui_demo.server import (
     HDF5_MAGIC,
+    build_research_dashboard_payload,
     build_raw_binary_schema,
     detect_upload_mode,
     extract_uploaded_schema,
@@ -20,6 +21,31 @@ from high_fidelity_schema_study.gui_demo.server import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def test_research_dashboard_payload_uses_current_aggregate_artifacts_without_sealed_ids():
+    payload = build_research_dashboard_payload()
+
+    assert payload["schema_version"] == "research-dashboard/v1"
+    assert payload["ndp50"]["selected"] == 50
+    assert payload["ndp50"]["splits"] == {
+        "development": 15,
+        "validation": 10,
+        "sealed_test": 25,
+    }
+    assert payload["ndp50"]["test_identity_visible"] is False
+    assert payload["headline"]["test_ready"] is False
+    assert payload["readiness"]["checks_passed"] == 19
+    assert len(payload["readiness"]["blockers"]) == 10
+    assert payload["qualification"]["eligible"] is True
+    assert payload["development_evidence"]["pairwise_status"] == {
+        "A_vs_B": "not_comparable",
+        "B_vs_C": "not_comparable",
+        "C_vs_D": "not_comparable",
+    }
+    serialized = json.dumps(payload).lower()
+    assert "selected_datasets" not in serialized
+    assert "test_dataset_ids" not in serialized
 
 
 def test_detect_upload_mode_prefers_hdf5_magic():

@@ -40,6 +40,15 @@ from .ndp50_test_execution import (
     build_workflow_spec as build_test_execution_workflow_spec,
 )
 from .semantic_gold_workflow import validate_vocabulary
+from .semantic_annotator_calibration import (
+    validate_annotator_calibration_summary,
+)
+from .ndp50_publication_gate import (
+    build_feedback_signoff_template,
+    build_workflow_spec as build_publication_gate_workflow_spec,
+    validate_external_preregistration_receipt,
+    validate_feedback_signoff,
+)
 
 
 SCHEMA_VERSION = "ndp50-research-readiness/v1"
@@ -96,6 +105,11 @@ def build_readiness_report(
     execution_freeze_config_template_path: Path,
     execution_freeze_workflow_path: Path,
     test_execution_workflow_path: Path,
+    publication_gate_workflow_path: Path,
+    public_package_manifest_path: Path,
+    feedback_response_signoff_template_path: Path,
+    feedback_matrix_path: Path,
+    feedback_amendment_path: Path,
     cpa_design_path: Path,
     cpa_screen_path: Path,
     cpa_workflow_path: Path,
@@ -115,7 +129,10 @@ def build_readiness_report(
     power_freeze_path: Path | None = None,
     data_governance_approval_path: Path | None = None,
     semantic_gold_approval_path: Path | None = None,
+    annotator_calibration_summary_path: Path | None = None,
     execution_freeze_path: Path | None = None,
+    feedback_response_signoff_path: Path | None = None,
+    external_preregistration_receipt_path: Path | None = None,
 ) -> Dict[str, Any]:
     selection = _load_json(selection_path)
     validation_run = _load_json(validation_run_path)
@@ -173,6 +190,13 @@ def build_readiness_report(
         execution_freeze_workflow_path
     )
     test_execution_workflow = _load_json(test_execution_workflow_path)
+    publication_gate_workflow = _load_json(publication_gate_workflow_path)
+    public_package_manifest = _load_json(public_package_manifest_path)
+    feedback_response_signoff_template = _load_json(
+        feedback_response_signoff_template_path
+    )
+    feedback_matrix_path.read_text(encoding="utf-8")
+    feedback_amendment_path.read_text(encoding="utf-8")
     cpa_design = _load_json(cpa_design_path)
     cpa_screen = _load_json(cpa_screen_path)
     cpa_workflow = _load_json(cpa_workflow_path)
@@ -202,6 +226,14 @@ def build_readiness_report(
         raise NDPReadinessError(
             "vocabulary freeze readiness requires the candidate catalog, "
             "both decisions, disagreement worksheet, and consensus"
+        )
+    if (
+        external_preregistration_receipt_path is not None
+        and feedback_response_signoff_path is None
+    ):
+        raise NDPReadinessError(
+            "external preregistration replay requires the collaborator "
+            "feedback-response sign-off"
         )
 
     checks = []
@@ -571,6 +603,49 @@ def build_readiness_report(
         test_execution_workflow_ready,
         "immutable 25-dataset blind-run workflow; test identities omitted",
     )
+    expected_publication_gate_workflow = (
+        build_publication_gate_workflow_spec(
+            public_package_manifest_path=public_package_manifest_path,
+            feedback_matrix_path=feedback_matrix_path,
+            amendment_path=feedback_amendment_path,
+            study_root=PACKAGE_ROOT,
+        )
+    )
+    expected_feedback_signoff_template = build_feedback_signoff_template(
+        feedback_matrix_path=feedback_matrix_path,
+        amendment_path=feedback_amendment_path,
+        study_root=PACKAGE_ROOT,
+    )
+    publication_gate_workflow_ready = (
+        publication_gate_workflow == expected_publication_gate_workflow
+        and feedback_response_signoff_template
+        == expected_feedback_signoff_template
+        and feedback_response_signoff_template.get(
+            "human_decisions_present"
+        )
+        is False
+        and feedback_response_signoff_template.get(
+            "independence_claimed"
+        )
+        is False
+        and publication_gate_workflow.get("human_decisions_present") is False
+        and publication_gate_workflow.get("test_outcomes_observed") is False
+        and publication_gate_workflow.get("test_release_authorized") is False
+        and public_package_manifest.get("status")
+        == "draft_structurally_valid_not_registered"
+        and public_package_manifest.get("authorization", {}).get(
+            "external_registration_claimed"
+        )
+        is False
+    )
+    check(
+        "publication_gate_workflow_binding",
+        publication_gate_workflow_ready,
+        (
+            "collaborator feedback sign-off and independently verified "
+            "external preregistration required"
+        ),
+    )
     data_governance_validation = validate_audit_file(
         data_governance,
         study_root=study_root,
@@ -845,14 +920,100 @@ def build_readiness_report(
         if semantic_gold_approval is not None
         else None
     )
+    annotator_calibration_validation = (
+        validate_annotator_calibration_summary(
+            annotator_calibration_summary_path
+        )
+        if annotator_calibration_summary_path is not None
+        else None
+    )
+    annotator_calibration = (
+        annotator_calibration_validation.get("payload")
+        if annotator_calibration_validation is not None
+        and annotator_calibration_validation.get("status") == "ready"
+        else None
+    )
+    handbook_path = (
+        PACKAGE_ROOT / "docs" / "semantic_gold_annotation_handbook_v1.md"
+    )
+    annotator_calibration_passed = (
+        annotator_calibration is not None
+        and annotator_calibration.get("status") == "passed"
+        and annotator_calibration.get("qualified_handbook_sha256")
+        == _sha256_file(handbook_path)
+        and annotator_calibration.get("qualified_vocabulary_sha256")
+        == _sha256_file(vocabulary_path)
+        and isinstance(annotator_calibration.get("annotator_ids"), list)
+        and len(annotator_calibration["annotator_ids"]) == 2
+        and len(set(annotator_calibration["annotator_ids"])) == 2
+    )
+    gold_registry_ids = {
+        str(item.get("annotator_id") or "")
+        for item in (
+            (semantic_gold_approval or {})
+            .get("index", {})
+            .get("annotator_registry", [])
+        )
+        if isinstance(item, dict)
+    }
+    gold_registry_ids.discard("")
+    gold_annotator_identity_matches_calibration = (
+        annotator_calibration_passed
+        and semantic_gold_approval is not None
+        and gold_registry_ids
+        == set(str(value) for value in annotator_calibration["annotator_ids"])
+    )
     independent_gold_complete = (
         semantic_gold_workflow_ready
+        and annotator_calibration_passed
+        and gold_annotator_identity_matches_calibration
         and semantic_gold_approval_validation is not None
         and semantic_gold_approval_validation.get("status") == "passed"
         and semantic_gold_approval.get("derived_gates", {}).get(
             "independent_gold_complete"
         )
         is True
+    )
+    feedback_signoff_validation = (
+        validate_feedback_signoff(
+            _load_json(feedback_response_signoff_path),
+            feedback_matrix_path=feedback_matrix_path,
+            amendment_path=feedback_amendment_path,
+            study_root=PACKAGE_ROOT,
+        )
+        if feedback_response_signoff_path is not None
+        else None
+    )
+    feedback_response_collaborator_signoff_complete = (
+        publication_gate_workflow_ready
+        and feedback_signoff_validation is not None
+        and feedback_signoff_validation.get("status") == "passed"
+        and feedback_signoff_validation.get(
+            "independent_validation_claimed"
+        )
+        is False
+    )
+    external_preregistration_validation = (
+        validate_external_preregistration_receipt(
+            _load_json(external_preregistration_receipt_path),
+            public_package_manifest_path=public_package_manifest_path,
+            feedback_signoff_path=feedback_response_signoff_path,
+            feedback_matrix_path=feedback_matrix_path,
+            amendment_path=feedback_amendment_path,
+            study_root=PACKAGE_ROOT,
+        )
+        if external_preregistration_receipt_path is not None
+        and feedback_response_signoff_path is not None
+        else None
+    )
+    external_preregistration_verified = (
+        feedback_response_collaborator_signoff_complete
+        and external_preregistration_validation is not None
+        and external_preregistration_validation.get("status") == "passed"
+        and external_preregistration_validation.get(
+            "test_release_authorized"
+        )
+        is False
     )
     if execution_freeze_path is not None and not all(
         path is not None
@@ -991,12 +1152,23 @@ def build_readiness_report(
         "cpa_independent_screening_authorized": screening_authorized,
         "cpa_applicability_consensus_complete": consensus_complete,
         "semantic_gold_workflow_ready": semantic_gold_workflow_ready,
+        "annotator_calibration_passed": annotator_calibration_passed,
+        "gold_annotator_identity_matches_calibration": (
+            gold_annotator_identity_matches_calibration
+        ),
         "independent_gold_complete": independent_gold_complete,
         "demonstration_pool_workflow_ready": (
             demonstration_pool_workflow_ready
         ),
         "execution_freeze_workflow_ready": execution_freeze_workflow_ready,
         "test_execution_workflow_ready": test_execution_workflow_ready,
+        "publication_gate_workflow_ready": publication_gate_workflow_ready,
+        "feedback_response_collaborator_signoff_complete": (
+            feedback_response_collaborator_signoff_complete
+        ),
+        "external_preregistration_verified": (
+            external_preregistration_verified
+        ),
         "prompt_and_backend_frozen": prompt_and_backend_frozen,
     }
     semantic_ready = all(
@@ -1006,6 +1178,7 @@ def build_readiness_report(
             "neutral_packets_ready",
             "vocabulary_frozen",
             "source_bundles_annotation_ready",
+            "annotator_calibration_passed",
             "cpa_applicability_consensus_complete",
             "independent_gold_complete",
             "data_governance_policy_frozen",
@@ -1019,6 +1192,8 @@ def build_readiness_report(
         gates["structural_validation_complete"]
         and gates["test_split_unopened"]
         and semantic_ready
+        and gates["feedback_response_collaborator_signoff_complete"]
+        and gates["external_preregistration_verified"]
     )
     blockers = [
         label
@@ -1033,8 +1208,15 @@ def build_readiness_report(
                 "two independent CPA applicability screens and consensus are absent",
             ),
             (
+                "annotator_calibration_passed",
+                "the semantic-gold annotator pair has not passed a "
+                "preregistered calibration bound to the frozen handbook "
+                "and vocabulary",
+            ),
+            (
                 "independent_gold_complete",
-                "two-annotator independent gold and consensus are absent",
+                "calibration-matched two-annotator independent gold and "
+                "consensus are absent",
             ),
             (
                 "prompt_and_backend_frozen",
@@ -1047,6 +1229,15 @@ def build_readiness_report(
             (
                 "test_power_plan_frozen",
                 "frozen non-blind semantic power plan is absent",
+            ),
+            (
+                "feedback_response_collaborator_signoff_complete",
+                "collaborator sign-off on the F01--F16 response matrix is absent",
+            ),
+            (
+                "external_preregistration_verified",
+                "independently verified immutable OSF/Zenodo preregistration "
+                "receipt is absent",
             ),
         )
         if not gates[key]
@@ -1076,10 +1267,12 @@ def build_readiness_report(
                 "ndp50_execution_freeze.py",
                 "ndp50_power_feasibility.py",
                 "ndp50_power_freeze.py",
+                "ndp50_publication_gate.py",
                 "ndp50_semantic_gold.py",
                 "ndp50_test_execution.py",
                 "ndp50_test_inference.py",
                 "ndp50_vocabulary_workflow.py",
+                "semantic_annotator_calibration.py",
                 "semantic_gold_workflow.py",
             )
         },
@@ -1166,6 +1359,11 @@ def build_readiness_report(
                 if semantic_gold_approval_path is not None
                 else None
             ),
+            "annotator_calibration_summary": (
+                _sha256_file(annotator_calibration_summary_path)
+                if annotator_calibration_summary_path is not None
+                else None
+            ),
             "execution_freeze_config_template": _sha256_file(
                 execution_freeze_config_template_path
             ),
@@ -1174,6 +1372,31 @@ def build_readiness_report(
             ),
             "test_execution_workflow": _sha256_file(
                 test_execution_workflow_path
+            ),
+            "publication_gate_workflow": _sha256_file(
+                publication_gate_workflow_path
+            ),
+            "public_package_manifest": _sha256_file(
+                public_package_manifest_path
+            ),
+            "feedback_response_signoff_template": _sha256_file(
+                feedback_response_signoff_template_path
+            ),
+            "feedback_response_matrix": _sha256_file(
+                feedback_matrix_path
+            ),
+            "feedback_improvement_amendment": _sha256_file(
+                feedback_amendment_path
+            ),
+            "feedback_response_signoff": (
+                _sha256_file(feedback_response_signoff_path)
+                if feedback_response_signoff_path is not None
+                else None
+            ),
+            "external_preregistration_receipt": (
+                _sha256_file(external_preregistration_receipt_path)
+                if external_preregistration_receipt_path is not None
+                else None
             ),
             "execution_freeze": (
                 _sha256_file(execution_freeze_path)
@@ -1226,6 +1449,12 @@ def build_readiness_report(
         },
         "checks": checks,
         "gates": gates,
+        "publication_gate_validation": {
+            "feedback_response_signoff": feedback_signoff_validation,
+            "external_preregistration_receipt": (
+                external_preregistration_validation
+            ),
+        },
         "semantic_execution_ready": semantic_ready,
         "test_ready": test_ready,
         "blockers": blockers,
@@ -1288,6 +1517,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--demonstration-pool-workflow-spec", type=Path, required=True
     )
     parser.add_argument("--semantic-gold-approval", type=Path)
+    parser.add_argument("--annotator-calibration-summary", type=Path)
     parser.add_argument(
         "--execution-freeze-config-template", type=Path, required=True
     )
@@ -1297,6 +1527,19 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--test-execution-workflow", type=Path, required=True
     )
+    parser.add_argument(
+        "--publication-gate-workflow", type=Path, required=True
+    )
+    parser.add_argument(
+        "--public-package-manifest", type=Path, required=True
+    )
+    parser.add_argument(
+        "--feedback-response-signoff-template", type=Path, required=True
+    )
+    parser.add_argument("--feedback-matrix", type=Path, required=True)
+    parser.add_argument("--feedback-amendment", type=Path, required=True)
+    parser.add_argument("--feedback-response-signoff", type=Path)
+    parser.add_argument("--external-preregistration-receipt", type=Path)
     parser.add_argument("--execution-freeze", type=Path)
     parser.add_argument("--semantic-power-analysis", type=Path)
     parser.add_argument("--completed-power-policy", type=Path)
@@ -1353,11 +1596,25 @@ def main(argv: Iterable[str] | None = None) -> int:
             args.demonstration_pool_workflow_spec
         ),
         semantic_gold_approval_path=args.semantic_gold_approval,
+        annotator_calibration_summary_path=(
+            args.annotator_calibration_summary
+        ),
         execution_freeze_config_template_path=(
             args.execution_freeze_config_template
         ),
         execution_freeze_workflow_path=args.execution_freeze_workflow,
         test_execution_workflow_path=args.test_execution_workflow,
+        publication_gate_workflow_path=args.publication_gate_workflow,
+        public_package_manifest_path=args.public_package_manifest,
+        feedback_response_signoff_template_path=(
+            args.feedback_response_signoff_template
+        ),
+        feedback_matrix_path=args.feedback_matrix,
+        feedback_amendment_path=args.feedback_amendment,
+        feedback_response_signoff_path=args.feedback_response_signoff,
+        external_preregistration_receipt_path=(
+            args.external_preregistration_receipt
+        ),
         execution_freeze_path=args.execution_freeze,
         cpa_design_path=args.cpa_design,
         cpa_screen_path=args.cpa_screen,

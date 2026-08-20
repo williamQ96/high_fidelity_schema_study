@@ -76,7 +76,7 @@
       "validation": 4
     }
   },
-  "created_at": "2026-07-27T01:16:44.141210Z",
+  "created_at": "2026-07-28T00:40:05.635175Z",
   "demonstration_policy": {
     "fine_tuning": "not_in_primary_pilot; requires separate registration",
     "selection": "frozen_similarity_ranking",
@@ -98,13 +98,39 @@
   },
   "metric_contract": {
     "canonicalization": "frozen_vocabulary_canonical_values_and_predeclared_aliases_only",
+    "confidence_reporting": {
+      "analysis_role": "secondary_descriptive_only",
+      "grouping": "separate_arm_x_label_id",
+      "low_support_policy": "report_support_bins_and_AURC_but_suppress_Brier_ECE_and_calibration_claim",
+      "minimum_group_support_for_calibration_claim": 30,
+      "pooling_across_arms": false,
+      "pooling_across_labels": false,
+      "reliability_bin_edges": [
+        0.0,
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9,
+        1.0
+      ]
+    },
     "definitions": {
-      "calls": "physical_backend_calls_excluding_cache_replay",
+      "aurc": "right_continuous_selective_risk_integral_over_achieved_coverage_with_whole_confidence_tie_groups",
+      "brier_score": "mean_squared_error_between_confidence_score_and_exact_canonical_correctness_for_accepted_applicable_known_claims",
+      "calls": "successful_and_failed_physical_backend_calls_with_retries_reported_separately_and_cache_replay_excluded",
+      "confidence_score": "frozen_arm_specific_score_in_closed_interval_zero_one_used_for_ordering_and_never_as_evidence_or_verification",
       "cost": "frozen_price_schedule_applied_to_recorded_token_and_call_usage",
+      "end_to_end_latency": "wall_clock_seconds_from_registered_record_start_to_completion",
       "evidence_reference_validity": "accepted_known_claims_with_resolvable_allowed_evidence_references_divided_by_all_accepted_known_claims",
-      "latency": "wall_clock_seconds_per_physical_backend_call",
+      "expected_calibration_error": "fixed_decile_support_weighted_absolute_gap_between_mean_confidence_and_empirical_exact_accuracy",
       "macro_f1": "unweighted_mean_of_defined_per_label_F1_values_with_gold_support",
       "micro_f1": "micro_averaged_label_value_F1_over_applicable_known_slots",
+      "model_latency": "seconds_spent_in_physical_backend_calls",
       "out_of_vocabulary_rate": "applicable_unknown_or_oov_gold_slots_divided_by_all_applicable_gold_slots",
       "per_label_f1": "label_value_F1_with_gold_support_prediction_support_and_counts",
       "selective_risk": "incorrect_accepted_known_claims_divided_by_all_accepted_known_claims",

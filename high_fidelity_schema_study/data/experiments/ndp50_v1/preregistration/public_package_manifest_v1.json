@@ -1,0 +1,624 @@
+{
+  "authorization": {
+    "external_registration_claimed": false,
+    "semantic_execution_authorized": false,
+    "test_release_authorized": false
+  },
+  "blocking_conditions": [
+    "external OSF or Zenodo immutable receipt is absent",
+    "required human and independent-methods sign-offs are absent",
+    "execution freeze is incomplete",
+    "power freeze is incomplete",
+    "draft contains unresolved registration fields"
+  ],
+  "draft_state": {
+    "draft_banner_present": true,
+    "execution_freeze_complete": false,
+    "external_receipt_present": false,
+    "human_signoffs_complete": false,
+    "power_freeze_complete": false,
+    "unresolved_marker_count": 22
+  },
+  "file_list": {
+    "file": "docs/preregistration/public_package_files_v1.txt",
+    "sha256": "a4663e8dc8f8a4481e769ca5613f44fcc9b44a3326736b544c63638e0e82ec3e"
+  },
+  "implementation": {
+    "file": "ndp50_preregistration_package.py",
+    "sha256": "f74a5825d67acbe720303234f2d9030fd059cfc1088429be694b9fb33b42ef0a"
+  },
+  "interpretation": "This manifest proves only local text-package integrity and absence of exact sealed test IDs/titles in the listed files. It is not an external timestamp, registration receipt, legal review, semantic result, or test-release authorization.",
+  "private_sealing_control": {
+    "all_public_files_scanned": true,
+    "sealed_identity_match_count": 0,
+    "sealed_test_dataset_count": 25,
+    "selection_file": "data/experiments/ndp50_v1/selection.json",
+    "selection_sha256": "27d73de3b4aa8638616588fdac0d927d79321d7d230d2c55f96c952689bd471d",
+    "test_identities_emitted": false
+  },
+  "public_scope": {
+    "content_digest_sha256": "1e3af50a8b983c00f0e0330acfbcde728e1527631a52a881e404f9b4af1a407a",
+    "file_count": 72,
+    "files": [
+      {
+        "bytes": 100,
+        "file": "__init__.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "375b4920ba253d817787e51aef2ff70612d491389060a8f1b9160ffcff5bc7b3",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 58537,
+        "file": "architecture_evaluation.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "2b5538694ec0a6a57fffbb6ee3281760ddccacd956c0937c3f4901545eb9e6a7",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 65119,
+        "file": "architecture_variants.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "fa3f888057631571b6c5c5a030bbe8b4127d363c3ac4ca92b69f9b565d171a6f",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 4080,
+        "file": "data/experiments/ndp50_v1/preregistration/feedback_response_signoff_neutral_v1.json",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "145ccf3801173cffc5edad7ad18a346c6045d11174aa4966223381feadea4d5e",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 8800,
+        "file": "data/experiments/ndp50_v1/semantic/cpa_design_draft_v1.json",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "0313d5fee93c03b693cf8962ad9406e77b3f86e004c7d916d810c0bf7a791840",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 4525,
+        "file": "data/experiments/ndp50_v1/semantic/power_feasibility_v1.json",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "a857b0bba22c97a2019e6b91bee2ce05984f6c1c30393406a7c2fd20de47ceb0",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 1908,
+        "file": "data/experiments/ndp50_v1/semantic/power_freeze/power_freeze_workflow_v1.json",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "ee3c1b98478b974db83d53f717adc10589c59f7af466188ceb2429f063cf5805",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 2283,
+        "file": "data/experiments/ndp50_v1/semantic/power_freeze/power_policy_neutral_v1.json",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "94ff64d47fec9389676caa1e2dae55ce0a074711a4bb9e9497daf3073bdb9a78",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 7071,
+        "file": "data/experiments/ndp50_v1/semantic/test_execution/test_execution_workflow_v1.json",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "e606c035f46d9f07317b3bc61f97ff94a34cc4548de3af03a790ba2487f9a2db",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 7461,
+        "file": "docs/literature/citation_matrix.md",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "aa07f58f0d66ba22b670bb535e3953cf700cdcbcaea39ff47b6a850b62b99572",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 16325,
+        "file": "docs/literature/semantic_architecture_literature_review_2026-07-27.md",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "8e25db2b0662cdafd80100382abe6f9173c4b65b62801b17413fdf596959681e",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 9279,
+        "file": "docs/ndp50_annotation_and_independence_plan_v1.md",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "2c2ace0621a840f1cfb9fce6add6f749a8c55325893e02cff2fa026b7ad7e8c4",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 19445,
+        "file": "docs/ndp50_feedback_implementation_audit_v1.md",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "cdb70d80051075bbbb09ca34e671eb728106e3dabff6c97865f2ed94da3539ff",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 16414,
+        "file": "docs/ndp50_feedback_improvement_amendment_v1.md",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "f4eb887864614bbf8758db83739e39764c8a979efb6c437e0df90ab60a584bcf",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 9761,
+        "file": "docs/ndp50_human_external_gate_ledger_v1.md",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "143ad38e8c6def58d818894d5a7c84fda29d0828c8866cd0746de5dbe8b564aa",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 12487,
+        "file": "docs/ndp50_initial_human_assignment_guide_v1.md",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "e5a00d6bacd7649555fcee9b0c60e6ea2ead79c7bb9fd4b0e4d842cd74a9b1e8",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 13877,
+        "file": "docs/ndp50_methodological_risk_register_v1.md",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "a04a289ef912c009d5e4538c373eef5eb1cc6dcb5ca8fa400232a85193eb1f31",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 6493,
+        "file": "docs/ndp50_power_policy_review_guide_v1.md",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "accf7cf54d361ee87e76159e2eced916a06b48178ea97584bb0f4419c4cd5f45",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 13283,
+        "file": "docs/ndp50_protocol_v1.md",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "3f5228afebd3144905e130c2a8a1b18230b7746e214bdaad49fe82021c1f73c9",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 5348,
+        "file": "docs/ndp50_scope_provenance_v1.md",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "065b1af907c41f7dd066c30911eb620d09011d79804a2436fbd29d0dfe9f3cf0",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 76134,
+        "file": "docs/ndp50_semantic_cpa_protocol_v1.md",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "3127a3fc8b301baefa7dc13fcbb75ee2e545837a79d3769e2a5dcb6dac228509",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 13299,
+        "file": "docs/ndp50_statistical_analysis_plan_v1.md",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "c690c5389b74e3490772aec437c2597ae117febc584cf1d75eb9477b2d5e9d52",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 5903,
+        "file": "docs/ndp50_structural_validation_report_v1.md",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "f8f5d1f160f1a592f7aa30461ca1b830becb6589a34af4cf0e4ba6e973ce063a",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 5221,
+        "file": "docs/ndp50_swathi_feedback_signoff_guide_v1.md",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "d5e0e2e212228ae153446bf5c858de0b6fb1dda33c87376741df7597a3941513",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 8643,
+        "file": "docs/preregistration/README.md",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "a5bef2c49ad7e7a9733458c9be5294a18dea949d77e910ccc30d53f2fd7a9f5e",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 21200,
+        "file": "docs/preregistration/ndp50_osf_zenodo_preregistration_draft_v1.md",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "2500344919c66ef715776431f29e2d3d0d70f4c5fdc12936854710eb381b328e",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 2723,
+        "file": "docs/preregistration/public_package_files_v1.txt",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "a4663e8dc8f8a4481e769ca5613f44fcc9b44a3326736b544c63638e0e82ec3e",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 10574,
+        "file": "docs/references.md",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "e5b96945d14754b156a0ede271b9ead7864024410590e39447f70b0ad9d3a14e",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 4832,
+        "file": "docs/semantic_annotator_calibration_protocol_v1.md",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "c6ef25e9ea48523455ceac748a3ca9bdb0c2434a286f075ea087c3522e067e4c",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 25072,
+        "file": "docs/semantic_architecture_claim_ledger_v1.md",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "11bcb975ed528697ee6e9e1796b696e9a31082846920d6acd89a90b142030ee2",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 5405,
+        "file": "docs/semantic_gold_workflow_protocol_v1.md",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "ee24b9bf6f7424d6f1076c7f3dec82bf9441a3be7f416e1e46668e089790f94b",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 6089,
+        "file": "docs/semantic_power_analysis_protocol_v1.md",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "26dd3d1e5353a69f021b5d3dec3622ad2e84ef9b2b34d562199348546d7e5d5a",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 11858,
+        "file": "docs/swathi_feedback_response_matrix_v1.md",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "e5834fd5abb403d2add82e0b84bff7cdc413e7fd5ad8d58cb8a25958a2fad831",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 29509,
+        "file": "ndp50_assignment_distribution.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "2a2ecb0e9444fde479a66e7263ebb2b6708b6dd9a3d45dc0afe5396c0d15fae2",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 29832,
+        "file": "ndp50_assignment_roster.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "aa298a58e08ea3e126e2dc450d5b3ea54755f2d0d7e7bfda0d20321d5af85261",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 14801,
+        "file": "ndp50_cpa_design.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "39b5c3dfdda9db5321d18316ee31f36a2f08e2cfa31574c5c78c8bb0c0f08934",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 42967,
+        "file": "ndp50_cpa_screen_workflow.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "11e190f867482742ee63c7eeca00b48b4177fd823446f777802f0583652eb5d5",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 25325,
+        "file": "ndp50_data_governance.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "e79a1b58c5815b2031d4043523e75438723fc962ad4e5ffd572a2cf14154670e",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 26261,
+        "file": "ndp50_data_governance_review.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "6b4a0a86bbae0f98f557d1638f2fcd9b1edce7019488bf78908f02eaa87bbcc1",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 16935,
+        "file": "ndp50_demonstration_pool.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "3a547209deb3e74f678211188e6caea8be20c798d18a18265b7e456d1eb82ba1",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 71235,
+        "file": "ndp50_execution_freeze.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "9cd64c59f7677c1b40449ca3b5c8c148c0e5bae5b00f68ea1d8eddddcb9c5a99",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 41694,
+        "file": "ndp50_execution_qualification.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "6209f2864ce619e357602b9edb922f2d36bb7fe0af695e8d59f79e11c867399c",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 110629,
+        "file": "ndp50_human_assignments.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "6eeb2b3659784205648196a078e1f200615da602900ab2a4c65bcf1c17bb8973",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 77274,
+        "file": "ndp50_human_handoff.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "ce159192b65a08cd45cbc56b87ad72becf0f3aa3f3287701a0f47d1313cf5d9d",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 18744,
+        "file": "ndp50_power_feasibility.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "6afa4836e564a0a20f5d636d1d74270fceb046c42d22cd8ac00461f0eb8e65c4",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 41328,
+        "file": "ndp50_power_freeze.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "65970f34de68226fa095ee763d37543e1ebfd3dec2dfaf09e0dafbb351e8d308",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 22081,
+        "file": "ndp50_preregistration_package.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "f74a5825d67acbe720303234f2d9030fd059cfc1088429be694b9fb33b42ef0a",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 25392,
+        "file": "ndp50_publication_gate.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "526ec5f4a41e1d9f957ce40da26221e109b0534fd9326b46def9414386b46c42",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 66386,
+        "file": "ndp50_readiness.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "8c95220aad951042c9fba4f96d4748a699d1f521cfe972ad2ae76cce51553d58",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 30212,
+        "file": "ndp50_semantic_gold.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "9d4e64214d201d05b8eba5d33c4f2c47c9ff477725c4154c70d360016a63c915",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 47369,
+        "file": "ndp50_source_approval.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "5460c32f54822f15771ee73fccd0f090ee96395340ac530967a6758091dea113",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 90370,
+        "file": "ndp50_test_execution.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "4213986ef0432063aeb959737e17a4e65ca2db09a540e6c24eb7a85b52dff347",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 46615,
+        "file": "ndp50_test_inference.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "3047e579c67b095d7507558bb91693c1c71d1a523c05d55727e758f66749cc1c",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 52543,
+        "file": "ndp50_vocabulary_workflow.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "8e4c8eb25d4c0346ee5ef88d76f2e475737d6f001cd1e466e575fc886273fb15",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 1330,
+        "file": "paper/README.md",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "e6baba765f0d1b47b3fb4931273b29456ec6baff55de6f22b1f747178ef18cb7",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 7189,
+        "file": "paper/references.bib",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "84490704a71ff43d2143a06218136f2ba3d3f863ac3f7d8bbf8979a93f13f413",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 2533,
+        "file": "paper/results_macros.tex",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "71516f1b553c47960326f2b09d46f97e0befed0e83e90ab2a6234d9f4fc74458",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 36996,
+        "file": "paper/semantic_architecture_study_en.tex",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "cb4d27deee4d5f6216a20a377a613530c9e99c995541d1d780d61fdceb79cebc",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 34,
+        "file": "requirements-dev.txt",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "59a0239e084f59949168a18fe9c3744f8e951fee6941f0e499a5be22428840f4",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 275,
+        "file": "requirements.txt",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "28992ad933dd755b8467bd04fe3702aa312c456cc574cf92d659e8d26d0410a2",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 23683,
+        "file": "semantic_annotate.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "01ee60d775a4122a58881806c75e30e9ef98d83a55570e3302e808c61dfd1da4",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 25713,
+        "file": "semantic_annotator_calibration.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "203a0dc3234f4d57f9d5fa547a324e636b2e3a0d1ae30ad5f49991181e4072fa",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 39296,
+        "file": "semantic_blind_inference.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "11cceb5ba17c1a605418066fdcb9f8c4640fb15c71c8a5f59385ce2be0c1f766",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 64608,
+        "file": "semantic_blind_sampling.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "d880b7132d5a4dd93e1fbc56b02f9d8eca07f58b290cea309b9a75758bd8009f",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 16814,
+        "file": "semantic_catalog_acquisition.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "5a5845a45e6bddff5009374ca319d898ca966d8564b8ea006673a990363b213a",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 59361,
+        "file": "semantic_gold_workflow.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "4be417efe6a2b4bb7b166e6fb0bba40a9545017908110077f7e7dc8618281a69",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 14697,
+        "file": "semantic_layer.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "381db8d9f17bc2ba8f03ef3cfe38e6bf08e0739f2c48e3f21487d388e3f7074e",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 22021,
+        "file": "semantic_power_analysis.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "9da204bc167095d5efd2a84bd6c89767db4eb534d8d3eba292ec4a02e8d13b50",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 13085,
+        "file": "semantic_power_calibration.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "a1208de3e3cf064da542e76b3cbd8891dd2bf506ed8bf59b25afcc7d3113ed73",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 71569,
+        "file": "semantic_study_preflight.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "44f5434bfd3eda85d775d7c98183cd937765879b3986c89161d0ae983cb84723",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 1838,
+        "file": "templates/ndp50_external_preregistration_receipt_template.json",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "5aacdb096019e9676c729685f2220b52908b16a0df3276dbb70a698604b17cfd",
+        "utf8_text_verified": true
+      },
+      {
+        "bytes": 3302,
+        "file": "unit_normalization.py",
+        "sealed_dataset_id_matches": 0,
+        "sealed_title_matches": 0,
+        "sha256": "9731e24b17f034b42c03afd50907a89fd4bc6f1b78062e43f121957a064d4a79",
+        "utf8_text_verified": true
+      }
+    ],
+    "format": "utf8_text_source_manifest"
+  },
+  "schema_version": "ndp50-public-preregistration-package/v1",
+  "status": "draft_structurally_valid_not_registered"
+}

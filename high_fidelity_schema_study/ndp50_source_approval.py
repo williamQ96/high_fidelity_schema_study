@@ -5,7 +5,7 @@ import copy
 import hashlib
 import json
 from pathlib import Path
-from typing import Any, Dict, Iterable, Mapping, Sequence
+from typing import Any, Dict, Iterable, Mapping
 
 from .semantic_gold_workflow import validate_vocabulary
 

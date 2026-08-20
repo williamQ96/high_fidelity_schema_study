@@ -1,7 +1,7 @@
 {
   "cpa_design": {
     "file": "semantic/cpa_design_draft_v1.json",
-    "sha256": "884cec768ecb08acb91e6f1b00a5dee88f163304af727fec8d67b132c900ecc3"
+    "sha256": "0313d5fee93c03b693cf8962ad9406e77b3f86e004c7d916d810c0bf7a791840"
   },
   "dataset_disposition_policy": {
     "allowed_dispositions": [
@@ -36,7 +36,7 @@
   },
   "execution_freeze_workflow": {
     "file": "semantic/execution_freeze/execution_freeze_workflow_v1.json",
-    "sha256": "32203d0ceaa6b242f7cadf4f222fecc973ee7dd72cdba351208a8a7ce64db33c"
+    "sha256": "de026e7fba04161a86d5128b1a3abcc44cf0d5449a5ccad9073844dcb9da25e6"
   },
   "execution_matrix_policy": {
     "allowed_record_statuses": [
@@ -60,26 +60,29 @@
   "human_decisions_present": false,
   "implementation": {
     "file": "ndp50_test_execution.py",
-    "sha256": "403ad03d8fb0abd3aa5437e30e82a3db4165dabc73a9ffd02b927b7fa9f080a6"
+    "sha256": "4213986ef0432063aeb959737e17a4e65ca2db09a540e6c24eb7a85b52dff347"
   },
   "implementation_dependencies": {
-    "ndp50_cpa_design.py": "d70c084733f7c955fee7e34c896ef020f25cf1a10e510b9bbbb3ac063c502ea5",
-    "ndp50_execution_freeze.py": "c72fdb822fc98cc81d417ac93a033baaadde5ab6e56090295f35b0f95b92fa68",
-    "ndp50_execution_qualification.py": "e72dabc340e339ecdbdd372ddf23b98c4bc10ad4b12a0b7ae55aa2346608940f",
+    "ndp50_cpa_design.py": "39b5c3dfdda9db5321d18316ee31f36a2f08e2cfa31574c5c78c8bb0c0f08934",
+    "ndp50_execution_freeze.py": "9cd64c59f7677c1b40449ca3b5c8c148c0e5bae5b00f68ea1d8eddddcb9c5a99",
+    "ndp50_execution_qualification.py": "6209f2864ce619e357602b9edb922f2d36bb7fe0af695e8d59f79e11c867399c",
     "ndp50_power_freeze.py": "65970f34de68226fa095ee763d37543e1ebfd3dec2dfaf09e0dafbb351e8d308",
-    "ndp50_test_inference.py": "a51dc634a228ef580457b91e0e8ae8eb1eb524818c15242f2af8babd9d7b508c"
+    "ndp50_test_inference.py": "3047e579c67b095d7507558bb91693c1c71d1a523c05d55727e758f66749cc1c"
   },
   "power_freeze_workflow": {
     "file": "semantic/power_freeze/power_freeze_workflow_v1.json",
-    "sha256": "c7fdc778474fa97ba942ed442080b1ec9e9f6420c4f7d4d1a242965e47d2880a"
+    "sha256": "ee3c1b98478b974db83d53f717adc10589c59f7af466188ceb2429f063cf5805"
   },
   "publication_reporting_contract": {
     "case_arm_missingness_and_failure_codes_required": true,
     "co_primary_effects_intervals_raw_and_holm_p_values_required": true,
+    "confidence_pooling_across_labels_or_arms_forbidden": true,
     "cost_latency_calls_and_tokens_required": true,
     "dataset_flow_and_all_dispositions_required": true,
     "deviations_and_protocol_version_required": true,
+    "low_support_calibration_claims_forbidden": true,
     "metric_numerators_denominators_and_undefined_counts_required": true,
+    "per_arm_per_label_confidence_support_reliability_and_AURC_required": true,
     "prompt_sampler_and_few_shot_results_labeled_descriptive": true,
     "registered_inference_replay_required": true,
     "underpowered_or_nonalysable_status_cannot_be_reworded_as_no_effect": true,
@@ -98,13 +101,15 @@
     "test_run_manifest": "ndp50-test-run-manifest/v1",
     "test_run_receipt": "ndp50-test-run-receipt/v1",
     "test_run_record": "ndp50-test-run-record/v1",
-    "test_score": "ndp50-test-score/v1"
+    "test_score": "ndp50-test-score/v3"
   },
   "required_upstream_gates": [
     "readiness.integrity_status=passed",
     "readiness.test_ready=true",
     "execution_freeze.derived_gates.prompt_and_backend_frozen=true",
-    "power_freeze.derived_gates.test_power_plan_frozen=true"
+    "power_freeze.derived_gates.test_power_plan_frozen=true",
+    "readiness.gates.feedback_response_collaborator_signoff_complete=true",
+    "readiness.gates.external_preregistration_verified=true"
   ],
   "response_reuse_policy": {
     "consumer_arm": "zero_shot_byte_identical_response_plus_deterministic_verification",

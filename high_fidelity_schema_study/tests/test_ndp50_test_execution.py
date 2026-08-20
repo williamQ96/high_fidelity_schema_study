@@ -40,6 +40,7 @@ from high_fidelity_schema_study.ndp50_execution_qualification import (
     reference_registered_execution_schedule,
 )
 from high_fidelity_schema_study.ndp50_test_inference import (
+    _confidence_group_diagnostics,
     build_inference_result,
     sign_flip_test,
     verify_inference_result,
@@ -276,6 +277,34 @@ def _fixture(tmp_path: Path) -> dict:
                     "arm_order_seed": 37,
                     "maximum_attempts_per_call": 2,
                 },
+                "confidence_reporting_contract": {
+                    "score_field": "confidence_score",
+                    "score_minimum": 0,
+                    "score_maximum": 1,
+                    "accepted_known_requires_score": True,
+                    "nonaccepted_requires_null": True,
+                    "calibration_target": (
+                        "exact_canonical_correctness_on_"
+                        "applicable_known_slots"
+                    ),
+                    "grouping_field": "label_id",
+                    "pooling_across_labels_permitted": False,
+                    "pooling_across_arms_permitted": False,
+                    "reliability_bin_edges": [
+                        index / 10 for index in range(11)
+                    ],
+                    "minimum_group_support_for_calibration_claim": 30,
+                    "risk_coverage_tie_rule": (
+                        "whole_confidence_tie_groups_right_continuous"
+                    ),
+                    "aurc_interval": "achieved_coverage_only",
+                    "confidence_source_by_arm": {
+                        arm: "synthetic frozen source" for arm in ARMS
+                    },
+                    "confidence_interpretation_by_arm": {
+                        arm: "ordering_score_only" for arm in ARMS
+                    },
+                },
             },
             "derived_gates": {"prompt_and_backend_frozen": True},
         },
@@ -316,6 +345,16 @@ def _fixture(tmp_path: Path) -> dict:
             "readiness_status": "ready",
             "test_ready": True,
             "semantic_execution_ready": True,
+            "checks": [
+                {
+                    "check_id": "publication_gate_workflow_binding",
+                    "passed": True,
+                }
+            ],
+            "publication_gate_validation": {
+                "feedback_response_signoff": {"status": "passed"},
+                "external_preregistration_receipt": {"status": "passed"},
+            },
             "gates": {
                 key: True
                 for key in (
@@ -332,6 +371,8 @@ def _fixture(tmp_path: Path) -> dict:
                     "test_power_plan_frozen",
                     "test_design_meets_pretest_assurance",
                     "test_execution_workflow_ready",
+                    "feedback_response_collaborator_signoff_complete",
+                    "external_preregistration_verified",
                 )
             },
             "blockers": [],
@@ -340,6 +381,12 @@ def _fixture(tmp_path: Path) -> dict:
                 "test_execution_workflow": _sha(workflow_path),
                 "execution_freeze": _sha(execution_freeze_path),
                 "power_freeze": _sha(power_freeze_path),
+                "publication_gate_workflow": "a" * 64,
+                "public_package_manifest": "b" * 64,
+                "feedback_response_matrix": "c" * 64,
+                "feedback_improvement_amendment": "d" * 64,
+                "feedback_response_signoff": "e" * 64,
+                "external_preregistration_receipt": "f" * 64,
             },
         },
     )
@@ -570,6 +617,7 @@ def _fixture(tmp_path: Path) -> dict:
                             "verified": True,
                             "support_valid": True,
                             "evidence_reference_valid": True,
+                            "confidence_score": 0.9,
                         }
                     )
                 elif index == correct + 1:
@@ -581,6 +629,7 @@ def _fixture(tmp_path: Path) -> dict:
                             "verified": False,
                             "support_valid": False,
                             "evidence_reference_valid": False,
+                            "confidence_score": 0.4,
                         }
                     )
                 else:
@@ -594,6 +643,7 @@ def _fixture(tmp_path: Path) -> dict:
                             "verified": False,
                             "support_valid": False,
                             "evidence_reference_valid": False,
+                            "confidence_score": None,
                         }
                     )
             prediction_slots.append(
@@ -604,6 +654,7 @@ def _fixture(tmp_path: Path) -> dict:
                     "verified": False,
                     "support_valid": False,
                     "evidence_reference_valid": False,
+                    "confidence_score": None,
                 }
             )
             response_path: Path | None
@@ -662,9 +713,14 @@ def _fixture(tmp_path: Path) -> dict:
                 **replayed_counts,
                 "resource_usage": {
                     "physical_model_calls": 1 if model_call else 0,
+                    "failed_model_calls": 0,
+                    "retry_count": 0,
                     "input_tokens": 10 if model_call else 0,
                     "output_tokens": 5 if model_call else 0,
-                    "latency_seconds": 0.25 if model_call else 0,
+                    "model_latency_seconds": 0.25 if model_call else 0,
+                    "end_to_end_latency_seconds": (
+                        0.3 if model_call else 0.01
+                    ),
                     "cost_usd": 0.001 if model_call else 0,
                 },
                 "completion_attestation": True,
@@ -734,6 +790,7 @@ def _fixture(tmp_path: Path) -> dict:
                             "verified": True,
                             "support_valid": True,
                             "evidence_reference_valid": True,
+                            "confidence_score": 0.9,
                         }
                     )
                 elif index == correct + 1:
@@ -745,6 +802,7 @@ def _fixture(tmp_path: Path) -> dict:
                             "verified": False,
                             "support_valid": False,
                             "evidence_reference_valid": False,
+                            "confidence_score": 0.4,
                         }
                     )
                 else:
@@ -758,6 +816,7 @@ def _fixture(tmp_path: Path) -> dict:
                             "verified": False,
                             "support_valid": False,
                             "evidence_reference_valid": False,
+                            "confidence_score": None,
                         }
                     )
             prediction_slots.append(
@@ -768,6 +827,7 @@ def _fixture(tmp_path: Path) -> dict:
                     "verified": False,
                     "support_valid": False,
                     "evidence_reference_valid": False,
+                    "confidence_score": None,
                 }
             )
             response_path = (
@@ -821,9 +881,12 @@ def _fixture(tmp_path: Path) -> dict:
                     **replayed_counts,
                     "resource_usage": {
                         "physical_model_calls": 1,
+                        "failed_model_calls": 0,
+                        "retry_count": 0,
                         "input_tokens": 10,
                         "output_tokens": 5,
-                        "latency_seconds": 0.25,
+                        "model_latency_seconds": 0.25,
+                        "end_to_end_latency_seconds": 0.3,
                         "cost_usd": 0.001,
                     },
                     "completion_attestation": True,
@@ -984,6 +1047,26 @@ def test_release_rejects_unmet_pretest_assurance(
         inputs["readiness_path"].read_text(encoding="utf-8")
     )
     readiness["gates"]["test_design_meets_pretest_assurance"] = False
+    _write(inputs["readiness_path"], readiness)
+
+    with pytest.raises(
+        NDPTestExecutionError,
+        match="readiness must pass",
+    ):
+        build_test_release_receipt(**inputs["release_kwargs"])
+
+
+def test_release_rejects_boolean_only_publication_gate_flip(
+    tmp_path: Path,
+) -> None:
+    inputs = _fixture(tmp_path)
+    readiness = json.loads(
+        inputs["readiness_path"].read_text(encoding="utf-8")
+    )
+    readiness["artifact_hashes"]["feedback_response_signoff"] = None
+    readiness["artifact_hashes"][
+        "external_preregistration_receipt"
+    ] = None
     _write(inputs["readiness_path"], readiness)
 
     with pytest.raises(
@@ -1235,6 +1318,71 @@ def test_unbound_score_substitution_is_rejected(tmp_path: Path) -> None:
     with pytest.raises(NDPTestExecutionError, match="hash mismatch"):
         build_run_receipt(**_receipt_kwargs(inputs))
 
+    resource_inputs = _fixture(tmp_path / "resource-usage")
+    resource_run = json.loads(
+        resource_inputs["run_path"].read_text(encoding="utf-8")
+    )
+    resource_entry = resource_run["records"][0]
+    resource_record_path = (
+        resource_inputs["root"] / resource_entry["artifact"]["file"]
+    )
+    resource_record = json.loads(
+        resource_record_path.read_text(encoding="utf-8")
+    )
+    resource_score_path = (
+        resource_inputs["root"]
+        / resource_record["score_artifact"]["file"]
+    )
+    resource_score = json.loads(
+        resource_score_path.read_text(encoding="utf-8")
+    )
+    del resource_score["resource_usage"]["failed_model_calls"]
+    _write(resource_score_path, resource_score)
+    resource_record["score_sha256"] = _sha(resource_score_path)
+    resource_record["score_artifact"] = _ref(
+        resource_score_path, resource_inputs["root"]
+    )
+    _write(resource_record_path, resource_record)
+    resource_entry["artifact"] = _ref(
+        resource_record_path, resource_inputs["root"]
+    )
+    _write(resource_inputs["run_path"], resource_run)
+
+    with pytest.raises(
+        NDPTestExecutionError,
+        match="resource usage fields are incomplete",
+    ):
+        build_run_receipt(**_receipt_kwargs(resource_inputs))
+
+
+def test_invalid_confidence_observation_is_rejected(
+    tmp_path: Path,
+) -> None:
+    inputs = _fixture(tmp_path)
+    run = json.loads(inputs["run_path"].read_text(encoding="utf-8"))
+    entry = next(
+        item
+        for item in run["records"]
+        if item["arm_id"] == "zero_shot_dataset_level"
+    )
+    record_path = inputs["root"] / entry["artifact"]["file"]
+    record = json.loads(record_path.read_text(encoding="utf-8"))
+    score_path = inputs["root"] / record["score_artifact"]["file"]
+    score = json.loads(score_path.read_text(encoding="utf-8"))
+    score["confidence_observations"][0]["confidence_score"] = 1.1
+    _write(score_path, score)
+    record["score_sha256"] = _sha(score_path)
+    record["score_artifact"] = _ref(score_path, inputs["root"])
+    _write(record_path, record)
+    entry["artifact"] = _ref(record_path, inputs["root"])
+    _write(inputs["run_path"], run)
+
+    with pytest.raises(
+        NDPTestExecutionError,
+        match="confidence observation is invalid",
+    ):
+        build_run_receipt(**_receipt_kwargs(inputs))
+
 
 def _inference_fixture(inputs: dict) -> tuple[Path, Path]:
     kwargs = _receipt_kwargs(inputs)
@@ -1274,6 +1422,16 @@ def test_registered_inference_replays_and_uses_sign_flip_primary(
     result = build_inference_result(**kwargs)
 
     assert result["status"] == "analysable_frozen_requirement_realized"
+    zero_usage = result["resource_usage_all_test_cases"][
+        "zero_shot_dataset_level"
+    ]
+    assert zero_usage["failed_model_calls"] == 0
+    assert zero_usage["retry_count"] == 0
+    assert zero_usage["model_latency_seconds"] > 0
+    assert (
+        zero_usage["end_to_end_latency_seconds"]
+        >= zero_usage["model_latency_seconds"]
+    )
     assert result["holm_family"]["family_complete"] is True
     assert result["co_primary_contrasts"][
         "deterministic-vs-zero"
@@ -1304,6 +1462,16 @@ def test_registered_inference_replays_and_uses_sign_flip_primary(
     assert result["arm_metrics_for_frozen_cpa_population"][
         "zero_shot_dataset_level"
     ]["support_counts"]["applicable_known_slot_count"] == 4
+    confidence = result["arm_metrics_for_frozen_cpa_population"][
+        "zero_shot_dataset_level"
+    ]["confidence_diagnostics"]
+    assert confidence["pooling_across_labels_performed"] is False
+    label_confidence = confidence["per_label"]["label-a"]
+    assert label_confidence["accepted_prediction_support"] == 4
+    assert label_confidence["calibration_claim_permitted"] is False
+    assert label_confidence["brier_score"] is None
+    assert label_confidence["aurc_over_achieved_coverage"] == 0.0625
+    assert label_confidence["achieved_coverage_interval"] == [0.0, 1.0]
     sensitivity = result["descriptive_sensitivity_results"]
     assert len(sensitivity) == 2
     prompt_result = next(
@@ -1339,6 +1507,41 @@ def test_sign_flip_excludes_zeros_from_patterns_but_retains_pairs() -> None:
     assert result["total_pair_count"] == 3
     assert result["nonzero_pair_count"] == 1
     assert result["repetitions"] == 2
+
+
+def test_confidence_diagnostics_enforce_support_and_whole_tie_groups() -> None:
+    observations = [
+        {
+            "slot_id": f"correct-{index}",
+            "label_id": "semantic_type",
+            "confidence_score": 0.8,
+            "correct": True,
+        }
+        for index in range(20)
+    ] + [
+        {
+            "slot_id": f"incorrect-{index}",
+            "label_id": "semantic_type",
+            "confidence_score": 0.2,
+            "correct": False,
+        }
+        for index in range(10)
+    ]
+
+    result = _confidence_group_diagnostics(
+        list(reversed(observations)),
+        applicable_known_slot_count=30,
+        bin_edges=[index / 10 for index in range(11)],
+        minimum_support=30,
+    )
+
+    assert result["calibration_claim_permitted"] is True
+    assert result["brier_score"] == 0.04
+    assert result["expected_calibration_error_fixed_deciles"] == 0.2
+    assert result["tie_group_count"] == 2
+    assert result["risk_coverage_curve"][0]["tie_group_size"] == 20
+    assert result["risk_coverage_curve"][1]["tie_group_size"] == 10
+    assert result["aurc_over_achieved_coverage"] == 0.111111111111
 
 
 def test_qualified_scorer_replay_rejects_self_consistent_score_forgery(

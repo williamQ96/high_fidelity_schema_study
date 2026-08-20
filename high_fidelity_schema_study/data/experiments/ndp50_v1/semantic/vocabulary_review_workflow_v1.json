@@ -11,11 +11,11 @@
   "human_decisions_present": false,
   "implementation": {
     "file": "ndp50_vocabulary_workflow.py",
-    "sha256": "16ee620d2e4d761cf9a729fb71de6967d8ab82c1d5585b6ffdfee925f204dc80"
+    "sha256": "8e4c8eb25d4c0346ee5ef88d76f2e475737d6f001cd1e466e575fc886273fb15"
   },
   "implementation_dependencies": {
     "ndp50_cpa_screen_workflow.py": "11e190f867482742ee63c7eeca00b48b4177fd823446f777802f0583652eb5d5",
-    "semantic_gold_workflow.py": "1319dd8b52a3421ce4e34bbfc59e21391e2c8d161e1c01272aa33a7299fab864"
+    "semantic_gold_workflow.py": "4be417efe6a2b4bb7b166e6fb0bba40a9545017908110077f7e7dc8618281a69"
   },
   "model_outputs_visible": false,
   "neutral_discovery_template": {

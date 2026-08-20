@@ -93,7 +93,8 @@ python -m high_fidelity_schema_study.semantic_power_analysis build \
   --output path/to/frozen-power-analysis.json
 
 python -m high_fidelity_schema_study.semantic_power_analysis validate \
-  --artifact path/to/frozen-power-analysis.json
+  --artifact path/to/frozen-power-analysis.json \
+  --output path/to/frozen-power-analysis-validation.json
 ```
 
 The output records all planning inputs, per-contrast calculations, sensitivity

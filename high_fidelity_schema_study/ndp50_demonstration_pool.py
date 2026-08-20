@@ -455,6 +455,7 @@ def build_parser() -> argparse.ArgumentParser:
             item.add_argument("--output", type=Path, required=True)
         else:
             item.add_argument("--artifact", type=Path, required=True)
+            item.add_argument("--output", type=Path)
     return parser
 
 
@@ -480,6 +481,8 @@ def main() -> None:
             packet_manifest_path=args.packet_manifest,
             study_root=args.study_root,
         )
+        if args.output is not None:
+            _write_json(args.output, payload)
     print(json.dumps(payload, indent=2, ensure_ascii=False, sort_keys=True))
 
 

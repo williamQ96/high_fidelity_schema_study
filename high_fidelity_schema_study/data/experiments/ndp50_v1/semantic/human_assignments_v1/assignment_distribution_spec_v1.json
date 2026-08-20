@@ -1,0 +1,2205 @@
+{
+  "assignment_release": {
+    "file": "semantic/human_assignments_v1/assignment_release_v1.json",
+    "sha256": "4449da78a8bacf6f2016d6a128d67dd6474ce17233e90e8bc799da75f362dd0e"
+  },
+  "distribution_invariants": {
+    "extra_files_are_forbidden": true,
+    "human_decisions_present": false,
+    "packet_file_sets_are_exact": true,
+    "packet_roots_must_be_outside_repository": true,
+    "reviewer_ids_present": false,
+    "sealed_test_ids_and_titles_are_scanned": true,
+    "vocabulary_payloads_remain_byte_identical": true,
+    "vocabulary_reviewers_receive_distinct_wrappers": true
+  },
+  "implementation": {
+    "file": "ndp50_assignment_distribution.py",
+    "sha256": "2a2ecb0e9444fde479a66e7263ebb2b6708b6dd9a3d45dc0afe5396c0d15fae2"
+  },
+  "implementation_dependencies": {
+    "ndp50_preregistration_package.py": "f74a5825d67acbe720303234f2d9030fd059cfc1088429be694b9fb33b42ef0a"
+  },
+  "packet_count": 4,
+  "packet_root_directory_name": "high_fidelity_schema_study",
+  "packets": {
+    "data_governance_review": {
+      "assignment_id": "data_governance_review",
+      "content_digest_sha256": "3bdcd73c7a0226e56fd40e96f9ddc6e92ea1a493854c2816c0355f9b05e3f6a6",
+      "extra_files_forbidden": true,
+      "file_count": 78,
+      "files": [
+        {
+          "bytes": 100,
+          "file": "__init__.py",
+          "scope": "public_source_base",
+          "sha256": "375b4920ba253d817787e51aef2ff70612d491389060a8f1b9160ffcff5bc7b3"
+        },
+        {
+          "bytes": 58537,
+          "file": "architecture_evaluation.py",
+          "scope": "public_source_base",
+          "sha256": "2b5538694ec0a6a57fffbb6ee3281760ddccacd956c0937c3f4901545eb9e6a7"
+        },
+        {
+          "bytes": 65119,
+          "file": "architecture_variants.py",
+          "scope": "public_source_base",
+          "sha256": "fa3f888057631571b6c5c5a030bbe8b4127d363c3ac4ca92b69f9b565d171a6f"
+        },
+        {
+          "bytes": 1209,
+          "file": "data/experiments/ndp50_v1/governance/data_governance_review_workflow_v1.json",
+          "scope": "released_input:workflow",
+          "sha256": "5aa9044518c5af5fe4d23b971cd60295b8df05d0e67d46985b96535b38795738"
+        },
+        {
+          "bytes": 4080,
+          "file": "data/experiments/ndp50_v1/preregistration/feedback_response_signoff_neutral_v1.json",
+          "scope": "public_source_base",
+          "sha256": "145ccf3801173cffc5edad7ad18a346c6045d11174aa4966223381feadea4d5e"
+        },
+        {
+          "bytes": 23575,
+          "file": "data/experiments/ndp50_v1/preregistration/public_package_manifest_v1.json",
+          "scope": "public_manifest",
+          "sha256": "944b4a3396f01452eefdf67f94c2cea9c2edd3d562f50492e7f75cde758e3056"
+        },
+        {
+          "bytes": 34610,
+          "file": "data/experiments/ndp50_v1/reports/data_governance_v1.json",
+          "scope": "released_input:audit",
+          "sha256": "51dd1934f1183b6300b816b2517802735699c55d8a66ec32156825ed6e7df05b"
+        },
+        {
+          "bytes": 8800,
+          "file": "data/experiments/ndp50_v1/semantic/cpa_design_draft_v1.json",
+          "scope": "public_source_base",
+          "sha256": "0313d5fee93c03b693cf8962ad9406e77b3f86e004c7d916d810c0bf7a791840"
+        },
+        {
+          "bytes": 4864,
+          "file": "data/experiments/ndp50_v1/semantic/human_assignments_v1/assignment_release_v1.json",
+          "scope": "assignment_release",
+          "sha256": "4449da78a8bacf6f2016d6a128d67dd6474ce17233e90e8bc799da75f362dd0e"
+        },
+        {
+          "bytes": 5798,
+          "file": "data/experiments/ndp50_v1/semantic/human_assignments_v1/data_governance_review_assignment.json",
+          "scope": "assignment_wrapper",
+          "sha256": "b40fb8f64944da4d9206a983d4be405c3f3346eab31b722e02bbbd6b7150f88d"
+        },
+        {
+          "bytes": 24619,
+          "file": "data/experiments/ndp50_v1/semantic/human_assignments_v1/data_governance_review_payload.json",
+          "scope": "assignment_payload",
+          "sha256": "f29629c8ea58a1fc28909f87409ef2bafc913d5a5f13d45dbb834f970adc2417"
+        },
+        {
+          "bytes": 4525,
+          "file": "data/experiments/ndp50_v1/semantic/power_feasibility_v1.json",
+          "scope": "public_source_base",
+          "sha256": "a857b0bba22c97a2019e6b91bee2ce05984f6c1c30393406a7c2fd20de47ceb0"
+        },
+        {
+          "bytes": 1908,
+          "file": "data/experiments/ndp50_v1/semantic/power_freeze/power_freeze_workflow_v1.json",
+          "scope": "public_source_base",
+          "sha256": "ee3c1b98478b974db83d53f717adc10589c59f7af466188ceb2429f063cf5805"
+        },
+        {
+          "bytes": 2283,
+          "file": "data/experiments/ndp50_v1/semantic/power_freeze/power_policy_neutral_v1.json",
+          "scope": "public_source_base",
+          "sha256": "94ff64d47fec9389676caa1e2dae55ce0a074711a4bb9e9497daf3073bdb9a78"
+        },
+        {
+          "bytes": 7071,
+          "file": "data/experiments/ndp50_v1/semantic/test_execution/test_execution_workflow_v1.json",
+          "scope": "public_source_base",
+          "sha256": "e606c035f46d9f07317b3bc61f97ff94a34cc4548de3af03a790ba2487f9a2db"
+        },
+        {
+          "bytes": 7461,
+          "file": "docs/literature/citation_matrix.md",
+          "scope": "public_source_base",
+          "sha256": "aa07f58f0d66ba22b670bb535e3953cf700cdcbcaea39ff47b6a850b62b99572"
+        },
+        {
+          "bytes": 16325,
+          "file": "docs/literature/semantic_architecture_literature_review_2026-07-27.md",
+          "scope": "public_source_base",
+          "sha256": "8e25db2b0662cdafd80100382abe6f9173c4b65b62801b17413fdf596959681e"
+        },
+        {
+          "bytes": 9279,
+          "file": "docs/ndp50_annotation_and_independence_plan_v1.md",
+          "scope": "public_source_base",
+          "sha256": "2c2ace0621a840f1cfb9fce6add6f749a8c55325893e02cff2fa026b7ad7e8c4"
+        },
+        {
+          "bytes": 19445,
+          "file": "docs/ndp50_feedback_implementation_audit_v1.md",
+          "scope": "public_source_base",
+          "sha256": "cdb70d80051075bbbb09ca34e671eb728106e3dabff6c97865f2ed94da3539ff"
+        },
+        {
+          "bytes": 16414,
+          "file": "docs/ndp50_feedback_improvement_amendment_v1.md",
+          "scope": "public_source_base",
+          "sha256": "f4eb887864614bbf8758db83739e39764c8a979efb6c437e0df90ab60a584bcf"
+        },
+        {
+          "bytes": 9761,
+          "file": "docs/ndp50_human_external_gate_ledger_v1.md",
+          "scope": "public_source_base",
+          "sha256": "143ad38e8c6def58d818894d5a7c84fda29d0828c8866cd0746de5dbe8b564aa"
+        },
+        {
+          "bytes": 12487,
+          "file": "docs/ndp50_initial_human_assignment_guide_v1.md",
+          "scope": "public_source_base",
+          "sha256": "e5a00d6bacd7649555fcee9b0c60e6ea2ead79c7bb9fd4b0e4d842cd74a9b1e8"
+        },
+        {
+          "bytes": 13877,
+          "file": "docs/ndp50_methodological_risk_register_v1.md",
+          "scope": "public_source_base",
+          "sha256": "a04a289ef912c009d5e4538c373eef5eb1cc6dcb5ca8fa400232a85193eb1f31"
+        },
+        {
+          "bytes": 6493,
+          "file": "docs/ndp50_power_policy_review_guide_v1.md",
+          "scope": "public_source_base",
+          "sha256": "accf7cf54d361ee87e76159e2eced916a06b48178ea97584bb0f4419c4cd5f45"
+        },
+        {
+          "bytes": 13283,
+          "file": "docs/ndp50_protocol_v1.md",
+          "scope": "public_source_base",
+          "sha256": "3f5228afebd3144905e130c2a8a1b18230b7746e214bdaad49fe82021c1f73c9"
+        },
+        {
+          "bytes": 5348,
+          "file": "docs/ndp50_scope_provenance_v1.md",
+          "scope": "public_source_base",
+          "sha256": "065b1af907c41f7dd066c30911eb620d09011d79804a2436fbd29d0dfe9f3cf0"
+        },
+        {
+          "bytes": 76134,
+          "file": "docs/ndp50_semantic_cpa_protocol_v1.md",
+          "scope": "public_source_base",
+          "sha256": "3127a3fc8b301baefa7dc13fcbb75ee2e545837a79d3769e2a5dcb6dac228509"
+        },
+        {
+          "bytes": 13299,
+          "file": "docs/ndp50_statistical_analysis_plan_v1.md",
+          "scope": "public_source_base",
+          "sha256": "c690c5389b74e3490772aec437c2597ae117febc584cf1d75eb9477b2d5e9d52"
+        },
+        {
+          "bytes": 5903,
+          "file": "docs/ndp50_structural_validation_report_v1.md",
+          "scope": "public_source_base",
+          "sha256": "f8f5d1f160f1a592f7aa30461ca1b830becb6589a34af4cf0e4ba6e973ce063a"
+        },
+        {
+          "bytes": 5221,
+          "file": "docs/ndp50_swathi_feedback_signoff_guide_v1.md",
+          "scope": "public_source_base",
+          "sha256": "d5e0e2e212228ae153446bf5c858de0b6fb1dda33c87376741df7597a3941513"
+        },
+        {
+          "bytes": 8643,
+          "file": "docs/preregistration/README.md",
+          "scope": "public_source_base",
+          "sha256": "a5bef2c49ad7e7a9733458c9be5294a18dea949d77e910ccc30d53f2fd7a9f5e"
+        },
+        {
+          "bytes": 21200,
+          "file": "docs/preregistration/ndp50_osf_zenodo_preregistration_draft_v1.md",
+          "scope": "public_source_base",
+          "sha256": "2500344919c66ef715776431f29e2d3d0d70f4c5fdc12936854710eb381b328e"
+        },
+        {
+          "bytes": 2723,
+          "file": "docs/preregistration/public_package_files_v1.txt",
+          "scope": "public_source_base",
+          "sha256": "a4663e8dc8f8a4481e769ca5613f44fcc9b44a3326736b544c63638e0e82ec3e"
+        },
+        {
+          "bytes": 10574,
+          "file": "docs/references.md",
+          "scope": "public_source_base",
+          "sha256": "e5b96945d14754b156a0ede271b9ead7864024410590e39447f70b0ad9d3a14e"
+        },
+        {
+          "bytes": 4832,
+          "file": "docs/semantic_annotator_calibration_protocol_v1.md",
+          "scope": "public_source_base",
+          "sha256": "c6ef25e9ea48523455ceac748a3ca9bdb0c2434a286f075ea087c3522e067e4c"
+        },
+        {
+          "bytes": 25072,
+          "file": "docs/semantic_architecture_claim_ledger_v1.md",
+          "scope": "public_source_base",
+          "sha256": "11bcb975ed528697ee6e9e1796b696e9a31082846920d6acd89a90b142030ee2"
+        },
+        {
+          "bytes": 5405,
+          "file": "docs/semantic_gold_workflow_protocol_v1.md",
+          "scope": "public_source_base",
+          "sha256": "ee24b9bf6f7424d6f1076c7f3dec82bf9441a3be7f416e1e46668e089790f94b"
+        },
+        {
+          "bytes": 6089,
+          "file": "docs/semantic_power_analysis_protocol_v1.md",
+          "scope": "public_source_base",
+          "sha256": "26dd3d1e5353a69f021b5d3dec3622ad2e84ef9b2b34d562199348546d7e5d5a"
+        },
+        {
+          "bytes": 11858,
+          "file": "docs/swathi_feedback_response_matrix_v1.md",
+          "scope": "public_source_base",
+          "sha256": "e5834fd5abb403d2add82e0b84bff7cdc413e7fd5ad8d58cb8a25958a2fad831"
+        },
+        {
+          "bytes": 29509,
+          "file": "ndp50_assignment_distribution.py",
+          "scope": "public_source_base",
+          "sha256": "2a2ecb0e9444fde479a66e7263ebb2b6708b6dd9a3d45dc0afe5396c0d15fae2"
+        },
+        {
+          "bytes": 29832,
+          "file": "ndp50_assignment_roster.py",
+          "scope": "public_source_base",
+          "sha256": "aa298a58e08ea3e126e2dc450d5b3ea54755f2d0d7e7bfda0d20321d5af85261"
+        },
+        {
+          "bytes": 14801,
+          "file": "ndp50_cpa_design.py",
+          "scope": "public_source_base",
+          "sha256": "39b5c3dfdda9db5321d18316ee31f36a2f08e2cfa31574c5c78c8bb0c0f08934"
+        },
+        {
+          "bytes": 42967,
+          "file": "ndp50_cpa_screen_workflow.py",
+          "scope": "public_source_base",
+          "sha256": "11e190f867482742ee63c7eeca00b48b4177fd823446f777802f0583652eb5d5"
+        },
+        {
+          "bytes": 25325,
+          "file": "ndp50_data_governance.py",
+          "scope": "public_source_base",
+          "sha256": "e79a1b58c5815b2031d4043523e75438723fc962ad4e5ffd572a2cf14154670e"
+        },
+        {
+          "bytes": 26261,
+          "file": "ndp50_data_governance_review.py",
+          "scope": "public_source_base",
+          "sha256": "6b4a0a86bbae0f98f557d1638f2fcd9b1edce7019488bf78908f02eaa87bbcc1"
+        },
+        {
+          "bytes": 16935,
+          "file": "ndp50_demonstration_pool.py",
+          "scope": "public_source_base",
+          "sha256": "3a547209deb3e74f678211188e6caea8be20c798d18a18265b7e456d1eb82ba1"
+        },
+        {
+          "bytes": 71235,
+          "file": "ndp50_execution_freeze.py",
+          "scope": "public_source_base",
+          "sha256": "9cd64c59f7677c1b40449ca3b5c8c148c0e5bae5b00f68ea1d8eddddcb9c5a99"
+        },
+        {
+          "bytes": 41694,
+          "file": "ndp50_execution_qualification.py",
+          "scope": "public_source_base",
+          "sha256": "6209f2864ce619e357602b9edb922f2d36bb7fe0af695e8d59f79e11c867399c"
+        },
+        {
+          "bytes": 110629,
+          "file": "ndp50_human_assignments.py",
+          "scope": "public_source_base",
+          "sha256": "6eeb2b3659784205648196a078e1f200615da602900ab2a4c65bcf1c17bb8973"
+        },
+        {
+          "bytes": 77274,
+          "file": "ndp50_human_handoff.py",
+          "scope": "public_source_base",
+          "sha256": "ce159192b65a08cd45cbc56b87ad72becf0f3aa3f3287701a0f47d1313cf5d9d"
+        },
+        {
+          "bytes": 18744,
+          "file": "ndp50_power_feasibility.py",
+          "scope": "public_source_base",
+          "sha256": "6afa4836e564a0a20f5d636d1d74270fceb046c42d22cd8ac00461f0eb8e65c4"
+        },
+        {
+          "bytes": 41328,
+          "file": "ndp50_power_freeze.py",
+          "scope": "public_source_base",
+          "sha256": "65970f34de68226fa095ee763d37543e1ebfd3dec2dfaf09e0dafbb351e8d308"
+        },
+        {
+          "bytes": 22081,
+          "file": "ndp50_preregistration_package.py",
+          "scope": "public_source_base",
+          "sha256": "f74a5825d67acbe720303234f2d9030fd059cfc1088429be694b9fb33b42ef0a"
+        },
+        {
+          "bytes": 25392,
+          "file": "ndp50_publication_gate.py",
+          "scope": "public_source_base",
+          "sha256": "526ec5f4a41e1d9f957ce40da26221e109b0534fd9326b46def9414386b46c42"
+        },
+        {
+          "bytes": 66386,
+          "file": "ndp50_readiness.py",
+          "scope": "public_source_base",
+          "sha256": "8c95220aad951042c9fba4f96d4748a699d1f521cfe972ad2ae76cce51553d58"
+        },
+        {
+          "bytes": 30212,
+          "file": "ndp50_semantic_gold.py",
+          "scope": "public_source_base",
+          "sha256": "9d4e64214d201d05b8eba5d33c4f2c47c9ff477725c4154c70d360016a63c915"
+        },
+        {
+          "bytes": 47369,
+          "file": "ndp50_source_approval.py",
+          "scope": "public_source_base",
+          "sha256": "5460c32f54822f15771ee73fccd0f090ee96395340ac530967a6758091dea113"
+        },
+        {
+          "bytes": 90370,
+          "file": "ndp50_test_execution.py",
+          "scope": "public_source_base",
+          "sha256": "4213986ef0432063aeb959737e17a4e65ca2db09a540e6c24eb7a85b52dff347"
+        },
+        {
+          "bytes": 46615,
+          "file": "ndp50_test_inference.py",
+          "scope": "public_source_base",
+          "sha256": "3047e579c67b095d7507558bb91693c1c71d1a523c05d55727e758f66749cc1c"
+        },
+        {
+          "bytes": 52543,
+          "file": "ndp50_vocabulary_workflow.py",
+          "scope": "public_source_base",
+          "sha256": "8e4c8eb25d4c0346ee5ef88d76f2e475737d6f001cd1e466e575fc886273fb15"
+        },
+        {
+          "bytes": 1330,
+          "file": "paper/README.md",
+          "scope": "public_source_base",
+          "sha256": "e6baba765f0d1b47b3fb4931273b29456ec6baff55de6f22b1f747178ef18cb7"
+        },
+        {
+          "bytes": 7189,
+          "file": "paper/references.bib",
+          "scope": "public_source_base",
+          "sha256": "84490704a71ff43d2143a06218136f2ba3d3f863ac3f7d8bbf8979a93f13f413"
+        },
+        {
+          "bytes": 2533,
+          "file": "paper/results_macros.tex",
+          "scope": "public_source_base",
+          "sha256": "71516f1b553c47960326f2b09d46f97e0befed0e83e90ab2a6234d9f4fc74458"
+        },
+        {
+          "bytes": 36996,
+          "file": "paper/semantic_architecture_study_en.tex",
+          "scope": "public_source_base",
+          "sha256": "cb4d27deee4d5f6216a20a377a613530c9e99c995541d1d780d61fdceb79cebc"
+        },
+        {
+          "bytes": 34,
+          "file": "requirements-dev.txt",
+          "scope": "public_source_base",
+          "sha256": "59a0239e084f59949168a18fe9c3744f8e951fee6941f0e499a5be22428840f4"
+        },
+        {
+          "bytes": 275,
+          "file": "requirements.txt",
+          "scope": "public_source_base",
+          "sha256": "28992ad933dd755b8467bd04fe3702aa312c456cc574cf92d659e8d26d0410a2"
+        },
+        {
+          "bytes": 23683,
+          "file": "semantic_annotate.py",
+          "scope": "public_source_base",
+          "sha256": "01ee60d775a4122a58881806c75e30e9ef98d83a55570e3302e808c61dfd1da4"
+        },
+        {
+          "bytes": 25713,
+          "file": "semantic_annotator_calibration.py",
+          "scope": "public_source_base",
+          "sha256": "203a0dc3234f4d57f9d5fa547a324e636b2e3a0d1ae30ad5f49991181e4072fa"
+        },
+        {
+          "bytes": 39296,
+          "file": "semantic_blind_inference.py",
+          "scope": "public_source_base",
+          "sha256": "11cceb5ba17c1a605418066fdcb9f8c4640fb15c71c8a5f59385ce2be0c1f766"
+        },
+        {
+          "bytes": 64608,
+          "file": "semantic_blind_sampling.py",
+          "scope": "public_source_base",
+          "sha256": "d880b7132d5a4dd93e1fbc56b02f9d8eca07f58b290cea309b9a75758bd8009f"
+        },
+        {
+          "bytes": 16814,
+          "file": "semantic_catalog_acquisition.py",
+          "scope": "public_source_base",
+          "sha256": "5a5845a45e6bddff5009374ca319d898ca966d8564b8ea006673a990363b213a"
+        },
+        {
+          "bytes": 59361,
+          "file": "semantic_gold_workflow.py",
+          "scope": "public_source_base",
+          "sha256": "4be417efe6a2b4bb7b166e6fb0bba40a9545017908110077f7e7dc8618281a69"
+        },
+        {
+          "bytes": 14697,
+          "file": "semantic_layer.py",
+          "scope": "public_source_base",
+          "sha256": "381db8d9f17bc2ba8f03ef3cfe38e6bf08e0739f2c48e3f21487d388e3f7074e"
+        },
+        {
+          "bytes": 22021,
+          "file": "semantic_power_analysis.py",
+          "scope": "public_source_base",
+          "sha256": "9da204bc167095d5efd2a84bd6c89767db4eb534d8d3eba292ec4a02e8d13b50"
+        },
+        {
+          "bytes": 13085,
+          "file": "semantic_power_calibration.py",
+          "scope": "public_source_base",
+          "sha256": "a1208de3e3cf064da542e76b3cbd8891dd2bf506ed8bf59b25afcc7d3113ed73"
+        },
+        {
+          "bytes": 71569,
+          "file": "semantic_study_preflight.py",
+          "scope": "public_source_base",
+          "sha256": "44f5434bfd3eda85d775d7c98183cd937765879b3986c89161d0ae983cb84723"
+        },
+        {
+          "bytes": 1838,
+          "file": "templates/ndp50_external_preregistration_receipt_template.json",
+          "scope": "public_source_base",
+          "sha256": "5aacdb096019e9676c729685f2220b52908b16a0df3276dbb70a698604b17cfd"
+        },
+        {
+          "bytes": 3302,
+          "file": "unit_normalization.py",
+          "scope": "public_source_base",
+          "sha256": "9731e24b17f034b42c03afd50907a89fd4bc6f1b78062e43f121957a064d4a79"
+        }
+      ],
+      "forbidden_assignment_files": [
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/feedback_response_signoff_assignment.json",
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/feedback_response_signoff_payload.json",
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/vocabulary_discovery_a_assignment.json",
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/vocabulary_discovery_a_payload.json",
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/vocabulary_discovery_b_assignment.json",
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/vocabulary_discovery_b_payload.json"
+      ],
+      "human_decisions_present": false,
+      "packet_directory": "governance",
+      "reviewer_ids_present": false,
+      "roster_slots": [
+        "governance_stewardship",
+        "governance_accountable_approval"
+      ],
+      "sealed_identity_scan_required": true,
+      "status": "specified_unmaterialized",
+      "test_data_access": "forbidden"
+    },
+    "feedback_response_signoff": {
+      "assignment_id": "feedback_response_signoff",
+      "content_digest_sha256": "c43a8aff715e76746077e62a08fd623f429c212cceae8604f7ed76263e02d3dc",
+      "extra_files_forbidden": true,
+      "file_count": 77,
+      "files": [
+        {
+          "bytes": 100,
+          "file": "__init__.py",
+          "scope": "public_source_base",
+          "sha256": "375b4920ba253d817787e51aef2ff70612d491389060a8f1b9160ffcff5bc7b3"
+        },
+        {
+          "bytes": 58537,
+          "file": "architecture_evaluation.py",
+          "scope": "public_source_base",
+          "sha256": "2b5538694ec0a6a57fffbb6ee3281760ddccacd956c0937c3f4901545eb9e6a7"
+        },
+        {
+          "bytes": 65119,
+          "file": "architecture_variants.py",
+          "scope": "public_source_base",
+          "sha256": "fa3f888057631571b6c5c5a030bbe8b4127d363c3ac4ca92b69f9b565d171a6f"
+        },
+        {
+          "bytes": 4080,
+          "file": "data/experiments/ndp50_v1/preregistration/feedback_response_signoff_neutral_v1.json",
+          "scope": "public_source_base",
+          "sha256": "145ccf3801173cffc5edad7ad18a346c6045d11174aa4966223381feadea4d5e"
+        },
+        {
+          "bytes": 23575,
+          "file": "data/experiments/ndp50_v1/preregistration/public_package_manifest_v1.json",
+          "scope": "public_manifest",
+          "sha256": "944b4a3396f01452eefdf67f94c2cea9c2edd3d562f50492e7f75cde758e3056"
+        },
+        {
+          "bytes": 2568,
+          "file": "data/experiments/ndp50_v1/preregistration/publication_gate_workflow_v1.json",
+          "scope": "released_input:publication_gate_workflow",
+          "sha256": "9e935c0c63836ca54986f3b8172de05c25fdff6b7d7b00e20ea1294814dd81d9"
+        },
+        {
+          "bytes": 8800,
+          "file": "data/experiments/ndp50_v1/semantic/cpa_design_draft_v1.json",
+          "scope": "public_source_base",
+          "sha256": "0313d5fee93c03b693cf8962ad9406e77b3f86e004c7d916d810c0bf7a791840"
+        },
+        {
+          "bytes": 4864,
+          "file": "data/experiments/ndp50_v1/semantic/human_assignments_v1/assignment_release_v1.json",
+          "scope": "assignment_release",
+          "sha256": "4449da78a8bacf6f2016d6a128d67dd6474ce17233e90e8bc799da75f362dd0e"
+        },
+        {
+          "bytes": 4192,
+          "file": "data/experiments/ndp50_v1/semantic/human_assignments_v1/feedback_response_signoff_assignment.json",
+          "scope": "assignment_wrapper",
+          "sha256": "8c1121691a90604292e4b7cb26063bd73ff33379538c57c72798763ace602659"
+        },
+        {
+          "bytes": 4080,
+          "file": "data/experiments/ndp50_v1/semantic/human_assignments_v1/feedback_response_signoff_payload.json",
+          "scope": "assignment_payload",
+          "sha256": "145ccf3801173cffc5edad7ad18a346c6045d11174aa4966223381feadea4d5e"
+        },
+        {
+          "bytes": 4525,
+          "file": "data/experiments/ndp50_v1/semantic/power_feasibility_v1.json",
+          "scope": "public_source_base",
+          "sha256": "a857b0bba22c97a2019e6b91bee2ce05984f6c1c30393406a7c2fd20de47ceb0"
+        },
+        {
+          "bytes": 1908,
+          "file": "data/experiments/ndp50_v1/semantic/power_freeze/power_freeze_workflow_v1.json",
+          "scope": "public_source_base",
+          "sha256": "ee3c1b98478b974db83d53f717adc10589c59f7af466188ceb2429f063cf5805"
+        },
+        {
+          "bytes": 2283,
+          "file": "data/experiments/ndp50_v1/semantic/power_freeze/power_policy_neutral_v1.json",
+          "scope": "public_source_base",
+          "sha256": "94ff64d47fec9389676caa1e2dae55ce0a074711a4bb9e9497daf3073bdb9a78"
+        },
+        {
+          "bytes": 7071,
+          "file": "data/experiments/ndp50_v1/semantic/test_execution/test_execution_workflow_v1.json",
+          "scope": "public_source_base",
+          "sha256": "e606c035f46d9f07317b3bc61f97ff94a34cc4548de3af03a790ba2487f9a2db"
+        },
+        {
+          "bytes": 7461,
+          "file": "docs/literature/citation_matrix.md",
+          "scope": "public_source_base",
+          "sha256": "aa07f58f0d66ba22b670bb535e3953cf700cdcbcaea39ff47b6a850b62b99572"
+        },
+        {
+          "bytes": 16325,
+          "file": "docs/literature/semantic_architecture_literature_review_2026-07-27.md",
+          "scope": "public_source_base",
+          "sha256": "8e25db2b0662cdafd80100382abe6f9173c4b65b62801b17413fdf596959681e"
+        },
+        {
+          "bytes": 9279,
+          "file": "docs/ndp50_annotation_and_independence_plan_v1.md",
+          "scope": "public_source_base",
+          "sha256": "2c2ace0621a840f1cfb9fce6add6f749a8c55325893e02cff2fa026b7ad7e8c4"
+        },
+        {
+          "bytes": 19445,
+          "file": "docs/ndp50_feedback_implementation_audit_v1.md",
+          "scope": "public_source_base",
+          "sha256": "cdb70d80051075bbbb09ca34e671eb728106e3dabff6c97865f2ed94da3539ff"
+        },
+        {
+          "bytes": 16414,
+          "file": "docs/ndp50_feedback_improvement_amendment_v1.md",
+          "scope": "public_source_base",
+          "sha256": "f4eb887864614bbf8758db83739e39764c8a979efb6c437e0df90ab60a584bcf"
+        },
+        {
+          "bytes": 9761,
+          "file": "docs/ndp50_human_external_gate_ledger_v1.md",
+          "scope": "public_source_base",
+          "sha256": "143ad38e8c6def58d818894d5a7c84fda29d0828c8866cd0746de5dbe8b564aa"
+        },
+        {
+          "bytes": 12487,
+          "file": "docs/ndp50_initial_human_assignment_guide_v1.md",
+          "scope": "public_source_base",
+          "sha256": "e5a00d6bacd7649555fcee9b0c60e6ea2ead79c7bb9fd4b0e4d842cd74a9b1e8"
+        },
+        {
+          "bytes": 13877,
+          "file": "docs/ndp50_methodological_risk_register_v1.md",
+          "scope": "public_source_base",
+          "sha256": "a04a289ef912c009d5e4538c373eef5eb1cc6dcb5ca8fa400232a85193eb1f31"
+        },
+        {
+          "bytes": 6493,
+          "file": "docs/ndp50_power_policy_review_guide_v1.md",
+          "scope": "public_source_base",
+          "sha256": "accf7cf54d361ee87e76159e2eced916a06b48178ea97584bb0f4419c4cd5f45"
+        },
+        {
+          "bytes": 13283,
+          "file": "docs/ndp50_protocol_v1.md",
+          "scope": "public_source_base",
+          "sha256": "3f5228afebd3144905e130c2a8a1b18230b7746e214bdaad49fe82021c1f73c9"
+        },
+        {
+          "bytes": 5348,
+          "file": "docs/ndp50_scope_provenance_v1.md",
+          "scope": "public_source_base",
+          "sha256": "065b1af907c41f7dd066c30911eb620d09011d79804a2436fbd29d0dfe9f3cf0"
+        },
+        {
+          "bytes": 76134,
+          "file": "docs/ndp50_semantic_cpa_protocol_v1.md",
+          "scope": "public_source_base",
+          "sha256": "3127a3fc8b301baefa7dc13fcbb75ee2e545837a79d3769e2a5dcb6dac228509"
+        },
+        {
+          "bytes": 13299,
+          "file": "docs/ndp50_statistical_analysis_plan_v1.md",
+          "scope": "public_source_base",
+          "sha256": "c690c5389b74e3490772aec437c2597ae117febc584cf1d75eb9477b2d5e9d52"
+        },
+        {
+          "bytes": 5903,
+          "file": "docs/ndp50_structural_validation_report_v1.md",
+          "scope": "public_source_base",
+          "sha256": "f8f5d1f160f1a592f7aa30461ca1b830becb6589a34af4cf0e4ba6e973ce063a"
+        },
+        {
+          "bytes": 5221,
+          "file": "docs/ndp50_swathi_feedback_signoff_guide_v1.md",
+          "scope": "public_source_base",
+          "sha256": "d5e0e2e212228ae153446bf5c858de0b6fb1dda33c87376741df7597a3941513"
+        },
+        {
+          "bytes": 8643,
+          "file": "docs/preregistration/README.md",
+          "scope": "public_source_base",
+          "sha256": "a5bef2c49ad7e7a9733458c9be5294a18dea949d77e910ccc30d53f2fd7a9f5e"
+        },
+        {
+          "bytes": 21200,
+          "file": "docs/preregistration/ndp50_osf_zenodo_preregistration_draft_v1.md",
+          "scope": "public_source_base",
+          "sha256": "2500344919c66ef715776431f29e2d3d0d70f4c5fdc12936854710eb381b328e"
+        },
+        {
+          "bytes": 2723,
+          "file": "docs/preregistration/public_package_files_v1.txt",
+          "scope": "public_source_base",
+          "sha256": "a4663e8dc8f8a4481e769ca5613f44fcc9b44a3326736b544c63638e0e82ec3e"
+        },
+        {
+          "bytes": 10574,
+          "file": "docs/references.md",
+          "scope": "public_source_base",
+          "sha256": "e5b96945d14754b156a0ede271b9ead7864024410590e39447f70b0ad9d3a14e"
+        },
+        {
+          "bytes": 4832,
+          "file": "docs/semantic_annotator_calibration_protocol_v1.md",
+          "scope": "public_source_base",
+          "sha256": "c6ef25e9ea48523455ceac748a3ca9bdb0c2434a286f075ea087c3522e067e4c"
+        },
+        {
+          "bytes": 25072,
+          "file": "docs/semantic_architecture_claim_ledger_v1.md",
+          "scope": "public_source_base",
+          "sha256": "11bcb975ed528697ee6e9e1796b696e9a31082846920d6acd89a90b142030ee2"
+        },
+        {
+          "bytes": 5405,
+          "file": "docs/semantic_gold_workflow_protocol_v1.md",
+          "scope": "public_source_base",
+          "sha256": "ee24b9bf6f7424d6f1076c7f3dec82bf9441a3be7f416e1e46668e089790f94b"
+        },
+        {
+          "bytes": 6089,
+          "file": "docs/semantic_power_analysis_protocol_v1.md",
+          "scope": "public_source_base",
+          "sha256": "26dd3d1e5353a69f021b5d3dec3622ad2e84ef9b2b34d562199348546d7e5d5a"
+        },
+        {
+          "bytes": 11858,
+          "file": "docs/swathi_feedback_response_matrix_v1.md",
+          "scope": "public_source_base",
+          "sha256": "e5834fd5abb403d2add82e0b84bff7cdc413e7fd5ad8d58cb8a25958a2fad831"
+        },
+        {
+          "bytes": 29509,
+          "file": "ndp50_assignment_distribution.py",
+          "scope": "public_source_base",
+          "sha256": "2a2ecb0e9444fde479a66e7263ebb2b6708b6dd9a3d45dc0afe5396c0d15fae2"
+        },
+        {
+          "bytes": 29832,
+          "file": "ndp50_assignment_roster.py",
+          "scope": "public_source_base",
+          "sha256": "aa298a58e08ea3e126e2dc450d5b3ea54755f2d0d7e7bfda0d20321d5af85261"
+        },
+        {
+          "bytes": 14801,
+          "file": "ndp50_cpa_design.py",
+          "scope": "public_source_base",
+          "sha256": "39b5c3dfdda9db5321d18316ee31f36a2f08e2cfa31574c5c78c8bb0c0f08934"
+        },
+        {
+          "bytes": 42967,
+          "file": "ndp50_cpa_screen_workflow.py",
+          "scope": "public_source_base",
+          "sha256": "11e190f867482742ee63c7eeca00b48b4177fd823446f777802f0583652eb5d5"
+        },
+        {
+          "bytes": 25325,
+          "file": "ndp50_data_governance.py",
+          "scope": "public_source_base",
+          "sha256": "e79a1b58c5815b2031d4043523e75438723fc962ad4e5ffd572a2cf14154670e"
+        },
+        {
+          "bytes": 26261,
+          "file": "ndp50_data_governance_review.py",
+          "scope": "public_source_base",
+          "sha256": "6b4a0a86bbae0f98f557d1638f2fcd9b1edce7019488bf78908f02eaa87bbcc1"
+        },
+        {
+          "bytes": 16935,
+          "file": "ndp50_demonstration_pool.py",
+          "scope": "public_source_base",
+          "sha256": "3a547209deb3e74f678211188e6caea8be20c798d18a18265b7e456d1eb82ba1"
+        },
+        {
+          "bytes": 71235,
+          "file": "ndp50_execution_freeze.py",
+          "scope": "public_source_base",
+          "sha256": "9cd64c59f7677c1b40449ca3b5c8c148c0e5bae5b00f68ea1d8eddddcb9c5a99"
+        },
+        {
+          "bytes": 41694,
+          "file": "ndp50_execution_qualification.py",
+          "scope": "public_source_base",
+          "sha256": "6209f2864ce619e357602b9edb922f2d36bb7fe0af695e8d59f79e11c867399c"
+        },
+        {
+          "bytes": 110629,
+          "file": "ndp50_human_assignments.py",
+          "scope": "public_source_base",
+          "sha256": "6eeb2b3659784205648196a078e1f200615da602900ab2a4c65bcf1c17bb8973"
+        },
+        {
+          "bytes": 77274,
+          "file": "ndp50_human_handoff.py",
+          "scope": "public_source_base",
+          "sha256": "ce159192b65a08cd45cbc56b87ad72becf0f3aa3f3287701a0f47d1313cf5d9d"
+        },
+        {
+          "bytes": 18744,
+          "file": "ndp50_power_feasibility.py",
+          "scope": "public_source_base",
+          "sha256": "6afa4836e564a0a20f5d636d1d74270fceb046c42d22cd8ac00461f0eb8e65c4"
+        },
+        {
+          "bytes": 41328,
+          "file": "ndp50_power_freeze.py",
+          "scope": "public_source_base",
+          "sha256": "65970f34de68226fa095ee763d37543e1ebfd3dec2dfaf09e0dafbb351e8d308"
+        },
+        {
+          "bytes": 22081,
+          "file": "ndp50_preregistration_package.py",
+          "scope": "public_source_base",
+          "sha256": "f74a5825d67acbe720303234f2d9030fd059cfc1088429be694b9fb33b42ef0a"
+        },
+        {
+          "bytes": 25392,
+          "file": "ndp50_publication_gate.py",
+          "scope": "public_source_base",
+          "sha256": "526ec5f4a41e1d9f957ce40da26221e109b0534fd9326b46def9414386b46c42"
+        },
+        {
+          "bytes": 66386,
+          "file": "ndp50_readiness.py",
+          "scope": "public_source_base",
+          "sha256": "8c95220aad951042c9fba4f96d4748a699d1f521cfe972ad2ae76cce51553d58"
+        },
+        {
+          "bytes": 30212,
+          "file": "ndp50_semantic_gold.py",
+          "scope": "public_source_base",
+          "sha256": "9d4e64214d201d05b8eba5d33c4f2c47c9ff477725c4154c70d360016a63c915"
+        },
+        {
+          "bytes": 47369,
+          "file": "ndp50_source_approval.py",
+          "scope": "public_source_base",
+          "sha256": "5460c32f54822f15771ee73fccd0f090ee96395340ac530967a6758091dea113"
+        },
+        {
+          "bytes": 90370,
+          "file": "ndp50_test_execution.py",
+          "scope": "public_source_base",
+          "sha256": "4213986ef0432063aeb959737e17a4e65ca2db09a540e6c24eb7a85b52dff347"
+        },
+        {
+          "bytes": 46615,
+          "file": "ndp50_test_inference.py",
+          "scope": "public_source_base",
+          "sha256": "3047e579c67b095d7507558bb91693c1c71d1a523c05d55727e758f66749cc1c"
+        },
+        {
+          "bytes": 52543,
+          "file": "ndp50_vocabulary_workflow.py",
+          "scope": "public_source_base",
+          "sha256": "8e4c8eb25d4c0346ee5ef88d76f2e475737d6f001cd1e466e575fc886273fb15"
+        },
+        {
+          "bytes": 1330,
+          "file": "paper/README.md",
+          "scope": "public_source_base",
+          "sha256": "e6baba765f0d1b47b3fb4931273b29456ec6baff55de6f22b1f747178ef18cb7"
+        },
+        {
+          "bytes": 7189,
+          "file": "paper/references.bib",
+          "scope": "public_source_base",
+          "sha256": "84490704a71ff43d2143a06218136f2ba3d3f863ac3f7d8bbf8979a93f13f413"
+        },
+        {
+          "bytes": 2533,
+          "file": "paper/results_macros.tex",
+          "scope": "public_source_base",
+          "sha256": "71516f1b553c47960326f2b09d46f97e0befed0e83e90ab2a6234d9f4fc74458"
+        },
+        {
+          "bytes": 36996,
+          "file": "paper/semantic_architecture_study_en.tex",
+          "scope": "public_source_base",
+          "sha256": "cb4d27deee4d5f6216a20a377a613530c9e99c995541d1d780d61fdceb79cebc"
+        },
+        {
+          "bytes": 34,
+          "file": "requirements-dev.txt",
+          "scope": "public_source_base",
+          "sha256": "59a0239e084f59949168a18fe9c3744f8e951fee6941f0e499a5be22428840f4"
+        },
+        {
+          "bytes": 275,
+          "file": "requirements.txt",
+          "scope": "public_source_base",
+          "sha256": "28992ad933dd755b8467bd04fe3702aa312c456cc574cf92d659e8d26d0410a2"
+        },
+        {
+          "bytes": 23683,
+          "file": "semantic_annotate.py",
+          "scope": "public_source_base",
+          "sha256": "01ee60d775a4122a58881806c75e30e9ef98d83a55570e3302e808c61dfd1da4"
+        },
+        {
+          "bytes": 25713,
+          "file": "semantic_annotator_calibration.py",
+          "scope": "public_source_base",
+          "sha256": "203a0dc3234f4d57f9d5fa547a324e636b2e3a0d1ae30ad5f49991181e4072fa"
+        },
+        {
+          "bytes": 39296,
+          "file": "semantic_blind_inference.py",
+          "scope": "public_source_base",
+          "sha256": "11cceb5ba17c1a605418066fdcb9f8c4640fb15c71c8a5f59385ce2be0c1f766"
+        },
+        {
+          "bytes": 64608,
+          "file": "semantic_blind_sampling.py",
+          "scope": "public_source_base",
+          "sha256": "d880b7132d5a4dd93e1fbc56b02f9d8eca07f58b290cea309b9a75758bd8009f"
+        },
+        {
+          "bytes": 16814,
+          "file": "semantic_catalog_acquisition.py",
+          "scope": "public_source_base",
+          "sha256": "5a5845a45e6bddff5009374ca319d898ca966d8564b8ea006673a990363b213a"
+        },
+        {
+          "bytes": 59361,
+          "file": "semantic_gold_workflow.py",
+          "scope": "public_source_base",
+          "sha256": "4be417efe6a2b4bb7b166e6fb0bba40a9545017908110077f7e7dc8618281a69"
+        },
+        {
+          "bytes": 14697,
+          "file": "semantic_layer.py",
+          "scope": "public_source_base",
+          "sha256": "381db8d9f17bc2ba8f03ef3cfe38e6bf08e0739f2c48e3f21487d388e3f7074e"
+        },
+        {
+          "bytes": 22021,
+          "file": "semantic_power_analysis.py",
+          "scope": "public_source_base",
+          "sha256": "9da204bc167095d5efd2a84bd6c89767db4eb534d8d3eba292ec4a02e8d13b50"
+        },
+        {
+          "bytes": 13085,
+          "file": "semantic_power_calibration.py",
+          "scope": "public_source_base",
+          "sha256": "a1208de3e3cf064da542e76b3cbd8891dd2bf506ed8bf59b25afcc7d3113ed73"
+        },
+        {
+          "bytes": 71569,
+          "file": "semantic_study_preflight.py",
+          "scope": "public_source_base",
+          "sha256": "44f5434bfd3eda85d775d7c98183cd937765879b3986c89161d0ae983cb84723"
+        },
+        {
+          "bytes": 1838,
+          "file": "templates/ndp50_external_preregistration_receipt_template.json",
+          "scope": "public_source_base",
+          "sha256": "5aacdb096019e9676c729685f2220b52908b16a0df3276dbb70a698604b17cfd"
+        },
+        {
+          "bytes": 3302,
+          "file": "unit_normalization.py",
+          "scope": "public_source_base",
+          "sha256": "9731e24b17f034b42c03afd50907a89fd4bc6f1b78062e43f121957a064d4a79"
+        }
+      ],
+      "forbidden_assignment_files": [
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/data_governance_review_assignment.json",
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/data_governance_review_payload.json",
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/vocabulary_discovery_a_assignment.json",
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/vocabulary_discovery_a_payload.json",
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/vocabulary_discovery_b_assignment.json",
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/vocabulary_discovery_b_payload.json"
+      ],
+      "human_decisions_present": false,
+      "packet_directory": "feedback",
+      "reviewer_ids_present": false,
+      "roster_slots": [
+        "feedback_response_signoff"
+      ],
+      "sealed_identity_scan_required": true,
+      "status": "specified_unmaterialized",
+      "test_data_access": "forbidden"
+    },
+    "vocabulary_discovery_a": {
+      "assignment_id": "vocabulary_discovery_a",
+      "content_digest_sha256": "fedc6097af580ff2ca64536b76e122dbee57e115ba94ca5839025352909379d9",
+      "extra_files_forbidden": true,
+      "file_count": 95,
+      "files": [
+        {
+          "bytes": 100,
+          "file": "__init__.py",
+          "scope": "public_source_base",
+          "sha256": "375b4920ba253d817787e51aef2ff70612d491389060a8f1b9160ffcff5bc7b3"
+        },
+        {
+          "bytes": 58537,
+          "file": "architecture_evaluation.py",
+          "scope": "public_source_base",
+          "sha256": "2b5538694ec0a6a57fffbb6ee3281760ddccacd956c0937c3f4901545eb9e6a7"
+        },
+        {
+          "bytes": 65119,
+          "file": "architecture_variants.py",
+          "scope": "public_source_base",
+          "sha256": "fa3f888057631571b6c5c5a030bbe8b4127d363c3ac4ca92b69f9b565d171a6f"
+        },
+        {
+          "bytes": 4080,
+          "file": "data/experiments/ndp50_v1/preregistration/feedback_response_signoff_neutral_v1.json",
+          "scope": "public_source_base",
+          "sha256": "145ccf3801173cffc5edad7ad18a346c6045d11174aa4966223381feadea4d5e"
+        },
+        {
+          "bytes": 23575,
+          "file": "data/experiments/ndp50_v1/preregistration/public_package_manifest_v1.json",
+          "scope": "public_manifest",
+          "sha256": "944b4a3396f01452eefdf67f94c2cea9c2edd3d562f50492e7f75cde758e3056"
+        },
+        {
+          "bytes": 8800,
+          "file": "data/experiments/ndp50_v1/semantic/cpa_design_draft_v1.json",
+          "scope": "public_source_base",
+          "sha256": "0313d5fee93c03b693cf8962ad9406e77b3f86e004c7d916d810c0bf7a791840"
+        },
+        {
+          "bytes": 4864,
+          "file": "data/experiments/ndp50_v1/semantic/human_assignments_v1/assignment_release_v1.json",
+          "scope": "assignment_release",
+          "sha256": "4449da78a8bacf6f2016d6a128d67dd6474ce17233e90e8bc799da75f362dd0e"
+        },
+        {
+          "bytes": 4388,
+          "file": "data/experiments/ndp50_v1/semantic/human_assignments_v1/vocabulary_discovery_a_assignment.json",
+          "scope": "assignment_wrapper",
+          "sha256": "267081d7de5c791712e0e90765f5bb621085e10e5d2c253cfe72bb2eb50fdbae"
+        },
+        {
+          "bytes": 6182,
+          "file": "data/experiments/ndp50_v1/semantic/human_assignments_v1/vocabulary_discovery_a_payload.json",
+          "scope": "assignment_payload",
+          "sha256": "51006f01cdea680254cb1898a2444129d094a620750a6d6adbb0f3d57156d190"
+        },
+        {
+          "bytes": 4525,
+          "file": "data/experiments/ndp50_v1/semantic/power_feasibility_v1.json",
+          "scope": "public_source_base",
+          "sha256": "a857b0bba22c97a2019e6b91bee2ce05984f6c1c30393406a7c2fd20de47ceb0"
+        },
+        {
+          "bytes": 1908,
+          "file": "data/experiments/ndp50_v1/semantic/power_freeze/power_freeze_workflow_v1.json",
+          "scope": "public_source_base",
+          "sha256": "ee3c1b98478b974db83d53f717adc10589c59f7af466188ceb2429f063cf5805"
+        },
+        {
+          "bytes": 2283,
+          "file": "data/experiments/ndp50_v1/semantic/power_freeze/power_policy_neutral_v1.json",
+          "scope": "public_source_base",
+          "sha256": "94ff64d47fec9389676caa1e2dae55ce0a074711a4bb9e9497daf3073bdb9a78"
+        },
+        {
+          "bytes": 9547,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/manifest.json",
+          "scope": "released_input:source_bundle_manifest",
+          "sha256": "13b6eb7a866ad81bcefb4f75e1e6e2d6067d92a442a1d507e103ec096b8b3159"
+        },
+        {
+          "bytes": 16310,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-development-610b435e-1877-4a4b-b0be-c73539979eec.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "f278599f3588b70292fa4fc890b8e4b17cab12f8f419015533584d4378091dfd"
+        },
+        {
+          "bytes": 28208,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "0b073be1865c0e6f03b67a87860c9c4a5615387a398d4b59b12f178bec187b24"
+        },
+        {
+          "bytes": 30568,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "b74636a9f79ccc2cbd51b694780ada6f0e7fc4f925c858444e1c5d87f4a81991"
+        },
+        {
+          "bytes": 18764,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-development-b651063b-edb5-4d4f-ae50-7fbc5191ad11.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "f5ecac3056ad8fb2c25f1f5256dcf6e7aa4c7e09b2d5790b8c0f6a5efac448a1"
+        },
+        {
+          "bytes": 18761,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-development-c2bbcf64-3737-42b9-aaf9-2d9971f31085.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "af3aa172ed050b98490cc82d443b41925a142262128d8236172b2802d7ca5b8d"
+        },
+        {
+          "bytes": 18763,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-development-c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "6574e0c42450bb93de92e9dc986ee025073bc2c6f019b7665a437cf21a0ac791"
+        },
+        {
+          "bytes": 27791,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "50284bad29d5e9b787d3788ab643901b8e2feeac62ee82aa5c56569d7bac0de2"
+        },
+        {
+          "bytes": 16107,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-development-d15771b1-b612-478c-80ef-91d3e2e1c333.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "395523595e9ac16c3e7e7266df5ee97f054571a29f49520d8af94debf7f9c3c3"
+        },
+        {
+          "bytes": 28212,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "79b2dd0dbf898ce9c2eab914e195d5a25e9ee0f0238910d9084bbc9e8915b473"
+        },
+        {
+          "bytes": 28212,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "1dd203b8d298377db8f062f5049667ff964be2e840669837c8ffd8a89b0bfedc"
+        },
+        {
+          "bytes": 16043,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-validation-47f47360-a5e2-441c-9b43-6cadf6eab7b6.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "5d5c5665a7197045493bdb14a68f68c2a01f9d8f7df26a7fbd216afe9c4df4fc"
+        },
+        {
+          "bytes": 18320,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "3626fd3040b4a220b6b432aeb0e145623587ebdccdf606870749f34a09f39470"
+        },
+        {
+          "bytes": 30158,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "0e5ac9a800f5f2a04698cb2536275edf8b39063368477fb45b1fc5f433703b62"
+        },
+        {
+          "bytes": 16101,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-validation-a47379a9-8051-42bf-9ddd-94f33b672ac6.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "8e788e670542505c74772f9bdeb293e7fd0fc31c9cf9f8f224a7cc89247774e7"
+        },
+        {
+          "bytes": 27785,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "d366ca8750f0df539e5594aa62aff0314ccdb550fbb62dbb5c44331c6c6311b3"
+        },
+        {
+          "bytes": 23576,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "e2e0124776c3f9e0ade7749e3759de236d9882a560b567b93ecd956dbe0cd300"
+        },
+        {
+          "bytes": 7071,
+          "file": "data/experiments/ndp50_v1/semantic/test_execution/test_execution_workflow_v1.json",
+          "scope": "public_source_base",
+          "sha256": "e606c035f46d9f07317b3bc61f97ff94a34cc4548de3af03a790ba2487f9a2db"
+        },
+        {
+          "bytes": 58388,
+          "file": "data/experiments/ndp50_v1/semantic/vocabulary_draft_v1.json",
+          "scope": "released_input:draft_vocabulary",
+          "sha256": "abb13e004e0dd1b28eaa4df0a9f0841eb65032c46730310d42f5979d56e9b773"
+        },
+        {
+          "bytes": 2126,
+          "file": "data/experiments/ndp50_v1/semantic/vocabulary_review_workflow_v1.json",
+          "scope": "released_input:workflow",
+          "sha256": "d3d0f24be786f4c89bb446ef1aceec55f5600e269f930c464a6c97c7bd37ac2d"
+        },
+        {
+          "bytes": 7461,
+          "file": "docs/literature/citation_matrix.md",
+          "scope": "public_source_base",
+          "sha256": "aa07f58f0d66ba22b670bb535e3953cf700cdcbcaea39ff47b6a850b62b99572"
+        },
+        {
+          "bytes": 16325,
+          "file": "docs/literature/semantic_architecture_literature_review_2026-07-27.md",
+          "scope": "public_source_base",
+          "sha256": "8e25db2b0662cdafd80100382abe6f9173c4b65b62801b17413fdf596959681e"
+        },
+        {
+          "bytes": 9279,
+          "file": "docs/ndp50_annotation_and_independence_plan_v1.md",
+          "scope": "public_source_base",
+          "sha256": "2c2ace0621a840f1cfb9fce6add6f749a8c55325893e02cff2fa026b7ad7e8c4"
+        },
+        {
+          "bytes": 19445,
+          "file": "docs/ndp50_feedback_implementation_audit_v1.md",
+          "scope": "public_source_base",
+          "sha256": "cdb70d80051075bbbb09ca34e671eb728106e3dabff6c97865f2ed94da3539ff"
+        },
+        {
+          "bytes": 16414,
+          "file": "docs/ndp50_feedback_improvement_amendment_v1.md",
+          "scope": "public_source_base",
+          "sha256": "f4eb887864614bbf8758db83739e39764c8a979efb6c437e0df90ab60a584bcf"
+        },
+        {
+          "bytes": 9761,
+          "file": "docs/ndp50_human_external_gate_ledger_v1.md",
+          "scope": "public_source_base",
+          "sha256": "143ad38e8c6def58d818894d5a7c84fda29d0828c8866cd0746de5dbe8b564aa"
+        },
+        {
+          "bytes": 12487,
+          "file": "docs/ndp50_initial_human_assignment_guide_v1.md",
+          "scope": "public_source_base",
+          "sha256": "e5a00d6bacd7649555fcee9b0c60e6ea2ead79c7bb9fd4b0e4d842cd74a9b1e8"
+        },
+        {
+          "bytes": 13877,
+          "file": "docs/ndp50_methodological_risk_register_v1.md",
+          "scope": "public_source_base",
+          "sha256": "a04a289ef912c009d5e4538c373eef5eb1cc6dcb5ca8fa400232a85193eb1f31"
+        },
+        {
+          "bytes": 6493,
+          "file": "docs/ndp50_power_policy_review_guide_v1.md",
+          "scope": "public_source_base",
+          "sha256": "accf7cf54d361ee87e76159e2eced916a06b48178ea97584bb0f4419c4cd5f45"
+        },
+        {
+          "bytes": 13283,
+          "file": "docs/ndp50_protocol_v1.md",
+          "scope": "public_source_base",
+          "sha256": "3f5228afebd3144905e130c2a8a1b18230b7746e214bdaad49fe82021c1f73c9"
+        },
+        {
+          "bytes": 5348,
+          "file": "docs/ndp50_scope_provenance_v1.md",
+          "scope": "public_source_base",
+          "sha256": "065b1af907c41f7dd066c30911eb620d09011d79804a2436fbd29d0dfe9f3cf0"
+        },
+        {
+          "bytes": 76134,
+          "file": "docs/ndp50_semantic_cpa_protocol_v1.md",
+          "scope": "public_source_base",
+          "sha256": "3127a3fc8b301baefa7dc13fcbb75ee2e545837a79d3769e2a5dcb6dac228509"
+        },
+        {
+          "bytes": 13299,
+          "file": "docs/ndp50_statistical_analysis_plan_v1.md",
+          "scope": "public_source_base",
+          "sha256": "c690c5389b74e3490772aec437c2597ae117febc584cf1d75eb9477b2d5e9d52"
+        },
+        {
+          "bytes": 5903,
+          "file": "docs/ndp50_structural_validation_report_v1.md",
+          "scope": "public_source_base",
+          "sha256": "f8f5d1f160f1a592f7aa30461ca1b830becb6589a34af4cf0e4ba6e973ce063a"
+        },
+        {
+          "bytes": 5221,
+          "file": "docs/ndp50_swathi_feedback_signoff_guide_v1.md",
+          "scope": "public_source_base",
+          "sha256": "d5e0e2e212228ae153446bf5c858de0b6fb1dda33c87376741df7597a3941513"
+        },
+        {
+          "bytes": 8643,
+          "file": "docs/preregistration/README.md",
+          "scope": "public_source_base",
+          "sha256": "a5bef2c49ad7e7a9733458c9be5294a18dea949d77e910ccc30d53f2fd7a9f5e"
+        },
+        {
+          "bytes": 21200,
+          "file": "docs/preregistration/ndp50_osf_zenodo_preregistration_draft_v1.md",
+          "scope": "public_source_base",
+          "sha256": "2500344919c66ef715776431f29e2d3d0d70f4c5fdc12936854710eb381b328e"
+        },
+        {
+          "bytes": 2723,
+          "file": "docs/preregistration/public_package_files_v1.txt",
+          "scope": "public_source_base",
+          "sha256": "a4663e8dc8f8a4481e769ca5613f44fcc9b44a3326736b544c63638e0e82ec3e"
+        },
+        {
+          "bytes": 10574,
+          "file": "docs/references.md",
+          "scope": "public_source_base",
+          "sha256": "e5b96945d14754b156a0ede271b9ead7864024410590e39447f70b0ad9d3a14e"
+        },
+        {
+          "bytes": 4832,
+          "file": "docs/semantic_annotator_calibration_protocol_v1.md",
+          "scope": "public_source_base",
+          "sha256": "c6ef25e9ea48523455ceac748a3ca9bdb0c2434a286f075ea087c3522e067e4c"
+        },
+        {
+          "bytes": 25072,
+          "file": "docs/semantic_architecture_claim_ledger_v1.md",
+          "scope": "public_source_base",
+          "sha256": "11bcb975ed528697ee6e9e1796b696e9a31082846920d6acd89a90b142030ee2"
+        },
+        {
+          "bytes": 5405,
+          "file": "docs/semantic_gold_workflow_protocol_v1.md",
+          "scope": "public_source_base",
+          "sha256": "ee24b9bf6f7424d6f1076c7f3dec82bf9441a3be7f416e1e46668e089790f94b"
+        },
+        {
+          "bytes": 6089,
+          "file": "docs/semantic_power_analysis_protocol_v1.md",
+          "scope": "public_source_base",
+          "sha256": "26dd3d1e5353a69f021b5d3dec3622ad2e84ef9b2b34d562199348546d7e5d5a"
+        },
+        {
+          "bytes": 11858,
+          "file": "docs/swathi_feedback_response_matrix_v1.md",
+          "scope": "public_source_base",
+          "sha256": "e5834fd5abb403d2add82e0b84bff7cdc413e7fd5ad8d58cb8a25958a2fad831"
+        },
+        {
+          "bytes": 29509,
+          "file": "ndp50_assignment_distribution.py",
+          "scope": "public_source_base",
+          "sha256": "2a2ecb0e9444fde479a66e7263ebb2b6708b6dd9a3d45dc0afe5396c0d15fae2"
+        },
+        {
+          "bytes": 29832,
+          "file": "ndp50_assignment_roster.py",
+          "scope": "public_source_base",
+          "sha256": "aa298a58e08ea3e126e2dc450d5b3ea54755f2d0d7e7bfda0d20321d5af85261"
+        },
+        {
+          "bytes": 14801,
+          "file": "ndp50_cpa_design.py",
+          "scope": "public_source_base",
+          "sha256": "39b5c3dfdda9db5321d18316ee31f36a2f08e2cfa31574c5c78c8bb0c0f08934"
+        },
+        {
+          "bytes": 42967,
+          "file": "ndp50_cpa_screen_workflow.py",
+          "scope": "public_source_base",
+          "sha256": "11e190f867482742ee63c7eeca00b48b4177fd823446f777802f0583652eb5d5"
+        },
+        {
+          "bytes": 25325,
+          "file": "ndp50_data_governance.py",
+          "scope": "public_source_base",
+          "sha256": "e79a1b58c5815b2031d4043523e75438723fc962ad4e5ffd572a2cf14154670e"
+        },
+        {
+          "bytes": 26261,
+          "file": "ndp50_data_governance_review.py",
+          "scope": "public_source_base",
+          "sha256": "6b4a0a86bbae0f98f557d1638f2fcd9b1edce7019488bf78908f02eaa87bbcc1"
+        },
+        {
+          "bytes": 16935,
+          "file": "ndp50_demonstration_pool.py",
+          "scope": "public_source_base",
+          "sha256": "3a547209deb3e74f678211188e6caea8be20c798d18a18265b7e456d1eb82ba1"
+        },
+        {
+          "bytes": 71235,
+          "file": "ndp50_execution_freeze.py",
+          "scope": "public_source_base",
+          "sha256": "9cd64c59f7677c1b40449ca3b5c8c148c0e5bae5b00f68ea1d8eddddcb9c5a99"
+        },
+        {
+          "bytes": 41694,
+          "file": "ndp50_execution_qualification.py",
+          "scope": "public_source_base",
+          "sha256": "6209f2864ce619e357602b9edb922f2d36bb7fe0af695e8d59f79e11c867399c"
+        },
+        {
+          "bytes": 110629,
+          "file": "ndp50_human_assignments.py",
+          "scope": "public_source_base",
+          "sha256": "6eeb2b3659784205648196a078e1f200615da602900ab2a4c65bcf1c17bb8973"
+        },
+        {
+          "bytes": 77274,
+          "file": "ndp50_human_handoff.py",
+          "scope": "public_source_base",
+          "sha256": "ce159192b65a08cd45cbc56b87ad72becf0f3aa3f3287701a0f47d1313cf5d9d"
+        },
+        {
+          "bytes": 18744,
+          "file": "ndp50_power_feasibility.py",
+          "scope": "public_source_base",
+          "sha256": "6afa4836e564a0a20f5d636d1d74270fceb046c42d22cd8ac00461f0eb8e65c4"
+        },
+        {
+          "bytes": 41328,
+          "file": "ndp50_power_freeze.py",
+          "scope": "public_source_base",
+          "sha256": "65970f34de68226fa095ee763d37543e1ebfd3dec2dfaf09e0dafbb351e8d308"
+        },
+        {
+          "bytes": 22081,
+          "file": "ndp50_preregistration_package.py",
+          "scope": "public_source_base",
+          "sha256": "f74a5825d67acbe720303234f2d9030fd059cfc1088429be694b9fb33b42ef0a"
+        },
+        {
+          "bytes": 25392,
+          "file": "ndp50_publication_gate.py",
+          "scope": "public_source_base",
+          "sha256": "526ec5f4a41e1d9f957ce40da26221e109b0534fd9326b46def9414386b46c42"
+        },
+        {
+          "bytes": 66386,
+          "file": "ndp50_readiness.py",
+          "scope": "public_source_base",
+          "sha256": "8c95220aad951042c9fba4f96d4748a699d1f521cfe972ad2ae76cce51553d58"
+        },
+        {
+          "bytes": 30212,
+          "file": "ndp50_semantic_gold.py",
+          "scope": "public_source_base",
+          "sha256": "9d4e64214d201d05b8eba5d33c4f2c47c9ff477725c4154c70d360016a63c915"
+        },
+        {
+          "bytes": 47369,
+          "file": "ndp50_source_approval.py",
+          "scope": "public_source_base",
+          "sha256": "5460c32f54822f15771ee73fccd0f090ee96395340ac530967a6758091dea113"
+        },
+        {
+          "bytes": 90370,
+          "file": "ndp50_test_execution.py",
+          "scope": "public_source_base",
+          "sha256": "4213986ef0432063aeb959737e17a4e65ca2db09a540e6c24eb7a85b52dff347"
+        },
+        {
+          "bytes": 46615,
+          "file": "ndp50_test_inference.py",
+          "scope": "public_source_base",
+          "sha256": "3047e579c67b095d7507558bb91693c1c71d1a523c05d55727e758f66749cc1c"
+        },
+        {
+          "bytes": 52543,
+          "file": "ndp50_vocabulary_workflow.py",
+          "scope": "public_source_base",
+          "sha256": "8e4c8eb25d4c0346ee5ef88d76f2e475737d6f001cd1e466e575fc886273fb15"
+        },
+        {
+          "bytes": 1330,
+          "file": "paper/README.md",
+          "scope": "public_source_base",
+          "sha256": "e6baba765f0d1b47b3fb4931273b29456ec6baff55de6f22b1f747178ef18cb7"
+        },
+        {
+          "bytes": 7189,
+          "file": "paper/references.bib",
+          "scope": "public_source_base",
+          "sha256": "84490704a71ff43d2143a06218136f2ba3d3f863ac3f7d8bbf8979a93f13f413"
+        },
+        {
+          "bytes": 2533,
+          "file": "paper/results_macros.tex",
+          "scope": "public_source_base",
+          "sha256": "71516f1b553c47960326f2b09d46f97e0befed0e83e90ab2a6234d9f4fc74458"
+        },
+        {
+          "bytes": 36996,
+          "file": "paper/semantic_architecture_study_en.tex",
+          "scope": "public_source_base",
+          "sha256": "cb4d27deee4d5f6216a20a377a613530c9e99c995541d1d780d61fdceb79cebc"
+        },
+        {
+          "bytes": 34,
+          "file": "requirements-dev.txt",
+          "scope": "public_source_base",
+          "sha256": "59a0239e084f59949168a18fe9c3744f8e951fee6941f0e499a5be22428840f4"
+        },
+        {
+          "bytes": 275,
+          "file": "requirements.txt",
+          "scope": "public_source_base",
+          "sha256": "28992ad933dd755b8467bd04fe3702aa312c456cc574cf92d659e8d26d0410a2"
+        },
+        {
+          "bytes": 23683,
+          "file": "semantic_annotate.py",
+          "scope": "public_source_base",
+          "sha256": "01ee60d775a4122a58881806c75e30e9ef98d83a55570e3302e808c61dfd1da4"
+        },
+        {
+          "bytes": 25713,
+          "file": "semantic_annotator_calibration.py",
+          "scope": "public_source_base",
+          "sha256": "203a0dc3234f4d57f9d5fa547a324e636b2e3a0d1ae30ad5f49991181e4072fa"
+        },
+        {
+          "bytes": 39296,
+          "file": "semantic_blind_inference.py",
+          "scope": "public_source_base",
+          "sha256": "11cceb5ba17c1a605418066fdcb9f8c4640fb15c71c8a5f59385ce2be0c1f766"
+        },
+        {
+          "bytes": 64608,
+          "file": "semantic_blind_sampling.py",
+          "scope": "public_source_base",
+          "sha256": "d880b7132d5a4dd93e1fbc56b02f9d8eca07f58b290cea309b9a75758bd8009f"
+        },
+        {
+          "bytes": 16814,
+          "file": "semantic_catalog_acquisition.py",
+          "scope": "public_source_base",
+          "sha256": "5a5845a45e6bddff5009374ca319d898ca966d8564b8ea006673a990363b213a"
+        },
+        {
+          "bytes": 59361,
+          "file": "semantic_gold_workflow.py",
+          "scope": "public_source_base",
+          "sha256": "4be417efe6a2b4bb7b166e6fb0bba40a9545017908110077f7e7dc8618281a69"
+        },
+        {
+          "bytes": 14697,
+          "file": "semantic_layer.py",
+          "scope": "public_source_base",
+          "sha256": "381db8d9f17bc2ba8f03ef3cfe38e6bf08e0739f2c48e3f21487d388e3f7074e"
+        },
+        {
+          "bytes": 22021,
+          "file": "semantic_power_analysis.py",
+          "scope": "public_source_base",
+          "sha256": "9da204bc167095d5efd2a84bd6c89767db4eb534d8d3eba292ec4a02e8d13b50"
+        },
+        {
+          "bytes": 13085,
+          "file": "semantic_power_calibration.py",
+          "scope": "public_source_base",
+          "sha256": "a1208de3e3cf064da542e76b3cbd8891dd2bf506ed8bf59b25afcc7d3113ed73"
+        },
+        {
+          "bytes": 71569,
+          "file": "semantic_study_preflight.py",
+          "scope": "public_source_base",
+          "sha256": "44f5434bfd3eda85d775d7c98183cd937765879b3986c89161d0ae983cb84723"
+        },
+        {
+          "bytes": 1838,
+          "file": "templates/ndp50_external_preregistration_receipt_template.json",
+          "scope": "public_source_base",
+          "sha256": "5aacdb096019e9676c729685f2220b52908b16a0df3276dbb70a698604b17cfd"
+        },
+        {
+          "bytes": 3302,
+          "file": "unit_normalization.py",
+          "scope": "public_source_base",
+          "sha256": "9731e24b17f034b42c03afd50907a89fd4bc6f1b78062e43f121957a064d4a79"
+        }
+      ],
+      "forbidden_assignment_files": [
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/data_governance_review_assignment.json",
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/data_governance_review_payload.json",
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/feedback_response_signoff_assignment.json",
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/feedback_response_signoff_payload.json",
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/vocabulary_discovery_b_assignment.json",
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/vocabulary_discovery_b_payload.json"
+      ],
+      "human_decisions_present": false,
+      "packet_directory": "vocab-a",
+      "reviewer_ids_present": false,
+      "roster_slots": [
+        "vocabulary_discovery_a"
+      ],
+      "sealed_identity_scan_required": true,
+      "status": "specified_unmaterialized",
+      "test_data_access": "forbidden"
+    },
+    "vocabulary_discovery_b": {
+      "assignment_id": "vocabulary_discovery_b",
+      "content_digest_sha256": "86dec1dacbba57e3714064288476369c0daa60f3c15a01daaedd9dd99c7bc44c",
+      "extra_files_forbidden": true,
+      "file_count": 95,
+      "files": [
+        {
+          "bytes": 100,
+          "file": "__init__.py",
+          "scope": "public_source_base",
+          "sha256": "375b4920ba253d817787e51aef2ff70612d491389060a8f1b9160ffcff5bc7b3"
+        },
+        {
+          "bytes": 58537,
+          "file": "architecture_evaluation.py",
+          "scope": "public_source_base",
+          "sha256": "2b5538694ec0a6a57fffbb6ee3281760ddccacd956c0937c3f4901545eb9e6a7"
+        },
+        {
+          "bytes": 65119,
+          "file": "architecture_variants.py",
+          "scope": "public_source_base",
+          "sha256": "fa3f888057631571b6c5c5a030bbe8b4127d363c3ac4ca92b69f9b565d171a6f"
+        },
+        {
+          "bytes": 4080,
+          "file": "data/experiments/ndp50_v1/preregistration/feedback_response_signoff_neutral_v1.json",
+          "scope": "public_source_base",
+          "sha256": "145ccf3801173cffc5edad7ad18a346c6045d11174aa4966223381feadea4d5e"
+        },
+        {
+          "bytes": 23575,
+          "file": "data/experiments/ndp50_v1/preregistration/public_package_manifest_v1.json",
+          "scope": "public_manifest",
+          "sha256": "944b4a3396f01452eefdf67f94c2cea9c2edd3d562f50492e7f75cde758e3056"
+        },
+        {
+          "bytes": 8800,
+          "file": "data/experiments/ndp50_v1/semantic/cpa_design_draft_v1.json",
+          "scope": "public_source_base",
+          "sha256": "0313d5fee93c03b693cf8962ad9406e77b3f86e004c7d916d810c0bf7a791840"
+        },
+        {
+          "bytes": 4864,
+          "file": "data/experiments/ndp50_v1/semantic/human_assignments_v1/assignment_release_v1.json",
+          "scope": "assignment_release",
+          "sha256": "4449da78a8bacf6f2016d6a128d67dd6474ce17233e90e8bc799da75f362dd0e"
+        },
+        {
+          "bytes": 4385,
+          "file": "data/experiments/ndp50_v1/semantic/human_assignments_v1/vocabulary_discovery_b_assignment.json",
+          "scope": "assignment_wrapper",
+          "sha256": "cd4b09364f4d80653611190c6d058a9a7709e14a120a88feedf72bf6689ea4bc"
+        },
+        {
+          "bytes": 6182,
+          "file": "data/experiments/ndp50_v1/semantic/human_assignments_v1/vocabulary_discovery_b_payload.json",
+          "scope": "assignment_payload",
+          "sha256": "51006f01cdea680254cb1898a2444129d094a620750a6d6adbb0f3d57156d190"
+        },
+        {
+          "bytes": 4525,
+          "file": "data/experiments/ndp50_v1/semantic/power_feasibility_v1.json",
+          "scope": "public_source_base",
+          "sha256": "a857b0bba22c97a2019e6b91bee2ce05984f6c1c30393406a7c2fd20de47ceb0"
+        },
+        {
+          "bytes": 1908,
+          "file": "data/experiments/ndp50_v1/semantic/power_freeze/power_freeze_workflow_v1.json",
+          "scope": "public_source_base",
+          "sha256": "ee3c1b98478b974db83d53f717adc10589c59f7af466188ceb2429f063cf5805"
+        },
+        {
+          "bytes": 2283,
+          "file": "data/experiments/ndp50_v1/semantic/power_freeze/power_policy_neutral_v1.json",
+          "scope": "public_source_base",
+          "sha256": "94ff64d47fec9389676caa1e2dae55ce0a074711a4bb9e9497daf3073bdb9a78"
+        },
+        {
+          "bytes": 9547,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/manifest.json",
+          "scope": "released_input:source_bundle_manifest",
+          "sha256": "13b6eb7a866ad81bcefb4f75e1e6e2d6067d92a442a1d507e103ec096b8b3159"
+        },
+        {
+          "bytes": 16310,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-development-610b435e-1877-4a4b-b0be-c73539979eec.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "f278599f3588b70292fa4fc890b8e4b17cab12f8f419015533584d4378091dfd"
+        },
+        {
+          "bytes": 28208,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-development-869fe564-c4ba-4568-9764-9e32c6535ff8.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "0b073be1865c0e6f03b67a87860c9c4a5615387a398d4b59b12f178bec187b24"
+        },
+        {
+          "bytes": 30568,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-development-a420cc30-2262-423a-8c63-3ad8d91f2a8f.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "b74636a9f79ccc2cbd51b694780ada6f0e7fc4f925c858444e1c5d87f4a81991"
+        },
+        {
+          "bytes": 18764,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-development-b651063b-edb5-4d4f-ae50-7fbc5191ad11.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "f5ecac3056ad8fb2c25f1f5256dcf6e7aa4c7e09b2d5790b8c0f6a5efac448a1"
+        },
+        {
+          "bytes": 18761,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-development-c2bbcf64-3737-42b9-aaf9-2d9971f31085.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "af3aa172ed050b98490cc82d443b41925a142262128d8236172b2802d7ca5b8d"
+        },
+        {
+          "bytes": 18763,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-development-c9eeeab1-ee8e-4cdc-bc40-7710f02ee87d.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "6574e0c42450bb93de92e9dc986ee025073bc2c6f019b7665a437cf21a0ac791"
+        },
+        {
+          "bytes": 27791,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-development-d0a6df1d-6272-43e9-a1b0-ca4fd8f6d26d.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "50284bad29d5e9b787d3788ab643901b8e2feeac62ee82aa5c56569d7bac0de2"
+        },
+        {
+          "bytes": 16107,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-development-d15771b1-b612-478c-80ef-91d3e2e1c333.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "395523595e9ac16c3e7e7266df5ee97f054571a29f49520d8af94debf7f9c3c3"
+        },
+        {
+          "bytes": 28212,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-development-ec9f2672-e152-4bf8-9ff2-f88a672b4587.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "79b2dd0dbf898ce9c2eab914e195d5a25e9ee0f0238910d9084bbc9e8915b473"
+        },
+        {
+          "bytes": 28212,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-development-fb5156fb-0f6c-49fc-b721-b6098a7bb894.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "1dd203b8d298377db8f062f5049667ff964be2e840669837c8ffd8a89b0bfedc"
+        },
+        {
+          "bytes": 16043,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-validation-47f47360-a5e2-441c-9b43-6cadf6eab7b6.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "5d5c5665a7197045493bdb14a68f68c2a01f9d8f7df26a7fbd216afe9c4df4fc"
+        },
+        {
+          "bytes": 18320,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-validation-50f44e8d-aad5-4e09-8b9b-43c73898b53c.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "3626fd3040b4a220b6b432aeb0e145623587ebdccdf606870749f34a09f39470"
+        },
+        {
+          "bytes": 30158,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-validation-6cb32478-e0a7-4915-a76b-232bb1f7eba1.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "0e5ac9a800f5f2a04698cb2536275edf8b39063368477fb45b1fc5f433703b62"
+        },
+        {
+          "bytes": 16101,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-validation-a47379a9-8051-42bf-9ddd-94f33b672ac6.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "8e788e670542505c74772f9bdeb293e7fd0fc31c9cf9f8f224a7cc89247774e7"
+        },
+        {
+          "bytes": 27785,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-validation-a650acb8-dc9d-4ec1-b98a-f5d852552e01.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "d366ca8750f0df539e5594aa62aff0314ccdb550fbb62dbb5c44331c6c6311b3"
+        },
+        {
+          "bytes": 23576,
+          "file": "data/experiments/ndp50_v1/semantic/source_bundle_drafts_v1/ndp50-validation-ca3a45e8-d931-4a27-ab5c-45d65a37a017.source-bundle.json",
+          "scope": "released_source_bundle",
+          "sha256": "e2e0124776c3f9e0ade7749e3759de236d9882a560b567b93ecd956dbe0cd300"
+        },
+        {
+          "bytes": 7071,
+          "file": "data/experiments/ndp50_v1/semantic/test_execution/test_execution_workflow_v1.json",
+          "scope": "public_source_base",
+          "sha256": "e606c035f46d9f07317b3bc61f97ff94a34cc4548de3af03a790ba2487f9a2db"
+        },
+        {
+          "bytes": 58388,
+          "file": "data/experiments/ndp50_v1/semantic/vocabulary_draft_v1.json",
+          "scope": "released_input:draft_vocabulary",
+          "sha256": "abb13e004e0dd1b28eaa4df0a9f0841eb65032c46730310d42f5979d56e9b773"
+        },
+        {
+          "bytes": 2126,
+          "file": "data/experiments/ndp50_v1/semantic/vocabulary_review_workflow_v1.json",
+          "scope": "released_input:workflow",
+          "sha256": "d3d0f24be786f4c89bb446ef1aceec55f5600e269f930c464a6c97c7bd37ac2d"
+        },
+        {
+          "bytes": 7461,
+          "file": "docs/literature/citation_matrix.md",
+          "scope": "public_source_base",
+          "sha256": "aa07f58f0d66ba22b670bb535e3953cf700cdcbcaea39ff47b6a850b62b99572"
+        },
+        {
+          "bytes": 16325,
+          "file": "docs/literature/semantic_architecture_literature_review_2026-07-27.md",
+          "scope": "public_source_base",
+          "sha256": "8e25db2b0662cdafd80100382abe6f9173c4b65b62801b17413fdf596959681e"
+        },
+        {
+          "bytes": 9279,
+          "file": "docs/ndp50_annotation_and_independence_plan_v1.md",
+          "scope": "public_source_base",
+          "sha256": "2c2ace0621a840f1cfb9fce6add6f749a8c55325893e02cff2fa026b7ad7e8c4"
+        },
+        {
+          "bytes": 19445,
+          "file": "docs/ndp50_feedback_implementation_audit_v1.md",
+          "scope": "public_source_base",
+          "sha256": "cdb70d80051075bbbb09ca34e671eb728106e3dabff6c97865f2ed94da3539ff"
+        },
+        {
+          "bytes": 16414,
+          "file": "docs/ndp50_feedback_improvement_amendment_v1.md",
+          "scope": "public_source_base",
+          "sha256": "f4eb887864614bbf8758db83739e39764c8a979efb6c437e0df90ab60a584bcf"
+        },
+        {
+          "bytes": 9761,
+          "file": "docs/ndp50_human_external_gate_ledger_v1.md",
+          "scope": "public_source_base",
+          "sha256": "143ad38e8c6def58d818894d5a7c84fda29d0828c8866cd0746de5dbe8b564aa"
+        },
+        {
+          "bytes": 12487,
+          "file": "docs/ndp50_initial_human_assignment_guide_v1.md",
+          "scope": "public_source_base",
+          "sha256": "e5a00d6bacd7649555fcee9b0c60e6ea2ead79c7bb9fd4b0e4d842cd74a9b1e8"
+        },
+        {
+          "bytes": 13877,
+          "file": "docs/ndp50_methodological_risk_register_v1.md",
+          "scope": "public_source_base",
+          "sha256": "a04a289ef912c009d5e4538c373eef5eb1cc6dcb5ca8fa400232a85193eb1f31"
+        },
+        {
+          "bytes": 6493,
+          "file": "docs/ndp50_power_policy_review_guide_v1.md",
+          "scope": "public_source_base",
+          "sha256": "accf7cf54d361ee87e76159e2eced916a06b48178ea97584bb0f4419c4cd5f45"
+        },
+        {
+          "bytes": 13283,
+          "file": "docs/ndp50_protocol_v1.md",
+          "scope": "public_source_base",
+          "sha256": "3f5228afebd3144905e130c2a8a1b18230b7746e214bdaad49fe82021c1f73c9"
+        },
+        {
+          "bytes": 5348,
+          "file": "docs/ndp50_scope_provenance_v1.md",
+          "scope": "public_source_base",
+          "sha256": "065b1af907c41f7dd066c30911eb620d09011d79804a2436fbd29d0dfe9f3cf0"
+        },
+        {
+          "bytes": 76134,
+          "file": "docs/ndp50_semantic_cpa_protocol_v1.md",
+          "scope": "public_source_base",
+          "sha256": "3127a3fc8b301baefa7dc13fcbb75ee2e545837a79d3769e2a5dcb6dac228509"
+        },
+        {
+          "bytes": 13299,
+          "file": "docs/ndp50_statistical_analysis_plan_v1.md",
+          "scope": "public_source_base",
+          "sha256": "c690c5389b74e3490772aec437c2597ae117febc584cf1d75eb9477b2d5e9d52"
+        },
+        {
+          "bytes": 5903,
+          "file": "docs/ndp50_structural_validation_report_v1.md",
+          "scope": "public_source_base",
+          "sha256": "f8f5d1f160f1a592f7aa30461ca1b830becb6589a34af4cf0e4ba6e973ce063a"
+        },
+        {
+          "bytes": 5221,
+          "file": "docs/ndp50_swathi_feedback_signoff_guide_v1.md",
+          "scope": "public_source_base",
+          "sha256": "d5e0e2e212228ae153446bf5c858de0b6fb1dda33c87376741df7597a3941513"
+        },
+        {
+          "bytes": 8643,
+          "file": "docs/preregistration/README.md",
+          "scope": "public_source_base",
+          "sha256": "a5bef2c49ad7e7a9733458c9be5294a18dea949d77e910ccc30d53f2fd7a9f5e"
+        },
+        {
+          "bytes": 21200,
+          "file": "docs/preregistration/ndp50_osf_zenodo_preregistration_draft_v1.md",
+          "scope": "public_source_base",
+          "sha256": "2500344919c66ef715776431f29e2d3d0d70f4c5fdc12936854710eb381b328e"
+        },
+        {
+          "bytes": 2723,
+          "file": "docs/preregistration/public_package_files_v1.txt",
+          "scope": "public_source_base",
+          "sha256": "a4663e8dc8f8a4481e769ca5613f44fcc9b44a3326736b544c63638e0e82ec3e"
+        },
+        {
+          "bytes": 10574,
+          "file": "docs/references.md",
+          "scope": "public_source_base",
+          "sha256": "e5b96945d14754b156a0ede271b9ead7864024410590e39447f70b0ad9d3a14e"
+        },
+        {
+          "bytes": 4832,
+          "file": "docs/semantic_annotator_calibration_protocol_v1.md",
+          "scope": "public_source_base",
+          "sha256": "c6ef25e9ea48523455ceac748a3ca9bdb0c2434a286f075ea087c3522e067e4c"
+        },
+        {
+          "bytes": 25072,
+          "file": "docs/semantic_architecture_claim_ledger_v1.md",
+          "scope": "public_source_base",
+          "sha256": "11bcb975ed528697ee6e9e1796b696e9a31082846920d6acd89a90b142030ee2"
+        },
+        {
+          "bytes": 5405,
+          "file": "docs/semantic_gold_workflow_protocol_v1.md",
+          "scope": "public_source_base",
+          "sha256": "ee24b9bf6f7424d6f1076c7f3dec82bf9441a3be7f416e1e46668e089790f94b"
+        },
+        {
+          "bytes": 6089,
+          "file": "docs/semantic_power_analysis_protocol_v1.md",
+          "scope": "public_source_base",
+          "sha256": "26dd3d1e5353a69f021b5d3dec3622ad2e84ef9b2b34d562199348546d7e5d5a"
+        },
+        {
+          "bytes": 11858,
+          "file": "docs/swathi_feedback_response_matrix_v1.md",
+          "scope": "public_source_base",
+          "sha256": "e5834fd5abb403d2add82e0b84bff7cdc413e7fd5ad8d58cb8a25958a2fad831"
+        },
+        {
+          "bytes": 29509,
+          "file": "ndp50_assignment_distribution.py",
+          "scope": "public_source_base",
+          "sha256": "2a2ecb0e9444fde479a66e7263ebb2b6708b6dd9a3d45dc0afe5396c0d15fae2"
+        },
+        {
+          "bytes": 29832,
+          "file": "ndp50_assignment_roster.py",
+          "scope": "public_source_base",
+          "sha256": "aa298a58e08ea3e126e2dc450d5b3ea54755f2d0d7e7bfda0d20321d5af85261"
+        },
+        {
+          "bytes": 14801,
+          "file": "ndp50_cpa_design.py",
+          "scope": "public_source_base",
+          "sha256": "39b5c3dfdda9db5321d18316ee31f36a2f08e2cfa31574c5c78c8bb0c0f08934"
+        },
+        {
+          "bytes": 42967,
+          "file": "ndp50_cpa_screen_workflow.py",
+          "scope": "public_source_base",
+          "sha256": "11e190f867482742ee63c7eeca00b48b4177fd823446f777802f0583652eb5d5"
+        },
+        {
+          "bytes": 25325,
+          "file": "ndp50_data_governance.py",
+          "scope": "public_source_base",
+          "sha256": "e79a1b58c5815b2031d4043523e75438723fc962ad4e5ffd572a2cf14154670e"
+        },
+        {
+          "bytes": 26261,
+          "file": "ndp50_data_governance_review.py",
+          "scope": "public_source_base",
+          "sha256": "6b4a0a86bbae0f98f557d1638f2fcd9b1edce7019488bf78908f02eaa87bbcc1"
+        },
+        {
+          "bytes": 16935,
+          "file": "ndp50_demonstration_pool.py",
+          "scope": "public_source_base",
+          "sha256": "3a547209deb3e74f678211188e6caea8be20c798d18a18265b7e456d1eb82ba1"
+        },
+        {
+          "bytes": 71235,
+          "file": "ndp50_execution_freeze.py",
+          "scope": "public_source_base",
+          "sha256": "9cd64c59f7677c1b40449ca3b5c8c148c0e5bae5b00f68ea1d8eddddcb9c5a99"
+        },
+        {
+          "bytes": 41694,
+          "file": "ndp50_execution_qualification.py",
+          "scope": "public_source_base",
+          "sha256": "6209f2864ce619e357602b9edb922f2d36bb7fe0af695e8d59f79e11c867399c"
+        },
+        {
+          "bytes": 110629,
+          "file": "ndp50_human_assignments.py",
+          "scope": "public_source_base",
+          "sha256": "6eeb2b3659784205648196a078e1f200615da602900ab2a4c65bcf1c17bb8973"
+        },
+        {
+          "bytes": 77274,
+          "file": "ndp50_human_handoff.py",
+          "scope": "public_source_base",
+          "sha256": "ce159192b65a08cd45cbc56b87ad72becf0f3aa3f3287701a0f47d1313cf5d9d"
+        },
+        {
+          "bytes": 18744,
+          "file": "ndp50_power_feasibility.py",
+          "scope": "public_source_base",
+          "sha256": "6afa4836e564a0a20f5d636d1d74270fceb046c42d22cd8ac00461f0eb8e65c4"
+        },
+        {
+          "bytes": 41328,
+          "file": "ndp50_power_freeze.py",
+          "scope": "public_source_base",
+          "sha256": "65970f34de68226fa095ee763d37543e1ebfd3dec2dfaf09e0dafbb351e8d308"
+        },
+        {
+          "bytes": 22081,
+          "file": "ndp50_preregistration_package.py",
+          "scope": "public_source_base",
+          "sha256": "f74a5825d67acbe720303234f2d9030fd059cfc1088429be694b9fb33b42ef0a"
+        },
+        {
+          "bytes": 25392,
+          "file": "ndp50_publication_gate.py",
+          "scope": "public_source_base",
+          "sha256": "526ec5f4a41e1d9f957ce40da26221e109b0534fd9326b46def9414386b46c42"
+        },
+        {
+          "bytes": 66386,
+          "file": "ndp50_readiness.py",
+          "scope": "public_source_base",
+          "sha256": "8c95220aad951042c9fba4f96d4748a699d1f521cfe972ad2ae76cce51553d58"
+        },
+        {
+          "bytes": 30212,
+          "file": "ndp50_semantic_gold.py",
+          "scope": "public_source_base",
+          "sha256": "9d4e64214d201d05b8eba5d33c4f2c47c9ff477725c4154c70d360016a63c915"
+        },
+        {
+          "bytes": 47369,
+          "file": "ndp50_source_approval.py",
+          "scope": "public_source_base",
+          "sha256": "5460c32f54822f15771ee73fccd0f090ee96395340ac530967a6758091dea113"
+        },
+        {
+          "bytes": 90370,
+          "file": "ndp50_test_execution.py",
+          "scope": "public_source_base",
+          "sha256": "4213986ef0432063aeb959737e17a4e65ca2db09a540e6c24eb7a85b52dff347"
+        },
+        {
+          "bytes": 46615,
+          "file": "ndp50_test_inference.py",
+          "scope": "public_source_base",
+          "sha256": "3047e579c67b095d7507558bb91693c1c71d1a523c05d55727e758f66749cc1c"
+        },
+        {
+          "bytes": 52543,
+          "file": "ndp50_vocabulary_workflow.py",
+          "scope": "public_source_base",
+          "sha256": "8e4c8eb25d4c0346ee5ef88d76f2e475737d6f001cd1e466e575fc886273fb15"
+        },
+        {
+          "bytes": 1330,
+          "file": "paper/README.md",
+          "scope": "public_source_base",
+          "sha256": "e6baba765f0d1b47b3fb4931273b29456ec6baff55de6f22b1f747178ef18cb7"
+        },
+        {
+          "bytes": 7189,
+          "file": "paper/references.bib",
+          "scope": "public_source_base",
+          "sha256": "84490704a71ff43d2143a06218136f2ba3d3f863ac3f7d8bbf8979a93f13f413"
+        },
+        {
+          "bytes": 2533,
+          "file": "paper/results_macros.tex",
+          "scope": "public_source_base",
+          "sha256": "71516f1b553c47960326f2b09d46f97e0befed0e83e90ab2a6234d9f4fc74458"
+        },
+        {
+          "bytes": 36996,
+          "file": "paper/semantic_architecture_study_en.tex",
+          "scope": "public_source_base",
+          "sha256": "cb4d27deee4d5f6216a20a377a613530c9e99c995541d1d780d61fdceb79cebc"
+        },
+        {
+          "bytes": 34,
+          "file": "requirements-dev.txt",
+          "scope": "public_source_base",
+          "sha256": "59a0239e084f59949168a18fe9c3744f8e951fee6941f0e499a5be22428840f4"
+        },
+        {
+          "bytes": 275,
+          "file": "requirements.txt",
+          "scope": "public_source_base",
+          "sha256": "28992ad933dd755b8467bd04fe3702aa312c456cc574cf92d659e8d26d0410a2"
+        },
+        {
+          "bytes": 23683,
+          "file": "semantic_annotate.py",
+          "scope": "public_source_base",
+          "sha256": "01ee60d775a4122a58881806c75e30e9ef98d83a55570e3302e808c61dfd1da4"
+        },
+        {
+          "bytes": 25713,
+          "file": "semantic_annotator_calibration.py",
+          "scope": "public_source_base",
+          "sha256": "203a0dc3234f4d57f9d5fa547a324e636b2e3a0d1ae30ad5f49991181e4072fa"
+        },
+        {
+          "bytes": 39296,
+          "file": "semantic_blind_inference.py",
+          "scope": "public_source_base",
+          "sha256": "11cceb5ba17c1a605418066fdcb9f8c4640fb15c71c8a5f59385ce2be0c1f766"
+        },
+        {
+          "bytes": 64608,
+          "file": "semantic_blind_sampling.py",
+          "scope": "public_source_base",
+          "sha256": "d880b7132d5a4dd93e1fbc56b02f9d8eca07f58b290cea309b9a75758bd8009f"
+        },
+        {
+          "bytes": 16814,
+          "file": "semantic_catalog_acquisition.py",
+          "scope": "public_source_base",
+          "sha256": "5a5845a45e6bddff5009374ca319d898ca966d8564b8ea006673a990363b213a"
+        },
+        {
+          "bytes": 59361,
+          "file": "semantic_gold_workflow.py",
+          "scope": "public_source_base",
+          "sha256": "4be417efe6a2b4bb7b166e6fb0bba40a9545017908110077f7e7dc8618281a69"
+        },
+        {
+          "bytes": 14697,
+          "file": "semantic_layer.py",
+          "scope": "public_source_base",
+          "sha256": "381db8d9f17bc2ba8f03ef3cfe38e6bf08e0739f2c48e3f21487d388e3f7074e"
+        },
+        {
+          "bytes": 22021,
+          "file": "semantic_power_analysis.py",
+          "scope": "public_source_base",
+          "sha256": "9da204bc167095d5efd2a84bd6c89767db4eb534d8d3eba292ec4a02e8d13b50"
+        },
+        {
+          "bytes": 13085,
+          "file": "semantic_power_calibration.py",
+          "scope": "public_source_base",
+          "sha256": "a1208de3e3cf064da542e76b3cbd8891dd2bf506ed8bf59b25afcc7d3113ed73"
+        },
+        {
+          "bytes": 71569,
+          "file": "semantic_study_preflight.py",
+          "scope": "public_source_base",
+          "sha256": "44f5434bfd3eda85d775d7c98183cd937765879b3986c89161d0ae983cb84723"
+        },
+        {
+          "bytes": 1838,
+          "file": "templates/ndp50_external_preregistration_receipt_template.json",
+          "scope": "public_source_base",
+          "sha256": "5aacdb096019e9676c729685f2220b52908b16a0df3276dbb70a698604b17cfd"
+        },
+        {
+          "bytes": 3302,
+          "file": "unit_normalization.py",
+          "scope": "public_source_base",
+          "sha256": "9731e24b17f034b42c03afd50907a89fd4bc6f1b78062e43f121957a064d4a79"
+        }
+      ],
+      "forbidden_assignment_files": [
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/data_governance_review_assignment.json",
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/data_governance_review_payload.json",
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/feedback_response_signoff_assignment.json",
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/feedback_response_signoff_payload.json",
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/vocabulary_discovery_a_assignment.json",
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/vocabulary_discovery_a_payload.json"
+      ],
+      "human_decisions_present": false,
+      "packet_directory": "vocab-b",
+      "reviewer_ids_present": false,
+      "roster_slots": [
+        "vocabulary_discovery_b"
+      ],
+      "sealed_identity_scan_required": true,
+      "status": "specified_unmaterialized",
+      "test_data_access": "forbidden"
+    }
+  },
+  "public_package_content_digest_sha256": "1e3af50a8b983c00f0e0330acfbcde728e1527631a52a881e404f9b4af1a407a",
+  "public_package_manifest": {
+    "file": "data/experiments/ndp50_v1/preregistration/public_package_manifest_v1.json",
+    "sha256": "944b4a3396f01452eefdf67f94c2cea9c2edd3d562f50492e7f75cde758e3056"
+  },
+  "schema_version": "ndp50-human-assignment-distribution-spec/v1",
+  "status": "neutral_packets_specified_unmaterialized"
+}

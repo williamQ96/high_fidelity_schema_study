@@ -173,16 +173,17 @@ def run_negative_controls() -> Dict[str, Any]:
         second.write_text("id,value\n2,20\n1,10\n", encoding="utf-8")
         first_outcome = extract_path(ExtractionRequest(str(first)))
         second_outcome = extract_path(ExtractionRequest(str(second)))
-        field_projection = lambda outcome: [
-            (
-                field.field_name,
-                field.physical_type,
-                field.logical_type,
-                field.semantic_type,
-                field.unit,
-            )
-            for field in (outcome.schema.fields if outcome.schema else [])
-        ]
+        def field_projection(outcome):
+            return [
+                (
+                    field.field_name,
+                    field.physical_type,
+                    field.logical_type,
+                    field.semantic_type,
+                    field.unit,
+                )
+                for field in (outcome.schema.fields if outcome.schema else [])
+            ]
         row_order_stable = (
             first_outcome.status == "success"
             and second_outcome.status == "success"

@@ -4,23 +4,23 @@
   "byte_identical_replay_required": true,
   "cpa_design": {
     "file": "semantic/cpa_design_draft_v1.json",
-    "sha256": "884cec768ecb08acb91e6f1b00a5dee88f163304af727fec8d67b132c900ecc3"
+    "sha256": "0313d5fee93c03b693cf8962ad9406e77b3f86e004c7d916d810c0bf7a791840"
   },
   "human_decisions_present": false,
   "implementation": {
     "file": "ndp50_execution_freeze.py",
-    "sha256": "c72fdb822fc98cc81d417ac93a033baaadde5ab6e56090295f35b0f95b92fa68"
+    "sha256": "9cd64c59f7677c1b40449ca3b5c8c148c0e5bae5b00f68ea1d8eddddcb9c5a99"
   },
   "implementation_dependencies": {
     "ndp50_data_governance_review.py": "6b4a0a86bbae0f98f557d1638f2fcd9b1edce7019488bf78908f02eaa87bbcc1",
-    "ndp50_demonstration_pool.py": "6482a9d27bcf0494172b5def30a0e3c7289c149e91b3fdd62028ee02d35f3b9a",
-    "ndp50_execution_qualification.py": "e72dabc340e339ecdbdd372ddf23b98c4bc10ad4b12a0b7ae55aa2346608940f",
+    "ndp50_demonstration_pool.py": "3a547209deb3e74f678211188e6caea8be20c798d18a18265b7e456d1eb82ba1",
+    "ndp50_execution_qualification.py": "6209f2864ce619e357602b9edb922f2d36bb7fe0af695e8d59f79e11c867399c",
     "ndp50_semantic_gold.py": "9d4e64214d201d05b8eba5d33c4f2c47c9ff477725c4154c70d360016a63c915",
-    "ndp50_source_approval.py": "6ba7772459167931a366a55ddfa74e6a591e41f6a47d40bedfc9f70b3bbc597d",
-    "semantic_gold_workflow.py": "1319dd8b52a3421ce4e34bbfc59e21391e2c8d161e1c01272aa33a7299fab864",
-    "semantic_study_preflight.py": "1201d58e9a70d5842f82a2ef840798cbbdc5363154936174f20d9ea731ff8d85"
+    "ndp50_source_approval.py": "5460c32f54822f15771ee73fccd0f090ee96395340ac530967a6758091dea113",
+    "semantic_gold_workflow.py": "4be417efe6a2b4bb7b166e6fb0bba40a9545017908110077f7e7dc8618281a69",
+    "semantic_study_preflight.py": "44f5434bfd3eda85d775d7c98183cd937765879b3986c89161d0ae983cb84723"
   },
-  "implementation_qualification_probe_suite": "ndp50-execution-synthetic-conformance/v3",
+  "implementation_qualification_probe_suite": "ndp50-execution-synthetic-conformance/v4",
   "implementation_qualification_required": true,
   "implementation_qualification_synthetic_only": true,
   "maximum_prompt_sensitivity_variants": 4,
@@ -28,7 +28,7 @@
   "model_or_gold_outcomes_observed": false,
   "neutral_config_template": {
     "file": "semantic/execution_freeze/execution_freeze_config_neutral_v1.json",
-    "sha256": "bd340b67580dd4a72611760ee78bba6e2e53146f8b98354340310d4012863aa0"
+    "sha256": "1f77caaea7f0b8024044c77c22d6aed90418b88b7a33e80c4cff890f0c8aa1ea"
   },
   "packet_manifest": {
     "file": "semantic/annotation_pack_v1/manifest.json",
@@ -43,7 +43,7 @@
     "response_parser": "ndp50-execution-response-parser/v2",
     "row_sampler": "ndp50-execution-row-sampler/v1",
     "runner": "ndp50-execution-runner/v2",
-    "scorer": "ndp50-execution-scorer/v2",
+    "scorer": "ndp50-execution-scorer/v3",
     "serializer": "ndp50-execution-serializer/v1"
   },
   "required_prompt_contract_arms": [

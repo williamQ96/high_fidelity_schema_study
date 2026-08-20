@@ -1,0 +1,46 @@
+{
+  "schema_version": "ndp50-external-preregistration-receipt/v1",
+  "status": "pending_external_registration_and_independent_verification",
+  "human_decisions_present": false,
+  "test_outcomes_observed": false,
+  "test_release_authorized": false,
+  "public_package_manifest": {
+    "file": "data/experiments/ndp50_v1/preregistration/public_package_manifest_v1.json",
+    "sha256": "replace-with-registered-manifest-sha256"
+  },
+  "public_package_content_digest_sha256": "replace-with-registered-content-digest",
+  "feedback_response_signoff": {
+    "file": "replace-with-feedback-signoff-path",
+    "sha256": "replace-with-feedback-signoff-sha256"
+  },
+  "registration": {
+    "registry": "replace-with-osf-or-zenodo",
+    "persistent_identifier": "replace-with-doi-or-osf-registration-id",
+    "public_record_url": "https://replace-with-public-record",
+    "registered_at": "YYYY-MM-DDTHH:MM:SSZ",
+    "immutable_version": false,
+    "publicly_accessible": false
+  },
+  "external_receipt_export_sha256": "replace-with-export-sha256",
+  "independent_verification": {
+    "reviewer_id": null,
+    "reviewer_role": "independent_registration_verifier",
+    "qualification_summary": null,
+    "developer_participation": false,
+    "project_collaborator": false,
+    "conflict_of_interest_declared": false,
+    "verified_at": null,
+    "public_record_access_verified": false,
+    "attachment_hashes_verified": false,
+    "indirect_disclosure_review_complete": false,
+    "sealed_test_identity_disclosed": null
+  },
+  "attestations": {
+    "registered_before_test_release": false,
+    "exact_manifest_and_content_digest_match": false,
+    "all_attachment_hashes_verified": false,
+    "no_test_identities_in_uploaded_attachments": false,
+    "no_test_outcomes_observed": false,
+    "receipt_does_not_itself_authorize_test_release": false
+  }
+}

@@ -4,6 +4,7 @@ import argparse
 from copy import deepcopy
 import hashlib
 import json
+import math
 from datetime import date
 from pathlib import Path
 from typing import Any, Dict, Iterable, Mapping
@@ -41,7 +42,18 @@ MODEL_ARMS = {
     "five_shot_development_similarity_selected": 5,
 }
 REPLAY_ARM = "zero_shot_byte_identical_response_plus_deterministic_verification"
+ALL_ARMS = {"deterministic_only", REPLAY_ARM, *MODEL_ARMS}
 IMPLEMENTATION_SLOTS = set(QUALIFICATION_IMPLEMENTATION_SLOTS)
+RESOURCE_ACCOUNTING_BASES = {
+    "public_list_price",
+    "institutional_contract",
+    "local_compute_not_monetized",
+}
+CONFIDENCE_INTERPRETATIONS = {
+    "ordering_score_only",
+    "probability_of_exact_correctness",
+}
+RELIABILITY_BIN_EDGES = [round(index / 10, 1) for index in range(11)]
 SIGNOFF_ROLES = {
     "study_operator": {"principal_investigator", "research_engineer"},
     "methods_reviewer": {
@@ -137,6 +149,266 @@ def _valid_date(value: Any) -> bool:
     except ValueError:
         return False
     return True
+
+
+def _check_resource_accounting(
+    config: Mapping[str, Any],
+    *,
+    error: Any,
+) -> None:
+    contract = config.get("resource_accounting_contract")
+    expected_keys = {
+        "currency",
+        "price_basis",
+        "pricing_effective_on",
+        "pricing_source",
+        "rates_usd",
+        "local_compute_cost_included",
+        "include_failed_model_calls",
+        "include_retries",
+        "include_reused_upstream",
+        "hardware_runtime_source",
+        "model_latency_field",
+        "end_to_end_latency_field",
+        "cost_scope_note",
+    }
+    if not isinstance(contract, dict) or set(contract) != expected_keys:
+        error(
+            "resource_accounting_contract_invalid",
+            "resource accounting must contain the exact registered fields",
+        )
+        return
+    if contract.get("currency") != "USD":
+        error(
+            "resource_accounting_currency_invalid",
+            "resource accounting currency must be USD",
+        )
+    basis = contract.get("price_basis")
+    if basis not in RESOURCE_ACCOUNTING_BASES:
+        error(
+            "resource_accounting_price_basis_invalid",
+            "price basis must be frozen to a registered value",
+        )
+    if not _valid_date(contract.get("pricing_effective_on")):
+        error(
+            "resource_accounting_price_date_invalid",
+            "pricing_effective_on must be an ISO date",
+        )
+    source = contract.get("pricing_source")
+    if basis == "public_list_price":
+        parsed = urlparse(str(source or ""))
+        if parsed.scheme != "https" or not parsed.netloc:
+            error(
+                "resource_accounting_price_source_invalid",
+                "public list pricing requires an HTTPS source",
+            )
+    elif basis == "institutional_contract":
+        if not _valid_text(source):
+            error(
+                "resource_accounting_price_source_invalid",
+                "institutional pricing requires a frozen source identifier",
+            )
+    elif basis == "local_compute_not_monetized" and (
+        source != "not_applicable_local_compute"
+    ):
+        error(
+            "resource_accounting_price_source_invalid",
+            "unmonetized local compute requires its explicit source marker",
+        )
+
+    rates = contract.get("rates_usd")
+    rate_keys = {
+        "per_call",
+        "input_per_million_tokens",
+        "output_per_million_tokens",
+    }
+    if not isinstance(rates, dict) or set(rates) != rate_keys:
+        error(
+            "resource_accounting_rates_invalid",
+            "the exact per-call and token price fields are required",
+        )
+        rates = {}
+    numeric_rates = []
+    for key in sorted(rate_keys):
+        value = rates.get(key)
+        if (
+            not isinstance(value, (int, float))
+            or isinstance(value, bool)
+            or not math.isfinite(float(value))
+            or float(value) < 0
+        ):
+            error(
+                "resource_accounting_rates_invalid",
+                f"rates_usd.{key} must be finite and nonnegative",
+            )
+        else:
+            numeric_rates.append(float(value))
+    local_cost_included = contract.get("local_compute_cost_included")
+    if not isinstance(local_cost_included, bool):
+        error(
+            "resource_accounting_local_cost_invalid",
+            "local_compute_cost_included must be boolean",
+        )
+    if basis == "local_compute_not_monetized":
+        if any(value != 0 for value in numeric_rates):
+            error(
+                "resource_accounting_local_rates_invalid",
+                "unmonetized local compute must freeze all monetary rates at zero",
+            )
+        if local_cost_included is not False:
+            error(
+                "resource_accounting_local_cost_invalid",
+                "unmonetized local compute cannot claim local cost inclusion",
+            )
+    elif len(numeric_rates) == len(rate_keys) and not any(
+        value > 0 for value in numeric_rates
+    ):
+        error(
+            "resource_accounting_rates_invalid",
+            "a nonlocal price schedule must contain at least one positive rate",
+        )
+    for key in (
+        "include_failed_model_calls",
+        "include_retries",
+        "include_reused_upstream",
+    ):
+        if contract.get(key) is not True:
+            error(
+                "resource_accounting_scope_invalid",
+                f"{key} must be true",
+            )
+    if (
+        contract.get("hardware_runtime_source")
+        != "selected_backend_registry_record"
+    ):
+        error(
+            "resource_accounting_hardware_source_invalid",
+            "hardware/runtime must come from the selected backend registry",
+        )
+    if contract.get("model_latency_field") != "model_latency_seconds":
+        error(
+            "resource_accounting_latency_fields_invalid",
+            "model latency field is not frozen to the score contract",
+        )
+    if (
+        contract.get("end_to_end_latency_field")
+        != "end_to_end_latency_seconds"
+    ):
+        error(
+            "resource_accounting_latency_fields_invalid",
+            "end-to-end latency field is not frozen to the score contract",
+        )
+    if not _valid_text(contract.get("cost_scope_note")):
+        error(
+            "resource_accounting_scope_note_missing",
+            "cost inclusions and exclusions require a non-empty scope note",
+        )
+
+
+def _check_confidence_reporting(
+    config: Mapping[str, Any],
+    *,
+    error: Any,
+) -> None:
+    contract = config.get("confidence_reporting_contract")
+    expected_keys = {
+        "score_field",
+        "score_minimum",
+        "score_maximum",
+        "accepted_known_requires_score",
+        "nonaccepted_requires_null",
+        "calibration_target",
+        "grouping_field",
+        "pooling_across_labels_permitted",
+        "pooling_across_arms_permitted",
+        "reliability_bin_edges",
+        "minimum_group_support_for_calibration_claim",
+        "risk_coverage_tie_rule",
+        "aurc_interval",
+        "confidence_source_by_arm",
+        "confidence_interpretation_by_arm",
+    }
+    if not isinstance(contract, dict) or set(contract) != expected_keys:
+        error(
+            "confidence_reporting_contract_invalid",
+            "confidence reporting must contain the exact registered fields",
+        )
+        return
+    if (
+        contract.get("score_field") != "confidence_score"
+        or contract.get("score_minimum") != 0
+        or contract.get("score_maximum") != 1
+        or contract.get("accepted_known_requires_score") is not True
+        or contract.get("nonaccepted_requires_null") is not True
+    ):
+        error(
+            "confidence_score_contract_invalid",
+            "accepted predictions require confidence_score in [0,1]",
+        )
+    if (
+        contract.get("calibration_target")
+        != "exact_canonical_correctness_on_applicable_known_slots"
+        or contract.get("grouping_field") != "label_id"
+    ):
+        error(
+            "confidence_calibration_target_invalid",
+            "calibration target and grouping must match the registered scorer",
+        )
+    if (
+        contract.get("pooling_across_labels_permitted") is not False
+        or contract.get("pooling_across_arms_permitted") is not False
+    ):
+        error(
+            "confidence_pooling_invalid",
+            "confidence scales cannot be pooled across labels or arms",
+        )
+    if contract.get("reliability_bin_edges") != RELIABILITY_BIN_EDGES:
+        error(
+            "confidence_reliability_bins_invalid",
+            "reliability bins must be fixed deciles over [0,1]",
+        )
+    support = contract.get("minimum_group_support_for_calibration_claim")
+    if (
+        not isinstance(support, int)
+        or isinstance(support, bool)
+        or support < 30
+    ):
+        error(
+            "confidence_support_threshold_invalid",
+            "calibration claims require at least 30 accepted predictions per arm-label group",
+        )
+    if (
+        contract.get("risk_coverage_tie_rule")
+        != "whole_confidence_tie_groups_right_continuous"
+        or contract.get("aurc_interval") != "achieved_coverage_only"
+    ):
+        error(
+            "confidence_aurc_contract_invalid",
+            "AURC tie handling and achieved-coverage interval must be frozen",
+        )
+    sources = contract.get("confidence_source_by_arm")
+    interpretations = contract.get("confidence_interpretation_by_arm")
+    if (
+        not isinstance(sources, dict)
+        or set(sources) != ALL_ARMS
+        or any(not _valid_text(value) for value in sources.values())
+    ):
+        error(
+            "confidence_sources_invalid",
+            "every registered arm requires a non-empty confidence source",
+        )
+    if (
+        not isinstance(interpretations, dict)
+        or set(interpretations) != ALL_ARMS
+        or any(
+            value not in CONFIDENCE_INTERPRETATIONS
+            for value in interpretations.values()
+        )
+    ):
+        error(
+            "confidence_interpretations_invalid",
+            "every registered arm requires a frozen confidence interpretation",
+        )
 
 
 def _is_loopback_url(value: Any) -> bool:
@@ -299,6 +571,50 @@ def build_config_template(
             "max_tokens": None,
             "thinking_enabled": False,
             "selection_uses_semantic_accuracy": False,
+        },
+        "resource_accounting_contract": {
+            "currency": "USD",
+            "price_basis": None,
+            "pricing_effective_on": None,
+            "pricing_source": None,
+            "rates_usd": {
+                "per_call": None,
+                "input_per_million_tokens": None,
+                "output_per_million_tokens": None,
+            },
+            "local_compute_cost_included": None,
+            "include_failed_model_calls": True,
+            "include_retries": True,
+            "include_reused_upstream": True,
+            "hardware_runtime_source": "selected_backend_registry_record",
+            "model_latency_field": "model_latency_seconds",
+            "end_to_end_latency_field": "end_to_end_latency_seconds",
+            "cost_scope_note": None,
+        },
+        "confidence_reporting_contract": {
+            "score_field": "confidence_score",
+            "score_minimum": 0,
+            "score_maximum": 1,
+            "accepted_known_requires_score": True,
+            "nonaccepted_requires_null": True,
+            "calibration_target": (
+                "exact_canonical_correctness_on_applicable_known_slots"
+            ),
+            "grouping_field": "label_id",
+            "pooling_across_labels_permitted": False,
+            "pooling_across_arms_permitted": False,
+            "reliability_bin_edges": RELIABILITY_BIN_EDGES,
+            "minimum_group_support_for_calibration_claim": 30,
+            "risk_coverage_tie_rule": (
+                "whole_confidence_tie_groups_right_continuous"
+            ),
+            "aurc_interval": "achieved_coverage_only",
+            "confidence_source_by_arm": {
+                arm_id: None for arm_id in sorted(ALL_ARMS)
+            },
+            "confidence_interpretation_by_arm": {
+                arm_id: None for arm_id in sorted(ALL_ARMS)
+            },
         },
         "execution_implementations": {
             key: None for key in sorted(IMPLEMENTATION_SLOTS)
@@ -518,6 +834,46 @@ def _check_prompt_contracts(
                         error(
                             "response_schema_invalid",
                             f"{arm_id} response schema must be an object",
+                        )
+                    slots_schema = (
+                        schema.get("properties", {}).get("slots", {})
+                        if isinstance(schema.get("properties"), dict)
+                        else {}
+                    )
+                    item_schema = (
+                        slots_schema.get("items", {})
+                        if isinstance(slots_schema, dict)
+                        else {}
+                    )
+                    item_properties = (
+                        item_schema.get("properties", {})
+                        if isinstance(item_schema, dict)
+                        else {}
+                    )
+                    confidence_schema = (
+                        item_properties.get("confidence_score", {})
+                        if isinstance(item_properties, dict)
+                        else {}
+                    )
+                    required = (
+                        item_schema.get("required", [])
+                        if isinstance(item_schema, dict)
+                        else []
+                    )
+                    if (
+                        not isinstance(confidence_schema, dict)
+                        or confidence_schema.get("type")
+                        != ["number", "null"]
+                        or confidence_schema.get("minimum") != 0
+                        or confidence_schema.get("maximum") != 1
+                        or "confidence_score" not in required
+                    ):
+                        error(
+                            "response_schema_confidence_invalid",
+                            (
+                                f"{arm_id} response schema must require "
+                                "confidence_score as number-or-null in [0,1]"
+                            ),
                         )
             except Exception as exc:  # noqa: BLE001
                 error("prompt_binding_invalid", str(exc))
@@ -987,6 +1343,7 @@ def validate_config(
                 f"analysis_contract.{key} differs from registered design",
             )
     _check_prompt_contracts(config, study_root=study_root, error=error)
+    _check_confidence_reporting(config, error=error)
 
     reuse = config.get("response_reuse_contract") or {}
     if reuse != {
@@ -1186,6 +1543,7 @@ def validate_config(
                 "local_policy_backend_endpoint",
                 "local-only backend endpoint must be loopback",
             )
+    _check_resource_accounting(config, error=error)
 
     implementations = config.get("execution_implementations")
     if not isinstance(implementations, dict) or set(

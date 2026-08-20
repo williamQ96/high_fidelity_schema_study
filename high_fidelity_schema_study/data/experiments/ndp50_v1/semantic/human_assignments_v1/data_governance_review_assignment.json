@@ -11,7 +11,7 @@
   "expected_submission_schema": "ndp50-data-governance-review/v1",
   "handoff": {
     "file": "semantic/human_handoff_v1.json",
-    "sha256": "7b3223d3f5971e35bf574cff3b43dc02d341e43b2a3a3c51e5ad419e4f9df6fd"
+    "sha256": "7ca57a78407584b57ef84700f184498646676da87919be2f6cf4d88e11f8cfe9"
   },
   "model_outputs_visible": false,
   "payload": {
@@ -60,6 +60,73 @@
     }
   ],
   "stage_id": "data_governance_review",
+  "submission_contract": {
+    "approval_validation_receipt_filename": "data_governance_approval_validation.json",
+    "derived_approval_filename": "data_governance_approval.json",
+    "forbidden_actions": [
+      "Do not edit the bound audit, dataset identities, or neutral-template bindings.",
+      "Do not use the same person or stable ID for both signatory slots.",
+      "Do not hand-edit the validator-generated approval artifact.",
+      "Do not claim that this workflow supplies legal advice.",
+      "Do not inspect test identities, details, gold, or outcomes."
+    ],
+    "required_actions": [
+      "Work only from the byte-identical neutral payload and the bound governance audit.",
+      "Have the stewardship reviewer complete every dataset decision and study-policy field first.",
+      "Freeze the completed stewardship review before the distinct accountable approver countersigns it.",
+      "Use stable pseudonymous IDs, truthful role declarations, and complete rationales.",
+      "Set the completion attestation true only after both signatories have personally completed their assigned checks.",
+      "Run validate-review and return its exact generated receipt with the completed review.",
+      "Generate the approval only with the approve command, then replay it with verify-approved for the next handoff rebuild."
+    ],
+    "return_manifest_slot": "data_governance_review",
+    "review_validation_receipt_filename": "data_governance_review_validation.json",
+    "validator_command_templates": {
+      "generate_approval": [
+        "python",
+        "-m",
+        "high_fidelity_schema_study.ndp50_data_governance_review",
+        "approve",
+        "--review",
+        "<completed_data_governance_review.json>",
+        "--audit",
+        "high_fidelity_schema_study/data/experiments/ndp50_v1/reports/data_governance_v1.json",
+        "--study-root",
+        "high_fidelity_schema_study/data/experiments/ndp50_v1",
+        "--output",
+        "<data_governance_approval.json>"
+      ],
+      "validate_review": [
+        "python",
+        "-m",
+        "high_fidelity_schema_study.ndp50_data_governance_review",
+        "validate-review",
+        "--review",
+        "<completed_data_governance_review.json>",
+        "--audit",
+        "high_fidelity_schema_study/data/experiments/ndp50_v1/reports/data_governance_v1.json",
+        "--study-root",
+        "high_fidelity_schema_study/data/experiments/ndp50_v1",
+        "--output",
+        "<data_governance_review_validation.json>"
+      ],
+      "verify_approval": [
+        "python",
+        "-m",
+        "high_fidelity_schema_study.ndp50_data_governance_review",
+        "verify-approved",
+        "--approved",
+        "<data_governance_approval.json>",
+        "--audit",
+        "high_fidelity_schema_study/data/experiments/ndp50_v1/reports/data_governance_v1.json",
+        "--study-root",
+        "high_fidelity_schema_study/data/experiments/ndp50_v1",
+        "--output",
+        "<data_governance_approval_validation.json>"
+      ]
+    },
+    "working_copy_filename": "completed_data_governance_review.json"
+  },
   "test_data_access": "forbidden",
   "validator": {
     "command": "validate-review",

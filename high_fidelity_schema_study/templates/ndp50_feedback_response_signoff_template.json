@@ -1,0 +1,44 @@
+{
+  "schema_version": "ndp50-feedback-response-signoff/v2",
+  "status": "pending_human_collaborator_review",
+  "human_decisions_present": false,
+  "test_outcomes_observed": false,
+  "independence_claimed": false,
+  "feedback_response_matrix": {
+    "file": "docs/swathi_feedback_response_matrix_v1.md",
+    "sha256": "replace-with-current-sha256"
+  },
+  "feedback_improvement_amendment": {
+    "file": "docs/ndp50_feedback_improvement_amendment_v1.md",
+    "sha256": "replace-with-current-sha256"
+  },
+  "review_materials": [],
+  "review_materials_digest_sha256": "replace-with-generated-review-materials-digest",
+  "reviewed_feedback_items": [],
+  "optional_sensitivity_decisions": {
+    "evidence_free_single_call": "exclude_from_confirmatory_matrix",
+    "heuristic_comparator": "development_validation_diagnostic_only",
+    "learned_cta_cpa": "separately_registered_extension_only",
+    "second_model_family": "defer_unless_complete_paired_execution_is_frozen"
+  },
+  "collaborator": {
+    "reviewer_id": null,
+    "reviewer_role": "postdoctoral_research_collaborator",
+    "qualification_summary": null,
+    "project_collaborator": true,
+    "developer_participation": false,
+    "independent_reviewer": false,
+    "conflict_of_interest_disclosure": null,
+    "signed_at": null
+  },
+  "signed_at": null,
+  "attestations": {
+    "all_feedback_items_reviewed": false,
+    "all_bound_review_materials_reviewed": false,
+    "claim_boundaries_accepted": false,
+    "inactive_sensitivities_not_presented_as_executed": false,
+    "collaborator_review_not_represented_as_independent": false,
+    "no_test_outcomes_seen": false,
+    "test_release_not_authorized_by_this_signoff": false
+  }
+}

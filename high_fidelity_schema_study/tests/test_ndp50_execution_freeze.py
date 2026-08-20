@@ -185,7 +185,28 @@ def _fixture(tmp_path: Path, monkeypatch) -> dict:
         ),
     ):
         _write(path, text)
-    _write(response_schema, {"type": "object"})
+    _write(
+        response_schema,
+        {
+            "type": "object",
+            "properties": {
+                "slots": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "confidence_score": {
+                                "type": ["number", "null"],
+                                "minimum": 0,
+                                "maximum": 1,
+                            }
+                        },
+                        "required": ["confidence_score"],
+                    },
+                }
+            },
+        },
+    )
 
     registry_path = root / "freeze" / "backend-registry.json"
     _write(
@@ -380,6 +401,53 @@ def _fixture(tmp_path: Path, monkeypatch) -> dict:
             "max_tokens": 1024,
         }
     )
+    config["resource_accounting_contract"].update(
+        {
+            "price_basis": "local_compute_not_monetized",
+            "pricing_effective_on": "2026-07-26",
+            "pricing_source": "not_applicable_local_compute",
+            "rates_usd": {
+                "per_call": 0,
+                "input_per_million_tokens": 0,
+                "output_per_million_tokens": 0,
+            },
+            "local_compute_cost_included": False,
+            "cost_scope_note": (
+                "Local compute is not monetized; exact hardware, runtime, "
+                "tokens, calls, and dual latency are reported."
+            ),
+        }
+    )
+    config["confidence_reporting_contract"][
+        "confidence_source_by_arm"
+    ] = {
+        "deterministic_only": "frozen deterministic support ordering",
+        "zero_shot_dataset_level": "model-reported exactness probability",
+        "one_shot_development_similarity_selected": (
+            "model-reported exactness probability"
+        ),
+        "five_shot_development_similarity_selected": (
+            "model-reported exactness probability"
+        ),
+        "zero_shot_byte_identical_response_plus_deterministic_verification": (
+            "source-response confidence retained for accepted claims"
+        ),
+    }
+    config["confidence_reporting_contract"][
+        "confidence_interpretation_by_arm"
+    ] = {
+        "deterministic_only": "ordering_score_only",
+        "zero_shot_dataset_level": "probability_of_exact_correctness",
+        "one_shot_development_similarity_selected": (
+            "probability_of_exact_correctness"
+        ),
+        "five_shot_development_similarity_selected": (
+            "probability_of_exact_correctness"
+        ),
+        "zero_shot_byte_identical_response_plus_deterministic_verification": (
+            "probability_of_exact_correctness"
+        ),
+    }
     declared_implementations = {
         key: {
             "artifact": _ref(common_code, root),
@@ -486,6 +554,29 @@ def test_neutral_template_and_workflow_do_not_claim_freeze(
     assert template["human_decisions_present"] is False
     assert template["prompt_contracts"] == []
     assert template["backend_contract"]["registry"] is None
+    assert template["resource_accounting_contract"]["price_basis"] is None
+    assert (
+        template["resource_accounting_contract"][
+            "include_failed_model_calls"
+        ]
+        is True
+    )
+    assert (
+        template["confidence_reporting_contract"]["score_field"]
+        == "confidence_score"
+    )
+    assert (
+        template["confidence_reporting_contract"][
+            "minimum_group_support_for_calibration_claim"
+        ]
+        == 30
+    )
+    assert all(
+        value is None
+        for value in template["confidence_reporting_contract"][
+            "confidence_source_by_arm"
+        ].values()
+    )
     assert template["execution_qualification"] == {
         "declaration": None,
         "receipt": None,
@@ -544,6 +635,24 @@ def test_valid_configuration_builds_and_replays_freeze(
     assert validation["status"] == "passed"
     assert frozen["derived_gates"]["prompt_and_backend_frozen"] is True
     assert verify_freeze(frozen, **inputs)["status"] == "passed"
+
+    config["confidence_reporting_contract"][
+        "pooling_across_labels_permitted"
+    ] = True
+    invalid_confidence = validate_config(config, **inputs)
+    assert "confidence_pooling_invalid" in {
+        item["code"] for item in invalid_confidence["errors"]
+    }
+    config["confidence_reporting_contract"][
+        "pooling_across_labels_permitted"
+    ] = False
+    config["resource_accounting_contract"][
+        "include_failed_model_calls"
+    ] = False
+    invalid = validate_config(config, **inputs)
+    assert "resource_accounting_scope_invalid" in {
+        item["code"] for item in invalid["errors"]
+    }
 
 
 def test_demonstration_pool_rejects_validation_case(

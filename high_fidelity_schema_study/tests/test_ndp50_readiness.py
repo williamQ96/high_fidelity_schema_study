@@ -494,6 +494,55 @@ def test_readiness_separates_integrity_from_human_freeze_gates(
         lambda **kwargs: test_execution_workflow_payload,
     )
     _write(test_execution_workflow, test_execution_workflow_payload)
+    public_package_manifest = tmp_path / "public_package_manifest.json"
+    _write(
+        public_package_manifest,
+        {
+            "schema_version": "ndp50-public-preregistration-package/v1",
+            "status": "draft_structurally_valid_not_registered",
+            "authorization": {"external_registration_claimed": False},
+            "private_sealing_control": {
+                "sealed_identity_match_count": 0,
+            },
+            "public_scope": {
+                "content_digest_sha256": "a" * 64,
+            },
+        },
+    )
+    feedback_matrix = tmp_path / "feedback_matrix.md"
+    feedback_matrix.write_text("feedback matrix\n", encoding="utf-8")
+    feedback_amendment = tmp_path / "feedback_amendment.md"
+    feedback_amendment.write_text("feedback amendment\n", encoding="utf-8")
+    publication_gate_workflow = tmp_path / "publication_gate_workflow.json"
+    publication_gate_workflow_payload = {
+        "schema_version": "ndp50-publication-gate-workflow/v1",
+        "status": (
+            "implementation_ready_waiting_on_collaborator_signoff_and_"
+            "external_registration"
+        ),
+        "human_decisions_present": False,
+        "test_outcomes_observed": False,
+        "test_release_authorized": False,
+    }
+    monkeypatch.setattr(
+        "high_fidelity_schema_study.ndp50_readiness."
+        "build_publication_gate_workflow_spec",
+        lambda **kwargs: publication_gate_workflow_payload,
+    )
+    _write(publication_gate_workflow, publication_gate_workflow_payload)
+    feedback_signoff_template = tmp_path / "feedback_signoff_template.json"
+    feedback_signoff_template_payload = {
+        "schema_version": "ndp50-feedback-response-signoff/v2",
+        "status": "pending_human_collaborator_review",
+        "human_decisions_present": False,
+        "independence_claimed": False,
+    }
+    monkeypatch.setattr(
+        "high_fidelity_schema_study.ndp50_readiness."
+        "build_feedback_signoff_template",
+        lambda **kwargs: feedback_signoff_template_payload,
+    )
+    _write(feedback_signoff_template, feedback_signoff_template_payload)
 
     readiness_kwargs = {
         "selection_path": selection,
@@ -528,6 +577,13 @@ def test_readiness_separates_integrity_from_human_freeze_gates(
         ),
         "execution_freeze_workflow_path": execution_freeze_workflow,
         "test_execution_workflow_path": test_execution_workflow,
+        "publication_gate_workflow_path": publication_gate_workflow,
+        "public_package_manifest_path": public_package_manifest,
+        "feedback_response_signoff_template_path": (
+            feedback_signoff_template
+        ),
+        "feedback_matrix_path": feedback_matrix,
+        "feedback_amendment_path": feedback_amendment,
         "cpa_design_path": cpa_design,
         "cpa_screen_path": cpa_screen,
         "cpa_workflow_path": cpa_workflow,
@@ -553,10 +609,16 @@ def test_readiness_separates_integrity_from_human_freeze_gates(
     assert report["gates"]["data_governance_review_workflow_ready"] is True
     assert report["gates"]["data_governance_policy_frozen"] is False
     assert report["gates"]["semantic_gold_workflow_ready"] is True
+    assert report["gates"]["annotator_calibration_passed"] is False
     assert report["gates"]["demonstration_pool_workflow_ready"] is True
     assert report["gates"]["independent_gold_complete"] is False
     assert report["gates"]["execution_freeze_workflow_ready"] is True
     assert report["gates"]["test_execution_workflow_ready"] is True
+    assert report["gates"]["publication_gate_workflow_ready"] is True
+    assert report["gates"][
+        "feedback_response_collaborator_signoff_complete"
+    ] is False
+    assert report["gates"]["external_preregistration_verified"] is False
     assert report["gates"]["prompt_and_backend_frozen"] is False
     assert report["gates"]["cpa_screen_workflow_ready"] is True
     assert report["gates"]["cpa_independent_screening_authorized"] is False
@@ -568,6 +630,12 @@ def test_readiness_separates_integrity_from_human_freeze_gates(
         {
             "schema_version": "ndp50-semantic-gold-approval/v1",
             "derived_gates": {"independent_gold_complete": True},
+            "index": {
+                "annotator_registry": [
+                    {"annotator_id": "annotator-a"},
+                    {"annotator_id": "annotator-b"},
+                ]
+            },
         },
     )
     monkeypatch.setattr(
@@ -582,7 +650,48 @@ def test_readiness_separates_integrity_from_human_freeze_gates(
         semantic_gold_approval_path=semantic_gold_approval,
     )
 
-    assert report_with_gold["gates"]["independent_gold_complete"] is True
+    assert report_with_gold["gates"]["independent_gold_complete"] is False
+    assert report_with_gold["gates"]["annotator_calibration_passed"] is False
     assert report_with_gold["artifact_hashes"][
         "semantic_gold_approval"
     ] == hashlib.sha256(semantic_gold_approval.read_bytes()).hexdigest()
+
+    calibration_summary = tmp_path / "annotator_calibration_summary.json"
+    _write(calibration_summary, {"schema_version": "test-fixture"})
+    handbook = (
+        Path(__file__).resolve().parents[1]
+        / "docs"
+        / "semantic_gold_annotation_handbook_v1.md"
+    )
+    monkeypatch.setattr(
+        "high_fidelity_schema_study.ndp50_readiness."
+        "validate_annotator_calibration_summary",
+        lambda *args, **kwargs: {
+            "status": "ready",
+            "payload": {
+                "status": "passed",
+                "qualified_handbook_sha256": hashlib.sha256(
+                    handbook.read_bytes()
+                ).hexdigest(),
+                "qualified_vocabulary_sha256": hashlib.sha256(
+                    vocabulary.read_bytes()
+                ).hexdigest(),
+                "annotator_ids": ["annotator-a", "annotator-b"],
+            },
+        },
+    )
+    report_with_calibrated_gold = build_readiness_report(
+        **readiness_kwargs,
+        semantic_gold_approval_path=semantic_gold_approval,
+        annotator_calibration_summary_path=calibration_summary,
+    )
+
+    assert report_with_calibrated_gold["gates"][
+        "annotator_calibration_passed"
+    ] is True
+    assert report_with_calibrated_gold["gates"][
+        "gold_annotator_identity_matches_calibration"
+    ] is True
+    assert report_with_calibrated_gold["gates"][
+        "independent_gold_complete"
+    ] is True

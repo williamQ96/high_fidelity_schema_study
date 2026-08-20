@@ -1,0 +1,172 @@
+{
+  "assignment_distribution": {
+    "extra_file_count": null,
+    "packet_count": null,
+    "packet_root_outside_repository": null,
+    "receipt": null,
+    "sealed_identity_match_count": null,
+    "spec": {
+      "file": "semantic/human_assignments_v1/assignment_distribution_spec_v1.json",
+      "sha256": "dd273e7497a1017dbe881d3c92ca6a1227f6ef201903299ce9971a7c92467453"
+    },
+    "validated_at": null,
+    "validated_before_roster_freeze": null,
+    "validation": null
+  },
+  "assignment_release": {
+    "file": "semantic/human_assignments_v1/assignment_release_v1.json",
+    "sha256": "4449da78a8bacf6f2016d6a128d67dd6474ce17233e90e8bc799da75f362dd0e"
+  },
+  "completion_attestation": null,
+  "frozen_at": null,
+  "handoff": {
+    "file": "semantic/human_handoff_v1.json",
+    "sha256": "7ca57a78407584b57ef84700f184498646676da87919be2f6cf4d88e11f8cfe9"
+  },
+  "operator_id": null,
+  "prework_attestations": {
+    "all_roles_confirmed_before_submission": null,
+    "distribution_receipt_validated_before_roster_freeze": null,
+    "feedback_collaborator_excluded_from_independent_roles": null,
+    "no_cross_packet_access_before_submission": null,
+    "no_human_submission_started": null,
+    "packet_delivery_bound_to_exact_reviewer_slots": null,
+    "vocabulary_reviewers_isolated": null
+  },
+  "schema_version": "ndp50-human-assignment-roster/v1",
+  "slots": {
+    "feedback_response_signoff": {
+      "accepted_assignment_contract": null,
+      "accepted_at": null,
+      "allowed_roles": [
+        "postdoctoral_research_collaborator"
+      ],
+      "assigned_at": null,
+      "assignment_id": "feedback_response_signoff",
+      "assignment_role": "postdoctoral_research_collaborator",
+      "conflict_of_interest_declared": null,
+      "developer_participation": null,
+      "developer_policy": "forbidden",
+      "distribution_packet_id": null,
+      "distribution_packet_manifest_sha256": null,
+      "independent_reviewer": false,
+      "no_model_outputs_visible": null,
+      "no_other_assignment_packet_received": null,
+      "no_test_data_access": null,
+      "packet_delivered_at": null,
+      "project_collaborator": null,
+      "project_collaborator_policy": "required",
+      "qualification_summary": null,
+      "received_exact_packet_attested": null,
+      "reviewer_id": null,
+      "reviewer_role": null
+    },
+    "governance_accountable_approval": {
+      "accepted_assignment_contract": null,
+      "accepted_at": null,
+      "allowed_roles": [
+        "principal_investigator",
+        "institutional_data_controller"
+      ],
+      "assigned_at": null,
+      "assignment_id": "data_governance_review",
+      "assignment_role": "accountable_approval",
+      "conflict_of_interest_declared": null,
+      "developer_participation": null,
+      "developer_policy": "must_declare",
+      "distribution_packet_id": null,
+      "distribution_packet_manifest_sha256": null,
+      "independent_reviewer": false,
+      "no_model_outputs_visible": null,
+      "no_other_assignment_packet_received": null,
+      "no_test_data_access": null,
+      "packet_delivered_at": null,
+      "project_collaborator": null,
+      "project_collaborator_policy": "must_declare",
+      "qualification_summary": null,
+      "received_exact_packet_attested": null,
+      "reviewer_id": null,
+      "reviewer_role": null
+    },
+    "governance_stewardship": {
+      "accepted_assignment_contract": null,
+      "accepted_at": null,
+      "allowed_roles": [
+        "institutional_data_steward",
+        "research_compliance_reviewer"
+      ],
+      "assigned_at": null,
+      "assignment_id": "data_governance_review",
+      "assignment_role": "stewardship_review",
+      "conflict_of_interest_declared": null,
+      "developer_participation": null,
+      "developer_policy": "forbidden",
+      "distribution_packet_id": null,
+      "distribution_packet_manifest_sha256": null,
+      "independent_reviewer": true,
+      "no_model_outputs_visible": null,
+      "no_other_assignment_packet_received": null,
+      "no_test_data_access": null,
+      "packet_delivered_at": null,
+      "project_collaborator": null,
+      "project_collaborator_policy": "must_declare",
+      "qualification_summary": null,
+      "received_exact_packet_attested": null,
+      "reviewer_id": null,
+      "reviewer_role": null
+    },
+    "vocabulary_discovery_a": {
+      "accepted_assignment_contract": null,
+      "accepted_at": null,
+      "allowed_roles": [
+        "scientific_metadata_curator"
+      ],
+      "assigned_at": null,
+      "assignment_id": "vocabulary_discovery_a",
+      "assignment_role": "scientific_metadata_curator",
+      "conflict_of_interest_declared": null,
+      "developer_participation": null,
+      "developer_policy": "forbidden",
+      "distribution_packet_id": null,
+      "distribution_packet_manifest_sha256": null,
+      "independent_reviewer": true,
+      "no_model_outputs_visible": null,
+      "no_other_assignment_packet_received": null,
+      "no_test_data_access": null,
+      "packet_delivered_at": null,
+      "project_collaborator": null,
+      "project_collaborator_policy": "forbidden",
+      "qualification_summary": null,
+      "received_exact_packet_attested": null,
+      "reviewer_id": null,
+      "reviewer_role": null
+    },
+    "vocabulary_discovery_b": {
+      "accepted_assignment_contract": null,
+      "accepted_at": null,
+      "allowed_roles": [
+        "annotation_methodologist"
+      ],
+      "assigned_at": null,
+      "assignment_id": "vocabulary_discovery_b",
+      "assignment_role": "annotation_methodologist",
+      "conflict_of_interest_declared": null,
+      "developer_participation": null,
+      "developer_policy": "forbidden",
+      "distribution_packet_id": null,
+      "distribution_packet_manifest_sha256": null,
+      "independent_reviewer": true,
+      "no_model_outputs_visible": null,
+      "no_other_assignment_packet_received": null,
+      "no_test_data_access": null,
+      "packet_delivered_at": null,
+      "project_collaborator": null,
+      "project_collaborator_policy": "forbidden",
+      "qualification_summary": null,
+      "received_exact_packet_attested": null,
+      "reviewer_id": null,
+      "reviewer_role": null
+    }
+  },
+  "status": "pending_assignment_acceptance"
+}

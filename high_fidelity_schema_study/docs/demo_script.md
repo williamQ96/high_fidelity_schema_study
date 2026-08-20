@@ -46,13 +46,28 @@ python -m high_fidelity_schema_study.cli agent-export --input high_fidelity_sche
 
 Show the read-only policy, claim/evidence records, provenance graph, capability context, and bounded actions.
 
-## 6. Run GUI
+## 6. Run the current research dashboard
 
 ```text
 python -m high_fidelity_schema_study.gui_demo.server 8765
 ```
 
-Open `http://localhost:8765/gui_demo/`. The Extract workbench is the default view.
+Open `http://localhost:8765/gui_demo/research_dashboard.html`.
+
+Show that the page reads the current repository artifacts through
+`/api/research-status`, while returning no sealed test identity, blind gold, reviewer
+submission, model output, or test outcome. Walk through:
+
+- the current defensible result and claim boundary;
+- the deterministic pipeline and fixed A/B/C/D variants;
+- the NDP-50 15/10/25 split and aggregate structural execution;
+- development noncomparability and backend operational eligibility;
+- the distinction between workflow readiness and completed human evidence;
+- the F01-F16 collaborator-review status and ordered release sequence.
+
+## 7. Run the extraction workbench
+
+Open `http://localhost:8765/gui_demo/index.html#extract`.
 
 Run these examples from the visible example list:
 
@@ -63,7 +78,7 @@ Run these examples from the visible example list:
 
 Inspect format signals, issues/conflicts, claim-state counts, provenance, fields, and the expandable structured JSON. Scratch extraction does not modify frozen artifacts or paper metrics.
 
-## 7. Run Portable Examples From CLI
+## 8. Run Portable Examples From CLI
 
 ```text
 python -m high_fidelity_schema_study.cli extract --input high_fidelity_schema_study/demo_examples/utc_series.csv --output-shape both

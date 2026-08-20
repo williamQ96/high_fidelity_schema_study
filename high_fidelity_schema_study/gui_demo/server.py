@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import json
+import re
 import tempfile
+from datetime import datetime, timezone
 from email.parser import BytesParser
 from email.policy import default
 from http import HTTPStatus
@@ -25,6 +27,280 @@ STUDY_DIR = Path(__file__).resolve().parents[1]
 DEMO_EXAMPLES_ROOT = STUDY_DIR / "demo_examples"
 DEMO_EXAMPLES_MANIFEST = DEMO_EXAMPLES_ROOT / "manifest.json"
 MAX_UPLOAD_BYTES = 100 * 1024 * 1024
+
+
+def _read_json(relative_path: str) -> dict[str, Any]:
+    return json.loads((STUDY_DIR / relative_path).read_text(encoding="utf-8"))
+
+
+def _read_paper_macros() -> dict[str, str]:
+    text = (STUDY_DIR / "paper" / "results_macros.tex").read_text(encoding="utf-8")
+    return {
+        name: value
+        for name, value in re.findall(r"\\newcommand\{\\([^}]+)\}\{([^}]*)\}", text)
+    }
+
+
+def build_research_dashboard_payload() -> dict[str, Any]:
+    """Build a sealed-safe, aggregate-only view of the current research state."""
+    selection = _read_json("data/experiments/ndp50_v1/selection.json")
+    readiness = _read_json("data/experiments/ndp50_v1/semantic/readiness_report_v1.json")
+    development = _read_json("data/experiments/ndp50_v1/reports/development_v4/summary.json")
+    validation = _read_json("data/experiments/ndp50_v1/reports/validation_v3/summary.json")
+    architecture = _read_json(
+        "data/experiments/minimal_architecture_redesign/"
+        "qwen35_9b_development_2026-07-14/report.json"
+    )
+    qualification = _read_json(
+        "data/experiments/semantic_backend_qualification_v1/"
+        "qwen36_27b_q4_k_m_candidate_qualification_rerun_2026-07-15.assessment.json"
+    )
+    roster = _read_json(
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/"
+        "assignment_roster_neutral_v1.json"
+    )
+    distribution = _read_json(
+        "data/experiments/ndp50_v1/semantic/human_assignments_v1/"
+        "assignment_distribution_spec_v1.json"
+    )
+    macros = _read_paper_macros()
+
+    checks = readiness.get("checks", [])
+    gate_values = readiness.get("gates", {})
+    variant_summaries = architecture.get("variant_summaries", {})
+    comparisons = architecture.get("architecture_comparison", {})
+    split_counts = selection.get("counts", {}).get("split_counts", {})
+    qualification_cost = qualification.get("descriptive_operational_cost", {})
+    qualification_backend = qualification.get("backend", {})
+
+    gate_groups = [
+        {
+            "id": "definitions",
+            "label": "Definitions & source scope",
+            "workflow_ready": bool(
+                gate_values.get("vocabulary_review_workflow_ready")
+                and gate_values.get("source_approval_workflow_implementation_ready")
+            ),
+            "evidence_complete": bool(
+                gate_values.get("vocabulary_frozen")
+                and gate_values.get("source_bundles_annotation_ready")
+            ),
+        },
+        {
+            "id": "cpa",
+            "label": "CPA applicability",
+            "workflow_ready": bool(gate_values.get("cpa_screen_workflow_ready")),
+            "evidence_complete": bool(gate_values.get("cpa_applicability_consensus_complete")),
+        },
+        {
+            "id": "gold",
+            "label": "Calibration & blind gold",
+            "workflow_ready": bool(gate_values.get("semantic_gold_workflow_ready")),
+            "evidence_complete": bool(
+                gate_values.get("annotator_calibration_passed")
+                and gate_values.get("independent_gold_complete")
+            ),
+        },
+        {
+            "id": "execution",
+            "label": "Execution & power freeze",
+            "workflow_ready": bool(
+                gate_values.get("execution_freeze_workflow_ready")
+                and gate_values.get("power_freeze_workflow_ready")
+            ),
+            "evidence_complete": bool(
+                gate_values.get("prompt_and_backend_frozen")
+                and gate_values.get("test_power_plan_frozen")
+            ),
+        },
+        {
+            "id": "governance",
+            "label": "Governance & publication",
+            "workflow_ready": bool(
+                gate_values.get("data_governance_review_workflow_ready")
+                and gate_values.get("publication_gate_workflow_ready")
+            ),
+            "evidence_complete": bool(
+                gate_values.get("data_governance_policy_frozen")
+                and gate_values.get("feedback_response_collaborator_signoff_complete")
+                and gate_values.get("external_preregistration_verified")
+            ),
+        },
+    ]
+
+    def execution_summary(report: dict[str, Any]) -> dict[str, Any]:
+        coverage = report.get("coverage", {})
+        denominators = report.get("denominators", {})
+        return {
+            "role": report.get("run_role"),
+            "datasets": denominators.get("datasets", 0),
+            "catalog_resources": denominators.get("catalog_resources", 0),
+            "successful_datasets": coverage.get("datasets_with_successful_extraction", 0),
+            "dataset_end_to_end_rate": coverage.get("dataset_end_to_end_rate"),
+            "extraction_success_given_acquisition": coverage.get(
+                "extraction_success_rate_given_acquisition"
+            ),
+            "claim_boundary": report.get("claim_boundary"),
+        }
+
+    variants = []
+    for key in ("A", "B", "C", "D"):
+        summary = variant_summaries.get(key, {})
+        metrics = summary.get("metrics", {})
+        telemetry = summary.get("telemetry", {})
+        variants.append(
+            {
+                "id": key,
+                "name": {
+                    "A": "Deterministic only",
+                    "B": "Dataset reasoner",
+                    "C": "Replay + verifier",
+                    "D": "Legacy pipeline",
+                }[key],
+                "end_to_end_accuracy": metrics.get("end_to_end_value_accuracy"),
+                "coverage": metrics.get("coverage"),
+                "selective_risk": metrics.get("selective_risk"),
+                "model_calls": telemetry.get("model_calls", 0),
+                "comparable": bool(summary.get("comparable")),
+                "comparison_note": summary.get("comparison_note"),
+            }
+        )
+
+    return {
+        "schema_version": "research-dashboard/v1",
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "artifact_snapshot": {
+            "paper_date": macros.get("PaperDate"),
+            "readiness_created_at": readiness.get("created_at"),
+            "selection_created_at": selection.get("selected_at"),
+            "protocol_version": selection.get("protocol_version"),
+        },
+        "headline": {
+            "title": "How Much Semantic Architecture Is Necessary?",
+            "subtitle": "Replay-controlled evaluation for evidence-constrained dataset schema induction",
+            "current_result": "Validated protocol + operationally eligible backend; no architecture winner yet.",
+            "test_ready": bool(readiness.get("test_ready")),
+            "semantic_execution_ready": bool(readiness.get("semantic_execution_ready")),
+            "integrity_status": readiness.get("integrity_status"),
+            "full_tests": int(macros.get("FullTests", "0")),
+        },
+        "methodology": {
+            "research_question": (
+                "What causal contribution do one dataset-level semantic response and deterministic "
+                "verification make beyond deterministic extraction?"
+            ),
+            "pipeline": [
+                "Validate intake",
+                "Detect format",
+                "Route extractor",
+                "Extract physical structure",
+                "Run deterministic validators",
+                "Project claims + evidence",
+            ],
+            "variants": variants,
+            "comparisons": comparisons,
+            "co_primary_contrasts": [
+                "A - B: contribution of one dataset-level semantic response",
+                "B - C: contribution of deterministic verification over byte-identical replay",
+            ],
+            "primary_test": "Paired two-sided sign-flip tests on dataset-level differences",
+            "multiplicity": "Holm control across the two registered co-primary contrasts",
+            "claim_boundary": (
+                "Missing gold, partial execution, or replay failure suppresses the affected comparison. "
+                "A failure to reject is not evidence of no effect."
+            ),
+        },
+        "ndp50": {
+            "selected": selection.get("counts", {}).get("selected_dataset_count", 0),
+            "reserves": selection.get("counts", {}).get("reserve_dataset_count", 0),
+            "splits": {
+                "development": split_counts.get("development", 0),
+                "validation": split_counts.get("validation", 0),
+                "sealed_test": split_counts.get("test", 0),
+            },
+            "strata": selection.get("counts", {}).get("stratum_counts", {}),
+            "selection_status": selection.get("status"),
+            "development_execution": execution_summary(development),
+            "validation_execution": execution_summary(validation),
+            "test_identity_visible": False,
+        },
+        "development_evidence": {
+            "case_count": int(macros.get("DevCases", "0")),
+            "semantic_opportunity_cases": int(macros.get("DevSemanticCases", "0")),
+            "variants": variants,
+            "pairwise_status": {
+                key: value.get("status") for key, value in comparisons.items()
+            },
+            "interpretation": (
+                "Development metrics are diagnostic only. All architecture comparisons are currently "
+                "non-comparable and cannot establish superiority."
+            ),
+        },
+        "qualification": {
+            "assessment": qualification.get("assessment"),
+            "eligible": bool(qualification.get("eligible_under_frozen_thresholds")),
+            "model": qualification_backend.get("model_identifier"),
+            "variant": qualification_backend.get("selected_variant"),
+            "quantization": qualification_backend.get("quantization"),
+            "context_length": qualification_backend.get("loaded_context_length"),
+            "case_count": int(macros.get("QualificationCases", "0")),
+            "target_count": int(macros.get("QualificationTargets", "0")),
+            "dataset_calls": qualification_cost.get("dataset_physical_model_calls"),
+            "legacy_calls": qualification_cost.get("legacy_physical_model_calls"),
+            "dataset_mean_latency_seconds": round(
+                qualification_cost.get("dataset_mean_attempt_latency_ms", 0) / 1000, 2
+            ),
+            "legacy_mean_latency_seconds": round(
+                qualification_cost.get("legacy_mean_dataset_latency_ms", 0) / 1000, 2
+            ),
+            "identity_binding_complete": bool(
+                qualification.get("identity_binding_complete_for_blind_freeze")
+            ),
+            "remaining_identity_blockers": qualification.get("remaining_identity_blockers", []),
+            "interpretation_boundary": qualification.get("interpretation_boundary"),
+        },
+        "readiness": {
+            "status": readiness.get("readiness_status"),
+            "checks_passed": sum(1 for check in checks if check.get("passed")),
+            "checks_total": len(checks),
+            "blockers": readiness.get("blockers", []),
+            "gate_groups": gate_groups,
+        },
+        "human_workflow": {
+            "roster_status": roster.get("status"),
+            "packet_count": distribution.get("packet_count", 0),
+            "feedback_signoff_complete": bool(
+                gate_values.get("feedback_response_collaborator_signoff_complete")
+            ),
+            "independent_gold_complete": bool(gate_values.get("independent_gold_complete")),
+            "external_preregistration_verified": bool(
+                gate_values.get("external_preregistration_verified")
+            ),
+            "roles": [
+                "Vocabulary reviewers A and B",
+                "Data steward + accountable validator",
+                "Two calibrated independent gold annotators",
+                "Postdoctoral collaborator for F01-F16 response sign-off",
+                "Independent preregistration verifier",
+            ],
+            "information_boundary": (
+                "The dashboard exposes aggregate preparation state only. Sealed test identities, blind "
+                "gold, model outputs, reviewer submissions, and test outcomes are never returned."
+            ),
+        },
+        "sources": [
+            "paper/semantic_architecture_study_en.tex",
+            "paper/results_macros.tex",
+            "data/experiments/ndp50_v1/selection.json",
+            "data/experiments/ndp50_v1/semantic/readiness_report_v1.json",
+            "data/experiments/ndp50_v1/reports/development_v4/summary.json",
+            "data/experiments/ndp50_v1/reports/validation_v3/summary.json",
+            "data/experiments/minimal_architecture_redesign/"
+            "qwen35_9b_development_2026-07-14/report.json",
+            "data/experiments/semantic_backend_qualification_v1/"
+            "qwen36_27b_q4_k_m_candidate_qualification_rerun_2026-07-15.assessment.json",
+        ],
+    }
 
 
 def load_demo_examples() -> list[dict[str, Any]]:
@@ -234,6 +510,14 @@ class DemoHandler(SimpleHTTPRequestHandler):
 
     def do_GET(self) -> None:
         parsed = urlparse(self.path)
+        if parsed.path == "/api/research-status":
+            try:
+                payload = build_research_dashboard_payload()
+            except (OSError, ValueError, KeyError) as exc:
+                self._write_json({"ok": False, "error": str(exc)}, HTTPStatus.INTERNAL_SERVER_ERROR)
+                return
+            self._write_json({"ok": True, **payload})
+            return
         if parsed.path == "/api/examples":
             self._write_json({"ok": True, "examples": load_demo_examples()})
             return

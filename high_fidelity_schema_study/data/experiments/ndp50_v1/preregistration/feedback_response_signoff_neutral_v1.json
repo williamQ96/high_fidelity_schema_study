@@ -1,0 +1,101 @@
+{
+  "attestations": {
+    "all_bound_review_materials_reviewed": false,
+    "all_feedback_items_reviewed": false,
+    "claim_boundaries_accepted": false,
+    "collaborator_review_not_represented_as_independent": false,
+    "inactive_sensitivities_not_presented_as_executed": false,
+    "no_test_outcomes_seen": false,
+    "test_release_not_authorized_by_this_signoff": false
+  },
+  "collaborator": {
+    "conflict_of_interest_disclosure": null,
+    "developer_participation": false,
+    "independent_reviewer": false,
+    "project_collaborator": true,
+    "qualification_summary": null,
+    "reviewer_id": null,
+    "reviewer_role": "postdoctoral_research_collaborator",
+    "signed_at": null
+  },
+  "feedback_improvement_amendment": {
+    "file": "docs/ndp50_feedback_improvement_amendment_v1.md",
+    "sha256": "f4eb887864614bbf8758db83739e39764c8a979efb6c437e0df90ab60a584bcf"
+  },
+  "feedback_response_matrix": {
+    "file": "docs/swathi_feedback_response_matrix_v1.md",
+    "sha256": "e5834fd5abb403d2add82e0b84bff7cdc413e7fd5ad8d58cb8a25958a2fad831"
+  },
+  "human_decisions_present": false,
+  "independence_claimed": false,
+  "optional_sensitivity_decisions": {
+    "evidence_free_single_call": "exclude_from_confirmatory_matrix",
+    "heuristic_comparator": "development_validation_diagnostic_only",
+    "learned_cta_cpa": "separately_registered_extension_only",
+    "second_model_family": "defer_unless_complete_paired_execution_is_frozen"
+  },
+  "review_materials": [
+    {
+      "file": "docs/literature/citation_matrix.md",
+      "sha256": "aa07f58f0d66ba22b670bb535e3953cf700cdcbcaea39ff47b6a850b62b99572"
+    },
+    {
+      "file": "docs/literature/semantic_architecture_literature_review_2026-07-27.md",
+      "sha256": "8e25db2b0662cdafd80100382abe6f9173c4b65b62801b17413fdf596959681e"
+    },
+    {
+      "file": "docs/ndp50_annotation_and_independence_plan_v1.md",
+      "sha256": "2c2ace0621a840f1cfb9fce6add6f749a8c55325893e02cff2fa026b7ad7e8c4"
+    },
+    {
+      "file": "docs/ndp50_feedback_implementation_audit_v1.md",
+      "sha256": "cdb70d80051075bbbb09ca34e671eb728106e3dabff6c97865f2ed94da3539ff"
+    },
+    {
+      "file": "docs/ndp50_human_external_gate_ledger_v1.md",
+      "sha256": "143ad38e8c6def58d818894d5a7c84fda29d0828c8866cd0746de5dbe8b564aa"
+    },
+    {
+      "file": "docs/ndp50_methodological_risk_register_v1.md",
+      "sha256": "a04a289ef912c009d5e4538c373eef5eb1cc6dcb5ca8fa400232a85193eb1f31"
+    },
+    {
+      "file": "docs/ndp50_scope_provenance_v1.md",
+      "sha256": "065b1af907c41f7dd066c30911eb620d09011d79804a2436fbd29d0dfe9f3cf0"
+    },
+    {
+      "file": "docs/ndp50_statistical_analysis_plan_v1.md",
+      "sha256": "c690c5389b74e3490772aec437c2597ae117febc584cf1d75eb9477b2d5e9d52"
+    },
+    {
+      "file": "docs/ndp50_swathi_feedback_signoff_guide_v1.md",
+      "sha256": "d5e0e2e212228ae153446bf5c858de0b6fb1dda33c87376741df7597a3941513"
+    },
+    {
+      "file": "docs/preregistration/ndp50_osf_zenodo_preregistration_draft_v1.md",
+      "sha256": "2500344919c66ef715776431f29e2d3d0d70f4c5fdc12936854710eb381b328e"
+    },
+    {
+      "file": "docs/semantic_architecture_claim_ledger_v1.md",
+      "sha256": "11bcb975ed528697ee6e9e1796b696e9a31082846920d6acd89a90b142030ee2"
+    },
+    {
+      "file": "paper/references.bib",
+      "sha256": "84490704a71ff43d2143a06218136f2ba3d3f863ac3f7d8bbf8979a93f13f413"
+    },
+    {
+      "file": "paper/results_macros.tex",
+      "sha256": "71516f1b553c47960326f2b09d46f97e0befed0e83e90ab2a6234d9f4fc74458"
+    },
+    {
+      "file": "paper/semantic_architecture_study_en.tex",
+      "sha256": "cb4d27deee4d5f6216a20a377a613530c9e99c995541d1d780d61fdceb79cebc"
+    }
+  ],
+  "review_materials_digest_sha256": "03d6ce3dd9eb97c39471b8c10abd1fd39dc6be8674118e37bb8c0a2b5a0a9591",
+  "reviewed_feedback_items": [],
+  "schema_version": "ndp50-feedback-response-signoff/v2",
+  "signed_at": null,
+  "status": "pending_human_collaborator_review",
+  "test_outcomes_observed": false
+}

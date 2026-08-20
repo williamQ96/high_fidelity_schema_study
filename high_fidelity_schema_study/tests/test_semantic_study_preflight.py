@@ -1366,6 +1366,24 @@ def test_backend_panel_below_three_families_blocks_freeze(tmp_path: Path) -> Non
     assert "backend_panel_too_small" in {item["code"] for item in report["errors"]}
 
 
+def test_incomplete_hardware_identity_blocks_freeze(tmp_path: Path) -> None:
+    manifest_path = build_fixture(tmp_path)
+    registry_path = tmp_path / "backends.json"
+    registry = json.loads(registry_path.read_text(encoding="utf-8"))
+    registry["backends"][0]["hardware"]["offload_configuration"] = ""
+    write_json(registry_path, registry)
+    refresh_manifest_hash(
+        manifest_path, "backend_registry_sha256", registry_path
+    )
+
+    report = preflight_blind_manifest(manifest_path)
+
+    assert report["status"] == "blocked"
+    assert "hardware_configuration_incomplete" in {
+        item["code"] for item in report["errors"]
+    }
+
+
 def test_unfrozen_power_analysis_blocks_freeze(tmp_path: Path) -> None:
     manifest_path = build_fixture(tmp_path)
     power_path = tmp_path / "power.json"

@@ -2,6 +2,12 @@
 
 Status: executable protocol; freeze before blind architecture execution
 
+> **Scope note.** This document governs the earlier generic A/B/C/D study. It
+> does not govern the NDP-50 named-arm analysis. NDP-50 uses the paired
+> sign-flip primary test in its machine-readable CPA design and
+> `docs/ndp50_statistical_analysis_plan_v1.md`. The paired-t primary analysis
+> below must not be imported into NDP-50 after outcomes.
+
 ## 1. Boundary
 
 This protocol analyzes only the frozen A/B/C/D semantic architecture study. It

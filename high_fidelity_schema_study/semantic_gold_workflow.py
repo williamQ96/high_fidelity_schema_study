@@ -6,7 +6,7 @@ import json
 import os
 import re
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional
+from typing import Any, Dict, Iterable, List, Optional, Sequence
 
 from .architecture_variants import (
     ALLOWED_LOGICAL_TYPES,
@@ -1008,6 +1008,46 @@ def _artifact_slots(artifact: Dict[str, Any]) -> Dict[str, Dict[str, Any]]:
     return slots
 
 
+def _cohen_kappa(
+    values_a: Sequence[str],
+    values_b: Sequence[str],
+) -> float | None:
+    if len(values_a) != len(values_b) or not values_a:
+        raise ValueError("kappa inputs must be non-empty and aligned")
+    observed = sum(
+        a == b for a, b in zip(values_a, values_b)
+    ) / len(values_a)
+    labels = set(values_a) | set(values_b)
+    expected = sum(
+        (values_a.count(label) / len(values_a))
+        * (values_b.count(label) / len(values_b))
+        for label in labels
+    )
+    if expected == 1.0:
+        return None
+    return (observed - expected) / (1.0 - expected)
+
+
+def _agreement_label(slot: Dict[str, Any]) -> str:
+    if not slot["applicability"]:
+        return "not_applicable"
+    if slot["value"] is None:
+        return "applicable_unknown"
+    return "applicable_value:" + json.dumps(
+        slot["value"],
+        ensure_ascii=False,
+        separators=(",", ":"),
+        sort_keys=True,
+    )
+
+
+def _label_support(values: Sequence[str]) -> Dict[str, int]:
+    return {
+        label: values.count(label)
+        for label in sorted(set(values))
+    }
+
+
 def compare_independent_artifacts(
     artifact_a_path: Path,
     artifact_b_path: Path,
@@ -1049,12 +1089,22 @@ def compare_independent_artifacts(
         property_name: {"agreed": 0, "total": 0}
         for property_name in EVALUATED_PROPERTIES
     }
+    labels_by_property = {
+        property_name: {"annotator_a": [], "annotator_b": []}
+        for property_name in EVALUATED_PROPERTIES
+    }
     evidence_agreement_count = 0
     for slot_id in sorted(slots_a):
         a = slots_a[slot_id]
         b = slots_b[slot_id]
         property_name = a["property"]
         agreement_by_property[property_name]["total"] += 1
+        labels_by_property[property_name]["annotator_a"].append(
+            _agreement_label(a)
+        )
+        labels_by_property[property_name]["annotator_b"].append(
+            _agreement_label(b)
+        )
         label_agreement = (
             a["applicability"] == b["applicability"] and a["value"] == b["value"]
         )
@@ -1086,10 +1136,31 @@ def compare_independent_artifacts(
         )
     slot_count = len(slots_a)
     agreed_count = slot_count - len(disagreements)
-    for values in agreement_by_property.values():
+    for property_name, values in agreement_by_property.items():
         values["exact_agreement_rate"] = (
             values["agreed"] / values["total"] if values["total"] else None
         )
+        labels_a = labels_by_property[property_name]["annotator_a"]
+        labels_b = labels_by_property[property_name]["annotator_b"]
+        if labels_a:
+            kappa = _cohen_kappa(labels_a, labels_b)
+            values["cohen_kappa"] = kappa
+            values["cohen_kappa_status"] = (
+                "defined"
+                if kappa is not None
+                else "undefined_degenerate_marginals"
+            )
+            values["label_state_support"] = {
+                "annotator_a": _label_support(labels_a),
+                "annotator_b": _label_support(labels_b),
+            }
+        else:
+            values["cohen_kappa"] = None
+            values["cohen_kappa_status"] = "undefined_no_slots"
+            values["label_state_support"] = {
+                "annotator_a": {},
+                "annotator_b": {},
+            }
     return {
         "schema_version": "semantic-disagreement-report/v1",
         "protocol_version": "semantic-architecture-protocol/v1",
@@ -1374,6 +1445,7 @@ def build_parser() -> argparse.ArgumentParser:
     validate.add_argument("--packet", type=Path, required=True)
     validate.add_argument("--source-bundle", type=Path, required=True)
     validate.add_argument("--vocabulary", type=Path, required=True)
+    validate.add_argument("--output", type=Path)
 
     compare = subparsers.add_parser(
         "compare",
@@ -1397,11 +1469,12 @@ def build_parser() -> argparse.ArgumentParser:
     consensus.add_argument("--packet", type=Path, required=True)
     consensus.add_argument("--source-bundle", type=Path, required=True)
     consensus.add_argument("--vocabulary", type=Path, required=True)
+    consensus.add_argument("--output", type=Path)
     return parser
 
 
-def main() -> None:
-    args = build_parser().parse_args()
+def main(argv: Iterable[str] | None = None) -> None:
+    args = build_parser().parse_args(argv)
     if args.command == "build-source-bundle":
         payload = build_packet_source_bundle(args.packet, args.vocabulary)
         _write_json(args.output, payload)
@@ -1440,6 +1513,11 @@ def main() -> None:
             disagreement_report_path=args.disagreement_report,
             **common,
         )
+    if (
+        args.command in {"validate-independent", "validate-consensus"}
+        and args.output is not None
+    ):
+        _write_json(args.output, report)
     print(json.dumps(report, indent=2, ensure_ascii=False))
     if report.get("status") == "blocked":
         raise SystemExit(2)

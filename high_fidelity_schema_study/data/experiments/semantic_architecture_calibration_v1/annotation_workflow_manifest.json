@@ -110,6 +110,6 @@
   "vocabulary_file": "vocabulary.json",
   "vocabulary_sha256": "874548a10f8871449be9b749c99e95e72e8852d261324abc8fa3c492246ed888",
   "workflow_implementation_file": "../../../semantic_gold_workflow.py",
-  "workflow_implementation_sha256": "1319dd8b52a3421ce4e34bbfc59e21391e2c8d161e1c01272aa33a7299fab864",
+  "workflow_implementation_sha256": "4be417efe6a2b4bb7b166e6fb0bba40a9545017908110077f7e7dc8618281a69",
   "workflow_status": "ready_for_independent_annotation"
 }

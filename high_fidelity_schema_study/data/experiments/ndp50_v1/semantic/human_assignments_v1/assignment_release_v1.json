@@ -1,34 +1,42 @@
 {
-  "assignment_count": 3,
+  "assignment_count": 4,
   "assignments": {
     "data_governance_review": {
       "file": "semantic/human_assignments_v1/data_governance_review_assignment.json",
-      "sha256": "2e8a2acb98ce4b51edfc7fab140273ea178c669d8eb7dcd737cb00fefbb36cea"
+      "sha256": "b40fb8f64944da4d9206a983d4be405c3f3346eab31b722e02bbbd6b7150f88d"
+    },
+    "feedback_response_signoff": {
+      "file": "semantic/human_assignments_v1/feedback_response_signoff_assignment.json",
+      "sha256": "8c1121691a90604292e4b7cb26063bd73ff33379538c57c72798763ace602659"
     },
     "vocabulary_discovery_a": {
       "file": "semantic/human_assignments_v1/vocabulary_discovery_a_assignment.json",
-      "sha256": "2abbdb82f44be4fd816e650cd8f77382907766f254433a8581826087c83830e6"
+      "sha256": "267081d7de5c791712e0e90765f5bb621085e10e5d2c253cfe72bb2eb50fdbae"
     },
     "vocabulary_discovery_b": {
       "file": "semantic/human_assignments_v1/vocabulary_discovery_b_assignment.json",
-      "sha256": "5534bf0f26cdb28abce4558f5d3824f31410dbc42e0ea6fad75e740cd16ec7f2"
+      "sha256": "cd4b09364f4d80653611190c6d058a9a7709e14a120a88feedf72bf6689ea4bc"
     }
   },
   "handoff": {
     "file": "semantic/human_handoff_v1.json",
-    "sha256": "7b3223d3f5971e35bf574cff3b43dc02d341e43b2a3a3c51e5ad419e4f9df6fd"
+    "sha256": "7ca57a78407584b57ef84700f184498646676da87919be2f6cf4d88e11f8cfe9"
   },
   "implementation": {
     "file": "ndp50_human_assignments.py",
-    "sha256": "e4802b753a0f0a1665c269e7d442e5559e57f07223cbbf14c80e20f78d6db70e"
+    "sha256": "6eeb2b3659784205648196a078e1f200615da602900ab2a4c65bcf1c17bb8973"
   },
   "implementation_dependencies": {
+    "ndp50_assignment_distribution.py": "2a2ecb0e9444fde479a66e7263ebb2b6708b6dd9a3d45dc0afe5396c0d15fae2",
+    "ndp50_assignment_roster.py": "aa298a58e08ea3e126e2dc450d5b3ea54755f2d0d7e7bfda0d20321d5af85261",
     "ndp50_cpa_screen_workflow.py": "11e190f867482742ee63c7eeca00b48b4177fd823446f777802f0583652eb5d5",
     "ndp50_data_governance_review.py": "6b4a0a86bbae0f98f557d1638f2fcd9b1edce7019488bf78908f02eaa87bbcc1",
-    "ndp50_human_handoff.py": "ea3f89f41fabcde6c02e0d656e6237060a70ad082872a4c7332855a2e5e03a5f",
-    "ndp50_vocabulary_workflow.py": "16ee620d2e4d761cf9a729fb71de6967d8ab82c1d5585b6ffdfee925f204dc80"
+    "ndp50_human_handoff.py": "ce159192b65a08cd45cbc56b87ad72becf0f3aa3f3287701a0f47d1313cf5d9d",
+    "ndp50_publication_gate.py": "526ec5f4a41e1d9f957ce40da26221e109b0534fd9326b46def9414386b46c42",
+    "ndp50_vocabulary_workflow.py": "8e4c8eb25d4c0346ee5ef88d76f2e475737d6f001cd1e466e575fc886273fb15"
   },
   "independence_controls": {
+    "collaborator_feedback_review_claimed_independent": false,
     "cross_review_visibility_before_dual_freeze": false,
     "human_decisions_present_at_release": false,
     "reviewer_ids_present_at_release": false,
@@ -37,6 +45,12 @@
     "vocabulary_payloads_byte_identical": true
   },
   "phase_graph": {
+    "feedback_signoff_sequence": [
+      "collaborator_reviews_all_f01_through_f16_items",
+      "collaboration_and_non_independence_disclosed",
+      "optional_sensitivity_decisions_preserved",
+      "validator_replays_exact_bound_submission"
+    ],
     "governance_sequence": [
       "stewardship_review",
       "accountable_approval",
@@ -51,7 +65,8 @@
     "parallel_initial_work": [
       "data_governance_review",
       "vocabulary_discovery_a",
-      "vocabulary_discovery_b"
+      "vocabulary_discovery_b",
+      "feedback_response_signoff"
     ],
     "vocabulary_sequence": [
       "two_isolated_discovery_submissions",
@@ -60,10 +75,29 @@
       "candidate_catalog_construction"
     ]
   },
-  "release_id": "ndp50-initial-human-release-ef7b72ec1ec685ee3411",
+  "pre_submission_roster_contract": {
+    "completed_filename": "completed_assignment_roster.json",
+    "distribution_must_validate_before_roster_freeze": true,
+    "distribution_packet_root_must_be_outside_repository": true,
+    "distribution_receipt_filename": "assignment_distribution_receipt.json",
+    "distribution_receipts_bound_by_roster": true,
+    "distribution_revalidated_from_live_packet_root_by_roster": true,
+    "distribution_spec_filename": "assignment_distribution_spec_v1.json",
+    "distribution_validation_receipt_filename": "assignment_distribution_validation.json",
+    "distribution_validator_module": "high_fidelity_schema_study.ndp50_assignment_distribution",
+    "must_be_frozen_before_human_submissions": true,
+    "neutral_filename": "assignment_roster_neutral_v1.json",
+    "per_role_packet_manifest_and_delivery_attestation_required": true,
+    "schema_version": "ndp50-human-assignment-roster/v1",
+    "validation_receipt_filename": "assignment_roster_validation.json",
+    "validator_command": "validate",
+    "validator_module": "high_fidelity_schema_study.ndp50_assignment_roster"
+  },
+  "release_id": "ndp50-initial-human-release-30af649c06c64bd6dbaf",
   "released_stage_ids": [
     "data_governance_review",
-    "vocabulary_governance"
+    "vocabulary_governance",
+    "feedback_response_signoff"
   ],
   "return_manifest_schema": "ndp50-human-assignment-return/v1",
   "schema_version": "ndp50-human-assignment-release/v1",

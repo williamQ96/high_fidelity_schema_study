@@ -6,10 +6,10 @@
   "human_decisions_present": false,
   "implementation": {
     "file": "ndp50_source_approval.py",
-    "sha256": "6ba7772459167931a366a55ddfa74e6a591e41f6a47d40bedfc9f70b3bbc597d"
+    "sha256": "5460c32f54822f15771ee73fccd0f090ee96395340ac530967a6758091dea113"
   },
   "implementation_dependencies": {
-    "semantic_gold_workflow.py": "1319dd8b52a3421ce4e34bbfc59e21391e2c8d161e1c01272aa33a7299fab864"
+    "semantic_gold_workflow.py": "4be417efe6a2b4bb7b166e6fb0bba40a9545017908110077f7e7dc8618281a69"
   },
   "purpose_taxonomy": [
     "general_semantic_annotation",

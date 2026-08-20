@@ -26,11 +26,15 @@ def test_time_axis_gap_adjudication_freezes_current_facts():
 
 def test_references_separate_verified_and_caution_entries():
     text = read_doc("references.md")
+    verified_section, caution_section = text.split(
+        "## Use With Caution", maxsplit=1
+    )
 
     assert "# Verified Artifact Bibliography" in text
     assert "Status: `verified`" in text
-    assert "Status: `verification_needed`" in text
-    assert "`Auctus`" in text
+    assert "`Auctus`" in verified_section
+    assert "10.14778/3476311.3476346" in verified_section
+    assert "`AttributedQA`" in caution_section
     assert "`Menick2022VerifiedQuotes`" in text
 
 
@@ -70,7 +74,7 @@ def test_paper_draft_uses_only_verified_core_citation_keys():
         for key in group.split(";")
     }
 
-    caution_keys = {"Auctus", "AttributedQA"}
+    caution_keys = {"AttributedQA"}
     assert caution_keys.isdisjoint(used_keys)
     assert used_keys
     assert used_keys <= verified_keys

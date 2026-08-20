@@ -588,6 +588,7 @@ def build_parser() -> argparse.ArgumentParser:
     build.add_argument("--output", type=Path, required=True)
     validate = subparsers.add_parser("validate")
     validate.add_argument("--artifact", type=Path, required=True)
+    validate.add_argument("--output", type=Path)
     return parser
 
 
@@ -602,6 +603,8 @@ def main(argv: Iterable[str] | None = None) -> int:
         return 0
     payload = json.loads(args.artifact.read_text(encoding="utf-8"))
     report = validate_power_analysis(payload)
+    if args.output is not None:
+        write_json(args.output, report)
     print(json.dumps(report, indent=2, sort_keys=True))
     return 0 if report["status"] == "ready" else 1
 

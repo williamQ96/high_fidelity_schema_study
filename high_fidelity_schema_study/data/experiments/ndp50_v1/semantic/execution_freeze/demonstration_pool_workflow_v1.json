@@ -4,10 +4,10 @@
   "human_decisions_present": false,
   "implementation": {
     "file": "ndp50_demonstration_pool.py",
-    "sha256": "6482a9d27bcf0494172b5def30a0e3c7289c149e91b3fdd62028ee02d35f3b9a"
+    "sha256": "3a547209deb3e74f678211188e6caea8be20c798d18a18265b7e456d1eb82ba1"
   },
   "implementation_dependencies": {
-    "semantic_gold_workflow.py": "1319dd8b52a3421ce4e34bbfc59e21391e2c8d161e1c01272aa33a7299fab864"
+    "semantic_gold_workflow.py": "4be417efe6a2b4bb7b166e6fb0bba40a9545017908110077f7e7dc8618281a69"
   },
   "minimum_candidate_count": 5,
   "model_outputs_used_for_inclusion": false,

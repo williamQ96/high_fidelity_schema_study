@@ -1,0 +1,110 @@
+{
+  "assigned_on": null,
+  "assignment_id": "feedback_response_signoff",
+  "execution_mode": "single_collaborator_full_feedback_review",
+  "expected_submission_schema": "ndp50-feedback-response-signoff/v2",
+  "handoff": {
+    "file": "semantic/human_handoff_v1.json",
+    "sha256": "7ca57a78407584b57ef84700f184498646676da87919be2f6cf4d88e11f8cfe9"
+  },
+  "model_outputs_visible": false,
+  "payload": {
+    "copied_from": {
+      "file": "preregistration/feedback_response_signoff_neutral_v1.json",
+      "sha256": "145ccf3801173cffc5edad7ad18a346c6045d11174aa4966223381feadea4d5e"
+    },
+    "copy_integrity": "byte_identical",
+    "file": "semantic/human_assignments_v1/feedback_response_signoff_payload.json",
+    "sha256": "145ccf3801173cffc5edad7ad18a346c6045d11174aa4966223381feadea4d5e"
+  },
+  "release_state": "ready_unassigned",
+  "released_inputs": {
+    "publication_gate_workflow": {
+      "file": "preregistration/publication_gate_workflow_v1.json",
+      "sha256": "9e935c0c63836ca54986f3b8172de05c25fdff6b7d7b00e20ea1294814dd81d9"
+    }
+  },
+  "review_contract": {
+    "every_review_material_binding_must_be_preserved": true,
+    "frozen_optional_sensitivity_decisions_must_be_preserved": true,
+    "independent_validation_claimed": false,
+    "required_feedback_items": [
+      "F01",
+      "F02",
+      "F03",
+      "F04",
+      "F05",
+      "F06",
+      "F07",
+      "F08",
+      "F09",
+      "F10",
+      "F11",
+      "F12",
+      "F13",
+      "F14",
+      "F15",
+      "F16"
+    ],
+    "test_outcomes_must_remain_unseen": true,
+    "test_release_authorized_by_signoff": false
+  },
+  "reviewer_contract": {
+    "conflict_of_interest_disclosure_required": true,
+    "developer_participation": false,
+    "independent_reviewer": false,
+    "project_collaborator": true,
+    "qualification_summary_required": true,
+    "required_role": "postdoctoral_research_collaborator",
+    "reviewer_id": null
+  },
+  "reviewer_id": null,
+  "schema_version": "ndp50-human-assignment/v1",
+  "stage_id": "feedback_response_signoff",
+  "submission_contract": {
+    "forbidden_actions": [
+      "Do not edit any matrix, amendment, or review-material binding.",
+      "Do not claim independent validation.",
+      "Do not inspect test identities, details, gold, or outcomes.",
+      "Do not treat this sign-off as test-release authorization."
+    ],
+    "required_actions": [
+      "Review the response matrix and amendment item by item.",
+      "Review every file in the bound review_materials list.",
+      "Preserve every content binding, the review-material digest, and all frozen optional-sensitivity decisions.",
+      "Record F01 through F16 exactly once and in order.",
+      "Provide a stable reviewer ID, qualification summary, and truthful conflict disclosure.",
+      "Use one RFC 3339 UTC timestamp for both signature fields.",
+      "Set every attestation true only after personally confirming it.",
+      "Run the validator and return its exact generated receipt."
+    ],
+    "return_manifest_slot": "feedback_response_signoff",
+    "validation_receipt_filename": "feedback_response_signoff_validation.json",
+    "validator_command_template": [
+      "python",
+      "-m",
+      "high_fidelity_schema_study.ndp50_publication_gate",
+      "validate-signoff",
+      "--artifact",
+      "<completed_feedback_response_signoff.json>",
+      "--feedback-matrix",
+      "high_fidelity_schema_study/docs/swathi_feedback_response_matrix_v1.md",
+      "--amendment",
+      "high_fidelity_schema_study/docs/ndp50_feedback_improvement_amendment_v1.md",
+      "--study-root",
+      "high_fidelity_schema_study",
+      "--output",
+      "<feedback_response_signoff_validation.json>"
+    ],
+    "working_copy_filename": "completed_feedback_response_signoff.json"
+  },
+  "test_data_access": "forbidden",
+  "validator": {
+    "command": "validate-signoff",
+    "implementation": {
+      "file": "ndp50_publication_gate.py",
+      "sha256": "526ec5f4a41e1d9f957ce40da26221e109b0534fd9326b46def9414386b46c42"
+    },
+    "module": "high_fidelity_schema_study.ndp50_publication_gate"
+  }
+}

@@ -8,10 +8,20 @@ from datetime import date
 from pathlib import Path
 from typing import Any, Dict, Iterable, Mapping
 
+from .ndp50_assignment_distribution import build_distribution_spec
+from .ndp50_assignment_roster import (
+    ROSTER_VALIDATION_SCHEMA_VERSION,
+    build_roster_template,
+    replay_assignment_roster_validation,
+)
 from .ndp50_cpa_screen_workflow import load_evidence_registry
 from .ndp50_data_governance_review import (
     VALIDATION_SCHEMA_VERSION as GOVERNANCE_VALIDATION_SCHEMA_VERSION,
     validate_review,
+)
+from .ndp50_publication_gate import (
+    VALIDATION_SCHEMA_VERSION as PUBLICATION_VALIDATION_SCHEMA_VERSION,
+    validate_feedback_signoff,
 )
 from .ndp50_vocabulary_workflow import (
     CONSENSUS_ADJUDICATOR_ROLES,
@@ -67,12 +77,23 @@ ASSIGNMENT_FILENAMES = {
     "data_governance_review": "data_governance_review_assignment.json",
     "vocabulary_discovery_a": "vocabulary_discovery_a_assignment.json",
     "vocabulary_discovery_b": "vocabulary_discovery_b_assignment.json",
+    "feedback_response_signoff": (
+        "feedback_response_signoff_assignment.json"
+    ),
 }
 PAYLOAD_FILENAMES = {
     "data_governance_review": "data_governance_review_payload.json",
     "vocabulary_discovery_a": "vocabulary_discovery_a_payload.json",
     "vocabulary_discovery_b": "vocabulary_discovery_b_payload.json",
+    "feedback_response_signoff": "feedback_response_signoff_payload.json",
 }
+PACKAGE_ROOT = Path(__file__).resolve().parent
+FEEDBACK_MATRIX_PATH = (
+    PACKAGE_ROOT / "docs" / "swathi_feedback_response_matrix_v1.md"
+)
+FEEDBACK_AMENDMENT_PATH = (
+    PACKAGE_ROOT / "docs" / "ndp50_feedback_improvement_amendment_v1.md"
+)
 
 
 class NDPHumanAssignmentError(ValueError):
@@ -188,9 +209,13 @@ def _verify_handoff(
             "handoff implementation binding is stale"
         )
     released = handoff.get("current_release", {}).get("released_stage_ids")
-    if released != ["data_governance_review", "vocabulary_governance"]:
+    if released != [
+        "data_governance_review",
+        "vocabulary_governance",
+        "feedback_response_signoff",
+    ]:
         raise NDPHumanAssignmentError(
-            "this release protocol requires exactly the two initial stages"
+            "this release protocol requires exactly the three initial stages"
         )
     stage_status = {
         item.get("stage_id"): item.get("status")
@@ -227,6 +252,10 @@ def _source_paths(
         "draft_vocabulary": "vocabulary",
         "source_bundle_manifest": "source_bundle_manifest",
         "vocabulary_workflow": "vocabulary_review_workflow",
+        "feedback_signoff_template": (
+            "feedback_response_signoff_template"
+        ),
+        "publication_gate_workflow": "publication_gate_workflow",
     }
     return {
         name: _resolve_binding(
@@ -258,6 +287,60 @@ def _payload_binding(
         **_binding(payload_path, study_root),
         "copied_from": _binding(source_path, study_root),
         "copy_integrity": "byte_identical",
+    }
+
+
+def _vocabulary_submission_contract(
+    *, slot_id: str
+) -> Dict[str, Any]:
+    if slot_id not in {
+        "vocabulary_discovery_a",
+        "vocabulary_discovery_b",
+    }:
+        raise NDPHumanAssignmentError(
+            f"unexpected vocabulary assignment slot: {slot_id}"
+        )
+    submission_filename = f"{slot_id}.json"
+    receipt_filename = f"{slot_id}_validation.json"
+    return {
+        "working_copy_filename": submission_filename,
+        "validation_receipt_filename": receipt_filename,
+        "return_manifest_slot": slot_id,
+        "required_actions": [
+            "Work only from the byte-identical neutral payload and the bound source-bundle manifest.",
+            "Complete all 16 case reviews and all corpus-level policy decisions without viewing the other review.",
+            "Use the assigned reviewer role, a stable pseudonymous reviewer ID, a unique submission ID, a qualification summary, and a truthful conflict disclosure.",
+            "Cite only locatable evidence IDs from the released source bundles and give a rationale for every coverage judgment or proposal.",
+            "Keep model outputs, the other submission, candidate catalogs, and disagreement reports hidden until both submissions and receipts are frozen.",
+            "Set the completion attestation true only after personally completing the full-corpus review.",
+            "Run validate-discovery and return its exact generated receipt.",
+        ],
+        "forbidden_actions": [
+            "Do not communicate about review content with the other vocabulary reviewer before dual freeze.",
+            "Do not edit case identities, evidence catalogs, or bound artifact hashes.",
+            "Do not use model outputs or inspect test identities, details, gold, or outcomes.",
+            "Do not build or view a candidate catalog or disagreement report before both passing receipts are frozen.",
+        ],
+        "validator_command_template": [
+            "python",
+            "-m",
+            "high_fidelity_schema_study.ndp50_vocabulary_workflow",
+            "validate-discovery",
+            "--submission",
+            f"<{submission_filename}>",
+            "--template",
+            (
+                "high_fidelity_schema_study/data/experiments/ndp50_v1/"
+                "semantic/vocabulary_discovery_neutral_v1.json"
+            ),
+            "--source-bundle-manifest",
+            (
+                "high_fidelity_schema_study/data/experiments/ndp50_v1/"
+                "semantic/source_bundle_drafts_v1/manifest.json"
+            ),
+            "--output",
+            f"<{receipt_filename}>",
+        ],
     }
 
 
@@ -324,6 +407,106 @@ def _assignment_payloads(
             "The two signatories must use distinct stable pseudonymous IDs.",
             "The validator, not either signatory, determines whether the review passes.",
         ],
+        "submission_contract": {
+            "working_copy_filename": (
+                "completed_data_governance_review.json"
+            ),
+            "review_validation_receipt_filename": (
+                "data_governance_review_validation.json"
+            ),
+            "derived_approval_filename": "data_governance_approval.json",
+            "approval_validation_receipt_filename": (
+                "data_governance_approval_validation.json"
+            ),
+            "return_manifest_slot": "data_governance_review",
+            "required_actions": [
+                "Work only from the byte-identical neutral payload and the bound governance audit.",
+                "Have the stewardship reviewer complete every dataset decision and study-policy field first.",
+                "Freeze the completed stewardship review before the distinct accountable approver countersigns it.",
+                "Use stable pseudonymous IDs, truthful role declarations, and complete rationales.",
+                "Set the completion attestation true only after both signatories have personally completed their assigned checks.",
+                "Run validate-review and return its exact generated receipt with the completed review.",
+                "Generate the approval only with the approve command, then replay it with verify-approved for the next handoff rebuild.",
+            ],
+            "forbidden_actions": [
+                "Do not edit the bound audit, dataset identities, or neutral-template bindings.",
+                "Do not use the same person or stable ID for both signatory slots.",
+                "Do not hand-edit the validator-generated approval artifact.",
+                "Do not claim that this workflow supplies legal advice.",
+                "Do not inspect test identities, details, gold, or outcomes.",
+            ],
+            "validator_command_templates": {
+                "validate_review": [
+                    "python",
+                    "-m",
+                    (
+                        "high_fidelity_schema_study."
+                        "ndp50_data_governance_review"
+                    ),
+                    "validate-review",
+                    "--review",
+                    "<completed_data_governance_review.json>",
+                    "--audit",
+                    (
+                        "high_fidelity_schema_study/data/experiments/"
+                        "ndp50_v1/reports/data_governance_v1.json"
+                    ),
+                    "--study-root",
+                    (
+                        "high_fidelity_schema_study/data/experiments/"
+                        "ndp50_v1"
+                    ),
+                    "--output",
+                    "<data_governance_review_validation.json>",
+                ],
+                "generate_approval": [
+                    "python",
+                    "-m",
+                    (
+                        "high_fidelity_schema_study."
+                        "ndp50_data_governance_review"
+                    ),
+                    "approve",
+                    "--review",
+                    "<completed_data_governance_review.json>",
+                    "--audit",
+                    (
+                        "high_fidelity_schema_study/data/experiments/"
+                        "ndp50_v1/reports/data_governance_v1.json"
+                    ),
+                    "--study-root",
+                    (
+                        "high_fidelity_schema_study/data/experiments/"
+                        "ndp50_v1"
+                    ),
+                    "--output",
+                    "<data_governance_approval.json>",
+                ],
+                "verify_approval": [
+                    "python",
+                    "-m",
+                    (
+                        "high_fidelity_schema_study."
+                        "ndp50_data_governance_review"
+                    ),
+                    "verify-approved",
+                    "--approved",
+                    "<data_governance_approval.json>",
+                    "--audit",
+                    (
+                        "high_fidelity_schema_study/data/experiments/"
+                        "ndp50_v1/reports/data_governance_v1.json"
+                    ),
+                    "--study-root",
+                    (
+                        "high_fidelity_schema_study/data/experiments/"
+                        "ndp50_v1"
+                    ),
+                    "--output",
+                    "<data_governance_approval_validation.json>",
+                ],
+            },
+        },
         "expected_submission_schema": (
             "ndp50-data-governance-review/v1"
         ),
@@ -386,6 +569,9 @@ def _assignment_payloads(
             source_path=sources["vocabulary_template"],
             study_root=study_root,
         ),
+        "submission_contract": _vocabulary_submission_contract(
+            slot_id="vocabulary_discovery_a"
+        ),
     }
     vocabulary_b = {
         **vocabulary_common,
@@ -400,11 +586,111 @@ def _assignment_payloads(
             source_path=sources["vocabulary_template"],
             study_root=study_root,
         ),
+        "submission_contract": _vocabulary_submission_contract(
+            slot_id="vocabulary_discovery_b"
+        ),
+    }
+    feedback_signoff = {
+        **common,
+        "assignment_id": "feedback_response_signoff",
+        "stage_id": "feedback_response_signoff",
+        "execution_mode": "single_collaborator_full_feedback_review",
+        "payload": _payload_binding(
+            slot_id="feedback_response_signoff",
+            output_dir=output_dir,
+            source_path=sources["feedback_signoff_template"],
+            study_root=study_root,
+        ),
+        "released_inputs": {
+            "publication_gate_workflow": _binding(
+                sources["publication_gate_workflow"], study_root
+            ),
+        },
+        "reviewer_contract": {
+            "reviewer_id": None,
+            "required_role": "postdoctoral_research_collaborator",
+            "project_collaborator": True,
+            "developer_participation": False,
+            "independent_reviewer": False,
+            "conflict_of_interest_disclosure_required": True,
+            "qualification_summary_required": True,
+        },
+        "review_contract": {
+            "required_feedback_items": [
+                f"F{index:02d}" for index in range(1, 17)
+            ],
+            "frozen_optional_sensitivity_decisions_must_be_preserved": True,
+            "every_review_material_binding_must_be_preserved": True,
+            "test_outcomes_must_remain_unseen": True,
+            "test_release_authorized_by_signoff": False,
+            "independent_validation_claimed": False,
+        },
+        "submission_contract": {
+            "working_copy_filename": (
+                "completed_feedback_response_signoff.json"
+            ),
+            "validation_receipt_filename": (
+                "feedback_response_signoff_validation.json"
+            ),
+            "return_manifest_slot": "feedback_response_signoff",
+            "required_actions": [
+                "Review the response matrix and amendment item by item.",
+                "Review every file in the bound review_materials list.",
+                "Preserve every content binding, the review-material digest, and all frozen optional-sensitivity decisions.",
+                "Record F01 through F16 exactly once and in order.",
+                "Provide a stable reviewer ID, qualification summary, and truthful conflict disclosure.",
+                "Use one RFC 3339 UTC timestamp for both signature fields.",
+                "Set every attestation true only after personally confirming it.",
+                "Run the validator and return its exact generated receipt.",
+            ],
+            "forbidden_actions": [
+                "Do not edit any matrix, amendment, or review-material binding.",
+                "Do not claim independent validation.",
+                "Do not inspect test identities, details, gold, or outcomes.",
+                "Do not treat this sign-off as test-release authorization.",
+            ],
+            "validator_command_template": [
+                "python",
+                "-m",
+                "high_fidelity_schema_study.ndp50_publication_gate",
+                "validate-signoff",
+                "--artifact",
+                "<completed_feedback_response_signoff.json>",
+                "--feedback-matrix",
+                (
+                    "high_fidelity_schema_study/docs/"
+                    "swathi_feedback_response_matrix_v1.md"
+                ),
+                "--amendment",
+                (
+                    "high_fidelity_schema_study/docs/"
+                    "ndp50_feedback_improvement_amendment_v1.md"
+                ),
+                "--study-root",
+                "high_fidelity_schema_study",
+                "--output",
+                "<feedback_response_signoff_validation.json>",
+            ],
+        },
+        "expected_submission_schema": (
+            "ndp50-feedback-response-signoff/v2"
+        ),
+        "validator": {
+            "module": (
+                "high_fidelity_schema_study.ndp50_publication_gate"
+            ),
+            "command": "validate-signoff",
+            "implementation": _binding(
+                Path(__file__).with_name("ndp50_publication_gate.py"),
+                Path(__file__).parent,
+            ),
+        },
     }
     return {
         "data_governance_review": governance,
         "vocabulary_discovery_a": vocabulary_a,
         "vocabulary_discovery_b": vocabulary_b,
+        "feedback_response_signoff": feedback_signoff,
     }
 
 
@@ -448,15 +734,48 @@ def _build_release(
         "released_stage_ids": [
             "data_governance_review",
             "vocabulary_governance",
+            "feedback_response_signoff",
         ],
         "assignments": assignment_bindings,
-        "assignment_count": 3,
+        "assignment_count": 4,
         "return_manifest_schema": RETURN_SCHEMA_VERSION,
+        "pre_submission_roster_contract": {
+            "schema_version": "ndp50-human-assignment-roster/v1",
+            "neutral_filename": "assignment_roster_neutral_v1.json",
+            "completed_filename": "completed_assignment_roster.json",
+            "distribution_spec_filename": (
+                "assignment_distribution_spec_v1.json"
+            ),
+            "distribution_receipt_filename": (
+                "assignment_distribution_receipt.json"
+            ),
+            "distribution_validation_receipt_filename": (
+                "assignment_distribution_validation.json"
+            ),
+            "distribution_packet_root_must_be_outside_repository": True,
+            "distribution_must_validate_before_roster_freeze": True,
+            "distribution_revalidated_from_live_packet_root_by_roster": True,
+            "distribution_receipts_bound_by_roster": True,
+            "per_role_packet_manifest_and_delivery_attestation_required": True,
+            "distribution_validator_module": (
+                "high_fidelity_schema_study."
+                "ndp50_assignment_distribution"
+            ),
+            "validation_receipt_filename": (
+                "assignment_roster_validation.json"
+            ),
+            "must_be_frozen_before_human_submissions": True,
+            "validator_module": (
+                "high_fidelity_schema_study.ndp50_assignment_roster"
+            ),
+            "validator_command": "validate",
+        },
         "phase_graph": {
             "parallel_initial_work": [
                 "data_governance_review",
                 "vocabulary_discovery_a",
                 "vocabulary_discovery_b",
+                "feedback_response_signoff",
             ],
             "governance_sequence": [
                 "stewardship_review",
@@ -470,6 +789,12 @@ def _build_release(
                 "atomic_dual_hash_freeze",
                 "candidate_catalog_construction",
             ],
+            "feedback_signoff_sequence": [
+                "collaborator_reviews_all_f01_through_f16_items",
+                "collaboration_and_non_independence_disclosed",
+                "optional_sensitivity_decisions_preserved",
+                "validator_replays_exact_bound_submission",
+            ],
             "locked_until_valid_return_manifest": [
                 "vocabulary_candidate_decisions",
                 "vocabulary_disagreement_reveal",
@@ -482,6 +807,7 @@ def _build_release(
             "vocabulary_payloads_byte_identical": True,
             "vocabulary_assignment_wrappers_distinct": True,
             "cross_review_visibility_before_dual_freeze": False,
+            "collaborator_feedback_review_claimed_independent": False,
             "test_data_access": "forbidden",
         },
         "implementation": {
@@ -491,10 +817,13 @@ def _build_release(
         "implementation_dependencies": {
             name: _sha256_file(implementation.with_name(name))
             for name in (
+                "ndp50_assignment_distribution.py",
+                "ndp50_assignment_roster.py",
                 "ndp50_human_handoff.py",
                 "ndp50_data_governance_review.py",
                 "ndp50_vocabulary_workflow.py",
                 "ndp50_cpa_screen_workflow.py",
+                "ndp50_publication_gate.py",
             )
         },
     }
@@ -511,6 +840,8 @@ def _build_return_template(
         "status": "pending_human_returns",
         "assignment_release": _binding(release_path, study_root),
         "release_id": release["release_id"],
+        "assignment_roster": None,
+        "assignment_roster_validation_receipt": None,
         "returns": {
             "data_governance_review": {
                 "stewardship_reviewer_id": None,
@@ -529,6 +860,11 @@ def _build_return_template(
                 "reviewer_id": None,
                 "reviewer_role": None,
                 "submission_id": None,
+                "submission": None,
+                "validation_receipt": None,
+            },
+            "feedback_response_signoff": {
+                "reviewer_id": None,
                 "submission": None,
                 "validation_receipt": None,
             },
@@ -565,6 +901,7 @@ def prepare_assignment_package(
         "data_governance_review": sources["governance_template"],
         "vocabulary_discovery_a": sources["vocabulary_template"],
         "vocabulary_discovery_b": sources["vocabulary_template"],
+        "feedback_response_signoff": sources["feedback_signoff_template"],
     }
     for slot_id, source in copy_sources.items():
         shutil.copyfile(source, output_dir / PAYLOAD_FILENAMES[slot_id])
@@ -585,6 +922,32 @@ def prepare_assignment_package(
     release_path = output_dir / "assignment_release_v1.json"
     _write_json(release_path, release)
     _write_json(
+        output_dir / "assignment_distribution_spec_v1.json",
+        build_distribution_spec(
+            assignment_release_path=release_path,
+            public_manifest_path=(
+                study_root
+                / "preregistration"
+                / "public_package_manifest_v1.json"
+            ),
+            selection_path=study_root / "selection.json",
+            study_root=study_root,
+            repo_root=Path(__file__).resolve().parent,
+        ),
+    )
+    distribution_spec_path = (
+        output_dir / "assignment_distribution_spec_v1.json"
+    )
+    _write_json(
+        output_dir / "assignment_roster_neutral_v1.json",
+        build_roster_template(
+            assignment_release_path=release_path,
+            handoff_path=handoff_path,
+            distribution_spec_path=distribution_spec_path,
+            study_root=study_root,
+        ),
+    )
+    _write_json(
         output_dir / "return_manifest_neutral_v1.json",
         _build_return_template(release_path, study_root=study_root),
     )
@@ -598,6 +961,7 @@ def validate_assignment_release(
     handoff_path: Path,
     study_root: Path,
 ) -> Dict[str, Any]:
+    distribution_spec_sha256 = None
     try:
         handoff = _verify_handoff(handoff_path, study_root=study_root)
         expected = _build_release(
@@ -611,6 +975,30 @@ def validate_assignment_release(
             for key in set(release) | set(expected)
             if release.get(key) != expected.get(key)
         )
+        distribution_spec_path = (
+            release_path.parent / "assignment_distribution_spec_v1.json"
+        )
+        expected_distribution_spec = build_distribution_spec(
+            assignment_release_path=release_path,
+            public_manifest_path=(
+                study_root
+                / "preregistration"
+                / "public_package_manifest_v1.json"
+            ),
+            selection_path=study_root / "selection.json",
+            study_root=study_root,
+            repo_root=Path(__file__).resolve().parent,
+        )
+        if (
+            not distribution_spec_path.is_file()
+            or _load_json(distribution_spec_path)
+            != expected_distribution_spec
+        ):
+            differing.append("assignment_distribution_spec")
+        else:
+            distribution_spec_sha256 = _sha256_file(
+                distribution_spec_path
+            )
         status = "passed" if not differing else "failed"
         detail = None
     except Exception as exc:  # noqa: BLE001
@@ -621,6 +1009,7 @@ def validate_assignment_release(
         "schema_version": RELEASE_VALIDATION_SCHEMA_VERSION,
         "status": status,
         "release_sha256": _sha256_file(release_path),
+        "distribution_spec_sha256": distribution_spec_sha256,
         "differing_top_level_keys": differing,
         "detail": detail,
     }
@@ -677,6 +1066,37 @@ def validate_return_manifest(
         )
     handoff = _verify_handoff(handoff_path, study_root=study_root)
     sources = _source_paths(handoff, study_root=study_root)
+    roster_path, roster = _return_binding(
+        manifest.get("assignment_roster"),
+        study_root=study_root,
+        label="assignment roster",
+    )
+    roster_receipt_path, roster_receipt = _return_binding(
+        manifest.get("assignment_roster_validation_receipt"),
+        study_root=study_root,
+        label="assignment roster validation receipt",
+    )
+    expected_roster_receipt = replay_assignment_roster_validation(
+        roster,
+        roster_path=roster_path,
+        assignment_release_path=release_path,
+        handoff_path=handoff_path,
+        distribution_spec_path=(
+            release_path.parent
+            / "assignment_distribution_spec_v1.json"
+        ),
+        study_root=study_root,
+    )
+    if (
+        roster_receipt != expected_roster_receipt
+        or roster_receipt.get("status") != "passed"
+        or roster_receipt.get("schema_version")
+        != ROSTER_VALIDATION_SCHEMA_VERSION
+    ):
+        raise NDPHumanAssignmentError(
+            "assignment roster receipt is not an exact passing replay"
+        )
+    roster_ids = expected_roster_receipt["reviewer_ids"]
 
     governance_return = returns["data_governance_review"]
     if not isinstance(governance_return, Mapping):
@@ -725,6 +1145,65 @@ def validate_return_manifest(
         raise NDPHumanAssignmentError(
             "governance return approver ID mismatch"
         )
+    if (
+        stewardship_id != roster_ids["governance_stewardship"]
+        or approver_id
+        != roster_ids["governance_accountable_approval"]
+    ):
+        raise NDPHumanAssignmentError(
+            "governance return identities do not match the frozen roster"
+        )
+
+    feedback_return = returns["feedback_response_signoff"]
+    if not isinstance(feedback_return, Mapping):
+        raise NDPHumanAssignmentError(
+            "feedback-response signoff return must be an object"
+        )
+    feedback_path, feedback_submission = _return_binding(
+        feedback_return.get("submission"),
+        study_root=study_root,
+        label="feedback-response signoff submission",
+    )
+    feedback_receipt_path, feedback_receipt = _return_binding(
+        feedback_return.get("validation_receipt"),
+        study_root=study_root,
+        label="feedback-response signoff validation receipt",
+    )
+    try:
+        feedback_report = validate_feedback_signoff(
+            feedback_submission,
+            feedback_matrix_path=FEEDBACK_MATRIX_PATH,
+            amendment_path=FEEDBACK_AMENDMENT_PATH,
+            study_root=PACKAGE_ROOT,
+        )
+    except Exception as exc:  # noqa: BLE001
+        raise NDPHumanAssignmentError(
+            f"feedback-response signoff validation failed: {exc}"
+        ) from exc
+    if (
+        feedback_report.get("status") != "passed"
+        or feedback_report.get("schema_version")
+        != PUBLICATION_VALIDATION_SCHEMA_VERSION
+        or feedback_receipt != feedback_report
+    ):
+        raise NDPHumanAssignmentError(
+            "feedback-response validation receipt is not an exact "
+            "passing replay"
+        )
+    if (
+        feedback_return.get("reviewer_id")
+        != feedback_report.get("collaborator_id")
+    ):
+        raise NDPHumanAssignmentError(
+            "feedback-response return reviewer ID mismatch"
+        )
+    if (
+        feedback_report.get("collaborator_id")
+        != roster_ids["feedback_response_signoff"]
+    ):
+        raise NDPHumanAssignmentError(
+            "feedback-response identity does not match the frozen roster"
+        )
 
     registry, _, _ = load_evidence_registry(
         sources["source_bundle_manifest"],
@@ -761,6 +1240,10 @@ def validate_return_manifest(
                 raise NDPHumanAssignmentError(
                     f"{slot_id} return {key} mismatch"
                 )
+        if report["reviewer_id"] != roster_ids[slot_id]:
+            raise NDPHumanAssignmentError(
+                f"{slot_id} identity does not match the frozen roster"
+            )
         vocabulary_reports[slot_id] = report
         vocabulary_submissions[slot_id] = submission_path
 
@@ -822,10 +1305,21 @@ def validate_return_manifest(
         "status": "passed",
         "return_manifest_sha256": _sha256_file(manifest_path),
         "assignment_release_sha256": _sha256_file(release_path),
+        "assignment_roster_sha256": _sha256_file(roster_path),
+        "assignment_roster_validation_receipt_sha256": _sha256_file(
+            roster_receipt_path
+        ),
+        "assignment_roster_frozen_before_submissions": True,
         "governance_submission_sha256": _sha256_file(governance_path),
         "governance_validation_receipt_sha256": _sha256_file(
             governance_receipt_path
         ),
+        "feedback_response_signoff_sha256": _sha256_file(feedback_path),
+        "feedback_response_validation_receipt_sha256": _sha256_file(
+            feedback_receipt_path
+        ),
+        "feedback_collaborator_id": feedback_report["collaborator_id"],
+        "feedback_review_independence_claimed": False,
         "vocabulary_discovery_a_sha256": report_a["submission_sha256"],
         "vocabulary_discovery_b_sha256": report_b["submission_sha256"],
         "vocabulary_reviewer_ids_distinct": True,

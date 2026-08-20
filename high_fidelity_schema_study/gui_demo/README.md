@@ -1,6 +1,17 @@
 # High-Fidelity Schema GUI Demo
 
-This directory contains the reviewer-facing demo for the high-fidelity schema extraction study.
+This directory contains two reviewer-facing interfaces for the high-fidelity schema extraction study:
+
+- `research_dashboard.html`: the current research console for the English manuscript,
+  A/B/C/D methodology, NDP-50 aggregate execution, backend qualification, human
+  workflow, and fail-closed readiness gates;
+- `index.html`: the deterministic extraction workbench and legacy artifact inspector.
+
+The research dashboard loads `/api/research-status` at runtime. The server assembles
+that response directly from the current content-addressed paper, selection, execution,
+qualification, readiness, and human-assignment artifacts. It returns aggregate state
+only and never exposes sealed test identities, blind gold, reviewer submissions, model
+outputs, or test outcomes.
 
 The main views are an inspection layer over frozen artifacts. They should not change benchmark membership, gold references, qrels, headline metrics, or semantic merge policy.
 
@@ -36,8 +47,11 @@ python -m http.server 8765
 Then open:
 
 ```text
-http://localhost:8765/gui_demo/
+http://localhost:8765/gui_demo/research_dashboard.html
 ```
+
+The extraction workbench remains available at
+`http://localhost:8765/gui_demo/index.html#extract`.
 
 The page attempts to load these artifact files:
 
@@ -51,6 +65,20 @@ The page attempts to load these artifact files:
 If artifact loading fails, the page still shows a small embedded fallback summary so the layout remains inspectable.
 
 ## Views
+
+Research Console:
+
+- Overview: current defensible claim, research architecture, and paper snapshot.
+- Methodology: deterministic pipeline, fixed A/B/C/D variants, paired inference,
+  replay control, and blind-gold information separation.
+- NDP-50 corpus: 15/10/25 split, selection strata, aggregate development and
+  validation extraction coverage, and sealed-test boundary.
+- Evidence: diagnostic development metrics and operational backend qualification.
+- Readiness gates: structural checks, evidence-completion matrix, and filterable blockers.
+- Human workflow: assignment roles, F01-F16 collaborator review, release sequence,
+  and information boundaries.
+
+Extraction Workbench:
 
 - Overview: frozen-slice counts, internal baseline metrics, and error modes.
 - Evidence: evidence adequacy ratios and source evidence type counts.

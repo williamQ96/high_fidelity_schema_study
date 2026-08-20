@@ -21,6 +21,8 @@ from .ndp50_test_execution import (
     RECEIPT_SCHEMA_VERSION,
     RUN_MANIFEST_SCHEMA_VERSION,
     SCORE_ARTIFACT_SCHEMA_VERSION,
+    RESOURCE_USAGE_FLOAT_KEYS,
+    RESOURCE_USAGE_INT_KEYS,
     ZERO_SHOT_ARM,
     build_missingness_report,
     verify_run_receipt,
@@ -260,8 +262,200 @@ def _rate(numerator: int, denominator: int) -> float | None:
     )
 
 
+def _confidence_group_diagnostics(
+    observations: Sequence[Mapping[str, Any]],
+    *,
+    applicable_known_slot_count: int,
+    bin_edges: Sequence[float],
+    minimum_support: int,
+) -> Dict[str, Any]:
+    ordered = sorted(
+        observations,
+        key=lambda item: (
+            -float(item["confidence_score"]),
+            str(item["slot_id"]),
+        ),
+    )
+    bins = []
+    for index, (lower, upper) in enumerate(
+        zip(bin_edges, bin_edges[1:])
+    ):
+        members = [
+            item
+            for item in ordered
+            if (
+                float(item["confidence_score"]) >= lower
+                and (
+                    float(item["confidence_score"]) < upper
+                    or (
+                        index == len(bin_edges) - 2
+                        and float(item["confidence_score"]) <= upper
+                    )
+                )
+            )
+        ]
+        if not members:
+            continue
+        bins.append(
+            {
+                "lower_inclusive": lower,
+                "upper": upper,
+                "upper_inclusive": index == len(bin_edges) - 2,
+                "support": len(members),
+                "mean_confidence": round(
+                    statistics.mean(
+                        float(item["confidence_score"])
+                        for item in members
+                    ),
+                    12,
+                ),
+                "empirical_accuracy": _rate(
+                    sum(int(item["correct"]) for item in members),
+                    len(members),
+                ),
+            }
+        )
+    support = len(ordered)
+    adequate = support >= minimum_support
+    brier_score = (
+        round(
+            statistics.mean(
+                (
+                    float(item["confidence_score"])
+                    - int(item["correct"])
+                )
+                ** 2
+                for item in ordered
+            ),
+            12,
+        )
+        if adequate
+        else None
+    )
+    expected_calibration_error = (
+        round(
+            sum(
+                int(item["support"])
+                / support
+                * abs(
+                    float(item["mean_confidence"])
+                    - float(item["empirical_accuracy"])
+                )
+                for item in bins
+            ),
+            12,
+        )
+        if adequate and support
+        else None
+    )
+    curve = []
+    cumulative = 0
+    cumulative_errors = 0
+    previous_coverage = 0.0
+    aurc = 0.0
+    for confidence, group in itertools.groupby(
+        ordered, key=lambda item: float(item["confidence_score"])
+    ):
+        tied = list(group)
+        cumulative += len(tied)
+        cumulative_errors += sum(
+            int(not item["correct"]) for item in tied
+        )
+        coverage = (
+            cumulative / applicable_known_slot_count
+            if applicable_known_slot_count
+            else 0.0
+        )
+        risk = cumulative_errors / cumulative
+        aurc += risk * (coverage - previous_coverage)
+        previous_coverage = coverage
+        curve.append(
+            {
+                "confidence_threshold": confidence,
+                "tie_group_size": len(tied),
+                "cumulative_accepted": cumulative,
+                "cumulative_errors": cumulative_errors,
+                "coverage": round(coverage, 12),
+                "selective_risk": round(risk, 12),
+            }
+        )
+    return {
+        "accepted_prediction_support": support,
+        "applicable_known_slot_count": applicable_known_slot_count,
+        "calibration_claim_minimum_support": minimum_support,
+        "calibration_claim_permitted": adequate,
+        "calibration_status": (
+            "adequate_for_descriptive_calibration"
+            if adequate
+            else "insufficient_support_no_calibration_claim"
+        ),
+        "reliability_bins": bins,
+        "brier_score": brier_score,
+        "expected_calibration_error_fixed_deciles": (
+            expected_calibration_error
+        ),
+        "risk_coverage_curve": curve,
+        "aurc_over_achieved_coverage": (
+            round(aurc, 12) if curve else None
+        ),
+        "achieved_coverage_interval": [
+            0.0,
+            round(previous_coverage, 12),
+        ],
+        "tie_group_count": len(curve),
+    }
+
+
+def _confidence_diagnostics(
+    scores: Sequence[Mapping[str, Any]],
+    *,
+    contract: Mapping[str, Any],
+) -> Dict[str, Any]:
+    observations_by_label: Dict[str, list[Mapping[str, Any]]] = defaultdict(
+        list
+    )
+    applicable_by_label: Dict[str, int] = defaultdict(int)
+    for score in scores:
+        for item in score["confidence_observations"]:
+            observations_by_label[str(item["label_id"])].append(item)
+        for item in score["label_confusion_counts"]:
+            applicable_by_label[str(item["label_id"])] += int(
+                item["gold_support"]
+            )
+    labels = sorted(
+        set(applicable_by_label) | set(observations_by_label)
+    )
+    return {
+        "analysis_role": "secondary_descriptive_only",
+        "calibration_target": contract["calibration_target"],
+        "confidence_score_field": contract["score_field"],
+        "pooling_across_labels_performed": False,
+        "pooling_across_arms_performed": False,
+        "risk_coverage_tie_rule": contract["risk_coverage_tie_rule"],
+        "aurc_interval": contract["aurc_interval"],
+        "per_label": {
+            label_id: _confidence_group_diagnostics(
+                observations_by_label[label_id],
+                applicable_known_slot_count=applicable_by_label[label_id],
+                bin_edges=[
+                    float(value)
+                    for value in contract["reliability_bin_edges"]
+                ],
+                minimum_support=int(
+                    contract[
+                        "minimum_group_support_for_calibration_claim"
+                    ]
+                ),
+            )
+            for label_id in labels
+        },
+    }
+
+
 def _aggregate_arm_metrics(
     scores: Sequence[Mapping[str, Any]],
+    *,
+    confidence_contract: Mapping[str, Any],
 ) -> Dict[str, Any]:
     sums = {
         key: sum(int(item[key]) for item in scores)
@@ -357,6 +551,10 @@ def _aggregate_arm_metrics(
             )
         ),
         "per_label_f1": per_label,
+        "confidence_diagnostics": _confidence_diagnostics(
+            scores,
+            contract=confidence_contract,
+        ),
     }
 
 
@@ -429,6 +627,25 @@ def build_inference_result(
     case_manifest = _load_json(case_manifest_path)
     execution = _load_json(execution_freeze_path)
     power = _load_json(power_freeze_path)
+    confidence_contract = execution.get("config", {}).get(
+        "confidence_reporting_contract"
+    )
+    if (
+        not isinstance(confidence_contract, dict)
+        or confidence_contract.get("score_field") != "confidence_score"
+        or confidence_contract.get("grouping_field") != "label_id"
+        or confidence_contract.get("pooling_across_labels_permitted")
+        is not False
+        or confidence_contract.get("pooling_across_arms_permitted")
+        is not False
+        or confidence_contract.get("risk_coverage_tie_rule")
+        != "whole_confidence_tie_groups_right_continuous"
+        or confidence_contract.get("aurc_interval")
+        != "achieved_coverage_only"
+    ):
+        raise NDPTestInferenceError(
+            "frozen confidence reporting contract is invalid"
+        )
     if run.get("schema_version") != RUN_MANIFEST_SCHEMA_VERSION:
         raise NDPTestInferenceError("unexpected test run schema")
     arms = execution.get("config", {}).get("planned_arms")
@@ -446,11 +663,8 @@ def build_inference_result(
     scores_by_pair: Dict[tuple[str, str], Dict[str, Any]] = {}
     usage_by_arm: Dict[str, Dict[str, float]] = {
         arm: {
-            "physical_model_calls": 0,
-            "input_tokens": 0,
-            "output_tokens": 0,
-            "latency_seconds": 0.0,
-            "cost_usd": 0.0,
+            **{key: 0 for key in RESOURCE_USAGE_INT_KEYS},
+            **{key: 0.0 for key in RESOURCE_USAGE_FLOAT_KEYS},
         }
         for arm in arms
     }
@@ -473,9 +687,9 @@ def build_inference_result(
         scores_by_pair[pair] = score
         usage = score["resource_usage"]
         arm_usage = usage_by_arm[str(entry["arm_id"])]
-        for key in ("physical_model_calls", "input_tokens", "output_tokens"):
+        for key in RESOURCE_USAGE_INT_KEYS:
             arm_usage[key] += int(usage[key])
-        for key in ("latency_seconds", "cost_usd"):
+        for key in RESOURCE_USAGE_FLOAT_KEYS:
             arm_usage[key] += float(usage[key])
     sensitivity_conditions = receipt.get("sensitivity_conditions")
     if (
@@ -499,11 +713,8 @@ def build_inference_result(
     ] = {}
     sensitivity_usage: Dict[str, Dict[str, float]] = {
         condition_id: {
-            "physical_model_calls": 0,
-            "input_tokens": 0,
-            "output_tokens": 0,
-            "latency_seconds": 0.0,
-            "cost_usd": 0.0,
+            **{key: 0 for key in RESOURCE_USAGE_INT_KEYS},
+            **{key: 0.0 for key in RESOURCE_USAGE_FLOAT_KEYS},
         }
         for condition_id in condition_by_id
     }
@@ -536,9 +747,9 @@ def build_inference_result(
         sensitivity_scores_by_pair[pair] = score
         usage = score["resource_usage"]
         condition_usage = sensitivity_usage[condition_id]
-        for key in ("physical_model_calls", "input_tokens", "output_tokens"):
+        for key in RESOURCE_USAGE_INT_KEYS:
             condition_usage[key] += int(usage[key])
-        for key in ("latency_seconds", "cost_usd"):
+        for key in RESOURCE_USAGE_FLOAT_KEYS:
             condition_usage[key] += float(usage[key])
     eligible_scores_by_arm = {
         arm: [
@@ -649,13 +860,14 @@ def build_inference_result(
             ),
             "arm_metrics_for_frozen_cpa_population": (
                 _aggregate_arm_metrics(
-                    eligible_sensitivity_scores[condition_id]
+                    eligible_sensitivity_scores[condition_id],
+                    confidence_contract=confidence_contract,
                 )
             ),
             "resource_usage_all_test_cases": {
                 key: (
                     round(value, 12)
-                    if key in {"latency_seconds", "cost_usd"}
+                    if key in RESOURCE_USAGE_FLOAT_KEYS
                     else int(value)
                 )
                 for key, value in sensitivity_usage[
@@ -808,14 +1020,17 @@ def build_inference_result(
     else:
         inferential_status = "analysable_frozen_requirement_realized"
     arm_metrics = {
-        arm: _aggregate_arm_metrics(eligible_scores_by_arm[arm])
+        arm: _aggregate_arm_metrics(
+            eligible_scores_by_arm[arm],
+            confidence_contract=confidence_contract,
+        )
         for arm in arms
     }
     usage_report = {
         arm: {
             key: (
                 round(value, 12)
-                if key in {"latency_seconds", "cost_usd"}
+                if key in RESOURCE_USAGE_FLOAT_KEYS
                 else int(value)
             )
             for key, value in usage.items()
@@ -1025,6 +1240,7 @@ def build_parser() -> argparse.ArgumentParser:
     verify = subparsers.add_parser("verify")
     _add_inputs(verify)
     verify.add_argument("--artifact", type=Path, required=True)
+    verify.add_argument("--output", type=Path)
     return parser
 
 
@@ -1067,6 +1283,8 @@ def main(argv: Iterable[str] | None = None) -> int:
         return 0
     payload = _load_json(args.artifact)
     replay = verify_inference_result(payload, **kwargs)
+    if args.output is not None:
+        _write_json(args.output, replay)
     print(json.dumps(replay, indent=2, sort_keys=True))
     return 0 if replay["status"] == "passed" else 1
 

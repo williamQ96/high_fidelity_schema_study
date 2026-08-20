@@ -6,7 +6,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
-from typing import Any, Dict, Iterable, Mapping, Sequence
+from typing import Any, Dict, Iterable, Mapping
 
 from .ndp50_cpa_screen_workflow import load_evidence_registry
 from .semantic_gold_workflow import validate_vocabulary

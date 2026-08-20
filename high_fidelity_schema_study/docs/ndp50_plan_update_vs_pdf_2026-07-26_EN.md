@@ -196,18 +196,23 @@ CPA does not cover hierarchical, array, geospatial, documentation, or file-level
 
 ## 8. Human governance and freeze workflow
 
-The previous PDF left blind provenance, annotator identities, gold hashes, prompt hashes, backend registry, and the analysis plan as empty fields. The current update decomposes them into eight dependency-ordered stages:
+The previous PDF left blind provenance, annotator identities, gold hashes,
+prompt hashes, backend registry, and the analysis plan as empty fields. The
+current update decomposes them into 11 dependency-ordered stages:
 
 1. data-governance review and accountable approval;
 2. vocabulary governance;
-3. source-bundle rebuild and independent approval;
-4. CPA applicability screening and semantic-gold review;
-5. prompt, serialization, demonstration, and backend freeze;
-6. non-blind calibration and power-plan freeze;
-7. test-release authorization by a study operator and an independent monitor;
-8. authorized immutable test execution.
+3. collaborator sign-off on the complete F01--F16 feedback response;
+4. source-bundle rebuild and independent approval;
+5. preregistered annotator calibration;
+6. CPA applicability screening and semantic-gold review;
+7. prompt, serialization, demonstration, and backend freeze;
+8. non-blind calibration and power-plan freeze;
+9. immutable external preregistration with independent verification;
+10. test-release authorization by a study operator and an independent monitor;
+11. authorized immutable test execution.
 
-Only stages 1 and 2 are currently released. All downstream stages remain locked.
+Only stages 1--3 are currently released. All downstream stages remain locked.
 
 ### 8.1 Current human assignments
 
@@ -215,11 +220,35 @@ The current release contains:
 
 - one sequential data-governance review and countersignature assignment;
 - vocabulary discovery A for a scientific metadata curator;
-- vocabulary discovery B for an annotation methodologist.
+- vocabulary discovery B for an annotation methodologist;
+- one complete F01--F16 collaborator feedback-sign-off assignment for the
+  postdoctoral research collaborator.
 
 The A and B vocabulary payloads are byte-identical, but their assignment wrappers are distinct. Each reviewer must independently complete all 16 cases. They may not communicate, view the other submission, construct the candidate catalog, or reveal disagreements until both submissions pass validation and their hashes are atomically frozen.
 
 Data governance requires a non-developer stewardship reviewer and a distinct institutionally accountable approver. They review license, attribution, local analysis, external-model transfer, raw/metadata/derived-schema redistribution, and study-level provider policy for the 25 development/validation dataset records.
+
+Every released assignment now identifies its working-copy and receipt
+filenames, required and forbidden actions, return-manifest slot, and exact
+validator command. The governance assignment additionally supplies the
+validator-controlled approval-generation and approval-replay commands. The
+feedback assignment explicitly records that collaborator review is not
+independent validation and does not itself authorize test release.
+The public preregistration source package now contains both released-task
+validators and is machine-checked for closure over every repository-local
+Python import. Pinned runtime and development requirements are included, while
+environment, external-service, hardware, and backend reproduction remain
+separate unresolved obligations.
+Each released assignment also has a deterministic least-access packet
+specification. Packets must be materialized outside the repository from the
+public source base plus only the matching wrapper, payload, and released
+inputs; exact-file validation and sealed-ID/title scanning precede
+distribution. The completed-roster validator must then replay that live packet
+root and both distribution receipts, bind the correct packet-manifest digest
+to each of the five role slots, and verify validation, assignment, delivery,
+acceptance, and roster-freeze order. No real packet receipt, delivery
+attestation, reviewer identity, or completed roster currently exists, so this
+implemented binding gate has not yet been satisfied operationally.
 
 The repository currently contains no completed human decision, signature, date, or reviewer identity.
 
@@ -302,32 +331,42 @@ The update preserves the central principles of the previous PDF:
 - structural validation is complete with a documented deviation;
 - semantic opportunities, prediction-neutral packets, and draft source bundles exist;
 - CPA design, power feasibility, data-governance audit, human handoff, and test workflows are implemented;
-- the current regression suite reports 480 passed tests;
+- the current regression suite reports 520 passed tests;
 - the initial human-assignment release exists and passes structural validation.
 
 ### Current blockers
 
 - data-governance review and accountable approval are incomplete;
 - vocabulary discovery A and B are incomplete;
+- collaborator sign-off on the complete F01--F16 response is incomplete;
 - vocabulary candidate decisions and consensus are not unlocked;
 - source bundles cannot yet be approved;
+- the semantic-gold annotator pair has not passed the preregistered calibration;
 - CPA screening and semantic gold have not been performed;
 - prompt, backend, and execution freezes are incomplete;
 - the power policy has not been signed or frozen;
+- an independently verified immutable OSF/Zenodo preregistration receipt is
+  absent;
 - semantic validation and test remain unauthorized.
 
 ### Recommended near-term sequence
 
-1. Assign and complete the three current human assignments.
-2. Validate governance and both vocabulary returns.
+1. Assign and complete the four current human assignments.
+2. Validate governance, both vocabulary returns, and collaborator feedback
+   sign-off.
 3. Atomically freeze the vocabulary-discovery hashes.
-4. Generate candidate-decision assignments and obtain decisions from a fresh reviewer pair.
+4. Generate candidate-decision assignments and obtain decisions from a fresh
+   reviewer pair.
 5. Complete vocabulary consensus and the validator-generated freeze.
 6. Rebuild and independently approve the source bundles.
-7. Complete CPA applicability and semantic gold in parallel.
-8. Freeze the execution configuration and development-only demonstration pool.
-9. Complete non-blind calibration and the power freeze.
-10. Authorize the sealed test only after every gate and independent signature passes.
+7. Complete preregistered annotator calibration.
+8. Complete CPA applicability and semantic gold in parallel.
+9. Freeze the execution configuration and development-only demonstration pool.
+10. Complete non-blind calibration and the power freeze.
+11. Register the exact public package on OSF/Zenodo and obtain independent
+    receipt verification.
+12. Authorize the sealed test only after every gate and independent signature
+    passes.
 
 ## 13. Conclusion
 

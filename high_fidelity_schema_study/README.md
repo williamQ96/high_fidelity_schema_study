@@ -63,10 +63,16 @@ infrastructure from absent human decisions:
 `cpa_screen_workflow_ready=true`,
 `cpa_independent_screening_authorized=false`, and
 `cpa_applicability_consensus_complete=false`.
+The publication gate also reports
+`annotator_calibration_passed=false` and
+`gold_annotator_identity_matches_calibration=false`: semantic gold cannot
+complete until a preregistered non-NDP calibration summary binds the final
+handbook, frozen vocabulary, and exact NDP-50 annotator pair.
 The independently replayable human handoff is
 `data/experiments/ndp50_v1/semantic/human_handoff_v1.json`. It currently
 releases the two-signatory data-governance review and two-reviewer vocabulary
-governance in parallel, while keeping source approval, CPA/gold review,
+governance in parallel, while keeping source approval, annotator calibration,
+CPA/gold review,
 execution freeze, power freeze, independent test-release authorization, and
 test execution locked. A generated template is never counted as a completed
 human decision.
@@ -529,7 +535,7 @@ These controlled results prove the declared challenge cases, not broad real-worl
 | Phase 18 unified evaluation | 11 categorized tracks; frozen references are not rerun; aggregate score is `null` | Common reporting entrypoint without collapsing evidence boundaries |
 | Phase 19 agent exports | 8 bundles; policy, fidelity, evidence, provenance, context, and bounded-action metrics `1.0000`; 7 capabilities | Agent-ready read-only context, not agent-controlled canonical extraction |
 | Phase 20 release readiness | Required paths, major documentation links, generated/documentation path hygiene, and frozen paths pass | Release-style repository readiness, not broader empirical validation |
-| Current regression suite | `480 passed` with pinned scientific backends, NDP structural/semantic workflow coverage, three-stage human-assignment isolation/return controls, machine-frozen CPA estimand/missingness rules, synthetic qualification v3 plus actual runner/parser/scorer replay, independently signed test-release authorization, immutable NDP raw-response/parsed-output/score/receipt controls, registered OFAT prompt/row-sampler sensitivity execution, registered sign-flip/Holm inference replay, structured-failure regression coverage, and CSV semantic guardrails | Current repository regression status as of the latest NDP workflow audit; historical phase reports retain their contemporaneous counts |
+| Current regression suite | `527 passed` with pinned scientific backends, NDP structural/semantic workflow coverage, three-stage human-assignment isolation/return controls, machine-frozen CPA estimand/missingness rules, synthetic qualification v4 plus actual runner/parser/scorer replay, independently signed test-release authorization, immutable NDP raw-response/parsed-output/score/receipt controls, registered OFAT prompt/row-sampler sensitivity execution, registered sign-flip/Holm inference replay, structured-failure regression coverage, full collaborator review-bundle binding, request-provenance attribution controls, resource-accounting and arm-by-label confidence-diagnostic score-v3 controls, and CSV semantic guardrails | Current repository regression status as of the latest NDP workflow audit; historical phase reports retain their contemporaneous counts |
 
 ## Current Target
 

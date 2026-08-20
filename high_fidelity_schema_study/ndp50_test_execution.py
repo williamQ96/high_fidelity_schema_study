@@ -30,7 +30,7 @@ RELEASE_REPLAY_SCHEMA_VERSION = "ndp50-test-release-receipt-replay/v1"
 CASE_MANIFEST_SCHEMA_VERSION = "ndp50-test-case-manifest/v1"
 RUN_MANIFEST_SCHEMA_VERSION = "ndp50-test-run-manifest/v1"
 RUN_RECORD_SCHEMA_VERSION = "ndp50-test-run-record/v1"
-SCORE_ARTIFACT_SCHEMA_VERSION = "ndp50-test-score/v1"
+SCORE_ARTIFACT_SCHEMA_VERSION = "ndp50-test-score/v3"
 GOLD_ARTIFACT_SCHEMA_VERSION = "ndp50-test-gold/v1"
 PARSED_OUTPUT_SCHEMA_VERSION = "ndp50-test-parsed-output/v1"
 DEVIATION_SCHEMA_VERSION = "ndp50-test-deviation-registry/v1"
@@ -73,6 +73,18 @@ MODEL_ARMS = {
 }
 SENSITIVITY_CONDITION_ID_RE = re.compile(
     r"^sensitivity_(prompt|sampler)__[a-z0-9][a-z0-9._-]*$"
+)
+RESOURCE_USAGE_INT_KEYS = (
+    "physical_model_calls",
+    "failed_model_calls",
+    "retry_count",
+    "input_tokens",
+    "output_tokens",
+)
+RESOURCE_USAGE_FLOAT_KEYS = (
+    "model_latency_seconds",
+    "end_to_end_latency_seconds",
+    "cost_usd",
 )
 
 
@@ -484,6 +496,8 @@ def build_workflow_spec(
             "readiness.test_ready=true",
             "execution_freeze.derived_gates.prompt_and_backend_frozen=true",
             "power_freeze.derived_gates.test_power_plan_frozen=true",
+            "readiness.gates.feedback_response_collaborator_signoff_complete=true",
+            "readiness.gates.external_preregistration_verified=true",
         ],
         "required_artifact_schemas": {
             "test_release_authorization": (
@@ -564,6 +578,9 @@ def build_workflow_spec(
             "co_primary_effects_intervals_raw_and_holm_p_values_required": True,
             "metric_numerators_denominators_and_undefined_counts_required": True,
             "cost_latency_calls_and_tokens_required": True,
+            "per_arm_per_label_confidence_support_reliability_and_AURC_required": True,
+            "low_support_calibration_claims_forbidden": True,
+            "confidence_pooling_across_labels_or_arms_forbidden": True,
             "prompt_sampler_and_few_shot_results_labeled_descriptive": True,
             "unexecuted_sensitivity_or_transfer_effects_must_be_reported_as_not_estimable": True,
             "underpowered_or_nonalysable_status_cannot_be_reworded_as_no_effect": True,
@@ -625,8 +642,20 @@ def _validate_release_readiness(
         "test_power_plan_frozen",
         "test_design_meets_pretest_assurance",
         "test_execution_workflow_ready",
+        "feedback_response_collaborator_signoff_complete",
+        "external_preregistration_verified",
     )
     gates = readiness.get("gates")
+    publication_validation = readiness.get("publication_gate_validation")
+    publication_hashes = readiness.get("artifact_hashes") or {}
+    publication_check = next(
+        (
+            item
+            for item in readiness.get("checks", [])
+            if item.get("check_id") == "publication_gate_workflow_binding"
+        ),
+        None,
+    )
     if (
         readiness.get("integrity_status") != "passed"
         or readiness.get("readiness_status") != "ready"
@@ -635,6 +664,34 @@ def _validate_release_readiness(
         or not isinstance(gates, dict)
         or any(gates.get(key) is not True for key in required_gates)
         or readiness.get("blockers") != []
+        or not isinstance(publication_validation, dict)
+        or (
+            publication_validation.get("feedback_response_signoff") or {}
+        ).get("status")
+        != "passed"
+        or (
+            publication_validation.get(
+                "external_preregistration_receipt"
+            )
+            or {}
+        ).get("status")
+        != "passed"
+        or publication_check is None
+        or publication_check.get("passed") is not True
+        or any(
+            SHA256_RE.fullmatch(
+                str(publication_hashes.get(key) or "").lower()
+            )
+            is None
+            for key in (
+                "publication_gate_workflow",
+                "public_package_manifest",
+                "feedback_response_matrix",
+                "feedback_improvement_amendment",
+                "feedback_response_signoff",
+                "external_preregistration_receipt",
+            )
+        )
     ):
         raise NDPTestExecutionError(
             "test release readiness must pass before test opening"
@@ -1333,6 +1390,67 @@ def _validate_record(
         raise NDPTestExecutionError(
             "test score confusion counts do not reconcile"
         )
+    confidence_observations = score.get("confidence_observations")
+    if not isinstance(confidence_observations, list):
+        raise NDPTestExecutionError(
+            "test score confidence observations are required"
+        )
+    confidence_slot_ids: set[str] = set()
+    confidence_by_label: Dict[str, Dict[str, int]] = {}
+    for item in confidence_observations:
+        if not isinstance(item, dict) or set(item) != {
+            "slot_id",
+            "label_id",
+            "confidence_score",
+            "correct",
+        }:
+            raise NDPTestExecutionError(
+                "test score confidence observation is invalid"
+            )
+        slot_id = str(item.get("slot_id") or "")
+        label_id = str(item.get("label_id") or "")
+        confidence = item.get("confidence_score")
+        correct_flag = item.get("correct")
+        if (
+            not slot_id
+            or slot_id in confidence_slot_ids
+            or not label_id
+            or not isinstance(confidence, (int, float))
+            or isinstance(confidence, bool)
+            or not math.isfinite(float(confidence))
+            or not 0 <= float(confidence) <= 1
+            or not isinstance(correct_flag, bool)
+        ):
+            raise NDPTestExecutionError(
+                "test score confidence observation is invalid"
+            )
+        confidence_slot_ids.add(slot_id)
+        counts = confidence_by_label.setdefault(
+            label_id, {"accepted": 0, "correct": 0}
+        )
+        counts["accepted"] += 1
+        counts["correct"] += int(correct_flag)
+    if (
+        len(confidence_observations) != accepted
+        or sum(
+            int(item["correct"]) for item in confidence_observations
+        )
+        != correct
+        or any(
+            confidence_by_label.get(item["label_id"], {}).get(
+                "accepted"
+            )
+            != item["prediction_support"]
+            or confidence_by_label.get(item["label_id"], {}).get(
+                "correct"
+            )
+            != item["tp"]
+            for item in labels
+        )
+    ):
+        raise NDPTestExecutionError(
+            "test score confidence observations do not reconcile"
+        )
     scoring_request = {
         "interface_version": interface_version("scorer"),
         "operation": "score_registered_case",
@@ -1350,7 +1468,12 @@ def _validate_record(
             f"qualified scorer replay failed: {exc}"
         ) from exc
     observed_score = {
-        key: score[key] for key in (*count_keys, "label_confusion_counts")
+        key: score[key]
+        for key in (
+            *count_keys,
+            "label_confusion_counts",
+            "confidence_observations",
+        )
     }
     if replayed_score != observed_score:
         raise NDPTestExecutionError(
@@ -1359,11 +1482,13 @@ def _validate_record(
     usage = score.get("resource_usage")
     if not isinstance(usage, dict):
         raise NDPTestExecutionError("test score resource usage is required")
-    for key in (
-        "physical_model_calls",
-        "input_tokens",
-        "output_tokens",
+    if set(usage) != set(
+        (*RESOURCE_USAGE_INT_KEYS, *RESOURCE_USAGE_FLOAT_KEYS)
     ):
+        raise NDPTestExecutionError(
+            "test score resource usage fields are incomplete or unexpected"
+        )
+    for key in RESOURCE_USAGE_INT_KEYS:
         if (
             not isinstance(usage.get(key), int)
             or isinstance(usage.get(key), bool)
@@ -1372,7 +1497,7 @@ def _validate_record(
             raise NDPTestExecutionError(
                 "test score integer resource usage is invalid"
             )
-    for key in ("latency_seconds", "cost_usd"):
+    for key in RESOURCE_USAGE_FLOAT_KEYS:
         value = usage.get(key)
         if (
             not isinstance(value, (int, float))
@@ -1386,6 +1511,46 @@ def _validate_record(
     if usage["physical_model_calls"] != calls:
         raise NDPTestExecutionError(
             "test score and record model-call counts differ"
+        )
+    if (
+        usage["failed_model_calls"] > calls
+        or usage["retry_count"] != max(0, attempts - 1)
+        or usage["model_latency_seconds"]
+        > usage["end_to_end_latency_seconds"]
+    ):
+        raise NDPTestExecutionError(
+            "test score resource usage does not reconcile with the run record"
+        )
+    if execution_mode in {"deterministic", "replay"} and any(
+        usage[key] != 0
+        for key in (
+            "physical_model_calls",
+            "failed_model_calls",
+            "retry_count",
+            "input_tokens",
+            "output_tokens",
+            "model_latency_seconds",
+            "cost_usd",
+        )
+    ):
+        raise NDPTestExecutionError(
+            "non-model arms cannot report generated model resource use"
+        )
+    if (
+        execution_mode == "model"
+        and payload["status"] != "execution_failure"
+        and usage["failed_model_calls"] >= calls
+    ):
+        raise NDPTestExecutionError(
+            "a completed model record must contain a successful physical call"
+        )
+    if (
+        payload["status"] == "execution_failure"
+        and calls > 0
+        and usage["failed_model_calls"] == 0
+    ):
+        raise NDPTestExecutionError(
+            "a failed model record must count failed physical calls"
         )
     if payload["status"] in {
         "structured_abstention",

@@ -244,3 +244,60 @@ data/experiments/ndp50_v1/
       failure_ledger.json
       report.md
 ```
+
+## 13. Feedback incorporation and publication control
+
+Swathi's Phase 1 methodological feedback is incorporated through:
+
+- `docs/swathi_feedback_response_matrix_v1.md`;
+- `docs/ndp50_feedback_implementation_audit_v1.md`;
+- `docs/ndp50_feedback_improvement_amendment_v1.md`;
+- `docs/ndp50_statistical_analysis_plan_v1.md`;
+- `docs/ndp50_annotation_and_independence_plan_v1.md`;
+- `docs/ndp50_power_policy_review_guide_v1.md`;
+- `docs/ndp50_methodological_risk_register_v1.md`;
+- `docs/ndp50_swathi_feedback_signoff_guide_v1.md`;
+- `docs/semantic_architecture_claim_ledger_v1.md`;
+- `docs/preregistration/ndp50_osf_zenodo_preregistration_draft_v1.md`;
+- `docs/preregistration/public_package_files_v1.txt`;
+- `ndp50_publication_gate.py`, the content-bound neutral sign-off artifact,
+  and the external-receipt template;
+- `docs/literature/semantic_architecture_literature_review_2026-07-27.md`.
+
+These documents strengthen positioning, citation coverage, claim language,
+resource reporting, agreement reporting, selective-prediction sensitivity, role
+independence, and public preregistration. They do not alter the current frozen
+selection or authorize semantic/test execution.
+
+The preregistration file is explicitly a draft. It cannot satisfy test release
+until every required placeholder is replaced, its public attachments are
+reviewed for sealed-identity leakage, and an external immutable receipt is
+verified. The claim ledger likewise records current evidence boundaries; it
+must be versioned after blind execution rather than retroactively edited to
+match an outcome.
+
+`ndp50_preregistration_package.py` deterministically hashes and scans the
+sorted public text-source allowlist. Its replayed local manifest establishes
+listed-file integrity and zero exact sealed ID/title matches only; it is not an
+external timestamp, cannot rule out indirect re-identification, and adds no
+test-release authority.
+
+`ndp50_publication_gate.py` closes the prose-to-code gap. `test_ready` cannot
+become true until (a) a collaborator sign-off covers F01--F16 without claiming
+independence and freezes the inactive-sensitivity decisions, and (b) an
+independent non-developer/non-collaborator verifies an immutable OSF/Zenodo
+receipt for the exact public manifest and content digest. These are distinct
+from, and do not replace, the final operator/independent-monitor test-release
+authorization. The 11-stage handoff releases the collaborator sign-off with
+the initial human work, releases external registration only after the
+execution/power freezes, and releases test authorization only after the
+external receipt replays. This ordering prevents the publication prerequisites
+from depending circularly on `test_ready`.
+
+An evidence-free call, heuristic comparator, learned CTA/CPA comparator, second
+model family, or new registered metric requires a versioned executable design
+and regenerated downstream hashes before it can be active. Human consensus is a
+reference standard and is never reported as a human upper bound. Swathi is a
+research collaborator and may review literature, protocol, claims, and
+interpretation, but cannot fill a slot whose validity depends on being blind and
+independent of the project.

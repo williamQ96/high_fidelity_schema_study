@@ -329,9 +329,35 @@ def preflight_backend_registry(path: Path) -> Dict[str, Any]:
             )
 
         hardware = item.get("hardware", {})
-        context_length = (
-            hardware.get("context_length") if isinstance(hardware, dict) else None
-        )
+        if not isinstance(hardware, dict):
+            hardware = {}
+            _issue(
+                errors,
+                "hardware_configuration_incomplete",
+                "hardware must be a structured object",
+                backend_id=backend_id,
+            )
+        for key in ("gpu", "offload_configuration"):
+            if not str(hardware.get(key) or "").strip():
+                _issue(
+                    errors,
+                    "hardware_configuration_incomplete",
+                    f"hardware.{key} is required",
+                    backend_id=backend_id,
+                )
+        gpu_count = hardware.get("gpu_count")
+        if (
+            not isinstance(gpu_count, int)
+            or isinstance(gpu_count, bool)
+            or gpu_count <= 0
+        ):
+            _issue(
+                errors,
+                "hardware_configuration_incomplete",
+                "hardware.gpu_count must be positive",
+                backend_id=backend_id,
+            )
+        context_length = hardware.get("context_length")
         if (
             not isinstance(context_length, int)
             or isinstance(context_length, bool)

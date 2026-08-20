@@ -47,7 +47,8 @@ python -m high_fidelity_schema_study.semantic_gold_workflow validate-independent
   --artifact annotator-a.json \
   --packet packet.json \
   --source-bundle source-bundle.json \
-  --vocabulary vocabulary.json
+  --vocabulary vocabulary.json \
+  --output annotator-a-validation.json
 ```
 
 The coordinator freezes the valid file's SHA-256. Corrections are allowed only before
@@ -86,7 +87,8 @@ python -m high_fidelity_schema_study.semantic_gold_workflow validate-consensus \
   --disagreement-report disagreement.json \
   --packet packet.json \
   --source-bundle source-bundle.json \
-  --vocabulary vocabulary.json
+  --vocabulary vocabulary.json \
+  --output consensus-validation.json
 ```
 
 Any post-reveal edit, missing resolution, unlogged change to an agreed slot, source

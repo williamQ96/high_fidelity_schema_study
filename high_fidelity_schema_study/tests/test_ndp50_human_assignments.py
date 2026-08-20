@@ -8,6 +8,9 @@ from pathlib import Path
 import pytest
 
 import high_fidelity_schema_study.ndp50_human_assignments as assignments
+from high_fidelity_schema_study.ndp50_assignment_roster import (
+    replay_assignment_roster_validation,
+)
 from high_fidelity_schema_study.ndp50_human_assignments import (
     NDPHumanAssignmentError,
     prepare_assignment_package,
@@ -41,6 +44,43 @@ def _binding(path: Path, root: Path) -> dict:
     }
 
 
+@pytest.fixture(autouse=True)
+def _stub_distribution_spec(monkeypatch) -> None:
+    def build_stub(*, assignment_release_path: Path, **kwargs) -> dict:
+        packet_slots = {
+            "data_governance_review": [
+                "governance_stewardship",
+                "governance_accountable_approval",
+            ],
+            "feedback_response_signoff": ["feedback_response_signoff"],
+            "vocabulary_discovery_a": ["vocabulary_discovery_a"],
+            "vocabulary_discovery_b": ["vocabulary_discovery_b"],
+        }
+        return {
+            "schema_version": (
+                "ndp50-human-assignment-distribution-spec/v1"
+            ),
+            "status": "neutral_packets_specified_unmaterialized",
+            "assignment_release": _binding(
+                assignment_release_path,
+                kwargs["study_root"],
+            ),
+            "packet_count": 4,
+            "packets": {
+                packet_id: {"roster_slots": slots}
+                for packet_id, slots in packet_slots.items()
+            },
+            "reviewer_ids_present": False,
+            "human_decisions_present": False,
+        }
+
+    monkeypatch.setattr(
+        assignments,
+        "build_distribution_spec",
+        build_stub,
+    )
+
+
 def _fixture(tmp_path: Path) -> tuple[Path, Path]:
     root = tmp_path / "ndp50"
     files = {
@@ -60,6 +100,12 @@ def _fixture(tmp_path: Path) -> tuple[Path, Path]:
         ),
         "vocabulary_review_workflow": (
             root / "semantic" / "vocabulary_workflow.json"
+        ),
+        "publication_gate_workflow": (
+            root / "preregistration" / "publication_gate_workflow.json"
+        ),
+        "feedback_response_signoff_template": (
+            root / "preregistration" / "feedback_signoff_template.json"
         ),
     }
     for index, (name, path) in enumerate(files.items()):
@@ -81,11 +127,13 @@ def _fixture(tmp_path: Path) -> tuple[Path, Path]:
             "released_stage_ids": [
                 "data_governance_review",
                 "vocabulary_governance",
+                "feedback_response_signoff",
             ]
         },
         "stages": [
             {"stage_id": "data_governance_review", "status": "released"},
             {"stage_id": "vocabulary_governance", "status": "released"},
+            {"stage_id": "feedback_response_signoff", "status": "released"},
             {"stage_id": "source_approval", "status": "locked"},
         ],
     }
@@ -114,13 +162,35 @@ def test_prepare_builds_neutral_isolated_replayable_assignments(
     )
 
     assert validation["status"] == "passed"
-    assert release["assignment_count"] == 3
+    assert validation["distribution_spec_sha256"] == _sha256(
+        output_dir / "assignment_distribution_spec_v1.json"
+    )
+    assert release["assignment_count"] == 4
+    assert release["pre_submission_roster_contract"][
+        "must_be_frozen_before_human_submissions"
+    ] is True
+    assert release["pre_submission_roster_contract"][
+        "distribution_revalidated_from_live_packet_root_by_roster"
+    ] is True
+    assert release["pre_submission_roster_contract"][
+        "per_role_packet_manifest_and_delivery_attestation_required"
+    ] is True
+    roster = json.loads(
+        (output_dir / "assignment_roster_neutral_v1.json").read_text()
+    )
+    assert roster["status"] == "pending_assignment_acceptance"
+    assert len(roster["slots"]) == 5
+    assert all(
+        slot["reviewer_id"] is None
+        for slot in roster["slots"].values()
+    )
     assert release["independence_controls"] == {
         "reviewer_ids_present_at_release": False,
         "human_decisions_present_at_release": False,
         "vocabulary_payloads_byte_identical": True,
         "vocabulary_assignment_wrappers_distinct": True,
         "cross_review_visibility_before_dual_freeze": False,
+        "collaborator_feedback_review_claimed_independent": False,
         "test_data_access": "forbidden",
     }
     first = output_dir / "vocabulary_discovery_a_payload.json"
@@ -135,6 +205,48 @@ def test_prepare_builds_neutral_isolated_replayable_assignments(
     assert wrapper_a["reviewer_id"] is None
     assert wrapper_b["reviewer_id"] is None
     assert wrapper_a["assignment_id"] != wrapper_b["assignment_id"]
+    for wrapper, slot in (
+        (wrapper_a, "vocabulary_discovery_a"),
+        (wrapper_b, "vocabulary_discovery_b"),
+    ):
+        contract = wrapper["submission_contract"]
+        assert contract["return_manifest_slot"] == slot
+        assert contract["working_copy_filename"] == f"{slot}.json"
+        command = contract["validator_command_template"]
+        assert "validate-discovery" in command
+        assert "--output" in command
+        assert command[-1] == f"<{slot}_validation.json>"
+        assert any(
+            "other vocabulary reviewer" in action
+            for action in contract["forbidden_actions"]
+        )
+    governance = json.loads(
+        (
+            output_dir / "data_governance_review_assignment.json"
+        ).read_text()
+    )
+    governance_contract = governance["submission_contract"]
+    assert governance_contract["return_manifest_slot"] == (
+        "data_governance_review"
+    )
+    assert set(
+        governance_contract["validator_command_templates"]
+    ) == {
+        "validate_review",
+        "generate_approval",
+        "verify_approval",
+    }
+    for command in governance_contract[
+        "validator_command_templates"
+    ].values():
+        assert "--output" in command
+    feedback = json.loads(
+        (
+            output_dir / "feedback_response_signoff_assignment.json"
+        ).read_text()
+    )
+    assert feedback["reviewer_contract"]["project_collaborator"] is True
+    assert feedback["reviewer_contract"]["independent_reviewer"] is False
 
 
 def test_release_replay_detects_modified_neutral_copy(tmp_path: Path) -> None:
@@ -192,6 +304,27 @@ def _completed_returns(
         assignments,
         "load_evidence_registry",
         lambda path, *, require_approved: ({}, {}, False),
+    )
+    feedback = {
+        "collaborator": {"reviewer_id": "swathi-01"},
+    }
+    feedback_path = output_dir / "returned_feedback_signoff.json"
+    _write(feedback_path, feedback)
+    feedback_receipt = {
+        "schema_version": "ndp50-publication-gate-validation/v1",
+        "artifact_type": "feedback_response_signoff",
+        "status": "passed",
+        "collaborator_id": "swathi-01",
+        "signed_at": "2026-07-27T12:00:00Z",
+        "independent_validation_claimed": False,
+        "test_release_authorized": False,
+    }
+    feedback_receipt_path = output_dir / "feedback_signoff_receipt.json"
+    _write(feedback_receipt_path, feedback_receipt)
+    monkeypatch.setattr(
+        assignments,
+        "validate_feedback_signoff",
+        lambda payload, **kwargs: feedback_receipt,
     )
 
     vocabulary_reports = {}
@@ -252,16 +385,137 @@ def _completed_returns(
         assignments, "validate_discovery", fake_validate_discovery
     )
 
-    release_path = output_dir / "assignment_release_v1.json"
     manifest = json.loads(
         (output_dir / "return_manifest_neutral_v1.json").read_text()
     )
+    roster = json.loads(
+        (output_dir / "assignment_roster_neutral_v1.json").read_text()
+    )
+    roster["status"] = "frozen_before_human_submissions"
+    roster["operator_id"] = "study-operator-01"
+    roster["frozen_at"] = "2026-07-27T10:02:00Z"
+    roster["assignment_distribution"].update(
+        {
+            "receipt": {
+                "filename": "distribution_receipt.json",
+                "sha256": "1" * 64,
+                "canonical_sha256": "2" * 64,
+            },
+            "validation": {
+                "filename": "distribution_validation.json",
+                "sha256": "3" * 64,
+                "schema_version": (
+                    "ndp50-human-assignment-distribution-validation/v1"
+                ),
+                "status": "passed",
+            },
+            "packet_count": 4,
+            "sealed_identity_match_count": 0,
+            "extra_file_count": 0,
+            "packet_root_outside_repository": True,
+            "validated_before_roster_freeze": True,
+            "validated_at": "2026-07-27T09:59:00Z",
+        }
+    )
+    roster_values = {
+        "governance_stewardship": (
+            "steward-01",
+            "institutional_data_steward",
+            False,
+            False,
+        ),
+        "governance_accountable_approval": (
+            "pi-01",
+            "principal_investigator",
+            True,
+            True,
+        ),
+        "vocabulary_discovery_a": (
+            "curator-01",
+            "scientific_metadata_curator",
+            False,
+            False,
+        ),
+        "vocabulary_discovery_b": (
+            "methodologist-01",
+            "annotation_methodologist",
+            False,
+            False,
+        ),
+        "feedback_response_signoff": (
+            "swathi-01",
+            "postdoctoral_research_collaborator",
+            False,
+            True,
+        ),
+    }
+    for slot_id, (
+        reviewer_id,
+        role,
+        developer,
+        collaborator,
+    ) in roster_values.items():
+        slot = roster["slots"][slot_id]
+        slot.update(
+            {
+                "reviewer_id": reviewer_id,
+                "reviewer_role": role,
+                "qualification_summary": (
+                    f"Qualified for {slot_id} under the released contract."
+                ),
+                "conflict_of_interest_declared": False,
+                "developer_participation": developer,
+                "project_collaborator": collaborator,
+                "assigned_at": "2026-07-27T10:00:00Z",
+                "distribution_packet_id": slot["assignment_id"],
+                "distribution_packet_manifest_sha256": hashlib.sha256(
+                    slot["assignment_id"].encode("utf-8")
+                ).hexdigest(),
+                "packet_delivered_at": "2026-07-27T10:00:30Z",
+                "received_exact_packet_attested": True,
+                "no_other_assignment_packet_received": True,
+                "accepted_at": "2026-07-27T10:01:00Z",
+                "accepted_assignment_contract": True,
+                "no_test_data_access": True,
+                "no_model_outputs_visible": True,
+            }
+        )
+    roster["prework_attestations"] = {
+        key: True for key in roster["prework_attestations"]
+    }
+    roster["completion_attestation"] = True
+    roster_path = output_dir / "assignment_roster_completed.json"
+    _write(roster_path, roster)
+    roster_receipt = replay_assignment_roster_validation(
+        roster,
+        roster_path=roster_path,
+        assignment_release_path=(
+            output_dir / "assignment_release_v1.json"
+        ),
+        handoff_path=output_dir.parent / "human_handoff.json",
+        distribution_spec_path=(
+            output_dir / "assignment_distribution_spec_v1.json"
+        ),
+        study_root=root,
+    )
+    roster_receipt_path = output_dir / "assignment_roster_validation.json"
+    _write(roster_receipt_path, roster_receipt)
+
     manifest["status"] = "completed_pending_validator_acceptance"
+    manifest["assignment_roster"] = _binding(roster_path, root)
+    manifest["assignment_roster_validation_receipt"] = _binding(
+        roster_receipt_path, root
+    )
     manifest["returns"]["data_governance_review"] = {
         "stewardship_reviewer_id": "steward-01",
         "accountable_approver_id": "pi-01",
         "submission": _binding(governance_path, root),
         "validation_receipt": _binding(governance_receipt_path, root),
+    }
+    manifest["returns"]["feedback_response_signoff"] = {
+        "reviewer_id": "swathi-01",
+        "submission": _binding(feedback_path, root),
+        "validation_receipt": _binding(feedback_receipt_path, root),
     }
     for slot, item in vocabulary_reports.items():
         manifest["returns"][slot] = {
@@ -318,7 +572,42 @@ def test_return_manifest_requires_atomic_independent_dual_freeze(
     assert report["status"] == "passed"
     assert report["vocabulary_reviewer_ids_distinct"] is True
     assert report["required_role_coverage_met"] is True
+    assert report["assignment_roster_frozen_before_submissions"] is True
     assert report["next_authorized_action"].startswith("build_vocabulary")
+
+
+def test_return_manifest_rejects_feedback_reviewer_mismatch(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    root, handoff_path = _fixture(tmp_path)
+    output_dir = root / "semantic" / "human_assignments"
+    prepare_assignment_package(
+        handoff_path=handoff_path,
+        study_root=root,
+        output_dir=output_dir,
+    )
+    manifest_path, manifest = _completed_returns(
+        root=root,
+        output_dir=output_dir,
+        monkeypatch=monkeypatch,
+    )
+    manifest["returns"]["feedback_response_signoff"][
+        "reviewer_id"
+    ] = "different-collaborator"
+    _write(manifest_path, manifest)
+
+    with pytest.raises(
+        NDPHumanAssignmentError,
+        match="feedback-response return reviewer ID mismatch",
+    ):
+        validate_return_manifest(
+            manifest,
+            manifest_path=manifest_path,
+            release_path=output_dir / "assignment_release_v1.json",
+            handoff_path=handoff_path,
+            study_root=root,
+        )
 
 
 def test_return_manifest_rejects_cross_review_visibility(
@@ -395,7 +684,7 @@ def test_return_manifest_rejects_reused_vocabulary_reviewer(
 
     with pytest.raises(
         NDPHumanAssignmentError,
-        match="reviewers must be distinct",
+        match="identity does not match|reviewers must be distinct",
     ):
         validate_return_manifest(
             manifest,

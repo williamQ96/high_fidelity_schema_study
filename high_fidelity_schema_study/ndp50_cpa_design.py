@@ -81,10 +81,48 @@ _METRIC_CONTRACT = {
         "evidence_reference_validity": (
             "accepted_known_claims_with_resolvable_allowed_evidence_references_divided_by_all_accepted_known_claims"
         ),
-        "calls": "physical_backend_calls_excluding_cache_replay",
-        "tokens": "backend_reported_or_frozen_tokenizer_input_plus_output_tokens",
-        "latency": "wall_clock_seconds_per_physical_backend_call",
+        "calls": (
+            "successful_and_failed_physical_backend_calls_with_retries_"
+            "reported_separately_and_cache_replay_excluded"
+        ),
+        "tokens": (
+            "backend_reported_or_frozen_tokenizer_input_plus_output_tokens"
+        ),
+        "model_latency": "seconds_spent_in_physical_backend_calls",
+        "end_to_end_latency": (
+            "wall_clock_seconds_from_registered_record_start_to_completion"
+        ),
         "cost": "frozen_price_schedule_applied_to_recorded_token_and_call_usage",
+        "confidence_score": (
+            "frozen_arm_specific_score_in_closed_interval_zero_one_used_"
+            "for_ordering_and_never_as_evidence_or_verification"
+        ),
+        "brier_score": (
+            "mean_squared_error_between_confidence_score_and_exact_"
+            "canonical_correctness_for_accepted_applicable_known_claims"
+        ),
+        "expected_calibration_error": (
+            "fixed_decile_support_weighted_absolute_gap_between_mean_"
+            "confidence_and_empirical_exact_accuracy"
+        ),
+        "aurc": (
+            "right_continuous_selective_risk_integral_over_achieved_"
+            "coverage_with_whole_confidence_tie_groups"
+        ),
+    },
+    "confidence_reporting": {
+        "analysis_role": "secondary_descriptive_only",
+        "grouping": "separate_arm_x_label_id",
+        "pooling_across_labels": False,
+        "pooling_across_arms": False,
+        "minimum_group_support_for_calibration_claim": 30,
+        "reliability_bin_edges": [
+            round(index / 10, 1) for index in range(11)
+        ],
+        "low_support_policy": (
+            "report_support_bins_and_AURC_but_suppress_Brier_ECE_and_"
+            "calibration_claim"
+        ),
     },
     "undefined_denominator_policy": (
         "emit_null_with_explicit_zero_denominator_and_never_impute_zero"

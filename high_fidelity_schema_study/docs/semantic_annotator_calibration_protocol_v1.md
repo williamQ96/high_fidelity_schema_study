@@ -72,7 +72,8 @@ the receipt-free design preflight:
 
 ```bash
 python -m high_fidelity_schema_study.semantic_annotator_calibration preflight-design \
-  --design path/to/annotator-calibration-design.json
+  --design path/to/annotator-calibration-design.json \
+  --output path/to/annotator-calibration-design-preflight.json
 ```
 
 The command validates the design schema, protocol floors, workflow and file hash
@@ -87,8 +88,12 @@ python -m high_fidelity_schema_study.semantic_annotator_calibration build \
   --output path/to/calibration-summary.json
 
 python -m high_fidelity_schema_study.semantic_annotator_calibration validate \
-  --artifact path/to/calibration-summary.json
+  --artifact path/to/calibration-summary.json \
+  --output path/to/calibration-summary-validation.json
 ```
+
+Persisted preflight and validation reports, rather than console output alone,
+must be hashed into the handoff evidence chain.
 
 ## Pass and failure behavior
 

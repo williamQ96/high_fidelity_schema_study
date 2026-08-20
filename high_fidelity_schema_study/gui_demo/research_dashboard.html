@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive research dashboard for the High-Fidelity Schema Study and NDP-50 protocol.">
+  <title>Research Console · High-Fidelity Schema Study</title>
+  <link rel="stylesheet" href="research_dashboard.css">
+</head>
+<body>
+  <a class="skip-link" href="#dashboard-main">Skip to research content</a>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <div>
+        <p class="eyebrow">HIGH-FIDELITY SCHEMA STUDY</p>
+        <h1>Research Console</h1>
+      </div>
+    </div>
+    <div class="topbar-status" aria-live="polite">
+      <span class="live-dot" aria-hidden="true"></span>
+      <span id="artifact-status">Connecting to research artifacts…</span>
+      <button class="icon-button" id="refresh-data" type="button" aria-label="Refresh dashboard data" title="Refresh artifact data">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6v5h-5M4 18v-5h5M6.1 9A7 7 0 0 1 18 6.3L20 11M4 13l2 4.7A7 7 0 0 0 17.9 15"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="study-state">
+        <span class="state-label">Blind study state</span>
+        <strong id="sidebar-state">Loading</strong>
+        <span id="sidebar-state-note">Checking release gates</span>
+      </div>
+
+      <nav aria-label="Research dashboard sections">
+        <p class="nav-group">Study</p>
+        <button class="nav-item active" type="button" data-view="overview">
+          <span class="nav-icon">01</span><span>Overview</span>
+        </button>
+        <button class="nav-item" type="button" data-view="methodology">
+          <span class="nav-icon">02</span><span>Methodology</span>
+        </button>
+        <button class="nav-item" type="button" data-view="ndp50">
+          <span class="nav-icon">03</span><span>NDP-50 corpus</span>
+        </button>
+        <button class="nav-item" type="button" data-view="evidence">
+          <span class="nav-icon">04</span><span>Evidence</span>
+        </button>
+        <p class="nav-group">Controls</p>
+        <button class="nav-item" type="button" data-view="readiness">
+          <span class="nav-icon">05</span><span>Readiness gates</span>
+        </button>
+        <button class="nav-item" type="button" data-view="human">
+          <span class="nav-icon">06</span><span>Human workflow</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-actions">
+        <a class="secondary-button" href="index.html#extract">
+          Open extraction workbench <span aria-hidden="true">↗</span>
+        </a>
+        <button class="text-button" id="open-sources" type="button">View artifact sources</button>
+      </div>
+    </aside>
+
+    <main id="dashboard-main" tabindex="-1">
+      <section class="view active" id="overview" data-section="overview">
+        <div class="page-heading">
+          <div>
+            <p class="section-kicker">CURRENT RESEARCH STATE</p>
+            <h2 id="research-title">How Much Semantic Architecture Is Necessary?</h2>
+            <p id="research-subtitle" class="page-deck">Loading the current manuscript and evidence records.</p>
+          </div>
+          <div class="heading-actions">
+            <span id="paper-date" class="artifact-chip">Paper snapshot</span>
+            <span class="artifact-chip good">Integrity checked</span>
+          </div>
+        </div>
+
+        <div class="claim-banner">
+          <div class="claim-symbol" aria-hidden="true">∴</div>
+          <div>
+            <span>Defensible result today</span>
+            <strong id="current-result">Loading current claim boundary…</strong>
+          </div>
+          <span id="winner-status" class="status-pill caution">No winner declared</span>
+        </div>
+
+        <div class="metric-grid" id="headline-metrics" aria-label="Headline research metrics"></div>
+
+        <div class="overview-grid">
+          <article class="panel research-map">
+            <div class="panel-heading">
+              <div>
+                <p class="panel-kicker">SYSTEM MAP</p>
+                <h3>One substrate, three research tracks</h3>
+              </div>
+              <span class="micro-label">DETERMINISTIC-FIRST</span>
+            </div>
+            <div class="substrate-line">
+              <span>Scientific resource</span><i></i><span>Registered extractor</span><i></i><span>Evidence envelope</span>
+            </div>
+            <div class="track-grid">
+              <div class="track product">
+                <span class="track-code">P</span>
+                <h4>Product</h4>
+                <p>Useful schema output with explicit partial, failed, abstained, unknown, and conflict states.</p>
+              </div>
+              <div class="track experiment">
+                <span class="track-code">E</span>
+                <h4>Semantic experiment</h4>
+                <p>Four fixed architectures with replay control, paired inference, and fail-closed comparability.</p>
+              </div>
+              <div class="track external">
+                <span class="track-code">N</span>
+                <h4>NDP-50</h4>
+                <p>Bounded external validation with a sealed test split and independent human governance.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel boundary-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="panel-kicker">CLAIM BOUNDARY</p>
+                <h3>What is—and is not—established</h3>
+              </div>
+            </div>
+            <div class="boundary-row established">
+              <span class="boundary-mark">✓</span>
+              <div><strong>Established</strong><p>Protocol integrity, deterministic substrate, controlled replay, and operational backend eligibility.</p></div>
+            </div>
+            <div class="boundary-row pending">
+              <span class="boundary-mark">···</span>
+              <div><strong>Pending</strong><p>Independent gold, test release, blind paired effects, and confirmatory generalization.</p></div>
+            </div>
+            <div class="boundary-row prohibited">
+              <span class="boundary-mark">×</span>
+              <div><strong>Not claimed</strong><p>Architecture superiority, broad NDP prevalence, or semantic accuracy from structural extraction rates.</p></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="methodology" data-section="methodology">
+        <div class="page-heading compact">
+          <div><p class="section-kicker">CAUSAL DESIGN</p><h2>Methodology</h2><p class="page-deck" id="research-question"></p></div>
+          <span class="artifact-chip">Pre-blind protocol</span>
+        </div>
+
+        <article class="panel pipeline-panel">
+          <div class="panel-heading"><div><p class="panel-kicker">DETERMINISTIC PRODUCT</p><h3>Physical truth before semantic interpretation</h3></div></div>
+          <div class="pipeline" id="method-pipeline"></div>
+          <div class="rule-strip"><strong>Non-negotiable boundary</strong><span>Semantic interpretation cannot create physical fields or overwrite stronger explicit metadata.</span></div>
+        </article>
+
+        <article class="panel variants-panel">
+          <div class="panel-heading">
+            <div><p class="panel-kicker">CONTROLLED INTERVENTIONS</p><h3>Four frozen architecture variants</h3></div>
+            <div class="segmented-control" role="group" aria-label="Architecture metric">
+              <button class="segment active" type="button" data-metric="end_to_end_accuracy">Accuracy</button>
+              <button class="segment" type="button" data-metric="coverage">Coverage</button>
+              <button class="segment" type="button" data-metric="selective_risk">Risk</button>
+            </div>
+          </div>
+          <div class="variant-grid" id="variant-grid"></div>
+          <div class="comparison-strip" id="comparison-strip"></div>
+        </article>
+
+        <div class="two-column">
+          <article class="panel">
+            <div class="panel-heading"><div><p class="panel-kicker">PRIMARY INFERENCE</p><h3>Dataset-level paired effects</h3></div></div>
+            <div id="inference-design" class="definition-list"></div>
+          </article>
+          <article class="panel">
+            <div class="panel-heading"><div><p class="panel-kicker">INFORMATION SEPARATION</p><h3>Blind reference standard</h3></div></div>
+            <ol class="workflow-list">
+              <li><span>01</span><div><strong>Calibrate</strong><p>Exact annotator pair passes a preregistered non-NDP round.</p></div></li>
+              <li><span>02</span><div><strong>Annotate independently</strong><p>No architecture outputs or another reviewer submission are visible.</p></div></li>
+              <li><span>03</span><div><strong>Freeze hashes</strong><p>Both submissions are bound before disagreement is revealed.</p></div></li>
+              <li><span>04</span><div><strong>Human consensus</strong><p>Evidence-backed reconciliation; no automatic judge.</p></div></li>
+            </ol>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="ndp50" data-section="ndp50">
+        <div class="page-heading compact">
+          <div><p class="section-kicker">EXTERNAL VALIDATION</p><h2>NDP-50 corpus</h2><p class="page-deck">A bounded, quota-weighted sample—not a prevalence claim about the full NDP catalog.</p></div>
+          <span id="selection-status" class="artifact-chip good">Selection frozen</span>
+        </div>
+
+        <div class="corpus-grid">
+          <article class="panel split-panel">
+            <div class="panel-heading"><div><p class="panel-kicker">FROZEN SPLIT</p><h3>50 selected datasets</h3></div></div>
+            <div class="split-viz">
+              <div id="split-ring" class="split-ring"><div><strong>50</strong><span>datasets</span></div></div>
+              <div id="split-legend" class="split-legend"></div>
+            </div>
+            <div class="sealed-note"><span class="lock-icon" aria-hidden="true">◆</span><span><strong>Test remains sealed.</strong> This API intentionally returns no test identity or title.</span></div>
+          </article>
+          <article class="panel strata-panel">
+            <div class="panel-heading"><div><p class="panel-kicker">FORMAT STRATA</p><h3>Coverage by selection stratum</h3></div><span id="reserve-count" class="micro-label"></span></div>
+            <div id="strata-bars" class="bar-stack"></div>
+          </article>
+        </div>
+
+        <div class="two-column execution-grid" id="execution-grid"></div>
+
+        <article class="panel policy-panel">
+          <div class="panel-heading"><div><p class="panel-kicker">RESOURCE POLICY</p><h3>Bounded execution and capability-debt loop</h3></div></div>
+          <div class="policy-grid">
+            <div><strong>≤ 3</strong><span>eligible resources / dataset</span></div>
+            <div><strong>25 MiB</strong><span>per-resource limit</span></div>
+            <div><strong>50 MiB</strong><span>transfer / dataset</span></div>
+            <div><strong>General fixes only</strong><span>rule + fixture + evidence + change record</span></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="view" id="evidence" data-section="evidence">
+        <div class="page-heading compact">
+          <div><p class="section-kicker">EVIDENCE LEDGER</p><h2>Development and qualification</h2><p class="page-deck">Diagnostic model behavior and operational eligibility are shown without converting them into confirmatory claims.</p></div>
+        </div>
+
+        <article class="panel development-panel">
+          <div class="panel-heading">
+            <div><p class="panel-kicker">SYNTHETIC DEVELOPMENT</p><h3>Architecture metrics are descriptive only</h3></div>
+            <span class="status-pill blocked">Non-comparable</span>
+          </div>
+          <div id="development-summary" class="summary-strip"></div>
+          <div id="development-chart" class="architecture-chart" aria-label="Development architecture metrics"></div>
+          <div id="development-interpretation" class="rule-strip caution-rule"></div>
+        </article>
+
+        <article class="panel qualification-panel">
+          <div class="panel-heading">
+            <div><p class="panel-kicker">BACKEND QUALIFICATION</p><h3 id="qualification-model">Candidate backend</h3></div>
+            <span id="qualification-status" class="status-pill good">Operationally eligible</span>
+          </div>
+          <div class="qualification-layout">
+            <div id="qualification-facts" class="qualification-facts"></div>
+            <div>
+              <div class="cost-chart" id="qualification-cost-chart"></div>
+              <div id="identity-warning" class="identity-warning"></div>
+            </div>
+          </div>
+          <p id="qualification-boundary" class="footnote"></p>
+        </article>
+      </section>
+
+      <section class="view" id="readiness" data-section="readiness">
+        <div class="page-heading compact">
+          <div><p class="section-kicker">FAIL-CLOSED RELEASE</p><h2>Readiness gates</h2><p class="page-deck">Workflow structure and completed human evidence are intentionally reported as different states.</p></div>
+          <span id="test-ready-chip" class="status-pill blocked">TEST_READY = FALSE</span>
+        </div>
+
+        <div class="readiness-grid">
+          <article class="panel readiness-summary">
+            <div id="readiness-ring" class="readiness-ring"><div><strong>—</strong><span>checks</span></div></div>
+            <div><p class="panel-kicker">STRUCTURAL INTEGRITY</p><h3 id="readiness-count">Loading checks</h3><p>Passing these checks validates workflow bindings and artifact consistency. It does not replace human evidence.</p></div>
+          </article>
+          <article class="panel blocker-summary">
+            <p class="panel-kicker">RELEASE BLOCKERS</p>
+            <strong id="blocker-count">—</strong>
+            <p>All must be resolved before sealed-test release.</p>
+            <label class="search-field"><span class="sr-only">Filter blockers</span><input id="blocker-filter" type="search" placeholder="Filter blockers…"></label>
+          </article>
+        </div>
+
+        <article class="panel gate-matrix-panel">
+          <div class="panel-heading"><div><p class="panel-kicker">TWO-LAYER STATUS</p><h3>Workflow readiness vs. evidence completion</h3></div></div>
+          <div class="gate-matrix" id="gate-matrix"></div>
+        </article>
+
+        <article class="panel blockers-panel">
+          <div class="panel-heading"><div><p class="panel-kicker">ACTIONABLE LEDGER</p><h3>Current blockers</h3></div><span class="micro-label">AGGREGATE ONLY</span></div>
+          <ol id="blocker-list" class="blocker-list"></ol>
+          <p id="blocker-empty" class="empty-state" hidden>No blockers match this filter.</p>
+        </article>
+      </section>
+
+      <section class="view" id="human" data-section="human">
+        <div class="page-heading compact">
+          <div><p class="section-kicker">HUMAN GOVERNANCE</p><h2>Assignments and information boundaries</h2><p class="page-deck">Role separation prevents reviewer anchoring, cross-packet contamination, and accidental test disclosure.</p></div>
+          <span id="roster-status" class="artifact-chip">Roster pending</span>
+        </div>
+
+        <article class="panel role-panel">
+          <div class="panel-heading"><div><p class="panel-kicker">ROLE GRAPH</p><h3>Who contributes which evidence?</h3></div><span id="packet-count" class="micro-label"></span></div>
+          <div id="role-graph" class="role-graph"></div>
+        </article>
+
+        <div class="two-column">
+          <article class="panel">
+            <div class="panel-heading"><div><p class="panel-kicker">COLLABORATOR REVIEW</p><h3>Swathi · F01–F16</h3></div></div>
+            <div id="feedback-status" class="status-callout"></div>
+            <ul class="clean-list">
+              <li>Reviews the response matrix and bound research materials.</li>
+              <li>Accepts, bounds, defers, or rejects proposed changes explicitly.</li>
+              <li>Does not act as an independent gold annotator or test-release authority.</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <div class="panel-heading"><div><p class="panel-kicker">SEALED INFORMATION</p><h3>What this dashboard will never show</h3></div></div>
+            <div class="sealed-grid">
+              <span>Test identities</span><span>Blind gold</span><span>Model outputs</span><span>Reviewer submissions</span><span>Test outcomes</span><span>Unreleased effects</span>
+            </div>
+            <p id="information-boundary" class="footnote"></p>
+          </article>
+        </div>
+
+        <article class="panel release-sequence-panel">
+          <div class="panel-heading"><div><p class="panel-kicker">RELEASE SEQUENCE</p><h3>Evidence must arrive in order</h3></div></div>
+          <div class="release-sequence">
+            <div><span>1</span><strong>Definitions</strong><small>Vocabulary · source · CPA</small></div>
+            <i></i><div><span>2</span><strong>Calibration</strong><small>Exact independent pair</small></div>
+            <i></i><div><span>3</span><strong>Blind gold</strong><small>Hash · reconcile · approve</small></div>
+            <i></i><div><span>4</span><strong>Freeze</strong><small>Execution · power · governance</small></div>
+            <i></i><div><span>5</span><strong>Preregister</strong><small>Independent receipt</small></div>
+            <i></i><div><span>6</span><strong>Release test</strong><small>One frozen run</small></div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="sources-dialog" class="sources-dialog">
+    <div class="dialog-heading"><div><p class="panel-kicker">LIVE DATA CONTRACT</p><h2>Artifact sources</h2></div><button id="close-sources" class="icon-button" type="button" aria-label="Close sources">×</button></div>
+    <p>Every research metric is assembled at request time from repository artifacts. The dashboard does not read sealed identities or outcome files.</p>
+    <ul id="source-list" class="source-list"></ul>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="research_dashboard.js"></script>
+</body>
+</html>

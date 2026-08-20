@@ -11,7 +11,7 @@
     "effect_direction": "arm_b_minus_arm_a",
     "familywise_alpha": 0.05,
     "fine_tuning_in_primary_study": false,
-    "metric_contract_sha256": "c39cd49a80a0c252aa2dd5f9547c31bbc13dd01cd6a5663145ca6fd1c03548ab",
+    "metric_contract_sha256": "1a7ea09576bbc7823e4fdf0eabc122e7f8c0370266bb2e241d1f2187a2389869",
     "missingness_policy": {
       "explicit_abstention_or_oov": "retain_registered_slot_in_denominator_as_no_correct_accepted_claim",
       "frozen_CPA_inapplicable_cases": "exclude_from_CPA_estimand_but_report_by_reason",
@@ -65,9 +65,50 @@
     "thinking_enabled": false
   },
   "completion_attestation": null,
+  "confidence_reporting_contract": {
+    "accepted_known_requires_score": true,
+    "aurc_interval": "achieved_coverage_only",
+    "calibration_target": "exact_canonical_correctness_on_applicable_known_slots",
+    "confidence_interpretation_by_arm": {
+      "deterministic_only": null,
+      "five_shot_development_similarity_selected": null,
+      "one_shot_development_similarity_selected": null,
+      "zero_shot_byte_identical_response_plus_deterministic_verification": null,
+      "zero_shot_dataset_level": null
+    },
+    "confidence_source_by_arm": {
+      "deterministic_only": null,
+      "five_shot_development_similarity_selected": null,
+      "one_shot_development_similarity_selected": null,
+      "zero_shot_byte_identical_response_plus_deterministic_verification": null,
+      "zero_shot_dataset_level": null
+    },
+    "grouping_field": "label_id",
+    "minimum_group_support_for_calibration_claim": 30,
+    "nonaccepted_requires_null": true,
+    "pooling_across_arms_permitted": false,
+    "pooling_across_labels_permitted": false,
+    "reliability_bin_edges": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "risk_coverage_tie_rule": "whole_confidence_tie_groups_right_continuous",
+    "score_field": "confidence_score",
+    "score_maximum": 1,
+    "score_minimum": 0
+  },
   "cpa_design": {
     "file": "semantic/cpa_design_draft_v1.json",
-    "sha256": "884cec768ecb08acb91e6f1b00a5dee88f163304af727fec8d67b132c900ecc3"
+    "sha256": "0313d5fee93c03b693cf8962ad9406e77b3f86e004c7d916d810c0bf7a791840"
   },
   "demonstration_contract": {
     "candidate_pool_manifest": null,
@@ -119,6 +160,25 @@
   ],
   "prompt_contracts": [],
   "prompt_sensitivity_contracts": [],
+  "resource_accounting_contract": {
+    "cost_scope_note": null,
+    "currency": "USD",
+    "end_to_end_latency_field": "end_to_end_latency_seconds",
+    "hardware_runtime_source": "selected_backend_registry_record",
+    "include_failed_model_calls": true,
+    "include_retries": true,
+    "include_reused_upstream": true,
+    "local_compute_cost_included": null,
+    "model_latency_field": "model_latency_seconds",
+    "price_basis": null,
+    "pricing_effective_on": null,
+    "pricing_source": null,
+    "rates_usd": {
+      "input_per_million_tokens": null,
+      "output_per_million_tokens": null,
+      "per_call": null
+    }
+  },
   "response_reuse_contract": {
     "additional_physical_model_calls": 0,
     "byte_identical_response_required": true,
